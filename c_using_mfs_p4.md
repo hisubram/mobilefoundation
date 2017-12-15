@@ -36,8 +36,6 @@ After you create the {{site.data.keyword.mobilefoundation_short}}: Professional 
 
 After the {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity service instance is created you will see the *Overview* page where you will need to specify the connection information for the {{site.data.keyword.Db2_on_Cloud_short}} service instance, that the {{site.data.keyword.mobilefoundation_short}} service instance should connect to.
 
-**Note:** If you already have a {{site.data.keyword.Db2_on_Cloud_short}} service instance, you can configure to use the same to connect to the {{site.data.keyword.mobilefoundation_short}} service instance.
-
 You can also create a new {{site.data.keyword.Db2_on_Cloud_short}} service instance, if you do not have one already existing.
 
 Follow these steps to create a new Db2 on Cloud service instance:
