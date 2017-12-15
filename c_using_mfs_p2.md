@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2017
-lastupdated:  "2017-02-17"
+lastupdated:  "2017-12-15"
 
 ---
 
@@ -16,11 +16,11 @@ After you create the {{site.data.keyword.mobilefoundation_short}}: Professional 
 {: #prerequisites_p2}
 
 Consider the following before you configure  {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application service instance.
-* {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application is supported only with {{site.data.keyword.dashdbshort_notm}}: Enterprise Transactional (supporting OLTP) {{site.data.keyword.Bluemix_notm}} plans.
+* {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application is supported only with {{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}} plans.
 
-* You should have access to the {{site.data.keyword.dashdbshort_notm}} service instance credentials before you can configure the settings of your {{site.data.keyword.mobilefoundation_short}} service instance.
+* You should have access to the {{site.data.keyword.Db2_on_Cloud_short}} service instance credentials before you can configure the settings of your {{site.data.keyword.mobilefoundation_short}} service instance.
 
-**Note**: The {{site.data.keyword.dashdbshort_notm}} service instance can exist in any `Space` within your {{site.data.keyword.Bluemix_notm}} `Organization` or any other `Organization` that you have access to. Ensure that you have the permissions to access the `Space` where the {{site.data.keyword.dashdbshort_notm}} service instance exists.
+**Note**: The {{site.data.keyword.Db2_on_Cloud_short}} service instance can exist in any `Space` within your {{site.data.keyword.Bluemix_notm}} `Organization` or any other `Organization` that you have access to. Ensure that you have the permissions to access the `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists.
 
 
 ## Adding the database connection
@@ -31,41 +31,41 @@ Consider the following before you configure  {{site.data.keyword.mobilefoundatio
 
 After you create the {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application service instance, follow the procedure to get started.
 
-### Setting up connection to dashDB service instance
+### Setting up connection to Db2 on Cloud service instance
 {: #connect_dashdb_p2}
 
-After the {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application service instance is created you will see the *Overview* page where you will need to specify the connection information for the {{site.data.keyword.dashdbshort_notm}} for Transactions service instance, that the {{site.data.keyword.mobilefoundation_short}} service instance should connect to.
+After the {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application service instance is created you will see the *Overview* page where you will need to specify the connection information for the {{site.data.keyword.Db2_on_Cloud_short}} service instance, that the {{site.data.keyword.mobilefoundation_short}} service instance should connect to.
 
-**Note:** If you already have a {{site.data.keyword.dashdbshort_notm}} for Analytics: Enterprise for Transactions service instance, you can configure to use the same to connect to the {{site.data.keyword.mobilefoundation_short}} service instance.
+**Note:** If you already have a {{site.data.keyword.Db2_on_Cloud_short}} service instance, you can configure to use the same to connect to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
-You can also create a new {{site.data.keyword.dashdbshort_notm}} for Transactions service instance, if you do not have one already existing.
+You can also create a new {{site.data.keyword.Db2_on_Cloud_short}} service instance, if you do not have one already existing.
 
-Follow these steps to create a new dashDB for Transactions service instance:
+Follow these steps to create a new Db2 on Cloud service instance:
 
 1. In the *Overview* page select **Create New Service** section.
 
-+ Select `Yes` on the **High availability configuration** option, if you want high available {{site.data.keyword.dashdbshort_notm}} for Transactions service instance.
++ Select `Yes` on the **High availability configuration** option, if you want high available {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 
 + Review the plan details and click **Create**.
 
-A new {{site.data.keyword.dashdbshort_notm}} for Transactions: EnterpriseForTransactions2.8.500 service instance is created, which provides a dedicated {{site.data.keyword.dashdbshort_notm}} instance with 8GB RAM and 2 vCPUs, and 500 GB of storage.
+A new {{site.data.keyword.Db2_on_Cloud_short}} service instance is created, which provides a dedicated {{site.data.keyword.Db2_on_Cloud_short}} instance with 8GB RAM and 2 vCPUs, and 500 GB of storage.
 
-Follow these steps to connect to an existing {{site.data.keyword.dashdbshort_notm}} service instance or to the {{site.data.keyword.dashdbshort_notm}} for Transactions service instance that you just created:
+Follow these steps to connect to an existing {{site.data.keyword.Db2_on_Cloud_short}} service instance or to the {{site.data.keyword.Db2_on_Cloud_short}} service instance that you just created:
 
-1. Select the {{site.data.keyword.Bluemix_notm}} `Organization` where the {{site.data.keyword.dashdbshort_notm}} service instance exists.
+1. Select the {{site.data.keyword.Bluemix_notm}} `Organization` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists.
 
-+ Select the {{site.data.keyword.Bluemix_notm}} `Space` where the {{site.data.keyword.dashdbshort_notm}} service instance exists, from the list of spaces available in the selected `Organization`.   
-**Note:** If you do not see listed the `Organization` and `Space` where your {{site.data.keyword.dashdbshort_notm}} service instance exists then check if you are a member of that `Organization` and `Space`. You are required to have a *Developer* role access to the organization and space, as the {{site.data.keyword.mobilefoundation_short}} service accesses the credentials from the {{site.data.keyword.dashdbshort_notm}} service.
++ Select the {{site.data.keyword.Bluemix_notm}} `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists, from the list of spaces available in the selected `Organization`.   
+**Note:** If you do not see listed the `Organization` and `Space` where your {{site.data.keyword.Db2_on_Cloud_short}} service instance exists then check if you are a member of that `Organization` and `Space`. You are required to have a *Developer* role access to the organization and space, as the {{site.data.keyword.mobilefoundation_short}} service accesses the credentials from the {{site.data.keyword.Db2_on_Cloud_short}} service.
 
-+ Select the {{site.data.keyword.dashdbshort_notm}} `Service Name` and `Credentials` to connect to the existing  {{site.data.keyword.dashdbshort_notm}} service instance.
++ Select the {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` and `Credentials` to connect to the existing  {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 
-+  Test the connection to the specified {{site.data.keyword.dashdbshort_notm}} service instance.
++  Test the connection to the specified {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 
-+  Click **Add**. This action creates the required tables in the configured {{site.data.keyword.dashdbshort_notm}} database service instance.
++  Click **Add**. This action creates the required tables in the configured {{site.data.keyword.Db2_on_Cloud_short}} database service instance.
 
 In a few seconds, you can access the `Overview` page that provides you with  tutorials and videos to help you get started with the  {{site.data.keyword.mobilefoundation_short}} service.
 
-**Note**: You cannot change the {{site.data.keyword.dashdbshort_notm}} service instance that is configured to be used by your {{site.data.keyword.mobilefoundation_short}} service instance. However, you can use the same {{site.data.keyword.dashdbshort_notm}} service instance across multiple {{site.data.keyword.mobilefoundation_short}} service instances, as each {{site.data.keyword.mobilefoundation_short}} service instance creates its own schema in the selected {{site.data.keyword.dashdbshort_notm}} service instance.
+**Note**: You cannot change the {{site.data.keyword.Db2_on_Cloud_short}} service instance that is configured to be used by your {{site.data.keyword.mobilefoundation_short}} service instance. However, you can use the same {{site.data.keyword.Db2_on_Cloud_short}} service instance across multiple {{site.data.keyword.mobilefoundation_short}} service instances, as each {{site.data.keyword.mobilefoundation_short}} service instance creates its own schema in the selected {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 
 
 ## Starting the MobileFirst server
@@ -131,7 +131,7 @@ You can now delete the Mobile Analytics server that was added to the {{site.data
 
 * This action stops your existing server and deletes the data. A new server instance is created with an updated version, if available. This action takes a few minutes to complete.
 
-**Note**: All the data from your previous server instance including information on the apps and adapters is persisted in the configured {{site.data.keyword.dashdbshort_notm}} service instance, this data is used to recreate your server.
+**Note**: All the data from your previous server instance including information on the apps and adapters is persisted in the configured {{site.data.keyword.Db2_on_Cloud_short}} service instance, this data is used to recreate your server.
 
 ##	Setting up advanced configuration
 {: #using_mfs_advanced_p2}
