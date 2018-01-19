@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -64,7 +64,7 @@ Sie können jetzt den Mobile Analytics-Server, der zur {{site.data.keyword.mobil
 
 *	Klicken Sie auf die Schaltfläche **Neu erstellen**, um den Server erneut zu erstellen.
 
-* Diese Aktion stoppt Ihre vorhandenen Server und löscht die Daten. Alle Daten Ihres mobilen Servers gehen verloren. Eine neue Serverinstanz wird mit einer aktualisierten Version erstellt, falls verfügbar. Diese Aktion dauert einige Minuten.
+* Diese Aktion stoppt Ihre vorhandenen Server und löscht die Daten. Alle Daten Ihres mobilen Servers gehen verloren. Eine neue Serverinstanz wird mit einer aktualisierten Version erstellt, falls verfügbar. Diese Aktion nimmt einige Minuten in Anspruch.
 
 ##	Erweiterte Konfiguration einrichten
 {: #using_mfs_advanced_p1}

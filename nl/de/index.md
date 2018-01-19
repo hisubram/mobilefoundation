@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -35,19 +35,19 @@ Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Devel
 
 Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application-Service erstellt haben, können Sie mit der Erstellung Ihres mobilen Kanals beginnen, indem Sie die folgenden Schritte ausführen.
 
-1.  Stellen Sie eine Verbindung zu einem vorhandenen {{site.data.keyword.dashdbshort}} for Transactions-Service in {{site.data.keyword.Bluemix_notm}} her.
+1.  Stellen Sie eine Verbindung zu einem vorhandenen {{site.data.keyword.Db2_on_Cloud_long}}-Service in {{site.data.keyword.Bluemix_notm}} her.
 
-    1.  Wählen Sie die {{site.data.keyword.Bluemix_notm}} `Organisation` aus, in der sich die {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz befindet.
+    1.  Wählen Sie die {{site.data.keyword.Bluemix_notm}} `Organisation` aus, in der sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet.
 
-    + Wählen Sie den {{site.data.keyword.Bluemix_notm}}-`Bereich`, in dem sich die {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz befindet, in der Liste der Bereiche aus, die in der ausgewählten `Organisation` verfügbar sind.
+    + Wählen Sie den {{site.data.keyword.Bluemix_notm}}-`Bereich`, in dem sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet, in der Liste der Bereiche aus, die in der ausgewählten `Organisation` verfügbar sind.
 
-    + Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.dashdbshort_notm}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz herzustellen.
+    + Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.Db2_on_Cloud_short}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz herzustellen.
 
-    + Testen Sie die Verbindung zu der ausgewählten {{site.data.keyword.dashdbshort_notm}} for Transactions-Serviceinstanz, indem Sie auf **Verbindung testen** klicken.
+    + Testen Sie die Verbindung zu der ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz, indem Sie auf **Verbindung testen** klicken.
 
-    + Klicken Sie auf **Hinzufügen** und anschließend auf **Weiter** in dem Popup-Fenster, in dem Sie zur Bestätigung des ausgewählten {{site.data.keyword.dashdbshort_notm}} for Transactions-Service aufgefordert werden. Mit dieser Aktion werden die erforderlichen Tabellen in der konfigurierten {{site.data.keyword.dashdbshort_notm}}-Datenbankserviceinstanz erstellt.
+    + Klicken Sie auf **Hinzufügen** und anschließend auf **Weiter** in dem Popup-Fenster, in dem Sie zur Bestätigung des ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}-Service aufgefordert werden. Mit dieser Aktion werden die erforderlichen Tabellen in der konfigurierten {{site.data.keyword.Db2_on_Cloud_short}}-Datenbankserviceinstanz erstellt.
 
-    **Hinweis:** Nach dem Hinzufügen einer {{site.data.keyword.dashdbshort_notm}}-Verbindung zur {{site.data.keyword.mobilefoundation_short}}-Instanz kann diese nicht mehr geändert werden.
+    **Hinweis:** Nach dem Hinzufügen einer {{site.data.keyword.Db2_on_Cloud_short}}-Verbindung zur {{site.data.keyword.mobilefoundation_short}}-Instanz kann diese nicht mehr geändert werden.
 
 2.  Erstellen Sie den Server und starten Sie ihn.
 
@@ -62,19 +62,19 @@ Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Profe
 
 Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Developer Pro-Service erstellt haben, können Sie mit der Erstellung Ihres mobilen Kanals beginnen, indem Sie die folgenden Schritte ausführen.
 
-  1.  Stellen Sie eine Verbindung zu einem vorhandenen {{site.data.keyword.dashdbshort}} for Transactions-Service in {{site.data.keyword.Bluemix_notm}} her.
+  1.  Stellen Sie eine Verbindung zu einem vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}-Service in {{site.data.keyword.Bluemix_notm}} her.
 
-      1.  Wählen Sie die {{site.data.keyword.Bluemix_notm}} `Organisation` aus, in der sich die {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz befindet.
+      1.  Wählen Sie die {{site.data.keyword.Bluemix_notm}} `Organisation` aus, in der sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet.
 
-      + Wählen Sie den {{site.data.keyword.Bluemix_notm}}-`Bereich`, in dem sich die {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz befindet, in der Liste der Bereiche aus, die in der ausgewählten `Organisation` verfügbar sind.
+      + Wählen Sie den {{site.data.keyword.Bluemix_notm}}-`Bereich`, in dem sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet, in der Liste der Bereiche aus, die in der ausgewählten `Organisation` verfügbar sind.
 
-      + Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.dashdbshort_notm}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz herzustellen.
+      + Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.Db2_on_Cloud_short}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz herzustellen.
 
-      + Testen Sie die Verbindung zu der ausgewählten {{site.data.keyword.dashdbshort_notm}} for Transactions-Serviceinstanz, indem Sie auf **Verbindung testen** klicken.
+      + Testen Sie die Verbindung zu der ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz, indem Sie auf **Verbindung testen** klicken.
 
-      + Klicken Sie auf **Hinzufügen** und anschließend auf **Weiter** in dem Popup-Fenster, in dem Sie zur Bestätigung des ausgewählten {{site.data.keyword.dashdbshort_notm}} for Transactions-Service aufgefordert werden. Mit dieser Aktion werden die erforderlichen Tabellen in der konfigurierten {{site.data.keyword.dashdbshort_notm}}-Datenbankserviceinstanz erstellt.
+      + Klicken Sie auf **Hinzufügen** und anschließend auf **Weiter** in dem Popup-Fenster, in dem Sie zur Bestätigung des ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}-Service aufgefordert werden. Mit dieser Aktion werden die erforderlichen Tabellen in der konfigurierten {{site.data.keyword.Db2_on_Cloud_short}}-Datenbankserviceinstanz erstellt.
 
-      **Hinweis:** Nach dem Hinzufügen einer {{site.data.keyword.dashdbshort_notm}}-Verbindung zur {{site.data.keyword.mobilefoundation_short}}-Instanz kann diese nicht mehr geändert werden.
+      **Hinweis:** Nach dem Hinzufügen einer {{site.data.keyword.Db2_on_Cloud_short}}-Verbindung zur {{site.data.keyword.mobilefoundation_short}}-Instanz kann diese nicht mehr geändert werden.
 
   2.  Erstellen Sie den Server und starten Sie ihn.
 
@@ -93,19 +93,19 @@ Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Devel
 
 Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity-Service erstellt haben, können Sie mit der Erstellung Ihres mobilen Kanals beginnen, indem Sie die folgenden Schritte ausführen.
 
-  1.  Stellen Sie eine Verbindung zu einem vorhandenen {{site.data.keyword.dashdbshort}} for Transactions-Service in {{site.data.keyword.Bluemix_notm}} her.
+  1.  Stellen Sie eine Verbindung zu einem vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}-Service in {{site.data.keyword.Bluemix_notm}} her.
 
-      1.  Wählen Sie die {{site.data.keyword.Bluemix_notm}} `Organisation` aus, in der sich die {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz befindet.
+      1.  Wählen Sie die {{site.data.keyword.Bluemix_notm}} `Organisation` aus, in der sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet.
 
-      + Wählen Sie den {{site.data.keyword.Bluemix_notm}}-`Bereich`, in dem sich die {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz befindet, in der Liste der Bereiche aus, die in der ausgewählten `Organisation` verfügbar sind.
+      + Wählen Sie den {{site.data.keyword.Bluemix_notm}}-`Bereich`, in dem sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet, in der Liste der Bereiche aus, die in der ausgewählten `Organisation` verfügbar sind.
 
-      + Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.dashdbshort_notm}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz herzustellen.
+      + Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.Db2_on_Cloud_short}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz herzustellen.
 
-      + Testen Sie die Verbindung zu der ausgewählten {{site.data.keyword.dashdbshort_notm}} for Transactions-Serviceinstanz, indem Sie auf **Verbindung testen** klicken.
+      + Testen Sie die Verbindung zu der ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz, indem Sie auf **Verbindung testen** klicken.
 
-      + Klicken Sie auf **Hinzufügen** und anschließend auf **Weiter** in dem Popup-Fenster, in dem Sie zur Bestätigung des ausgewählten {{site.data.keyword.dashdbshort_notm}} for Transactions-Service aufgefordert werden. Mit dieser Aktion werden die erforderlichen Tabellen in der konfigurierten {{site.data.keyword.dashdbshort_notm}}-Datenbankserviceinstanz erstellt.
+      + Klicken Sie auf **Hinzufügen** und anschließend auf **Weiter** in dem Popup-Fenster, in dem Sie zur Bestätigung des ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}-Service aufgefordert werden. Mit dieser Aktion werden die erforderlichen Tabellen in der konfigurierten {{site.data.keyword.Db2_on_Cloud_short}}-Datenbankserviceinstanz erstellt.
 
-      **Hinweis:** Nach dem Hinzufügen einer {{site.data.keyword.dashdbshort_notm}}-Verbindung zur {{site.data.keyword.mobilefoundation_short}}-Instanz kann diese nicht mehr geändert werden.
+      **Hinweis:** Nach dem Hinzufügen einer {{site.data.keyword.Db2_on_Cloud_short}}-Verbindung zur {{site.data.keyword.mobilefoundation_short}}-Instanz kann diese nicht mehr geändert werden.
 
   2.  Erstellen Sie den Server und starten Sie ihn.
 

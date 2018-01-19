@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -26,7 +26,7 @@ Bei der Erstellung der <!--container group is created with a--> URL oder Route b
   |`au-syd.mybluemix.net` | Sydney  |      
   {: caption="Tabelle 1. Anwendungsdomänennamen auf der Basis von Regionen in {{site.data.keyword.Bluemix_notm}}" caption-side="top"}
 
-To be able to use your own domain you will need to configure custom domain by performing the following steps:
+Zur Verwendung einer eigenen Domäne müssen Sie eine benutzerdefinierte Domäne konfigurieren, indem Sie die folgenden Schritte ausführen:
 
 1.	Erstellen Sie eine {{site.data.keyword.mfserver_short_notm}}-Instanz, indem Sie die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz durch die Auswahl eines unterstützten Plans erstellen.
 

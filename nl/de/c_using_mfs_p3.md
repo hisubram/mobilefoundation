@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -17,11 +17,11 @@ Einige Sekunden nach der Erstellung der Serviceinstanz von {{site.data.keyword.m
 {: #prerequisites_p3}
 
 Beachten Sie Folgendes, bevor Sie die Serviceinstanz von {{site.data.keyword.mobilefoundation_short}}: Developer Pro konfigurieren.
-* {{site.data.keyword.mobilefoundation_short}}: Developer Pro wird nur von {{site.data.keyword.dashdbshort_notm}}: Enterprise Transactional (Unterstützung für OLTP) {{site.data.keyword.Bluemix_notm}}-Plänen unterstützt.
+* {{site.data.keyword.mobilefoundation_short}}: Developer Pro wird nur mit {{site.data.keyword.Bluemix_notm}}-Plänen für {{site.data.keyword.Db2_on_Cloud_short}} unterstützt.
 
-* Sie benötigen Zugriff auf die Berechtigungsnachweise der {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz, bevor Sie die Einstellungen für die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz konfigurieren.
+* Sie benötigen Zugriff auf die Berechtigungsnachweise der {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz, bevor Sie die Einstellungen für die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz konfigurieren.
 
-**Hinweis**: Die {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz kann sich in jedem `Bereich` in Ihrer {{site.data.keyword.Bluemix_notm}}-`Organisation` bzw. in jeder anderen `Organisation`, auf die Sie zugreifen können, befinden. Stellen Sie sicher, dass Sie über die Berechtigungen für den Zugriff auf den `Bereich` verfügen, in dem sich die {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz befindet.
+**Hinweis**: Die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz kann sich in jedem `Bereich` in Ihrer {{site.data.keyword.Bluemix_notm}}-`Organisation` bzw. in jeder anderen `Organisation`, auf die Sie zugreifen können, befinden. Stellen Sie sicher, dass Sie über die Berechtigungen für den Zugriff auf den `Bereich` verfügen, in dem sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet.
 
 
 ## Datenbankverbindung hinzufügen
@@ -32,41 +32,39 @@ Beachten Sie Folgendes, bevor Sie die Serviceinstanz von {{site.data.keyword.mob
 
 Führen Sie nach der Erstellung der Serviceinstanz von {{site.data.keyword.mobilefoundation_short}}: Developer Pro die beschriebene Prozedur aus, um mit der Verwendung des Service zu beginnen.
 
-### Verbindung zur dashDB-Serviceinstanz herstellen
+### Verbindung zur Db2 on Cloud-Serviceinstanz einrichten
 {: #connect_dashdb_p3}
 
-Nachdem die Serviceinstanz von {{site.data.keyword.mobilefoundation_short}}: Developer Pro erstellt wurde, sehen Sie die Seite *Übersicht*, auf der Sie die Verbindungsinformationen für die {{site.data.keyword.dashdbshort_notm}} for Transactions-Serviceinstanz angeben müssen, zu der die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz eine Verbindung herstellen soll.
+Nachdem die {{site.data.keyword.mobilefoundation_short}}: Developer Pro-Serviceinstanz erstellt wurde, wird die Seite *Übersicht* angezeigt, auf der Sie die Verbindungsinformationen für die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz angeben müssen, zu der die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz eine Verbindung herstellen soll.
 
-**Hinweis:** Wenn Sie bereits über eine Serviceinstanz von {{site.data.keyword.dashdbshort_notm}} for Analytics: Enterprise for Transactions verfügen, können Sie diese verwenden, um die Verbindung zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz herzustellen.
+Sie können auch eine neue Serviceinstanz von {{site.data.keyword.Db2_on_Cloud_short}} erstellen, falls noch keine vorhanden ist.
 
-Sie können auch eine neue Serviceinstanz von {{site.data.keyword.dashdbshort_notm}} for Transactions erstellen, falls noch keine vorhanden ist.
-
-Führen Sie die folgenden Schritte aus, um eine neue dashDB for Transactions-Serviceinstanz zu erstellen:
+Führen Sie die folgenden Schritte aus, um eine neue Db2 on Cloud-Serviceinstanz zu erstellen:
 
 1. Wählen Sie auf der Seite *Übersicht* den Abschnitt **Neuen Service erstellen** aus.
 
-+ Wählen Sie `Ja` für die Option **Hochverfügbarkeitskonfiguration** aus, wenn Sie eine hochverfügbare Serviceinstanz von {{site.data.keyword.dashdbshort_notm}} for Transactions benötigen.
++ Wählen Sie `Ja` für die Option **Hochverfügbarkeitskonfiguration** aus, wenn Sie eine {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz mit Hochverfügbarkeitsfunktionalität benötigen.
 
 + Prüfen Sie die Plandetails und klicken Sie auf **Erstellen**.
 
-Eine neue Serviceinstanz von {{site.data.keyword.dashdbshort_notm}} for Transactions: EnterpriseForTransactions2.8.500 wird erstellt, die eine dedizierte {{site.data.keyword.dashdbshort_notm}}-Instanz mit 8 GB RAM und 2 vCPUs sowie mit 500 GB Speicher bereitstellt.
+Eine neue {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz wird erstellt. Mit dieser steht eine dedizierte {{site.data.keyword.Db2_on_Cloud_short}}-Instanz mit 8 GB RAM und 2 vCPUs sowie 500 GB Speicher zur Verfügung.
 
-Führen Sie die folgenden Schritte aus, um die Verbindung zu einer vorhandenen {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz oder zu der Serviceinstanz von {{site.data.keyword.dashdbshort_notm}} for Transactions herzustellen, die Sie gerade erstellt haben:
+Führen Sie die folgenden Schritte aus, um die Verbindung zu einer vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz oder zu der Serviceinstanz von {{site.data.keyword.Db2_on_Cloud_short}} herzustellen, die Sie gerade erstellt haben:
 
-1. Wählen Sie die {{site.data.keyword.Bluemix_notm}} `Organisation` aus, in der sich die {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz befindet.
+1. Wählen Sie die {{site.data.keyword.Bluemix_notm}} `Organisation` aus, in der sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet.
 
-+ Wählen Sie den {{site.data.keyword.Bluemix_notm}}-`Bereich`, in dem sich die {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz befindet, in der Liste der Bereiche aus, die in der ausgewählten `Organisation` verfügbar sind.   
-**Hinweis:** Wenn die `Organisation` und der `Bereich`, in denen sich Ihre {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz befindet, nicht aufgeführt sind, prüfen Sie, ob Sie ein Mitglied der betreffenden `Organisation` bzw. des betreffenden `Bereichs` sind. Sie benötigen die Zugriffsrolle *Entwickler* für die Organisation und den Bereich, da der {{site.data.keyword.mobilefoundation_short}}-Service über den {{site.data.keyword.dashdbshort_notm}}-Service auf die Berechtigungsnachweise zugreift.
++ Wählen Sie den {{site.data.keyword.Bluemix_notm}}-`Bereich`, in dem sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet, in der Liste der Bereiche aus, die in der ausgewählten `Organisation` verfügbar sind.   
+**Hinweis:** Wenn die `Organisation` und der `Bereich`, in denen sich Ihre {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet, nicht aufgeführt sind, prüfen Sie, ob Sie ein Mitglied der betreffenden `Organisation` bzw. des betreffenden `Bereichs` sind. Sie benötigen die Zugriffsrolle *Entwickler* für die Organisation und den Bereich, da der {{site.data.keyword.mobilefoundation_short}}-Service über den {{site.data.keyword.Db2_on_Cloud_short}}-Service auf die Berechtigungsnachweise zugreift.
 
-+ Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.dashdbshort_notm}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz herzustellen.
++ Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.Db2_on_Cloud_short}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz herzustellen.
 
-+  Testen Sie die Verbindung zur angegebenen {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz.
++  Testen Sie die Verbindung zur angegebenen {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz.
 
-+  Klicken Sie auf **Hinzufügen**. Mit dieser Aktion werden die erforderlichen Tabellen in der konfigurierten {{site.data.keyword.dashdbshort_notm}}-Datenbankserviceinstanz erstellt.
++  Klicken Sie auf **Hinzufügen**. Mit dieser Aktion werden die erforderlichen Tabellen in der konfigurierten {{site.data.keyword.Db2_on_Cloud_short}}-Datenbankserviceinstanz erstellt.
 
 Nach einigen Sekunden können Sie auf die Seite `Übersicht` zugreifen, auf der die Lernprogramme und Videos zur Verfügung stehen, die Sie beim Einstieg in die Verwendung des {{site.data.keyword.mobilefoundation_short}}-Service unterstützten.
 
-**Hinweis**: Sie können die {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz, die zur Verwendung durch die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz konfiguriert ist, nicht ändern. Sie können jedoch dieselbe {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz für mehrere {{site.data.keyword.mobilefoundation_short}}-Serviceinstanzen verwenden, da jede {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz ein eigenes Schema in der ausgewählten {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz erstellt.
+**Hinweis**: Sie können die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz, die zur Verwendung durch die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz konfiguriert ist, nicht ändern. Sie können jedoch dieselbe {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz für mehrere {{site.data.keyword.mobilefoundation_short}}-Serviceinstanzen verwenden, da jede {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz ein eigenes Schema in der ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz erstellt.
 
 ## MobileFirst-Server starten
 {: #start_mobilefoundation_p3}
@@ -78,9 +76,7 @@ Nach einigen Sekunden können Sie auf die Seite `Übersicht` zugreifen, auf der 
 
     -	`Benutzername` und `Kennwort` werden automatisch für Sie generiert. Sie können darauf zugreifen, wenn der Server betriebsbereit ist.
 
-Der Prozess der Bereitstellung Ihres Servers wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten;
-in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt. Ist der Vorgang abgeschlossen, wird ein Dashboard mit folgenden
-Informationen angezeigt:
+Der Prozess der Bereitstellung Ihres Servers wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt. Ist der Vorgang abgeschlossen, wird ein Dashboard mit folgenden Informationen angezeigt:
 
   -	Status Ihres Servers, der ausgeführt wird (Zustand, Größe).
 
@@ -134,14 +130,12 @@ Sie können jetzt den Mobile Analytics-Server, der zur {{site.data.keyword.mobil
 
 * Diese Aktion stoppt Ihre vorhandenen Server und löscht die Daten. Eine neue Serverinstanz wird mit einer aktualisierten Version erstellt, falls verfügbar. Diese Aktion nimmt einige Minuten in Anspruch.
 
-**Hinweis**: Alle Daten der vorherigen Serverinstanz, einschließlich Informationen zu den Apps und Adaptern, werden in der konfigurierten {{site.data.keyword.dashdbshort_notm}}-Serviceinstanz beibehalten; diese Daten werden zur erneuten Erstellung des Servers verwendet.
+**Hinweis**: Alle Daten der vorherigen Serverinstanz, einschließlich Informationen zu den Apps und Adaptern, werden in der konfigurierten {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz beibehalten; diese Daten werden zur erneuten Erstellung des Servers verwendet.
 
 ##	Erweiterte Konfiguration einrichten
 {: #using_mfs_advanced_p3}
 
-Mit der Option **Server mit erweiterter Konfiguration starten** auf der Seite `Übersicht` können Sie einen Server mit erweiterten oder benutzerdefinierten Einstellungen erstellen. Sie können die
-Servereinstellungen auch aktualisieren, um Ihre Serverkonfiguration anzupassen; klicken Sie hierfür auf die
-Registerkarte **Konfiguration**. {{site.data.keyword.mobilefoundation_short}} bietet Ihnen Zugriff auf einige erweiterte Einstellungen.
+Mit der Option **Server mit erweiterter Konfiguration starten** auf der Seite `Übersicht` können Sie einen Server mit erweiterten oder benutzerdefinierten Einstellungen erstellen. Sie können die Servereinstellungen auch aktualisieren, um Ihre Serverkonfiguration anzupassen; klicken Sie hierfür auf die Registerkarte **Konfiguration**. {{site.data.keyword.mobilefoundation_short}} bietet Ihnen Zugriff auf einige erweiterte Einstellungen.
 
 *	Auf der Registerkarte **Topologie** können Sie die Servergröße und den Hauptspeicher auswählen, die den jeweiligen Anforderungen entsprechen. Der Standardserver wird mit 1 GB Hauptspeicher erstellt.
   - Sie können den Hauptspeicher für Ihren Server in Abhängigkeit von Ihrem Bedarf auf höchstens 2 GB vergrößern.
