@@ -1,3 +1,4 @@
+<!-- Markdown Navigation -->
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
@@ -10,8 +11,8 @@ Mobile Foundation
 
     {: .topicgroup}
     相關鏈結
-        [IBM MobileFirst Platform Foundation 8.0.0 版產品文件](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
-        [IBM MobileFirst Platform Developer Center](https://mobilefirstplatform.ibmcloud.com)
+        [IBM MobileFirst Platform Foundation 8.0.0 版產品說明文件](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
+        [IBM MobileFirst Platform 開發人員中心](https://mobilefirstplatform.ibmcloud.com)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}

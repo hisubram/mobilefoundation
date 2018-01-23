@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -19,14 +19,14 @@ lastupdated:  "2017-02-17"
 
 <!--container group is created with a--> URL 或路徑建立時是使用根據 {{site.data.keyword.Bluemix_notm}} `Region` 的預設網域名稱。
 
-  |網域 |  地區  |    
+  |網域|  地區|    
   |:----- | :----- |    
-  |`mybluemix.net` | 美國南部 |    
-  |`eu-gb.mybluemix.net` | 英國  |
-  |`au-syd.mybluemix.net` | 雪梨  |      
-  {: caption="表 1. {{site.data.keyword.Bluemix_notm}} 中以地區為基礎的應用程式網域名稱" caption-side="top"}
+  |`mybluemix.net` | 美國南部|    
+  |`eu-gb.mybluemix.net` | 英國|
+  |`au-syd.mybluemix.net` | 雪梨|      
+  {: caption="表 1. 應用程式網域名稱，根據 {{site.data.keyword.Bluemix_notm}} 中的地區" caption-side="top"}
 
-
+您需要執行下列步驟配置自訂網域，才能使用自己的網域：
 
 1.	藉由選擇其中一個支援的方案，建立 {{site.data.keyword.mobilefoundation_short}} 服務實例來建立 {{site.data.keyword.mfserver_short_notm}} 實例。
 

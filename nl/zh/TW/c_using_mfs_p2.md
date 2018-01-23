@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -16,11 +16,11 @@ lastupdated:  "2017-02-17"
 {: #prerequisites_p2}
 
 在配置 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服務實例之前，請考量下列各項。
-* 只有 {{site.data.keyword.dashdbshort_notm}}: Enterprise Transactional（支援 OLTP）的 {{site.data.keyword.Bluemix_notm}} 方案才支援 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application。
+* 只有 {{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}} 方案才支援 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application。
 
-* 您應該具有 {{site.data.keyword.dashdbshort_notm}} 服務實例認證的存取權，才能配置 {{site.data.keyword.mobilefoundation_short}} 服務實例的設定。
+* 您應該具有 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例認證的存取權，才能配置 {{site.data.keyword.mobilefoundation_short}} 服務實例的設定。
 
-**附註**：{{site.data.keyword.dashdbshort_notm}} 服務實例可存在於 {{site.data.keyword.Bluemix_notm}} `Organization` 的任何 `Space` 中或您具有存取權的任何其他 `Organization` 中。請確定您具有存取 {{site.data.keyword.dashdbshort_notm}} 服務實例所存在的 `Space` 的許可權。
+**附註**：{{site.data.keyword.Db2_on_Cloud_short}} 服務實例可存在於 {{site.data.keyword.Bluemix_notm}} `Organization` 的任何 `Space` 中或您具有存取權的任何其他 `Organization` 中。請確定您具有存取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 `Space` 的許可權。
 
 
 ## 新增資料庫連線
@@ -31,41 +31,39 @@ lastupdated:  "2017-02-17"
 
 建立 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服務實例之後，請遵循程序以開始使用。
 
-### 設定 dashDB 服務實例的連線
+### 設定 Db2 on Cloud 服務實例的連線
 {: #connect_dashdb_p2}
 
-在建立 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服務實例之後，就會看到*概觀* 頁面，您將需要在這裡為 {{site.data.keyword.mobilefoundation_short}} 服務實例應該連接至其中的 {{site.data.keyword.dashdbshort_notm}} for Transactions 服務實例指定連線資訊。
+在建立 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服務實例之後，就會看到*概觀* 頁面，您將需要在這裡為 {{site.data.keyword.mobilefoundation_short}} 服務實例應該連接至其中的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例指定連線資訊。
 
-**附註：**如果已有 {{site.data.keyword.dashdbshort_notm}} for Analytics: Enterprise for Transactions 服務實例，則可以配置為使用相同方式來連接至 {{site.data.keyword.mobilefoundation_short}} 服務實例。
+如果尚未有 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例，也可以建立新的。
 
-如果尚未有 {{site.data.keyword.dashdbshort_notm}} for Transactions 服務實例，也可以建立新的。
-
-請遵循下列步驟，建立新的 dashDB for Transactions 服務實例：
+請遵循下列步驟，建立新的 Db2 on Cloud 服務實例：
 
 1. 在*概觀* 頁面中，選取**建立新服務**區段。
 
-+ 如果您想要高可用的 {{site.data.keyword.dashdbshort_notm}} for Transactions 服務實例，請在**高可用性配置**選項上選取`是`。
++ 如果您想要高可用的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例，請在**高可用性配置**選項上選取`是`。
 
 + 檢閱方案詳細資料，然後按一下**建立**。
 
-即會建立新的 {{site.data.keyword.dashdbshort_notm}} for Transactions: EnterpriseForTransactions2.8.500 服務實例，其會提供具有 8GB RAM 及 2 個 vCPU，以及 500 GB 儲存空間的專用 {{site.data.keyword.dashdbshort_notm}}實例。
+即會建立新的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例，其會提供具有 8GB RAM 及 2 個 vCPU，以及 500 GB 儲存空間的專用 {{site.data.keyword.Db2_on_Cloud_short}}實例。
 
-請遵循下列步驟，來連接至現有的 {{site.data.keyword.dashdbshort_notm}} 服務實例或您剛建立的 {{site.data.keyword.dashdbshort_notm}} for Transactions 服務實例。
+請遵循下列步驟，來連接至現有的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例或您剛建立的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。
 
-1. 選取 {{site.data.keyword.dashdbshort_notm}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Organization`。
+1. 選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Organization`。
 
-+ 從所選取 `Organization` 中可用的空間清單，選取 {{site.data.keyword.dashdbshort_notm}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Space`。   
-**附註：**如果您未看見，請列出 {{site.data.keyword.dashdbshort_notm}} 服務實例所存在的 `Organization` 和 `Space`，然後檢查您是否為該 `Organization` 和 `Space` 的成員。您需要對組織及空間具有*開發人員* 角色存取權，因為 {{site.data.keyword.mobilefoundation_short}} 服務會從 {{site.data.keyword.dashdbshort_notm}} 服務存取認證。
++ 從所選取 `Organization` 中可用的空間清單，選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Space`。   
+**附註：**如果您未看見，請列出 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 `Organization` 和 `Space`，然後檢查您是否為該 `Organization` 和 `Space` 的成員。您需要對組織及空間具有*開發人員* 角色存取權，因為 {{site.data.keyword.mobilefoundation_short}} 服務會從 {{site.data.keyword.Db2_on_Cloud_short}} 服務存取認證。
 
-+ 選取 {{site.data.keyword.dashdbshort_notm}} `Service Name` 和 `Credentials`，以連接至現有的 {{site.data.keyword.dashdbshort_notm}} 服務實例。
++ 選取 {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` 和 `Credentials`，以連接至現有的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。
 
-+  測試所指定的 {{site.data.keyword.dashdbshort_notm}} 服務實例的連線。
++  測試所指定的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例的連線。
 
-+  按一下**新增**。此動作會在配置的 {{site.data.keyword.dashdbshort_notm}} 資料庫服務實例中建立必要的表格。
++  按一下**新增**。此動作會在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 資料庫服務實例中建立必要的表格。
 
 幾秒過後，您就可以存取 `Overview` 頁面，而此頁面提供指導教學及視訊，協助您開始使用 {{site.data.keyword.mobilefoundation_short}} 服務。
 
-**附註**：您無法變更配置來供 {{site.data.keyword.mobilefoundation_short}} 服務實例使用的 {{site.data.keyword.dashdbshort_notm}} 服務實例。不過，您能夠在多個 {{site.data.keyword.mobilefoundation_short}} 服務實例之間使用相同的 {{site.data.keyword.dashdbshort_notm}} 服務實例，因為每一個 {{site.data.keyword.mobilefoundation_short}} 服務實例都會在所選取的 {{site.data.keyword.dashdbshort_notm}} 服務實例中建立自己的綱目。
+**附註**：您無法變更配置來供 {{site.data.keyword.mobilefoundation_short}} 服務實例使用的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。不過，您能夠在多個 {{site.data.keyword.mobilefoundation_short}} 服務實例之間使用相同的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例，因為每一個 {{site.data.keyword.mobilefoundation_short}} 服務實例都會在所選取的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例中建立自己的綱目。
 
 
 ## 啟動 MobileFirst 伺服器
@@ -93,7 +91,7 @@ lastupdated:  "2017-02-17"
 
 
 
-##  新增行動分析伺服器
+##  新增 Mobile Analytics 伺服器
 {: #adding_analytics_server_prof}
 
  您現在可以在 {{site.data.keyword.mobilefirst}} 伺服器上監視您的行動應用程式，方法是將 Mobile Analytics 伺服器新增至
@@ -137,7 +135,7 @@ lastupdated:  "2017-02-17"
 
 * 此動作會停止現有的伺服器，並刪除資料。隨即會使用更新的版本（如果有的話）建立新的伺服器實例。這個動作需要數分鐘的時間才能完成。
 
-**附註**：所有來自舊版伺服器實例的資料（包括應用程式及配接器的相關資訊）都會持續保存在已配置的 {{site.data.keyword.dashdbshort_notm}} 服務實例中，這項資料可用來重建您的伺服器。
+**附註**：所有來自舊版伺服器實例的資料（包括應用程式及配接器的相關資訊）都會持續保存在已配置的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例中，這項資料可用來重建您的伺服器。
 
 ##	設定進階配置
 {: #using_mfs_advanced_p2}

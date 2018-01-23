@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -38,19 +38,19 @@ lastupdated:  "2017-02-17"
 
 建立 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服務的實例之後，只要完成下列步驟，就可以開始建置行動通道。
 
-1.  連接至 {{site.data.keyword.Bluemix_notm}} 上的現有 {{site.data.keyword.dashdbshort}} for Transactions 服務。
+1.  連接至 {{site.data.keyword.Bluemix_notm}} 上的現有 {{site.data.keyword.Db2_on_Cloud_long}} 服務。
 
-    1.  選取 {{site.data.keyword.dashdbshort_notm}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Organization`。
+    1.  選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Organization`。
 
-    + 從所選取 `Organization` 中可用的空間清單，選取 {{site.data.keyword.dashdbshort_notm}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Space`。
+    + 從所選取 `Organization` 中可用的空間清單，選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Space`。
 
-    + 選取 {{site.data.keyword.dashdbshort_notm}} `Service Name` 和 `Credentials`，以連接至現有的 {{site.data.keyword.dashdbshort_notm}} 服務實例。
+    + 選取 {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` 和 `Credentials`，以連接至現有的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。
 
-    + 按一下**測試連線**，以測試與所選取 {{site.data.keyword.dashdbshort_notm}} for Transactions 服務實例的連線。
+    + 按一下**測試連線**，以測試與所選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例的連線。
 
-    + 按一下**新增**，接著在要求確認所選取 {{site.data.keyword.dashdbshort_notm}} for Transactions 服務的蹦現視窗上按一下**繼續**。此動作會在配置的 {{site.data.keyword.dashdbshort_notm}} 資料庫服務實例中建立必要的表格。
+    + 按一下**新增**，接著在要求確認所選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務的蹦現視窗上按一下**繼續**。此動作會在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 資料庫服務實例中建立必要的表格。
 
-    **附註：**將 {{site.data.keyword.dashdbshort_notm}} 連線新增至 {{site.data.keyword.mobilefoundation_short}} 實例之後，即無法進行變更。
+    **附註：**將 {{site.data.keyword.Db2_on_Cloud_short}} 連線新增至 {{site.data.keyword.mobilefoundation_short}} 實例之後，即無法進行變更。
 
 2.  建立及啟動伺服器。
 
@@ -65,19 +65,19 @@ lastupdated:  "2017-02-17"
 
 在建立 {{site.data.keyword.mobilefoundation_short}}: Developer Pro 服務的實例之後，您可以完成下列步驟來開始建置行動通道。
 
-  1.  連接至 {{site.data.keyword.Bluemix_notm}} 上的現有 {{site.data.keyword.dashdbshort}} for Transactions 服務。
+  1.  連接至 {{site.data.keyword.Bluemix_notm}} 上的現有 {{site.data.keyword.Db2_on_Cloud_short}} 服務。
 
-      1.  選取 {{site.data.keyword.dashdbshort_notm}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Organization`。
+      1.  選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Organization`。
 
-      + 從所選取 `Organization` 中可用的空間清單，選取 {{site.data.keyword.dashdbshort_notm}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Space`。
+      + 從所選取 `Organization` 中可用的空間清單，選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Space`。
 
-      + 選取 {{site.data.keyword.dashdbshort_notm}} `Service Name` 和 `Credentials`，以連接至現有的 {{site.data.keyword.dashdbshort_notm}} 服務實例。
+      + 選取 {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` 和 `Credentials`，以連接至現有的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。
 
-      + 按一下**測試連線**，以測試與所選取 {{site.data.keyword.dashdbshort_notm}} for Transactions 服務實例的連線。
+      + 按一下**測試連線**，以測試與所選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例的連線。
 
-      + 按一下**新增**，接著在要求確認所選取 {{site.data.keyword.dashdbshort_notm}} for Transactions 服務的蹦現視窗上按一下**繼續**。此動作會在配置的 {{site.data.keyword.dashdbshort_notm}} 資料庫服務實例中建立必要的表格。
+      + 按一下**新增**，接著在要求確認所選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務的蹦現視窗上按一下**繼續**。此動作會在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 資料庫服務實例中建立必要的表格。
 
-      **附註：**將 {{site.data.keyword.dashdbshort_notm}} 連線新增至 {{site.data.keyword.mobilefoundation_short}} 實例之後，即無法進行變更。
+      **附註：**將 {{site.data.keyword.Db2_on_Cloud_short}} 連線新增至 {{site.data.keyword.mobilefoundation_short}} 實例之後，即無法進行變更。
 
   2.  建立及啟動伺服器。
 
@@ -96,19 +96,19 @@ lastupdated:  "2017-02-17"
 
 在建立 {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity 服務的實例之後，您可以完成下列步驟來開始建置行動通道。
 
-  1.  連接至 {{site.data.keyword.Bluemix_notm}} 上的現有 {{site.data.keyword.dashdbshort}} for Transactions 服務。
+  1.  連接至 {{site.data.keyword.Bluemix_notm}} 上的現有 {{site.data.keyword.Db2_on_Cloud_short}} 服務。
 
-      1.  選取 {{site.data.keyword.dashdbshort_notm}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Organization`。
+      1.  選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Organization`。
 
-      + 從所選取 `Organization` 中可用的空間清單，選取 {{site.data.keyword.dashdbshort_notm}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Space`。
+      + 從所選取 `Organization` 中可用的空間清單，選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Space`。
 
-      + 選取 {{site.data.keyword.dashdbshort_notm}} `Service Name` 和 `Credentials`，以連接至現有的 {{site.data.keyword.dashdbshort_notm}} 服務實例。
+      + 選取 {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` 和 `Credentials`，以連接至現有的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。
 
-      + 按一下**測試連線**，以測試與所選取 {{site.data.keyword.dashdbshort_notm}} for Transactions 服務實例的連線。
+      + 按一下**測試連線**，以測試與所選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例的連線。
 
-      + 按一下**新增**，接著在要求確認所選取 {{site.data.keyword.dashdbshort_notm}} for Transactions 服務的蹦現視窗上按一下**繼續**。此動作會在配置的 {{site.data.keyword.dashdbshort_notm}} 資料庫服務實例中建立必要的表格。
+      + 按一下**新增**，接著在要求確認所選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務的蹦現視窗上按一下**繼續**。此動作會在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 資料庫服務實例中建立必要的表格。
 
-      **附註：**將 {{site.data.keyword.dashdbshort_notm}} 連線新增至 {{site.data.keyword.mobilefoundation_short}} 實例之後，即無法進行變更。
+      **附註：**將 {{site.data.keyword.Db2_on_Cloud_short}} 連線新增至 {{site.data.keyword.mobilefoundation_short}} 實例之後，即無法進行變更。
 
   2.  建立及啟動伺服器。
 
