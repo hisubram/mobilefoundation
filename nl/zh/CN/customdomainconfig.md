@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -19,14 +19,14 @@ lastupdated:  "2017-02-17"
 
 该<!--container group is created with a--> URL 或路径是使用基于 {{site.data.keyword.Bluemix_notm}} `区域`的缺省域名进行创建的。
 
-  |域 |  区域  |    
+  |域|  区域|    
   |:----- | :----- |    
-  |`mybluemix.net` | 美国南部 |    
-  |`eu-gb.mybluemix.net` | 英国  |
-  |`au-syd.mybluemix.net` | 悉尼  |      
+  |`mybluemix.net` | 美国南部|    
+  |`eu-gb.mybluemix.net` | 英国|
+  |`au-syd.mybluemix.net` | 悉尼|      
   {: caption="表 1. 基于 {{site.data.keyword.Bluemix_notm}} 中“区域”的应用程序域名" caption-side="top"}
 
-为了能够使用您自己的域，需要执行以下步骤来配置定制域：
+为了可以使用您自己的域，将需要执行以下步骤来配置定制域：
 
 1.	通过选择其中一个受支持套餐创建 {{site.data.keyword.mobilefoundation_short}} 服务实例来创建 {{site.data.keyword.mfserver_short_notm}} 实例。
 

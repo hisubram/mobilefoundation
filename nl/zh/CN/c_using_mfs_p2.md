@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -15,11 +15,11 @@ lastupdated:  "2017-02-17"
 {: #prerequisites_p2}
 
 配置 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服务实例之前，请考虑以下内容。
-* 仅 {{site.data.keyword.dashdbshort_notm}}: Enterprise Transactional（支持 OLTP）{{site.data.keyword.Bluemix_notm}} 套餐支持 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application。
+* 仅 {{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}} 套餐支持 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application。
 
-* 您应该拥有对 {{site.data.keyword.dashdbshort_notm}} 服务实例凭证的访问权，才能配置 {{site.data.keyword.mobilefoundation_short}} 服务实例的设置。
+* 您应该拥有对 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例凭证的访问权，才能配置 {{site.data.keyword.mobilefoundation_short}} 服务实例的设置。
 
-**注**：{{site.data.keyword.dashdbshort_notm}} 服务实例可以存在于您的 {{site.data.keyword.Bluemix_notm}} `组织`或您有权访问的任何其他`组织`内的任何`空间`中。请确保您有权访问 {{site.data.keyword.dashdbshort_notm}} 服务实例所在的`空间`。
+**注**：{{site.data.keyword.Db2_on_Cloud_short}} 服务实例可以存在于您的 {{site.data.keyword.Bluemix_notm}} `组织`或您有权访问的任何其他`组织`内的任何`空间`中。请确保您有权访问 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例所在的`空间`。
 
 
 ## 添加数据库连接
@@ -30,41 +30,39 @@ lastupdated:  "2017-02-17"
 
 创建 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服务实例之后，请按照下面的过程开始进行使用。
 
-### 设置与 dashDB 服务实例的连接
+### 设置与 Db2 on Cloud 服务实例的连接
 {: #connect_dashdb_p2}
 
-创建 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服务实例后，您将看到*概述*页面，您需要在该页面中指定 {{site.data.keyword.mobilefoundation_short}} 服务实例应该连接到的 {{site.data.keyword.dashdbshort_notm}} for Transactions 服务实例的连接信息。
+创建 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服务实例后，您将看到*概述*页面，您需要在该页面中指定 {{site.data.keyword.mobilefoundation_short}} 服务实例应该连接到的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例的连接信息。
 
-**注：**如果已有 {{site.data.keyword.dashdbshort_notm}} for Analytics: Enterprise for Transactions 服务实例，那么可配置为使用相同信息连接到 {{site.data.keyword.mobilefoundation_short}} 服务实例。
+如果还没有 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例，也可以新建一个。
 
-如果尚无现有的 {{site.data.keyword.dashdbshort_notm}} for Transactions 服务实例，那么也可创建一个新的服务实例。
-
-遵循以下步骤，创建新的 dashDB for Transactions 服务实例：
+按照以下步骤，创建新的 Db2 on Cloud 服务实例：
 
 1. 在*概述*页面上选择**创建新服务**部分。
 
-+ 如果需要 {{site.data.keyword.dashdbshort_notm}} for Transactions 服务实例具有高可用性，请在**高可用性配置**选项上选择`是`。
++ 如果需要 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例具有高可用性，请在**高可用性配置**选项上选择`是`。
 
 + 检查套餐详细信息，然后单击**创建**。
 
-这样就创建了新的 {{site.data.keyword.dashdbshort_notm}} for Transactions: EnterpriseForTransactions2.8.500 服务实例，也就提供了具有 8GB RAM、2 个 vCPU 和 500 GB 存储的专用 {{site.data.keyword.dashdbshort_notm}} 实例。
+这样就创建了新的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例，也就提供了具有 8GB RAM、2 个 vCPU 和 500 GB 存储的专用 {{site.data.keyword.Db2_on_Cloud_short}} 实例。
 
-遵循以下步骤，连接到现有的 {{site.data.keyword.dashdbshort_notm}} 服务实例或者刚刚创建的 {{site.data.keyword.dashdbshort_notm}} for Transactions 服务实例：
+按照以下步骤，连接到现有的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例或刚创建的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例：
 
-1. 选择 {{site.data.keyword.dashdbshort_notm}} 服务实例所在的 {{site.data.keyword.Bluemix_notm}} `组织`。
+1. 选择 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例所在的 {{site.data.keyword.Bluemix_notm}} `组织`。
 
-+ 从所选`组织`中可用的空间列表中选择具有 {{site.data.keyword.dashdbshort_notm}} 服务实例的 {{site.data.keyword.Bluemix_notm}} `空间`。   
-**注：**如果未看到 {{site.data.keyword.dashdbshort_notm}} 服务实例所在的`组织`和`空间`列表，请检查您是否是该`组织`和`空间`的成员。您需要对组织和空间具有 *Developer* 角色访问权，因为 {{site.data.keyword.mobilefoundation_short}} 服务从 {{site.data.keyword.dashdbshort_notm}} 服务访问凭证。
++ 从所选`组织`内可用的空间列表中，选择具有 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例的 {{site.data.keyword.Bluemix_notm}} `空间`。   
+**注：**如果未看到 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例所在的`组织`和`空间`列表，请检查您是否是该`组织`和`空间`的成员。您需要对组织和空间具有 *Developer* 角色访问权，因为 {{site.data.keyword.mobilefoundation_short}} 服务从 {{site.data.keyword.Db2_on_Cloud_short}} 服务访问凭证。
 
-+ 选择 {{site.data.keyword.dashdbshort_notm}} `服务名称`和`凭证`以连接到现有 {{site.data.keyword.dashdbshort_notm}} 服务实例。
++ 选择 {{site.data.keyword.Db2_on_Cloud_short}} `服务名称`和`凭证`以连接到现有 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例。
 
-+  测试与指定的 {{site.data.keyword.dashdbshort_notm}} 服务实例的连接。
++  测试与指定的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例的连接。
 
-+  单击**添加**。此操作可在配置的 {{site.data.keyword.dashdbshort_notm}} 数据库服务实例中创建需要的表。
++  单击**添加**。此操作可在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 数据库服务实例中创建需要的表。
 
 几秒钟后，可以访问“`概述`”页面，其中为您提供教程和视频，可帮助您开始使用 {{site.data.keyword.mobilefoundation_short}} 服务。
 
-**注**：您无法更改配置为由 {{site.data.keyword.mobilefoundation_short}} 服务实例使用的 {{site.data.keyword.dashdbshort_notm}} 服务实例。但是，您可以在多个 {{site.data.keyword.mobilefoundation_short}} 服务实例上使用同一 {{site.data.keyword.dashdbshort_notm}} 服务实例，因为每个 {{site.data.keyword.mobilefoundation_short}} 服务实例都将在所选 {{site.data.keyword.dashdbshort_notm}} 服务实例中创建自己的模式。
+**注**：您无法更改已配置为由 {{site.data.keyword.mobilefoundation_short}} 服务实例使用的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例。但是，您可以在多个 {{site.data.keyword.mobilefoundation_short}} 服务实例上使用同一 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例，因为每个 {{site.data.keyword.mobilefoundation_short}} 服务实例都会在所选 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例中创建自己的模式。
 
 
 ## 启动 MobileFirst 服务器
@@ -132,7 +130,7 @@ lastupdated:  "2017-02-17"
 
 * 此操作将停止现有服务器并删除数据。将会使用更新的版本（如果可用）来创建新的服务器实例。此操作会花费几分钟才能完成。
 
-**注**：先前服务器实例中的所有数据（包括有关应用程序和适配器的信息）会持久存储在配置的 {{site.data.keyword.dashdbshort_notm}} 服务实例中，在重新创建服务器时会使用这些数据。
+**注**：先前服务器实例中的所有数据（包括有关应用程序和适配器的信息）会持久存储在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例中，在重新创建服务器时会使用这些数据。
 
 ##	设置高级配置
 {: #using_mfs_advanced_p2}

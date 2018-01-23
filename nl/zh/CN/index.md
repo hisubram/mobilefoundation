@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -36,19 +36,19 @@ Developer 套餐<!-- does not support {{site.data.keyword.mobilefoundation_short
 
 创建 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服务的实例后，可以通过完成以下步骤开始构建移动通道。
 
-1.  连接到 {{site.data.keyword.Bluemix_notm}} 上的现有 {{site.data.keyword.dashdbshort}} for Transactions 服务。
+1.  连接到 {{site.data.keyword.Bluemix_notm}} 上的某个现有 {{site.data.keyword.Db2_on_Cloud_long}} 服务。
 
-    1.  选择 {{site.data.keyword.dashdbshort_notm}} 服务实例所在的 {{site.data.keyword.Bluemix_notm}} `组织`。
+    1.  选择 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例所在的 {{site.data.keyword.Bluemix_notm}} `组织`。
 
-    + 从所选`组织`中可用的空间列表中选择具有 {{site.data.keyword.dashdbshort_notm}} 服务实例的 {{site.data.keyword.Bluemix_notm}} `空间`。
+    + 从所选`组织`内可用的空间列表中，选择具有 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例的 {{site.data.keyword.Bluemix_notm}} `空间`。
 
-    + 选择 {{site.data.keyword.dashdbshort_notm}} `服务名称`和`凭证`以连接到现有 {{site.data.keyword.dashdbshort_notm}} 服务实例。
+    + 选择 {{site.data.keyword.Db2_on_Cloud_short}} `服务名称`和`凭证`以连接到现有 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例。
 
-    + 通过单击**测试连接**测试与所选 {{site.data.keyword.dashdbshort_notm}} for Transactions 服务实例的连接。
+    + 通过单击**测试连接**，测试与所选 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例的连接。
 
-    + 单击**添加**，然后会出现弹出窗口，询问您是否确认所选的 {{site.data.keyword.dashdbshort_notm}} for Transactions 服务，请单击**继续**。此操作可在配置的 {{site.data.keyword.dashdbshort_notm}} 数据库服务实例中创建需要的表。
+    + 单击**添加**，然后会出现弹出窗口，询问您是否确认所选的 {{site.data.keyword.Db2_on_Cloud_short}} 服务，请单击**继续**。此操作可在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 数据库服务实例中创建需要的表。
 
-    **注：**添加 {{site.data.keyword.mobilefoundation_short}} 实例的 {{site.data.keyword.dashdbshort_notm}} 连接后，您将无法对其进行更改。
+    **注：**添加与 {{site.data.keyword.mobilefoundation_short}} 实例的 {{site.data.keyword.Db2_on_Cloud_short}} 连接后，您将无法对其进行更改。
 
 2.  创建并启动服务器。
 
@@ -63,19 +63,19 @@ Developer 套餐<!-- does not support {{site.data.keyword.mobilefoundation_short
 
 创建 {{site.data.keyword.mobilefoundation_short}}: Developer Pro 服务的实例后，可以通过完成以下步骤开始构建移动通道。
 
-  1.  连接到 {{site.data.keyword.Bluemix_notm}} 上的现有 {{site.data.keyword.dashdbshort}} for Transactions 服务。
+  1.  连接到 {{site.data.keyword.Bluemix_notm}} 上的某个现有 {{site.data.keyword.Db2_on_Cloud_short}} 服务。
 
-      1.  选择 {{site.data.keyword.dashdbshort_notm}} 服务实例所在的 {{site.data.keyword.Bluemix_notm}} `组织`。
+      1.  选择 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例所在的 {{site.data.keyword.Bluemix_notm}} `组织`。
 
-      + 从所选`组织`中可用的空间列表中选择具有 {{site.data.keyword.dashdbshort_notm}} 服务实例的 {{site.data.keyword.Bluemix_notm}} `空间`。
+      + 从所选`组织`内可用的空间列表中，选择具有 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例的 {{site.data.keyword.Bluemix_notm}} `空间`。
 
-      + 选择 {{site.data.keyword.dashdbshort_notm}} `服务名称`和`凭证`以连接到现有 {{site.data.keyword.dashdbshort_notm}} 服务实例。
+      + 选择 {{site.data.keyword.Db2_on_Cloud_short}} `服务名称`和`凭证`以连接到现有 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例。
 
-      + 通过单击**测试连接**测试与所选 {{site.data.keyword.dashdbshort_notm}} for Transactions 服务实例的连接。
+      + 通过单击**测试连接**，测试与所选 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例的连接。
 
-      + 单击**添加**，然后会出现弹出窗口，询问您是否确认所选的 {{site.data.keyword.dashdbshort_notm}} for Transactions 服务，请单击**继续**。此操作可在配置的 {{site.data.keyword.dashdbshort_notm}} 数据库服务实例中创建需要的表。
+      + 单击**添加**，然后会出现弹出窗口，询问您是否确认所选的 {{site.data.keyword.Db2_on_Cloud_short}} 服务，请单击**继续**。此操作可在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 数据库服务实例中创建需要的表。
 
-      **注：**添加 {{site.data.keyword.mobilefoundation_short}} 实例的 {{site.data.keyword.dashdbshort_notm}} 连接后，您将无法对其进行更改。
+      **注：**添加与 {{site.data.keyword.mobilefoundation_short}} 实例的 {{site.data.keyword.Db2_on_Cloud_short}} 连接后，您将无法对其进行更改。
 
   2.  创建并启动服务器。
 
@@ -94,19 +94,19 @@ Developer 套餐<!-- does not support {{site.data.keyword.mobilefoundation_short
 
 创建 {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity 服务的实例后，可以通过完成以下步骤开始构建移动通道。
 
-  1.  连接到 {{site.data.keyword.Bluemix_notm}} 上的现有 {{site.data.keyword.dashdbshort}} for Transactions 服务。
+  1.  连接到 {{site.data.keyword.Bluemix_notm}} 上的某个现有 {{site.data.keyword.Db2_on_Cloud_short}} 服务。
 
-      1.  选择 {{site.data.keyword.dashdbshort_notm}} 服务实例所在的 {{site.data.keyword.Bluemix_notm}} `组织`。
+      1.  选择 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例所在的 {{site.data.keyword.Bluemix_notm}} `组织`。
 
-      + 从所选`组织`中可用的空间列表中选择具有 {{site.data.keyword.dashdbshort_notm}} 服务实例的 {{site.data.keyword.Bluemix_notm}} `空间`。
+      + 从所选`组织`内可用的空间列表中，选择具有 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例的 {{site.data.keyword.Bluemix_notm}} `空间`。
 
-      + 选择 {{site.data.keyword.dashdbshort_notm}} `服务名称`和`凭证`以连接到现有 {{site.data.keyword.dashdbshort_notm}} 服务实例。
+      + 选择 {{site.data.keyword.Db2_on_Cloud_short}} `服务名称`和`凭证`以连接到现有 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例。
 
-      + 通过单击**测试连接**测试与所选 {{site.data.keyword.dashdbshort_notm}} for Transactions 服务实例的连接。
+      + 通过单击**测试连接**，测试与所选 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例的连接。
 
-      + 单击**添加**，然后会出现弹出窗口，询问您是否确认所选的 {{site.data.keyword.dashdbshort_notm}} for Transactions 服务，请单击**继续**。此操作可在配置的 {{site.data.keyword.dashdbshort_notm}} 数据库服务实例中创建需要的表。
+      + 单击**添加**，然后会出现弹出窗口，询问您是否确认所选的 {{site.data.keyword.Db2_on_Cloud_short}} 服务，请单击**继续**。此操作可在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 数据库服务实例中创建需要的表。
 
-      **注：**添加 {{site.data.keyword.mobilefoundation_short}} 实例的 {{site.data.keyword.dashdbshort_notm}} 连接后，您将无法对其进行更改。
+      **注：**添加与 {{site.data.keyword.mobilefoundation_short}} 实例的 {{site.data.keyword.Db2_on_Cloud_short}} 连接后，您将无法对其进行更改。
 
   2.  创建并启动服务器。
 
