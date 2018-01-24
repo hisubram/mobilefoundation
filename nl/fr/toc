@@ -1,3 +1,4 @@
+<!-- Markdown Navigation -->
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
@@ -10,8 +11,8 @@ Mobile Foundation
 
     {: .topicgroup}
     Liens connexes
-        [Documentation produit IBM MobileFirst Platform Foundation version 8.0.0](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
-        [Centre de développement IBM MobileFirst Platform](https://mobilefirstplatform.ibmcloud.com)
+        [Documentation du produit IBM MobileFirst Platform Foundation V8.0.0](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
+        [IBM MobileFirst Platform Developer Center](https://mobilefirstplatform.ibmcloud.com)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -26,6 +27,6 @@ Mobile Foundation
     {: .navgroup id="help"}
     [Stack Overflow](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix)
     [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix)
-    [Comment obtenir de l'aide](../../support/index.html#getting-help)
+    [Obtenir de l'aide](../../support/index.html#getting-help)
     [Contacter le service de support](../../support/index.html#contacting-support)
     {: .navgroup-end}

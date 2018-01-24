@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -56,26 +56,28 @@ Après avoir créé une instance du service
 Application, vous pouvez commencer à générer votre canal d'accès mobile en
 procédant comme suit :
 
-1.  Connectez-vous à un service {{site.data.keyword.dashdbshort}} for Transactions existant sur {{site.data.keyword.Bluemix_notm}}.
+1.  Connectez-vous à un service {{site.data.keyword.Db2_on_Cloud_long}} existant sur {{site.data.keyword.Bluemix_notm}}.
 
-    1.  Sélectionnez l'{{site.data.keyword.Bluemix_notm}} `organisation` dans laquelle l'instance de service {{site.data.keyword.dashdbshort_notm}} existe.
+    1.  Sélectionnez l'{{site.data.keyword.Bluemix_notm}} `organisation` dans laquelle l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} existe.
 
-    + Depuis la liste des espaces disponibles dans `Organisation`, sélectionnez l'élément `Espace` {{site.data.keyword.Bluemix_notm}} dans lequel se trouve l'instance de service {{site.data.keyword.dashdbshort_notm}},
+    + Depuis la liste des espaces disponibles dans `Organisation`, sélectionnez l'`espace` {{site.data.keyword.Bluemix_notm}}
+dans lequel se trouve l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
 
-    + Sélectionnez également le nom du service (`Service
-Name`) et les données d'identification
-(`Credentials`) {{site.data.keyword.dashdbshort_notm}}
-pour la connexion à l'instance de service
-{{site.data.keyword.dashdbshort_notm}}.
 
-    + Testez la connexion à l'instance de service {{site.data.keyword.dashdbshort_notm}} for Transactions sélectionnée en cliquant sur
+    + Sélectionnez également le nom du service (`Service Name`) et les données
+d'identification (`Credentials`) {{site.data.keyword.Db2_on_Cloud_short}}
+pour la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
+
+
+    + Testez la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} sélectionnée en cliquant sur
 **Tester la connexion**.
 
-    + Cliquez sur **Ajouter**, puis sur **Continuer** dans la fenêtre en incrustation vous demandant de confirmer la
-sélection du service {{site.data.keyword.dashdbshort_notm}} for Transactions. Cela permet de créer les tables requises dans l'instance de service de base de
-données {{site.data.keyword.dashdbshort_notm}} configurée.
+    + Cliquez sur **Add**, puis sur
+**Continue** dans la fenêtre en incrustation vous demandant
+de confirmer la sélection du service {{site.data.keyword.Db2_on_Cloud_short}}. Cela permet de créer les tables requises dans l'instance de service de base de
+données {{site.data.keyword.Db2_on_Cloud_short}} configurée.
 
-    **Remarque :** Une fois que vous avez ajouté une connexion {{site.data.keyword.dashdbshort_notm}} à l'instance {{site.data.keyword.mobilefoundation_short}}, vous ne pouvez plus la modifier.
+    **Remarque :** Une fois que vous avez ajouté une connexion {{site.data.keyword.Db2_on_Cloud_short}} à l'instance {{site.data.keyword.mobilefoundation_short}}, vous ne pouvez plus la modifier.
 
 2.  Créez et démarrez le serveur.
 
@@ -99,26 +101,30 @@ configuration avancée](c_using_mfs_p2.html#using_mfs_advanced_p2).
 Après avoir créé une instance du service {{site.data.keyword.mobilefoundation_short}}: Developer Pro, vous pouvez commencer à construire votre
 canal d'accès mobile en procédant comme suit.
 
-  1.  Connectez-vous à un service {{site.data.keyword.dashdbshort}} for Transactions existant sur {{site.data.keyword.Bluemix_notm}}.
+  1.  Connectez-vous à un service {{site.data.keyword.Db2_on_Cloud_short}} existant sur {{site.data.keyword.Bluemix_notm}}.
 
-      1.  Sélectionnez l'{{site.data.keyword.Bluemix_notm}} `organisation` dans laquelle l'instance de service {{site.data.keyword.dashdbshort_notm}} existe.
+      1.  Sélectionnez l'`organisation` {{site.data.keyword.Bluemix_notm}} dans laquelle se trouve
+l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
 
-      + Depuis la liste des espaces disponibles dans `Organisation`, sélectionnez l'élément `Espace` {{site.data.keyword.Bluemix_notm}} dans lequel se trouve l'instance de service {{site.data.keyword.dashdbshort_notm}},
 
-      + Sélectionnez également le nom du service (`Service
-Name`) et les données d'identification
-(`Credentials`) {{site.data.keyword.dashdbshort_notm}}
-pour la connexion à l'instance de service
-{{site.data.keyword.dashdbshort_notm}}.
+      + Depuis la liste des espaces disponibles dans `Organisation`, sélectionnez l'`espace` {{site.data.keyword.Bluemix_notm}}
+dans lequel se trouve l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
 
-      + Testez la connexion à l'instance de service {{site.data.keyword.dashdbshort_notm}} for Transactions sélectionnée en cliquant sur
+
+      + Sélectionnez également le nom du service (`Service Name`) et les données
+d'identification (`Credentials`) {{site.data.keyword.Db2_on_Cloud_short}}
+pour la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
+
+
+      + Testez la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} sélectionnée en cliquant sur
 **Tester la connexion**.
 
-      + Cliquez sur **Ajouter**, puis sur **Continuer** dans la fenêtre en incrustation vous demandant de confirmer la
-sélection du service {{site.data.keyword.dashdbshort_notm}} for Transactions. Cela permet de créer les tables requises dans l'instance de service de base de
-données {{site.data.keyword.dashdbshort_notm}} configurée.
+      + Cliquez sur **Add**, puis sur
+**Continue** dans la fenêtre en incrustation vous demandant
+de confirmer la sélection du service {{site.data.keyword.Db2_on_Cloud_short}}. Cela permet de créer les tables requises dans l'instance de service de base de
+données {{site.data.keyword.Db2_on_Cloud_short}} configurée.
 
-      **Remarque :** Une fois que vous avez ajouté une connexion {{site.data.keyword.dashdbshort_notm}} à l'instance {{site.data.keyword.mobilefoundation_short}}, vous ne pouvez plus la modifier.
+      **Remarque :** Une fois que vous avez ajouté une connexion {{site.data.keyword.Db2_on_Cloud_short}} à l'instance {{site.data.keyword.mobilefoundation_short}}, vous ne pouvez plus la modifier.
 
   2.  Créez et démarrez le serveur.
 
@@ -126,8 +132,7 @@ données {{site.data.keyword.dashdbshort_notm}} configurée.
 {{site.data.keyword.mobilefirst_notm}} avec la configuration par
 défaut, cliquez sur **Start Basic Server**.
 
-      * Cette option affecte les paramètres suivants à un serveur
-{{site.data.keyword.mfserver_long_notm}} :
+      * Cette option affecte les paramètres suivants à un serveur {{site.data.keyword.mfserver_long_notm}} :
 
           - Noeud unique avec 1 Go de mémoire. Cette taille est
 suffisante pour des activités de développement et des activités de
@@ -153,26 +158,30 @@ d'une configuration avancée](c_using_mfs_p3.html#using_mfs_advanced_p3).
 Après avoir créé une instance du service {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity, vous pouvez commencer à construire votre
 canal d'accès mobile en procédant comme suit.
 
-  1.  Connectez-vous à un service {{site.data.keyword.dashdbshort}} for Transactions existant sur {{site.data.keyword.Bluemix_notm}}.
+  1.  Connectez-vous à un service {{site.data.keyword.Db2_on_Cloud_short}} existant sur {{site.data.keyword.Bluemix_notm}}.
 
-      1.  Sélectionnez l'{{site.data.keyword.Bluemix_notm}} `organisation` dans laquelle l'instance de service {{site.data.keyword.dashdbshort_notm}} existe.
+      1.  Sélectionnez l'`organisation` {{site.data.keyword.Bluemix_notm}} dans laquelle se trouve
+l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
 
-      + Depuis la liste des espaces disponibles dans `Organisation`, sélectionnez l'élément `Espace` {{site.data.keyword.Bluemix_notm}} dans lequel se trouve l'instance de service {{site.data.keyword.dashdbshort_notm}},
 
-      + Sélectionnez également le nom du service (`Service
-Name`) et les données d'identification
-(`Credentials`) {{site.data.keyword.dashdbshort_notm}}
-pour la connexion à l'instance de service
-{{site.data.keyword.dashdbshort_notm}}.
+      + Depuis la liste des espaces disponibles dans `Organisation`, sélectionnez l'`espace` {{site.data.keyword.Bluemix_notm}}
+dans lequel se trouve l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
 
-      + Testez la connexion à l'instance de service {{site.data.keyword.dashdbshort_notm}} for Transactions sélectionnée en cliquant sur
+
+      + Sélectionnez également le nom du service (`Service Name`) et les données
+d'identification (`Credentials`) {{site.data.keyword.Db2_on_Cloud_short}}
+pour la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
+
+
+      + Testez la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} sélectionnée en cliquant sur
 **Tester la connexion**.
 
-      + Cliquez sur **Ajouter**, puis sur **Continuer** dans la fenêtre en incrustation vous demandant de confirmer la
-sélection du service {{site.data.keyword.dashdbshort_notm}} for Transactions. Cela permet de créer les tables requises dans l'instance de service de base de
-données {{site.data.keyword.dashdbshort_notm}} configurée.
+      + Cliquez sur **Add**, puis sur
+**Continue** dans la fenêtre en incrustation vous demandant
+de confirmer la sélection du service {{site.data.keyword.Db2_on_Cloud_short}}. Cela permet de créer les tables requises dans l'instance de service de base de
+données {{site.data.keyword.Db2_on_Cloud_short}} configurée.
 
-      **Remarque :** Une fois que vous avez ajouté une connexion {{site.data.keyword.dashdbshort_notm}} à l'instance {{site.data.keyword.mobilefoundation_short}}, vous ne pouvez plus la modifier.
+      **Remarque :** Une fois que vous avez ajouté une connexion {{site.data.keyword.Db2_on_Cloud_short}} à l'instance {{site.data.keyword.mobilefoundation_short}}, vous ne pouvez plus la modifier.
 
   2.  Créez et démarrez le serveur.
 
@@ -180,8 +189,7 @@ données {{site.data.keyword.dashdbshort_notm}} configurée.
 {{site.data.keyword.mobilefirst_notm}} avec la configuration par
 défaut, cliquez sur **Start Basic Server**.
 
-      * Cette option affecte les paramètres suivants à un serveur
-{{site.data.keyword.mfserver_long_notm}} :
+      * Cette option affecte les paramètres suivants à un serveur {{site.data.keyword.mfserver_long_notm}} :
           -  2 noeuds avec 1 Go de mémoire chacun. Cette taille
 convient pour des activités de développement et des activités de
 test sommaires et pour des charges de travail à faible échelle.

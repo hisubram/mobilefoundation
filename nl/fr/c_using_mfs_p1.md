@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -47,7 +47,7 @@ que serveur dorsal mobile, l'envoi de notifications push, etc.
 
  Vous pouvez maintenant surveiller votre application mobile sur un serveur {{site.data.keyword.mobilefirst}} en ajoutant un serveur Mobile Analytics à l'instance de service {{site.data.keyword.mobilefoundation_short}}. Le plan Developer crée le serveur Mobile Analytics dans un groupe de conteneurs avec un seul noeud d'1 Go de mémoire.
 
-* Cliquez sur commande d'ajout d'analyse pour ajouter le serveur Mobile Analytics à l'instance de service {{site.data.keyword.mobilefoundation_short}}.
+* Cliquez sur **Ajouter un module d'analyse** pour ajouter le serveur Mobile Analytics à l'instance de service {{site.data.keyword.mobilefoundation_short}}.
 
 Le processus de mise à disposition commence. Ce processus prend environ 10 minutes et une fenêtre de
 message indique la progression de l'opération.  
@@ -101,4 +101,4 @@ vos besoins.
 * **Nodes** affiche le nombre de noeuds créés. Cette
 zone n'est pas modifiable dans {{site.data.keyword.mobilefoundation_short}}: Developer. Le nombre de noeuds <!--in your {{site.data.keyword.IBM_notm}} container group--> est de **1** par défaut dans le plan Developer.
 
-Pour plus de détails, voir la documentation [{{site.data.keyword.mobilefoundation_long}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}.
+Pour plus de détails, consultez la documentation [{{site.data.keyword.mobilefoundation_long}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}.
