@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -36,25 +36,21 @@ Depois de criar uma instância do {{site.data.keyword.mobilefoundation_short}}: 
 
 Depois de criar uma instância do serviço {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, é possível iniciar a construção de seu canal móvel concluindo as etapas a seguir.
 
-1.  Conecte-se a um serviço {{site.data.keyword.dashdbshort}} for Transactions
-existente no {{site.data.keyword.Bluemix_notm}}.
+1.  Conecte-se a um serviço existente do {{site.data.keyword.Db2_on_Cloud_long}} no {{site.data.keyword.Bluemix_notm}}.
 
-    1.  Selecione a {{site.data.keyword.Bluemix_notm}} `Organização` na qual a instância do serviço {{site.data.keyword.dashdbshort_notm}} existe.
+    1.  Selecione a {{site.data.keyword.Bluemix_notm}} `Organização` na qual a instância do serviço {{site.data.keyword.Db2_on_Cloud_short}} existe.
 
-    + Selecione o `Space` do
-{{site.data.keyword.Bluemix_notm}}, no qual a instância de
-serviço do {{site.data.keyword.dashdbshort_notm}} existe, na lista de espaços disponíveis na `Organization` atual.
+    + Selecione {{site.data.keyword.Bluemix_notm}} `Space` em que a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, na lista de espaços disponíveis na
+`Organization` selecionada.
 
-    + Selecione o `Service Name` e as `Credentials` do {{site.data.keyword.dashdbshort_notm}} para se conectar à instância de serviço {{site.data.keyword.dashdbshort_notm}} existente.
+    + Selecione {{site.data.keyword.Db2_on_Cloud_short}} `Service name` e `Credentials` para se conectar à instância de serviço existente do {{site.data.keyword.Db2_on_Cloud_short}}.
 
-    + Teste a conexão com a instância de serviço {{site.data.keyword.dashdbshort_notm}} for Transactions selecionada clicando em **Testar conexão**.
+    + Teste a conexão com a instância de serviço selecionada do {{site.data.keyword.Db2_on_Cloud_short}} clicando em **Testar conexão**.
 
-    + Clique em **Incluir**, seguido por **Continuar**
-na janela pop-up que solicita confirmação no serviço {{site.data.keyword.dashdbshort_notm}}
-for Transactions selecionado. Essa ação cria as tabelas necessárias na instância de serviço de banco de dados {{site.data.keyword.dashdbshort_notm}} configurada.
+    + Clique em **Incluir**, seguido de **Continuar**, na janela pop-up que solicita confirmação no serviço {{site.data.keyword.Db2_on_Cloud_short}} selecionado. Essa ação cria as tabelas necessárias na instância de serviço de banco de dados {{site.data.keyword.Db2_on_Cloud_short}} configurada.
 
     **Nota:** após incluir uma conexão do
-{{site.data.keyword.dashdbshort_notm}} na instância do
+{{site.data.keyword.Db2_on_Cloud_short}} na instância do
 {{site.data.keyword.mobilefoundation_short}}, não será possível
 mudá-la.
 
@@ -72,25 +68,21 @@ mudá-la.
 Após criar uma instância do serviço {{site.data.keyword.mobilefoundation_short}}:
 Developer Pro, será possível iniciar a construção de seu canal móvel concluindo as etapas a seguir.
 
-  1.  Conecte-se a um serviço {{site.data.keyword.dashdbshort}} for Transactions
-existente no {{site.data.keyword.Bluemix_notm}}.
+  1.  Conecte-se a um serviço existente do {{site.data.keyword.Db2_on_Cloud_short}} no {{site.data.keyword.Bluemix_notm}}.
 
-      1.  Selecione a {{site.data.keyword.Bluemix_notm}} `Organização` na qual a instância do serviço {{site.data.keyword.dashdbshort_notm}} existe.
+      1.  Selecione a {{site.data.keyword.Bluemix_notm}} `Organização` na qual a instância do serviço {{site.data.keyword.Db2_on_Cloud_short}} existe.
 
-      + Selecione o `Space` do
-{{site.data.keyword.Bluemix_notm}}, no qual a instância de
-serviço do {{site.data.keyword.dashdbshort_notm}} existe, na lista de espaços disponíveis na `Organization` atual.
+      + Selecione {{site.data.keyword.Bluemix_notm}} `Space` em que a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, na lista de espaços disponíveis na
+`Organization` selecionada.
 
-      + Selecione o `Service Name` e as `Credentials` do {{site.data.keyword.dashdbshort_notm}} para se conectar à instância de serviço {{site.data.keyword.dashdbshort_notm}} existente.
+      + Selecione {{site.data.keyword.Db2_on_Cloud_short}} `Service name` e `Credentials` para se conectar à instância de serviço existente do {{site.data.keyword.Db2_on_Cloud_short}}.
 
-      + Teste a conexão com a instância de serviço {{site.data.keyword.dashdbshort_notm}} for Transactions selecionada clicando em **Testar conexão**.
+      + Teste a conexão com a instância de serviço selecionada do {{site.data.keyword.Db2_on_Cloud_short}} clicando em **Testar conexão**.
 
-      + Clique em **Incluir**, seguido por **Continuar**
-na janela pop-up que solicita confirmação no serviço {{site.data.keyword.dashdbshort_notm}}
-for Transactions selecionado. Essa ação cria as tabelas necessárias na instância de serviço de banco de dados {{site.data.keyword.dashdbshort_notm}} configurada.
+      + Clique em **Incluir**, seguido de **Continuar**, na janela pop-up que solicita confirmação no serviço {{site.data.keyword.Db2_on_Cloud_short}} selecionado. Essa ação cria as tabelas necessárias na instância de serviço de banco de dados {{site.data.keyword.Db2_on_Cloud_short}} configurada.
 
       **Nota:** após incluir uma conexão do
-{{site.data.keyword.dashdbshort_notm}} na instância do
+{{site.data.keyword.Db2_on_Cloud_short}} na instância do
 {{site.data.keyword.mobilefoundation_short}}, não será possível
 mudá-la.
 
@@ -113,25 +105,21 @@ Após criar uma instância do serviço{{site.data.keyword.mobilefoundation_short
 Professional Per Capacity, será possível iniciar a construção de seu canal móvel concluindo as
 etapas a seguir.
 
-  1.  Conecte-se a um serviço {{site.data.keyword.dashdbshort}} for Transactions
-existente no {{site.data.keyword.Bluemix_notm}}.
+  1.  Conecte-se a um serviço existente do {{site.data.keyword.Db2_on_Cloud_short}} no {{site.data.keyword.Bluemix_notm}}.
 
-      1.  Selecione a {{site.data.keyword.Bluemix_notm}} `Organização` na qual a instância do serviço {{site.data.keyword.dashdbshort_notm}} existe.
+      1.  Selecione a {{site.data.keyword.Bluemix_notm}} `Organização` na qual a instância do serviço {{site.data.keyword.Db2_on_Cloud_short}} existe.
 
-      + Selecione o `Space` do
-{{site.data.keyword.Bluemix_notm}}, no qual a instância de
-serviço do {{site.data.keyword.dashdbshort_notm}} existe, na lista de espaços disponíveis na `Organization` atual.
+      + Selecione {{site.data.keyword.Bluemix_notm}} `Space` em que a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, na lista de espaços disponíveis na
+`Organization` selecionada.
 
-      + Selecione o `Service Name` e as `Credentials` do {{site.data.keyword.dashdbshort_notm}} para se conectar à instância de serviço {{site.data.keyword.dashdbshort_notm}} existente.
+      + Selecione {{site.data.keyword.Db2_on_Cloud_short}} `Service name` e `Credentials` para se conectar à instância de serviço existente do {{site.data.keyword.Db2_on_Cloud_short}}.
 
-      + Teste a conexão com a instância de serviço {{site.data.keyword.dashdbshort_notm}} for Transactions selecionada clicando em **Testar conexão**.
+      + Teste a conexão com a instância de serviço selecionada do {{site.data.keyword.Db2_on_Cloud_short}} clicando em **Testar conexão**.
 
-      + Clique em **Incluir**, seguido por **Continuar**
-na janela pop-up que solicita confirmação no serviço {{site.data.keyword.dashdbshort_notm}}
-for Transactions selecionado. Essa ação cria as tabelas necessárias na instância de serviço de banco de dados {{site.data.keyword.dashdbshort_notm}} configurada.
+      + Clique em **Incluir**, seguido de **Continuar**, na janela pop-up que solicita confirmação no serviço {{site.data.keyword.Db2_on_Cloud_short}} selecionado. Essa ação cria as tabelas necessárias na instância de serviço de banco de dados {{site.data.keyword.Db2_on_Cloud_short}} configurada.
 
       **Nota:** após incluir uma conexão do
-{{site.data.keyword.dashdbshort_notm}} na instância do
+{{site.data.keyword.Db2_on_Cloud_short}} na instância do
 {{site.data.keyword.mobilefoundation_short}}, não será possível
 mudá-la.
 

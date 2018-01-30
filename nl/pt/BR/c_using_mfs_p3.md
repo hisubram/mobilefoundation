@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -18,13 +18,13 @@ fornece tutoriais e vídeos para ajudá-lo a iniciar o serviço {{site.data.keyw
 {: #prerequisites_p3}
 
 Considere o seguinte antes de configurar a instância de serviço do {{site.data.keyword.mobilefoundation_short}}: Developer Pro.
-* O {{site.data.keyword.mobilefoundation_short}}: Developer Pro é suportado somente com os planos {{site.data.keyword.dashdbshort_notm}}: Enterprise Transactional (que suporta o OLTP) {{site.data.keyword.Bluemix_notm}}.
+* O {{site.data.keyword.mobilefoundation_short}}: Developer Pro é suportado somente com os planos do {{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}}.
 
-* É necessário ter acesso às credenciais da instância de serviço {{site.data.keyword.dashdbshort_notm}} antes de poder definir
+* É necessário ter acesso às credenciais da instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} antes de poder definir
 as configurações de sua instância de serviço {{site.data.keyword.mobilefoundation_short}}.
 
-**Nota**: a instância de serviço {{site.data.keyword.dashdbshort_notm}} pode existir em qualquer `Espaço` dentro de sua{{site.data.keyword.Bluemix_notm}} `Organização` ou qualquer outra `Organização` à qual você tem acesso. Assegure-se de ter as permissões para acessar o `Espaço` na qual a instância de serviço
-{{site.data.keyword.dashdbshort_notm}} existe.
+**Nota**: a instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} pode existir em qualquer `Espaço` dentro de sua{{site.data.keyword.Bluemix_notm}} `Organização` ou qualquer outra `Organização` à qual você tem acesso. Assegure-se de ter as permissões para acessar o `Espaço` na qual a instância de serviço
+{{site.data.keyword.Db2_on_Cloud_short}} existe.
 
 
 ## Incluindo a conexão com o banco de dados
@@ -35,53 +35,42 @@ as configurações de sua instância de serviço {{site.data.keyword.mobilefound
 
 Após criar a instância de serviço do {{site.data.keyword.mobilefoundation_short}}: Developer Pro, siga o procedimento para iniciar.
 
-### Configurando a conexão com a instância de serviço dashDB
+### Configurando a conexão com a instância de serviço do DB2 on Cloud
 {: #connect_dashdb_p3}
 
-Após a instância de serviço do {{site.data.keyword.mobilefoundation_short}}:
-Developer Pro ser criada, você verá a página *Visão geral*, na qual será necessário
-especificar as informações de conexão para a instância de serviço
-{{site.data.keyword.dashdbshort_notm}} for Transactions com a qual a instância de serviço
-{{site.data.keyword.mobilefoundation_short}} deverá se conectar.
+Após a criação da instância de serviço do {{site.data.keyword.mobilefoundation_short}}: Developer Pro, você verá a página *Visão Geral*, na qual será necessário especificar as informações de conexão para a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} à qual a instância de serviço do {{site.data.keyword.mobilefoundation_short}} deve se conectar.
 
-**Nota:** se você já tiver uma instância de serviço
-{{site.data.keyword.dashdbshort_notm}} for Analytics: Enterprise for Transactions,
-poderá configurar para usá-la para se conectar à instância de serviço
-{{site.data.keyword.mobilefoundation_short}}.
+Também será possível criar uma nova instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}}, se você não tiver um já existente.
 
-Também é possível criar uma nova instância de serviço {{site.data.keyword.dashdbshort_notm}} for Transactions, caso você não tenha uma já existente.
-
-Siga estas etapas para criar uma nova instância de serviço dashDB for Transactions:
+Siga estas etapas para criar uma nova instância de serviço do DB2 on Cloud:
 
 1. Na página *Visão geral*, selecione a seção **Criar novo serviço**.
 
-+ Selecione `Sim` na opção **Configuração de alta
-disponibilidade** se você desejar alta disponibilidade para a instância
-de serviço {{site.data.keyword.dashdbshort_notm}} for Transactions.
++ Selecione `Sim` na opção **Configuração de alta disponibilidade**, se você desejar uma instância de serviço de alta disponível do {{site.data.keyword.Db2_on_Cloud_short}}.
 
 + Revise os detalhes do plano e clique em **Criar**.
 
-Uma nova instância de serviço {{site.data.keyword.dashdbshort_notm}} for Transactions: EnterpriseForTransactions2.8.500 é criada, que fornece uma instância{{site.data.keyword.dashdbshort_notm}} dedicada com 8 GB de RAM, 2 vCPUs e 500 GB de
-armazenamento.
+Uma nova instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} é criada, o que fornece uma instância dedicada do {{site.data.keyword.Db2_on_Cloud_short}} com 8 GB de RAM e 2 vCPUs, além de 500 GB de armazenamento.
 
-Siga estas etapas para se conectar a uma instância de serviço do {{site.data.keyword.dashdbshort_notm}} existente ou a uma instância de serviço do {{site.data.keyword.dashdbshort_notm}} for Transactions que você acabou de criar:
+Siga estas etapas para se conectar a uma instância de serviço existente do {{site.data.keyword.Db2_on_Cloud_short}} ou a uma instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} que você acabou de criar:
 
-1. Selecione a {{site.data.keyword.Bluemix_notm}} `Organização` na qual a instância do serviço {{site.data.keyword.dashdbshort_notm}} existe.
+1. Selecione a {{site.data.keyword.Bluemix_notm}} `Organização` na qual a instância do serviço {{site.data.keyword.Db2_on_Cloud_short}} existe.
 
-+ Selecione o `Space` do {{site.data.keyword.Bluemix_notm}}, no qual a instância de serviço do {{site.data.keyword.dashdbshort_notm}} existe, na lista de espaços disponíveis na `Organization` atual.   
-**Nota:** se você não vir listados a `Organização` e o `Espaço` nos quais a instância de serviço {{site.data.keyword.dashdbshort_notm}} existe, então, verifique se você é um membro de tal `Organização` e `Espaço`. É necessário ter acesso a uma função de *Desenvolvedor* para a organização e para o
++ Selecione {{site.data.keyword.Bluemix_notm}} `Space` em que a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, na lista de espaços disponíveis na
+`Organization` selecionada.   
+**Nota:** se você não vir listados a `Organização` e o `Espaço` nos quais a instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} existe, então, verifique se você é um membro de tal `Organização` e `Espaço`. É necessário ter acesso a uma função de *Desenvolvedor* para a organização e para o
 espaço, já que o serviço {{site.data.keyword.mobilefoundation_short}} acessa as credenciais
-por meio do serviço {{site.data.keyword.dashdbshort_notm}}.
+por meio do serviço {{site.data.keyword.Db2_on_Cloud_short}}.
 
-+ Selecione o `Service Name` e as `Credentials` do {{site.data.keyword.dashdbshort_notm}} para se conectar à instância de serviço {{site.data.keyword.dashdbshort_notm}} existente.
++ Selecione {{site.data.keyword.Db2_on_Cloud_short}} `Service name` e `Credentials` para se conectar à instância de serviço existente do {{site.data.keyword.Db2_on_Cloud_short}}.
 
-+  Teste a conexão com a instância de serviço {{site.data.keyword.dashdbshort_notm}} especificada.
++  Teste a conexão com a instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} especificada.
 
-+  Clique em **Incluir**. Essa ação cria as tabelas necessárias na instância de serviço de banco de dados {{site.data.keyword.dashdbshort_notm}} configurada.
++  Clique em **Incluir**. Essa ação cria as tabelas necessárias na instância de serviço de banco de dados {{site.data.keyword.Db2_on_Cloud_short}} configurada.
 
 Em alguns segundos, é possível acessar a página `Overview` que fornece tutoriais e vídeos para ajudar a iniciar o serviço {{site.data.keyword.mobilefoundation_short}}.
 
-**Nota**: não é possível mudar a instância de serviço {{site.data.keyword.dashdbshort_notm}} que está configurada para ser usada por sua instância de serviço {{site.data.keyword.mobilefoundation_short}}. No entanto, é possível usar a mesma instância de serviço {{site.data.keyword.dashdbshort_notm}} em múltiplas instâncias de serviço {{site.data.keyword.mobilefoundation_short}}, uma vez que cada instância de serviço {{site.data.keyword.mobilefoundation_short}} cria seu próprio esquema na instância de serviço {{site.data.keyword.dashdbshort_notm}} selecionada.
+**Nota**: não é possível mudar a instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} que está configurada para ser usada por sua instância de serviço {{site.data.keyword.mobilefoundation_short}}. No entanto, é possível usar a mesma instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} em múltiplas instâncias de serviço {{site.data.keyword.mobilefoundation_short}}, uma vez que cada instância de serviço {{site.data.keyword.mobilefoundation_short}} cria seu próprio esquema na instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} selecionada.
 
 ## Iniciando o servidor do MobileFirst
 {: #start_mobilefoundation_p3}
@@ -122,8 +111,7 @@ no ícone **Mostrar senha** para visualizá-lo.
 usuário. Se o usuário precisar de espaço de armazenamento adicional para persistir dados de analítica, ele precisará comprar compartilhamento de arquivo adicional e criar um volume usando esse
 compartilhamento de arquivo. Ele poderá, então, selecionar esse novo volume enquanto implementa o servidor analítico.
 
- Para obter mais informação sobre a inclusão de volume no {{site.data.keyword.containerlong}}, consulte [Armazenamento de dados persistentes
-em um volume usando o painel {{site.data.keyword.Bluemix_notm}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui){: new_window}.
+ Para obter mais informações sobre incluir volumes no {{site.data.keyword.containerlong}}, consulte [Armazenando dados persistentes em um volume usando o {{site.data.keyword.Bluemix_notm}} Dashboard ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui){: new_window}.
 
 * Clique em **Incluir Analytics** para incluir o servidor Mobile Analytics na instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
 
@@ -168,7 +156,7 @@ demora alguns minutos para ser concluída.
 
 **Nota**: todos os dados de sua instância de servidor anterior,
 incluindo informações sobre os aplicativos e adaptadores, são persistidos na instância
-de serviço {{site.data.keyword.dashdbshort_notm}} configurada, esses dados são
+de serviço {{site.data.keyword.Db2_on_Cloud_short}} configurada, esses dados são
 usados para recriar seu servidor.
 
 ##	Definindo a configuração avançada
@@ -183,4 +171,4 @@ guia **Configuração**. O {{site.data.keyword.mobilefoundation_short}} fornece 
 
   - **Nós** exibe o número de nós que são criados. Esse campo não pode ser editado no {{site.data.keyword.mobilefoundation_short}}: Developer Pro. O número de nós <!--in your {{site.data.keyword.IBM_notm}} container group--> é padronizado para **1** no plano Developer Pro.
 
-Consulte a [documentação do {{site.data.keyword.mobilefoundation_long}}![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window} para obter mais detalhes.
+Consulte a documentação do [{{site.data.keyword.mobilefoundation_long}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window} para obter mais detalhes.
