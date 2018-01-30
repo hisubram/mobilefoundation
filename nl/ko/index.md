@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -26,7 +26,7 @@ lastupdated:  "2017-02-17"
 
 *	기본 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **기본 서버 시작**을 클릭하십시오. 		
 
-  `기본 서버 인스턴스에는 단일 노드와 1GB의 메모리가 포함됩니다.`
+  `The basic server instance includes a single node, 1 GB of memory.`
 
 * 토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](c_using_mfs_p1.html#using_mfs_advanced_p1)을 참조하십시오. 
 
@@ -35,25 +35,25 @@ lastupdated:  "2017-02-17"
 
 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 서비스의 인스턴스를 작성한 후에는 다음 단계를 완료하여 모바일 채널의 빌드를 시작할 수 있습니다. 
 
-1.  {{site.data.keyword.Bluemix_notm}}에서 기존 {{site.data.keyword.dashdbshort}} for Transactions 서비스에 연결하십시오.
+1.  {{site.data.keyword.Bluemix_notm}}에서 기존 {{site.data.keyword.Db2_on_Cloud_long}} 서비스에 연결하십시오.
 
-    1.  {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스가 있는 {{site.data.keyword.Bluemix_notm}} `Organization`을 선택하십시오. 
+    1.  {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 있는 {{site.data.keyword.Bluemix_notm}} `Organization`을 선택하십시오. 
 
-    + 선택된 `Organization`에 사용 가능한 영역 목록에서 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스가 존재하는 {{site.data.keyword.Bluemix_notm}} `Space`를 선택하십시오. 
+    + 선택된 `Organization`에 사용 가능한 영역 목록에서 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 존재하는 {{site.data.keyword.Bluemix_notm}} `Space`를 선택하십시오. 
 
-    + {{site.data.keyword.dashdbshort_notm}} `Service Name` 및 `Credentials`를 선택하여 기존 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스에 연결하십시오.
+    + {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` 및 `Credentials`를 선택하여 기존 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 연결하십시오.
 
-    + **연결 테스트**를 클릭하여 선택한 {{site.data.keyword.dashdbshort_notm}} for Transactions 서비스 인스턴스에 대한 연결을 테스트하십시오.
+    + **연결 테스트**를 클릭하여 선택한 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 대한 연결을 테스트하십시오.
 
-    + **추가**를 클릭한 후, 선택한 {{site.data.keyword.dashdbshort_notm}} for Transactions 서비스에 대한 확인을 요청하는 팝업 창에서 **계속**을 클릭하십시오. 이 조치는 구성된 {{site.data.keyword.dashdbshort_notm}} 데이터베이스 서비스 인스턴스에 필수 테이블을 작성합니다.
+    + **추가**를 클릭한 후, 선택한 {{site.data.keyword.Db2_on_Cloud_short}} 서비스에 대한 확인을 요청하는 팝업 창에서 **계속**을 클릭하십시오. 이 조치는 구성된 {{site.data.keyword.Db2_on_Cloud_short}} 데이터베이스 서비스 인스턴스에 필수 테이블을 작성합니다.
 
-    **참고:** {{site.data.keyword.dashdbshort_notm}} 연결을 {{site.data.keyword.mobilefoundation_short}} 인스턴스에 추가한 후에는 이를 변경할 수 없습니다. 
+    **참고:** {{site.data.keyword.Db2_on_Cloud_short}} 연결을 {{site.data.keyword.mobilefoundation_short}} 인스턴스에 추가한 후에는 이를 변경할 수 없습니다. 
 
 2.  서버를 작성하고 시작하십시오. 
 
     * 기본 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **기본 서버 시작**을 클릭하십시오. 		
 
-      `기본 서버 인스턴스에는 단일 노드와 1GB의 메모리가 포함됩니다.`
+      `The basic server instance includes a single node, 1 GB of memory.`
 
     * 토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](c_using_mfs_p2.html#using_mfs_advanced_p2)을 참조하십시오. 
 
@@ -62,19 +62,19 @@ lastupdated:  "2017-02-17"
 
 {{site.data.keyword.mobilefoundation_short}}: Developer Pro 서비스의 인스턴스를 작성한 후에는 다음 단계를 완료하여 모바일 채널의 빌드를 시작할 수 있습니다.
 
-  1.  {{site.data.keyword.Bluemix_notm}}에서 기존 {{site.data.keyword.dashdbshort}} for Transactions 서비스에 연결하십시오.
+  1.  {{site.data.keyword.Bluemix_notm}}에서 기존 {{site.data.keyword.Db2_on_Cloud_short}} 서비스에 연결하십시오.
 
-      1.  {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스가 있는 {{site.data.keyword.Bluemix_notm}} `Organization`을 선택하십시오. 
+      1.  {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 있는 {{site.data.keyword.Bluemix_notm}} `Organization`을 선택하십시오. 
 
-      + 선택된 `Organization`에 사용 가능한 영역 목록에서 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스가 존재하는 {{site.data.keyword.Bluemix_notm}} `Space`를 선택하십시오. 
+      + 선택된 `Organization`에 사용 가능한 영역 목록에서 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 존재하는 {{site.data.keyword.Bluemix_notm}} `Space`를 선택하십시오. 
 
-      + {{site.data.keyword.dashdbshort_notm}} `Service Name` 및 `Credentials`를 선택하여 기존 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스에 연결하십시오.
+      + {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` 및 `Credentials`를 선택하여 기존 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 연결하십시오.
 
-      + **연결 테스트**를 클릭하여 선택한 {{site.data.keyword.dashdbshort_notm}} for Transactions 서비스 인스턴스에 대한 연결을 테스트하십시오.
+      + **연결 테스트**를 클릭하여 선택한 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 대한 연결을 테스트하십시오.
 
-      + **추가**를 클릭한 후, 선택한 {{site.data.keyword.dashdbshort_notm}} for Transactions 서비스에 대한 확인을 요청하는 팝업 창에서 **계속**을 클릭하십시오. 이 조치는 구성된 {{site.data.keyword.dashdbshort_notm}} 데이터베이스 서비스 인스턴스에 필수 테이블을 작성합니다.
+      + **추가**를 클릭한 후, 선택한 {{site.data.keyword.Db2_on_Cloud_short}} 서비스에 대한 확인을 요청하는 팝업 창에서 **계속**을 클릭하십시오. 이 조치는 구성된 {{site.data.keyword.Db2_on_Cloud_short}} 데이터베이스 서비스 인스턴스에 필수 테이블을 작성합니다.
 
-      **참고:** {{site.data.keyword.dashdbshort_notm}} 연결을 {{site.data.keyword.mobilefoundation_short}} 인스턴스에 추가한 후에는 이를 변경할 수 없습니다. 
+      **참고:** {{site.data.keyword.Db2_on_Cloud_short}} 연결을 {{site.data.keyword.mobilefoundation_short}} 인스턴스에 추가한 후에는 이를 변경할 수 없습니다. 
 
   2.  서버를 작성하고 시작하십시오. 
 
@@ -93,19 +93,19 @@ lastupdated:  "2017-02-17"
 
 {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity 서비스의 인스턴스를 작성한 후에는 다음 단계를 완료하여 모바일 채널의 빌드를 시작할 수 있습니다.
 
-  1.  {{site.data.keyword.Bluemix_notm}}에서 기존 {{site.data.keyword.dashdbshort}} for Transactions 서비스에 연결하십시오.
+  1.  {{site.data.keyword.Bluemix_notm}}에서 기존 {{site.data.keyword.Db2_on_Cloud_short}} 서비스에 연결하십시오.
 
-      1.  {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스가 있는 {{site.data.keyword.Bluemix_notm}} `Organization`을 선택하십시오. 
+      1.  {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 있는 {{site.data.keyword.Bluemix_notm}} `Organization`을 선택하십시오. 
 
-      + 선택된 `Organization`에 사용 가능한 영역 목록에서 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스가 존재하는 {{site.data.keyword.Bluemix_notm}} `Space`를 선택하십시오. 
+      + 선택된 `Organization`에 사용 가능한 영역 목록에서 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 존재하는 {{site.data.keyword.Bluemix_notm}} `Space`를 선택하십시오. 
 
-      + {{site.data.keyword.dashdbshort_notm}} `Service Name` 및 `Credentials`를 선택하여 기존 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스에 연결하십시오.
+      + {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` 및 `Credentials`를 선택하여 기존 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 연결하십시오.
 
-      + **연결 테스트**를 클릭하여 선택한 {{site.data.keyword.dashdbshort_notm}} for Transactions 서비스 인스턴스에 대한 연결을 테스트하십시오.
+      + **연결 테스트**를 클릭하여 선택한 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 대한 연결을 테스트하십시오.
 
-      + **추가**를 클릭한 후, 선택한 {{site.data.keyword.dashdbshort_notm}} for Transactions 서비스에 대한 확인을 요청하는 팝업 창에서 **계속**을 클릭하십시오. 이 조치는 구성된 {{site.data.keyword.dashdbshort_notm}} 데이터베이스 서비스 인스턴스에 필수 테이블을 작성합니다.
+      + **추가**를 클릭한 후, 선택한 {{site.data.keyword.Db2_on_Cloud_short}} 서비스에 대한 확인을 요청하는 팝업 창에서 **계속**을 클릭하십시오. 이 조치는 구성된 {{site.data.keyword.Db2_on_Cloud_short}} 데이터베이스 서비스 인스턴스에 필수 테이블을 작성합니다.
 
-      **참고:** {{site.data.keyword.dashdbshort_notm}} 연결을 {{site.data.keyword.mobilefoundation_short}} 인스턴스에 추가한 후에는 이를 변경할 수 없습니다. 
+      **참고:** {{site.data.keyword.Db2_on_Cloud_short}} 연결을 {{site.data.keyword.mobilefoundation_short}} 인스턴스에 추가한 후에는 이를 변경할 수 없습니다. 
 
   2.  서버를 작성하고 시작하십시오. 
 
@@ -118,7 +118,7 @@ lastupdated:  "2017-02-17"
 
       * 토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](c_using_mfs_p4.html#using_mfs_advanced_p4)을 참조하십시오. 
 
-[Using the Mobile Foundation service to set up MobileFirst Server<!-- on IBM Containers--> ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window}으로 이동하여 {{site.data.keyword.mobilefoundation_short}}을 시작하는 방법에 대해 자세히 알아보십시오. 
+[Using the Mobile Foundation service to set up MobileFirst Server<!-- on IBM Containers--> ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window}로 이동하여 {{site.data.keyword.mobilefoundation_short}}을 시작하는 방법에 대해 자세히 알아보십시오. 
 
 ##  알려진 제한사항
 {: #knownlimitations_mfp}

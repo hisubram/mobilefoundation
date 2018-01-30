@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -43,9 +43,9 @@ lastupdated:  "2017-02-17"
 
 * {{site.data.keyword.mfp_oc_short_notm}}에서 MobileFirst Analytics Console을 실행하십시오.
 
-* {{site.data.keyword.mfserver_short_notm}}와 Mobile Analytics 서버 간에 싱글 사인온이 사용됩니다. Mobile Analytics 서버는 {{site.data.keyword.mfserver_short_notm}}와 동일한 LTPA 키 및 사용자 신임 정보를 사용하여 구성합니다. {{site.data.keyword.mfp_oc_short_notm}}에 로그인하는 데 사용한 `사용자 이름` 및 `비밀번호`를 사용하여 Mobile Analytics 콘솔에 로그인할 수 있습니다.
+* {{site.data.keyword.mfserver_short_notm}}와 Mobile Analytics 서버 간에 싱글 사인온이 사용됩니다. Mobile Analytics 서버는 {{site.data.keyword.mfserver_short_notm}}와 동일한 LTPA 키 및 사용자 신임 정보를 사용하여 구성합니다. {{site.data.keyword.mfp_oc_short_notm}}에 로그인하는 데 사용한 `username` 및 `password`를 사용하여 Mobile Analytics 콘솔에 로그인할 수 있습니다.
 
-MobileFirst Analytics에 대한 자세한 정보는 [MobileFirst Foundation Operational Analytics ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}을 참조하십시오. 
+MobileFirst Analytics에 대한 자세한 정보는 [MobileFirst Foundation Operational Analytics ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}를 참조하십시오. 
 
 **참고:** {{site.data.keyword.mobilefoundation_short}} 서버 인스턴스를 삭제하거나 {{site.data.keyword.mfserver_short_notm}}를 다시 작성하려고 할 때 Mobile Analytics 서버가 제거됩니다.
 
@@ -77,4 +77,4 @@ MobileFirst Analytics에 대한 자세한 정보는 [MobileFirst Foundation Oper
 
 * **노드**는 작성된 노드의 수를 표시합니다. 이 필드는 {{site.data.keyword.mobilefoundation_short}}: Developer에서 편집할 수 없습니다. Developer 플랜에서 <!--in your {{site.data.keyword.IBM_notm}} container group--> 노드 수는 기본적으로 **1**입니다.
 
-세부사항은 [{{site.data.keyword.mobilefoundation_long}} 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}을 참조하십시오. 
+세부사항은 [{{site.data.keyword.mobilefoundation_long}} 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}를 참조하십시오. 

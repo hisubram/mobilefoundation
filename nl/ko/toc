@@ -1,3 +1,4 @@
+<!-- Markdown Navigation -->
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
@@ -24,7 +25,7 @@ Mobile Foundation
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    [Stack Overflow](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix)
+    [스택 오버플로우](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix)
     [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix)
     [도움 받기](../../support/index.html#getting-help)
     [지원 문의](../../support/index.html#contacting-support)

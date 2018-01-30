@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -16,11 +16,11 @@ Professional Per Capacity 플랜을 사용하면 여러 모바일 운영 체제�
 {: #prerequisites_p4}
 
 {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity 서비스 인스턴스를 구성하기 전에 다음을 고려하십시오. 
-* {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity는 {{site.data.keyword.dashdbshort_notm}}: Enterprise Transactional(OLTP 지원) {{site.data.keyword.Bluemix_notm}} 플랜과 함께 사용하는 경우에만 지원됩니다. 
+* {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity는 {{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}} 플랜과 함께 사용하는 경우에만 지원됩니다.
 
-* {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스의 설정을 구성하려면 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스 신임 정보에 액세스할 수 있어야 합니다. 
+* {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스의 설정을 구성하려면 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스 신임 정보에 액세스할 수 있어야 합니다. 
 
-**참고**: {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스는 {{site.data.keyword.Bluemix_notm}} `Organization` 또는 액세스 권한이 있는 기타 `Organization`의 모든 `Space`에 존재할 수 있습니다. {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스가 있는 `Space`에 액세스할 수 있는 권한이 있는지 확인하십시오. 
+**참고**: {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스는 {{site.data.keyword.Bluemix_notm}} `Organization` 또는 액세스 권한이 있는 기타 `Organization`의 모든 `Space`에 존재할 수 있습니다. {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 있는 `Space`에 액세스할 수 있는 권한이 있는지 확인하십시오. 
 
 
 ## 데이터베이스 연결 추가
@@ -31,41 +31,39 @@ Professional Per Capacity 플랜을 사용하면 여러 모바일 운영 체제�
 
 {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity 서비스 인스턴스를 작성한 후 프로시저에 따라 시작하십시오. 
 
-### dashDB 서비스 인스턴스에 대한 연결 설정
+### Db2 on Cloud 서비스 인스턴스에 대한 연결 설정
 {: #connect_dashdb_p4}
 
-{{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity 서비스 인스턴스가 작성된 후에 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스를 연결할 {{site.data.keyword.dashdbshort_notm}} for Transactions 서비스 인스턴스에 대한 연결 정보를 지정해야 하는 *Overview* 페이지가 표시됩니다.
+{{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity 서비스 인스턴스가 작성된 후에 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스를 연결할 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 대한 연결 정보를 지정해야 하는 *Overview* 페이지가 표시됩니다.
 
-**참고:** {{site.data.keyword.dashdbshort_notm}} for Analytics: Enterprise for Transactions 서비스 인스턴스가 이미 있는 경우, 동일한 인스턴스를 사용하여 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에 연결하도록 구성할 수 있습니다.
+기존 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 없는 경우에는 새로 작성할 수 있습니다.
 
-기존 {{site.data.keyword.dashdbshort_notm}} for Transactions 서비스 인스턴스가 없는 경우에는 새로 작성할 수 있습니다.
-
-다음 단계에 따라 새로운 dashDB for Transactions 서비스 인스턴스를 작성하십시오. 
+다음 단계에 따라 새로운 Db2 on Cloud 서비스 인스턴스를 작성하십시오. 
 
 1. *Overview* 페이지에서 **새 서비스 작성** 섹션을 선택하십시오.
 
-+ 고가용성 {{site.data.keyword.dashdbshort_notm}} for Transactions 서비스 인스턴스를 원하는 경우 **고가용성 구성** 옵션에서 `Yes`를 선택하십시오.
++ 고가용성 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스를 원하는 경우 **고가용성 구성** 옵션에서 `Yes`를 선택하십시오.
 
 + 플랜 세부사항을 검토하고 **작성**을 클릭하십시오.
 
-새 {{site.data.keyword.dashdbshort_notm}} for Transactions: EnterpriseForTransactions2.8.500 서비스 인스턴스가 작성되며, 전용 {{site.data.keyword.dashdbshort_notm}} 인스턴스에 8GB RAM과 2vCPU 및 500GB의 스토리지를 제공합니다.
+새 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 작성되며, 전용 {{site.data.keyword.Db2_on_Cloud_short}} 인스턴스에 8GB RAM과 2vCPU 및 500GB의 스토리지를 제공합니다.
 
-다음 단계에 따라 기존 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스 또는 방금 작성한 {{site.data.keyword.dashdbshort_notm}} for Transactions 서비스 인스턴스에 연결하십시오. 
+다음 단계에 따라 기존 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스 또는 방금 작성한 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 연결하십시오. 
 
-1. {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스가 있는 {{site.data.keyword.Bluemix_notm}} `Organization`을 선택하십시오. 
+1. {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 있는 {{site.data.keyword.Bluemix_notm}} `Organization`을 선택하십시오. 
 
-+ 선택된 `Organization`에 사용 가능한 영역 목록에서 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스가 존재하는 {{site.data.keyword.Bluemix_notm}} `Space`를 선택하십시오.    
-**참고:** {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스가 있는 `Organization`과 `Space`가 나열되지 않는 경우에는 해당 `Organization`과 `Space`의 구성원인지 여부를 확인하십시오. {{site.data.keyword.mobilefoundation_short}} 서비스가 {{site.data.keyword.dashdbshort_notm}} 서비스의 신임 정보에 액세스하므로 조직 및 영역에 대한 *Developer* 역할 액세스 권한을 가져야 합니다.
++ 선택된 `Organization`에 사용 가능한 영역 목록에서 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 존재하는 {{site.data.keyword.Bluemix_notm}} `Space`를 선택하십시오.    
+**참고:** {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 있는 `Organization`과 `Space`가 나열되지 않는 경우에는 해당 `Organization`과 `Space`의 구성원인지 여부를 확인하십시오. {{site.data.keyword.mobilefoundation_short}} 서비스가 {{site.data.keyword.Db2_on_Cloud_short}} 서비스의 신임 정보에 액세스하므로 조직 및 영역에 대한 *Developer* 역할 액세스 권한을 가져야 합니다.
 
-+ {{site.data.keyword.dashdbshort_notm}} `Service Name` 및 `Credentials`를 선택하여 기존 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스에 연결하십시오.
++ {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` 및 `Credentials`를 선택하여 기존 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 연결하십시오.
 
-+  지정된 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스에 대한 연결을 테스트하십시오.
++  지정된 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 대한 연결을 테스트하십시오.
 
-+  **추가**를 클릭하십시오. 이 조치는 구성된 {{site.data.keyword.dashdbshort_notm}} 데이터베이스 서비스 인스턴스에 필수 테이블을 작성합니다.
++  **추가**를 클릭하십시오. 이 조치는 구성된 {{site.data.keyword.Db2_on_Cloud_short}} 데이터베이스 서비스 인스턴스에 필수 테이블을 작성합니다.
 
 잠시 후에는 {{site.data.keyword.mobilefoundation_short}} 서비스를 시작하는 데 도움이 되는 튜토리얼과 동영상을 제공하는 `Overview` 페이지에 액세스할 수 있습니다.
 
-**참고**: 사용자의 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에 의해 사용되도록 구성된 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스를 변경할 수 없습니다. 그러나 각 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스가 선택된 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스 내에 자체 스키마를 작성하므로, 다중 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에 걸쳐 동일한 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스를 사용할 수 있습니다.
+**참고**: 사용자의 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에 의해 사용되도록 구성된 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스를 변경할 수 없습니다. 그러나 각 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스가 선택된 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스 내에 자체 스키마를 작성하므로, 다중 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에 걸쳐 동일한 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스를 사용할 수 있습니다.
 
 ## MobileFirst 서버 시작
 {: #start_mobilefoundation_p4}
@@ -99,11 +97,11 @@ Professional Per Capacity 플랜을 사용하면 여러 모바일 운영 체제�
 
  데이터를 유지하기 위해 컨테이너에 볼륨도 연결할 수 있습니다. 볼륨을 한 번 선택하면 변경할 수 없습니다. 사용 가능한 기본 파일 공유 영역은 20GB입니다. 사용자가 분석 데이터를 유지할 추가 스토리지 영역이 필요하면 추가 파일 공유를 구매하고 이 파일 공유를 사용하여 볼륨을 작성해야 합니다. 그런 다음 분석 서버를 배치하는 동안 이 새 볼륨을 선택할 수 있습니다.
 
- {{site.data.keyword.containerlong}}에 볼륨 추가에 대한 자세한 정보는 [Storing persistent data in a volume by using the {{site.data.keyword.Bluemix_notm}} Dashboard ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui.html){: new_window}을 참조하십시오.
+ {{site.data.keyword.containerlong}}에 볼륨 추가에 대한 자세한 정보는 [Storing persistent data in a volume by using the {{site.data.keyword.Bluemix_notm}} Dashboard ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui.html){: new_window}를 참조하십시오.
 
 * **분석 추가**를 클릭하여 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에 Mobile Analytics 서버를 추가하십시오.
 
-* Mobile Analytics 서버 구성(Analytics 서버에 지원되는 최소 구성은 각각 1GB 메모리가 있는 두 개의 노드)을 선택할 수 있으며 각각 16GM 메모리가 있는 32개의 노드를 가진 최대 구성으로 Analytics 서버를 작성할 수 있습니다. 
+* Mobile Analytics 서버 구성(Analytics 서버에 지원되는 최소 구성은 각각 1GB 메모리가 있는 두 개의 노드)을 선택할 수 있으며 각각 16GB 메모리가 있는 32개의 노드를 가진 최대 구성으로 Analytics 서버를 작성할 수 있습니다. 
 
 프로비저닝 프로세스가 시작됩니다. 이 프로세스는 약 10분 정도 소요되며, 메시지 창은 이 조작의 진행상태를 표시합니다.   
 
@@ -111,7 +109,7 @@ Professional Per Capacity 플랜을 사용하면 여러 모바일 운영 체제�
 
 * {{site.data.keyword.mfserver_short_notm}}와 Mobile Analytics 서버 간에 싱글 사인온이 사용됩니다. Mobile Analytics 서버는 {{site.data.keyword.mfserver_short_notm}} 서버와 동일한 LTPA 키 및 사용자 신임 정보를 사용하여 구성합니다. {{site.data.keyword.mfp_oc_short_notm}}에 로그인하는 데 사용한 `username`과 `password`를 사용하여 Mobile Analytics 콘솔에 로그인할 수 있습니다. 
 
-MobileFirst Analytics에 대한 자세한 정보는 [MobileFirst Foundation Operational Analytics ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}을 참조할 수 있습니다. 
+MobileFirst Analytics에 대한 자세한 정보는 [MobileFirst Foundation Operational Analytics ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}를 참조할 수 있습니다. 
 
 **참고:** {{site.data.keyword.mobilefoundation_short}} 서버 인스턴스를 삭제하거나 {{site.data.keyword.mfserver_short_notm}}를 다시 작성하려고 할 때 Mobile Analytics 서버가 제거됩니다.
 
@@ -131,7 +129,7 @@ MobileFirst Analytics에 대한 자세한 정보는 [MobileFirst Foundation Oper
 
 * 이 조치는 기존 서버를 중지하고 데이터를 삭제합니다. 업데이트된 버전이 있는 경우 새 서버 인스턴스가 업데이트된 버전으로 작성됩니다. 이 조치를 완료하려면 수 분이 소요됩니다. 
 
-**참고**: 앱과 어댑터에 대한 정보를 포함하여 이전 서버 인스턴스의 모든 데이터가 구성된 {{site.data.keyword.dashdbshort_notm}} 서비스 인스턴스에서 유지되며 이 데이터는 서버를 다시 작성하는 데 사용됩니다. 
+**참고**: 앱과 어댑터에 대한 정보를 포함하여 이전 서버 인스턴스의 모든 데이터가 구성된 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에서 유지되며 이 데이터는 서버를 다시 작성하는 데 사용됩니다. 
 
 ##	고급 구성 설정
 {: #using_mfs_advanced_p4}
@@ -145,4 +143,4 @@ MobileFirst Analytics에 대한 자세한 정보는 [MobileFirst Foundation Oper
 
       - {{site.data.keyword.mobilefirst}} 서버 팜은 여기서 노드의 수를 구성하여 작성될 수 있습니다. 지원되는 최소 구성은 각각 1GB 메모리가 있는 두 개의 노드이며 지원되는 최대 구성은 각각 16GB 메모리가 있는 32개의 노드입니다. 
 
-세부사항은 [{{site.data.keyword.mobilefoundation_long}} 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}을 참조하십시오. 
+세부사항은 [{{site.data.keyword.mobilefoundation_long}} 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}를 참조하십시오. 
