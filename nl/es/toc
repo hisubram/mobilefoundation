@@ -1,9 +1,9 @@
+<!-- Markdown Navigation -->
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
 {: .toc subcollection="mobile-foundation" audience="service" href="/docs/services/mobilefoundation/index.html"}
 Mobile Foundation
-
     {: .navgroup id="learn"}
     index.md
     mdoverview.md
@@ -25,7 +25,7 @@ Mobile Foundation
 
     {: .navgroup id="help"}
     [Stack Overflow](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix)
-    [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix)
+    [dW Answers de IBM developerWorks](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix)
     [Obtención de ayuda](../../support/index.html#getting-help)
     [Cómo obtener soporte](../../support/index.html#contacting-support)
     {: .navgroup-end}

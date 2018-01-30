@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -75,7 +75,6 @@ Utilice la opción **Iniciar servidor con configuración avanzada** en la págin
 
   - Seleccione el tamaño correcto para su servidor en función de sus necesidades.
 
-* **Nodos** muestra el número de nodos que se han creado. Este campo no es editable en
-{{site.data.keyword.mobilefoundation_short}}: Developer. El número de nodos <!--in your {{site.data.keyword.IBM_notm}} container group--> toma el valor predeterminado de **1** en el plan Developer.
+* **Nodos** muestra el número de nodos que se han creado. Este campo no es editable en {{site.data.keyword.mobilefoundation_short}}: Developer. El número de nodos <!--in your {{site.data.keyword.IBM_notm}} container group--> toma el valor predeterminado de **1** en el plan Developer.
 
-Consulte la [documentación de {{site.data.keyword.mobilefoundation_long}} ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window} para obtener más detalles.
+Consulte la documentación de [{{site.data.keyword.mobilefoundation_long}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window} para obtener más detalles.

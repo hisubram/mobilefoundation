@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -19,14 +19,14 @@ lastupdated:  "2017-02-17"
 
 El URL o la ruta de <!--container group is created with a--> se crea con los nombres de dominio predeterminados basados en la `Región` de {{site.data.keyword.Bluemix_notm}}.
 
-  |Dominio |  Región  |    
+  |Dominio|  Región|    
   |:----- | :----- |    
-  |`mybluemix.net` | EE.UU. sur |    
-  |`eu-gb.mybluemix.net` | Reino Unido  |
-  |`au-syd.mybluemix.net` | Sídney  |      
+  |`mybluemix.net` | EE.UU. sur|    
+  |`eu-gb.mybluemix.net` | Reino Unido|
+  |`au-syd.mybluemix.net` | Sídney|      
   {: caption="Tabla 1. Nombres de dominio de aplicación basados en Región en {{site.data.keyword.Bluemix_notm}}" caption-side="top"}
 
-To be able to use your own domain you will need to configure custom domain by performing the following steps:
+Para poder utilizar su propio dominio será necesario configurar el dominio personalizado realizando los siguientes pasos:
 
 1.	Cree una instancia de {{site.data.keyword.mfserver_short_notm}} creando la instancia de servicio de {{site.data.keyword.mobilefoundation_short}} seleccionando uno de los planes soportados.
 
@@ -34,6 +34,6 @@ To be able to use your own domain you will need to configure custom domain by pe
 
 + Configure una ruta para que el servidor de <!--container group--> utilice el dominio personalizado.
 
-+ Vaya al proveedor DNS para su dominio y añada una entrada CNAME, que dirigirá el tráfico de su dominio a la ruta de {{site.data.keyword.Bluemix_notm}} predeterminada, donde se está ejecutando el servidor de <!--container group-->.
++ Vaya al proveedor DNS para su dominio y añada una entrada CNAME, que dirigirá el tráfico de su dominio a la ruta de {{site.data.keyword.Bluemix_notm}} predeterminada, donde se está ejecutando el servidor de <!--container group-->. 
 
 + Si desea configurar `https` para el dominio personalizado, cargue el certificado SSL para su dominio en {{site.data.keyword.Bluemix_notm}}. Para hacerlo, vaya a **Gestionar organizaciones > DOMINIOS**, seleccione el dominio personalizado para el que desea configurar el certificado SSL, pulse **Cargar certificado** para cargar el certificado SSL para su dominio. Consulte [Certificados SSL y dominios personalizados de Bluemix ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window}, para obtener más información.

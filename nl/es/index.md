@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -35,19 +35,19 @@ Después de crear una instancia de {{site.data.keyword.mobilefoundation_short}}:
 
 Después de crear una instancia del servicio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, puede empezar a crear el canal móvil realizando los pasos siguientes.
 
-1.  Conéctese a un servicio de {{site.data.keyword.dashdbshort}} for Transactions existente en {{site.data.keyword.Bluemix_notm}}.
+1.  Conéctese a un servicio de {{site.data.keyword.Db2_on_Cloud_long}} existente en {{site.data.keyword.Bluemix_notm}}.
 
-    1.  Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.dashdbshort_notm}}.
+    1.  Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}.
 
-    + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.dashdbshort_notm}}, en la lista de espacios disponible en la `Organización` seleccionada.
+    + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}, en la lista de espacios disponibles en la `Organización` seleccionada.
 
-    + Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.dashdbshort_notm}} para conectarse con la instancia de servicio {{site.data.keyword.dashdbshort_notm}} existente.
+    + Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.Db2_on_Cloud_short}} para conectarse con la instancia  de servicio {{site.data.keyword.Db2_on_Cloud_short}} existente.
 
-    + Pruebe la conexión a la instancia de servicio de {{site.data.keyword.dashdbshort_notm}} for Transactions seleccionada pulsando **Probar conexión**.
+    + Pruebe la conexión a la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionada pulsando **Probar conexión**.
 
-    + Pulse **Añadir**, seguido de **Continuar** en la ventana emergente que le solicita información sobre el servicio de {{site.data.keyword.dashdbshort_notm}} for Transactions seleccionado. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.dashdbshort_notm}} configurada.
+    + Pulse **Añadir**, seguido de **Continuar** en la ventana emergente que le solicita información sobre el servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionado. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.Db2_on_Cloud_short}} configurada.
 
-    **Nota:** Después de añadir una conexión {{site.data.keyword.dashdbshort_notm}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
+    **Nota:** Después de añadir una conexión {{site.data.keyword.Db2_on_Cloud_short}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
 
 2.  Cree e inicie el servidor.
 
@@ -62,19 +62,19 @@ Después de crear una instancia del servicio {{site.data.keyword.mobilefoundatio
 
 Después de crear una instancia del servicio de {{site.data.keyword.mobilefoundation_short}}: Developer Pro, puede empezar a crear el canal móvil realizando los pasos siguientes.
 
-  1.  Conéctese a un servicio de {{site.data.keyword.dashdbshort}} for Transactions existente en {{site.data.keyword.Bluemix_notm}}.
+  1.  Conéctese a un servicio de {{site.data.keyword.Db2_on_Cloud_short}} existente en {{site.data.keyword.Bluemix_notm}}.
 
-      1.  Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.dashdbshort_notm}}.
+      1.  Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}.
 
-      + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.dashdbshort_notm}}, en la lista de espacios disponible en la `Organización` seleccionada.
+      + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}, en la lista de espacios disponibles en la `Organización` seleccionada.
 
-      + Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.dashdbshort_notm}} para conectarse con la instancia de servicio {{site.data.keyword.dashdbshort_notm}} existente.
+      + Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.Db2_on_Cloud_short}} para conectarse con la instancia  de servicio {{site.data.keyword.Db2_on_Cloud_short}} existente.
 
-      + Pruebe la conexión a la instancia de servicio de {{site.data.keyword.dashdbshort_notm}} for Transactions seleccionada pulsando **Probar conexión**.
+      + Pruebe la conexión a la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionada pulsando **Probar conexión**.
 
-      + Pulse **Añadir**, seguido de **Continuar** en la ventana emergente que le solicita información sobre el servicio de {{site.data.keyword.dashdbshort_notm}} for Transactions seleccionado. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.dashdbshort_notm}} configurada.
+      + Pulse **Añadir**, seguido de **Continuar** en la ventana emergente que le solicita información sobre el servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionado. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.Db2_on_Cloud_short}} configurada.
 
-      **Nota:** Después de añadir una conexión {{site.data.keyword.dashdbshort_notm}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
+      **Nota:** Después de añadir una conexión {{site.data.keyword.Db2_on_Cloud_short}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
 
   2.  Cree e inicie el servidor.
 
@@ -93,19 +93,19 @@ Después de crear una instancia del servicio de {{site.data.keyword.mobilefounda
 
 Después de crear una instancia del servicio de {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity, puede empezar a crear el canal móvil realizando los pasos siguientes.
 
-  1.  Conéctese a un servicio de {{site.data.keyword.dashdbshort}} for Transactions existente en {{site.data.keyword.Bluemix_notm}}.
+  1.  Conéctese a un servicio de {{site.data.keyword.Db2_on_Cloud_short}} existente en {{site.data.keyword.Bluemix_notm}}.
 
-      1.  Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.dashdbshort_notm}}.
+      1.  Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}.
 
-      + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.dashdbshort_notm}}, en la lista de espacios disponible en la `Organización` seleccionada.
+      + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}, en la lista de espacios disponibles en la `Organización` seleccionada.
 
-      + Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.dashdbshort_notm}} para conectarse con la instancia de servicio {{site.data.keyword.dashdbshort_notm}} existente.
+      + Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.Db2_on_Cloud_short}} para conectarse con la instancia  de servicio {{site.data.keyword.Db2_on_Cloud_short}} existente.
 
-      + Pruebe la conexión a la instancia de servicio de {{site.data.keyword.dashdbshort_notm}} for Transactions seleccionada pulsando **Probar conexión**.
+      + Pruebe la conexión a la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionada pulsando **Probar conexión**.
 
-      + Pulse **Añadir**, seguido de **Continuar** en la ventana emergente que le solicita información sobre el servicio de {{site.data.keyword.dashdbshort_notm}} for Transactions seleccionado. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.dashdbshort_notm}} configurada.
+      + Pulse **Añadir**, seguido de **Continuar** en la ventana emergente que le solicita información sobre el servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionado. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.Db2_on_Cloud_short}} configurada.
 
-      **Nota:** Después de añadir una conexión {{site.data.keyword.dashdbshort_notm}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
+      **Nota:** Después de añadir una conexión {{site.data.keyword.Db2_on_Cloud_short}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
 
   2.  Cree e inicie el servidor.
 

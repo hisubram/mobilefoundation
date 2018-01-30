@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated:  "2017-02-17"
+  years: 2016, 2018
+lastupdated:  "2018-01-18"
 
 ---
 
@@ -16,11 +16,11 @@ Tras crear la instancia del servicio {{site.data.keyword.mobilefoundation_short}
 {: #prerequisites_p2}
 
 Tenga en cuenta lo siguiente antes de configurar la instancia del servicio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application.
-* {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application solo se admite con planes de {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.dashdbshort_notm}}: Enterprise Transactional (con soporte para OLTP).
+* {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application solo se admite con planes de {{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}}.
 
-* Deberá tener acceso a las credenciales de la instancia de servicio {{site.data.keyword.dashdbshort_notm}} antes de poder configurar los valores de su instancia de servicio {{site.data.keyword.mobilefoundation_short}}.
+* Deberá tener acceso a las credenciales de la instancia de servicio {{site.data.keyword.Db2_on_Cloud_short}} antes de poder configurar los valores de su instancia de servicio {{site.data.keyword.mobilefoundation_short}}.
 
-**Nota**: La instancia de servicio {{site.data.keyword.dashdbshort_notm}} puede existir en cualquier `Espacio` dentro de la `Organización` de {{site.data.keyword.Bluemix_notm}} o de cualquier otra `Organización` a la que tenga acceso. Asegúrese de que dispone de los permisos para acceder al `Espacio` donde existe la instancia del servicio {{site.data.keyword.dashdbshort_notm}}.
+**Nota**: La instancia de servicio {{site.data.keyword.Db2_on_Cloud_short}} puede existir en cualquier `Espacio` dentro de la {{site.data.keyword.Bluemix_notm}} `Organización` o de cualquier otra `Organización` a la que tenga acceso. Asegúrese de que dispone de los permisos para acceder al `Espacio` donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}.
 
 
 ## Adición de la conexión de base de datos
@@ -31,41 +31,39 @@ Tenga en cuenta lo siguiente antes de configurar la instancia del servicio {{sit
 
 Tras crear la instancia del servicio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, siga el procedimiento para iniciarse.
 
-### Configuración de la conexión con la instancia de servicio dashDB
+### Configuración de la conexión con la instancia de servicio Db2 on Cloud
 {: #connect_dashdb_p2}
 
-Una vez que se haya creado la instancia de servicio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, podrá ver la página *Visión general*, donde deberá especificar la información de conexión de la instancia de servicio {{site.data.keyword.dashdbshort_notm}} for Transactions, a la que se debe conectar la instancia de servicio {{site.data.keyword.mobilefoundation_short}}.
+Una vez que se haya creado la instancia de servicio de {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, podrá ver la página *Visión general*, donde deberá especificar la información de conexión de la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}}, a la que se debe conectar la instancia de servicio de {{site.data.keyword.mobilefoundation_short}}.
 
-**Nota:** Si ya tiene una instancia de servicio {{site.data.keyword.dashdbshort_notm}} for Analytics: Enterprise for Transactions, puede configurarla para utilizar lo mismo para conectarse a la instancia de servicio de {{site.data.keyword.mobilefoundation_short}}.
+También puede crear una nueva instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}}, si aún no tiene ninguna existente.
 
-También puede crear una nueva instancia de servicio de {{site.data.keyword.dashdbshort_notm}} for Transactions, si aún no tiene ninguna existente.
-
-Siga estos pasos para crear una nueva instancia de servicio de dashDB for Transactions:
+Siga estos pasos para crear una nueva instancia de servicio de Db2 on Cloud:
 
 1. En la página *Visión general*, seleccione la sección **Crear nuevo servicio**.
 
-+ Seleccione `Sí` en la opción **Configuración de alta disponibilidad**, si desea una instancia de servicio altamente disponible de {{site.data.keyword.dashdbshort_notm}} for Transactions.
++ Seleccione `Sí` en la opción **Configuración de alta disponibilidad**, si desea una instancia de servicio altamente disponible de {{site.data.keyword.Db2_on_Cloud_short}}.
 
 + Revise los detalles del plan y pulse **Crear**.
 
-Se ha creado una nueva instancia de servicio de {{site.data.keyword.dashdbshort_notm}} for Transactions: EnterpriseForTransactions2.8.500, que proporciona una instancia dedicada de {{site.data.keyword.dashdbshort_notm}} con RAM de 8 GB y 2 vCPUs, y 500 GB de almacenamiento.
+Se ha creado una nueva instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}}, que proporciona una instancia dedicada de {{site.data.keyword.Db2_on_Cloud_short}} con RAM de 8 GB y 2 vCPUs, y 500 GB de almacenamiento.
 
-Siga estos pasos para conectarse a una instancia de servicio existente de {{site.data.keyword.dashdbshort_notm}} o a la instancia de servicio de {{site.data.keyword.dashdbshort_notm}} for Transactions que acaba de crear:
+Siga estos pasos para conectarse a una instancia de servicio existente de {{site.data.keyword.Db2_on_Cloud_short}} o a la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} que acaba de crear:
 
-1. Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.dashdbshort_notm}}.
+1. Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}.
 
-+ Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.dashdbshort_notm}}, en la lista de espacios disponible en la `Organización` seleccionada.   
-**Nota:** Si no ve la `Organización` y el `Espacio` donde existe su instancia del servicio {{site.data.keyword.dashdbshort_notm}} consulte si es miembro de la `Organización` y del `Espacio`. Se requiere el rol de *Desarrollador* para acceder a la organización y al espacio, ya que el servicio de {{site.data.keyword.mobilefoundation_short}} accede a las credenciales desde el servicio de {{site.data.keyword.dashdbshort_notm}}.
++ Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}, en la lista de espacios disponibles en la `Organización` seleccionada.   
+**Nota:** Si no ve la `Organización` y el `Espacio` donde existe su instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}} consulte si es miembro de la `Organización` y del `Espacio`. Se requiere el rol de *Desarrollador* para acceder a la organización y al espacio, ya que el servicio de {{site.data.keyword.mobilefoundation_short}} accede a las credenciales desde el servicio de {{site.data.keyword.Db2_on_Cloud_short}}.
 
-+ Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.dashdbshort_notm}} para conectarse con la instancia de servicio {{site.data.keyword.dashdbshort_notm}} existente.
++ Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.Db2_on_Cloud_short}} para conectarse con la instancia  de servicio {{site.data.keyword.Db2_on_Cloud_short}} existente.
 
-+  Pruebe la conexión a la instancia de servicio especificada de {{site.data.keyword.dashdbshort_notm}}.
++  Pruebe la conexión a la instancia de servicio especificada de {{site.data.keyword.Db2_on_Cloud_short}}.
 
-+  Pulse **Añadir**. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.dashdbshort_notm}} configurada.
++  Pulse **Añadir**. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.Db2_on_Cloud_short}} configurada.
 
 En varios segundos, puede acceder a la página `Visión general`, que le ofrece guías de aprendizaje y vídeos para ayudarle a aprender a utilizar el servicio {{site.data.keyword.mobilefoundation_short}}.
 
-**Nota**: no puede cambiar la instancia de servicio {{site.data.keyword.dashdbshort_notm}} que está configurada para que la utilice la instancia del servicio {{site.data.keyword.mobilefoundation_short}}. No obstante, puede utilizar la misma instancia de servicio {{site.data.keyword.dashdbshort_notm}} en varias instancias de servicio {{site.data.keyword.mobilefoundation_short}}, ya que cada instancia de servicio {{site.data.keyword.mobilefoundation_short}} crea su propio esquema en la instancia de servicio {{site.data.keyword.dashdbshort_notm}} seleccionada.
+**Nota**: no puede cambiar la instancia de servicio {{site.data.keyword.Db2_on_Cloud_short}} que está configurada para que la utilice la instancia del servicio {{site.data.keyword.mobilefoundation_short}}. No obstante, puede utilizar la misma instancia de servicio {{site.data.keyword.Db2_on_Cloud_short}} en varias instancias de servicio {{site.data.keyword.mobilefoundation_short}}, ya que cada instancia de servicio {{site.data.keyword.mobilefoundation_short}} crea su propio esquema en la instancia de servicio {{site.data.keyword.Db2_on_Cloud_short}} seleccionada.
 
 
 ## Inicio del servidor de MobileFirst
@@ -100,7 +98,7 @@ Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minut
 
  Los usuarios también pueden adjuntar volúmenes a los contenedores para persistir datos. El volumen seleccionado no se puede cambiar. 20 GB es el espacio de compartición de archivos predeterminado disponible para el usuario. Si el usuario necesita espacio de almacenamiento adicional para persistir datos analíticos, necesitará adquirir compartición de archivos adicional y crear un volumen utilizando esta compartición de archivos. Puede seleccionar este nuevo volumen al desplegar el servidor de análisis.
 
- Para obtener más información sobre cómo añadir volúmenes a {{site.data.keyword.containerlong}}, consulte [Almacenamiento de datos permanentes en un volumen mediante el Panel de control de {{site.data.keyword.Bluemix_notm}} ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui){: new_window}.
+ Para obtener más información sobre cómo añadir volúmenes a {{site.data.keyword.containerlong}}, consulte [Almacenamiento de un volumen utilizando el Panel de control de {{site.data.keyword.Bluemix_notm}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui){: new_window}.
 
 * Pulse **Añadir analíticas** para añadir el servidor de Mobile Analytics a la instancia de servicio de {{site.data.keyword.mobilefoundation_short}}.
 
@@ -131,7 +129,7 @@ Ahora puede suprimir el servidor de Mobile Analytics que se ha añadido a la ins
 
 * Esta acción detiene el servidor existente y suprime los datos. Se crea una nueva instancia con una versión actualizada, si está disponible. Esta acción tarda unos minutos en completarse.
 
-**Nota**: todos los datos de su instancia de servidor anterior, incluyendo la información sobre apps y adaptadores, se conserva en la instancia del servicio {{site.data.keyword.dashdbshort_notm}} configurada; estos datos se utilizan para volver a crear el servidor.
+**Nota**: todos los datos de su instancia de servidor anterior, incluyendo la información sobre apps y adaptadores, se conserva en la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}} configurada; estos datos se utilizan para volver a crear el servidor.
 
 ##	Ajuste de la configuración avanzada
 {: #using_mfs_advanced_p2}
@@ -145,4 +143,4 @@ Utilice la opción **Iniciar servidor con configuración avanzada** en la págin
 
       - Se puede crear una granja de servidores de {{site.data.keyword.mobilefirst}} configurando el número de nodos aquí.
 
-Consulte la [documentación de {{site.data.keyword.mobilefoundation_long}} ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}, para obtener más detalles.
+Consulte la documentación de [{{site.data.keyword.mobilefoundation_long}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}, para obtener más detalles.
