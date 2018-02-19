@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-02-14"
 
 ---
 
@@ -20,7 +20,7 @@ Consider the following before you configure  {{site.data.keyword.mobilefoundatio
 
 * You should have access to the {{site.data.keyword.Db2_on_Cloud_short}} service instance credentials before you can configure the settings of your {{site.data.keyword.mobilefoundation_short}} service instance.
 
-**Note**: The {{site.data.keyword.Db2_on_Cloud_short}} service instance can exist in any `Space` within your {{site.data.keyword.Bluemix_notm}} `Organization` or any other `Organization` that you have access to. Ensure that you have the permissions to access the `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists.
+> **Note**: The {{site.data.keyword.Db2_on_Cloud_short}} service instance can exist in any `Space` within your {{site.data.keyword.Bluemix_notm}} `Organization` or any other `Organization` that you have access to. Ensure that you have the permissions to access the `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists.
 
 
 ## Adding the database connection
@@ -46,14 +46,14 @@ Follow these steps to create a new Db2 on Cloud service instance:
 
 + Review the plan details and click **Create**.
 
-A new {{site.data.keyword.Db2_on_Cloud_short}} service instance is created, which provides a dedicated {{site.data.keyword.Db2_on_Cloud_short}} instance with 8GB RAM and 2 vCPUs, and 500 GB of storage.
+A new {{site.data.keyword.Db2_on_Cloud_short}} service instance is created, which provides a dedicated {{site.data.keyword.Db2_on_Cloud_short}} instance with 8 GB RAM and 2 vCPUs, and 500 GB of storage.
 
 Follow these steps to connect to an existing {{site.data.keyword.Db2_on_Cloud_short}} service instance or to the {{site.data.keyword.Db2_on_Cloud_short}} service instance that you just created:
 
 1. Select the {{site.data.keyword.Bluemix_notm}} `Organization` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists.
 
 + Select the {{site.data.keyword.Bluemix_notm}} `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists, from the list of spaces available in the selected `Organization`.   
-**Note:** If you do not see listed the `Organization` and `Space` where your {{site.data.keyword.Db2_on_Cloud_short}} service instance exists then check if you are a member of that `Organization` and `Space`. You are required to have a *Developer* role access to the organization and space, as the {{site.data.keyword.mobilefoundation_short}} service accesses the credentials from the {{site.data.keyword.Db2_on_Cloud_short}} service.
+> **Note:** If you do not see listed the `Organization` and `Space` where your {{site.data.keyword.Db2_on_Cloud_short}} service instance exists then check if you are a member of that `Organization` and `Space`. You are required to have a *Developer* role access to the organization and space, as the {{site.data.keyword.mobilefoundation_short}} service accesses the credentials from the {{site.data.keyword.Db2_on_Cloud_short}} service.
 
 + Select the {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` and `Credentials` to connect to the existing  {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 
@@ -63,7 +63,7 @@ Follow these steps to connect to an existing {{site.data.keyword.Db2_on_Cloud_sh
 
 In a few seconds, you can access the `Overview` page that provides you with  tutorials and videos to help you get started with the  {{site.data.keyword.mobilefoundation_short}} service.
 
-**Note**: You cannot change the {{site.data.keyword.Db2_on_Cloud_short}} service instance that is configured to be used by your {{site.data.keyword.mobilefoundation_short}} service instance. However, you can use the same {{site.data.keyword.Db2_on_Cloud_short}} service instance across multiple {{site.data.keyword.mobilefoundation_short}} service instances, as each {{site.data.keyword.mobilefoundation_short}} service instance creates its own schema in the selected {{site.data.keyword.Db2_on_Cloud_short}} service instance.
+> **Note**: You cannot change the {{site.data.keyword.Db2_on_Cloud_short}} service instance that is configured to be used by your {{site.data.keyword.mobilefoundation_short}} service instance. However, you can use the same {{site.data.keyword.Db2_on_Cloud_short}} service instance across multiple {{site.data.keyword.mobilefoundation_short}} service instances, as each {{site.data.keyword.mobilefoundation_short}} service instance creates its own schema in the selected {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 
 
 ## Starting the MobileFirst server
@@ -76,50 +76,49 @@ In a few seconds, you can access the `Overview` page that provides you with  tut
 
     -	The `username` and `password` is automatically generated for you. You have access to them when the server is up and running.
 
-The process of provisioning your server starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
+    The process of provisioning your server starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
 
-  -	The status of your server that is running (state, size).
+      -	The status of your server that is running (state, size).
 
-  -	The server route is created for you. Use this route in your mobile application to connect to the {{site.data.keyword.mfserver_short_notm}}.
+      -	The server route is created for you. Use this route in your mobile application to connect to the {{site.data.keyword.mfserver_short_notm}}.
 
-  -	Your personal `username` and `password` to access the {{site.data.keyword.mfp_oc_short_notm}}. The `password` is hidden. Click **Show Password** icon to visualize it.
+      -	Your personal `username` and `password` to access the {{site.data.keyword.mfp_oc_short_notm}}. The `password` is hidden. Click **Show Password** icon to visualize it.
 
 *	Click **Launch Console** to open the {{site.data.keyword.mfp_oc_short_notm}}.
 
+With the console you can manage your mobile apps, adapters and mobile devices, use your server as a mobile backend, send push notifications, and do more.
 
-<!--This console runs inside the container.--> With the console you can manage your mobile apps, adapters and mobile devices, use your server as a mobile backend, send push notifications, and do more.
-
-##  Adding Mobile Analytics server
+##  Adding Mobile Analytics service
 {: #adding_analytics_server_prof}
 
- You can now monitor your mobile application on {{site.data.keyword.mobilefirst}} server by adding a Mobile Analytics server to the {{site.data.keyword.mobilefoundation_short}} service instance.
+ You can now monitor your mobile application on {{site.data.keyword.mobilefirst}} server by adding a Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
- Professional plan creates the Mobile Analytics server in a container group, user can customize the configuration by selecting the number of container nodes in the container group.
+ Professional plan creates a Mobile Analytics service instance.
 
- Users can also attach volumes to the containers to persist data. The volume once selected cannot be changed. 20 GB is the default file share space available to the user. If the user needs additional storage space to persist analytics data, he is required to buy additional file share and create a volume using this file share. He can then select this new volume while deploying the analytics server.
+ <!--Users can also attach volumes to the containers to persist data. The volume once selected cannot be changed. 20 GB is the default file share space available to the user. If the user needs additional storage space to persist analytics data, he is required to buy additional file share and create a volume using this file share. He can then select this new volume while deploying the analytics server.
 
- For more information on adding volumes to {{site.data.keyword.containerlong}}, refer to [Storing persistent data in a volume by using the {{site.data.keyword.Bluemix_notm}} Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui){: new_window}.
+ For more information on adding volumes to {{site.data.keyword.containerlong}}, refer to [Storing persistent data in a volume by using the {{site.data.keyword.Bluemix_notm}} Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui){: new_window}.-->
 
-* Click **Add Analytics** to add the Mobile Analytics server to the {{site.data.keyword.mobilefoundation_short}} service instance.
+ * Click **Add Analytics** to add the Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
-The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation.  
+   The process of provisioning starts. This process takes few minutes, and a progress indicator indicates the progress of this operation.  
 
-* Launch the MobileFirst Analytics Console from the {{site.data.keyword.mfp_oc_short_notm}}.
+ * Launch the Mobile Analytics service Console from the {{site.data.keyword.mfp_oc_short_notm}}.
 
-* Single sign-on is enabled between the {{site.data.keyword.mfserver_short_notm}} and the Mobile Analytics server. Mobile Analytics server is configured with the same LTPA keys and user credentials as the {{site.data.keyword.mfserver_short_notm}} server. You can use the same `username` and `password` to log in to the Mobile Analytics console as used to log in to the {{site.data.keyword.mfp_oc_short_notm}}.
+ * Single sign-on is enabled between the {{site.data.keyword.mfserver_short_notm}} and the Mobile Analytics service. Mobile Analytics service is configured with the same LTPA keys and user credentials as the {{site.data.keyword.mfserver_short_notm}} server. You can use the same `username` and `password` to log in to the Mobile Analytics console as used to log in to the {{site.data.keyword.mfp_oc_short_notm}}.
 
-For more information on MobileFirst Analytics you can refer to [MobileFirst Foundation Operational Analytics ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
+ For more information on Mobile Analytics you can refer to [MobileFirst Foundation Operational Analytics ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
 
-**Note:** The Mobile Analytics server is removed when you delete the {{site.data.keyword.mobilefoundation_short}} service instance or when you attempt to re-create the {{site.data.keyword.mfserver_short_notm}}.
+> **Note:** Deleting the {{site.data.keyword.mobilefoundation_short}} service instance removes the Mobile Analytics service instance.
 
-##  Deleting Mobile Analytics server
+##  Deleting Mobile Analytics service
 {: #deleting_analytics_server_prof}
 
-You can now delete the Mobile Analytics server that was added to the {{site.data.keyword.mobilefoundation_short}} service instance, from the {{site.data.keyword.mobilefoundation_short}} service dashboard.
+You can now delete the Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance, from the {{site.data.keyword.mobilefoundation_short}} service dashboard.
 
-* Click **Delete Analytics** to delete the  Mobile Analytics server that has been added to the {{site.data.keyword.mobilefoundation_short}} service instance.
+* Click **Delete Analytics** to delete the  Mobile Analytics service that has been added to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
- This will delete the analytics container group. The process of deleting analytics containers takes about 10 minutes. You can refresh the screen to view the updated status. Once the analytics containers are deleted, the **Add Analytics** button is re-enabled, you can use this to add the Mobile Analytics server again if you choose to.
+ Clicking **Delete Analytics** deletes the analytics server instance. The process of deleting analytics instance takes about 10 minutes. You can refresh the screen to view the updated status. Deletion of analytics instance reenables the **Add Analytics** button. If you choose to add the Mobile Analytics service again, you can click this button.
 
 
 ## Re-creating the MobileFirst server
@@ -129,7 +128,7 @@ You can now delete the Mobile Analytics server that was added to the {{site.data
 
 * This action stops your existing server and deletes the data. A new server instance is created with an updated version, if available. This action takes a few minutes to complete.
 
-**Note**: All the data from your previous server instance including information on the apps and adapters is persisted in the configured {{site.data.keyword.Db2_on_Cloud_short}} service instance, this data is used to recreate your server.
+> **Note**: Data from your previous server instance including information on the apps and adapters is persisted in the configured {{site.data.keyword.Db2_on_Cloud_short}} service instance. This data is used to recreate your server.
 
 ##	Setting up advanced configuration
 {: #using_mfs_advanced_p2}
@@ -139,8 +138,8 @@ Use the **Start Server with Advanced Configuration** from the `Overview` page to
 *	From the **Topology** tab, you can select the server size and number of server instances based on your need. The default 1 GB server is enough for development and light testing.
   - Select the correct size for your server based on your need.
 
-  - **Nodes** displays the number of nodes that are created.
+  - **Instances** displays the number of nodes that are created.
 
-      - {{site.data.keyword.mobilefirst}} server farm can be created by configuring the number of nodes here.
+      <!--- {{site.data.keyword.mobilefirst}} server farm can be created by configuring the number of nodes here.-->
 
 See [{{site.data.keyword.mobilefoundation_long}} documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}, for more details.

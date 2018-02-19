@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-01-24"
 
 ---
 
@@ -23,7 +23,8 @@ The <!--container group is created with a--> URL or route is created with the de
   |:----- | :----- |    
   |`mybluemix.net` | US South |    
   |`eu-gb.mybluemix.net` | United Kingdom  |
-  |`au-syd.mybluemix.net` | Sydney  |      
+  |`au-syd.mybluemix.net` | Sydney  |   
+  |`eu-de.mybluemix.net` | Frankfurt |   
   {: caption="Table 1. Application domain names based on Region in {{site.data.keyword.Bluemix_notm}}" caption-side="top"}
 
 To be able to use your own domain you will need to configure custom domain by performing the following steps:
@@ -36,4 +37,4 @@ To be able to use your own domain you will need to configure custom domain by pe
 
 + Go to the DNS provider for your domain, and add a CNAME entry, which will route the traffic from your domain to the default {{site.data.keyword.Bluemix_notm}} route, where the <!--container group--> server is running.
 
-+ If you would like to configure `https` for your custom domain then upload the SSL certificate for your domain in {{site.data.keyword.Bluemix_notm}}. To do this go to **Manage Organizations > DOMAINS**, select the custom domain you want to configure SSL certificate for, click the **Upload Certificate** to upload SSL certificate for your domain. Refer to [SSL Certificates and Bluemix Custom Domains ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window}, for more information.
++ If you would like to configure `https` for your custom domain then upload the SSL certificate for your domain in {{site.data.keyword.Bluemix_notm}}. To do this go to **Manage Organizations > DOMAINS**, select the custom domain you want to configure SSL certificate for, click the **Upload Certificate** to upload SSL certificate for your domain. Refer to [this post ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window}, for more information.

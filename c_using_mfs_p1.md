@@ -2,61 +2,60 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-02-14"
 
 ---
 
 #	Using the Developer plan
 {: #using_mobilefoundation_p1}
 
-After you create the {{site.data.keyword.mobilefoundation_short}}: Developer service instance, in a few seconds, you can access the `Overview` page on {{site.data.keyword.Bluemix_notm}}, which provides you tutorials and videos to help you get started with the  {{site.data.keyword.mobilefoundation_short}} service.
+After you create the {{site.data.keyword.mobilefoundation_short}} service instance using the Developer plan, access the Overview page on {{site.data.keyword.Bluemix_notm}}. On this page, you are provided with tutorials and videos to help you get started with the service.
 
 ## Starting the MobileFirst server
 {: #start_mobilefoundation_p1}
 * To start the {{site.data.keyword.mfserver_short_notm}} with default settings, click **Start Basic Server**.
 
-This selection provisions an {{site.data.keyword.mfserver_long_notm}} with the following settings:
-*	1 GB of memory. This size is enough for development, light testing activities and small scale production workloads.
+  This selection provisions an {{site.data.keyword.mfserver_long_notm}} with the following settings:
+  *	1 GB of memory. This size is enough for development, light testing activities and small scale production workloads.
 
-*	The `username` and `password` is automatically generated for you. You have access to them when the server is up and running.
+  *	The `username` and `password` is automatically generated for you. You have access to them when the server is up and running.
 
-The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
-*	The status of your server that is running (state, size).
+  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
+    *	The status of your server that is running (state, size).
 
-*	The server route created for you. Use this route in your mobile application to connect to the {{site.data.keyword.mfserver_short_notm}}.
+    *	The server route created for you. Use this route in your mobile application to connect to the {{site.data.keyword.mfserver_short_notm}}.
 
-*	Your personal `username` and `password` to access the {{site.data.keyword.mfp_oc_short_notm}}. The `password` is hidden. Click **Show Password** icon to visualize it.
+    *	Your personal `username` and `password` to access the {{site.data.keyword.mfp_oc_short_notm}}. The `password` is hidden. Click **Show Password** icon to visualize it.
 
 *	Click **Launch Console** to launch the {{site.data.keyword.mfp_oc_short_notm}}.
 
+With the console you can manage your mobile apps and mobile devices, use your server as a mobile backend, send push notifications, and do more.
 
-<!--This console runs inside the container.--> With the console you can manage your mobile apps and mobile devices, use your server as a mobile backend, send push notifications, and do more.
-
-##  Adding Mobile Analytics server
+##  Adding Mobile Analytics service
 {: #adding_analytics_server_dev}
 
- You can now monitor your mobile application on {{site.data.keyword.mobilefirst}} server by adding a Mobile Analytics server to the {{site.data.keyword.mobilefoundation_short}} service instance. Developer plan creates the Mobile Analytics server in a container group with a single node having 1 GB memory.
+ You can now monitor your mobile application on {{site.data.keyword.mobilefirst}} server by adding a Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance. Developer plan creates the Mobile Analytics service in a container group with a single node having 1 GB memory.
 
-* Click **Add Analytics** to add the Mobile Analytics server to the {{site.data.keyword.mobilefoundation_short}} service instance.
+* Click **Add Analytics** to add the Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
-The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation.  
+  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation.  
 
-* Launch the MobileFirst Analytics Console from the {{site.data.keyword.mfp_oc_short_notm}}.
+* Launch the Mobile Analytics service Console from the {{site.data.keyword.mfp_oc_short_notm}}.
 
-* Single sign-on is enabled between the {{site.data.keyword.mfserver_short_notm}} and the Mobile Analytics server. Mobile Analytics server is configured with the same LTPA keys and user credentials as the {{site.data.keyword.mfserver_short_notm}}. You can use the same `username` and `password` to log in to the Mobile Analytics console as used to log in to the {{site.data.keyword.mfp_oc_short_notm}}.
+* Single sign-on is enabled between the {{site.data.keyword.mfserver_short_notm}} and the Mobile Analytics service. Mobile Analytics service is configured with the same LTPA keys and user credentials as the {{site.data.keyword.mfserver_short_notm}}. You can use the same `username` and `password` to log in to the Mobile Analytics console as used to log in to the {{site.data.keyword.mfp_oc_short_notm}}.
 
-For more information on MobileFirst Analytics you can refer to [MobileFirst Foundation Operational Analytics ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
+For more information on Mobile Analytics, you can refer to [MobileFirst Foundation Operational Analytics ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
 
-**Note:** The Mobile Analytics server is removed when you delete the {{site.data.keyword.mobilefoundation_short}} service instance or when you attempt to re-create the {{site.data.keyword.mfserver_short_notm}}.
+> **Note:** Deleting the {{site.data.keyword.mobilefoundation_short}} service instance or re-creating the {{site.data.keyword.mfserver_short_notm}} removes the Mobile Analytics service instance.
 
-##  Deleting Mobile Analytics server
+##  Deleting Mobile Analytics service
 {: #deleting_analytics_server_dev}
 
-You can now delete the Mobile Analytics server that was added to the {{site.data.keyword.mobilefoundation_short}} service instance, from the {{site.data.keyword.mobilefoundation_short}} service dashboard.
+You can now delete the Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance, from the {{site.data.keyword.mobilefoundation_short}} service dashboard.
 
-* Click **Delete Analytics** to delete the  Mobile Analytics server that was added to the {{site.data.keyword.mobilefoundation_short}} service instance.
+* Click **Delete Analytics** to delete the  Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
- This will delete the analytics container group. The process of deleting analytics containers takes about 10 minutes. You can refresh the screen to view the updated status. Once the analytics containers are deleted, the **Add Analytics** button is re-enabled, you can use this to add the Mobile Analytics server again if you choose to.
+ Clicking **Delete Analytics** deletes the analytics server instance. The process of deleting analytics instance takes about 10 minutes. You can refresh the screen to view the updated status. Deletion of analytics instance reenables the **Add Analytics** button. If you choose to add the Mobile Analytics service again, you can click this button.
 
 
 ## Re-creating the MobileFirst server

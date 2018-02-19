@@ -38,18 +38,3 @@ With {{site.data.keyword.mobilefoundation_short}}, you can perform the following
 You can use the {{site.data.keyword.mfp_cli_long_notm}} (CLI) with the {{site.data.keyword.mobilefoundation_short}} to easily create and manage apps.
 
 <!--{{site.data.keyword.mobilefoundation_short}} service provisions a container in your space in {{site.data.keyword.Bluemix_notm}}. You can see the details of the container that is created, view the container performance, and access the server logs from your {{site.data.keyword.Bluemix_notm}} dashboard.-->
-
-## Getting help and support for Mobile Foundation
-{: #getting_help_mobilefoundation}
-
-If you have problems or questions when using {{site.data.keyword.mobilefoundation_short}}, you can get help by searching for information or by asking questions through a forum. You can also open a support ticket.
-
-When using the forums to ask a question, tag your question so that it is seen by the IBM  {{site.data.keyword.Bluemix_notm}} development teams.
-
-If you have technical questions about developing or deploying an app with {{site.data.keyword.mobilefoundation_short}}, post your question on [Stack Overflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window} and tag your question with `bluemix` and `ibm-mobilefirst`.
-
-For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} forum. Include the `bluemix` and  `mobilefirst` tags.
-
-See [Getting help ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.{DomainName}/docs/support/index.html#getting-help){: new_window} for more details about using the forums.
-
-For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.{DomainName}/docs/support/index.html#contacting-support){: new_window}.
