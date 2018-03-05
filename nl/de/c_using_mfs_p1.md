@@ -2,61 +2,60 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-02-14"
 
 ---
 
 #	Developer-Plan verwenden
 {: #using_mobilefoundation_p1}
 
-Einige Sekunden nach der Erstellung der Serviceinstanz von {{site.data.keyword.mobilefoundation_short}}: Developer können Sie auf die Seite `Übersicht` in {{site.data.keyword.Bluemix_notm}} zugreifen. Dort stehen Lernprogramme und Videos zum Einstieg in die Verwendung des {{site.data.keyword.mobilefoundation_short}}-Service zur Verfügung.
+Nach der Erstellung der {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz im Rahmen des Developer-Plans können Sie auf die Übersichtsseite in {{site.data.keyword.Bluemix_notm}} zugreifen. Auf dieser Seite finden Sie Lernprogramme und Videos, die Sie beim Einstieg in die Arbeit mit dem Service unterstützen.
 
 ## MobileFirst-Server starten
 {: #start_mobilefoundation_p1}
 * Um den {{site.data.keyword.mfserver_short_notm}} mit den Standardeinstellungen zu starten, klicken Sie auf **Basisserver starten**.
 
-Diese Auswahl stellt einen {{site.data.keyword.mfserver_long_notm}} mit den folgenden Einstellungen bereit:
-*	1 GB Hauptspeicher. Diese Größe ist für Entwicklungs- und kleinere Testaktivitäten sowie für kleinere Produktionsworkloads ausreichend.
+  Diese Auswahl stellt einen {{site.data.keyword.mfserver_long_notm}} mit den folgenden Einstellungen bereit:
+  *	1 GB Hauptspeicher. Diese Größe ist für Entwicklungs- und kleinere Testaktivitäten sowie für kleinere Produktionsworkloads ausreichend.
 
-*	`Benutzername` und `Kennwort` werden automatisch für Sie generiert. Sie können darauf zugreifen, wenn der Server betriebsbereit ist.
+  *	`Benutzername` und `Kennwort` werden automatisch für Sie generiert. Sie können darauf zugreifen, wenn der Server betriebsbereit ist.
 
-Der Prozess der Bereitstellung wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt. Ist der Vorgang abgeschlossen, wird ein Dashboard mit folgenden Informationen angezeigt:
-*	Status Ihres Servers, der ausgeführt wird (Zustand, Größe).
+  Der Prozess der Bereitstellung wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt. Ist der Vorgang abgeschlossen, wird ein Dashboard mit folgenden Informationen angezeigt:
+    *	Status Ihres Servers, der ausgeführt wird (Zustand, Größe).
 
-*	Für Sie erstellte Serverroute. Verwenden Sie diese Route in Ihrer mobilen Anwendung, um eine Verbindung zum {{site.data.keyword.mfserver_short_notm}} herzustellen.
+    *	Für Sie erstellte Serverroute. Verwenden Sie diese Route in Ihrer mobilen Anwendung, um eine Verbindung zum {{site.data.keyword.mfserver_short_notm}} herzustellen.
 
-*	Ihr persönlicher `Benutzername` und das `Kennwort` für den Zugriff auf die {{site.data.keyword.mfp_oc_short_notm}}. Das `Kennwort` wird ausgeblendet. Klicken Sie auf das Symbol **Kennwort anzeigen**, um es einzublenden.
+    *	Ihr persönlicher `Benutzername` und das `Kennwort` für den Zugriff auf die {{site.data.keyword.mfp_oc_short_notm}}. Das `Kennwort` wird ausgeblendet. Klicken Sie auf das Symbol **Kennwort anzeigen**, um es einzublenden.
 
 *	Klicken Sie auf **Konsole starten**, um die {{site.data.keyword.mfp_oc_short_notm}} zu starten.
 
+Mit der Konsole können Sie Ihre mobilen Apps und Geräte verwalten, Ihren Server als mobiles Back-End verwenden, Push-Benachrichtigungen senden usw.
 
-<!--This console runs inside the container.--> Mit der Konsole können Sie Ihre mobilen Apps und Geräte verwalten, Ihren Server als mobiles Back-End verwenden, Push-Benachrichtigungen senden usw.
-
-##  Mobile Analytics-Server hinzufügen
+##  Mobile Analytics-Service hinzufügen
 {: #adding_analytics_server_dev}
 
- Sie können Ihre mobile Anwendung nun auf dem {{site.data.keyword.mobilefirst}}-Server überwachen, indem Sie einen Mobile Analytics-Server zur Instanz des Service {{site.data.keyword.mobilefoundation_short}} hinzufügen. Durch den Entwicklerplan wird der Mobile Analytics-Server in einer Containergruppe mit einem einzigen Knoten und 1 GB Speicherplatz erstellt.
+ Sie können Ihre mobile Anwendung nun auf dem {{site.data.keyword.mobilefirst}}-Server überwachen, indem Sie einen Mobile Analytics-Service zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz hinzufügen. Durch den Entwicklerplan wird der Mobile Analytics-Service in einer Containergruppe mit einem einzigen Knoten und 1 GB Speicherplatz erstellt.
 
-* Klicken Sie auf die Option zum Hinzufügen der Analyse, um den Mobile Analytics-Server zur Instanz des {{site.data.keyword.mobilefoundation_short}}-Service hinzuzufügen.
+* Klicken Sie auf **Analytics hinzufügen**, um den Mobile Analytics-Service zur Instanz des {{site.data.keyword.mobilefoundation_short}}-Service hinzuzufügen.
 
-Der Prozess der Bereitstellung wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt.  
+  Der Prozess der Bereitstellung wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt.  
 
-* Starten Sie die MobileFirst Analytics Console über die {{site.data.keyword.mfp_oc_short_notm}}.
+* Starten Sie die Mobile Analytics-Servicekonsole über {{site.data.keyword.mfp_oc_short_notm}}.
 
-* Für den {{site.data.keyword.mfserver_short_notm}} und den Mobile Analytics-Server ist Single Sign-on aktiviert. Der Mobile Analytics-Server ist mit denselben LTPA-Schlüsseln und denselben Benutzerberechtigungen konfiguriert wie der {{site.data.keyword.mfserver_short_notm}}. Sie können für die Anmeldung an der Mobile Analytics Console den `Benutzernamen` und das `Kennwort` verwenden, die Sie auch für die Anmeldung bei der {{site.data.keyword.mfp_oc_short_notm}} verwendet haben.
+* Für den {{site.data.keyword.mfserver_short_notm}} und den Mobile Analytics-Service ist Single Sign-on aktiviert. Der Mobile Analytics-Service ist mit denselben LTPA-Schlüsseln und denselben Benutzerberechtigungen konfiguriert wie der {{site.data.keyword.mfserver_short_notm}}. Sie können für die Anmeldung an der Mobile Analytics Console den `Benutzernamen` und das `Kennwort` verwenden, die Sie auch für die Anmeldung bei der {{site.data.keyword.mfp_oc_short_notm}} verwendet haben.
 
-Weitere Informationen zu MobileFirst Analytics finden Sie unter [MobileFirst Foundation Operational Analytics ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
+Weitere Informationen zu Mobile Analytics finden Sie unter [MobileFirst Foundation Operational Analytics ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
 
-**Anmerkung:** Der Mobile Analytics-Server wird entfernt, wenn Sie die Instanz des Service {{site.data.keyword.mobilefoundation_short}} löschen oder wenn Sie versuchen, den {{site.data.keyword.mfserver_short_notm}} erneut zu erstellen.
+> **Hinweis:** Durch das Löschen der {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz und die erneute Erstellung von {{site.data.keyword.mfserver_short_notm}} wird die Mobile Analytics-Serviceinstanz entfernt.
 
-##  Mobile Analytics-Server löschen
+##  Mobile Analytics-Service löschen
 {: #deleting_analytics_server_dev}
 
-Sie können jetzt den Mobile Analytics-Server, der zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz hinzugefügt wurde, im {{site.data.keyword.mobilefoundation_short}}-Service-Dashboard löschen.
+Sie können jetzt den Mobile Analytics-Service, der zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz hinzugefügt wurde, im {{site.data.keyword.mobilefoundation_short}}-Service-Dashboard löschen.
 
-* Klicken Sie auf die Option zum Löschen der Analyse****, um den Mobile Analytics-Server zu löschen, der zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz hinzugefügt wurde.
+* Klicken Sie auf die Option **Analytics löschen**, um den Mobile Analytics-Service zu löschen, der zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz hinzugefügt wurde.
 
- Bei dieser Aktion wird die Analytics-Containergruppe gelöscht. Das Löschen der Analytics-Container dauert ca. 10 Minuten. Sie können die Anzeige aktualisieren, um den aktuellen Status anzuzeigen. Nach dem Löschen der Analysecontainer wird die Schaltfläche zum Hinzufügen der Analyse**** wieder aktiviert und kann verwendet werden, um den Mobile Analytics-Server bei Bedarf erneut hinzuzufügen.
+ Durch das Klicken auf **Analytics löschen** wird die Analytics-Serverinstanz gelöscht. Das Löschen der Analytics-Instanz dauert ca. 10 Minuten. Sie können die Anzeige aktualisieren, um den aktuellen Status anzuzeigen. Durch das Löschen der Analytics-Instanz wird die Schaltfläche **Analytics hinzufügen** erneut aktiviert. Wenn Sie den Mobile Analytics-Service erneut hinzufügen möchten, können Sie auf diese Schaltfläche klicken.
 
 
 ## MobileFirst-Server erneut erstellen

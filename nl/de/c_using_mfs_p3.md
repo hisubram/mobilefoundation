@@ -2,16 +2,16 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-02-14"
 
 ---
 
 #	Developer Pro-Plan verwenden
 {: #using_mobilefoundation_p3}
 
-{{site.data.keyword.mobilefoundation_short}}: Developer Pro richtet sich vorallem an die Anwendungsentwicklung im Team und das Testen von Anwendungen; dieser Plan ist nicht für die Produktion gedacht.
+{{site.data.keyword.mobilefoundation_short}}: Developer Pro richtet sich vor allem an die Anwendungsentwicklung im Team und das Testen von Anwendungen; dieser Plan ist nicht für die Produktion gedacht.
 
-Einige Sekunden nach der Erstellung der Serviceinstanz von {{site.data.keyword.mobilefoundation_short}}: Developer Pro können Sie auf die Seite `Übersicht` in {{site.data.keyword.Bluemix_notm}} zugreifen. Dort stehen Lernprogramme und Videos zum Einstieg in die Verwendung des {{site.data.keyword.mobilefoundation_short}}-Service zur Verfügung.
+Nach der Erstellung der {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz im Rahmen des Developer Pro-Plans können Sie auf die Seite `Übersicht` in {{site.data.keyword.Bluemix_notm}} zugreifen. Dort stehen Lernprogramme und Videos zur Verfügung, die Sie beim Einstieg in die Arbeit mit dem Service unterstützen.
 
 ## Voraussetzungen
 {: #prerequisites_p3}
@@ -21,7 +21,7 @@ Beachten Sie Folgendes, bevor Sie die Serviceinstanz von {{site.data.keyword.mob
 
 * Sie benötigen Zugriff auf die Berechtigungsnachweise der {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz, bevor Sie die Einstellungen für die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz konfigurieren.
 
-**Hinweis**: Die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz kann sich in jedem `Bereich` in Ihrer {{site.data.keyword.Bluemix_notm}}-`Organisation` bzw. in jeder anderen `Organisation`, auf die Sie zugreifen können, befinden. Stellen Sie sicher, dass Sie über die Berechtigungen für den Zugriff auf den `Bereich` verfügen, in dem sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet.
+> **Hinweis**: Die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz kann sich in jedem `Bereich` in Ihrer {{site.data.keyword.Bluemix_notm}}-`Organisation` bzw. in jeder anderen `Organisation`, auf die Sie zugreifen können, befinden. Stellen Sie sicher, dass Sie über die Berechtigungen für den Zugriff auf den `Bereich` verfügen, in dem sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet.
 
 
 ## Datenbankverbindung hinzufügen
@@ -35,26 +35,26 @@ Führen Sie nach der Erstellung der Serviceinstanz von {{site.data.keyword.mobil
 ### Verbindung zur Db2 on Cloud-Serviceinstanz einrichten
 {: #connect_dashdb_p3}
 
-Nachdem die {{site.data.keyword.mobilefoundation_short}}: Developer Pro-Serviceinstanz erstellt wurde, wird die Seite *Übersicht* angezeigt, auf der Sie die Verbindungsinformationen für die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz angeben müssen, zu der die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz eine Verbindung herstellen soll.
+Nach der Erstellung der {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz im Rahmen des Developer Pro-Plans wird die Seite *Übersicht* angezeigt, auf der Sie die Verbindungsinformationen für die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz angeben müssen. Für die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz muss eine Verbindung zur angegebenen {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz hergestellt werden.
 
-Sie können auch eine neue Serviceinstanz von {{site.data.keyword.Db2_on_Cloud_short}} erstellen, falls noch keine vorhanden ist.
+Falls Sie nicht über eine vorhandene {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz verfügen, können Sie diese erstellen.
 
-Führen Sie die folgenden Schritte aus, um eine neue Db2 on Cloud-Serviceinstanz zu erstellen:
+Führen Sie die folgenden Schritte aus, um eine Db2 on Cloud-Serviceinstanz zu erstellen:
 
 1. Wählen Sie auf der Seite *Übersicht* den Abschnitt **Neuen Service erstellen** aus.
 
-+ Wählen Sie `Ja` für die Option **Hochverfügbarkeitskonfiguration** aus, wenn Sie eine {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz mit Hochverfügbarkeitsfunktionalität benötigen.
++ Wenn Sie eine {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz mit Hochverfügbarkeit verwenden möchten, wählen Sie `Ja` für die Option **Hochverfügbarkeitskonfiguration** aus.
 
 + Prüfen Sie die Plandetails und klicken Sie auf **Erstellen**.
 
 Eine neue {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz wird erstellt. Mit dieser steht eine dedizierte {{site.data.keyword.Db2_on_Cloud_short}}-Instanz mit 8 GB RAM und 2 vCPUs sowie 500 GB Speicher zur Verfügung.
 
-Führen Sie die folgenden Schritte aus, um die Verbindung zu einer vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz oder zu der Serviceinstanz von {{site.data.keyword.Db2_on_Cloud_short}} herzustellen, die Sie gerade erstellt haben:
+Führen Sie die folgenden Schritte aus, um eine Verbindung zu einer vorhandenen oder neuen {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz herzustellen:
 
 1. Wählen Sie die {{site.data.keyword.Bluemix_notm}} `Organisation` aus, in der sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet.
 
 + Wählen Sie den {{site.data.keyword.Bluemix_notm}}-`Bereich`, in dem sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet, in der Liste der Bereiche aus, die in der ausgewählten `Organisation` verfügbar sind.   
-**Hinweis:** Wenn die `Organisation` und der `Bereich`, in denen sich Ihre {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet, nicht aufgeführt sind, prüfen Sie, ob Sie ein Mitglied der betreffenden `Organisation` bzw. des betreffenden `Bereichs` sind. Sie benötigen die Zugriffsrolle *Entwickler* für die Organisation und den Bereich, da der {{site.data.keyword.mobilefoundation_short}}-Service über den {{site.data.keyword.Db2_on_Cloud_short}}-Service auf die Berechtigungsnachweise zugreift.
+> **Hinweis:** Wenn die `Organisation` und der `Bereich`, in denen sich Ihre {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet, nicht aufgeführt sind, prüfen Sie, ob Sie ein Mitglied der betreffenden `Organisation` bzw. des betreffenden `Bereichs` sind. Sie benötigen die Zugriffsrolle *Entwickler* für die Organisation und den Bereich, da der {{site.data.keyword.mobilefoundation_short}}-Service über den {{site.data.keyword.Db2_on_Cloud_short}}-Service auf die Berechtigungsnachweise zugreift.
 
 + Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.Db2_on_Cloud_short}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz herzustellen.
 
@@ -64,7 +64,7 @@ Führen Sie die folgenden Schritte aus, um die Verbindung zu einer vorhandenen {
 
 Nach einigen Sekunden können Sie auf die Seite `Übersicht` zugreifen, auf der die Lernprogramme und Videos zur Verfügung stehen, die Sie beim Einstieg in die Verwendung des {{site.data.keyword.mobilefoundation_short}}-Service unterstützten.
 
-**Hinweis**: Sie können die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz, die zur Verwendung durch die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz konfiguriert ist, nicht ändern. Sie können jedoch dieselbe {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz für mehrere {{site.data.keyword.mobilefoundation_short}}-Serviceinstanzen verwenden, da jede {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz ein eigenes Schema in der ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz erstellt.
+> **Hinweis**: Sie können die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz, die zur Verwendung durch die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz konfiguriert ist, nicht ändern. Sie können jedoch dieselbe {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz für mehrere {{site.data.keyword.mobilefoundation_short}}-Serviceinstanzen verwenden, da jede {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz ein eigenes Schema in der ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz erstellt.
 
 ## MobileFirst-Server starten
 {: #start_mobilefoundation_p3}
@@ -76,52 +76,50 @@ Nach einigen Sekunden können Sie auf die Seite `Übersicht` zugreifen, auf der 
 
     -	`Benutzername` und `Kennwort` werden automatisch für Sie generiert. Sie können darauf zugreifen, wenn der Server betriebsbereit ist.
 
-Der Prozess der Bereitstellung Ihres Servers wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt. Ist der Vorgang abgeschlossen, wird ein Dashboard mit folgenden Informationen angezeigt:
+    Der Prozess der Bereitstellung Ihres Servers wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt. Ist der Vorgang abgeschlossen, wird ein Dashboard mit folgenden Informationen angezeigt:
 
-  -	Status Ihres Servers, der ausgeführt wird (Zustand, Größe).
+      -	Status Ihres Servers, der ausgeführt wird (Zustand, Größe).
 
-  -	Für Sie erstellte Serverroute. Verwenden Sie diese Route in Ihrer mobilen Anwendung, um eine Verbindung zum {{site.data.keyword.mfserver_short_notm}} herzustellen.
+      -	Für Sie erstellte Serverroute. Verwenden Sie diese Route in Ihrer mobilen Anwendung, um eine Verbindung zum {{site.data.keyword.mfserver_short_notm}} herzustellen.
 
-  -	Ihr persönlicher `Benutzername` und das `Kennwort` für den Zugriff auf die {{site.data.keyword.mfp_oc_short_notm}}. Das `Kennwort` wird ausgeblendet. Klicken Sie auf das Symbol **Kennwort anzeigen**, um es einzublenden.
+      -	Ihr persönlicher `Benutzername` und das `Kennwort` für den Zugriff auf die {{site.data.keyword.mfp_oc_short_notm}}. Das `Kennwort` wird ausgeblendet. Klicken Sie auf das Symbol **Kennwort anzeigen**, um es einzublenden.
 
 *	Klicken Sie auf **Konsole starten**, um die {{site.data.keyword.mfp_oc_short_notm}} zu öffnen.
 
+Mit der Konsole können Sie Ihre mobilen Apps, Adapter und Geräte verwalten, Ihren Server als mobiles Back-End verwenden, Push-Benachrichtigungen senden usw.
 
-<!--This console runs inside the container.--> Mit der Konsole können Sie Ihre mobilen Apps, Adapter und Geräte verwalten, Ihren Server als mobiles Back-End verwenden, Push-Benachrichtigungen senden usw.
-
-##  Mobile Analytics-Server hinzufügen
+##  Mobile Analytics-Service hinzufügen
 {: #adding_analytics_server_p3}
 
- Sie können Ihre mobile Anwendung nun auf dem {{site.data.keyword.mobilefirst}}-Server überwachen, indem Sie einen Mobile Analytics-Server zur Instanz des Service {{site.data.keyword.mobilefoundation_short}} hinzufügen.
+ Sie können Ihre mobile Anwendung nun auf dem {{site.data.keyword.mobilefirst}}-Server überwachen, indem Sie eine Verbindung von einer Mobile Analytics-Serviceinstanz zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz herstellen.
 
- Durch den Developer Pro-Plan wird der Mobile Analytics-Server in einer Containergruppe erstellt; der Benutzer kann die Konfiguration durch Auswahl der Anzahl von Containerknoten in der Containergruppe anpassen.
+ Die Mobile Analytics-Serviceinstanz wird mit dem Developer Pro-Plan erstellt.
 
- Benutzer können auch Datenträger an die Container anhängen, um Daten dauerhaft zu speichern. Wird ein Datenträger einmal ausgewählt, kann er nicht mehr geändert werden. 20 GB Speicherplatz für die Dateifreigabe stehen dem Benutzer standardmäßig zur Verfügung. Benötigt der Benutzer zusätzlichen Speicherplatz, um die Analysedaten dauerhaft zu speichern, muss er weiteren Speicherplatz für die Dateifreigabe erwerben und mit dieser Dateifreigabe einen Datenträger erstellen. Anschließend kann er diesen neuen Datenträger auswählen und den Analyseserver bereitstellen.
+ <!--Users can also attach volumes to the containers to persist data. The volume once selected cannot be changed. 20 GB is the default file share space available to the user. If the user needs additional storage space to persist analytics data, he is required to buy additional file share and create a volume using this file share. He can then select this new volume while deploying the analytics server.
 
- Weitere Informationen zum Hinzufügen von Datenträgern zu {{site.data.keyword.containerlong}} finden Sie im Abschnitt zum [Speichern persistenter Daten auf einem Datenträger mit dem {{site.data.keyword.Bluemix_notm}}-Dashboard ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui){: new_window}.
+ For more information on adding volumes to {{site.data.keyword.containerlong}}, refer to [Storing persistent data in a volume by using the {{site.data.keyword.Bluemix_notm}} Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui){: new_window}. -->
 
-* Klicken Sie auf die Option zum Hinzufügen der Analyse, um den Mobile Analytics-Server zur Instanz des {{site.data.keyword.mobilefoundation_short}}-Service hinzuzufügen.
+* Klicken Sie auf **Analytics hinzufügen**, um die Mobile Analytics-Serviceinstanz zur Instanz des {{site.data.keyword.mobilefoundation_short}}-Service hinzuzufügen.
 
-* Sie können die Mobile Analytics-Serverkonfiguration verwenden; für die Analytics-Serverkonfiguration werden ein Minimum von 1 GB und ein Maximum von 2 GB unterstützt. Der Analytics-Server wird bei diesem Plan nur auf einem einzigen Knoten unterstützt.
+<!--* You can choose the Mobile Analytics service configuration, a minimum of 1 GB and a maximum of 2 GB memory is supported for the Analytics server configuration.-->
+  Der Prozess der Bereitstellung wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt.  
 
-Der Prozess der Bereitstellung wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt.  
+* Starten Sie die Mobile Analytics-Servicekonsole über {{site.data.keyword.mfp_oc_short_notm}}.
 
-* Starten Sie die MobileFirst Analytics Console über die {{site.data.keyword.mfp_oc_short_notm}}.
+* Für den {{site.data.keyword.mfserver_short_notm}} und den Mobile Analytics-Service ist Single Sign-on aktiviert. Der Mobile Analytics-Service ist mit denselben LTPA-Schlüsseln und denselben Benutzerberechtigungen konfiguriert wie der {{site.data.keyword.mfserver_short_notm}}. Sie können für die Anmeldung an der Mobile Analytics Console den `Benutzernamen` und das `Kennwort` verwenden, die Sie auch für die Anmeldung bei der {{site.data.keyword.mfp_oc_short_notm}} verwendet haben.
 
-* Für den {{site.data.keyword.mfserver_short_notm}} und den Mobile Analytics-Server ist Single Sign-on aktiviert. Der Mobile Analytics-Server ist mit denselben LTPA-Schlüsseln und denselben Benutzerberechtigungen konfiguriert wie der {{site.data.keyword.mfserver_short_notm}}. Sie können für die Anmeldung an der Mobile Analytics Console den `Benutzernamen` und das `Kennwort` verwenden, die Sie auch für die Anmeldung bei der {{site.data.keyword.mfp_oc_short_notm}} verwendet haben.
+Weitere Informationen zum Mobile Analytics-Service finden Sie unter [MobileFirst Foundation Operational Analytics ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
 
-Weitere Informationen zu MobileFirst Analytics finden Sie unter [MobileFirst Foundation Operational Analytics ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
+> **Hinweis:** Durch das Löschen der {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz wird die Mobile Analytics-Serviceinstanz entfernt.
 
-**Anmerkung:** Der Mobile Analytics-Server wird entfernt, wenn Sie die Instanz des Service {{site.data.keyword.mobilefoundation_short}} löschen oder wenn Sie versuchen, den {{site.data.keyword.mfserver_short_notm}} erneut zu erstellen.
-
-##  Mobile Analytics-Server löschen
+##  Mobile Analytics-Service löschen
 {: #deleting_analytics_server_p3}
 
-Sie können jetzt den Mobile Analytics-Server, der zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz hinzugefügt wurde, im {{site.data.keyword.mobilefoundation_short}}-Service-Dashboard löschen.
+Sie können jetzt den Mobile Analytics-Service, der zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz hinzugefügt wurde, im {{site.data.keyword.mobilefoundation_short}}-Service-Dashboard löschen.
 
-* Klicken Sie auf die Option zum Löschen der Analyse****, um den Mobile Analytics-Server zu löschen, der zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz hinzugefügt wurde.
+* Klicken Sie auf die Option **Analytics löschen**, um den Mobile Analytics-Service zu löschen, der zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz hinzugefügt wurde.
 
- Bei dieser Aktion wird die Analytics-Containergruppe gelöscht. Das Löschen der Analytics-Container dauert ca. 10 Minuten. Sie können die Anzeige aktualisieren, um den aktuellen Status anzuzeigen. Nach dem Löschen der Analysecontainer wird die Schaltfläche zum Hinzufügen der Analyse**** wieder aktiviert und kann verwendet werden, um den Mobile Analytics-Server bei Bedarf erneut hinzuzufügen.
+  Durch das Klicken auf **Analytics löschen** wird die Analytics-Serverinstanz gelöscht. Das Löschen der Analytics-Instanz dauert ca. 10 Minuten. Sie können die Anzeige aktualisieren, um den aktuellen Status anzuzeigen. Durch das Löschen der Analytics-Instanz wird die Schaltfläche **Analytics hinzufügen** erneut aktiviert. Wenn Sie den Mobile Analytics-Service erneut hinzufügen möchten, können Sie auf diese Schaltfläche klicken.
 
 ## MobileFirst-Server erneut erstellen
 {: #recreate_mobilefoundation_p3}
@@ -130,16 +128,16 @@ Sie können jetzt den Mobile Analytics-Server, der zur {{site.data.keyword.mobil
 
 * Diese Aktion stoppt Ihre vorhandenen Server und löscht die Daten. Eine neue Serverinstanz wird mit einer aktualisierten Version erstellt, falls verfügbar. Diese Aktion nimmt einige Minuten in Anspruch.
 
-**Hinweis**: Alle Daten der vorherigen Serverinstanz, einschließlich Informationen zu den Apps und Adaptern, werden in der konfigurierten {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz beibehalten; diese Daten werden zur erneuten Erstellung des Servers verwendet.
+> **Hinweis**: Daten der vorherigen Serverinstanz, einschließlich Informationen zu den Apps und Adaptern, werden in der konfigurierten {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz beibehalten. Diese Daten werden zur erneuten Erstellung des Servers verwendet.
 
 ##	Erweiterte Konfiguration einrichten
 {: #using_mfs_advanced_p3}
 
-Mit der Option **Server mit erweiterter Konfiguration starten** auf der Seite `Übersicht` können Sie einen Server mit erweiterten oder benutzerdefinierten Einstellungen erstellen. Sie können die Servereinstellungen auch aktualisieren, um Ihre Serverkonfiguration anzupassen; klicken Sie hierfür auf die Registerkarte **Konfiguration**. {{site.data.keyword.mobilefoundation_short}} bietet Ihnen Zugriff auf einige erweiterte Einstellungen.
+Mit der Option **Server mit erweiterter Konfiguration starten** auf der Seite `Übersicht` können Sie einen Server mit erweiterten oder benutzerdefinierten Einstellungen erstellen. Sie können die Servereinstellungen auch aktualisieren, um Ihre Serverkonfiguration anzupassen; klicken Sie hierfür auf die Registerkarte **Einstellungen**. {{site.data.keyword.mobilefoundation_short}} bietet Ihnen Zugriff auf einige erweiterte Einstellungen.
 
 *	Auf der Registerkarte **Topologie** können Sie die Servergröße und den Hauptspeicher auswählen, die den jeweiligen Anforderungen entsprechen. Der Standardserver wird mit 1 GB Hauptspeicher erstellt.
   - Sie können den Hauptspeicher für Ihren Server in Abhängigkeit von Ihrem Bedarf auf höchstens 2 GB vergrößern.
 
-  - **Knoten** zeigt die Anzahl der erstellten Knoten an. Dieses Feld kann in {{site.data.keyword.mobilefoundation_short}}: Developer Pro nicht bearbeitet werden. Die Anzahl der Knoten <!--in your {{site.data.keyword.IBM_notm}} container group--> beträgt standardmäßig **1** im Developer Pro-Plan.
+  - **Instanzen** zeigt die Anzahl der erstellten Knoten an. Dieses Feld kann in {{site.data.keyword.mobilefoundation_short}}: Developer Pro nicht bearbeitet werden. Die Anzahl der Knoten beträgt standardmäßig **1** im Developer Pro-Plan.
 
-Weitere Details finden Sie in der [{{site.data.keyword.mobilefoundation_long}}-Dokumentation ![Symbol für externen Link icon](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}.
+Weitere Details finden Sie in der [{{site.data.keyword.mobilefoundation_long}}-Dokumentation ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}.

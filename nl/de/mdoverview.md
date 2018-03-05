@@ -38,18 +38,3 @@ Mit {{site.data.keyword.mobilefoundation_short}} können Sie folgende Funktionen
 Sie können die {{site.data.keyword.mfp_cli_long_notm}} (CLI) mit {{site.data.keyword.mobilefoundation_short}} verwenden, um Apps ohne großen Aufwand zu erstellen und zu verwalten.
 
 <!--{{site.data.keyword.mobilefoundation_short}} service provisions a container in your space in {{site.data.keyword.Bluemix_notm}}. You can see the details of the container that is created, view the container performance, and access the server logs from your {{site.data.keyword.Bluemix_notm}} dashboard.-->
-
-## Hilfe und Unterstützung für Mobile Foundation anfordern
-{: #getting_help_mobilefoundation}
-
-Sollten bei der Verwendung von {{site.data.keyword.mobilefoundation_short}} Probleme auftreten oder Fragen entstehen, können Sie nach Informationen suchen oder Fragen in einem Forum stellen. Sie haben auch die Möglichkeit, ein Support-Ticket zu öffnen.
-
-Wenn Sie zum Stellen einer Frage die Foren nutzen, versehen Sie Ihre Frage mit entsprechenden Tags, damit die IBM {{site.data.keyword.Bluemix_notm}}-Entwicklerteams Ihre Frage auf Anhieb erkennen können.
-
-Bei technischen Fragen zur Entwicklung und zur Bereitstellung einer App mit {{site.data.keyword.mobilefoundation_short}} können Sie Ihre Frage an [Stack Overflow ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window} richten. Versehen Sie Ihre Frage mit den Tags `bluemix` und `ibm-mobilefirst`.
-
-Bei Fragen zum Service sowie zu einführenden Anweisungen können Sie das Forum [IBM developerWorks dW Answers ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} verwenden. Verwenden Sie dabei die Tags `bluemix` und `mobilefirst`.
-
-Weitere Details zur Verwendung von Foren finden Sie im Abschnitt zum [Anfordern der Hilfe ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.{DomainName}/docs/support/index.html#getting-help){: new_window}.
-
-Informationen zum Öffnen eines IBM Support-Tickets oder zu Supportebenen und zur Priorität von Tickets finden Sie im Abschnitt zum [Kontaktieren des Supports ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.{DomainName}/docs/support/index.html#contacting-support){: new_window}.
