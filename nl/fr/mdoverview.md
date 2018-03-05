@@ -1,4 +1,4 @@
-﻿---
+---
 
 copyright:
   years: 2016, 2018
@@ -38,19 +38,3 @@ Le service {{site.data.keyword.mobilefoundation_short}} permet de configurer rap
 Vous pouvez utiliser l'interface de ligne de commande (CLI) d'{{site.data.keyword.mfp_cli_long_notm}} avec {{site.data.keyword.mobilefoundation_short}} pour créer et gérer sans difficulté des applications.
 
 <!--{{site.data.keyword.mobilefoundation_short}} service provisions a container in your space in {{site.data.keyword.Bluemix_notm}}. You can see the details of the container that is created, view the container performance, and access the server logs from your {{site.data.keyword.Bluemix_notm}} dashboard.-->
-
-## Aide Mobile Foundation
-{: #getting_help_mobilefoundation}
-
-Si vous avez des problèmes ou des questions quand vous utilisez {{site.data.keyword.mobilefoundation_short}}, vous pouvez obtenir de l'aide en recherchant des informations précises ou en posant des questions via un forum. Vous pouvez aussi ouvrir un ticket de demande de service.
-
-Quand vous utilisez les forums pour poser une question, prenez soin d'étiqueter cette dernière de façon à ce qu'elle soit vue par les équipes de développement {{site.data.keyword.Bluemix_notm}}.
-
-En cas de questions d'ordre technique sur le développement et le déploiement d'une application avec {{site.data.keyword.mobilefoundation_short}}, postez votre question sur le forum [Stack Overflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window} en lui adjoignant les balises `bluemix` et `ibm-mobilefirst`.
-
-Pour des questions relatives au service et aux instructions de mise en route, utilisez le forum [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window}. Incluez les étiquettes `bluemix` et `mobilefirst`.
-
-Pour plus d'informations sur l'utilisation des forums, voir la rubrique décrivant [Comment obtenir de l'aide ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.{DomainName}/docs/support/index.html#getting-help){: new_window}.
-
-Pour plus d'informations sur l'ouverture d'un ticket de demande de service IBM, sur les niveaux de support disponibles ou les niveaux de gravité des tickets, voir la rubrique décrivant
-[Comment contacter le support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.{DomainName}/docs/support/index.html#contacting-support){: new_window}.

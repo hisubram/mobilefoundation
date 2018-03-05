@@ -17,16 +17,19 @@ Mobile Foundation
 
     {: .navgroup id="howto"}
     c_using_mfs_p1.md
-    c_using_mfs_p2.md
     c_using_mfs_p3.md
     c_using_mfs_p4.md
-    customdomainconfig.md
-    maint_updates.md
+    c_using_mfs_p2.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    [Stack Overflow](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix)
-    [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix)
-    [Obtenir de l'aide](../../support/index.html#getting-help)
-    [Contacter le service de support](../../support/index.html#contacting-support)
+    faq.md
+    troubleshooting.md
+    [Contacter le service de support](https://console.bluemix.net/docs/get-support/howtogetsupport.html)
+
+    {: .topicgroup}
+    La communauté des développeurs
+        [StackOverflow](https://stackoverflow.com/questions/tagged/ibm-mobile-services)
+        [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/bluemix-mobile-foundation/?smartspace=bluemix)
+        [Canal MFP Dev on Slack](https://slackin.mybluemix.net)
     {: .navgroup-end}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-01-24"
 
 ---
 
@@ -23,7 +23,8 @@ L'<!--container group is created with a-->URL ou la route est créée avec les n
   |:----- | :----- |    
   |`mybluemix.net` | Sud des Etats-Unis |    
   |`eu-gb.mybluemix.net` | Royaume-Uni  |
-  |`au-syd.mybluemix.net` | Sydney  |      
+  |`au-syd.mybluemix.net` | Sydney  |   
+  |`eu-de.mybluemix.net` | Francfort |   
   {: caption="Tableau 1. Noms de domaine de l'application basés sur la région dans {{site.data.keyword.Bluemix_notm}}" caption-side="top"}
 
 Pour pouvoir utiliser votre propre domaine, vous devez configurer un domaine personnalisé en procédant comme suit :
@@ -36,4 +37,5 @@ Pour pouvoir utiliser votre propre domaine, vous devez configurer un domaine per
 
 + Accédez au fournisseur DNS de votre domaine et ajoutez une entrée CNAME, qui acheminera le trafic de votre domaine vers la route {{site.data.keyword.Bluemix_notm}} par défaut, dans laquelle le serveur <!--container group--> s'exécute.
 
-+ Si vous voulez configurer `https` pour votre domaine personnalisé, transférez le certificat SSL de votre domaine dans {{site.data.keyword.Bluemix_notm}}. Pour ce faire, accédez à **Gérer les organisations > Domaines**, sélectionnez le domaine personnalisé pour lequel le certificat SSL doit être configuré et cliquez sur **Télécharger le certificat** pour transférer le certificat SSL de votre domaine. Pour plus d'informations, voir [SSL Certificates and Bluemix Custom Domains ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window}.
++ Si vous voulez configurer `https` pour votre domaine personnalisé, transférez le certificat SSL de votre domaine dans {{site.data.keyword.Bluemix_notm}}. Pour ce faire, accédez à **Gérer les organisations > Domaines**, sélectionnez le domaine personnalisé pour lequel le certificat SSL doit être configuré et cliquez sur **Télécharger le certificat** pour transférer le certificat SSL de votre domaine. Pour plus d'informations, consultez
+[cet article (en anglais)![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window}.

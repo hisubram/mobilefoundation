@@ -40,4 +40,7 @@ Lors de l'application de la mise à jour, la version du serveur, comme affichée
 {: #note notoc}
 
 * Les utilisateurs ne seront pas en mesure d'appliquer leurs propres correctifs et mises à jour à leur instance de service {{site.data.keyword.mobilefoundation_short}}.
-* Voir les rubriques relatives à la [recréation du serveur dans le plan Developer](c_using_mfs_p1.html#recreate_mobilefoundation_p1) et la [recréation du serveur dans le plan Professional 1 Application](c_using_mfs_p2.html#recreate_mobilefoundation_p2) pour comprendre la différence de comportement entre les plans lorsque vous cliquez sur la commande de recréation.
+* Pour comprendre la différence de comportement d'un plan à un autre lorsque vous cliquez
+sur **Recréer**, consultez [Recréation du serveur dans le plan Developer](c_using_mfs_p1.html#recreate_mobilefoundation_p1) et
+[Recréation du serveur dans le plan Professional 1 Application](c_using_mfs_p2.html#recreate_mobilefoundation_p2).
+

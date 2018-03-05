@@ -2,33 +2,24 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-02-14"
 
 ---
 
 #	Utilisation du plan Professional Per Capacity
 {: #using_mobilefoundation_p4}
 
-Avec le plan Professional Per Capacity, les utilisateurs
-peuvent créer un certain nombre d'applications mobiles avec
-plusieurs systèmes d'exploitation mobiles.
-Une fois que vous avez créé l'instance de service
-{{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity, lisez la procédure ci-après pour commencer à l'utiliser.
+Avec le plan Professional Per Capacity, les utilisateurs peuvent créer un certain nombre d'applications mobiles avec plusieurs systèmes d'exploitation mobiles. Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity, lisez la procédure ci-après pour commencer à l'utiliser.
 
 ## Conditions prérequises
 {: #prerequisites_p4}
 
-Prenez connaissance des éléments suivants avant de configurer
-l'instance de service
-{{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity.
-* {{site.data.keyword.mobilefoundation_short}}:
-Professional Per Capacity est pris en charge uniquement avec les
-plans {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.Db2_on_Cloud_short}}.
-
+Prenez connaissance des éléments suivants avant de configurer l'instance de service {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity.
+* {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity est pris en charge uniquement avec les plans {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.Db2_on_Cloud_short}}.
 
 * Vous devez avoir accès aux données d'identification de l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} avant de pouvoir configurer les paramètres de votre instance de service {{site.data.keyword.mobilefoundation_short}}.
 
-**Remarque** : L'instance de service {{site.data.keyword.Db2_on_Cloud_short}} peut exister dans n'importe quel `espace` de votre {{site.data.keyword.Bluemix_notm}} `organisation` ou de n'importe quelle autre `organisation` à laquelle vous avez accès. Assurez-vous que vous disposez des droits nécessaires pour accéder à l'`espace` dans lequel l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} service existe.
+> **Remarque** : L'instance de service {{site.data.keyword.Db2_on_Cloud_short}} peut exister dans n'importe quel `espace` de votre {{site.data.keyword.Bluemix_notm}} `organisation` ou de n'importe quelle autre `organisation` à laquelle vous avez accès. Assurez-vous que vous disposez des droits nécessaires pour accéder à l'`espace` dans lequel l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} service existe.
 
 
 ## Ajout de la connexion à la base de données
@@ -50,7 +41,6 @@ Vous pouvez également créer une nouvelle instance de service {{site.data.keywo
 
 Suivez ces étapes pour créer une nouvelle instance de service Db2 on Cloud :
 
-
 1. Sur la page *Présentation*, sélectionnez la section **Créer un service**.
 
 + Sélectionnez `Oui` pour l'option **Configuration à haute disponibilité** si vous souhaitez une instance de
@@ -67,17 +57,15 @@ l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} que vous venez de
 1. Sélectionnez l'`organisation` {{site.data.keyword.Bluemix_notm}} dans laquelle se trouve
 l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
 
-
 + Depuis la liste des espaces disponibles dans `Organisation`, sélectionnez l'`espace` {{site.data.keyword.Bluemix_notm}}
-dans lequel se trouve l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
-   
-**Remarque :** Si l'`organisation` et l'`espace` dans lesquels réside votre instance de service {{site.data.keyword.Db2_on_Cloud_short}} ne figurent pas dans la liste, vérifiez que vous êtes membre de cette `organisation` et de cet `espace`. Vous
+dans lequel se trouve l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.   
+> **Remarque :** Si l'`organisation` et l'`espace` dans lesquels réside votre instance de service {{site.data.keyword.Db2_on_Cloud_short}} ne figurent pas dans la liste, vérifiez que vous êtes membre de cette `organisation` et de cet `espace`. Vous
 devez être affecté au rôle *Développeur* dans l'organisation et l'espace vu que le service {{site.data.keyword.mobilefoundation_short}}
 accède aux données d'identification du service {{site.data.keyword.Db2_on_Cloud_short}}.
 
-+ Sélectionnez également le nom du service (`Service Name`) et les données
-d'identification (`Credentials`) {{site.data.keyword.Db2_on_Cloud_short}}
-pour la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
++ Sélectionnez également le `Nom du service` et les
+`Données d'identification` {{site.data.keyword.Db2_on_Cloud_short}}
+pour la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} existante.
 
 
 +  Testez la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} spécifiée.
@@ -85,23 +73,26 @@ pour la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_shor
 +  Cliquez sur **Ajouter**. Cela permet de créer les tables requises dans l'instance de service de base de
 données {{site.data.keyword.Db2_on_Cloud_short}} configurée.
 
-Après quelques secondes, vous pouvez accéder à la page `Overview` qui fournit des tutoriels et des vidéos facilitant vos premiers pas avec le service {{site.data.keyword.mobilefoundation_short}}.
+Après quelques secondes, vous pouvez accéder à la page `Présentation`, qui fournit des tutoriels et des vidéos pour vous
+permettre de faire vos premiers pas avec le service {{site.data.keyword.mobilefoundation_short}}.
 
-**Remarque** : Vous ne pouvez pas modifier l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée pour être utilisée par votre instance de service {{site.data.keyword.mobilefoundation_short}}. Vous pouvez toutefois utiliser la même instance de service {{site.data.keyword.Db2_on_Cloud_short}} sur plusieurs instances de service {{site.data.keyword.mobilefoundation_short}}, car chaque instance de service {{site.data.keyword.mobilefoundation_short}} crée son propre schéma dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} sélectionnée.
+> **Remarque** : Vous ne pouvez pas changer l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée pour être utilisée par votre instance de service {{site.data.keyword.mobilefoundation_short}}. Vous pouvez toutefois utiliser la même instance de service {{site.data.keyword.Db2_on_Cloud_short}} sur plusieurs instances de service {{site.data.keyword.mobilefoundation_short}}, car chaque instance de service {{site.data.keyword.mobilefoundation_short}} crée son propre schéma dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} sélectionnée.
 
 ## Démarrage du serveur MobileFirst
 {: #start_mobilefoundation_p4}
 
-* Pour démarrer {{site.data.keyword.mfserver_short_notm}} avec les paramètres par défaut, cliquez sur **Start Basic Server**.
+* Pour démarrer le serveur
+{{site.data.keyword.mfserver_short_notm}} avec les réglages par
+défaut, cliquez sur **Démarrer le serveur de base**.
 
-* Cette option affecte les paramètres suivants à un serveur {{site.data.keyword.mfserver_long_notm}} :
+* Cette sélection met à disposition une instance {{site.data.keyword.mfserver_long_notm}} avec les réglages suivants :
     -  2 noeuds avec 1 Go de mémoire chacun. Cette taille
-convient pour des activités de développement et des activités de
-test sommaires et pour des charges de travail à faible échelle.
+convient aux activités de développement et aux activités de test modérées, ainsi qu'aux charges
+de travail de production à petite échelle.
 
-    -	Le `nom_d'utilisateur` et le
-`mot_de_passe` sont générés automatiquement pour
-vous. Vous pouvez y accéder une fois que le
+
+    -	Le `nom d'utilisateur` et le `mot de passe` sont générés automatiquement pour vous.
+Vous pouvez y accéder une fois que le
 serveur est en opération.
 
 L'implantation de votre serveur débute. Ce processus prend environ 10 minutes et une fenêtre de
@@ -111,97 +102,108 @@ message indique la progression de l'opération. A son terme, un tableau de bord 
 
   -	La route de serveur créée pour vous. Utilisez cette route dans votre application mobile pour vous connecter à {{site.data.keyword.mfserver_short_notm}}.
 
-  -	Votre `nom_d'utilisateur` personnel et votre `mot_de_passe`
-pour accéder à la console {{site.data.keyword.mfp_oc_short_notm}}. Le
-`mot_de_passe` est masqué. Cliquez sur l'icône **Show Password** pour le visualiser.
+  -	Vos `nom d'utilisateur` et `mot de passe` personnels
+pour accéder à la console {{site.data.keyword.mfp_oc_short_notm}}.
+Le `mot de passe` est masqué.
+Cliquez sur l'icône **Afficher le mot de passe** pour le visualiser.
 
-*	Cliquez sur **Launch Console** pour ouvrir la console {{site.data.keyword.mfp_oc_short_notm}}.
+*	Cliquez sur **Lancer la console** pour ouvrir la console {{site.data.keyword.mfp_oc_short_notm}}.
 
 
 <!--This console runs inside the container.--> Elle vous permet de gérer vos applications, adaptateurs et
 périphériques mobiles, ainsi que l'utilisation de votre serveur en
 tant que serveur dorsal mobile, l'envoi de notifications push, etc.
 
-##  Ajout d'un serveur Mobile Analytics
+##  Ajout d'un service Mobile Analytics
 {: #adding_analytics_server_p4}
 
- Vous pouvez maintenant surveiller votre application mobile sur un serveur {{site.data.keyword.mobilefirst}} en ajoutant un serveur Mobile Analytics à l'instance de service {{site.data.keyword.mobilefoundation_short}}.
-
- Le plan Professional crée le serveur Mobile Analytics dans un
-groupe de conteneurs, l'utilisateur peut personnaliser la
-configuration en sélectionnant le nombre de noeuds de conteneur dans
-le groupe de conteneurs.
-
- Les utilisateurs peuvent aussi connecter des volumes aux conteneurs pour conserver les données. Le volume une fois sélectionné ne peut être changé. L'espace de partage de fichiers par défaut disponible pour l'utilisateur est de 20 Go. Si l'utilisateur a besoin d'un espace de stockage supplémentaire pour conserver des données d'analyse, il est invité à acheter un partage de fichiers supplémentaire et à créer un volume en utilisant ce partage de fichier. Il peut ensuite sélectionner ce nouveau volume lors du déploiement du serveur d'analyse.
-
- Pour plus d'informations sur l'ajout de volumes dans {{site.data.keyword.containerlong}},
-consultez [Stockage de données persistantes dans un volume à l'aide du tableau de bord {{site.data.keyword.Bluemix_notm}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui.html){: new_window}.
+ Vous pouvez maintenant surveiller votre application mobile sur le serveur {{site.data.keyword.mobilefirst}} en ajoutant une instance de service
+Mobile Analytics à l'instance {{site.data.keyword.mobilefoundation_short}}.
 
 
-* Cliquez sur **Ajouter un module d'analyse** pour ajouter le serveur Mobile Analytics à l'instance de service {{site.data.keyword.mobilefoundation_short}}.
+ <!--The Professional plan creates the Mobile Analytics service in a container group, the user can customize the configuration by selecting the number of container nodes in the container group.
 
-* Vous pouvez utiliser la configuration de serveur Mobile
-Analytics : la configuration de serveur minimum prise en charge
-pour le serveur d'analyse est de 2
-noeuds avec un 1 Go de mémoire chacun, et vous pouvez choisir de
-créer un serveur d'analyse avec une configuration maximum de 32
-noeuds avec 16 Go de mémoire chacun.
+ Users can also attach volumes to the containers to persist data. The volume once selected cannot be changed. 20 GB is the default file share space available to the user. If the user needs additional storage space to persist analytics data, he is required to buy additional file share and create a volume using this file share. He can then select this new volume while deploying the analytics server.
 
-Le processus de mise à disposition commence. Ce processus prend environ 10 minutes et une fenêtre de
-message indique la progression de l'opération.  
+ For more information on adding volumes to {{site.data.keyword.containerlong}}, refer to [Storing persistent data in a volume by using the {{site.data.keyword.Bluemix_notm}} Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui.html){: new_window}.-->
 
-* Lancez MobileFirst Analytics depuis {{site.data.keyword.mfp_oc_short_notm}}.
+* Cliquez sur **Ajouter un module d'analyse** pour créer et ajouter une instance de service
+Mobile Analytics à l'instance {{site.data.keyword.mobilefoundation_short}}.
 
-* La connexion unique est activée entre {{site.data.keyword.mfserver_short_notm}} et le serveur Mobile Analytics. Le serveur Mobile Analytics est configuré avec les mêmes clés LTPA et données d'identification de l'utilisateur que celles du serveur {{site.data.keyword.mfserver_short_notm}}. Vous pouvez vous servir des mêmes
-`nom_d'utilisateur` et
-`mot_de_passe` pour vous connecter à la console
-Mobile Analytics que ceux utilisés pour la connexion à
-{{site.data.keyword.mfp_oc_short_notm}}.
+<!--* You can choose the Mobile Analytics service configuration, the minimum supported configuration for the Analytics server is 2 nodes with 1 GB memory each, you can choose to create an Analytics server up to a maximum configuration of 32 nodes with 16 GB memory each.-->
 
-Pour plus d'informations sur MobileFirst Analytics, accédez au site [MobileFirst Foundation Operational Analytics ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
+Le processus de mise à disposition commence. Ce processus prend environ 10 minutes. Vous pouvez suivre son avancement avec
+l'indicateur de progression.
+  
 
-**Remarque :** le serveur Mobile Analytics est retiré quand vous supprimez l'instance de service {{site.data.keyword.mobilefoundation_short}} ou si vous tentez de recréer le serveur {{site.data.keyword.mfserver_short_notm}}.
+* Lancez la console du service Mobile Analytics à partir de {{site.data.keyword.mfp_oc_short_notm}}.
 
-##  Suppression du serveur Mobile Analytics
+* La connexion unique (SSO) est activée entre {{site.data.keyword.mfserver_short_notm}} et le service Mobile Analytics.
+Le service Mobile Analytics est configuré avec les mêmes clés LTPA et données d'identification d'utilisateur que celles du
+serveur {{site.data.keyword.mfserver_short_notm}}.
+Cela signifie que, pour vous connecter à la console Mobile Analytics, vous pouvez utiliser les mêmes `nom d'utilisateur` et `mot de passe`
+que ceux utilisés pour la connexion au serveur {{site.data.keyword.mfp_oc_short_notm}}.
+
+Pour plus d'informations sur Mobile Analytics, vous pouvez vous référer
+au site [MobileFirst Foundation Operational Analytics ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
+
+> **Remarque :** La
+suppression de l'instance de service {{site.data.keyword.mobilefoundation_short}} supprime l'instance de service Mobile Analytics.
+
+
+##  Suppression du service Mobile Analytics
 {: #deleting_analytics_server_p4}
 
-Vous pouvez à présent supprimer depuis le tableau de bord du service {{site.data.keyword.mobilefoundation_short}} le serveur
-Mobile Analytics qui a été ajouté à l'instance de service {{site.data.keyword.mobilefoundation_short}} .
+Vous pouvez maintenant supprimer, à partir du tableau de bord du service {{site.data.keyword.mobilefoundation_short}}, le service
+Mobile Analytics qui a été ajouté à l'instance de service {{site.data.keyword.mobilefoundation_short}}.
 
-* Cliquez sur **Supprimer le serveur Analytics** pour supprimer le serveur Mobile Analytics qui a été ajouté à l'instance de service
+
+* Cliquez sur **Supprimer le module d'analyse** pour supprimer le service Mobile Analytics qui a été ajouté à l'instance de service
 {{site.data.keyword.mobilefoundation_short}}.
 
- Ceci a pour effet de supprimer le groupe de conteneurs Analytics. Cette opération prend environ 10 minutes. Vous pouvez actualiser l'écran pour examiner le
-statut mis à jour. Une fois les conteneurs Analytics supprimés, le bouton **Ajouter un serveur Analytics** est réactivé pour vous permettre
-éventuellement d'ajouter à nouveau le serveur Mobile Analytics.
+ Le fait de cliquer sur **Supprimer le module d'analyse** supprime l'instance
+de service Mobile Analytics.
+Cette opération prend environ 10 minutes. Vous pouvez actualiser l'écran pour examiner le
+statut mis à jour. La suppression de l'instance Mobile Analytics
+réactive le bouton **Ajouter un module d'analyse**.
+Utilisez ce bouton si vous souhaitez ajouter à nouveau le
+service Mobile Analytics.
 
-## Re-création du serveur MobileFirst
+
+## Recréation du serveur MobileFirst
 {: #recreate_mobilefoundation_p4}
 
-*	Cliquez sur **Recreate** pour recréer le serveur.
+*	Cliquez sur **Recréer** pour recréer le serveur.
 
 * Cette action arrête votre serveur existant et supprime les données. Une
 nouvelle instance de serveur est créée avec une version mise à jour, si elle est disponible. Cette action prend quelques minutes avant de s'achever.
 
-**Remarque** : Toutes les données provenant de votre instance de serveur précédente, y compris les informations sur les applications et les adaptateurs, sont conservées dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée ; elles sont utilisées pour recréer le serveur.
+> **Remarque** : Les
+données de votre instance de serveur précédente, y compris les informations sur les applications et les adaptateurs,
+sont conservées dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée.
+Elles sont utilisées pour recréer le serveur.
 
-##	Paramétrage d'une configuration avancée
+
+##	Mise en place d'une configuration avancée
 {: #using_mfs_advanced_p4}
 
-L'option **Start Server with Advanced Configuration**
-de la page `Overview` permet de créer le serveur avec des
-paramètres avancés ou personnalisés. Vous pouvez également mettre à jour les paramètres du serveur
-pour personnaliser sa configuration en cliquant sur l'onglet **Configuration**. {{site.data.keyword.mobilefoundation_short}}
+L'option **Démarrer le serveur avec la configuration avancée**
+de la page `Présentation` permet de créer le serveur avec des réglages
+avancés ou personnalisés.
+Vous pouvez également modifier les réglages du serveur pour personnaliser sa
+configuration en cliquant sur l'onglet **Paramètres**.
+{{site.data.keyword.mobilefoundation_short}}
 vous permet d'accéder à certains paramètres avancés.
 
-*	Dans l'onglet **Topology**, vous pouvez sélectionner la taille du serveur, ainsi que le nombre d'instances de serveur dont vous avez besoin. Le serveur par défaut doté d'1 Go est idoine pour le développement et des tests sommaires.
+*	Dans l'onglet **Topologie**, vous pouvez sélectionner la
+taille du serveur, ainsi que le nombre d'instances dont vous avez besoin. Avec sa mémoire de 1 Go, le serveur par défaut
+est suffisant pour le développement et des tests peu intensifs.
+
   - Sélectionnez la taille appropriée pour votre serveur compte tenu de
 vos besoins.
 
-  - **Nodes** affiche le nombre de noeuds créés.
+  - La zone **Instances** affiche le nombre d'instances créées. 
 
-      - Vous pouvez créer un parc de serveurs {{site.data.keyword.mobilefirst}} en configurant le nombre de noeuds à cet endroit. La configuration minimum prise en charge est de 2 noeuds avec un 1 Go
-de mémoire chacun, et la configuration
-maximum prise en charge est de 32 noeuds avec 16 Go de mémoire chacun.
+      <!--- {{site.data.keyword.mobilefirst}} server farm can be created by configuring the number of nodes here. The minimum supported configuration is 2 nodes with 1 GB memory each and the maximum supported configuration is 32 nodes with 16 GB memory each.-->
 
 Pour plus de détails, consultez la documentation [{{site.data.keyword.mobilefoundation_long}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}.
