@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-02-13"
 
 ---
 
@@ -10,55 +10,55 @@ lastupdated:  "2018-01-18"
 {:shortdesc: .shortdesc}
 {:screen:.screen}
 {:codeblock:.codeblock}
+{:tip: .tip}
 
-# Iniciación a Mobile Foundation
+# Guía de aprendizaje de iniciación
 {: #gettingstartedtemplate}
 
-{{site.data.keyword.mobilefoundation_long}} acelera la configuración de un entorno de {{site.data.keyword.mfp_full}} desde el cual puede desarrollar, probar y operar apps móviles de empresa. {{site.data.keyword.mobilefoundation_short}} está disponible bajo dos de servicio distintos: Developer y Professional 1 Application.
+{{site.data.keyword.mobilefoundation_long}} acelera la configuración de un entorno de {{site.data.keyword.mfp_full}} que puede utilizar para desarrollar, probar y operar apps móviles de empresa. {{site.data.keyword.mobilefoundation_short}} está disponible bajo los diferentes planes de servicio siguientes: Developer, Developer Pro, Professional Per Capacity y Professional 1 Application.
 {:shortdesc}
 
-<!-- The Professional 1 Application plan allows the {{site.data.keyword.mobilefoundation_short}} server to be deployed on a scalable container group.--> Utilizando el plan Professional 1 Application se puede gestionar una sola aplicación incorporada en una o todas las plataformas operativas soportadas como Android, iOS, Windows o Mobile Web. El plan Developer <!-- does not support {{site.data.keyword.mobilefoundation_short}} deployment on a container group with more than 1 node. This plan --> está pensado para entornos de desarrollo y pruebas.
+Utilizando el plan Professional 1 Application se puede gestionar una sola aplicación incorporada en una o todas las plataformas operativas soportadas como Android, iOS, Windows o Mobile Web. El plan Developer está pensado para entornos de desarrollo y pruebas. Puede revisar todos los planes disponibles [aquí](https://console.bluemix.net/catalog/services/mobile-foundation).
 
-## Iniciación al plan Mobile Foundation: Developer
-{: #gettingstartedtemplate_dev}
+## Antes de empezar
+{: #prereqs}
 
-Después de crear una instancia de {{site.data.keyword.mobilefoundation_short}}: Developer, puede empezar a crear el canal móvil en tan solo unas pulsaciones.
+Necesitará una cuenta de {{site.data.keyword.Bluemix}} y una instancia del servicio de {{site.data.keyword.mobilefoundation_short}}.
 
-*	Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con la configuración predeterminada, pulse **Iniciar servidor básico**.
+## Paso 1: Cree una instancia del servicio de {{site.data.keyword.mobilefoundation_short}}
+{: #step1create}
 
-  `La instancia de servidor básico incluye un nodo y 1 GB de memoria.`
+1. En el **Catálogo** de {{site.data.keyword.Bluemix_notm}}, seleccione **{{site.data.keyword.mobilefoundation_short}}**. Se abre la pantalla de configuración del servicio.
+2. Dé un nombre a la instancia de servicio, o utilice el nombre preestablecido.
+3. Seleccione la región, la organización y el espacio en los que desea crear la instancia de servicio.
+4. Seleccione el **Plan de precios** y pulse **Crear**.
 
-* Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p1.html#using_mfs_advanced_p1), para obtener más información.
+## Paso 2: Cree el canal móvil
+{: #buildmobilechannel}
 
-## Iniciación al plan Mobile Foundation: Professional 1 Application
-{: #gettingstartedtemplate_prof}
+### Para {{site.data.keyword.mobilefoundation_short}}: plan Developer
+{: #buildchanneldevplan}
 
-Después de crear una instancia del servicio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, puede empezar a crear el canal móvil realizando los pasos siguientes.
+Después de crear una instancia de {{site.data.keyword.mobilefoundation_short}}: Developer, puede empezar a crear el canal móvil realizando los pasos siguientes.
 
-1.  Conéctese a un servicio de {{site.data.keyword.Db2_on_Cloud_long}} existente en {{site.data.keyword.Bluemix_notm}}.
+  1.  Cree una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con la configuración predeterminada, pulse **Iniciar servidor básico**.
 
-    1.  Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}.
+    `La instancia de servidor básico incluye un nodo y 1 GB de memoria.`
 
-    + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}, en la lista de espacios disponibles en la `Organización` seleccionada.
+  +	El `nombre de usuario` y la `contraseña` se generan de forma automática. Tiene acceso a ellos cuando el servidor está en ejecución.
 
-    + Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.Db2_on_Cloud_short}} para conectarse con la instancia  de servicio {{site.data.keyword.Db2_on_Cloud_short}} existente.
+    Se inicia el proceso de suministro. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de control en el que se puede ver lo siguiente:
+    * El estado del servidor que se ejecuta (estado, tamaño).
+    *	La ruta creada para el servidor. Utilice esta ruta en su aplicación móvil para conectarse a {{site.data.keyword.mfserver_short_notm}}.
+    *	Su `nombre de usuario` y `contraseña` personal para acceder a la {{site.data.keyword.mfp_oc_short_notm}}. La `contraseña` está oculta. Pulse el icono **Mostrar contraseña** para visualizarla.
 
-    + Pruebe la conexión a la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionada pulsando **Probar conexión**.
+  + Pulse **Iniciar consola** para iniciar la {{site.data.keyword.mfp_oc_short_notm}}.
 
-    + Pulse **Añadir**, seguido de **Continuar** en la ventana emergente que le solicita información sobre el servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionado. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.Db2_on_Cloud_short}} configurada.
+Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p1.html#using_mfs_advanced_p1), para obtener más información.
+{: tip}
 
-    **Nota:** Después de añadir una conexión {{site.data.keyword.Db2_on_Cloud_short}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
-
-2.  Cree e inicie el servidor.
-
-    * Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con la configuración predeterminada, pulse **Iniciar servidor básico**.
-
-      `La instancia de servidor básico incluye un nodo y 1 GB de memoria.`
-
-    * Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p2.html#using_mfs_advanced_p2), para obtener más información.
-
-## Iniciación al plan Mobile Foundation: Developer Pro
-{: #gettingstartedtemplate_devpro}
+### Para {{site.data.keyword.mobilefoundation_short}}: plan Developer Pro
+{: #buildchanneldevproplan}
 
 Después de crear una instancia del servicio de {{site.data.keyword.mobilefoundation_short}}: Developer Pro, puede empezar a crear el canal móvil realizando los pasos siguientes.
 
@@ -74,22 +74,30 @@ Después de crear una instancia del servicio de {{site.data.keyword.mobilefounda
 
       + Pulse **Añadir**, seguido de **Continuar** en la ventana emergente que le solicita información sobre el servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionado. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.Db2_on_Cloud_short}} configurada.
 
-      **Nota:** Después de añadir una conexión {{site.data.keyword.Db2_on_Cloud_short}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
+      > **Nota:** Después de añadir una conexión {{site.data.keyword.Db2_on_Cloud_short}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
 
   2.  Cree e inicie el servidor.
 
-      * Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con la configuración predeterminada, pulse **Iniciar servidor básico**.
+      1. Cree una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con la configuración predeterminada, pulse **Iniciar servidor básico**.
 
-      * Esta selección suministra un {{site.data.keyword.mfserver_long_notm}} con la configuración siguiente:
+      + Esta selección suministra un {{site.data.keyword.mfserver_long_notm}} con la configuración siguiente:
 
           - Un nodo con 1 GB de memoria. Este tamaño es suficiente para realizar actividades de desarrollo, de pruebas no muy exigentes y cargas de trabajo de producción a pequeña escala.
 
           -	El `nombre de usuario` y la `contraseña` se generan de forma automática. Tiene acceso a ellos cuando el servidor está en ejecución.
 
-      * Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p3.html#using_mfs_advanced_p3), para obtener más información.
+          Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de control en el que se puede ver lo siguiente:
+            -	El estado del servidor que se ejecuta (estado, tamaño).
+            -	Se ha creado la ruta para el servidor. Utilice esta ruta en su aplicación móvil para conectarse a {{site.data.keyword.mfserver_short_notm}}.
+            -	Su `nombre de usuario` y `contraseña` personal para acceder a la {{site.data.keyword.mfp_oc_short_notm}}. La `contraseña` está oculta. Pulse el icono **Mostrar contraseña** para visualizarla.
 
-## Iniciación al plan Mobile Foundation: Professional Per Capacity
-{: #gettingstartedtemplate_profper}
+      +	Pulse **Iniciar consola** para abrir la {{site.data.keyword.mfp_oc_short_notm}}.  
+
+      Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p3.html#using_mfs_advanced_p3), para obtener más información.
+      {: tip}
+
+### Para {{site.data.keyword.mobilefoundation_short}}: plan Professional Per Capacity
+{: #buildchannelprofcapacityplan}
 
 Después de crear una instancia del servicio de {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity, puede empezar a crear el canal móvil realizando los pasos siguientes.
 
@@ -105,26 +113,186 @@ Después de crear una instancia del servicio de {{site.data.keyword.mobilefounda
 
       + Pulse **Añadir**, seguido de **Continuar** en la ventana emergente que le solicita información sobre el servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionado. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.Db2_on_Cloud_short}} configurada.
 
-      **Nota:** Después de añadir una conexión {{site.data.keyword.Db2_on_Cloud_short}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
+      > **Nota:** Después de añadir una conexión {{site.data.keyword.Db2_on_Cloud_short}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
 
   2.  Cree e inicie el servidor.
 
-      * Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con la configuración predeterminada, pulse **Iniciar servidor básico**.
+      1. Cree una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con la configuración predeterminada, pulse **Iniciar servidor básico**.
 
-      * Esta selección suministra un {{site.data.keyword.mfserver_long_notm}} con la configuración siguiente:
+      + Esta selección suministra un {{site.data.keyword.mfserver_long_notm}} con la configuración siguiente:
           -  2 nodos con 1 GB de memoria cada uno. Este tamaño es correcto para realizar actividades de desarrollo, de pruebas no muy exigentes y cargas de trabajo de producción a pequeña escala.
 
           -	El `nombre de usuario` y la `contraseña` se generan de forma automática. Tiene acceso a ellos cuando el servidor está en ejecución.
 
-      * Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p4.html#using_mfs_advanced_p4), para obtener más información.
+          Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de control en el que se puede ver lo siguiente:
+            -	El estado del servidor que se ejecuta (estado, tamaño).
+            -	Se ha creado la ruta para el servidor. Utilice esta ruta en su aplicación móvil para conectarse a {{site.data.keyword.mfserver_short_notm}}.
+            -	Su `nombre de usuario` y `contraseña` personal para acceder a la {{site.data.keyword.mfp_oc_short_notm}}. La `contraseña` está oculta. Pulse el icono **Mostrar contraseña** para visualizarla.
 
-Vaya a [Utilización del servicio Mobile Foundation para configurar el servidor de MobileFirst<!-- on IBM Containers--> ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window} para obtener más información sobre la iniciación a {{site.data.keyword.mobilefoundation_short}}.
+      +	Pulse **Iniciar consola** para abrir la {{site.data.keyword.mfp_oc_short_notm}}.      
 
-##  Limitaciones conocidas
-{: #knownlimitations_mfp}
+      Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p4.html#using_mfs_advanced_p4), para obtener más información.
+      {: tip}
 
-* La IU del servicio {{site.data.keyword.mobilefoundation_short}} no utiliza el patrón específico del entorno local seleccionado por el usuario para mostrar números.
+### Para {{site.data.keyword.mobilefoundation_short}}: plan Professional 1 Application
+{: #buildchannelprof1appplan}
 
+Después de crear una instancia del servicio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, puede empezar a crear el canal móvil realizando los pasos siguientes.
+
+  1.  Conéctese a un servicio de {{site.data.keyword.Db2_on_Cloud_long}} existente en {{site.data.keyword.Bluemix_notm}}.
+
+      1.  Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}.
+
+      + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}, en la lista de espacios disponibles en la `Organización` seleccionada.
+
+      + Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.Db2_on_Cloud_short}} para conectarse con la instancia  de servicio {{site.data.keyword.Db2_on_Cloud_short}} existente.
+
+      + Pruebe la conexión a la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionada pulsando **Probar conexión**.
+
+      + Pulse **Añadir**, seguido de **Continuar** en la ventana emergente que le solicita información sobre el servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionado. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.Db2_on_Cloud_short}} configurada.
+
+      > **Nota:** Después de añadir una conexión {{site.data.keyword.Db2_on_Cloud_short}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
+
+  2.  Cree e inicie el servidor.
+
+      1. Cree una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con la configuración predeterminada, pulse **Iniciar servidor básico**.
+
+        `La instancia de servidor básico incluye un nodo y 1 GB de memoria.`
+
+      + El `nombre de usuario` y la `contraseña` se generan de forma automática. Tiene acceso a ellos cuando el servidor está en ejecución.  
+
+        Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de control en el que se puede ver lo siguiente:
+          -	El estado del servidor que se ejecuta (estado, tamaño).
+          -	Se ha creado la ruta para el servidor. Utilice esta ruta en su aplicación móvil para conectarse a {{site.data.keyword.mfserver_short_notm}}.
+          -	Su `nombre de usuario` y `contraseña` personal para acceder a la {{site.data.keyword.mfp_oc_short_notm}}. La `contraseña` está oculta. Pulse el icono **Mostrar contraseña** para visualizarla.
+
+      +  Pulse **Iniciar consola** para abrir la {{site.data.keyword.mfp_oc_short_notm}}.  
+
+      Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p2.html#using_mfs_advanced_p2), para obtener más información.
+      {: tip}
+
+Vaya a [Utilización del servicio Mobile Foundation para configurar el servidor de MobileFirst ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window} para obtener más información sobre la iniciación a {{site.data.keyword.mobilefoundation_short}}.
+{: tip}
+
+## Paso 3: Registre la aplicación en {{site.data.keyword.mobilefoundation_short}}
+{: #registerapp}
+
+Después de crear e iniciar la instancia de servidor de Mobile Foundation, siga estos pasos para registrar una aplicación de Android.
+
+  1.  Inicie la {{site.data.keyword.mfp_oc_short_notm}} cargando el URL: http://your-server-host:server-port/mfpconsole. Utilice el `nombre de usuario` y la `contraseña` generados en el momento del suministro.
+
+  + En el **Panel de control** de la {{site.data.keyword.mfp_oc_short_notm}}, pulse **Nueva** junto a **Aplicaciones**.
+
+  + Escriba *MFPStarterAndroid* como **nombre de aplicación**.
+
+  + Seleccione *Android* en **Elegir plataforma**.
+
+  + Indique *com.ibm.mfpstarterandroid* como **Identificador de aplicación**.
+
+  + Indique *1.0* como **Versión**.
+
+  + Pulse **Registrar aplicación**.
+
+## Paso 4: Descargue la aplicación de ejemplo
+{: #downloadapp}
+
+  1.  Desde el **Panel de control** de {{site.data.keyword.mfp_oc_short_notm}}, seleccione **MFPStarterAndroid** en **Aplicaciones**.
+
+  + Pulse **Obtener código de inicio** y seleccione descargar la aplicación de ejemplo de Android.
+
+## Paso 5: Edite la aplicación de ejemplo
+{: #editapp}
+
+  1. Importe en Android Studio la app de ejemplo de Android que ha descargado en el paso anterior.
+
+  + En el menú de la barra lateral **Proyecto** en Android Studio, seleccione el archivo **app → java → com.ibm.mfpstarterandroid → ServerConnectActivity.java**.
+
+    * Añada las importaciones siguientes
+      ```java
+      import java.net.URI;
+      import java.net.URISyntaxException;
+      import android.util.Log;
+      ```
+      {: codeblock}
+
+    * Pegue el fragmento de código siguiente y sustituya la llamada a `WLAuthorizationManager.getInstance().obtainAccessToken`
+
+        ```java
+          WLAuthorizationManager.getInstance().obtainAccessToken("", new WLAccessTokenListener() {
+            @Override
+            public void onSuccess(AccessToken token) {
+                System.out.println("Received the following access token value: " + token);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        titleLabel.setText("Yay!");
+                        connectionStatusLabel.setText("Connected to MobileFirst Server");
+                    }
+                });
+
+                URI adapterPath = null;
+                try {
+                    adapterPath = new URI("/adapters/javaAdapter/resource/greet");
+                } catch (URISyntaxException e) {
+                    e.printStackTrace();
+                }
+
+                WLResourceRequest request = new WLResourceRequest(adapterPath, WLResourceRequest.GET);
+
+                request.setQueryParameter("name","world");
+                request.send(new WLResponseListener() {
+                    @Override
+                    public void onSuccess(WLResponse wlResponse) {
+                        // Will print "Hello world" in LogCat.
+                        Log.i("MobileFirst Quick Start", "Success: " + wlResponse.getResponseText());
+                    }
+
+                    @Override
+                    public void onFailure(WLFailResponse wlFailResponse) {
+                        Log.i("MobileFirst Quick Start", "Failure: " + wlFailResponse.getErrorMsg());
+                    }
+                });
+            }
+
+            @Override
+            public void onFailure(WLFailResponse wlFailResponse) {
+                System.out.println("Did not receive an access token from server: " + wlFailResponse.getErrorMsg());
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        titleLabel.setText("Bummer...");
+                        connectionStatusLabel.setText("Failed to connect to MobileFirst Server");
+                    }
+                });
+            }
+        });
+        ```
+        {: codeblock}  
+
+## Paso 6: Despliegue un adaptador
+{: #deployadapter}
+
+  1. Descargue este [artefacto de adaptador](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/javaAdapter.adapter){: download} y despliéguelo desde la {{site.data.keyword.mfp_oc_short_notm}} mediante **Acciones → Desplegar adaptador**.
+
+## Paso 7: Pruebe la aplicación
+{: #testapp}
+
+  1. En Android Studio, en el menú de la barra lateral de **Proyecto**, seleccione el archivo **app → src → main →assets → mfpclient.properties** y edite las propiedades de `protocol`, `host` y `port` con los valores correctos del servidor de MobileFirst.
+
+   Los valores suelen ser https, *su-dirección-de-servidor* y 443.
+   {: tip}
+
+  2. Pulse **Ejecutar App** en Android Studio.
+     * Verá la app iniciada en un emulador de dispositivo.
+     * Pulse el botón **Hacer ping a servidor de MobileFirst** en la aplicación iniciada, se mostrará `Conectado al servidor de MobileFirst`.
+     * Si la aplicación se ha podido conectar al servidor de MobileFirst Server, se producirá una llamada de solicitud de recurso mediante el adaptador de Java desplegado.
+     * La respuesta del adaptador aparecerá en la vista de LogCat de Android Studio.
+
+
+## Próximos pasos
+{: #nextsteps}
+
+Siga las [Guías de aprendizaje rápido ![Icono de enlace externo](../../icons/launch-glyph.svg "Guías de aprendizaje rápido")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} para trabajar con más aplicaciones de ejemplo y explorar el funcionamiento de {{site.data.keyword.mobilefoundation_short}}. Hay guías de aprendizaje rápido para explicar el funcionamiento de {{site.data.keyword.mobilefoundation_short}} para apps de iOS, Android, Web, Cordova, Windows y Xamarin.
 
 # Enlaces relacionados
 {: #rellinks  notoc}

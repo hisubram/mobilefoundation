@@ -4,6 +4,7 @@
 
 {: .toc subcollection="mobile-foundation" audience="service" href="/docs/services/mobilefoundation/index.html"}
 Mobile Foundation
+
     {: .navgroup id="learn"}
     index.md
     mdoverview.md
@@ -16,16 +17,19 @@ Mobile Foundation
 
     {: .navgroup id="howto"}
     c_using_mfs_p1.md
-    c_using_mfs_p2.md
     c_using_mfs_p3.md
     c_using_mfs_p4.md
-    customdomainconfig.md
-    maint_updates.md
+    c_using_mfs_p2.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    [Stack Overflow](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix)
-    [dW Answers de IBM developerWorks](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix)
-    [Obtención de ayuda](../../support/index.html#getting-help)
-    [Cómo obtener soporte](../../support/index.html#contacting-support)
+    faq.md
+    troubleshooting.md
+    [Cómo obtener soporte](https://console.bluemix.net/docs/get-support/howtogetsupport.html)
+
+    {: .topicgroup}
+    Comunidad de desarrolladores
+        [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-mobile-services)
+        [dW Answers de IBM developerWorks](https://developer.ibm.com/answers/topics/bluemix-mobile-foundation/?smartspace=bluemix)
+        [Canal de Slack de MFP Dev](https://slackin.mybluemix.net)
     {: .navgroup-end}
