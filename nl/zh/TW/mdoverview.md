@@ -38,18 +38,3 @@ lastupdated:  "2018-01-18"
 您可以搭配使用 {{site.data.keyword.mfp_cli_long_notm}} (CLI) 與 {{site.data.keyword.mobilefoundation_short}}，輕鬆地建立及管理應用程式。
 
 <!--{{site.data.keyword.mobilefoundation_short}} service provisions a container in your space in {{site.data.keyword.Bluemix_notm}}. You can see the details of the container that is created, view the container performance, and access the server logs from your {{site.data.keyword.Bluemix_notm}} dashboard.-->
-
-## 取得 Mobile Foundation 的協助和支援
-{: #getting_help_mobilefoundation}
-
-如果您使用 {{site.data.keyword.mobilefoundation_short}} 時有問題或疑問，可以搜尋資訊或透過討論區提問來取得協助。您也可以開立支援問題單。
-
-使用討論區提問時，請標記您的問題，以及 IBM  {{site.data.keyword.Bluemix_notm}} 開發團隊能看到它。
-
-如果您有使用 {{site.data.keyword.mobilefoundation_short}} 開發或部署應用程式的相關技術問題，請將問題張貼在 [Stack Overflow ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window}，並使用 `bluemix` 及 `ibm-mobilefirst` 來標記您的問題。
-
-如需服務的相關問題和開始使用的指示，請使用 [IBM developerWorksdW Answers ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} 討論區。請包含 `bluemix` 和 `mobilefirst` 標籤。
-
-如需使用討論區的詳細資料，請參閱[取得說明 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.{DomainName}/docs/support/index.html#getting-help){: new_window}。
-
-如需開立 IBM 支援問題單的相關資訊，或支援層次與問題單嚴重性的相關資訊，請參閱[與支援中心聯絡 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.{DomainName}/docs/support/index.html#contacting-support){: new_window}。

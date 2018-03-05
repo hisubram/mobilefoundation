@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-02-14"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated:  "2018-01-18"
 
 * 您應該具有 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例認證的存取權，才能配置 {{site.data.keyword.mobilefoundation_short}} 服務實例的設定。
 
-**附註**：{{site.data.keyword.Db2_on_Cloud_short}} 服務實例可存在於 {{site.data.keyword.Bluemix_notm}} `Organization` 的任何 `Space` 中或您具有存取權的任何其他 `Organization` 中。請確定您具有存取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 `Space` 的許可權。
+> **附註**：{{site.data.keyword.Db2_on_Cloud_short}} 服務實例可存在於 {{site.data.keyword.Bluemix_notm}} `Organization` 的任何 `Space` 中或您具有存取權的任何其他 `Organization` 中。請確定您具有存取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 `Space` 的許可權。
 
 
 ## 新增資料庫連線
@@ -52,7 +52,7 @@ lastupdated:  "2018-01-18"
 1. 選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Organization`。
 
 + 從所選取 `Organization` 中可用的空間清單，選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Space`。   
-**附註：**如果您未看見，請列出 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 `Organization` 和 `Space`，然後檢查您是否為該 `Organization` 和 `Space` 的成員。您需要對組織及空間具有*開發人員* 角色存取權，因為 {{site.data.keyword.mobilefoundation_short}} 服務會從 {{site.data.keyword.Db2_on_Cloud_short}} 服務存取認證。
+> **附註：**如果您未看見，請列出 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 `Organization` 和 `Space`，然後檢查您是否為該 `Organization` 和 `Space` 的成員。您需要對組織及空間具有*開發人員* 角色存取權，因為 {{site.data.keyword.mobilefoundation_short}} 服務會從 {{site.data.keyword.Db2_on_Cloud_short}} 服務存取認證。
 
 + 選取 {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` 和 `Credentials`，以連接至現有的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。
 
@@ -62,7 +62,7 @@ lastupdated:  "2018-01-18"
 
 幾秒過後，您就可以存取 `Overview` 頁面，而此頁面提供指導教學及視訊，協助您開始使用 {{site.data.keyword.mobilefoundation_short}} 服務。
 
-**附註**：您無法變更配置來供 {{site.data.keyword.mobilefoundation_short}} 服務實例使用的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。不過，您能夠在多個 {{site.data.keyword.mobilefoundation_short}} 服務實例之間使用相同的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例，因為每一個 {{site.data.keyword.mobilefoundation_short}} 服務實例都會在所選取的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例中建立自己的綱目。
+> **附註**：您無法變更配置來供 {{site.data.keyword.mobilefoundation_short}} 服務實例使用的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。不過，您能夠在多個 {{site.data.keyword.mobilefoundation_short}} 服務實例之間使用相同的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例，因為每一個 {{site.data.keyword.mobilefoundation_short}} 服務實例都會在所選取的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例中建立自己的綱目。
 
 ## 啟動 MobileFirst 伺服器
 {: #start_mobilefoundation_p4}
@@ -87,41 +87,39 @@ lastupdated:  "2018-01-18"
 
 <!--This console runs inside the container.--> 使用這個主控台，您可以管理行動應用程式、配接器及行動裝置，使用伺服器作為行動後端、傳送推送通知，以及執行其他作業。
 
-##  新增 Mobile Analytics 伺服器
+##  新增 Mobile Analytics 服務
 {: #adding_analytics_server_p4}
 
- 您現在可以在 {{site.data.keyword.mobilefirst}} 伺服器上監視您的行動應用程式，方法是將 Mobile Analytics 伺服器新增至
-{{site.data.keyword.mobilefoundation_short}} 服務實例。
+ 您現在可以在 {{site.data.keyword.mobilefirst}} 伺服器上監視您的行動應用程式，方法是將 Mobile Analytics 服務實例新增至 {{site.data.keyword.mobilefoundation_short}} 實例。
 
- Professional 方案會在一個容器群組中建立 Mobile Analytics 伺服器，使用者可以透過在容器群組中選取容器節點數來自訂配置。
+ <!--The Professional plan creates the Mobile Analytics service in a container group, the user can customize the configuration by selecting the number of container nodes in the container group.
 
- 使用者也可以附加容器的磁區來持續保存資料。一旦磁區選定後就無法變更。20 GB 是使用者可用的預設檔案共用空間。如果使用者需要額外的儲存空間來持續保存分析資料，則需要購買額外的檔案共用，並且使用該檔案共用來建立磁區。然後，在部署分析伺服器時，便可以選取這個新的磁區。
+ Users can also attach volumes to the containers to persist data. The volume once selected cannot be changed. 20 GB is the default file share space available to the user. If the user needs additional storage space to persist analytics data, he is required to buy additional file share and create a volume using this file share. He can then select this new volume while deploying the analytics server.
 
- 如需將磁區新增至 {{site.data.keyword.containerlong}} 的相關資訊，請參閱[使用 {{site.data.keyword.Bluemix_notm}} 儀表板將持續資料儲存在磁區中 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui.html){: new_window}。
+ For more information on adding volumes to {{site.data.keyword.containerlong}}, refer to [Storing persistent data in a volume by using the {{site.data.keyword.Bluemix_notm}} Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui.html){: new_window}.-->
 
-* 按一下**新增分析**將 Mobile Analytics 伺服器新增至 {{site.data.keyword.mobilefoundation_short}} 服務實例。
+* 按一下**新增分析**，以建立 Mobile Analytics 服務實例，並將其新增至 {{site.data.keyword.mobilefoundation_short}} 實例。
 
-* 您可以選擇 Mobile Analytics 伺服器配置；針對 Analytics 伺服器的最低支援配置是 2 個節點、各具有 1 GB 記憶體。您可以選擇使用最多 32 個節點、各具有 16 GB 記憶體的配置來建立 Analytics 伺服器。
+<!--* You can choose the Mobile Analytics service configuration, the minimum supported configuration for the Analytics server is 2 nodes with 1 GB memory each, you can choose to create an Analytics server up to a maximum configuration of 32 nodes with 16 GB memory each.-->
 
-即會啟動佈建處理程序。此處理程序大約需要 10 分鐘的時間，並且會出現一個訊息視窗，指出此作業的進度。  
+即會啟動佈建處理程序。此處理程序需要數分鐘的時間，並且會出現一個進度指示器，顯示此作業的進度。  
 
-* 從 {{site.data.keyword.mfp_oc_short_notm}} 啟動 MobileFirst Analytics 主控台。
+* 從 {{site.data.keyword.mfp_oc_short_notm}} 啟動 Mobile Analytics 服務主控台。
 
-* 介於 {{site.data.keyword.mfserver_short_notm}} 及 Mobile Analytics 伺服器的單一登入已啟用。使用相同的 LTPA 金鑰及使用者認證將 Mobile Analytics 伺服器配置為 {{site.data.keyword.mfserver_short_notm}} 伺服器。您可以使用與用來登入 {{site.data.keyword.mfp_oc_short_notm}} 相同的 `username` 及 `password` 來登入 Mobile Analytics 主控台。
+* 已啟用 {{site.data.keyword.mfserver_short_notm}} 與 Mobile Analytics 服務之間的單一登入。使用相同的 LTPA 金鑰及使用者認證將 Mobile Analytics 服務配置為 {{site.data.keyword.mfserver_short_notm}} 伺服器。您可以使用與用來登入 {{site.data.keyword.mfp_oc_short_notm}} 相同的 `username` 及 `password` 來登入 Mobile Analytics 主控台。
 
-如需 MobileFirst Analytics 的相關資訊，您可以參閱 [MobileFirst FoundationOperational Analytics ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}。
+如需 Mobile Analytics 的相關資訊，您可以參閱 [MobileFirst Foundation Operational Analytics ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}。
 
-**附註：**當您刪除 {{site.data.keyword.mobilefoundation_short}} 服務實例時或當您嘗試重新建立
-{{site.data.keyword.mfserver_short_notm}} 時，會移除 Mobile Analytics 伺服器。
+> **附註：**刪除 {{site.data.keyword.mobilefoundation_short}} 服務實例會移除 Mobile Analytics 服務實例。
 
-##  刪除 Mobile Analytics 伺服器
+##  刪除 Mobile Analytics 服務
 {: #deleting_analytics_server_p4}
 
-現在您可以從 {{site.data.keyword.mobilefoundation_short}} 服務儀表板中刪除已新增至 {{site.data.keyword.mobilefoundation_short}} 服務實例的 Mobile Analytics 伺服器。
+現在您可以從 {{site.data.keyword.mobilefoundation_short}} 服務儀表板中刪除已新增至 {{site.data.keyword.mobilefoundation_short}} 服務實例的 Mobile Analytics 服務。
 
-* 按一下**刪除分析**，刪除已新增至 {{site.data.keyword.mobilefoundation_short}} 服務實例的 Mobile Analytics 伺服器。
+* 按一下**刪除分析**，刪除已新增至 {{site.data.keyword.mobilefoundation_short}} 服務實例的 Mobile Analytics 服務。
 
- 這將刪除分析容器群組。刪除分析容器的程序需要大約 10 分鐘。您可以重新整理畫面來檢視更新的狀態。一旦刪除分析容器，便會重新啟用**新增分析**按鈕，您可以使用此按鈕，重新新增 Mobile Analytics 伺服器（如果您選擇這樣做的話）。
+ 按一下**刪除分析**會刪除分析伺服器實例。刪除分析實例的處理程序需要大約 10 分鐘。您可以重新整理畫面來檢視更新的狀態。刪除分析實例會重新啟用**新增分析**按鈕。如果您選擇重新新增 Mobile Analytics 服務，則可以按一下此按鈕。
 
 ## 重建 MobileFirst 伺服器
 {: #recreate_mobilefoundation_p4}
@@ -130,18 +128,18 @@ lastupdated:  "2018-01-18"
 
 * 此動作會停止現有的伺服器，並刪除資料。隨即會使用更新的版本（如果有的話）建立新的伺服器實例。這個動作需要數分鐘的時間才能完成。
 
-**附註**：所有來自舊版伺服器實例的資料（包括應用程式及配接器的相關資訊）都會持續保存在已配置的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例中，這項資料可用來重建您的伺服器。
+> **附註**：來自舊版伺服器實例的資料（包括應用程式及配接器的相關資訊）會持續保存在已配置的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。這項資料可用來重建您的伺服器。
 
 ##	設定進階配置
 {: #using_mfs_advanced_p4}
 
-使用 `Overview` 頁面中的**使用進階配置啟動伺服器**頁面，以使用進階或自訂設定來建立伺服器。您也可以更新伺服器設定來自訂伺服器配置，方法是按一下**配置**標籤。{{site.data.keyword.mobilefoundation_short}} 可讓您存取一些進階設定。
+使用 `Overview` 頁面中的**使用進階配置啟動伺服器**頁面，以使用進階或自訂設定來建立伺服器。您也可以更新伺服器設定來自訂伺服器配置，方法是按一下**設定**標籤。{{site.data.keyword.mobilefoundation_short}} 可讓您存取一些進階設定。
 
 *	從**拓蹼**標籤中，您可以視需要選取伺服器大小和實例數目。預設 1 GB 伺服器就足以進行開發及輕量型測試。
   - 根據您的需求，選取正確的伺服器大小。
 
-  - **節點數**會顯示已建立的節點數目。
+  - **實例**會顯示已建立的實例數目。
 
-      - {{site.data.keyword.mobilefirst}} 伺服器陣列可以透過在此處配置節點數目加以建立。最低支援配置是 2 個節點、各具有 1 GB 記憶體，最高支援配置則為 32 個節點、各具有 16 GB 記憶體。
+      <!--- {{site.data.keyword.mobilefirst}} server farm can be created by configuring the number of nodes here. The minimum supported configuration is 2 nodes with 1 GB memory each and the maximum supported configuration is 32 nodes with 16 GB memory each.-->
 
 如需詳細資料，請參閱 [{{site.data.keyword.mobilefoundation_long}} 文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}。
