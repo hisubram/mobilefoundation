@@ -2,81 +2,68 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-02-14"
 
 ---
 
-#	Usando o plano Developer
+#	Usando o plano do Desenvolvedor
 {: #using_mobilefoundation_p1}
 
-Após criar a instância de serviço {{site.data.keyword.mobilefoundation_short}}: Desenvolvedor, em alguns segundos, será possível acessar a página `Visão geral`
-no {{site.data.keyword.Bluemix_notm}}, que fornece tutoriais e vídeos para ajudá-lo a
-iniciar o serviço {{site.data.keyword.mobilefoundation_short}}.
+Após criar a instância de serviço do {{site.data.keyword.mobilefoundation_short}} usando o plano do Desenvolvedor, acesse a página Visão geral no {{site.data.keyword.Bluemix_notm}}. Nessa página, são fornecidos a você tutoriais e vídeos para ajudá-lo na introdução do serviço.
 
 ## Iniciando o servidor do MobileFirst
 {: #start_mobilefoundation_p1}
 * Para iniciar o {{site.data.keyword.mfserver_short_notm}} com configurações padrão, clique em **Iniciar servidor básico**.
 
-Esta seleção provisiona um {{site.data.keyword.mfserver_long_notm}} com as configurações a seguir:
-*	1 GB de memória. Este tamanho é suficiente para desenvolvimento, atividades de teste leve e cargas de trabalho de produção em pequena escala.
+  Esta seleção provisiona um {{site.data.keyword.mfserver_long_notm}} com as configurações a seguir:
+  *	1 GB de memória. Este tamanho é suficiente para desenvolvimento, atividades de teste leve e cargas de trabalho de produção em pequena escala.
 
-*	O `username` e a `password` são gerados automaticamente para
+  *	O `username` e a `password` são gerados automaticamente para
 você. Você tem acesso a eles quando o servidor está funcionando.
 
-O processo de fornecimento inicia. Esse processo leva aproximadamente 10 minutos e uma
+  O processo de fornecimento inicia. Esse processo leva aproximadamente 10 minutos e uma
 janela de mensagem indica o progresso dessa operação. Quando completo, um painel é exibido
 no qual é possível ver:
-*	O status do servidor que está em execução (estado, tamanho).
+    *	O status do servidor que está em execução (estado, tamanho).
 
-*	A rota do servidor criada para você. Use esta rota em seu aplicativo móvel para se
+    *	A rota do servidor criada para você. Use esta rota em seu aplicativo móvel para se
 conectar ao {{site.data.keyword.mfserver_short_notm}}.
 
-*	Seu `nome do usuário` e `senha` para acessar o {{site.data.keyword.mfp_oc_short_notm}}. A `password` fica oculta. Clique
+    *	Seu `nome do usuário` e `senha` para acessar o {{site.data.keyword.mfp_oc_short_notm}}. A `password` fica oculta. Clique
 no ícone **Mostrar senha** para visualizá-lo.
 
 *	Clique em **Ativar console** para ativar o {{site.data.keyword.mfp_oc_short_notm}}.
 
+Com o console, é possível gerenciar os aplicativos móveis e dispositivos móveis, usar o servidor como um backend móvel, enviar notificações push e muito mais.
 
-<!--This console runs inside the container.--> Com o console, é possível gerenciar os aplicativos móveis e dispositivos móveis, usar o servidor como um backend móvel, enviar notificações push e muito mais.
-
-##  Incluindo o servidor Mobile Analytics
+##  Incluindo o serviço Mobile Analytics
 {: #adding_analytics_server_dev}
 
- Agora é possível monitorar o seu aplicativo móvel no servidor {{site.data.keyword.mobilefirst}} incluindo um servidor Mobile Analytics na instância de serviço do
-{{site.data.keyword.mobilefoundation_short}}. O plano de desenvolvedor cria o servidor Mobile Analytics em um grupo de contêiner com um nó único tendo 1 GB de memória.
+ Agora é possível monitorar o aplicativo móvel no servidor {{site.data.keyword.mobilefirst}} incluindo um serviço Mobile Analytics na instância de serviço do {{site.data.keyword.mobilefoundation_short}}. O Plano do Desenvolvedor cria o serviço do Mobile Analytics em um grupo de contêiner com um nó único tendo 1 GB de memória.
 
-* Clique em **Incluir Analytics** para incluir o servidor Mobile Analytics na instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
+* Clique em **Incluir Analytics** para incluir o serviço Mobile Analytics na instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
 
-O processo de fornecimento inicia. Esse processo leva aproximadamente 10 minutos e uma
+  O processo de fornecimento inicia. Esse processo leva aproximadamente 10 minutos e uma
 janela de mensagem indica o progresso dessa operação.  
 
-* Ative o Console do MobileFirst Analytics a partir do {{site.data.keyword.mfp_oc_short_notm}}.
+* Ative o Console do serviço Mobile Analytics por meio do {{site.data.keyword.mfp_oc_short_notm}}.
 
-* A conexão única é ativada entre o {{site.data.keyword.mfserver_short_notm}} e o servidor Mobile Analytics. O servidor Mobile Analytics é configurado com as mesmas chaves de LTPA e
-credenciais do usuário que o {{site.data.keyword.mfserver_short_notm}}. É possível usar o mesmo `username` e `password` para efetuar login no console do Mobile
+* A conexão única é ativada entre o {{site.data.keyword.mfserver_short_notm}} e o serviço Mobile Analytics. O serviço Mobile Analytics é configurado com as mesmas chaves LTPA e credenciais do usuário que as do {{site.data.keyword.mfserver_short_notm}}. É possível usar o mesmo `username` e `password` para efetuar login no console do Mobile
 Analytics que aqueles usados no {{site.data.keyword.mfp_oc_short_notm}}.
 
-Para obter mais informações sobre o MobileFirst Analytics, é possível consultar o [MobileFirst Foundation Operational Analytics![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
+Para obter mais informações sobre o Mobile Analytics, é possível consultar o [MobileFirst Foundation Operational Analytics ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
 
-**Nota:** o servidor Mobile Analytics é removido quando você exclui a instância de serviço do {{site.data.keyword.mobilefoundation_short}} ou quando você tenta recriar o
-{{site.data.keyword.mfserver_short_notm}}.
+> **Nota:** excluir a instância de serviço do {{site.data.keyword.mobilefoundation_short}} ou recriar o {{site.data.keyword.mfserver_short_notm}} remove a instância de serviço do Mobile Analytics.
 
-##  Excluindo o servidor Mobile Analytics
+##  Excluindo o serviço Mobile Analytics
 {: #deleting_analytics_server_dev}
 
-Agora, é possível excluir o servidor Mobile Analytics que foi incluído na instância
-de serviço {{site.data.keyword.mobilefoundation_short}}, por meio do painel do
-serviço {{site.data.keyword.mobilefoundation_short}}.
+Agora é possível excluir o serviço Mobile Analytics que foi incluído na instância de serviço do {{site.data.keyword.mobilefoundation_short}} por meio do painel de serviço do {{site.data.keyword.mobilefoundation_short}}.
 
-* Clique em **Excluir Analytics** para excluir o servidor
-Mobile Analytics que foi incluído na instância de serviço
-{{site.data.keyword.mobilefoundation_short}}.
+* Clique em **Excluir Analytics** para excluir o serviço Mobile Analytics que foi incluído na instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
 
- Isso excluirá o grupo de contêiner de analítica. O processo de exclusão de contêineres de
-analítica leva cerca de 10 minutos. É possível atualizar a tela para visualizar o status
-atualizado. Quando os contêineres de analítica forem excluídos, o botão
-**Incluir Analytics** será reativado e você poderá usá-lo para incluir
-novamente o servidor Mobile Analytics, caso escolha fazê-lo.
+ Clicar em **Excluir Analytics** exclui a instância do servidor analítico. O processo de exclusão da instância de análise leva aproximadamente 10 minutos. É possível atualizar a tela para visualizar o status
+atualizado. A exclusão da instância de análise reativa o botão **Incluir Analytics**. Se optar por incluir o serviço Mobile Analytics novamente, será possível clicar nesse botão.
 
 
 ## Recriando o servidor do MobileFirst
