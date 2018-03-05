@@ -38,18 +38,3 @@ lastupdated:  "2018-01-18"
 {{site.data.keyword.mobilefoundation_short}} とともに {{site.data.keyword.mfp_cli_long_notm}} (CLI) を使用して、アプリを簡単に作成して管理できます。
 
 <!--{{site.data.keyword.mobilefoundation_short}} service provisions a container in your space in {{site.data.keyword.Bluemix_notm}}. You can see the details of the container that is created, view the container performance, and access the server logs from your {{site.data.keyword.Bluemix_notm}} dashboard.-->
-
-## Mobile Foundation のヘルプおよびサポートの利用
-{: #getting_help_mobilefoundation}
-
-{{site.data.keyword.mobilefoundation_short}} をご使用中に問題が発生した場合、または質問がある場合は、情報を検索するか、フォーラムで質問してヘルプを得ることができます。 また、サポート・チケットをオープンすることも可能です。
-
-フォーラムで質問する際には、IBM {{site.data.keyword.Bluemix_notm}} 開発チームによって認識されるように、質問にタグを付けてください。
-
-{{site.data.keyword.mobilefoundation_short}} を使用したアプリの開発やデプロイについて技術的な質問がある場合は、[Stack Overflow ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window}に質問を投稿し、質問に `bluemix` と `ibm-mobilefirst` のタグを付けてください。
-
-サービスや開始の手順に関する質問については、[IBM developerWorks dW Answers ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window}フォーラムを使用してください。 `bluemix` と `mobilefirst` のタグを含めてください。
-
-フォーラムの使用について詳しくは、[ヘルプの利用![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.{DomainName}/docs/support/index.html#getting-help){: new_window}を参照してください。
-
-IBM サポート・チケットのオープン、またはサポート・レベルとチケットの重大度に関する情報は、[サポートへのお問い合わせ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.{DomainName}/docs/support/index.html#contacting-support){: new_window}を参照してください。

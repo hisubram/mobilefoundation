@@ -20,7 +20,7 @@ lastupdated:  "2018-01-18"
 ## 保守方針
 {: #maintupdate_strategy_mf}
 
-{{site.data.keyword.mobilefoundation_short}} に対する更新があると、更新が利用可能であることがユーザーに通知されます。  通知は、サービス・インスタンス・ダッシュボードに表示されます。 ユーザーは、自分で決定した保守時間帯に {{site.data.keyword.mobilefoundation_short}} に更新を適用することができます。
+{{site.data.keyword.mobilefoundation_short}} に対する更新があると、更新が利用可能であることがユーザーに通知されます。  通知は、サービス・インスタンス・ダッシュボードに表示されます。 ユーザーは、自分で決定した保守時間帯に {{site.data.keyword.mobilefoundation_short}} に更新を適用することを選択できます。
 
 以下のいずれかのコンポーネントが更新されたときに、{{site.data.keyword.mobilefoundation_short}} サービス更新が利用可能になります。
 

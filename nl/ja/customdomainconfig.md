@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-01-24"
 
 ---
 
@@ -23,7 +23,8 @@ lastupdated:  "2018-01-18"
   |:----- | :----- |    
   |`mybluemix.net` | 米国南部 |    
   |`eu-gb.mybluemix.net` | 英国  |
-  |`au-syd.mybluemix.net` | シドニー  |      
+  |`au-syd.mybluemix.net` | シドニー  |   
+  |`eu-de.mybluemix.net` | フランクフルト |   
   {: caption="表 1. {{site.data.keyword.Bluemix_notm}} の地域に基づいたアプリケーション・ドメイン名" caption-side="top"}
 
 独自ドメインを使用できるようにするには、以下のステップを実行してカスタム・ドメインを構成する必要があります。
@@ -36,4 +37,4 @@ lastupdated:  "2018-01-18"
 
 + ドメインの DNS プロバイダーに進み、サーバーが実行されているデフォルトの {{site.data.keyword.Bluemix_notm}} の経路にドメインからトラフィックをルーティングする CNAME エントリーを追加します。<!--container group-->
 
-+ カスタム・ドメインに `https` を構成する場合は、{{site.data.keyword.Bluemix_notm}} でドメインの SSL 証明書をアップロードします。 これを行うには、**「組織の管理」>「ドメイン」**と進み、SSL 証明書を構成するカスタム・ドメインを選択し、**「証明書のアップロード」**をクリックしてドメインの SSL 証明書をアップロードします。 詳しくは、[SSL Certificates and Bluemix Custom Domains ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window}を参照してください。
++ カスタム・ドメインに `https` を構成する場合は、{{site.data.keyword.Bluemix_notm}} でドメインの SSL 証明書をアップロードします。 これを行うには、**「組織の管理」>「ドメイン」**と進み、SSL 証明書を構成するカスタム・ドメインを選択し、**「証明書のアップロード」**をクリックしてドメインの SSL 証明書をアップロードします。 詳しくは、[この投稿 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window} を参照してください。

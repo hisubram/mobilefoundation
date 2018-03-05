@@ -2,61 +2,60 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-02-14"
 
 ---
 
 #	「開発者」プランの使用
 {: #using_mobilefoundation_p1}
 
-「{{site.data.keyword.mobilefoundation_short}}: 開発者」サービス・インスタンスを作成した後、数秒後には {{site.data.keyword.Bluemix_notm}} の`「概要」`ページにアクセスでき、ここで {{site.data.keyword.mobilefoundation_short}} サービスを使い始める上で役立つチュートリアルやビデオが提供されます。
+「開発者」プランを使用して、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを作成した後、{{site.data.keyword.Bluemix_notm}} の「概要」ページにアクセスします。このページには、サービスを使い始める上で役立つチュートリアルやビデオが用意されています。
 
 ## MobileFirst サーバーの始動
 {: #start_mobilefoundation_p1}
 * {{site.data.keyword.mfserver_short_notm}} をデフォルト設定で始動するには、**「基本サーバーの始動」**をクリックしてください。
 
-この選択により、以下の設定で {{site.data.keyword.mfserver_long_notm}} がプロビジョンされます。
-*	1 GB のメモリー。 開発アクティビティー、簡単なテスト・アクティビティー、および小規模な実動ワークロードには、このサイズで十分です。
+  この選択により、以下の設定で {{site.data.keyword.mfserver_long_notm}} がプロビジョンされます。
+  *	1 GB のメモリー。 開発アクティビティー、簡単なテスト・アクティビティー、および小規模な実動ワークロードには、このサイズで十分です。
 
-*	`ユーザー名` と `パスワード` は自動的に生成されます。 サーバーの稼働中にこれらにアクセスできます。
+  *	`ユーザー名` と `パスワード` は自動的に生成されます。 サーバーの稼働中にこれらにアクセスできます。
 
-プロビジョン・プロセスが始動します。 このプロセスには約 10 分かかり、メッセージ・ウィンドウにはこの操作の進行が示されます。 完了すると、以下のことを確認できるダッシュボードが表示されます。
-*	実行中のサーバーの状況 (状態、サイズ)。
+  プロビジョン・プロセスが始動します。 このプロセスには約 10 分かかり、メッセージ・ウィンドウにはこの操作の進行が示されます。 完了すると、以下のことを確認できるダッシュボードが表示されます。
+    *	実行中のサーバーの状況 (状態、サイズ)。
 
-*	自動的に作成されたサーバーの経路。 {{site.data.keyword.mfserver_short_notm}} に接続するには、モバイル・アプリケーションでこの経路を使用します。
+    *	自動的に作成されたサーバーの経路。 {{site.data.keyword.mfserver_short_notm}} に接続するには、モバイル・アプリケーションでこの経路を使用します。
 
-*	{{site.data.keyword.mfp_oc_short_notm}} にアクセスするための個人の`ユーザー名` と`パスワード`。 `パスワード` は非表示です。 表示するには**「パスワードの表示」**アイコンをクリックします。
+    *	{{site.data.keyword.mfp_oc_short_notm}} にアクセスするための個人の`ユーザー名` と`パスワード`。 `パスワード` は非表示です。 表示するには**「パスワードの表示」**アイコンをクリックします。
 
 *	**「コンソールの起動」**をクリックして {{site.data.keyword.mfp_oc_short_notm}} を起動します。
 
+このコンソールを使用して、モバイル・アプリとモバイル・デバイスの管理、モバイル・バックエンドとしてのサーバーの使用、プッシュ通知の送信などを行えます。
 
-<!--This console runs inside the container.--> このコンソールを使用して、モバイル・アプリとモバイル・デバイスの管理、モバイル・バックエンドとしてのサーバーの使用、プッシュ通知の送信などを行えます。
-
-##  Mobile Analytics サーバーの追加
+##  Mobile Analytics サービスの追加
 {: #adding_analytics_server_dev}
 
- Mobile Analytics サーバーを {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加することにより、{{site.data.keyword.mobilefirst}} サーバー上のモバイル・アプリケーションをモニターできるようになりました。 「開発者」プランでは、単一のノードと 1 GB メモリーを持つコンテナー・グループに、Mobile Analytics サーバーを作成します。
+ Mobile Analytics サービスを {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加することにより、{{site.data.keyword.mobilefirst}} サーバー上のモバイル・アプリケーションをモニターできるようになりました。「開発者」プランでは、単一のノードと 1 GB メモリーを持つコンテナー・グループに、Mobile Analytics サービスを作成します。
 
-* **「Analytics の追加 (Add Analytics)」**をクリックして、Mobile Analytics サーバーを {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加します。
+* **「Analytics の追加」**をクリックして、Mobile Analytics サービスを {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加します。
 
-プロビジョン・プロセスが始動します。 このプロセスには約 10 分かかり、メッセージ・ウィンドウにはこの操作の進行が示されます。  
+  プロビジョン・プロセスが始動します。 このプロセスには約 10 分かかり、メッセージ・ウィンドウにはこの操作の進行が示されます。  
 
-* {{site.data.keyword.mfp_oc_short_notm}} から、MobileFirst Analytics コンソールを起動します。
+* {{site.data.keyword.mfp_oc_short_notm}} から、Mobile Analytics サービス・コンソールを起動します。
 
-* {{site.data.keyword.mfserver_short_notm}} と Mobile Analytics サーバーとの間で、シングル・サインオンが使用可能になります。 Mobile Analytics サーバーは、{{site.data.keyword.mfserver_short_notm}} と同じ LTPA 鍵とユーザー資格情報で構成されます。 {{site.data.keyword.mfp_oc_short_notm}} のログインに使用したのと同じ `username` と `password` を使用して、Mobile Analytics コンソールにログインできます。
+* {{site.data.keyword.mfserver_short_notm}} と Mobile Analytics サービスとの間で、シングル・サインオンが使用可能になります。Mobile Analytics サービスは、{{site.data.keyword.mfserver_short_notm}} と同じ LTPA 鍵とユーザー資格情報で構成されます。{{site.data.keyword.mfp_oc_short_notm}} のログインに使用したのと同じ `username` と `password` を使用して、Mobile Analytics コンソールにログインできます。
 
-MobileFirst Analytics について詳しくは、[MobileFirst Foundation Operational Analytics ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}を参照してください。
+Mobile Analytics について詳しくは、[MobileFirst Foundation Operational Analytics ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}を参照してください。
 
-**注:** {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを削除する場合や、{{site.data.keyword.mfserver_short_notm}} を再作成しようとする場合、Mobile Analytics サーバーは削除されます。
+> **注:** {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを削除するか、{{site.data.keyword.mfserver_short_notm}} を再作成すると、Mobile Analytics サービス・インスタンスが削除されます。
 
-##  Mobile Analytics サーバーの削除
+##  Mobile Analytics サービスの削除
 {: #deleting_analytics_server_dev}
 
-{{site.data.keyword.mobilefoundation_short}} サービス・ダッシュボードから、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加された Mobile Analytics サーバーを削除できるようになりました。
+{{site.data.keyword.mobilefoundation_short}} サービス・ダッシュボードから、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加された Mobile Analytics サービスを削除できるようになりました。
 
-* **「Analytics の削除 (Delete Analytics)」**をクリックして、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加された Mobile Analytics サーバーを削除します。
+* **「Analytics の削除」**をクリックして、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加された Mobile Analytics サービスを削除します。
 
- これにより、Analytics コンテナー・グループが削除されます。 Analytics コンテナーの削除プロセスには、約 10 分かかります。 画面を最新表示して、更新された状況を確認できます。 Analytics コンテナーが削除されると、**「Analytics の追加 (Add Analytics)」**ボタンが再び有効になります。必要であれば、これを使用して再度 Mobile Analytics サーバーを追加できます。
+ **「Analytics の削除」** をクリックすると、Analytics サーバー・インスタンスが削除されます。Analytics インスタンスの削除プロセスには、約 10 分かかります。画面を最新表示して、更新された状況を確認できます。 Analytics インスタンスを削除すると、**「Analytics の追加」**ボタンが再び使用可能になります。Mobile Analytics サービスを再度追加する場合は、このボタンをクリックできます。
 
 
 ## MobileFirst サーバーの再作成
