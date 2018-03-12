@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-13"
+lastupdated:  "2018-03-12"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated:  "2018-02-13"
 # Getting started tutorial
 {: #gettingstartedtemplate}
 
-{{site.data.keyword.mobilefoundation_long}} expedites setting up an {{site.data.keyword.mfp_full}} environment using which you can develop, test, and operate enterprise mobile apps. {{site.data.keyword.mobilefoundation_short}} is available under the following different service plans: Developer, Developer Pro, Professional Per Capacity, and Professional 1 Application.
+{{site.data.keyword.mobilefoundation_long}} expedites setting up an {{site.data.keyword.mfp_full}} environment using which you can develop, test, and operate enterprise mobile apps. {{site.data.keyword.mobilefoundation_short}} is available under the following different service plans: Developer, Professional Per Device, and Professional 1 Application.
 {:shortdesc}
 
 Using the Professional 1 Application plan a single application built on any or all of the supported operating platforms such as Android, iOS, Windows or mobile web, can be managed. The Developer plan is best suited for development and test. You can review all the available plans [here](https://console.bluemix.net/catalog/services/mobile-foundation).
@@ -41,65 +41,17 @@ You will need a {{site.data.keyword.Bluemix}} account and an instance of the {{s
 
 After you create an instance of the {{site.data.keyword.mobilefoundation_short}}: Developer, you can start building your mobile channel by completing the following steps.
 
-  1.  Create a {{site.data.keyword.mobilefirst_notm}} server instance with the default configuration, click **Start Basic Server**.
+* You can instantly access and work with the MobileFirst Server.
 
-    `The basic server instance includes a single node, 1 GB of memory.`
+  This selection provisions an {{site.data.keyword.mfserver_long_notm}} with the following settings:
+  *	1 GB of memory. This size is enough for development, light testing activities and small scale production workloads.
 
-  +	The `username` and `password` is automatically generated for you. You have access to them when the server is up and running.
+  * To access the MobileFirst Server using CLI you will need the credentials, which are available when you click **Service credentials** from the left navigation pane of the IBM Cloud console.
 
-    The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
-    * The status of your server that is running (state, size).
-    *	The server route created for you. Use this route in your mobile application to connect to the {{site.data.keyword.mfserver_short_notm}}.
-    *	Your personal `username` and `password` to access the {{site.data.keyword.mfp_oc_short_notm}}. The `password` is hidden. Click **Show Password** icon to visualize it.
+### For {{site.data.keyword.mobilefoundation_short}}: Professional Per Device plan
+{: #buildchannelprofdeviceplan}
 
-  + Click **Launch Console** to launch the {{site.data.keyword.mfp_oc_short_notm}}.
-
-To create a {{site.data.keyword.mobilefirst_notm}} server instance with advanced configuration for topology, security, and other server configuration, click **Start Server with Advanced Configuration**. See [Setting up advanced configuration](c_using_mfs_p1.html#using_mfs_advanced_p1), for more information.
-{: tip}
-
-### For {{site.data.keyword.mobilefoundation_short}}: Developer Pro plan
-{: #buildchanneldevproplan}
-
-After you create an instance of the {{site.data.keyword.mobilefoundation_short}}: Developer Pro service, you can start building your mobile channel by completing the following steps.
-
-  1.  Connect to an existing {{site.data.keyword.Db2_on_Cloud_short}} service on {{site.data.keyword.Bluemix_notm}}.
-
-      1.  Select the {{site.data.keyword.Bluemix_notm}} `Organization` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists.
-
-      + Select the {{site.data.keyword.Bluemix_notm}} `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists, from the list of spaces available in the selected `Organization`.
-
-      + Select the {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` and `Credentials` to connect to the existing  {{site.data.keyword.Db2_on_Cloud_short}} service instance.
-
-      + Test the connection to the selected {{site.data.keyword.Db2_on_Cloud_short}} service instance by clicking **Test Connection**.
-
-      + Click **Add**, followed by **Continue** on the pop up window asking for confirmation on the selected {{site.data.keyword.Db2_on_Cloud_short}} service. This action creates the required tables in the configured {{site.data.keyword.Db2_on_Cloud_short}} database service instance.
-
-      > **Note:** After you add a {{site.data.keyword.Db2_on_Cloud_short}} connection to the {{site.data.keyword.mobilefoundation_short}} instance you will not be able to change it.
-
-  2.  Create and start the server.
-
-      1. Create a {{site.data.keyword.mobilefirst_notm}} server instance with the default configuration, click **Start Basic Server**.
-
-      + This selection provisions an {{site.data.keyword.mfserver_long_notm}} with the following settings:
-
-          - Single Node with 1 GB of memory. This size is enough for development, moderate testing activities, and small scale production workloads.
-
-          -	The `username` and `password` are automatically generated for you. You have access to them when the server is up and running.
-
-          The process of provisioning your server starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
-            -	The status of your server that is running (state, size).
-            -	The server route is created for you. Use this route in your mobile application to connect to the {{site.data.keyword.mfserver_short_notm}}.
-            -	Your personal `username` and `password` to access the {{site.data.keyword.mfp_oc_short_notm}}. The `password` is hidden. Click **Show Password** icon to visualize it.
-
-      +	Click **Launch Console** to open the {{site.data.keyword.mfp_oc_short_notm}}.  
-
-      To create a {{site.data.keyword.mobilefirst_notm}} server instance with advanced configuration for topology, security, and other server configuration, click **Start Server with Advanced Configuration**. See [Setting up advanced configuration](c_using_mfs_p3.html#using_mfs_advanced_p3), for more information.
-      {: tip}
-
-### For {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity plan
-{: #buildchannelprofcapacityplan}
-
-After you create an instance of the {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity service, you can start building your mobile channel by completing the following steps.
+After you create an instance of the {{site.data.keyword.mobilefoundation_short}}: Professional Per Device service, you can start building your mobile channel by completing the following steps.
 
   1.  Connect to an existing {{site.data.keyword.Db2_on_Cloud_short}} service on {{site.data.keyword.Bluemix_notm}}.
 

@@ -34,7 +34,7 @@ On applying the update, the version of the server, as seen in the {{site.data.ke
 
 > **Note:**
 >  * Users will not be able to apply their own fixes and updates to their {{site.data.keyword.mobilefoundation_short}} service instance.
->  * See [Re-creating server in Developer plan](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [Re-creating server in DeveloperPro plan](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Re-creating server in Professional Per Capacity plan](c_using_mfs_p4.html#recreate_mobilefoundation_p4) and [Re-creating server in Professional 1 Application plan](c_using_mfs_p2.html#recreate_mobilefoundation_p2) to understand the difference in behavior across the plans  when **Recreate** is clicked.
+>  * See [Re-creating server in Developer plan](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [Re-creating server in DeveloperPro plan](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Re-creating server in Professional Per Device plan](c_using_mfs_p4.html#recreate_mobilefoundation_p5) and [Re-creating server in Professional 1 Application plan](c_using_mfs_p2.html#recreate_mobilefoundation_p2) to understand the difference in behavior across the plans  when **Recreate** is clicked.
 >
 
 ## How do I configure custom domain for my {{site.data.keyword.mobilefoundation_short}} server instance?
