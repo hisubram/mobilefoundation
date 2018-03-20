@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-13"
+lastupdated:  "2018-03-12"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated:  "2018-02-13"
 # 入门教程
 {: #gettingstartedtemplate}
 
-{{site.data.keyword.mobilefoundation_long}} 加快设置 {{site.data.keyword.mfp_full}} 环境，您可使用此环境开发、测试和操作企业移动应用程序。{{site.data.keyword.mobilefoundation_short}} 提供了以下不同服务套餐：Developer、Developer Pro、Professional Per Capacity 和 Professional 1 Application。
+{{site.data.keyword.mobilefoundation_long}} 加快设置 {{site.data.keyword.mfp_full}} 环境，您可使用此环境开发、测试和操作企业移动应用程序。以下不同的服务套餐都提供了 {{site.data.keyword.mobilefoundation_short}}：Developer、Professional Per Device 和 Professional 1 Application。
 {:shortdesc}
 
 使用 Professional 1 Application 套餐，可管理任何或所有受支持操作系统（例如 Android、iOS、Windows 或移动 Web）上构建的单个应用程序。Developer 套餐最适合进行开发和测试。您可以在[此处](https://console.bluemix.net/catalog/services/mobile-foundation)查看所有可用的套餐。
@@ -41,65 +41,17 @@ lastupdated:  "2018-02-13"
 
 创建 {{site.data.keyword.mobilefoundation_short}}: Developer 的实例后，可以通过完成以下步骤开始构建移动通道。
 
-  1.  使用缺省配置创建 {{site.data.keyword.mobilefirst_notm}} 服务器实例，然后单击**启动基本服务器**。
+* 您可以立即访问和使用 MobileFirst 服务器。
 
-    `基本服务器实例包含单一节点和 1 GB 内存。`
+  此选择将为 {{site.data.keyword.mfserver_long_notm}} 供应以下设置：
+  *	1 GB 内存。此大小足够用于开发、轻量测试活动和小规模生产工作负载。
 
-  +	自动为您生成 `username` 和 `password`。服务器启动并运行时，您可以对其进行访问。
+  * 要使用 CLI 访问 MobileFirst 服务器，您将需要凭证。在 IBM Cloud 控制台的左侧导航窗格中单击**服务凭证**即可获取凭证。
 
-    供应过程启动。此过程会花费大约 10 分钟，并且消息窗口会指示此操作的进度。完成后，会显示仪表板，在其中您可以看到：
-    * 正在运行的服务器的状态（状态和大小）。
-    *	为您创建的服务器路径。在您的移动应用程序中使用此路径可连接到 {{site.data.keyword.mfserver_short_notm}}。
-    *	用于访问 {{site.data.keyword.mfp_oc_short_notm}} 的个人 `username` 和 `password`。`password` 会隐藏。单击**显示密码**图标以使其可见。
+### 对于 {{site.data.keyword.mobilefoundation_short}}: Professional Per Device 套餐
+{: #buildchannelprofdeviceplan}
 
-  + 单击**启动控制台**以启动 {{site.data.keyword.mfp_oc_short_notm}}。
-
-要使用拓扑、安全性和其他服务器配置的高级配置来创建 {{site.data.keyword.mobilefirst_notm}} 服务器实例，请单击**使用高级配置启动服务器**。请参阅[设置高级配置](c_using_mfs_p1.html#using_mfs_advanced_p1)，以获取更多信息。
-{: tip}
-
-### 对于 {{site.data.keyword.mobilefoundation_short}}: Developer Pro 套餐
-{: #buildchanneldevproplan}
-
-创建 {{site.data.keyword.mobilefoundation_short}}: Developer Pro 服务的实例后，可以通过完成以下步骤开始构建移动通道。
-
-  1.  连接到 {{site.data.keyword.Bluemix_notm}} 上的某个现有 {{site.data.keyword.Db2_on_Cloud_short}} 服务。
-
-      1.  选择 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例所在的 {{site.data.keyword.Bluemix_notm}} `组织`。
-
-      + 从所选`组织`内可用的空间列表中，选择具有 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例的 {{site.data.keyword.Bluemix_notm}} `空间`。
-
-      + 选择 {{site.data.keyword.Db2_on_Cloud_short}} `服务名称`和`凭证`以连接到现有 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例。
-
-      + 通过单击**测试连接**，测试与所选 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例的连接。
-
-      + 单击**添加**，然后会出现弹出窗口，询问您是否确认所选的 {{site.data.keyword.Db2_on_Cloud_short}} 服务，请单击**继续**。此操作可在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 数据库服务实例中创建需要的表。
-
-      > **注：**添加与 {{site.data.keyword.mobilefoundation_short}} 实例的 {{site.data.keyword.Db2_on_Cloud_short}} 连接后，您将无法对其进行更改。
-
-  2.  创建并启动服务器。
-
-      1. 使用缺省配置创建 {{site.data.keyword.mobilefirst_notm}} 服务器实例，然后单击**启动基本服务器**。
-
-      + 此选择将为 {{site.data.keyword.mfserver_long_notm}} 供应以下设置：
-
-          - 单个节点具有 1GB 内存。此大小足够用于开发、中等测试活动和小规模生产工作负载。
-
-          -	自动为您生成 `username` 和 `password`。服务器启动并运行时，您可以对其进行访问。
-
-          供应服务器的过程启动。此过程会花费大约 10 分钟，并且消息窗口会指示此操作的进度。完成后，会显示仪表板，在其中您可以看到：
-            -	正在运行的服务器的状态（状态和大小）。
-            -	为您创建了服务器路径。在您的移动应用程序中使用此路径可连接到 {{site.data.keyword.mfserver_short_notm}}。
-            -	用于访问 {{site.data.keyword.mfp_oc_short_notm}} 的个人 `username` 和 `password`。`password` 会隐藏。单击**显示密码**图标以使其可见。
-
-      +	单击**启动控制台**以打开 {{site.data.keyword.mfp_oc_short_notm}}。  
-
-      要使用拓扑、安全性和其他服务器配置的高级配置来创建 {{site.data.keyword.mobilefirst_notm}} 服务器实例，请单击**使用高级配置启动服务器**。请参阅[设置高级配置](c_using_mfs_p3.html#using_mfs_advanced_p3)，以获取更多信息。
-      {: tip}
-
-### 对于 {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity 套餐
-{: #buildchannelprofcapacityplan}
-
-创建 {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity 服务的实例后，可以通过完成以下步骤开始构建移动通道。
+创建 {{site.data.keyword.mobilefoundation_short}}: Professional Per Device 服务的实例后，可以通过完成以下步骤开始构建移动通道。
 
   1.  连接到 {{site.data.keyword.Bluemix_notm}} 上的某个现有 {{site.data.keyword.Db2_on_Cloud_short}} 服务。
 

@@ -15,7 +15,7 @@ lastupdated:  "2018-02-14"
 ## 前提条件
 {: #prerequisites_p2}
 
-{{site.data.keyword.mobilefoundation_short}}: プロフェッショナル 1 アプリケーション」サービス・インスタンスを構成する前に、以下の項目を考慮してください。
+「{{site.data.keyword.mobilefoundation_short}}: プロフェッショナル 1 アプリケーション」サービス・インスタンスを構成する前に、以下の項目を考慮してください。
 * 「{{site.data.keyword.mobilefoundation_short}}: プロフェッショナル 1 アプリケーション」は、{{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}} プランでのみサポートされます。
 
 * {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス資格情報へのアクセスができなければ、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスの設定を構成できません。
@@ -105,7 +105,7 @@ lastupdated:  "2018-02-14"
 
  * {{site.data.keyword.mfp_oc_short_notm}} から、Mobile Analytics サービス・コンソールを起動します。
 
- * {{site.data.keyword.mfserver_short_notm}} と Mobile Analytics サービスとの間で、シングル・サインオンが使用可能になります。Mobile Analytics サービスは、{{site.data.keyword.mfserver_short_notm}} サーバーと同じ LTPA 鍵とユーザー資格情報で構成されます。{{site.data.keyword.mfp_oc_short_notm}} のログインに使用したのと同じ `username` と `password` を使用して、Mobile Analytics コンソールにログインできます。
+ * {{site.data.keyword.mfserver_short_notm}} と Mobile Analytics サービスとの間で、シングル・サインオンが使用可能になります。 Mobile Analytics サービスは、{{site.data.keyword.mfserver_short_notm}} サーバーと同じ LTPA 鍵とユーザー資格情報で構成されます。 {{site.data.keyword.mfp_oc_short_notm}} のログインに使用したのと同じ `username` と `password` を使用して、Mobile Analytics コンソールにログインできます。
 
  Mobile Analytics について詳しくは、[MobileFirst Foundation Operational Analytics ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}を参照してください。
 
@@ -118,7 +118,7 @@ lastupdated:  "2018-02-14"
 
 * **「Analytics の削除」**をクリックして、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加されている Mobile Analytics サービスを削除します。
 
- **「Analytics の削除」** をクリックすると、Analytics サーバー・インスタンスが削除されます。Analytics インスタンスの削除プロセスには、約 10 分かかります。画面を最新表示して、更新された状況を確認できます。 Analytics インスタンスを削除すると、**「Analytics の追加」**ボタンが再び使用可能になります。Mobile Analytics サービスを再度追加する場合は、このボタンをクリックできます。
+ **「Analytics の削除」** をクリックすると、Analytics サーバー・インスタンスが削除されます。 Analytics インスタンスの削除プロセスには、約 10 分かかります。 画面を最新表示して、更新された状況を確認できます。 Analytics インスタンスを削除すると、**「Analytics の追加」**ボタンが再び使用可能になります。 Mobile Analytics サービスを再度追加する場合は、このボタンをクリックできます。
 
 
 ## MobileFirst サーバーの再作成
@@ -128,7 +128,7 @@ lastupdated:  "2018-02-14"
 
 * このアクションは、既存のサーバーを停止し、データを削除します。 更新されたバージョンがある場合は、更新されたバージョンで新しいサーバー・インスタンスが作成されます。 このアクションは、完了するまでに数分かかります。
 
-> **注**: アプリおよびアダプターに関する情報など、前のサーバー・インスタンスのデータは、構成された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス内に保持されます。このデータは、サーバーの再作成に使用されます。
+> **注**: アプリおよびアダプターに関する情報など、前のサーバー・インスタンスのデータは、構成された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス内に保持されます。 このデータは、サーバーの再作成に使用されます。
 
 ##	拡張構成のセットアップ
 {: #using_mfs_advanced_p2}

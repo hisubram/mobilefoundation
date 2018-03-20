@@ -34,7 +34,7 @@ lastupdated:  "2018-02-09"
 
 > **注：**
 >  * 用户将无法对其 {{site.data.keyword.mobilefoundation_short}} 服务实例应用自己的修订和更新。
->  * 请参阅 [Developer 套餐中的重新创建服务器](c_using_mfs_p1.html#recreate_mobilefoundation_p1)、[DeveloperPro 套餐中的重新创建服务器](c_using_mfs_p3.html#recreate_mobilefoundation_p3)、[Professional Per Capacity 套餐中的重新创建服务器](c_using_mfs_p4.html#recreate_mobilefoundation_p4)和 [Professional 1 Application 套餐中的重新创建服务器](c_using_mfs_p2.html#recreate_mobilefoundation_p2)，以了解单击**重新创建** 后不同套餐之间的行为差异。
+>  * 请参阅 [Developer 套餐中的重新创建服务器](c_using_mfs_p1.html#recreate_mobilefoundation_p1)、[DeveloperPro 套餐中的重新创建服务器](c_using_mfs_p3.html#recreate_mobilefoundation_p3)、[Professional Per Device 套餐中的重新创建服务器](c_using_mfs_p4.html#recreate_mobilefoundation_p5)和 [Professional 1 Application 套餐中的重新创建服务器](c_using_mfs_p2.html#recreate_mobilefoundation_p2)，以了解单击**重新创建** 后不同套餐之间的操作差异。
 >
 
 ## 如何为我的 {{site.data.keyword.mobilefoundation_short}} 服务器实例配置定制域？

@@ -35,7 +35,7 @@ lastupdated:  "2018-02-14"
 ### Db2 on Cloud サービス・インスタンスへの接続のセットアップ
 {: #connect_dashdb_p3}
 
-「開発者商用」プランを使用して {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを作成した後、*「概要」*ページが表示されます。このページで、{{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスの接続情報を指定する必要があります。{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスは、指定された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスに接続する必要があります。
+「開発者商用」プランを使用して {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを作成した後、*「概要」*ページが表示されます。このページで、{{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスの接続情報を指定する必要があります。 {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスは、指定された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスに接続する必要があります。
 
 既存の {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスがない場合は、作成できます。
 
@@ -54,7 +54,7 @@ lastupdated:  "2018-02-14"
 1. {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `組織`を選択します。
 
 + 選択した`組織`で使用可能なスペースのリストから、{{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `スペース`を選択します。   
-> **注:** {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する`組織`および`スペース`がリストされない場合、その`組織`および`スペース`のメンバーであるかどうかを確認してください。{{site.data.keyword.mobilefoundation_short}} サービスは {{site.data.keyword.Db2_on_Cloud_short}} サービスから資格情報にアクセスするため、組織およびスペースに対して*開発者* 役割のアクセス権限を持っている必要があります。
+> **注:** {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する`組織`および`スペース`がリストされない場合、その`組織`および`スペース`のメンバーであるかどうかを確認してください。 {{site.data.keyword.mobilefoundation_short}} サービスは {{site.data.keyword.Db2_on_Cloud_short}} サービスから資格情報にアクセスするため、組織およびスペースに対して*開発者* 役割のアクセス権限を持っている必要があります。
 
 + 既存の {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスに接続するための {{site.data.keyword.Db2_on_Cloud_short}} `サービス名` および `資格情報` を選択します。
 
@@ -106,7 +106,7 @@ lastupdated:  "2018-02-14"
 
 * {{site.data.keyword.mfp_oc_short_notm}} から、Mobile Analytics サービス・コンソールを起動します。
 
-* {{site.data.keyword.mfserver_short_notm}} と Mobile Analytics サービスとの間で、シングル・サインオンが使用可能になります。Mobile Analytics サービスは、{{site.data.keyword.mfserver_short_notm}} と同じ LTPA 鍵とユーザー資格情報で構成されます。{{site.data.keyword.mfp_oc_short_notm}} のログインに使用したのと同じ `username` と `password` を使用して、Mobile Analytics コンソールにログインできます。
+* {{site.data.keyword.mfserver_short_notm}} と Mobile Analytics サービスとの間で、シングル・サインオンが使用可能になります。 Mobile Analytics サービスは、{{site.data.keyword.mfserver_short_notm}} と同じ LTPA 鍵とユーザー資格情報で構成されます。 {{site.data.keyword.mfp_oc_short_notm}} のログインに使用したのと同じ `username` と `password` を使用して、Mobile Analytics コンソールにログインできます。
 
 Mobile Analytics サービスについて詳しくは、[MobileFirst Foundation Operational Analytics ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}を参照してください。
 
@@ -119,7 +119,7 @@ Mobile Analytics サービスについて詳しくは、[MobileFirst Foundation 
 
 * **「Analytics の削除」**をクリックして、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加されている Mobile Analytics サービスを削除します。
 
-  **「Analytics の削除」** をクリックすると、Analytics サーバー・インスタンスが削除されます。Analytics インスタンスの削除プロセスには、約 10 分かかります。画面を最新表示して、更新された状況を確認できます。 Analytics インスタンスを削除すると、**「Analytics の追加」**ボタンが再び使用可能になります。Mobile Analytics サービスを再度追加する場合は、このボタンをクリックできます。
+  **「Analytics の削除」** をクリックすると、Analytics サーバー・インスタンスが削除されます。 Analytics インスタンスの削除プロセスには、約 10 分かかります。 画面を最新表示して、更新された状況を確認できます。 Analytics インスタンスを削除すると、**「Analytics の追加」**ボタンが再び使用可能になります。 Mobile Analytics サービスを再度追加する場合は、このボタンをクリックできます。
 
 ## MobileFirst サーバーの再作成
 {: #recreate_mobilefoundation_p3}
@@ -128,16 +128,16 @@ Mobile Analytics サービスについて詳しくは、[MobileFirst Foundation 
 
 * このアクションは、既存のサーバーを停止し、データを削除します。 更新されたバージョンがある場合は、更新されたバージョンで新しいサーバー・インスタンスが作成されます。 このアクションは、完了するまでに数分かかります。
 
-> **注**: アプリおよびアダプターに関する情報など、前のサーバー・インスタンスのデータは、構成された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス内に保持されます。このデータは、サーバーの再作成に使用されます。
+> **注**: アプリおよびアダプターに関する情報など、前のサーバー・インスタンスのデータは、構成された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス内に保持されます。 このデータは、サーバーの再作成に使用されます。
 
 ##	拡張構成のセットアップ
 {: #using_mfs_advanced_p3}
 
-拡張設定またはカスタム設定を使用してサーバーを作成するには、`「概要」` ページの**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**を使用します。 また、**「設定」**タブをクリックして、サーバー構成をカスタマイズするためにサーバー設定を更新することもできます。{{site.data.keyword.mobilefoundation_short}} では、拡張設定にアクセスできます。
+拡張設定またはカスタム設定を使用してサーバーを作成するには、`「概要」` ページの**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**を使用します。 また、**「設定」**タブをクリックして、サーバー構成をカスタマイズするためにサーバー設定を更新することもできます。 {{site.data.keyword.mobilefoundation_short}} では、拡張設定にアクセスできます。
 
 *	**「トポロジー (Topology)」**タブから、必要に応じてサーバーのサイズとメモリーを選択できます。 デフォルトのサーバーは、1 GB のメモリーで作成されます。
   - 必要に応じて、サーバーのメモリーを最大 2 GB に変更できます。
 
-  - **「インスタンス」**は作成されたノード数を表示します。このフィールドは、「{{site.data.keyword.mobilefoundation_short}}: 開発者専門」では編集できません。 「開発者商用」プランでは、ノードの数は、デフォルトの **1** になります。
+  - **「インスタンス」**は作成されたノード数を表示します。 このフィールドは、「{{site.data.keyword.mobilefoundation_short}}: 開発者専門」では編集できません。 「開発者商用」プランでは、ノードの数は、デフォルトの **1** になります。
 
 詳しくは、[{{site.data.keyword.mobilefoundation_long}} documentation ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}を参照してください。

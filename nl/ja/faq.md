@@ -18,8 +18,7 @@ lastupdated:  "2018-02-09"
 ## {{site.data.keyword.mobilefoundation_short}} サービスの更新が使用可能になったことは、どのようにして分かりますか。
 {: #maintupdates_mf}
 
-{{site.data.keyword.mobilefoundation_short}} は {{site.data.keyword.mfserver_short_notm}} をプロビジョンします。{{site.data.keyword.mobilefoundation_short}} サーバーに対する更新は、ユーザーに通知されます。 通知は、サービス・インスタンス・ダッシュボードに表示されます。 ユーザーは、自分で決定した保守時間帯に {{site.data.keyword.mobilefoundation_short}} に更新を適用することを選択できます。都合のよいときに {{site.data.keyword.mobilefoundation_short}} サーバーを更新することができます。
-
+{{site.data.keyword.mobilefoundation_short}} は {{site.data.keyword.mfserver_short_notm}} をプロビジョンします。 {{site.data.keyword.mobilefoundation_short}} サーバーに対する更新は、ユーザーに通知されます。 通知は、サービス・インスタンス・ダッシュボードに表示されます。 ユーザーは、自分で決定した保守時間帯に {{site.data.keyword.mobilefoundation_short}} に更新を適用することを選択できます。 都合のよいときに {{site.data.keyword.mobilefoundation_short}} サーバーを更新することができます。
 
 以下のいずれかのコンポーネントが更新されたときに、{{site.data.keyword.mobilefoundation_short}} サービス更新が利用可能になります。
 
@@ -30,18 +29,18 @@ lastupdated:  "2018-02-09"
 ## {{site.data.keyword.mobilefoundation_short}} サービスに更新を適用するにはどうすればいいですか。
 {: #apply_update_mf}
 
-{{site.data.keyword.mobilefoundation_short}} に対する更新は、**「再作成」**をクリックして適用できます。更新を適用すると、{{site.data.keyword.mfp_oc_short_notm}} に表示されるサーバーのバージョンが変更され、サーバーの更新バージョンを示します。
+{{site.data.keyword.mobilefoundation_short}} に対する更新は、**「再作成」**をクリックして適用できます。
+更新を適用すると、{{site.data.keyword.mfp_oc_short_notm}} に表示されるサーバーのバージョンが変更され、サーバーの更新バージョンを示します。
 
 > **注:**
 >  * ユーザーが自分の {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに独自のフィックスや更新を適用することはできません。
->  * *「再作成」** をクリックしたときのプランによる動作の違いについては、[「開発者」プランでのサーバーの再作成](c_using_mfs_p1.html#recreate_mobilefoundation_p1)、[「開発者商用」プランでのサーバーの再作成](c_using_mfs_p3.html#recreate_mobilefoundation_p3)、[「容量ごとの商用」プランでのサーバーの再作成](c_using_mfs_p4.html#recreate_mobilefoundation_p4)、および[「1 つの商用アプリケーション」プランでのサーバーの再作成](c_using_mfs_p2.html#recreate_mobilefoundation_p2)を参照してください。*
+>  * *「再作成」** をクリックしたときのプランによる動作の違いについては、[「開発者」プランでのサーバーの再作成](c_using_mfs_p1.html#recreate_mobilefoundation_p1)、[「開発者専門」プランでのサーバーの再作成](c_using_mfs_p3.html#recreate_mobilefoundation_p3)、[「デバイス当たりのプロフェッショナル」プランでのサーバーの再作成 ](c_using_mfs_p4.html#recreate_mobilefoundation_p5)、および[「プロフェッショナル 1 アプリケーション」プランでのサーバーの再作成](c_using_mfs_p2.html#recreate_mobilefoundation_p2)を参照してください。*
 >
 
 ## {{site.data.keyword.mobilefoundation_short}} サーバー・インスタンスのカスタム・ドメインを構成するにはどうすればいいですか。
 {: #configcustomdomain}
 
-{{site.data.keyword.mobilefoundation_short}} は、{{site.data.keyword.Bluemix_notm}} **地域**に基づいたドメイン名を含む URL を使用してアクセス可能な、{{site.data.keyword.mfserver_short_notm}} をプロビジョンします。独自のカスタム・ドメインを構成することも可能です。
-
+{{site.data.keyword.mobilefoundation_short}} は、{{site.data.keyword.Bluemix_notm}} **地域**に基づいたドメイン名を含む URL を使用してアクセス可能な、{{site.data.keyword.mfserver_short_notm}} をプロビジョンします。 独自のカスタム・ドメインを構成することも可能です。
 
 この URL や経路は、{{site.data.keyword.Bluemix_notm}} `地域`に基づいたデフォルト・ドメイン名を使用して作成されます。
 

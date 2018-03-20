@@ -2,78 +2,80 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-14"
+lastupdated:  "2018-03-07"
 
 ---
 
 #	「開発者」プランの使用
 {: #using_mobilefoundation_p1}
 
-「開発者」プランを使用して、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを作成した後、{{site.data.keyword.Bluemix_notm}} の「概要」ページにアクセスします。このページには、サービスを使い始める上で役立つチュートリアルやビデオが用意されています。
+「開発者」プランを使用して、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを作成した後、{{site.data.keyword.Bluemix_notm}} の「概要」ページにアクセスします。 このページには、サービスを使い始める上で役立つチュートリアルやビデオが用意されています。
 
-## MobileFirst サーバーの始動
+## MobileFirst Server を使用した作業
 {: #start_mobilefoundation_p1}
-* {{site.data.keyword.mfserver_short_notm}} をデフォルト設定で始動するには、**「基本サーバーの始動」**をクリックしてください。
+* MobileFirst Server に即座にアクセスして作業を行うことができます。
 
   この選択により、以下の設定で {{site.data.keyword.mfserver_long_notm}} がプロビジョンされます。
   *	1 GB のメモリー。 開発アクティビティー、簡単なテスト・アクティビティー、および小規模な実動ワークロードには、このサイズで十分です。
 
-  *	`ユーザー名` と `パスワード` は自動的に生成されます。 サーバーの稼働中にこれらにアクセスできます。
+  * CLI を使用して MobileFirst Server にアクセスするには、IBM Cloud コンソールの左側のナビゲーション・ペインで**「サービス資格情報」**をクリックして表示される、資格情報が必要です。
 
-  プロビジョン・プロセスが始動します。 このプロセスには約 10 分かかり、メッセージ・ウィンドウにはこの操作の進行が示されます。 完了すると、以下のことを確認できるダッシュボードが表示されます。
-    *	実行中のサーバーの状況 (状態、サイズ)。
+<!--  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
+    *	The status of your server that is running (state, size).
 
-    *	自動的に作成されたサーバーの経路。 {{site.data.keyword.mfserver_short_notm}} に接続するには、モバイル・アプリケーションでこの経路を使用します。
+    *	The server route created for you. Use this route in your mobile application to connect to the {{site.data.keyword.mfserver_short_notm}}.
 
-    *	{{site.data.keyword.mfp_oc_short_notm}} にアクセスするための個人の`ユーザー名` と`パスワード`。 `パスワード` は非表示です。 表示するには**「パスワードの表示」**アイコンをクリックします。
+    *	Your personal `username` and `password` to access the {{site.data.keyword.mfp_oc_short_notm}}. The `password` is hidden. Click **Show Password** icon to visualize it.
 
-*	**「コンソールの起動」**をクリックして {{site.data.keyword.mfp_oc_short_notm}} を起動します。
+*	Click **Launch Console** to launch the {{site.data.keyword.mfp_oc_short_notm}}.-->
 
-このコンソールを使用して、モバイル・アプリとモバイル・デバイスの管理、モバイル・バックエンドとしてのサーバーの使用、プッシュ通知の送信などを行えます。
+これで、モバイル・アプリとモバイル・デバイスの管理、モバイル・バックエンドとしてのサーバーの使用、プッシュ通知の送信などを行うことができます。
 
-##  Mobile Analytics サービスの追加
+## Mobile Analytics サービス
 {: #adding_analytics_server_dev}
 
- Mobile Analytics サービスを {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加することにより、{{site.data.keyword.mobilefirst}} サーバー上のモバイル・アプリケーションをモニターできるようになりました。「開発者」プランでは、単一のノードと 1 GB メモリーを持つコンテナー・グループに、Mobile Analytics サービスを作成します。
+Mobile Analytics サーバーが含まれ、「Mobile Foundation: 開発者」プランのサービス・インスタンスで事前構成されています。
 
-* **「Analytics の追加」**をクリックして、Mobile Analytics サービスを {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加します。
+<!-- You can now monitor your mobile application on {{site.data.keyword.mobilefirst}} server by adding a Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance. Developer plan creates the Mobile Analytics service in a container group with a single node having 1 GB memory.
 
-  プロビジョン・プロセスが始動します。 このプロセスには約 10 分かかり、メッセージ・ウィンドウにはこの操作の進行が示されます。  
+* Click **Add Analytics** to add the Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance.
+
+  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation.  -->
 
 * {{site.data.keyword.mfp_oc_short_notm}} から、Mobile Analytics サービス・コンソールを起動します。
 
-* {{site.data.keyword.mfserver_short_notm}} と Mobile Analytics サービスとの間で、シングル・サインオンが使用可能になります。Mobile Analytics サービスは、{{site.data.keyword.mfserver_short_notm}} と同じ LTPA 鍵とユーザー資格情報で構成されます。{{site.data.keyword.mfp_oc_short_notm}} のログインに使用したのと同じ `username` と `password` を使用して、Mobile Analytics コンソールにログインできます。
+* {{site.data.keyword.mfserver_short_notm}} と Mobile Analytics サービスとの間で、シングル・サインオンが使用可能になります。 Mobile Analytics サービスは、{{site.data.keyword.mfserver_short_notm}} と同じ LTPA 鍵とユーザー資格情報で構成されます。 {{site.data.keyword.mfp_oc_short_notm}} のログインに使用したのと同じ `username` と `password` を使用して、Mobile Analytics コンソールにログインできます。
 
 Mobile Analytics について詳しくは、[MobileFirst Foundation Operational Analytics ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}を参照してください。
 
-> **注:** {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを削除するか、{{site.data.keyword.mfserver_short_notm}} を再作成すると、Mobile Analytics サービス・インスタンスが削除されます。
+> **注:** {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを削除すると、Mobile Analytics サービス・インスタンスが削除されます。
 
-##  Mobile Analytics サービスの削除
+<!--##  Deleting Mobile Analytics service
 {: #deleting_analytics_server_dev}
 
-{{site.data.keyword.mobilefoundation_short}} サービス・ダッシュボードから、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加された Mobile Analytics サービスを削除できるようになりました。
+You can now delete the Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance, from the {{site.data.keyword.mobilefoundation_short}} service dashboard.
 
-* **「Analytics の削除」**をクリックして、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに追加された Mobile Analytics サービスを削除します。
+* Click **Delete Analytics** to delete the  Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
- **「Analytics の削除」** をクリックすると、Analytics サーバー・インスタンスが削除されます。Analytics インスタンスの削除プロセスには、約 10 分かかります。画面を最新表示して、更新された状況を確認できます。 Analytics インスタンスを削除すると、**「Analytics の追加」**ボタンが再び使用可能になります。Mobile Analytics サービスを再度追加する場合は、このボタンをクリックできます。
+ Clicking **Delete Analytics** deletes the analytics server instance. The process of deleting analytics instance takes about 10 minutes. You can refresh the screen to view the updated status. Deletion of analytics instance reenables the **Add Analytics** button. If you choose to add the Mobile Analytics service again, you can click this button.
 
 
-## MobileFirst サーバーの再作成
+## Re-creating the MobileFirst server
 {: #recreate_mobilefoundation_p1}
 
-*	**「再作成」**をクリックしてサーバーを再作成します。
+*	Click **Recreate** to re-create the server.
 
-* このアクションは、既存のサーバーを停止し、データを削除します。 モバイル・サーバー内のデータはすべて失われます。 更新されたバージョンがある場合は、更新されたバージョンで新しいサーバー・インスタンスが作成されます。 このアクションは、完了するまでに数分かかります。
+* This action stops your existing server and deletes the data. All the data in your mobile server is lost. A new server instance is created with an updated version, if available. This action takes a few minutes to complete.
 
-##	拡張構成のセットアップ
+##	Setting up advanced configuration
 {: #using_mfs_advanced_p1}
 
-拡張設定またはカスタム設定を使用してサーバーを作成するには、`「概要」` ページの**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**を使用します。 また、**「構成 (Configuration)」**タブをクリックして、サーバー構成をカスタマイズするためにサーバー設定を更新することもできます。 {{site.data.keyword.mobilefoundation_short}} では、拡張設定にアクセスできます。
+Use the **Start Server with Advanced Configuration** from the `Overview` page to create the server with advanced or custom settings. You can also update the server settings to customize your server configuration by clicking the **Configuration** tab. {{site.data.keyword.mobilefoundation_short}} gives you access to some advanced settings.
 
-*	**「トポロジー (Topology)」**タブから、サーバーのサイズと、必要なインスタンスの数を選択できます。 開発と中程度のテストにはデフォルトの 1 GB のサーバーで十分です。
+*	From the **Topology** tab, you can select the server size and the number of instances you need. The default 1 GB server is enough for development and moderate testing.
 
-  - ニーズに応じて、ご使用のサーバーに合ったサイズを選択してください。
+  - Select the correct size for your server based on your need.
 
-* **「ノード (Nodes)」**は作成されたノード数を表示します。 このフィールドは「{{site.data.keyword.mobilefoundation_short}}: 開発者」では編集できません。 「開発者」プランで、ノードの数<!--in your {{site.data.keyword.IBM_notm}} container group-->は、**1** にデフォルト設定されます。
+* **Nodes** displays the number of nodes that are created. This field is not editable in {{site.data.keyword.mobilefoundation_short}}: Developer. The number of nodes is defaulted to **1** in the Developer plan.-->
 
 詳細については、[{{site.data.keyword.mobilefoundation_long}} documentation ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}を参照してください。
