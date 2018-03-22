@@ -2,14 +2,14 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-05"
+lastupdated:  "2018-03-22"
 
 ---
 
 #	Using the Professional Per Device plan
 {: #using_mobilefoundation_p5}
 
-With the Professional Per Device plan users can build, test and run mobile applications in production, regardless of the number of mobile users or devices. This plan supports large deployments and High Availability.
+With the Professional Per Device plan users can build, test and run mobile applications in production, regardless of the number of mobile users or devices, the charges are based on the number of daily client devices. This plan supports large deployments and High Availability.
 After you create the {{site.data.keyword.mobilefoundation_short}}: Professional Per Device service instance, read the following procedure to get started with the service.
 
 ## Pre-requisites
