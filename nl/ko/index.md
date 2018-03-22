@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-13"
+lastupdated:  "2018-03-12"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated:  "2018-02-13"
 # 시작하기 튜토리얼
 {: #gettingstartedtemplate}
 
-{{site.data.keyword.mobilefoundation_long}}는 엔터프라이즈 모바일 앱을 개발, 테스트 및 작동할 수 있는 {{site.data.keyword.mfp_full}} 환경 설정을 신속히 처리합니다. {{site.data.keyword.mobilefoundation_short}}은 다음과 같은 서로 다른 서비스 플랜(Developer, Developer Pro, Professional Per Capacity 및 Professional 1 Application) 아래에서 사용 가능합니다.
+{{site.data.keyword.mobilefoundation_long}}는 엔터프라이즈 모바일 앱을 개발, 테스트 및 작동할 수 있는 {{site.data.keyword.mfp_full}} 환경 설정을 신속히 처리합니다. {{site.data.keyword.mobilefoundation_short}}은 Developer, Professional Per Device 및 Professional 1 Application과 같은 여러 서비스 플랜 아래에서 사용 가능합니다.
 {:shortdesc}
 
 Professional 1 Application 플랜을 사용하면 Android, iOS, Windows 또는 모바일 웹 등 지원되는 운영 플랫폼 전체 또는 일부에서 빌드된 단일 애플리케이션을 관리할 수 있습니다. Developer 플랜은 개발과 테스트에 가장 적합합니다. [여기](https://console.bluemix.net/catalog/services/mobile-foundation)에서 사용 가능한 모든 플랜을 검토할 수 있습니다.
@@ -41,65 +41,17 @@ Professional 1 Application 플랜을 사용하면 Android, iOS, Windows 또는 �
 
 {{site.data.keyword.mobilefoundation_short}}: Developer의 인스턴스를 작성한 후에는 다음 단계를 완료하여 모바일 채널 빌드를 시작할 수 있습니다.
 
-  1.  기본 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하고 **기본 서버 시작**을 클릭하십시오.
+* MobileFirst 서버에 즉시 액세스하여 작업할 수 있습니다.
 
-    `The basic server instance includes a single node, 1 GB of memory.`
+  이 선택은 다음 설정으로 {{site.data.keyword.mfserver_long_notm}}를 프로비저닝합니다.
+  *	1GB의 메모리. 이 크기는 개발, 간단한 테스트 활동 및 소규모 프로덕션 워크로드에 충분합니다.
 
-  +	`username` 및 `password`가 사용자를 위해 자동으로 생성됩니다. 서버가 시작되고 실행되면 이에 액세스할 수 있습니다.
+  * CLI를 사용하여 MobileFirst 서버에 액세스하려면 IBM Cloud 콘솔의 왼쪽 탐색 분할창에서 **서비스 신임 정보**를 클릭할 때 사용 가능한 신임 정보가 필요합니다.
 
-    프로비저닝 프로세스가 시작됩니다. 이 프로세스는 약 10분 정도 소요되며, 메시지 창은 이 조작의 진행상태를 표시합니다. 완료되면 대시보드가 표시되며, 여기서 다음을 볼 수 있습니다.
-    * 실행 중인 서버의 상태(상태, 크기).
-    *	사용자를 위해 작성된 서버 라우트. 모바일 애플리케이션에서 이 라우트를 사용하여 {{site.data.keyword.mfserver_short_notm}}에 연결하십시오.
-    *	{{site.data.keyword.mfp_oc_short_notm}}에 액세스하기 위한 개인 `username` 및 `password`. `password`는 숨겨집니다. **비밀번호 표시** 아이콘을 클릭하면 볼 수 있습니다.
+### {{site.data.keyword.mobilefoundation_short}}의 경우: Professional Per Device 플랜
+{: #buildchannelprofdeviceplan}
 
-  + **콘솔 실행**을 클릭하여 {{site.data.keyword.mfp_oc_short_notm}}을 실행하십시오.
-
-토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](c_using_mfs_p1.html#using_mfs_advanced_p1)을 참조하십시오.
-{: tip}
-
-### {{site.data.keyword.mobilefoundation_short}}의 경우: Developer Pro 플랜
-{: #buildchanneldevproplan}
-
-{{site.data.keyword.mobilefoundation_short}}: Developer Pro 서비스의 인스턴스를 작성한 후에는 다음 단계를 완료하여 모바일 채널의 빌드를 시작할 수 있습니다.
-
-  1.  {{site.data.keyword.Bluemix_notm}}에서 기존 {{site.data.keyword.Db2_on_Cloud_short}} 서비스에 연결하십시오.
-
-      1.  {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 있는 {{site.data.keyword.Bluemix_notm}} `Organization`을 선택하십시오.
-
-      + 선택된 `Organization`에 사용 가능한 영역 목록에서 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 존재하는 {{site.data.keyword.Bluemix_notm}} `Space`를 선택하십시오.
-
-      + {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` 및 `Credentials`를 선택하여 기존 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 연결하십시오.
-
-      + **연결 테스트**를 클릭하여 선택한 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 대한 연결을 테스트하십시오.
-
-      + **추가**를 클릭한 후, 선택한 {{site.data.keyword.Db2_on_Cloud_short}} 서비스에 대한 확인을 요청하는 팝업 창에서 **계속**을 클릭하십시오. 이 조치는 구성된 {{site.data.keyword.Db2_on_Cloud_short}} 데이터베이스 서비스 인스턴스에 필수 테이블을 작성합니다.
-
-      > **참고:** {{site.data.keyword.Db2_on_Cloud_short}} 연결을 {{site.data.keyword.mobilefoundation_short}} 인스턴스에 추가한 후에는 이를 변경할 수 없습니다.
-
-  2.  서버를 작성하고 시작하십시오.
-
-      1. 기본 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하고 **기본 서버 시작**을 클릭하십시오.
-
-      + 이 선택은 다음 설정으로 {{site.data.keyword.mfserver_long_notm}}를 프로비저닝합니다.
-
-          - 1GB의 메모리가 있는 단일 노드. 이 크기는 개발, 일반적인 테스트 활동 및 소규모 프로덕션 워크로드에 충분합니다.
-
-          -	`username`과 `password`가 자동으로 생성됩니다. 서버가 시작되고 실행되면 이에 액세스할 수 있습니다.
-
-          서버 프로비저닝 프로세스가 시작됩니다. 이 프로세스는 약 10분 정도 소요되며, 메시지 창은 이 조작의 진행상태를 표시합니다. 완료되면 대시보드가 표시되며, 여기서 다음을 볼 수 있습니다.
-            -	실행 중인 서버의 상태(상태, 크기).
-            -	사용자가 사용할 수 있도록 서버 라우트가 작성됩니다. 모바일 애플리케이션에서 이 라우트를 사용하여 {{site.data.keyword.mfserver_short_notm}}에 연결하십시오.
-            -	{{site.data.keyword.mfp_oc_short_notm}}에 액세스하기 위한 개인 `username` 및 `password`. `password`는 숨겨집니다. **비밀번호 표시** 아이콘을 클릭하면 볼 수 있습니다.
-
-      +	**콘솔 실행**을 클릭하여 {{site.data.keyword.mfp_oc_short_notm}}을 여십시오.  
-
-      토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](c_using_mfs_p3.html#using_mfs_advanced_p3)을 참조하십시오.
-      {: tip}
-
-### {{site.data.keyword.mobilefoundation_short}}의 경우: Professional Per Capacity 플랜
-{: #buildchannelprofcapacityplan}
-
-{{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity 서비스의 인스턴스를 작성한 후에는 다음 단계를 완료하여 모바일 채널의 빌드를 시작할 수 있습니다.
+{{site.data.keyword.mobilefoundation_short}}: Professional Per Device 서비스의 인스턴스를 작성한 후에는 다음 단계를 완료하여 모바일 채널의 빌드를 시작할 수 있습니다.
 
   1.  {{site.data.keyword.Bluemix_notm}}에서 기존 {{site.data.keyword.Db2_on_Cloud_short}} 서비스에 연결하십시오.
 
@@ -284,7 +236,7 @@ Mobile Foundation 서버 인스턴스를 작성하고 시작한 후에 아래 �
 
   2. Android Studio에서 **앱 실행**을 클릭하십시오.
      * 디바이스 에뮬레이터에서 실행된 앱을 볼 수 있습니다.
-     * 실행된 애플리케이션에서 **MobileFirst Server 핑** 단추를 클릭하면 `Connected to MobileFirst Server`가 표시됩니다.
+     * 실행된 애플리케이션에서 **MobileFirst Server Ping** 단추를 클릭하면 `Connected to MobileFirst Server`가 표시됩니다.
      * 애플리케이션이 MobileFirst Server에 연결할 수 있으면 배치된 Java 어댑터를 사용하는 리소스 요청 호출이 발생합니다.
      * 그런 다음 어댑터 응답이 Android Studio의 LogCat 보기에 출력됩니다.
 
