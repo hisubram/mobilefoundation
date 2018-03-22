@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-13"
+lastupdated:  "2018-03-12"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated:  "2018-02-13"
 # Einführung - Lernprogramm
 {: #gettingstartedtemplate}
 
-{{site.data.keyword.mobilefoundation_long}} beschleunigt die Einrichtung einer {{site.data.keyword.mfp_full}}-Umgebung, mit der Sie mobile Unternehmens-Apps entwickeln, testen und betreiben können. {{site.data.keyword.mobilefoundation_short}} ist mit den folgenden unterschiedlichen Serviceplänen verfügbar: Developer, Developer Pro, Professional Per Capacity und Professional 1 Application.
+{{site.data.keyword.mobilefoundation_long}} beschleunigt die Einrichtung einer {{site.data.keyword.mfp_full}}-Umgebung, mit der Sie mobile Unternehmens-Apps entwickeln, testen und betreiben können. {{site.data.keyword.mobilefoundation_short}} ist mit den folgenden unterschiedlichen Serviceplänen verfügbar: Developer, Professional Per Device und Professional 1 Application.
 {:shortdesc}
 
 Mit dem Professional 1 Application-Plan kann eine einzelne Anwendung, die auf einer oder mehreren der unterstützten Betriebsplattformen, wie z. B. Android, iOS, Windows oder Mobile Web, erstellt wird, verwaltet werden. Der Developer-Plan ist am besten für Entwicklungs- und Testzwecke geeignet. Alle verfügbaren Pläne sind [hier](https://console.bluemix.net/catalog/services/mobile-foundation) aufgeführt.
@@ -41,65 +41,17 @@ Sie benötigen ein {{site.data.keyword.Bluemix}}-Konto und eine {{site.data.keyw
 
 Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Developer erstellt haben, können Sie mit der Erstellung Ihres mobilen Kanals beginnen, indem Sie die folgenden Schritte ausführen.
 
-  1.  Erstellen Sie eine {{site.data.keyword.mobilefirst_notm}}-Serverinstanz mit der Standardkonfiguration, indem Sie auf **Basisserver starten** klicken.
+* Sie können sofort auf den MobileFirst-Server zugreifen und diesen verwenden.
 
-    `Die Basisserverinstanz umfasst einen zentralen Knoten und 1 GB Speicherkapazität.`
+  Diese Auswahl stellt einen {{site.data.keyword.mfserver_long_notm}} mit den folgenden Einstellungen bereit:
+  *	1 GB Hauptspeicher. Diese Größe ist für Entwicklungs- und kleinere Testaktivitäten sowie für kleinere Produktionsworkloads ausreichend.
 
-  +	`Benutzername` und `Kennwort` werden automatisch für Sie generiert. Sie können darauf zugreifen, wenn der Server betriebsbereit ist.
+  * Für den Zugriff auf den MobileFirst-Server über die Befehlszeilenschnittstelle (CLI) benötigen Sie die Berechtigungsnachweise, die zur Verfügung stehen, wenn Sie auf **Serviceberechtigungsnachweise** im linken Navigationsbereich der IBM Cloud-Konsole klicken.
 
-    Der Prozess der Bereitstellung wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt. Ist der Vorgang abgeschlossen, wird ein Dashboard mit folgenden Informationen angezeigt:
-    * Status Ihres Servers, der ausgeführt wird (Zustand, Größe).
-    *	Für Sie erstellte Serverroute. Verwenden Sie diese Route in Ihrer mobilen Anwendung, um eine Verbindung zum {{site.data.keyword.mfserver_short_notm}} herzustellen.
-    *	Ihr persönlicher `Benutzername` und das `Kennwort` für den Zugriff auf die {{site.data.keyword.mfp_oc_short_notm}}. Das `Kennwort` wird ausgeblendet. Klicken Sie auf das Symbol **Kennwort anzeigen**, um es einzublenden.
+### Für {{site.data.keyword.mobilefoundation_short}}: Professional Per Device-Plan
+{: #buildchannelprofdeviceplan}
 
-  + Klicken Sie auf **Konsole starten**, um die {{site.data.keyword.mfp_oc_short_notm}} zu starten.
-
-Zur Erstellung einer {{site.data.keyword.mobilefirst_notm}}-Serverinstanz mit erweiterter Konfiguration für Topologie, Sicherheit und weitere Serverkonfigurationen klicken Sie auf **Server mit erweiterter Konfiguration starten**. Weitere Informationen finden Sie in [Erweiterte Konfiguration einrichten](c_using_mfs_p1.html#using_mfs_advanced_p1).
-{: tip}
-
-### Für {{site.data.keyword.mobilefoundation_short}}: Developer Pro-Plan
-{: #buildchanneldevproplan}
-
-Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Developer Pro-Service erstellt haben, können Sie mit der Erstellung Ihres mobilen Kanals beginnen, indem Sie die folgenden Schritte ausführen.
-
-  1.  Stellen Sie eine Verbindung zu einem vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}-Service in {{site.data.keyword.Bluemix_notm}} her.
-
-      1.  Wählen Sie die {{site.data.keyword.Bluemix_notm}} `Organisation` aus, in der sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet.
-
-      + Wählen Sie den {{site.data.keyword.Bluemix_notm}}-`Bereich`, in dem sich die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz befindet, in der Liste der Bereiche aus, die in der ausgewählten `Organisation` verfügbar sind.
-
-      + Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.Db2_on_Cloud_short}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz herzustellen.
-
-      + Testen Sie die Verbindung zu der ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz, indem Sie auf **Verbindung testen** klicken.
-
-      + Klicken Sie auf **Hinzufügen** und anschließend auf **Weiter** in dem Popup-Fenster, in dem Sie zur Bestätigung des ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}-Service aufgefordert werden. Mit dieser Aktion werden die erforderlichen Tabellen in der konfigurierten {{site.data.keyword.Db2_on_Cloud_short}}-Datenbankserviceinstanz erstellt.
-
-      > **Hinweis:** Nach dem Hinzufügen einer {{site.data.keyword.Db2_on_Cloud_short}}-Verbindung zur {{site.data.keyword.mobilefoundation_short}}-Instanz kann diese nicht mehr geändert werden.
-
-  2.  Erstellen Sie den Server und starten Sie ihn.
-
-      1. Erstellen Sie eine {{site.data.keyword.mobilefirst_notm}}-Serverinstanz mit der Standardkonfiguration, indem Sie auf **Basisserver starten** klicken.
-
-      + Diese Auswahl stellt einen {{site.data.keyword.mfserver_long_notm}} mit den folgenden Einstellungen bereit:
-
-          - Einzelner Knoten mit 1 GB Hauptspeicher. Diese Größe ist für Entwicklungs- und kleinere Testaktivitäten sowie für kleinere Produktionsworkloads ausreichend.
-
-          -	`Benutzername` und `Kennwort` werden automatisch für Sie generiert. Sie können darauf zugreifen, wenn der Server betriebsbereit ist.
-
-          Der Prozess der Bereitstellung Ihres Servers wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt. Ist der Vorgang abgeschlossen, wird ein Dashboard mit folgenden Informationen angezeigt:
-            -	Status Ihres Servers, der ausgeführt wird (Zustand, Größe).
-            -	Für Sie erstellte Serverroute. Verwenden Sie diese Route in Ihrer mobilen Anwendung, um eine Verbindung zum {{site.data.keyword.mfserver_short_notm}} herzustellen.
-            -	Ihr persönlicher `Benutzername` und das `Kennwort` für den Zugriff auf die {{site.data.keyword.mfp_oc_short_notm}}. Das `Kennwort` wird ausgeblendet. Klicken Sie auf das Symbol **Kennwort anzeigen**, um es einzublenden.
-
-      +	Klicken Sie auf **Konsole starten**, um die {{site.data.keyword.mfp_oc_short_notm}} zu öffnen.  
-
-      Zur Erstellung einer {{site.data.keyword.mobilefirst_notm}}-Serverinstanz mit erweiterter Konfiguration für Topologie, Sicherheit und weitere Serverkonfigurationen klicken Sie auf **Server mit erweiterter Konfiguration starten**. Weitere Informationen finden Sie in [Erweiterte Konfiguration einrichten](c_using_mfs_p3.html#using_mfs_advanced_p3).
-      {: tip}
-
-### Für {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity-Plan
-{: #buildchannelprofcapacityplan}
-
-Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity-Service erstellt haben, können Sie mit der Erstellung Ihres mobilen Kanals beginnen, indem Sie die folgenden Schritte ausführen.
+Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Professional Per Device-Service erstellt haben, können Sie mit der Erstellung Ihres mobilen Kanals beginnen, indem Sie die folgenden Schritte ausführen.
 
   1.  Stellen Sie eine Verbindung zu einem vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}-Service in {{site.data.keyword.Bluemix_notm}} her.
 

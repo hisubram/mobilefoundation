@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-14"
+lastupdated:  "2018-03-07"
 
 ---
 
@@ -11,34 +11,36 @@ lastupdated:  "2018-02-14"
 
 Nach der Erstellung der {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz im Rahmen des Developer-Plans können Sie auf die Übersichtsseite in {{site.data.keyword.Bluemix_notm}} zugreifen. Auf dieser Seite finden Sie Lernprogramme und Videos, die Sie beim Einstieg in die Arbeit mit dem Service unterstützen.
 
-## MobileFirst-Server starten
+## MobileFirst-Server verwenden
 {: #start_mobilefoundation_p1}
-* Um den {{site.data.keyword.mfserver_short_notm}} mit den Standardeinstellungen zu starten, klicken Sie auf **Basisserver starten**.
+* Sie können sofort auf den MobileFirst-Server zugreifen und diesen verwenden.
 
   Diese Auswahl stellt einen {{site.data.keyword.mfserver_long_notm}} mit den folgenden Einstellungen bereit:
   *	1 GB Hauptspeicher. Diese Größe ist für Entwicklungs- und kleinere Testaktivitäten sowie für kleinere Produktionsworkloads ausreichend.
 
-  *	`Benutzername` und `Kennwort` werden automatisch für Sie generiert. Sie können darauf zugreifen, wenn der Server betriebsbereit ist.
+  * Für den Zugriff auf den MobileFirst-Server über die Befehlszeilenschnittstelle (CLI) benötigen Sie die Berechtigungsnachweise, die zur Verfügung stehen, wenn Sie auf **Serviceberechtigungsnachweise** im linken Navigationsbereich der IBM Cloud-Konsole klicken.
 
-  Der Prozess der Bereitstellung wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt. Ist der Vorgang abgeschlossen, wird ein Dashboard mit folgenden Informationen angezeigt:
-    *	Status Ihres Servers, der ausgeführt wird (Zustand, Größe).
+<!--  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
+    *	The status of your server that is running (state, size).
 
-    *	Für Sie erstellte Serverroute. Verwenden Sie diese Route in Ihrer mobilen Anwendung, um eine Verbindung zum {{site.data.keyword.mfserver_short_notm}} herzustellen.
+    *	The server route created for you. Use this route in your mobile application to connect to the {{site.data.keyword.mfserver_short_notm}}.
 
-    *	Ihr persönlicher `Benutzername` und das `Kennwort` für den Zugriff auf die {{site.data.keyword.mfp_oc_short_notm}}. Das `Kennwort` wird ausgeblendet. Klicken Sie auf das Symbol **Kennwort anzeigen**, um es einzublenden.
+    *	Your personal `username` and `password` to access the {{site.data.keyword.mfp_oc_short_notm}}. The `password` is hidden. Click **Show Password** icon to visualize it.
 
-*	Klicken Sie auf **Konsole starten**, um die {{site.data.keyword.mfp_oc_short_notm}} zu starten.
+*	Click **Launch Console** to launch the {{site.data.keyword.mfp_oc_short_notm}}.-->
 
-Mit der Konsole können Sie Ihre mobilen Apps und Geräte verwalten, Ihren Server als mobiles Back-End verwenden, Push-Benachrichtigungen senden usw.
+Sie können nun Ihre mobilen Apps und Geräte verwalten, Ihren Server als mobiles Back-End verwenden, Push-Benachrichtigungen senden usw.
 
-##  Mobile Analytics-Service hinzufügen
+## Mobile Analytics-Service
 {: #adding_analytics_server_dev}
 
- Sie können Ihre mobile Anwendung nun auf dem {{site.data.keyword.mobilefirst}}-Server überwachen, indem Sie einen Mobile Analytics-Service zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz hinzufügen. Durch den Entwicklerplan wird der Mobile Analytics-Service in einer Containergruppe mit einem einzigen Knoten und 1 GB Speicherplatz erstellt.
+Mobile Analytics-Server ist in der Serviceinstanz des Mobile Foundation: Developer-Plans enthalten und vorkonfiguriert.
 
-* Klicken Sie auf **Analytics hinzufügen**, um den Mobile Analytics-Service zur Instanz des {{site.data.keyword.mobilefoundation_short}}-Service hinzuzufügen.
+<!-- You can now monitor your mobile application on {{site.data.keyword.mobilefirst}} server by adding a Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance. Developer plan creates the Mobile Analytics service in a container group with a single node having 1 GB memory.
 
-  Der Prozess der Bereitstellung wird gestartet. Dieser Prozess dauert ungefähr 10 Minuten; in einem Nachrichtenfenster wird der Fortschritt dieser Operation angezeigt.  
+* Click **Add Analytics** to add the Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance.
+
+  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation.  -->
 
 * Starten Sie die Mobile Analytics-Servicekonsole über {{site.data.keyword.mfp_oc_short_notm}}.
 
@@ -46,34 +48,34 @@ Mit der Konsole können Sie Ihre mobilen Apps und Geräte verwalten, Ihren Serve
 
 Weitere Informationen zu Mobile Analytics finden Sie unter [MobileFirst Foundation Operational Analytics ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
 
-> **Hinweis:** Durch das Löschen der {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz und die erneute Erstellung von {{site.data.keyword.mfserver_short_notm}} wird die Mobile Analytics-Serviceinstanz entfernt.
+> **Hinweis:** Durch das Löschen der {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz wird die Mobile Analytics-Serviceinstanz entfernt.
 
-##  Mobile Analytics-Service löschen
+<!--##  Deleting Mobile Analytics service
 {: #deleting_analytics_server_dev}
 
-Sie können jetzt den Mobile Analytics-Service, der zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz hinzugefügt wurde, im {{site.data.keyword.mobilefoundation_short}}-Service-Dashboard löschen.
+You can now delete the Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance, from the {{site.data.keyword.mobilefoundation_short}} service dashboard.
 
-* Klicken Sie auf die Option **Analytics löschen**, um den Mobile Analytics-Service zu löschen, der zur {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz hinzugefügt wurde.
+* Click **Delete Analytics** to delete the  Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
- Durch das Klicken auf **Analytics löschen** wird die Analytics-Serverinstanz gelöscht. Das Löschen der Analytics-Instanz dauert ca. 10 Minuten. Sie können die Anzeige aktualisieren, um den aktuellen Status anzuzeigen. Durch das Löschen der Analytics-Instanz wird die Schaltfläche **Analytics hinzufügen** erneut aktiviert. Wenn Sie den Mobile Analytics-Service erneut hinzufügen möchten, können Sie auf diese Schaltfläche klicken.
+ Clicking **Delete Analytics** deletes the analytics server instance. The process of deleting analytics instance takes about 10 minutes. You can refresh the screen to view the updated status. Deletion of analytics instance reenables the **Add Analytics** button. If you choose to add the Mobile Analytics service again, you can click this button.
 
 
-## MobileFirst-Server erneut erstellen
+## Re-creating the MobileFirst server
 {: #recreate_mobilefoundation_p1}
 
-*	Klicken Sie auf die Schaltfläche **Neu erstellen**, um den Server erneut zu erstellen.
+*	Click **Recreate** to re-create the server.
 
-* Diese Aktion stoppt Ihre vorhandenen Server und löscht die Daten. Alle Daten Ihres mobilen Servers gehen verloren. Eine neue Serverinstanz wird mit einer aktualisierten Version erstellt, falls verfügbar. Diese Aktion nimmt einige Minuten in Anspruch.
+* This action stops your existing server and deletes the data. All the data in your mobile server is lost. A new server instance is created with an updated version, if available. This action takes a few minutes to complete.
 
-##	Erweiterte Konfiguration einrichten
+##	Setting up advanced configuration
 {: #using_mfs_advanced_p1}
 
-Mit der Option **Server mit erweiterter Konfiguration starten** auf der Seite `Übersicht` können Sie einen Server mit erweiterten oder benutzerdefinierten Einstellungen erstellen. Sie können die Servereinstellungen auch aktualisieren, um Ihre Serverkonfiguration anzupassen; klicken Sie hierfür auf die Registerkarte **Konfiguration**. {{site.data.keyword.mobilefoundation_short}} bietet Ihnen Zugriff auf einige erweiterte Einstellungen.
+Use the **Start Server with Advanced Configuration** from the `Overview` page to create the server with advanced or custom settings. You can also update the server settings to customize your server configuration by clicking the **Configuration** tab. {{site.data.keyword.mobilefoundation_short}} gives you access to some advanced settings.
 
-*	Auf der Registerkarte **Topologie** können Sie die Servergröße und die Anzahl der Instanzen auswählen, die den jeweiligen Anforderungen entsprechen. Die Standardgröße von 1 GB für den Server ist für die Entwicklung und kleinere Tests ausreichend.
+*	From the **Topology** tab, you can select the server size and the number of instances you need. The default 1 GB server is enough for development and moderate testing.
 
-  - Wählen Sie in Abhängigkeit von Ihrem Bedarf die richtige Größe für Ihren Server aus.
+  - Select the correct size for your server based on your need.
 
-* **Knoten** zeigt die Anzahl der erstellten Knoten an. Dieses Feld ist nicht in {{site.data.keyword.mobilefoundation_short}}: Developer bearbeitbar. Die Anzahl der Knoten <!--in your {{site.data.keyword.IBM_notm}} container group--> beträgt standardmäßig **1** im Developer-Plan.
+* **Nodes** displays the number of nodes that are created. This field is not editable in {{site.data.keyword.mobilefoundation_short}}: Developer. The number of nodes is defaulted to **1** in the Developer plan.-->
 
 Weitere Details finden Sie in der [{{site.data.keyword.mobilefoundation_long}}-Dokumentation ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}.

@@ -26,7 +26,7 @@ Die {{site.data.keyword.mobilefoundation_short}}-Serviceaktualisierung steht zur
 * Zugrunde liegende Liberty-Version.
 * Zugrunde liegende Java Developer Kit-Version.
 
-## Wie wende ich die Aktualisierungen für den {{site.data.keyword.mobilefoundation_short}}-Service an? 
+## Wie wende ich die Aktualisierungen für den {{site.data.keyword.mobilefoundation_short}}-Service an?
 {: #apply_update_mf}
 
 Die Aktualisierung für {{site.data.keyword.mobilefoundation_short}} kann durch Klicken auf die Option für die Neuerstellung angewendet werden.
@@ -34,7 +34,7 @@ Bei der Anwendung der Aktualisierung wird die Version des Servers, die in der {{
 
 > **Hinweis:**
 >  * Benutzer können keine eigenen Fixes und Aktualisierungen auf ihre Instanz des {{site.data.keyword.mobilefoundation_short}}-Service anwenden.
->  * In [Server im Developer-Plan erneut erstellen](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [Server im DeveloperPro-Plan erneut erstellen](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Server im Professional Per Capacity-Plan erneut erstellen](c_using_mfs_p4.html#recreate_mobilefoundation_p4) und [Server im Professional 1 Application-Plan](c_using_mfs_p2.html#recreate_mobilefoundation_p2) werden die Unterschiede im Verhalten beim Klicken auf **Erneut erstellen** für die jeweiligen Pläne beschrieben.
+>  * In [Server im Developer-Plan erneut erstellen](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [Server im DeveloperPro-Plan erneut erstellen](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Server im Professional Per Device-Plan erneut erstellen](c_using_mfs_p4.html#recreate_mobilefoundation_p5) und [Server im Professional 1 Application-Plan](c_using_mfs_p2.html#recreate_mobilefoundation_p2) werden die Unterschiede im Verhalten beim Klicken auf **Erneut erstellen** für die jeweiligen Pläne beschrieben.
 >
 
 ## Wie konfiguriere ich eine angepasste Domäne für meine {{site.data.keyword.mobilefoundation_short}}-Serverinstanz?

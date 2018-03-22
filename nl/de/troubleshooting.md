@@ -44,7 +44,7 @@ Bei der Beschreibung eines Problems lautet die offensichtlichste Frage "Was ist 
 
 ### Wo tritt das Problem auf?
 
-Den Ursprung des Problems festzustellen, ist nicht immer einfach. Dieser Schritt ist jedoch einer der wichtigsten bei der Behebung eines Problems. Zahlreiche Technologieebenen können sich zwischen der Komponente, die den Fehler meldet, und der Komponente, bei der der Fehler auftritt, befinden. Netze, Platten und Treiber sind nur einige der Komponenten, die bei der Untersuchung von Problemen zu berücksichtigen sind. 
+Den Ursprung des Problems festzustellen, ist nicht immer einfach. Dieser Schritt ist jedoch einer der wichtigsten bei der Behebung eines Problems. Zahlreiche Technologieebenen können sich zwischen der Komponente, die den Fehler meldet, und der Komponente, bei der der Fehler auftritt, befinden. Netze, Platten und Treiber sind nur einige der Komponenten, die bei der Untersuchung von Problemen zu berücksichtigen sind.
 
 Mithilfe der folgenden Fragen können Sie den Ursprung des Problems eingrenzen, um so die Ebene zu isolieren, auf der der Fehler auftritt:
 
