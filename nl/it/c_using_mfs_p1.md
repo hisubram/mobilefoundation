@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-14"
+lastupdated:  "2018-03-07"
 
 ---
 
@@ -11,77 +11,71 @@ lastupdated:  "2018-02-14"
 
 Dopo aver creato l'istanza del servizio {{site.data.keyword.mobilefoundation_short}} utilizzando il piano Developer, accedi alla pagina della panoramica in {{site.data.keyword.Bluemix_notm}}. In questa pagina, ti vengono forniti i video e le esercitazioni per aiutarti a iniziare a utilizzare il servizio.
 
-## Avvio del server MobileFirst
+## Utilizzo del server MobileFirst 
 {: #start_mobilefoundation_p1}
-* Per avviare {{site.data.keyword.mfserver_short_notm}} con le impostazioni predefinite, fai clic su **Avvia server di base**.
+* Puoi accedere e utilizzare immediatamente il server MobileFirst.
 
   Questa selezione fornisce un {{site.data.keyword.mfserver_long_notm}} con le seguenti impostazioni:
   *	1 GB di memoria. Questa dimensione è sufficiente per lo sviluppo, per delle attività leggere di test e i carichi di lavoro di produzione su piccola scala.
 
-  *	Il `nome utente` e la `password` ti vengono generati
-automaticamente. Disporrai dell'accesso ad essi quando il server è avviato e in esecuzione.
+  * Per accedere al server MobileFirst utilizzando la CLI avrai bisogno delle credenziali, che sono disponibili quando fai clic su **Credenziali del servizio** dal pannello di navigazione di sinistra della console IBM Cloud.
 
-  Viene avviato il processo di provisioning. Questo processo impiega circa 10 minuti e una finestra di messaggio
-indica l'avanzamento di questa operazione. Al suo completamento, viene visualizzato un dashboard
-dove puoi vedere:
-    *	Lo stato del tuo server in esecuzione (stato, dimensione).
+<!--  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
+    *	The status of your server that is running (state, size).
 
-    *	La rotta del server creata per te. Utilizza questa rotta nella tua applicazione mobile per collegarti a {{site.data.keyword.mfserver_short_notm}}.
+    *	The server route created for you. Use this route in your mobile application to connect to the {{site.data.keyword.mfserver_short_notm}}.
 
-    *	I tuoi `nomeutente` e `password` personali per accedere a {{site.data.keyword.mfp_oc_short_notm}}. La `password` è nascosta. Fai clic sull'icona **Mostra password** per visualizzarla.
+    *	Your personal `username` and `password` to access the {{site.data.keyword.mfp_oc_short_notm}}. The `password` is hidden. Click **Show Password** icon to visualize it.
 
-*	Fai clic su **Avvia console** per avviare {{site.data.keyword.mfp_oc_short_notm}}.
+*	Click **Launch Console** to launch the {{site.data.keyword.mfp_oc_short_notm}}.-->
 
-Con la console, puoi gestire le tue applicazioni mobili e i tuoi dispositivi mobili, utilizzare il tuo server come un backend mobile, inviare notifiche di push e altro ancora.
+Puoi ora gestire le tue applicazioni mobili e i tuoi dispositivi mobili, utilizzare il tuo server come un backend mobile, inviare notifiche di push e altro ancora. 
 
-##  Aggiunta del servizio Mobile Analytics 
+## Servizio Mobile Analytics 
 {: #adding_analytics_server_dev}
 
- Puoi ora monitorare la tua applicazione mobile sul server {{site.data.keyword.mobilefirst}} aggiungendo un servizio Mobile Analytics all'istanza del servizio {{site.data.keyword.mobilefoundation_short}}. Il piano Developer crea il servizio Mobile Analytics in un gruppo di contenitori con un solo nodo con 1 GB di memoria. 
+Il server Mobile Analytics è incluso e preconfigurato con l'istanza del servizio del piano Mobile Foundation: Developer.
 
-* Fai clic su **Aggiungi Analytics** per aggiungere il servizio Mobile Analytics all'istanza del servizio {{site.data.keyword.mobilefoundation_short}}. 
+<!-- You can now monitor your mobile application on {{site.data.keyword.mobilefirst}} server by adding a Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance. Developer plan creates the Mobile Analytics service in a container group with a single node having 1 GB memory.
 
-  Viene avviato il processo di provisioning. Questo processo impiega circa 10 minuti e una finestra di messaggio
-indica l'avanzamento di questa operazione.  
+* Click **Add Analytics** to add the Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
-* Avvia la console del servizio Mobile Analytics da {{site.data.keyword.mfp_oc_short_notm}}. 
+  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation.  -->
+
+* Avvia la console del servizio Mobile Analytics da {{site.data.keyword.mfp_oc_short_notm}}.
 
 * SSO (single sign-on) è abilitato tra {{site.data.keyword.mfserver_short_notm}} e il servizio Mobile Analytics. Il servizio Mobile Analytics è configurato con le stesse credenziali utente e chiavi LTPA di {{site.data.keyword.mfserver_short_notm}}. Puoi utilizzare gli stessi `nomeutente` e `password` per accedere alla console di Mobile Analytics utilizzati per accedere a {{site.data.keyword.mfp_oc_short_notm}}.
 
 Per ulteriori informazioni su Mobile Analytics, puoi fare riferimento a [MobileFirst Foundation Operational Analytics ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
 
-> **Nota:** l'eliminazione dell'istanza del servizio {{site.data.keyword.mobilefoundation_short}} o il ricreare {{site.data.keyword.mfserver_short_notm}} rimuove l'istanza del servizio Mobile Analytics.
+> **Nota:** l'eliminazione dell'istanza del servizio {{site.data.keyword.mobilefoundation_short}} rimuove l'istanza del servizio Mobile Analytics.
 
-##  Eliminazione del servizio Mobile Analytics 
+<!--##  Deleting Mobile Analytics service
 {: #deleting_analytics_server_dev}
 
-Puoi ora eliminare il servizio Mobile Analytics che è stato aggiunto all'istanza del servizio {{site.data.keyword.mobilefoundation_short}},
-dal dashboard del servizio {{site.data.keyword.mobilefoundation_short}}. 
+You can now delete the Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance, from the {{site.data.keyword.mobilefoundation_short}} service dashboard.
 
-* Fai clic su **Elimina Analytics** per eliminare il servizio Mobile Analytics che è stato aggiunto all'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
+* Click **Delete Analytics** to delete the  Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
- Facendo clic su **Elimina Analytics** elimini l'istanza del server di analisi. Il processo di eliminazione dell'istanza di analisi dura circa 10 minuti. Puoi aggiornare la schermata per visualizzare lo stato di aggiornamento. L'eliminazione dell'istanza di analisi riabilita il pulsante **Aggiungi Analytics**. Se scegli di aggiungere nuovamente il servizio Mobile Analytics, puoi fare clic sul questo pulsante.
+ Clicking **Delete Analytics** deletes the analytics server instance. The process of deleting analytics instance takes about 10 minutes. You can refresh the screen to view the updated status. Deletion of analytics instance reenables the **Add Analytics** button. If you choose to add the Mobile Analytics service again, you can click this button.
 
 
-## Ricreazione del server MobileFirst
+## Re-creating the MobileFirst server
 {: #recreate_mobilefoundation_p1}
 
-*	Fai clic su **Ricrea** per ricreare il server.
+*	Click **Recreate** to re-create the server.
 
-* Questa azione arresta il tuo server esistente e elimina i dati. Tutti i dati nel tuo server mobile vengono persi. Viene creata una nuova istanza del server con una versione aggiornata, se disponibile. Il completamento di questa azione richiede
-alcuni minuti.
+* This action stops your existing server and deletes the data. All the data in your mobile server is lost. A new server instance is created with an updated version, if available. This action takes a few minutes to complete.
 
-##	Impostazione della configurazione avanzata
+##	Setting up advanced configuration
 {: #using_mfs_advanced_p1}
 
-Utilizza **Avvia server con la configurazione avanzata** dalla pagina `Panoramica` per creare il server con le impostazioni avanzate o personalizzate. Puoi inoltre
-aggiornare le impostazioni del server per personalizzare la tua configurazione server facendo clic sulla scheda
-**Configurazione**. {{site.data.keyword.mobilefoundation_short}} ti dà l'accesso ad alcune impostazioni avanzate.
+Use the **Start Server with Advanced Configuration** from the `Overview` page to create the server with advanced or custom settings. You can also update the server settings to customize your server configuration by clicking the **Configuration** tab. {{site.data.keyword.mobilefoundation_short}} gives you access to some advanced settings.
 
-*	Dalla scheda **Topologia**, puoi selezionare la dimensione del server e il numero di istanze di cui hai bisogno. Il server da 1 GB predefinito è sufficiente per lo sviluppo e una moderata attività di test.
+*	From the **Topology** tab, you can select the server size and the number of instances you need. The default 1 GB server is enough for development and moderate testing.
 
-  - Seleziona la dimensione corretta per il tuo server sulla base delle tue necessità.
+  - Select the correct size for your server based on your need.
 
-* **Nodi** visualizza il numero di nodi creati. Questo campo non è modificabile in {{site.data.keyword.mobilefoundation_short}}: Developer. Il numero di nodi in <!--in your {{site.data.keyword.IBM_notm}} container group--> è predefinito su **1** nel piano Developer.
+* **Nodes** displays the number of nodes that are created. This field is not editable in {{site.data.keyword.mobilefoundation_short}}: Developer. The number of nodes is defaulted to **1** in the Developer plan.-->
 
 Fai riferimento alla documentazione di [{{site.data.keyword.mobilefoundation_long}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window} per ulteriori dettagli.

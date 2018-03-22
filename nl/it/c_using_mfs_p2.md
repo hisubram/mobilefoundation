@@ -36,23 +36,23 @@ Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_
 
 Dopo che l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application è stata creata, vedrai la pagina *Panoramica*
 dove dovrai specificare le informazioni di connessione per l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}},
-a cui dovrebbe collegarsi l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}. 
+a cui dovrebbe collegarsi l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
 
-Puoi anche creare una nuova istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, se non ne hai una già esistente. 
+Puoi anche creare una nuova istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, se non ne hai una già esistente.
 
 Utilizza la seguente procedura per creare una nuova istanza del servizio Db2 on Cloud:
 
 1. Nella pagina *Panoramica* seleziona la sezione **Crea nuovo servizio**.
 
 + Seleziona `Sì` per l'opzione **Configurazione alta disponibilità **,
-se desideri l'alta disponibilità per l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}. 
+se desideri l'alta disponibilità per l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}.
 
 + Controlla i dettagli del piano e fai clic su **Crea**.
 
 Viene creata una nuova istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} che fornisce un'istanza
 {{site.data.keyword.Db2_on_Cloud_short}} dedicata con 8 GB RAM e 2 vCPU e 500 GB di archiviazione.
 
-Utilizza la seguente procedura per stabilire una connessione a un'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} esistente o all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} che hai appena creato: 
+Utilizza la seguente procedura per stabilire una connessione a un'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} esistente o all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} che hai appena creato:
 
 1. Seleziona l'`Organizzazione` {{site.data.keyword.Bluemix_notm}} dove è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}.
 
@@ -95,10 +95,10 @@ dove puoi vedere:
 
 Con la console, puoi gestire le tue applicazioni mobili, gli adattatori e i tuoi dispositivi mobili, utilizzare il tuo server come un backend mobile, inviare notifiche di push e altro ancora.
 
-##  Aggiunta del servizio Mobile Analytics 
+##  Aggiunta del servizio Mobile Analytics
 {: #adding_analytics_server_prof}
 
- Puoi ora monitorare la tua applicazione mobile sul server {{site.data.keyword.mobilefirst}} aggiungendo un servizio Mobile Analytics all'istanza del servizio {{site.data.keyword.mobilefoundation_short}}. 
+ Puoi ora monitorare la tua applicazione mobile sul server {{site.data.keyword.mobilefirst}} aggiungendo un servizio Mobile Analytics all'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
 
  Il piano Professional crea un'istanza del servizio Mobile Analytics.
 
@@ -106,11 +106,11 @@ Con la console, puoi gestire le tue applicazioni mobili, gli adattatori e i tuoi
 
  For more information on adding volumes to {{site.data.keyword.containerlong}}, refer to [Storing persistent data in a volume by using the {{site.data.keyword.Bluemix_notm}} Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui){: new_window}.-->
 
- * Fai clic su **Aggiungi Analytics** per aggiungere il servizio Mobile Analytics all'istanza del servizio {{site.data.keyword.mobilefoundation_short}}. 
+ * Fai clic su **Aggiungi Analytics** per aggiungere il servizio Mobile Analytics all'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
 
    Viene avviato il processo di provisioning. Questo processo dura alcuni minuti e un indicatore di avanzamento indica l'avanzamento di questa operazione.  
 
- * Avvia la console del servizio Mobile Analytics da {{site.data.keyword.mfp_oc_short_notm}}. 
+ * Avvia la console del servizio Mobile Analytics da {{site.data.keyword.mfp_oc_short_notm}}.
 
  * SSO (single sign-on) è abilitato tra {{site.data.keyword.mfserver_short_notm}} e il servizio Mobile Analytics. Il servizio Mobile Analytics è configurato con le stesse credenziali utente e chiavi LTPA del server {{site.data.keyword.mfserver_short_notm}}. Puoi utilizzare gli stessi `nomeutente` e `password` per accedere alla console di Mobile Analytics utilizzati per accedere a {{site.data.keyword.mfp_oc_short_notm}}.
 
@@ -118,11 +118,11 @@ Con la console, puoi gestire le tue applicazioni mobili, gli adattatori e i tuoi
 
 > **Nota:** l'eliminazione dell'istanza del servizio {{site.data.keyword.mobilefoundation_short}} rimuove l'istanza del servizio Mobile Analytics.
 
-##  Eliminazione del servizio Mobile Analytics 
+##  Eliminazione del servizio Mobile Analytics
 {: #deleting_analytics_server_prof}
 
 Puoi ora eliminare il servizio Mobile Analytics che è stato aggiunto all'istanza del servizio {{site.data.keyword.mobilefoundation_short}},
-dal dashboard del servizio {{site.data.keyword.mobilefoundation_short}}. 
+dal dashboard del servizio {{site.data.keyword.mobilefoundation_short}}.
 
 * Fai clic su **Elimina Analytics** per eliminare il servizio Mobile Analytics che è stato aggiunto all'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
 

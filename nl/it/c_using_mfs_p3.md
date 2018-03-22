@@ -102,7 +102,7 @@ Con la console, puoi gestire le tue applicazioni mobili, gli adattatori e i tuoi
 
  For more information on adding volumes to {{site.data.keyword.containerlong}}, refer to [Storing persistent data in a volume by using the {{site.data.keyword.Bluemix_notm}} Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui){: new_window}. -->
 
-* Fai clic su **Aggiungi Analytics** per aggiungere l'istanza del servizio Mobile Analytics all'istanza del servizio {{site.data.keyword.mobilefoundation_short}}. 
+* Fai clic su **Aggiungi Analytics** per aggiungere l'istanza del servizio Mobile Analytics all'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
 
 <!--* You can choose the Mobile Analytics service configuration, a minimum of 1 GB and a maximum of 2 GB memory is supported for the Analytics server configuration.-->
   Viene avviato il processo di provisioning. Questo processo impiega circa 10 minuti e una finestra di messaggio

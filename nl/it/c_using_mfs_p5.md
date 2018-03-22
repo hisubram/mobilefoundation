@@ -2,21 +2,21 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-14"
+lastupdated:  "2018-03-05"
 
 ---
 
-#	Utilizzo del piano Professional Per Capacity
-{: #using_mobilefoundation_p4}
+#	Utilizzo del piano Professional Per Device
+{: #using_mobilefoundation_p5}
 
-Con il piano Professional Per Capacity gli utenti possono creare qualsiasi numero di applicazioni mobili con più sistemi operativi mobili.
-Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity, leggi la seguente procedura introduttiva al servizio.
+Con il piano Professional Per Device gli utenti possono creare, verificare ed eseguire le applicazioni mobili nella produzione, indipendentemente dal numero di dispositivi o utenti mobili. Questo piano supporta le grandi distribuzioni e l'alta disponibilità.
+Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device, leggi la seguente procedura introduttiva al servizio.
 
 ## Prerequisiti
-{: #prerequisites_p4}
+{: #prerequisites_p5}
 
-Tieni conto di quanto segue, prima di configurare l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity
-* {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity è supportato solo con i piani {{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}}.
+Tieni conto di quanto segue, prima di configurare l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device
+* {{site.data.keyword.mobilefoundation_short}}: Professional Per Device è supportato solo con i piani {{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}}.
 
 * Devi avere accesso alle credenziali dell'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} prima di poter configurare le impostazioni della tua istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
 
@@ -24,19 +24,17 @@ Tieni conto di quanto segue, prima di configurare l'istanza del servizio {{site.
 
 
 ## Aggiunta della connessione al database
-{: #configure_dashdb_p4}
+{: #configure_dashdb_p5}
 
 ###  Prime operazioni
-{: #firststeps_p4}
+{: #firststeps_p5}
 
-Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity, completa la seguente procedura per iniziare a utilizzarla.
+Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device, completa la seguente procedura per iniziare a utilizzarla.
 
 ### Impostazione della connessione all'istanza del servizio Db2 on Cloud
-{: #connect_dashdb_p4}
+{: #connect_dashdb_p5}
 
-Dopo che l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity è stata creata, vedrai la pagina *Panoramica*
-dove dovrai specificare le informazioni di connessione per l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}},
-a cui dovrebbe collegarsi l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
+Dopo che l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device è stata creata, vedrai la pagina *Panoramica* dove dovrai specificare le informazioni di connessione per l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, a cui dovrebbe collegarsi l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}. 
 
 Puoi anche creare una nuova istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, se non ne hai una già esistente.
 
@@ -70,7 +68,7 @@ Dopo pochi secondi, puoi accedere alla pagina `Panoramica` che ti fornisce le es
 > **Nota**: non puoi modificare l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} configurata per essere utilizzata dalla tua istanza del servizio {{site.data.keyword.mobilefoundation_short}}. Tuttavia, puoi utilizzare la stessa istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} tra più istanze del servizio {{site.data.keyword.mobilefoundation_short}}, poiché ogni istanza di {{site.data.keyword.mobilefoundation_short}} crea il proprio schema nell'istanza del servizio  {{site.data.keyword.Db2_on_Cloud_short}} selezionata.
 
 ## Avvio del server MobileFirst
-{: #start_mobilefoundation_p4}
+{: #start_mobilefoundation_p5}
 
 * Per avviare {{site.data.keyword.mfserver_short_notm}}, con le impostazioni predefinite, fai clic su **Avvia server di base**.
 
@@ -92,10 +90,11 @@ dove puoi vedere:
 *	Fai clic su **Avvia console** per aprire {{site.data.keyword.mfp_oc_short_notm}}.
 
 
-<!--This console runs inside the container.--> Con la console, puoi gestire le tue applicazioni mobili, gli adattatori e i tuoi dispositivi mobili, utilizzare il tuo server come un backend mobile, inviare notifiche di push e altro ancora.
+Con la console, puoi gestire le tue applicazioni mobili, gli adattatori e i tuoi dispositivi mobili, utilizzare il tuo server come un backend mobile, inviare notifiche di push e altro ancora.
+
 
 ##  Aggiunta del servizio Mobile Analytics
-{: #adding_analytics_server_p4}
+{: #adding_analytics_server_p5}
 
  Puoi ora monitorare la tua applicazione mobile sul server {{site.data.keyword.mobilefirst}} aggiungendo un'istanza del servizio Mobile Analytics all'istanza {{site.data.keyword.mobilefoundation_short}}.
 
@@ -120,7 +119,7 @@ Per ulteriori informazioni su Mobile Analytics, puoi fare riferimento a [MobileF
 > **Nota:** l'eliminazione dell'istanza del servizio {{site.data.keyword.mobilefoundation_short}} rimuove l'istanza del servizio Mobile Analytics.
 
 ##  Eliminazione del servizio Mobile Analytics
-{: #deleting_analytics_server_p4}
+{: #deleting_analytics_server_p5}
 
 Puoi ora eliminare il servizio Mobile Analytics che è stato aggiunto all'istanza del servizio {{site.data.keyword.mobilefoundation_short}},
 dal dashboard del servizio {{site.data.keyword.mobilefoundation_short}}.
@@ -130,7 +129,7 @@ dal dashboard del servizio {{site.data.keyword.mobilefoundation_short}}.
  Facendo clic su **Elimina Analytics** elimini l'istanza del server di analisi. Il processo di eliminazione dell'istanza di analisi dura circa 10 minuti. Puoi aggiornare la schermata per visualizzare lo stato di aggiornamento. L'eliminazione dell'istanza di analisi riabilita il pulsante **Aggiungi Analytics**. Se scegli di aggiungere nuovamente il servizio Mobile Analytics, puoi fare clic sul questo pulsante.
 
 ## Ricreazione del server MobileFirst
-{: #recreate_mobilefoundation_p4}
+{: #recreate_mobilefoundation_p5}
 
 *	Fai clic su **Ricrea** per ricreare il server.
 
@@ -140,7 +139,7 @@ alcuni minuti.
 > **Nota**: i dati dalla tua istanza del server precedente, comprese le informazioni sulle applicazioni e sugli adattatori, sono memorizzati in modo persistente nell'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} configurata. Questi dati saranno utilizzati per ricreare il tuo server.
 
 ##	Impostazione della configurazione avanzata
-{: #using_mfs_advanced_p4}
+{: #using_mfs_advanced_p5}
 
 Utilizza **Avvia server con la configurazione avanzata** dalla pagina `Panoramica` per creare il server con le impostazioni avanzate o personalizzate. Puoi inoltre
 aggiornare le impostazioni del server per personalizzare la tua configurazione server facendo clic sulla scheda **Impostazioni**. {{site.data.keyword.mobilefoundation_short}} ti dà l'accesso ad alcune impostazioni avanzate.

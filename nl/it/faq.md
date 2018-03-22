@@ -34,7 +34,7 @@ Durante l'applicazione dell'aggiornamento, la versione del server, come visto in
 
 > **Nota:**
 >  * Gli utenti non saranno in grado di applicare le loro modifiche e aggiornamenti alla loro istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
->  * Consulta [Ricreare il server nel piano Developer](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [Ricreare il server nel piano DeveloperPro](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Ricreare il server nel piano Professional Per Capacity](c_using_mfs_p4.html#recreate_mobilefoundation_p4) e [Ricreare il server nel piano Professional 1 Application](c_using_mfs_p2.html#recreate_mobilefoundation_p2) per comprendere la differenza nel comportamento dei piani quando viene fatto clic su **Ricrea**.
+>  * Consulta [Ricreare il server nel piano Developer](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [Ricreare il server nel piano DeveloperPro](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Ricreare il server nel piano Professional Per Device](c_using_mfs_p4.html#recreate_mobilefoundation_p5) e [Ricreare il server nel piano Professional 1 Application](c_using_mfs_p2.html#recreate_mobilefoundation_p2) per comprendere la differenza nel comportamento dei piani quando viene fatto clic su **Ricrea**.
 >
 
 ## Come configuro il dominio personalizzato della mia istanza del server {{site.data.keyword.mobilefoundation_short}}?
@@ -42,14 +42,14 @@ Durante l'applicazione dell'aggiornamento, la versione del server, come visto in
 
 {{site.data.keyword.mobilefoundation_short}} fornisce {{site.data.keyword.mfserver_short_notm}}, a cui è possibile accedere utilizzando un URL che dispone dei nomi del dominio basati sulla **Regione** {{site.data.keyword.Bluemix_notm}}. Puoi anche configurare il tuo dominio personalizzato.
 
-L'URL o la rotta sono creati con i nomi del dominio predefiniti basati sulla `Regione` {{site.data.keyword.Bluemix_notm}}. 
+L'URL o la rotta sono creati con i nomi del dominio predefiniti basati sulla `Regione` {{site.data.keyword.Bluemix_notm}}.
 
   |Dominio |  Regione  |    
   |:----- | :----- |    
   |`mybluemix.net` | Stati Uniti Sud |    
   |`eu-gb.mybluemix.net` | Regno Unito  |
   |`au-syd.mybluemix.net` | Sydney  |   
-  |`eu-de.mybluemix.net` | Francoforte|   
+  |`eu-de.mybluemix.net` | Francoforte |   
   {: caption="Tabella 1. Nomi dominio dell'applicazione basati sulla regione in {{site.data.keyword.Bluemix_notm}}" caption-side="top"}
 
 Per poter utilizzare il tuo dominio, dovrai configurare il dominio personalizzato completando la seguente procedura:
