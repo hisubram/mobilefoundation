@@ -34,7 +34,7 @@ lastupdated:  "2018-02-09"
 
 > **附註：**
 >  * 使用者將無法套用自己的修正程式和更新至 {{site.data.keyword.mobilefoundation_short}} 服務實例。
->  * 請參閱[在 Developer 方案中重建伺服器](c_using_mfs_p1.html#recreate_mobilefoundation_p1)、[在 DeveloperPro 方案中重建伺服器](c_using_mfs_p3.html#recreate_mobilefoundation_p3)、[在 Professional Per Capacity 方案中重建伺服器](c_using_mfs_p4.html#recreate_mobilefoundation_p4)及[在 Professional 1 Application 方案中重建伺服器](c_using_mfs_p2.html#recreate_mobilefoundation_p2)，以瞭解按一下**重建* 時，方案之間的行為差異。
+>  * 請參閱[在 Developer 方案中重建伺服器](c_using_mfs_p1.html#recreate_mobilefoundation_p1)、[在 DeveloperPro 方案中重建伺服器](c_using_mfs_p3.html#recreate_mobilefoundation_p3)、[在 Professional Per Device 方案中重建伺服器](c_using_mfs_p4.html#recreate_mobilefoundation_p5)及[在 Professional 1 Application 方案中重建伺服器](c_using_mfs_p2.html#recreate_mobilefoundation_p2)，以瞭解按一下**重建* 時，方案之間的行為差異。
 >
 
 ## 如何配置 {{site.data.keyword.mobilefoundation_short}} 伺服器實例的自訂網域？

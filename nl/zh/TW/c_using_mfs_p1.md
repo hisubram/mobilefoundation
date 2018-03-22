@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-14"
+lastupdated:  "2018-03-07"
 
 ---
 
@@ -11,34 +11,36 @@ lastupdated:  "2018-02-14"
 
 使用 Developer 方案建立 {{site.data.keyword.mobilefoundation_short}} 服務實例之後，請存取 {{site.data.keyword.Bluemix_notm}} 上的 Overview 頁面。在此頁面上，提供指導教學及視訊，協助您開始使用服務。
 
-## 啟動 MobileFirst 伺服器
+## 使用 MobileFirst 伺服器
 {: #start_mobilefoundation_p1}
-* 若要以預設值啟動 {{site.data.keyword.mfserver_short_notm}}，請按一下**啟動基本伺服器**。
+* 您可以立即存取與使用 MobileFirst 伺服器。
 
   此選項會使用下列設定佈建 {{site.data.keyword.mfserver_long_notm}}：
   *	1 GB 的記憶體。此大小就足以進行開發、輕量型測試活動及小規模正式作業工作負載。
 
-  *	自動產生 `username` 及 `password`。您可以在伺服器啟動並執行時存取它們。
+  * 使用 CLI 存取 MobileFirst 伺服器時需要認證，您可以從 IBM Cloud 主控台的左導覽窗格按一下**服務認證**來取得認證。
 
-  即會啟動佈建處理程序。此處理程序大約需要 10 分鐘的時間，並且會出現一個訊息視窗，指出此作業的進度。完成時，會顯示一個儀表板，您可以在其中查看：
-    *	執行中伺服器的狀態（狀態、大小）。
+<!--  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
+    *	The status of your server that is running (state, size).
 
-    *	為您建立的伺服器路徑。您可以使用行動應用程式中的這個路徑來連接至 {{site.data.keyword.mfserver_short_notm}}。
+    *	The server route created for you. Use this route in your mobile application to connect to the {{site.data.keyword.mfserver_short_notm}}.
 
-    *	用來存取 {{site.data.keyword.mfp_oc_short_notm}} 的 `username` 和 `password`。會隱藏 `password`。按一下**顯示密碼**圖示，即可進行視覺化。
+    *	Your personal `username` and `password` to access the {{site.data.keyword.mfp_oc_short_notm}}. The `password` is hidden. Click **Show Password** icon to visualize it.
 
-*	按一下**啟動主控台**，以啟動 {{site.data.keyword.mfp_oc_short_notm}}。
+*	Click **Launch Console** to launch the {{site.data.keyword.mfp_oc_short_notm}}.-->
 
-利用這個主控台，您可以管理行動應用程式及行動裝置、使用伺服器作為行動後端、傳送推送通知，以及執行其他作業。
+您現在可以管理行動應用程式及行動裝置、使用伺服器作為行動後端、傳送推送通知，以及執行其他作業。
 
-##  新增 Mobile Analytics 服務
+## Mobile Analytics 服務
 {: #adding_analytics_server_dev}
 
- 您現在可以在 {{site.data.keyword.mobilefirst}} 伺服器上監視您的行動應用程式，方法是將 Mobile Analytics 服務新增至 {{site.data.keyword.mobilefoundation_short}} 服務實例。Developer 方案使用具有 1 GB 記憶體的單一節點在容器群組中建立 Mobile Analytics 服務。
+Mobile Foundation: Developer 方案服務實例已包含並預先配置 Mobile Analytics 伺服器。
 
-* 按一下**新增分析**將 Mobile Analytics 服務新增至 {{site.data.keyword.mobilefoundation_short}} 服務實例。
+<!-- You can now monitor your mobile application on {{site.data.keyword.mobilefirst}} server by adding a Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance. Developer plan creates the Mobile Analytics service in a container group with a single node having 1 GB memory.
 
-  即會啟動佈建處理程序。此處理程序大約需要 10 分鐘的時間，並且會出現一個訊息視窗，指出此作業的進度。  
+* Click **Add Analytics** to add the Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance.
+
+  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation.  -->
 
 * 從 {{site.data.keyword.mfp_oc_short_notm}} 啟動 Mobile Analytics 服務主控台。
 
@@ -48,34 +50,34 @@ lastupdated:  "2018-02-14"
 
 如需 Mobile Analytics 的相關資訊，您可以參閱 [MobileFirst Foundation Operational Analytics ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}。
 
-> **附註：**刪除 {{site.data.keyword.mobilefoundation_short}} 服務實例或重建 {{site.data.keyword.mfserver_short_notm}} 會移除 Mobile Analytics 服務實例。
+> **附註：**刪除 {{site.data.keyword.mobilefoundation_short}} 服務實例會移除 Mobile Analytics 服務實例。
 
-##  刪除 Mobile Analytics 服務
+<!--##  Deleting Mobile Analytics service
 {: #deleting_analytics_server_dev}
 
-您現在可以從 {{site.data.keyword.mobilefoundation_short}} 服務儀表板中刪除已新增至 {{site.data.keyword.mobilefoundation_short}} 服務實例的 Mobile Analytics 服務。
+You can now delete the Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance, from the {{site.data.keyword.mobilefoundation_short}} service dashboard.
 
-* 按一下**刪除分析**，刪除已新增至 {{site.data.keyword.mobilefoundation_short}} 服務實例的 Mobile Analytics 服務。
+* Click **Delete Analytics** to delete the  Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
- 按一下**刪除分析**會刪除分析伺服器實例。刪除分析實例的處理程序需要大約 10 分鐘。您可以重新整理畫面來檢視更新的狀態。刪除分析實例會重新啟用**新增分析**按鈕。如果您選擇重新新增 Mobile Analytics 服務，則可以按一下此按鈕。
+ Clicking **Delete Analytics** deletes the analytics server instance. The process of deleting analytics instance takes about 10 minutes. You can refresh the screen to view the updated status. Deletion of analytics instance reenables the **Add Analytics** button. If you choose to add the Mobile Analytics service again, you can click this button.
 
 
-## 重建 MobileFirst 伺服器
+## Re-creating the MobileFirst server
 {: #recreate_mobilefoundation_p1}
 
-*	按一下**重建**，以重建伺服器。
+*	Click **Recreate** to re-create the server.
 
-* 此動作會停止現有的伺服器，並刪除資料。行動伺服器中的所有資料都會遺失。隨即會使用更新的版本（如果有的話）建立新的伺服器實例。這個動作需要數分鐘的時間才能完成。
+* This action stops your existing server and deletes the data. All the data in your mobile server is lost. A new server instance is created with an updated version, if available. This action takes a few minutes to complete.
 
-##	設定進階配置
+##	Setting up advanced configuration
 {: #using_mfs_advanced_p1}
 
-使用 `Overview` 頁面中的**使用進階配置啟動伺服器**頁面，以使用進階或自訂設定來建立伺服器。您也可以更新伺服器設定來自訂伺服器配置，方法是按一下**配置**標籤。{{site.data.keyword.mobilefoundation_short}} 可讓您存取一些進階設定。
+Use the **Start Server with Advanced Configuration** from the `Overview` page to create the server with advanced or custom settings. You can also update the server settings to customize your server configuration by clicking the **Configuration** tab. {{site.data.keyword.mobilefoundation_short}} gives you access to some advanced settings.
 
-*	從**拓蹼**標籤中，您可以選取伺服器大小和所需的實例數目。預設 1 GB 伺服器就足以進行開發及控管測試。
+*	From the **Topology** tab, you can select the server size and the number of instances you need. The default 1 GB server is enough for development and moderate testing.
 
-  - 根據您的需求，選取正確的伺服器大小。
+  - Select the correct size for your server based on your need.
 
-* **節點數**會顯示已建立的節點數目。在 {{site.data.keyword.mobilefoundation_short}}: Developer 中無法編輯此欄位。在 Developer 方案中，<!--in your {{site.data.keyword.IBM_notm}} container group-->節點數目預設為 **1**。
+* **Nodes** displays the number of nodes that are created. This field is not editable in {{site.data.keyword.mobilefoundation_short}}: Developer. The number of nodes is defaulted to **1** in the Developer plan.-->
 
 如需詳細資料，請參閱 [{{site.data.keyword.mobilefoundation_long}} 文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}。
