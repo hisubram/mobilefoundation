@@ -34,20 +34,14 @@ Lors de l'application de la mise à jour, la version du serveur, comme affichée
 
 > **Remarque :**
 >  * Les utilisateurs ne seront pas en mesure d'appliquer leurs propres correctifs et mises à jour à leur instance de service {{site.data.keyword.mobilefoundation_short}}.
->  * Pour comprendre la différence de comportement d'un plan à un autre lorsque vous cliquez
-sur **Recréer*, consultez [Recréation du serveur dans le plan Developer](c_using_mfs_p1.html#recreate_mobilefoundation_p1),
-[Recréation du serveur dans le plan DeveloperPro](c_using_mfs_p3.html#recreate_mobilefoundation_p3),
-[Recréation du serveur dans le plan Professional Per Capacity](c_using_mfs_p4.html#recreate_mobilefoundation_p4) et
-[Recréation du serveur dans le plan Professional 1 Application](c_using_mfs_p2.html#recreate_mobilefoundation_p2).
-
+>  * Pour comprendre la différence de comportement d'un plan à un autre lorsque vous cliquez sur **Recréer*, consultez [Recréation du serveur dans le plan Développeur](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [Recréation du serveur dans le plan Développeur Pro](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Recréation du serveur dans le plan Professionnel par appareil](c_using_mfs_p4.html#recreate_mobilefoundation_p5) et [Recréation du serveur dans le plan Professionnel, 1 application](c_using_mfs_p2.html#recreate_mobilefoundation_p2).
 >
 
 ## Comment configurer un domaine personnalisé pour mon instance de serveur {{site.data.keyword.mobilefoundation_short}} ?
 {: #configcustomdomain}
 
 {{site.data.keyword.mobilefoundation_short}} met à disposition un serveur {{site.data.keyword.mfserver_short_notm}}
-qui est accessible en utilisant une URL dont les noms de domaine reposent sur la **région** {{site.data.keyword.Bluemix_notm}}.
-Vous pouvez également configurer votre propre domaine personnalisé.
+qui est accessible en utilisant une URL dont les noms de domaine reposent sur la **région** {{site.data.keyword.Bluemix_notm}}. Vous pouvez également configurer votre propre domaine personnalisé.
 
 L'URL ou la route est créée avec les noms de domaine par défaut, d'après la `région` {{site.data.keyword.Bluemix_notm}}.
 

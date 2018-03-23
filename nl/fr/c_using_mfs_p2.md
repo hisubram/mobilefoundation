@@ -6,17 +6,17 @@ lastupdated:  "2018-02-14"
 
 ---
 
-#	Utilisation du plan Professional 1 Application
+#	Utilisation du plan Professionnel, 1 application
 {: #using_mobilefoundation_p2}
 
-Les utilisateurs du plan Professional 1 Application peuvent créer une application mobile avec plusieurs systèmes d'exploitation mobiles.
-Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, lisez la procédure ci-après pour commencer à l'utiliser.
+Les utilisateurs du plan Professionnel, 1 application peuvent créer une application mobile avec plusieurs systèmes d'exploitation mobiles.
+Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel, 1 application, lisez la procédure ci-après pour commencer à l'utiliser.
 
 ## Conditions prérequises
 {: #prerequisites_p2}
 
-Prenez connaissance des éléments suivants avant de configurer l'instance de service {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application.
-* {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application est pris en charge uniquement avec les plans {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.Db2_on_Cloud_short}}.
+Prenez connaissance des éléments suivants avant de configurer l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel, 1 application.
+* {{site.data.keyword.mobilefoundation_short}} : Professionnel, 1 application est pris en charge uniquement avec les plans {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.Db2_on_Cloud_short}}.
 
 * Vous devez avoir accès aux données d'identification de l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} avant de pouvoir configurer les paramètres de votre instance de service {{site.data.keyword.mobilefoundation_short}}.
 
@@ -29,12 +29,12 @@ Prenez connaissance des éléments suivants avant de configurer l'instance de se
 ###  Premières étapes
 {: #firststeps_p2}
 
-ne fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, lisez la procédure ci-après pour commencer à l'utiliser.
+ne fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel, 1 application, lisez la procédure ci-après pour commencer à l'utiliser.
 
 ### Configuration de la connexion à l'instance de service Db2 on Cloud
 {: #connect_dashdb_p2}
 
-Une fois l'instance de service {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application créée, la page *Présentation*
+Une fois l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel, 1 application créée, la page *Présentation*
 s'affiche et vous devez y spécifier les informations de connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} à laquelle
 l'instance de service {{site.data.keyword.mobilefoundation_short}} doit se connecter.
 
@@ -68,7 +68,6 @@ accède aux données d'identification du service {{site.data.keyword.Db2_on_Clou
 `Données d'identification` {{site.data.keyword.Db2_on_Cloud_short}}
 pour la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} existante.
 
-
 +  Testez la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} spécifiée.
 
 +  Cliquez sur **Ajouter**. Cela permet de créer les tables requises dans l'instance de service de base de
@@ -92,9 +91,7 @@ défaut, cliquez sur **Démarrer le serveur de base**.
 suffit aux activités de développement et aux activités de test modérées, ainsi qu'aux charges
 de travail de production à petite échelle.
 
-
-    -	Le `nom d'utilisateur` et le `mot de passe` sont générés automatiquement pour vous.
-Vous pouvez y accéder une fois que le
+    -	Le `nom d'utilisateur` et le `mot de passe` sont générés automatiquement pour vous. Vous pouvez y accéder une fois que le
 serveur est en opération.
 
     L'implantation de votre serveur débute. Ce processus prend environ 10 minutes et une fenêtre de
@@ -105,9 +102,7 @@ message indique la progression de l'opération. A son terme, un tableau de bord 
       -	La route de serveur créée pour vous. Utilisez cette route dans votre application mobile pour vous connecter à {{site.data.keyword.mfserver_short_notm}}.
 
       -	Vos `nom d'utilisateur` et `mot de passe` personnels
-pour accéder à la console {{site.data.keyword.mfp_oc_short_notm}}.
-Le `mot de passe` est masqué.
-Cliquez sur l'icône **Afficher le mot de passe** pour le visualiser.
+pour accéder à la console {{site.data.keyword.mfp_oc_short_notm}}. Le `mot de passe` est masqué. Cliquez sur l'icône **Afficher le mot de passe** pour le visualiser.
 
 *	Cliquez sur **Lancer la console** pour ouvrir la console {{site.data.keyword.mfp_oc_short_notm}}.
 
@@ -119,8 +114,7 @@ Elle vous permet de gérer vos applications, adaptateurs et périphériques mobi
  Vous pouvez maintenant surveiller votre application mobile sur le serveur {{site.data.keyword.mobilefirst}} en ajoutant un service
 Mobile Analytics à l'instance de service {{site.data.keyword.mobilefoundation_short}}.
 
-
- Le plan Professional crée une instance de service Mobile Analytics.
+ Le plan Professionnel crée une instance de service Mobile Analytics.
 
  <!--Users can also attach volumes to the containers to persist data. The volume once selected cannot be changed. 20 GB is the default file share space available to the user. If the user needs additional storage space to persist analytics data, he is required to buy additional file share and create a volume using this file share. He can then select this new volume while deploying the analytics server.
 
@@ -129,15 +123,12 @@ Mobile Analytics à l'instance de service {{site.data.keyword.mobilefoundation_s
  * Cliquez sur **Ajouter un module d'analyse** pour ajouter le service Mobile Analytics à l'instance de service {{site.data.keyword.mobilefoundation_short}}.
 
    Le processus de mise à disposition commence. Ce processus prend environ 10 minutes. Vous pouvez suivre son avancement avec
-l'indicateur de progression.
-  
+l'indicateur de progression.  
 
  * Lancez la console du service Mobile Analytics à partir de {{site.data.keyword.mfp_oc_short_notm}}.
 
- * La connexion unique (SSO) est activée entre {{site.data.keyword.mfserver_short_notm}} et le service Mobile Analytics.
-Le service Mobile Analytics est configuré avec les mêmes clés LTPA et données d'identification d'utilisateur que celles du
-serveur {{site.data.keyword.mfserver_short_notm}}.
-Cela signifie que, pour vous connecter à la console Mobile Analytics, vous pouvez utiliser les mêmes `nom d'utilisateur` et `mot de passe`
+ * La connexion unique (SSO) est activée entre {{site.data.keyword.mfserver_short_notm}} et le service Mobile Analytics. Le service Mobile Analytics est configuré avec les mêmes clés LTPA et données d'identification d'utilisateur que celles du
+serveur {{site.data.keyword.mfserver_short_notm}}. Cela signifie que, pour vous connecter à la console Mobile Analytics, vous pouvez utiliser les mêmes `nom d'utilisateur` et `mot de passe`
 que ceux utilisés pour la connexion au serveur {{site.data.keyword.mfp_oc_short_notm}}.
 
  Pour plus d'informations sur Mobile Analytics, vous pouvez vous référer
@@ -146,25 +137,20 @@ au site [MobileFirst Foundation Operational Analytics ![Icône de lien externe](
 > **Remarque :** La
 suppression de l'instance de service {{site.data.keyword.mobilefoundation_short}} supprime l'instance de service Mobile Analytics.
 
-
 ##  Suppression du service Mobile Analytics
 {: #deleting_analytics_server_prof}
 
 Vous pouvez maintenant supprimer, à partir du tableau de bord du service {{site.data.keyword.mobilefoundation_short}}, le service
 Mobile Analytics qui a été ajouté à l'instance de service {{site.data.keyword.mobilefoundation_short}}.
 
-
 * Cliquez sur **Supprimer le module d'analyse** pour supprimer le service Mobile Analytics qui a été ajouté à l'instance de service
 {{site.data.keyword.mobilefoundation_short}}.
 
  Le fait de cliquer sur **Supprimer le module d'analyse** supprime l'instance
-de service Mobile Analytics.
-Cette opération prend environ 10 minutes. Vous pouvez actualiser l'écran pour examiner le
+de service Mobile Analytics. Cette opération prend environ 10 minutes. Vous pouvez actualiser l'écran pour examiner le
 statut mis à jour. La suppression de l'instance Mobile Analytics
-réactive le bouton **Ajouter un module d'analyse**.
-Utilisez ce bouton si vous souhaitez ajouter à nouveau le
+réactive le bouton **Ajouter un module d'analyse**. Utilisez ce bouton si vous souhaitez ajouter à nouveau le
 service Mobile Analytics.
-
 
 
 ## Recréation du serveur MobileFirst
@@ -177,28 +163,24 @@ nouvelle instance de serveur est créée avec une version mise à jour, si elle 
 
 > **Remarque** : Les
 données de votre instance de serveur précédente, y compris les informations sur les applications et les adaptateurs,
-sont conservées dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée.
-Elles sont utilisées pour recréer le serveur.
-
+sont conservées dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée. Elles sont utilisées pour recréer le serveur.
 
 ##	Mise en place d'une configuration avancée
 {: #using_mfs_advanced_p2}
 
 L'option **Démarrer le serveur avec la configuration avancée**
 de la page `Présentation` permet de créer le serveur avec des réglages
-avancés ou personnalisés.
-Vous pouvez également mettre à jour les paramètres du serveur
+avancés ou personnalisés. Vous pouvez également mettre à jour les paramètres du serveur
 pour personnaliser sa configuration en cliquant sur l'onglet **Configuration**. {{site.data.keyword.mobilefoundation_short}}
 vous permet d'accéder à certains paramètres avancés.
 
 *	Dans l'onglet **Topologie**, vous pouvez sélectionner la
 taille du serveur, ainsi que le nombre d'instances dont vous avez besoin. Avec sa mémoire de 1 Go, le serveur par défaut
 est suffisant pour le développement et des tests peu intensifs.
-
   - Sélectionnez la taille appropriée pour votre serveur compte tenu de
 vos besoins.
 
-  - La zone **Instances** affiche le nombre de noeuds créés. 
+  - La zone **Instances** affiche le nombre de noeuds créés.
 
       <!--- {{site.data.keyword.mobilefirst}} server farm can be created by configuring the number of nodes here.-->
 

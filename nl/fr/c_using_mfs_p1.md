@@ -2,128 +2,87 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-14"
+lastupdated:  "2018-03-07"
 
 ---
 
-#	Utilisation du plan Developer
+#	Utilisation du plan Développeur
 {: #using_mobilefoundation_p1}
 
 Après avoir créé l'instance de service {{site.data.keyword.mobilefoundation_short}} utilisant le
-plan Developer, accédez à la page Présentation sur {{site.data.keyword.Bluemix_notm}}.
-Vous y trouverez des tutoriels et des vidéos pour vous aider à faire vos premiers pas avec le service.
+plan Développeur, accédez à la page Présentation sur {{site.data.keyword.Bluemix_notm}}. Vous y trouverez des tutoriels et des vidéos pour vous aider à faire vos premiers pas avec le service.
 
-
-## Démarrage du serveur MobileFirst
+## Utilisation du serveur MobileFirst
 {: #start_mobilefoundation_p1}
-* Pour démarrer le serveur
-{{site.data.keyword.mfserver_short_notm}} avec les réglages par
-défaut, cliquez sur **Démarrer le serveur de base**.
+* Vous pouvez instantanément accéder et utiliser le serveur MobileFirst.
 
   Cette sélection met à disposition une instance {{site.data.keyword.mfserver_long_notm}} avec les réglages suivants :
   *	1 Go de mémoire. Cette taille
 suffit aux activités de développement et aux activités de test peu intensives, ainsi qu'aux charges
 de travail de production à petite échelle.
 
+  * Pour accéder au serveur MobileFirst à l'aide de l'interface de ligne de commande, vous aurez besoin de vos données d'identification, qui sont disponibles lorsque vous cliquez sur **Données d'identification pour le service** dans le panneau de navigation gauche de la console IBM Cloud.
 
-  *	Le `nom d'utilisateur` et le `mot de passe` sont générés automatiquement pour vous.
-Vous pouvez y accéder une fois que le
-serveur est en opération.
+<!--  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
+    *	The status of your server that is running (state, size).
 
-  Le processus de mise à disposition commence. Ce processus prend environ 10 minutes et une fenêtre de
-message indique la progression de l'opération. A son terme, un tableau de bord s'affiche et présente les éléments suivants :
-    *	L'état du serveur que vous exécutez (état, taille).
+    *	The server route created for you. Use this route in your mobile application to connect to the {{site.data.keyword.mfserver_short_notm}}.
 
-    *	La route de serveur créée pour vous. Utilisez cette route dans votre application mobile pour vous connecter à {{site.data.keyword.mfserver_short_notm}}.
+    *	Your personal `username` and `password` to access the {{site.data.keyword.mfp_oc_short_notm}}. The `password` is hidden. Click **Show Password** icon to visualize it.
 
-    *	Vos `nom d'utilisateur` et `mot de passe` personnels
-pour accéder à la console {{site.data.keyword.mfp_oc_short_notm}}.
-Le `mot de passe` est masqué.
-Cliquez sur l'icône **Afficher le mot de passe** pour le visualiser.
+*	Click **Launch Console** to launch the {{site.data.keyword.mfp_oc_short_notm}}.-->
 
-*	Cliquez sur **Lancer la console** pour lancer la
-console {{site.data.keyword.mfp_oc_short_notm}}.
+Vous pouvez maintenant gérer vos applications et périphériques mobiles, utiliser votre serveur en tant que serveur dorsal mobile, envoyer des notifications push, etc.
 
-Elle vous permet de gérer vos
-applications et périphériques mobiles, l'utilisation de votre serveur en tant
-que serveur dorsal mobile, l'envoi de notifications push, etc.
-
-##  Ajout d'un service Mobile Analytics
+## Service Mobile Analytics
 {: #adding_analytics_server_dev}
 
- Vous pouvez maintenant surveiller votre application mobile sur le serveur {{site.data.keyword.mobilefirst}} en ajoutant un service
-Mobile Analytics à l'instance de service {{site.data.keyword.mobilefoundation_short}}.
-Le plan Developer crée le service Mobile Analytics dans un groupe de conteneurs avec un seul noeud d'1 Go de mémoire.
+Le service Mobile Analytics est inclut et préconfiguré avec l'instance du plan de service Développeur Mobile Foundation.
 
-* Cliquez sur **Ajouter un module d'analyse** pour ajouter le service Mobile Analytics à l'instance de service {{site.data.keyword.mobilefoundation_short}}.
+<!-- You can now monitor your mobile application on {{site.data.keyword.mobilefirst}} server by adding a Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance. Developer plan creates the Mobile Analytics service in a container group with a single node having 1 GB memory.
 
-  Le processus de mise à disposition commence. Ce processus prend environ 10 minutes et une fenêtre de
-message indique la progression de l'opération.  
+* Click **Add Analytics** to add the Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance.
+
+  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation.  -->
 
 * Lancez la console du service Mobile Analytics à partir de {{site.data.keyword.mfp_oc_short_notm}}.
 
-* La connexion unique (SSO) est activée entre {{site.data.keyword.mfserver_short_notm}} et le service Mobile Analytics.
-Le service Mobile Analytics est configuré avec les mêmes clés LTPA et données d'identification d'utilisateur que celles du
-serveur {{site.data.keyword.mfserver_short_notm}}.
-Cela signifie que, pour vous connecter à la console Mobile Analytics, vous pouvez utiliser les mêmes `nom d'utilisateur` et `mot de passe`
+* La connexion unique (SSO) est activée entre {{site.data.keyword.mfserver_short_notm}} et le service Mobile Analytics. Le service Mobile Analytics est configuré avec les mêmes clés LTPA et données d'identification d'utilisateur que celles du
+serveur {{site.data.keyword.mfserver_short_notm}}. Cela signifie que, pour vous connecter à la console Mobile Analytics, vous pouvez utiliser les mêmes `nom d'utilisateur` et `mot de passe`
 que ceux utilisés pour la connexion au serveur {{site.data.keyword.mfp_oc_short_notm}}.
 
 Pour plus d'informations sur Mobile Analytics, vous pouvez vous référer
 au site [MobileFirst Foundation Operational Analytics ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
 
 > **Remarque :** La
-suppression de l'instance de service {{site.data.keyword.mobilefoundation_short}} ou la recréation
-du serveur {{site.data.keyword.mfserver_short_notm}} supprime l'instance de service Mobile Analytics.
+suppression de l'instance de service {{site.data.keyword.mobilefoundation_short}} supprime l'instance de service Mobile Analytics.
 
-
-##  Suppression du service Mobile Analytics
+<!--##  Deleting Mobile Analytics service
 {: #deleting_analytics_server_dev}
 
-Vous pouvez maintenant supprimer, à partir du tableau de bord du service {{site.data.keyword.mobilefoundation_short}}, le service
-Mobile Analytics qui a été ajouté à l'instance de service {{site.data.keyword.mobilefoundation_short}}.
+You can now delete the Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance, from the {{site.data.keyword.mobilefoundation_short}} service dashboard.
+
+* Click **Delete Analytics** to delete the  Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance.
+
+ Clicking **Delete Analytics** deletes the analytics server instance. The process of deleting analytics instance takes about 10 minutes. You can refresh the screen to view the updated status. Deletion of analytics instance reenables the **Add Analytics** button. If you choose to add the Mobile Analytics service again, you can click this button.
 
 
-* Cliquez sur **Supprimer le module d'analyse** pour supprimer le service Mobile Analytics qui a été ajouté à l'instance de service
-{{site.data.keyword.mobilefoundation_short}}.
-
- Le fait de cliquer sur **Supprimer le module d'analyse** supprime l'instance
-de service Mobile Analytics.
-Cette opération prend environ 10 minutes. Vous pouvez actualiser l'écran pour examiner le
-statut mis à jour. La suppression de l'instance Mobile Analytics
-réactive le bouton **Ajouter un module d'analyse**.
-Utilisez ce bouton si vous souhaitez ajouter à nouveau le
-service Mobile Analytics.
-
-
-
-## Recréation du serveur MobileFirst
+## Re-creating the MobileFirst server
 {: #recreate_mobilefoundation_p1}
 
-*	Cliquez sur **Recréer** pour recréer le serveur.
+*	Click **Recreate** to re-create the server.
 
-* Cette action arrête votre serveur existant et supprime les données. Toutes les
-données de votre serveur mobile sont perdues. Une
-nouvelle instance de serveur est créée avec une version mise à jour, si elle est disponible. Cette action prend quelques minutes avant de s'achever.
+* This action stops your existing server and deletes the data. All the data in your mobile server is lost. A new server instance is created with an updated version, if available. This action takes a few minutes to complete.
 
-##	Mise en place d'une configuration avancée
+##	Setting up advanced configuration
 {: #using_mfs_advanced_p1}
 
-L'option **Démarrer le serveur avec la configuration avancée**
-de la page `Présentation` permet de créer le serveur avec des réglages
-avancés ou personnalisés.
-Vous pouvez également modifier les réglages du serveur pour personnaliser sa
-configuration en cliquant sur l'onglet **Configuration**.
-{{site.data.keyword.mobilefoundation_short}}
-vous permet d'accéder à certains paramètres avancés.
+Use the **Start Server with Advanced Configuration** from the `Overview` page to create the server with advanced or custom settings. You can also update the server settings to customize your server configuration by clicking the **Configuration** tab. {{site.data.keyword.mobilefoundation_short}} gives you access to some advanced settings.
 
-*	Dans l'onglet **Topologie**, vous pouvez sélectionner la
-taille du serveur, ainsi que le nombre d'instances dont vous avez besoin. Avec sa mémoire de 1 Go, le serveur par défaut
-est suffisant pour le développement et des tests sommaires.
+*	From the **Topology** tab, you can select the server size and the number of instances you need. The default 1 GB server is enough for development and moderate testing.
 
-  - Sélectionnez la taille appropriée pour votre serveur compte tenu de
-vos besoins.
+  - Select the correct size for your server based on your need.
 
-* La zone **Noeuds** affiche le nombre de noeuds créés. Cette
-zone n'est pas modifiable dans {{site.data.keyword.mobilefoundation_short}}: Developer. Le nombre de noeuds <!--in your {{site.data.keyword.IBM_notm}} container group--> est de **1** par défaut dans le plan Developer.
+* **Nodes** displays the number of nodes that are created. This field is not editable in {{site.data.keyword.mobilefoundation_short}}: Developer. The number of nodes is defaulted to **1** in the Developer plan.-->
 
 Pour plus de détails, consultez la documentation [{{site.data.keyword.mobilefoundation_long}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}.

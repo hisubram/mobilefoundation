@@ -2,21 +2,20 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-14"
+lastupdated:  "2018-03-05"
 
 ---
 
-#	Utilisation du plan Professionnel par capacité
-{: #using_mobilefoundation_p4}
+#	Utilisation du plan Professionnel par appareil
+{: #using_mobilefoundation_p5}
 
-Avec le plan Professionnel par capacité, les utilisateurs peuvent créer un certain nombre d'applications mobiles avec plusieurs systèmes d'exploitation mobiles.
-Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par capacité, lisez la procédure ci-après pour commencer à l'utiliser.
+Avec le plan Professionnel par appareil, les utilisateurs peuvent générer, tester et exécuter des applications mobiles en production, quel que soit le nombre d'utilisateurs ou d'appareils mobiles. Ce plan prend en charge les déploiements étendus et la haute disponibilité. Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par appareil, lisez la procédure ci-après pour commencer à l'utiliser.
 
 ## Conditions prérequises
-{: #prerequisites_p4}
+{: #prerequisites_p5}
 
-Prenez connaissance des éléments suivants avant de configurer l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par capacité.
-* {{site.data.keyword.mobilefoundation_short}} : Professionnel par capacité est pris en charge uniquement avec les plans {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.Db2_on_Cloud_short}}.
+Prenez connaissance des éléments suivants avant de configurer l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par appareil.
+* {{site.data.keyword.mobilefoundation_short}} : Professionnel par appareil est pris en charge uniquement avec les plans {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.Db2_on_Cloud_short}}.
 
 * Vous devez avoir accès aux données d'identification de l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} avant de pouvoir configurer les paramètres de votre instance de service {{site.data.keyword.mobilefoundation_short}}.
 
@@ -24,19 +23,17 @@ Prenez connaissance des éléments suivants avant de configurer l'instance de se
 
 
 ## Ajout de la connexion à la base de données
-{: #configure_dashdb_p4}
+{: #configure_dashdb_p5}
 
 ###  Premières étapes
-{: #firststeps_p4}
+{: #firststeps_p5}
 
-Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par capacité, lisez la procédure ci-après pour commencer à l'utiliser.
+Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par appareil, lisez la procédure ci-après pour commencer à l'utiliser.
 
 ### Configuration de la connexion à l'instance de service Db2 on Cloud
-{: #connect_dashdb_p4}
+{: #connect_dashdb_p5}
 
-Une fois l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par capacité créée, la page *Présentation*
-s'affiche et vous devez y spécifier les informations de connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} à laquelle
-l'instance de service {{site.data.keyword.mobilefoundation_short}} doit se connecter.
+Une fois l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par appareil créée, la page *Présentation* s'affiche et vous devez y spécifier les informations de connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} à laquelle l'instance de service {{site.data.keyword.mobilefoundation_short}} doit se connecter.
 
 Vous pouvez également créer une nouvelle instance de service {{site.data.keyword.Db2_on_Cloud_short}} si vous n'en avez pas encore.
 
@@ -55,18 +52,14 @@ une instance {{site.data.keyword.Db2_on_Cloud_short}} dédiée avec 8 Go de RAM,
 Suivez ces étapes pour vous connecter à une instance de service {{site.data.keyword.Db2_on_Cloud_short}} existante ou à
 l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} que vous venez de créer :
 
-1. Sélectionnez l'`organisation` {{site.data.keyword.Bluemix_notm}} dans laquelle se trouve
-l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
+1. Sélectionnez l'`organisation` {{site.data.keyword.Bluemix_notm}} dans laquelle se trouve l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
 
-+ Depuis la liste des espaces disponibles dans `Organisation`, sélectionnez l'`espace` {{site.data.keyword.Bluemix_notm}}
-dans lequel se trouve l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.   
++ Depuis la liste des espaces disponibles dans `Organisation`, sélectionnez l'`espace` {{site.data.keyword.Bluemix_notm}} dans lequel se trouve l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.   
 > **Remarque :** Si l'`organisation` et l'`espace` dans lesquels réside votre instance de service {{site.data.keyword.Db2_on_Cloud_short}} ne figurent pas dans la liste, vérifiez que vous êtes membre de cette `organisation` et de cet `espace`. Vous
 devez être affecté au rôle *Développeur* dans l'organisation et l'espace vu que le service {{site.data.keyword.mobilefoundation_short}}
 accède aux données d'identification du service {{site.data.keyword.Db2_on_Cloud_short}}.
 
-+ Sélectionnez également le `Nom du service` et les
-`Données d'identification` {{site.data.keyword.Db2_on_Cloud_short}}
-pour la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} existante.
++ Sélectionnez également le `Nom du service` et les `Données d'identification` {{site.data.keyword.Db2_on_Cloud_short}} pour la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} existante.
 
 +  Testez la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} spécifiée.
 
@@ -79,7 +72,7 @@ permettre de faire vos premiers pas avec le service {{site.data.keyword.mobilefo
 > **Remarque** : Vous ne pouvez pas changer l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée pour être utilisée par votre instance de service {{site.data.keyword.mobilefoundation_short}}. Vous pouvez toutefois utiliser la même instance de service {{site.data.keyword.Db2_on_Cloud_short}} sur plusieurs instances de service {{site.data.keyword.mobilefoundation_short}}, car chaque instance de service {{site.data.keyword.mobilefoundation_short}} crée son propre schéma dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} sélectionnée.
 
 ## Démarrage du serveur MobileFirst
-{: #start_mobilefoundation_p4}
+{: #start_mobilefoundation_p5}
 
 * Pour démarrer le serveur
 {{site.data.keyword.mfserver_short_notm}} avec les réglages par
@@ -106,12 +99,13 @@ pour accéder à la console {{site.data.keyword.mfp_oc_short_notm}}. Le `mot de 
 *	Cliquez sur **Lancer la console** pour ouvrir la console {{site.data.keyword.mfp_oc_short_notm}}.
 
 
-<!--This console runs inside the container.--> Elle vous permet de gérer vos applications, adaptateurs et
+Elle vous permet de gérer vos applications, adaptateurs et
 périphériques mobiles, ainsi que l'utilisation de votre serveur en
 tant que serveur dorsal mobile, l'envoi de notifications push, etc.
 
+
 ##  Ajout d'un service Mobile Analytics
-{: #adding_analytics_server_p4}
+{: #adding_analytics_server_p5}
 
  Vous pouvez maintenant surveiller votre application mobile sur le serveur {{site.data.keyword.mobilefirst}} en ajoutant une instance de service
 Mobile Analytics à l'instance {{site.data.keyword.mobilefoundation_short}}.
@@ -143,7 +137,7 @@ au site [MobileFirst Foundation Operational Analytics ![Icône de lien externe](
 suppression de l'instance de service {{site.data.keyword.mobilefoundation_short}} supprime l'instance de service Mobile Analytics.
 
 ##  Suppression du service Mobile Analytics
-{: #deleting_analytics_server_p4}
+{: #deleting_analytics_server_p5}
 
 Vous pouvez maintenant supprimer, à partir du tableau de bord du service {{site.data.keyword.mobilefoundation_short}}, le service
 Mobile Analytics qui a été ajouté à l'instance de service {{site.data.keyword.mobilefoundation_short}}.
@@ -158,7 +152,7 @@ réactive le bouton **Ajouter un module d'analyse**. Utilisez ce bouton si vous 
 service Mobile Analytics.
 
 ## Recréation du serveur MobileFirst
-{: #recreate_mobilefoundation_p4}
+{: #recreate_mobilefoundation_p5}
 
 *	Cliquez sur **Recréer** pour recréer le serveur.
 
@@ -170,7 +164,7 @@ données de votre instance de serveur précédente, y compris les informations s
 sont conservées dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée. Elles sont utilisées pour recréer le serveur.
 
 ##	Mise en place d'une configuration avancée
-{: #using_mfs_advanced_p4}
+{: #using_mfs_advanced_p5}
 
 L'option **Démarrer le serveur avec la configuration avancée**
 de la page `Présentation` permet de créer le serveur avec des réglages

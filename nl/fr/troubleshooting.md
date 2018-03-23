@@ -17,37 +17,31 @@ lastupdated: "2018-02-12"
 {: #troubleshooting}
 
 Pour isoler et résoudre les problèmes que vous rencontrez avec vos produits
-{{site.data.keyword.IBM_notm}}, vous pouvez utiliser les informations de dépannage.
-Celles-ci contiennent les instructions à suivre pour identifier les problèmes liés aux ressources fournies avec vos produits {{site.data.keyword.IBM_notm}},
+{{site.data.keyword.IBM_notm}}, vous pouvez utiliser les informations de dépannage. Celles-ci contiennent les instructions à suivre pour identifier les problèmes liés aux ressources fournies avec vos produits {{site.data.keyword.IBM_notm}},
 parmi lesquels {{site.data.keyword.mobilefoundation_short}}.
 {: shortdesc}
 
 ## Techniques pour le traitement des problèmes
 {: #ts_overview}
 
-La *recherche de panne* est une approche systématique de la résolution d'un problème. Il s'agit de déterminer la raison pour laquelle un problème s'est produit et d'identifier les moyens d'y remédier. 
-Certaines techniques courantes peuvent vous aider dans votre recherche de panne.
-
+La *recherche de panne* est une approche systématique de la résolution d'un problème. Il s'agit de déterminer la raison pour laquelle un problème s'est produit et d'identifier les moyens d'y remédier. Certaines techniques courantes peuvent vous aider dans votre recherche de panne.
 
 La première étape de la recherche de panne
 est de décrire complètement le problème. Les descriptions de
-problème aident le représentant du support technique {{site.data.keyword.IBM_notm}} et vous-même à savoir où commencer pour trouver la cause du problème.
-Cette étape vous amènera à vous poser quelques questions élémentaires :
+problème aident le représentant du support technique {{site.data.keyword.IBM_notm}} et vous-même à savoir où commencer pour trouver la cause du problème. Cette étape vous amènera à vous poser quelques questions élémentaires :
 
 - Quels sont les symptômes du problème ?
 - Où le problème se produit-il ?
 - Quand le problème se produit-il ?
 - Dans quelles circonstances le problème se produit-il ?
-- Le problème peut-il être reproduit ? 
+- Le problème peut-il être reproduit ?
 
 Les réponses à ces questions donnent généralement une bonne description du problème qui peut conduire à sa résolution.
 
 ### Quels sont les symptômes du problème ?
 
 Lorsque vous commencez à décrire un problème, la question la plus évidente est
-"Quel est le problème ?"
-Cette question, qui semble simple, peut cependant être décomposée en plusieurs questions plus ciblées qui permettront de mieux décrire le problème.
-Ces questions peuvent être :
+"Quel est le problème ?" Cette question, qui semble simple, peut cependant être décomposée en plusieurs questions plus ciblées qui permettront de mieux décrire le problème. Ces questions peuvent être :
 
 - Par qui ou par quoi le problème est-il signalé ?
 - Quels sont les codes d'erreur et les messages ?
@@ -57,22 +51,18 @@ Ces questions peuvent être :
 
 Il n'est pas toujours aisé de déterminer à quel endroit survient le problème, mais
 c'est l'une des étapes les plus importantes pour sa résolution. De nombreuses couches de
-technologie peuvent exister entre les composants qui signalent le problème et les composants défaillants.
-Réseaux, disques et pilotes figurent parmi les composants à examiner dans votre investigation du problème.
-
+technologie peuvent exister entre les composants qui signalent le problème et les composants défaillants. Réseaux, disques et pilotes figurent parmi les composants à examiner dans votre investigation du problème.
 
 Les questions suivantes vous aideront à cerner l'endroit où se produit le problème pour vous permettre d'isoler la couche où il se situe :
 
-
 - Le problème est-il spécifique à une plateforme ou un système d'exploitation,
 ou est-il commun à plusieurs plateformes ou systèmes d'exploitation ?
-- L'environnement et la configuration actuels sont-ils pris en charge ? 
+- L'environnement et la configuration actuels sont-ils pris en charge ?
 - Tous les utilisateurs rencontrent-ils ce problème ?
 - (Pour les installations multisites) Tous les sites rencontrent-ils ce problème ?
 
 Si le problème est signalé par une couche en particulier, cela ne signifie pas pour autant qu'il
-est originaire de cette couche.
-L'identification de l'origine d'un problème revient
+est originaire de cette couche. L'identification de l'origine d'un problème revient
 en partie à comprendre l'environnement dans lequel il existe. Prenez quelques instants
 pour décrire complètement l'environnement du problème, notamment le système
 d'exploitation et sa version, tous les logiciels correspondants et leur version, ainsi
@@ -104,8 +94,7 @@ Les réponses à ces questions fournissent un cadre de référence pour l'analys
 ### Dans quelles circonstances le problème se produit-il ?
 
 Savoir quels systèmes et applications étaient en cours d'exécution au moment où le problème s'est produit est essentiel
-à la recherche de panne.
-Ces questions sur votre environnement peuvent vous aider à identifier la cause première du problème :
+à la recherche de panne. Ces questions sur votre environnement peuvent vous aider à identifier la cause première du problème :
 
 - Le problème se produit-il toujours lorsque la même tâche est exécutée ?
 - Faut-il qu'une certaine succession d'événements se produise pour que le problème
@@ -113,19 +102,15 @@ survienne ?
 - D'autres applications échouent-elles au même moment ?
 
 La réponse à ces types de questions peut vous aider à décrire l'environnement dans
-lequel le problème se produit et à faire le lien avec d'éventuelles dépendances.
-N'oubliez pas que si plusieurs problèmes se produisent à peu près au même moment, cela ne signifie pas pour autant qu'ils sont liés entre eux.
+lequel le problème se produit et à faire le lien avec d'éventuelles dépendances. N'oubliez pas que si plusieurs problèmes se produisent à peu près au même moment, cela ne signifie pas pour autant qu'ils sont liés entre eux.
 
-### Le problème peut-il être reproduit ? 
+### Le problème peut-il être reproduit ?
 
-Du point de vue de la recherche de panne, le problème idéal est celui qui peut être reproduit. 
-Généralement, dès lors qu'un problème peut être reproduit, vous disposez de plus d'outils
-ou de procédures pour en rechercher la cause.
-Par conséquent, les problèmes que vous pouvez
+Du point de vue de la recherche de panne, le problème idéal est celui qui peut être reproduit. Généralement, dès lors qu'un problème peut être reproduit, vous disposez de plus d'outils
+ou de procédures pour en rechercher la cause. Par conséquent, les problèmes que vous pouvez
 reproduire sont souvent plus faciles à déboguer et à résoudre.
 
-Ces problèmes présentent toutefois un inconvénient. S'ils ont un impact important sur l'activité, vous ne souhaitez pas qu'ils se reproduisent.
-Si possible, recréez le problème dans un environnement de test ou de développement qui vous offrira davantage de souplesse et de contrôle pour mener votre enquête.
+Ces problèmes présentent toutefois un inconvénient. S'ils ont un impact important sur l'activité, vous ne souhaitez pas qu'ils se reproduisent. Si possible, recréez le problème dans un environnement de test ou de développement qui vous offrira davantage de souplesse et de contrôle pour mener votre enquête.
 
 - Le problème peut-il être recréé sur un système test ?
 - Plusieurs utilisateurs ou applications rencontrent-ils le même type de problème ?
