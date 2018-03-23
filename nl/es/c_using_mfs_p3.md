@@ -17,7 +17,7 @@ Después de crear la instancia de servicio de {{site.data.keyword.mobilefoundati
 {: #prerequisites_p3}
 
 Tenga en cuenta lo siguiente antes de configurar la instancia del servicio {{site.data.keyword.mobilefoundation_short}}: Developer Pro.
-* {{site.data.keyword.mobilefoundation_short}}: Developer Pro solo se admite con planes de {{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}}.
+* {{site.data.keyword.mobilefoundation_short}}: Developer Pro solo se admite con planes de {{site.data.keyword.Db2_on_Cloud_short}} de {{site.data.keyword.Bluemix_notm}}.
 
 * Deberá tener acceso a las credenciales de la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} antes de poder configurar los valores de su instancia de servicio de {{site.data.keyword.mobilefoundation_short}}.
 
@@ -106,7 +106,7 @@ Con la consola, puede gestionar sus apps móviles, adaptadores y dispositivos m�
 
 * Inicie la consola del servicio de Mobile Analytics desde {{site.data.keyword.mfp_oc_short_notm}}.
 
-* El inicio de sesión único está habilitado entre {{site.data.keyword.mfserver_short_notm}} y el servicio de Mobile Analytics. El servicio de Mobile Analytics está configurado con las mismas claves de LTPA y credenciales de usuario que {{site.data.keyword.mfserver_short_notm}}.Puede utilizar el mismo `nombre_usuario` y `contraseña` para iniciar sesión en la consola de Mobile Analytics como se solía iniciar sesión en {{site.data.keyword.mfp_oc_short_notm}}.
+* El inicio de sesión único está habilitado entre {{site.data.keyword.mfserver_short_notm}} y el servicio de Mobile Analytics. El servicio de Mobile Analytics está configurado con las mismas claves de LTPA y credenciales de usuario que {{site.data.keyword.mfserver_short_notm}}. Puede utilizar el mismo `nombre_usuario` y `contraseña` para iniciar sesión en la consola de Mobile Analytics como se solía iniciar sesión en {{site.data.keyword.mfp_oc_short_notm}}.
 
 Para obtener más información sobre el servicio de Mobile Analytics, puede consultar [MobileFirst Foundation Operational Analytics ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
 
@@ -138,6 +138,6 @@ Utilice la opción **Iniciar servidor con configuración avanzada** en la págin
 *	Desde el separador **Topología**, puede seleccionar el tamaño del servidor y la memoria que necesita. El servidor predeterminado se crea con 1 GB de memoria.
   - Puede cambiar la memoria de su servidor en función de sus necesidades a un máximo de 2 GB.
 
-  - **Instancias** muestra el número de nodos que se han creado. Este campo no se puede editar en {{site.data.keyword.mobilefoundation_short}}: Developer. De forma predeterminada, el número de nodos es **1** en el plan Developer Pro.
+  - **Instancias** muestra el número de nodos que se han creado. Este campo no se puede editar en {{site.data.keyword.mobilefoundation_short}}: Developer Pro. De forma predeterminada, el número de nodos es **1** en el plan Developer Pro.
 
 Consulte la documentación de [{{site.data.keyword.mobilefoundation_long}} ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}, para obtener más detalles.

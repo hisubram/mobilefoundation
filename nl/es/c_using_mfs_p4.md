@@ -16,7 +16,7 @@ Tras crear la instancia del servicio {{site.data.keyword.mobilefoundation_short}
 {: #prerequisites_p4}
 
 Tenga en cuenta lo siguiente antes de configurar la instancia del servicio {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity.
-* {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity solo se admite con planes de {{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}}.
+* {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity solo se admite con planes de {{site.data.keyword.Db2_on_Cloud_short}} de {{site.data.keyword.Bluemix_notm}}.
 
 * Deberá tener acceso a las credenciales de la instancia de servicio {{site.data.keyword.Db2_on_Cloud_short}} antes de poder configurar los valores de su instancia de servicio {{site.data.keyword.mobilefoundation_short}}.
 

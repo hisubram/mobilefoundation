@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-13"
+lastupdated:  "2018-03-12"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated:  "2018-02-13"
 # Guía de aprendizaje de iniciación
 {: #gettingstartedtemplate}
 
-{{site.data.keyword.mobilefoundation_long}} acelera la configuración de un entorno de {{site.data.keyword.mfp_full}} que puede utilizar para desarrollar, probar y operar apps móviles de empresa. {{site.data.keyword.mobilefoundation_short}} está disponible bajo los diferentes planes de servicio siguientes: Developer, Developer Pro, Professional Per Capacity y Professional 1 Application.
+{{site.data.keyword.mobilefoundation_long}} acelera la configuración de un entorno de {{site.data.keyword.mfp_full}} que puede utilizar para desarrollar, probar y operar apps móviles de empresa. {{site.data.keyword.mobilefoundation_short}} está disponible bajo los diferentes planes de servicio siguientes: Developer, Professional Per Device y Professional 1 Application.
 {:shortdesc}
 
 Utilizando el plan Professional 1 Application se puede gestionar una sola aplicación incorporada en una o todas las plataformas operativas soportadas como Android, iOS, Windows o Mobile Web. El plan Developer está pensado para entornos de desarrollo y pruebas. Puede revisar todos los planes disponibles [aquí](https://console.bluemix.net/catalog/services/mobile-foundation).
@@ -36,70 +36,22 @@ Necesitará una cuenta de {{site.data.keyword.Bluemix}} y una instancia del serv
 ## Paso 2: Cree el canal móvil
 {: #buildmobilechannel}
 
-### Para {{site.data.keyword.mobilefoundation_short}}: plan Developer
+### Para el plan {{site.data.keyword.mobilefoundation_short}}: Developer
 {: #buildchanneldevplan}
 
 Después de crear una instancia de {{site.data.keyword.mobilefoundation_short}}: Developer, puede empezar a crear el canal móvil realizando los pasos siguientes.
 
-  1.  Cree una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con la configuración predeterminada, pulse **Iniciar servidor básico**.
+* Puede acceder instantáneamente al servidor de MobileFirst y trabajar con él.
 
-    `La instancia de servidor básico incluye un nodo y 1 GB de memoria.`
+  Esta selección suministra un {{site.data.keyword.mfserver_long_notm}} con la configuración siguiente:
+  *	1 GB de memoria. Este tamaño es suficiente para realizar actividades de desarrollo, de pruebas no muy exigentes y cargas de trabajo de producción a pequeña escala.
 
-  +	El `nombre de usuario` y la `contraseña` se generan de forma automática. Tiene acceso a ellos cuando el servidor está en ejecución.
+  * Para acceder al servidor de MobileFirst mediante la CLI, necesitará las credenciales, que están disponibles al pulsar **Credenciales de servicio** en el panel de navegación izquierdo de la consola de IBM Cloud.
 
-    Se inicia el proceso de suministro. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de control en el que se puede ver lo siguiente:
-    * El estado del servidor que se ejecuta (estado, tamaño).
-    *	La ruta creada para el servidor. Utilice esta ruta en su aplicación móvil para conectarse a {{site.data.keyword.mfserver_short_notm}}.
-    *	Su `nombre de usuario` y `contraseña` personal para acceder a la {{site.data.keyword.mfp_oc_short_notm}}. La `contraseña` está oculta. Pulse el icono **Mostrar contraseña** para visualizarla.
+### Para el plan {{site.data.keyword.mobilefoundation_short}}: Professional Per Device
+{: #buildchannelprofdeviceplan}
 
-  + Pulse **Iniciar consola** para iniciar la {{site.data.keyword.mfp_oc_short_notm}}.
-
-Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p1.html#using_mfs_advanced_p1), para obtener más información.
-{: tip}
-
-### Para {{site.data.keyword.mobilefoundation_short}}: plan Developer Pro
-{: #buildchanneldevproplan}
-
-Después de crear una instancia del servicio de {{site.data.keyword.mobilefoundation_short}}: Developer Pro, puede empezar a crear el canal móvil realizando los pasos siguientes.
-
-  1.  Conéctese a un servicio de {{site.data.keyword.Db2_on_Cloud_short}} existente en {{site.data.keyword.Bluemix_notm}}.
-
-      1.  Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}.
-
-      + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}, en la lista de espacios disponibles en la `Organización` seleccionada.
-
-      + Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.Db2_on_Cloud_short}} para conectarse con la instancia  de servicio {{site.data.keyword.Db2_on_Cloud_short}} existente.
-
-      + Pruebe la conexión a la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionada pulsando **Probar conexión**.
-
-      + Pulse **Añadir**, seguido de **Continuar** en la ventana emergente que le solicita información sobre el servicio de {{site.data.keyword.Db2_on_Cloud_short}} seleccionado. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.Db2_on_Cloud_short}} configurada.
-
-      > **Nota:** Después de añadir una conexión {{site.data.keyword.Db2_on_Cloud_short}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
-
-  2.  Cree e inicie el servidor.
-
-      1. Cree una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con la configuración predeterminada, pulse **Iniciar servidor básico**.
-
-      + Esta selección suministra un {{site.data.keyword.mfserver_long_notm}} con la configuración siguiente:
-
-          - Un nodo con 1 GB de memoria. Este tamaño es suficiente para realizar actividades de desarrollo, de pruebas no muy exigentes y cargas de trabajo de producción a pequeña escala.
-
-          -	El `nombre de usuario` y la `contraseña` se generan de forma automática. Tiene acceso a ellos cuando el servidor está en ejecución.
-
-          Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de control en el que se puede ver lo siguiente:
-            -	El estado del servidor que se ejecuta (estado, tamaño).
-            -	Se ha creado la ruta para el servidor. Utilice esta ruta en su aplicación móvil para conectarse a {{site.data.keyword.mfserver_short_notm}}.
-            -	Su `nombre de usuario` y `contraseña` personal para acceder a la {{site.data.keyword.mfp_oc_short_notm}}. La `contraseña` está oculta. Pulse el icono **Mostrar contraseña** para visualizarla.
-
-      +	Pulse **Iniciar consola** para abrir la {{site.data.keyword.mfp_oc_short_notm}}.  
-
-      Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p3.html#using_mfs_advanced_p3), para obtener más información.
-      {: tip}
-
-### Para {{site.data.keyword.mobilefoundation_short}}: plan Professional Per Capacity
-{: #buildchannelprofcapacityplan}
-
-Después de crear una instancia del servicio de {{site.data.keyword.mobilefoundation_short}}: Professional Per Capacity, puede empezar a crear el canal móvil realizando los pasos siguientes.
+Después de crear una instancia del servicio de {{site.data.keyword.mobilefoundation_short}}: Professional Per Device, puede empezar a crear el canal móvil realizando los pasos siguientes.
 
   1.  Conéctese a un servicio de {{site.data.keyword.Db2_on_Cloud_short}} existente en {{site.data.keyword.Bluemix_notm}}.
 
@@ -134,7 +86,7 @@ Después de crear una instancia del servicio de {{site.data.keyword.mobilefounda
       Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p4.html#using_mfs_advanced_p4), para obtener más información.
       {: tip}
 
-### Para {{site.data.keyword.mobilefoundation_short}}: plan Professional 1 Application
+### Para el plan {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application
 {: #buildchannelprof1appplan}
 
 Después de crear una instancia del servicio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, puede empezar a crear el canal móvil realizando los pasos siguientes.

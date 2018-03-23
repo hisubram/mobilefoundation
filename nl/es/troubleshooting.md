@@ -79,7 +79,7 @@ La respuesta a este tipo de preguntas puede proporcionar un marco de referencia 
 
 Es importante saber
 qué sistemas y aplicaciones están en ejecución cuando se produce el problema
-para resolverlo.Estas preguntas sobre el entorno le ayudarán a identificar la causa raíz del problema:
+para resolverlo. Estas preguntas sobre el entorno le ayudarán a identificar la causa raíz del problema:
 
 - ¿El problema siempre se produce al realizar la misma tarea?
 - ¿Tiene que darse una secuencia de sucesos determinada para que se produzca el problema?
