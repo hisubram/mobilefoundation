@@ -10,9 +10,9 @@ lastupdated:  "2018-02-09"
 {:shortdesc: .shortdesc}
 
 
-# FAQ
+# Perguntas mais frequentes
 
-Esta FAQ fornece respostas às perguntas comuns sobre o serviço {{site.data.keyword.mobilefoundation_long}}.
+Esta Pergunta mais frequente fornece respostas às perguntas comuns sobre o serviço {{site.data.keyword.mobilefoundation_long}}.
 {: shortdesc}
 
 ## Como eu sei quando as atualizações para o serviço do {{site.data.keyword.mobilefoundation_short}} são disponibilizadas?
@@ -34,7 +34,7 @@ Ao aplicar esta atualização, a versão do servidor, conforme visto no {{site.d
 
 > **Nota:**
 >  * Os usuários não poderão aplicar suas próprias correções e atualizações à sua instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
->  * Veja [Recriando o servidor no plano do Desenvolvedor](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [Recriando o servidor no plano DeveloperPro](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Recriando o servidor no plano Profissional por capacidade](c_using_mfs_p4.html#recreate_mobilefoundation_p4) e [Recriando o servidor no plano Aplicativo 1 do profissional](c_using_mfs_p2.html#recreate_mobilefoundation_p2) para entender a diferença no comportamento ao longo dos planos quando **Recriar** for clicado.
+>  * Consulte [Recriando o servidor no plano Developer](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [Recriando o servidor no plano DeveloperPro](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Recriando o servidor no plano Professional Per Device](c_using_mfs_p4.html#recreate_mobilefoundation_p5) e[Recriando o servidor no plano Professional 1 Application](c_using_mfs_p2.html#recreate_mobilefoundation_p2) para entender a diferença no comportamento entre os planos quando a opção **Recriar** é clicada.
 >
 
 ## Como eu configuro o domínio customizado para a minha instância de servidor do {{site.data.keyword.mobilefoundation_short}}?
