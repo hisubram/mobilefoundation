@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-12"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -131,7 +131,7 @@ Go to [Using the Mobile Foundation service to set up MobileFirst Server ![Extern
 
 After creating and starting your Mobile Foundation server instance, you can follow the steps below to register an Android application.
 
-  1.  Launch the {{site.data.keyword.mfp_oc_short_notm}} by loading the URL: http://your-server-host:server-port/mfpconsole. Use the `username` and `password` generated at the time of provisioning.
+  1.  Launch the {{site.data.keyword.mfp_oc_short_notm}} by loading the URL: `http://<your-server-host>:<server-port>/mfpconsole`. Use the `username` and `password` generated at the time of provisioning.
 
   + In the  {{site.data.keyword.mfp_oc_short_notm}} **Dashboard**, click **New** next to **Applications**.
 
