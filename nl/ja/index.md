@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-12"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -131,7 +131,7 @@ lastupdated:  "2018-03-12"
 
 Mobile Foundation サーバー・インスタンスを作成して始動した後、次の手順に従って、Android アプリケーションを登録できます。
 
-  1.  URL: http://your-server-host:server-port/mfpconsole をロードして、{{site.data.keyword.mfp_oc_short_notm}} を起動します。 プロビジョニング時に生成された`ユーザー名`と`パスワード`を使用します。
+  1.  URL: `http://<your-server-host>:<server-port>/mfpconsole` をロードして、{{site.data.keyword.mfp_oc_short_notm}} を起動します。プロビジョニング時に生成された`ユーザー名`と`パスワード`を使用します。
 
   + {{site.data.keyword.mfp_oc_short_notm}} **「ダッシュボード」**で、**「アプリケーション」**の横にある**「新規」**をクリックします。
 
