@@ -44,7 +44,7 @@ Mobile Foundation: Developer 套餐服务实例中包含并预配置了 Mobile A
 
 * 从 {{site.data.keyword.mfp_oc_short_notm}} 启动 Mobile Analytics 服务控制台。
 
-* 在 {{site.data.keyword.mfserver_short_notm}} 与 Mobile Analytics 服务之间启用单点登录。为 Mobile Analytics 服务配置与 {{site.data.keyword.mfserver_short_notm}} 相同的 LTPA 密钥和用户凭证。您可以像登录 {{site.data.keyword.mfp_oc_short_notm}} 一样，使用相同的 `username` 和 `password` 登录到“移动分析”控制台。
+* 在 {{site.data.keyword.mfserver_short_notm}} 与 Mobile Analytics 服务之间启用单点登录。为 Mobile Analytics 服务配置与 {{site.data.keyword.mfserver_short_notm}} 相同的 LTPA 密钥和用户凭证。您可以像登录 {{site.data.keyword.mfp_oc_short_notm}} 一样，使用相同的 `username` 和 `password` 登录到 Mobile Analytics 控制台。
 
 有关 Mobile Analytics 的更多信息，请参阅 [MobileFirst Foundation Operational Analytics ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}。
 

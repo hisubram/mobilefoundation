@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-12"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -131,7 +131,7 @@ lastupdated:  "2018-03-12"
 
 创建并启动 Mobile Foundation 服务器实例后，您可以按照以下步骤注册 Android 应用程序。
 
-  1.  装入 URL http://your-server-host:server-port/mfpconsole 以启动 {{site.data.keyword.mfp_oc_short_notm}}。使用供应时生成的 `username` 和 `password`。
+  1.  装入 URL `http://<your-server-host>:<server-port>/mfpconsole` 以启动 {{site.data.keyword.mfp_oc_short_notm}}。使用供应时生成的 `username` 和 `password`。
 
   + 在 {{site.data.keyword.mfp_oc_short_notm}} **仪表板**中，单击**应用程序**旁边的**新建**。
 
@@ -198,6 +198,8 @@ lastupdated:  "2018-03-12"
                         // Will print "Hello world" in LogCat.
                         Log.i("MobileFirst Quick Start", "Success: " + wlResponse.getResponseText());
                     }
+
+                    
 
                     @Override
                     public void onFailure(WLFailResponse wlFailResponse) {

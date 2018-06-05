@@ -2,14 +2,14 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-05"
+lastupdated:  "2018-03-22"
 
 ---
 
 #	使用 Professional Per Device 套餐
 {: #using_mobilefoundation_p5}
 
-使用 Professional Per Device 套餐，用户可以在生产环境中构建、测试和运行移动应用程序（无论有多少移动用户数或设备数）。此套餐支持大型部署和高可用性。创建 {{site.data.keyword.mobilefoundation_short}}: Professional Per Device 服务实例后，请阅读以下过程以开始使用该服务。
+使用 Professional Per Device 套餐，用户可以在生产环境中构建、测试和运行移动应用程序，无论有多少移动用户或设备，都将根据每日客户机设备数进行收费。此套餐支持大型部署和高可用性。创建 {{site.data.keyword.mobilefoundation_short}}: Professional Per Device 服务实例后，请阅读以下过程以开始使用该服务。
 
 ## 先决条件
 {: #prerequisites_p5}
@@ -109,7 +109,7 @@ lastupdated:  "2018-03-05"
 
 * 从 {{site.data.keyword.mfp_oc_short_notm}} 启动 Mobile Analytics 服务控制台。
 
-* 在 {{site.data.keyword.mfserver_short_notm}} 与 Mobile Analytics 服务之间启用单点登录。为 Mobile Analytics 服务配置与 {{site.data.keyword.mfserver_short_notm}} 服务器相同的 LTPA 密钥和用户凭证。您可以像登录 {{site.data.keyword.mfp_oc_short_notm}} 一样，使用相同的 `username` 和 `password` 登录到“移动分析”控制台。
+* 在 {{site.data.keyword.mfserver_short_notm}} 与 Mobile Analytics 服务之间启用单点登录。为 Mobile Analytics 服务配置与 {{site.data.keyword.mfserver_short_notm}} 服务器相同的 LTPA 密钥和用户凭证。您可以像登录 {{site.data.keyword.mfp_oc_short_notm}} 一样，使用相同的 `username` 和 `password` 登录到 Mobile Analytics 控制台。
 
 有关 Mobile Analytics 的更多信息，请参阅 [MobileFirst Foundation Operational Analytics ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-02-09"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -34,7 +34,7 @@ lastupdated:  "2018-02-09"
 
 > **注：**
 >  * 用户将无法对其 {{site.data.keyword.mobilefoundation_short}} 服务实例应用自己的修订和更新。
->  * 请参阅 [Developer 套餐中的重新创建服务器](c_using_mfs_p1.html#recreate_mobilefoundation_p1)、[DeveloperPro 套餐中的重新创建服务器](c_using_mfs_p3.html#recreate_mobilefoundation_p3)、[Professional Per Device 套餐中的重新创建服务器](c_using_mfs_p4.html#recreate_mobilefoundation_p5)和 [Professional 1 Application 套餐中的重新创建服务器](c_using_mfs_p2.html#recreate_mobilefoundation_p2)，以了解单击**重新创建** 后不同套餐之间的操作差异。
+>  * 请参阅[在 Professional Per Device 套餐中重新创建服务器](c_using_mfs_p4.html#recreate_mobilefoundation_p5)和[在 Professional 1 Application 套餐中重新创建服务器](c_using_mfs_p2.html#recreate_mobilefoundation_p2)，以了解单击**重新创建** 后不同套餐之间的行为差异。
 >
 
 ## 如何为我的 {{site.data.keyword.mobilefoundation_short}} 服务器实例配置定制域？
@@ -45,12 +45,12 @@ lastupdated:  "2018-02-09"
 
 该 URL 或路径是使用基于 {{site.data.keyword.Bluemix_notm}} `区域`的缺省域名进行创建的。
 
-  |域|  区域|    
+  |域|区域|    
   |:----- | :----- |    
-  |`mybluemix.net` | 美国南部|    
-  |`eu-gb.mybluemix.net` | 英国|
-  |`au-syd.mybluemix.net` | 悉尼|   
-  |`eu-de.mybluemix.net` | 法兰克福|   
+  |`mybluemix.net` |美国南部|    
+  |`eu-gb.mybluemix.net` |英国|
+  |`au-syd.mybluemix.net` |悉尼|   
+  |`eu-de.mybluemix.net` |法兰克福|   
   {: caption="表 1. 基于 {{site.data.keyword.Bluemix_notm}} 中“区域”的应用程序域名" caption-side="top"}
 
 为了可以使用您自己的域，将需要执行以下步骤来配置定制域：
