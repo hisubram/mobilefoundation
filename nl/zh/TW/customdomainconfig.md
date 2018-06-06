@@ -19,12 +19,12 @@ lastupdated:  "2018-01-24"
 
 <!--container group is created with a--> URL 或路徑建立時是使用根據 {{site.data.keyword.Bluemix_notm}} `Region` 的預設網域名稱。
 
-  |網域|  地區|    
+  |網域|地區|    
   |:----- | :----- |    
-  |`mybluemix.net` | 美國南部|    
-  |`eu-gb.mybluemix.net` | 英國|
-  |`au-syd.mybluemix.net` | 雪梨|   
-  |`eu-de.mybluemix.net` | 法蘭克福|   
+  |`mybluemix.net` |美國南部|    
+  |`eu-gb.mybluemix.net` |英國|
+  |`au-syd.mybluemix.net` |雪梨|   
+  |`eu-de.mybluemix.net` |法蘭克福|   
   {: caption="表 1. 應用程式網域名稱，根據 {{site.data.keyword.Bluemix_notm}} 中的地區" caption-side="top"}
 
 您需要執行下列步驟配置自訂網域，才能使用自己的網域：

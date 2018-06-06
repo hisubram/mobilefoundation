@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-12"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -83,7 +83,8 @@ lastupdated:  "2018-03-12"
 
       +	按一下**啟動主控台**，以啟動 {{site.data.keyword.mfp_oc_short_notm}}。      
 
-      若要使用拓蹼、安全及其他伺服器配置的進階配置來建立 {{site.data.keyword.mobilefirst_notm}} 伺服器實例，請按一下**使用進階配置啟動伺服器**。如需相關資訊，請參閱[設定進階配置](c_using_mfs_p4.html#using_mfs_advanced_p4)。{: tip}
+      若要使用拓蹼、安全及其他伺服器配置的進階配置來建立 {{site.data.keyword.mobilefirst_notm}} 伺服器實例，請按一下**使用進階配置啟動伺服器**。如需相關資訊，請參閱[設定進階配置](c_using_mfs_p4.html#using_mfs_advanced_p4)。
+      {: tip}
 
 ### 針對 {{site.data.keyword.mobilefoundation_short}}：Professional 1 Application 方案
 {: #buildchannelprof1appplan}
@@ -119,7 +120,8 @@ lastupdated:  "2018-03-12"
 
       +  按一下**啟動主控台**，以啟動 {{site.data.keyword.mfp_oc_short_notm}}。  
 
-      若要使用拓蹼、安全及其他伺服器配置的進階配置來建立 {{site.data.keyword.mobilefirst_notm}} 伺服器實例，請按一下**使用進階配置啟動伺服器**。如需相關資訊，請參閱[設定進階配置](c_using_mfs_p2.html#using_mfs_advanced_p2)。{: tip}
+      若要使用拓蹼、安全及其他伺服器配置的進階配置來建立 {{site.data.keyword.mobilefirst_notm}} 伺服器實例，請按一下**使用進階配置啟動伺服器**。如需相關資訊，請參閱[設定進階配置](c_using_mfs_p2.html#using_mfs_advanced_p2)。
+      {: tip}
 
 移至[使用 Mobile Foundation 服務來設定 MobileFirst Server ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window}，以進一步瞭解開始使用 {{site.data.keyword.mobilefoundation_short}}。
 {: tip}
@@ -129,7 +131,7 @@ lastupdated:  "2018-03-12"
 
 建立及啟動 Mobile Foundation 伺服器實例之後，即可遵循下列的步驟來登錄 Android 應用程式。
 
-  1.  載入 URL，以啟動 {{site.data.keyword.mfp_oc_short_notm}}：http://your-server-host:server-port/mfpconsole。使用在佈建時所產生的 `username` 及 `password`。
+  1.  啟動 {{site.data.keyword.mfp_oc_short_notm}}，方法為載入 URL：`http://<your-server-host>:<server-port>/mfpconsole`。使用在佈建時所產生的 `username` 及 `password`。
 
   + 在 {{site.data.keyword.mfp_oc_short_notm}} **儀表板**中，按一下**應用程式**旁邊的**新建**。
 
@@ -219,7 +221,7 @@ lastupdated:  "2018-03-12"
         ```
         {: codeblock}  
 
-## 步驟 6：部署配接器
+## Step 6: Deploy an adapter
 {: #deployadapter}
 
   1. 下載此[配接器構件](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/javaAdapter.adapter){: download}，並使用**動作 → 部署配接器**從 {{site.data.keyword.mfp_oc_short_notm}} 進行部署。

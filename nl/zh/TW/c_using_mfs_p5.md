@@ -2,14 +2,14 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-05"
+lastupdated:  "2018-03-22"
 
 ---
 
 #	使用 Professional Per Device 方案
 {: #using_mobilefoundation_p5}
 
-使用 Professional Per Device 方案，使用者可以建置、測試和執行正式作業行動應用程式，而不論行動使用者或裝置的數目有多少。此方案支援大型部署與高可用性。建立 {{site.data.keyword.mobilefoundation_short}}: Professional Per Device 服務實例之後，請閱讀下列程序，以開始使用服務。
+使用 Professional Per Device 方案，使用者可以建置、測試和執行正式作業行動應用程式，而不論行動使用者或裝置的數目有多少。費用則以每日用戶端裝置數目為依據。此方案支援大型部署與高可用性。建立 {{site.data.keyword.mobilefoundation_short}}: Professional Per Device 服務實例之後，請閱讀下列程序，以開始使用服務。
 
 ## 必要條件
 {: #prerequisites_p5}

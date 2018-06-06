@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-02-09"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -34,7 +34,7 @@ lastupdated:  "2018-02-09"
 
 > **附註：**
 >  * 使用者將無法套用自己的修正程式和更新至 {{site.data.keyword.mobilefoundation_short}} 服務實例。
->  * 請參閱[在 Developer 方案中重建伺服器](c_using_mfs_p1.html#recreate_mobilefoundation_p1)、[在 DeveloperPro 方案中重建伺服器](c_using_mfs_p3.html#recreate_mobilefoundation_p3)、[在 Professional Per Device 方案中重建伺服器](c_using_mfs_p4.html#recreate_mobilefoundation_p5)及[在 Professional 1 Application 方案中重建伺服器](c_using_mfs_p2.html#recreate_mobilefoundation_p2)，以瞭解按一下**重建* 時，方案之間的行為差異。
+>  * 請參閱[在 Professional Per Device 方案中重建伺服器](c_using_mfs_p4.html#recreate_mobilefoundation_p5)和[在 Professional 1 Application 方案中重建伺服器](c_using_mfs_p2.html#recreate_mobilefoundation_p2)，以瞭解按一下**重建**時，方案之間的行為差異。
 >
 
 ## 如何配置 {{site.data.keyword.mobilefoundation_short}} 伺服器實例的自訂網域？
@@ -45,12 +45,12 @@ lastupdated:  "2018-02-09"
 
 URL 或路徑建立時是使用根據 {{site.data.keyword.Bluemix_notm}} `Region` 的預設網域名稱。
 
-  |網域|  地區|    
+  |網域|地區|    
   |:----- | :----- |    
-  |`mybluemix.net` | 美國南部|    
-  |`eu-gb.mybluemix.net` | 英國|
-  |`au-syd.mybluemix.net` | 雪梨|   
-  |`eu-de.mybluemix.net` | 法蘭克福|   
+  |`mybluemix.net` |美國南部|    
+  |`eu-gb.mybluemix.net` |英國|
+  |`au-syd.mybluemix.net` |雪梨|   
+  |`eu-de.mybluemix.net` |法蘭克福|   
   {: caption="表 1. 應用程式網域名稱，根據 {{site.data.keyword.Bluemix_notm}} 中的地區" caption-side="top"}
 
 您需要執行下列步驟配置自訂網域，才能使用自己的網域：

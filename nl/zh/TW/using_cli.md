@@ -1,0 +1,379 @@
+---
+
+copyright:
+  years: 2018
+lastupdated:  "2018-05-04"
+
+---
+
+{:shortdesc: .shortdesc}
+{:codeblock: .codeblock}
+{:screen: .screen}
+{:tip: .tip}
+{:pre: .pre}
+
+#	{{ site.data.keyword.mobilefoundation_short }} CLI
+{: #using_mobilefoundation_cli}
+
+{{ site.data.keyword.mobilefoundation_short }} 提供「指令行介面 (CLI)」工具，讓開發人員 **mfpdev** 可以輕鬆地管理 {{site.data.keyword.mobilefoundation_short}} 用戶端及伺服器構件。
+
+所有 `mfpdev` 指令都可以在互動或直接模式下執行。在互動模式下，將提示指令所需的參數，並將使用一些預設值。在直接模式下，必須提供搭配指令執行的參數。
+
+
+## 安裝 {{site.data.keyword.mobilefoundation_short}} CLI
+{: #installing_mf_cli}
+
+{{site.data.keyword.mobilefoundation_short}} 可以用作 [NPM 登錄 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.npmjs.com){: new_window} 中的 NPM 套件。
+
+確定已安裝 **node.js** 及 **npm**，才能安裝 NPM 套件。請遵循 [nodejs.org ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://nodejs.org/){: new_window} 中的安裝指示，來安裝 **node.js**。若要確認已適當地安裝 **node.js**，請執行下列指令：
+```
+node -v
+```
+{: codeblock}
+
+> **附註：**支援的 node.js 最低版本為 **4.2.3**。此外，由於節點及 npm 套件快速發展，{{site.data.keyword.mobilefoundation_short}} CLI 可能無法搭配節點及 npm 的所有可用版本（包括最新版本）完全運作。若要讓 CLI 正常運作，請確定節點的版本為 **6.11.1**，而 npm 版本為 **3.10.10**。
+
+若要安裝 {{site.data.keyword.mobilefoundation_short}} CLI，請執行下列指令：
+```
+npm install -g mfpdev-cli
+```
+{: codeblock}
+
+如果已從「MobileFirst 作業主控台」的「下載中心」下載 CLI .zip 檔案，請使用下列指令：
+```
+npm install -g <path-to-mfpdev-cli.tgz>
+```
+{: codeblock}
+
+若要安裝 CLI，但不安裝選用的相依關係，請新增 `--no-optional` 旗標：
+```
+npm install -g --no-optional path-to-mfpdev-cli.tgz
+```
+{: codeblock}
+
+若要確認已正確地安裝 CLI，請執行下列指令：
+```
+mfpdev
+```
+{: codeblock}
+
+CLI 說明即列印為輸出。
+
+```
+ NAME
+     IBM MobileFirst Foundation Command Line Interface (CLI).
+
+ SYNOPSIS
+     mfpdev <command> [options]
+
+ DESCRIPTION
+     The IBM MobileFirst Foundation Command Line Interface (CLI) is a command-line
+     for developing MobileFirst applications. The command-line can be used by itself, or in conjunction  with the IBM MobileFirst Foundation Operations Console. Some functions are available from  the command-line only and not the console.
+
+     For more information and a step-by-step example of using the CLI, see the IBM Knowledge Center for your version of IBM MobileFirst Foundation at
+     https://www.ibm.com/support/knowledgecenter.
+     ...
+     ...
+     ...
+```
+{: screen}
+
+## {{site.data.keyword.mobilefoundation_short}} CLI 指令的清單
+{: #list_cli_commands}
+
+<table summary="具有鏈結可帶給您指令進一步資訊的 {{site.data.keyword.mobilefoundation_short}} CLI 指令">
+<caption>表 1. {{site.data.keyword.mobilefoundation_short}} CLI 指令</caption>
+ <thead>
+ <th colspan="6">一般 [mfpdev](#mfpdev) 指令</th>
+ </thead>
+ <tbody>
+ <tr>
+ <td>[app](#mfpdev_app)</td>
+ <td>[server](#mfpdev_server)</td>
+ <td>[adapter](#mfpdev_adapter)</td>
+ <td>[help](#mfpdev_help)</td>
+ </tr>
+   </tbody>
+ </table>
+
+### mfpdev
+{: #mfpdev}
+
+針對 mfpdev 指令行介面的預覽瀏覽器類型、預覽逾時值及伺服器逾時值，設定您的配置喜好設定。
+
+```
+mfpdev config
+```
+{: codeblock}
+
+顯示您環境的相關資訊，包括作業系統、記憶體耗用量、節點版本，以及指令行介面版本。如果現行目錄為 Cordova 應用程式，則也會顯示 Cordova `cordova info` 指令所提供的資訊。
+
+```
+mfpdev info
+```
+{: codeblock}
+
+顯示目前使用中的 {{site.data.keyword.mobilefoundation_short}} CLI 的版本號碼。
+
+```
+mfpdev -v
+```
+{: codeblock}
+
+除錯模式：產生除錯輸出。
+
+```
+mfpdev [-d|--debug]
+```
+{: codeblock}
+
+詳細除錯模式：產生詳細除錯輸出。
+
+```
+mfpdev [-dd|--ddebug]
+```
+{: codeblock}
+
+在指令輸出中暫停使用顏色。
+
+```
+mfpdev -no-color
+```
+{: codeblock}
+
+### mfpdev help
+{: #mfpdev_help}
+
+顯示 MobileFirst CLI (mfpdev) 指令的說明。將指令名稱作為引數時，可對每一個指令類型或指令顯示更明確的說明文字。例如，`mfpdev help server add`。
+
+```
+mfpdev help <command name>
+```
+{: codeblock}
+
+
+### mfpdev app
+{: #mfpdev_app}
+
+使用「MobileFirst 伺服器」來登錄應用程式。
+
+```
+mfpdev app register
+```
+{: codeblock}
+
+若要將應用程式登錄至伺服器，以及不是預設使用的運行環境，請執行下列指令：
+
+```
+mfpdev app register <server> <runtime>
+```
+{: codeblock}
+
+若為 Cordova Windows 平台，`-w <platform>` 引數必須新增至指令。平台引數是要登錄之 Windows 平台的逗點區隔清單。有效值為 windows、windows8 及 windowsphone8。
+
+```
+mfpdev app register -w windows8
+```
+{: codeblock}
+
+可讓您指定要用於應用程式的後端伺服器及運行環境。此外，若為 Cordova 應用程式，也可讓您配置數個其他層面，例如系統訊息的預設語言，以及是否執行總和檢查安全檢查。包括 Cordova 應用程式的其他配置參數。
+
+```
+mfpdev app config
+```
+{: codeblock}
+
+從伺服器中擷取現有應用程式配置。
+
+```
+mfpdev app pull
+```
+{: codeblock}
+
+將應用程式配置傳送至伺服器。
+
+```
+mfpdev app push
+```
+{: codeblock}
+
+可讓您不需要目標平台類型的實際裝置，即可預覽 Cordova 應用程式。您可以在「行動式瀏覽器模擬器」或 Web 瀏覽器中檢視預覽。
+
+```
+mfpdev app preview
+```
+{: codeblock}
+
+將 www 目錄內含的應用程式資源，包裝成可以用於直接更新程序的 .zip 檔案。
+
+```
+mfpdev app webupdate
+```
+{: codeblock}
+
+此指令會將已更新的 Web 資源包裝成 .zip 檔案，然後將它上傳至已登錄的預設「MobileFirst 伺服器」。您可在 `[cordova-project-root-folder]/mobilefirst/` 資料夾中找到包裝的 Web 資源。
+
+若要將 Web 資源上傳至不同的伺服器實例，請提供伺服器名稱及運行環境，作為指令的一部分：
+
+```
+mfpdev app webupdate <server_name> <runtime>
+```
+{: codeblock}
+
+您可以使用 –build 參數，搭配已包裝的 Web 資源來產生 .zip 檔案，但不將它上傳至伺服器。
+```
+mfpdev app webupdate --build
+```
+{: codeblock}
+
+若要上傳先前建置的套件，請執行下列指令：
+```
+mfpdev app webupdate --file mobilefirst/com.ibm.test-android-1.0.0.zip
+```
+{: codeblock}
+
+也可以選擇使用 –encrypt 參數來加密套件的內容：
+```
+mfpdev app webupdate --encrypt
+```
+{: codeblock}
+
+
+### mfpdev server
+{: #mfpdev_server}
+
+顯示「MobileFirst 伺服器」的相關資訊。
+
+```
+mfpdev server info
+```
+{: codeblock}
+
+新增伺服器定義至您的環境。
+
+```
+mfpdev server add
+```
+{: codeblock}
+
+可讓您編輯伺服器定義。
+
+```
+mfpdev server edit
+```
+{: codeblock}
+
+若要將伺服器設為預設伺服器，請使用下列指令：
+
+```
+mfpdev server edit <server_name> --setdefault
+```
+{: codeblock}
+
+移除您環境中的伺服器定義。
+
+```
+mfpdev server remove
+```
+{: codeblock}
+
+開啟「MobileFirst 作業主控台」。
+
+```
+mfpdev server console
+```
+{: codeblock}
+
+若要開啟另一部伺服器的主控台，請提供伺服器名稱，作為指令的參數：
+
+```
+mfpdev server console <server-name>
+```
+{: codeblock}
+
+取消登錄應用程式，並移除「MobileFirst 伺服器」中的配接器。
+
+```
+mfpdev server clean
+```
+{: codeblock}
+
+### mfpdev adapter
+{: #mfpdev_adapter}
+
+建立配接器。
+
+```
+mfpdev adapter create
+```
+{: codeblock}
+
+建置配接器。
+
+```
+mfpdev adapter build
+```
+{: codeblock}
+
+在現行目錄及其子目錄中，尋找並建置所有配接器。
+
+```
+mfpdev adapter build all
+```
+{: codeblock}
+
+將配接器部署至「MobileFirst 伺服器」。
+
+```
+mfpdev adapter deploy
+```
+{: codeblock}
+
+若要部署至不同伺服器，請使用：
+```
+mfpdev adapter deploy <server_name>
+```
+{: codeblock}
+
+在現行目錄及其子目錄中尋找所有配接器，並將它們部署至「MobileFirst 伺服器」。
+
+```
+mfpdev adapter deploy all
+```
+{: codeblock}
+
+在「MobileFirst 伺服器」上呼叫配接器的程序。
+
+```
+mfpdev adapter call
+```
+{: codeblock}
+
+從伺服器中擷取現有配接器配置。
+```
+mfpdev adapter pull
+```
+{: codeblock}
+
+將配接器配置傳送至伺服器。
+```
+mfpdev adapter push
+```
+{: codeblock}
+
+## 更新及解除安裝 {{site.data.keyword.mobilefoundation_short}} CLI
+{: #update_uninstall_mf_cli}
+
+若要更新指令行介面，請執行下列指令：
+
+```
+npm update -g mfpdev-cli
+```
+{: codeblock}
+
+若要解除安裝指令行介面，請執行下列指令：
+
+```
+npm uninstall -g mfpdev-cli
+```
+{: codeblock}
