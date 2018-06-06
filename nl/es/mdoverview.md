@@ -9,8 +9,7 @@ lastupdated:  "2018-01-18"
 #	Acerca de Mobile Foundation
 {: #overview_mobilefoundation}
 
-El servicio {{site.data.keyword.mobilefoundation_short}} ofrece un modo de configurar rápidamente un entorno de servidor de
-{{site.data.keyword.mobilefirst}} en {{site.data.keyword.Bluemix}}. Puede desarrollar, probar y gestionar apps móviles desde este entorno de nube.
+El servicio {{site.data.keyword.mobilefoundation_short}} ofrece un modo de configurar rápidamente un entorno de servidor de {{site.data.keyword.mobilefirst}} en {{site.data.keyword.Bluemix}}. Puede desarrollar, probar y gestionar apps móviles desde este entorno de nube.
 
 {{site.data.keyword.mobilefoundation_short}} ofrece a los usuarios un método sencillo y guiado para configurar {{site.data.keyword.mfserver_short_notm}} <!--in the {{site.data.keyword.containerlong}} -->el entorno en {{site.data.keyword.Bluemix_notm}}.
 

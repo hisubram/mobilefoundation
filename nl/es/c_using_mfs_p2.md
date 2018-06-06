@@ -16,7 +16,7 @@ Tras crear la instancia del servicio {{site.data.keyword.mobilefoundation_short}
 {: #prerequisites_p2}
 
 Tenga en cuenta lo siguiente antes de configurar la instancia del servicio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application.
-* {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application solo se admite con planes de {{site.data.keyword.Db2_on_Cloud_short}} de {{site.data.keyword.Bluemix_notm}}.
+* {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application solo se admite con planes de {{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}}.
 
 * Deberá tener acceso a las credenciales de la instancia de servicio {{site.data.keyword.Db2_on_Cloud_short}} antes de poder configurar los valores de su instancia de servicio {{site.data.keyword.mobilefoundation_short}}.
 
@@ -76,7 +76,7 @@ En varios segundos, puede acceder a la página `Visión general`, que le ofrece 
 
     -	El `nombre de usuario` y la `contraseña` se generan de forma automática. Tiene acceso a ellos cuando el servidor está en ejecución.
 
-    Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de control en el que se puede ver lo siguiente:
+    Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de instrumentos en el que se puede ver lo siguiente:
 
       -	El estado del servidor que se ejecuta (estado, tamaño).
 

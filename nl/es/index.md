@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-12"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -76,7 +76,7 @@ Después de crear una instancia del servicio de {{site.data.keyword.mobilefounda
 
           -	El `nombre de usuario` y la `contraseña` se generan de forma automática. Tiene acceso a ellos cuando el servidor está en ejecución.
 
-          Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de control en el que se puede ver lo siguiente:
+          Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de instrumentos en el que se puede ver lo siguiente:
             -	El estado del servidor que se ejecuta (estado, tamaño).
             -	Se ha creado la ruta para el servidor. Utilice esta ruta en su aplicación móvil para conectarse a {{site.data.keyword.mfserver_short_notm}}.
             -	Su `nombre de usuario` y `contraseña` personal para acceder a la {{site.data.keyword.mfp_oc_short_notm}}. La `contraseña` está oculta. Pulse el icono **Mostrar contraseña** para visualizarla.
@@ -113,7 +113,7 @@ Después de crear una instancia del servicio {{site.data.keyword.mobilefoundatio
 
       + El `nombre de usuario` y la `contraseña` se generan de forma automática. Tiene acceso a ellos cuando el servidor está en ejecución.  
 
-        Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de control en el que se puede ver lo siguiente:
+        Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de instrumentos en el que se puede ver lo siguiente:
           -	El estado del servidor que se ejecuta (estado, tamaño).
           -	Se ha creado la ruta para el servidor. Utilice esta ruta en su aplicación móvil para conectarse a {{site.data.keyword.mfserver_short_notm}}.
           -	Su `nombre de usuario` y `contraseña` personal para acceder a la {{site.data.keyword.mfp_oc_short_notm}}. La `contraseña` está oculta. Pulse el icono **Mostrar contraseña** para visualizarla.
@@ -131,7 +131,7 @@ Vaya a [Utilización del servicio Mobile Foundation para configurar el servidor 
 
 Después de crear e iniciar la instancia de servidor de Mobile Foundation, siga estos pasos para registrar una aplicación de Android.
 
-  1.  Inicie la {{site.data.keyword.mfp_oc_short_notm}} cargando el URL: http://your-server-host:server-port/mfpconsole. Utilice el `nombre de usuario` y la `contraseña` generados en el momento del suministro.
+  1.  Inicie la {{site.data.keyword.mfp_oc_short_notm}} cargando el URL: `http://<your-server-host>:<server-port>/mfpconsole`. Utilice el `nombre de usuario` y la `contraseña` generados en el momento del suministro.
 
   + En el **Panel de control** de la {{site.data.keyword.mfp_oc_short_notm}}, pulse **Nueva** junto a **Aplicaciones**.
 
@@ -241,7 +241,7 @@ Después de crear e iniciar la instancia de servidor de Mobile Foundation, siga 
      * La respuesta del adaptador aparecerá en la vista de LogCat de Android Studio.
 
 
-## Próximos pasos
+## Pasos siguientes
 {: #nextsteps}
 
 Siga las [Guías de aprendizaje rápido ![Icono de enlace externo](../../icons/launch-glyph.svg "Guías de aprendizaje rápido")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} para trabajar con más aplicaciones de ejemplo y explorar el funcionamiento de {{site.data.keyword.mobilefoundation_short}}. Hay guías de aprendizaje rápido para explicar el funcionamiento de {{site.data.keyword.mobilefoundation_short}} para apps de iOS, Android, Web, Cordova, Windows y Xamarin.

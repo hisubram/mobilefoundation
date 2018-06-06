@@ -22,80 +22,71 @@ Para aislar y resolver problemas con los productos de {{site.data.keyword.IBM_no
 ## Técnicas para la resolución de problemas
 {: #ts_overview}
 
-La *resolución de problemas* consiste en un enfoque sistemático para solucionar un problema. El objetivo de la resolución de problemas es determinar por qué algo no funciona como estaba previsto y cómo resolver el problema. Algunas técnicas comunes pueden ayudar con la tarea de resolución de problemas.
+La *resolución de problemas* es un procedimiento sistemático para resolver un problema. El objetivo de la resolución de problemas es determinar por qué algo no funciona del modo esperado y cómo resolverlo. Algunas técnicas comunes pueden ayudar con la tarea de resolución de problemas.
 
-El primer paso del proceso de resolución de problemas es describir el problema completamente. Las descripciones de problemas le ayudan a usted y al representante del servicio de asistencia técnica de {{site.data.keyword.IBM_notm}} a saber por dónde empezar para encontrar la causa del problema. En este paso, debe plantearse algunas cuestiones básicas:
+El primer paso del proceso de resolución de problemas consiste en describir por completo el problema. Las descripciones de problemas le ayudan a usted y al representante del servicio de asistencia técnica de {{site.data.keyword.IBM_notm}} a saber por dónde empezar para encontrar la causa del problema. En este paso, deben plantearse algunas cuestiones básicas:
 
 - ¿Cuáles son los síntomas del problema?
 - ¿Dónde se produce el problema?
 - ¿Cuándo se produce el problema?
-- ¿Bajo qué circunstancias se produce el problema?
-- ¿Se puede reproducir el problema?
+- ¿En qué condiciones se produce el problema?
+- ¿Puede reproducirse el problema?
 
-Las respuestas a estas preguntas suelen llevar a una buena descripción del problema, lo que puede llevar, a su vez, a
-resolverlo.
+Las respuestas a estas preguntas normalmente conducen a una buena descripción del problema, que a su vez puede llevarle a una resolución.
 
 ### ¿Cuáles son los síntomas del problema?
 
-Cuando se empieza a describir un problema, la pregunta más obvia es: "¿Cuál es el problema?" Esta pregunta puede resultar demasiado directa, sin embargo, puede subdividirse en varias preguntas más focalizadas que crean una imagen más descriptiva del problema. Estas preguntas pueden incluir:
+Al empezar a describir un problema, la pregunta más evidente es "¿Cuál es el problema?". Esta pregunta puede parecer sencilla; sin embargo, puede dividirla en varias más precisas que creen una imagen más descriptiva del problema. Estas preguntas pueden incluir:
 
-- ¿Quién o qué notifica el problema?
-- ¿Qué códigos y mensajes de error se emiten?
-- ¿De qué manera falla el sistema? Por ejemplo, ¿se produce un bucle, el sistema se cuelga, se produce una colisión, una disminución del rendimiento o un resultado incorrecto?
+- ¿Quién o qué está informando del problema?
+- ¿Cuáles son los códigos y los mensajes de error?
+- ¿Cómo falla el sistema? Por ejemplo, ¿es un bucle, un cuelgue, un bloqueo, una degradación del rendimiento o un resultado incorrecto?
 
 ### ¿Dónde se produce el problema?
 
-Determinar dónde se origina el problema no siempre es fácil, pero es uno de los pasos más importantes para la resolución de un problema. Pueden existir muchas capas de tecnología entre los componentes de informe y error. Redes, discos y controladores son sólo algunos de los componentes a tener en cuenta cuando se investiga un problema.
+Determinar dónde se origina el problema no es siempre fácil, pero es uno de los pasos más importantes para resolver un problema. Muchas capas de tecnología pueden existir entre los componentes de informe y los componentes anómalos. Las redes, discos y controladores son sólo algunos de los componentes que deben tenerse en cuenta al investigar un problema.
 
-Las siguientes preguntas le ayudarán a determinar dónde se produce el problema para
-aislar la capa del problema:
+Las siguientes preguntas le ayudarán a centrarse en dónde se produce el problema para aislar la capa del problema:
 
-- ¿El problema es específico de una plataforma o sistema operativo o, por el contrario, es común en varias plataformas o sistemas operativos?
-- ¿Se da soporte al entorno y la configuración actuales?
-- ¿El problema afecta a todos los usuarios?
-- (Para instalaciones en varios sitios). ¿Todos los sitios tienen este problema?
+- ¿El problema es específico de una plataforma o sistema operativo, o por el contrario es común en varias plataformas o sistemas operativos?
+- ¿Están soportados el entorno y la configuración actuales?
+- ¿Tienen el problema todos los usuarios?
+- (Para instalaciones multisitio). ¿Tienen todos los sitios el problema?
 
-Si una capa
-informa del problema, el problema no tiene por qué haberse generado necesariamente en esa
-capa. Parte del proceso de identificación del lugar donde se origina un problema consiste en comprender el entorno en el que se produce. Tómese un tiempo para describir por completo el entorno del problema, incluidos el sistema operativo y la versión y toda la información de software, hardware y versiones. Confirme que está trabajando en un entorno con una configuración soportada; muchos
-problemas pueden rastrearse hasta niveles incompatibles de software que no están
-concebidos para funcionar juntos o no se han probado a fondo conjuntamente.
+Si una capa notifica el problema, el problema no necesariamente se ha creado en esa capa. Parte de la identificación de dónde se origina un problema es comprender el entorno en el que existe. Dedique tiempo a describir completamente el entorno del problema, incluido el sistema operativo y la versión, todo el software y las versiones correspondientes, y la información de hardware. Confirme que está ejecutando dentro de un entorno que es una configuración admitida; muchos problemas pueden deberse a niveles incompatibles de software que no se han planeado para que se ejecuten juntos, o cuyo funcionamiento conjunto no se ha comprobado totalmente.
 
 ### ¿Cuándo se produce el problema?
 
-Desarrolle una línea temporal detallada de sucesos que lleven hasta el error, especialmente en los casos de una única aparición. Puede desarrollar con mayor facilidad una cronología si recorre el trabajo de forma retrospectiva: empiece en el momento en que se ha informado acerca del error (de un modo tan preciso como sea posible, incluso llegando a los milisegundos) y trabaje hacia adelante a través de la información y los registros disponibles. Por lo general, sólo suele ser necesario llegar hasta el primer suceso sospechoso que encuentra en un registro de diagnóstico.
+Desarrolle una línea temporal detallada de sucesos que den como resultado un error, especialmente para los casos que sólo ocurran una vez. Puede desarrollar fácilmente una línea temporal realizando un retroceso: empiece en el momento en que se informó del error (tan detalladamente como sea posible, incluso hasta el milisegundo) y retroceda por los registros y la información disponibles. Normalmente sólo deberá llegar hasta el primer suceso sospechoso que encuentre en un registro de diagnóstico.
 
-Para desarrollar una línea temporal detallada de los sucesos, responda estas preguntas:
+Para desarrollar una línea temporal detallada de sucesos, responda a estas preguntas:
 
-- ¿Se produce el problema sólo en ciertos momentos del día o de la noche?
-- ¿Con qué frecuencia se produce el problema?
+- ¿El problema sucede una sola vez en una determinada hora del día o de la noche?
+- ¿Con qué frecuencia ocurre el problema?
 - ¿Qué secuencia de sucesos antecede al momento en que se informa del problema?
-- ¿El problema se produce tras un cambio de entorno, como al actualizar
-o instalar software o hardware?
+- ¿Sucede el problema después de un cambio de entorno como, por ejemplo, al actualizar o instalar software o hardware?
 
 La respuesta a este tipo de preguntas puede proporcionar un marco de referencia en el que investigar el problema.
 
-### ¿Bajo qué circunstancias se produce el problema?
+### ¿En qué condiciones se produce el problema?
 
-Es importante saber
-qué sistemas y aplicaciones están en ejecución cuando se produce el problema
-para resolverlo. Estas preguntas sobre el entorno le ayudarán a identificar la causa raíz del problema:
+Saber qué sistemas y aplicaciones se están ejecutando en el momento en que se produce un problema es una parte importante de la resolución de problemas. Estas preguntas sobre el entorno pueden ayudarle a identificar la causa raíz del problema:
 
-- ¿El problema siempre se produce al realizar la misma tarea?
-- ¿Tiene que darse una secuencia de sucesos determinada para que se produzca el problema?
+- ¿Se produce siempre el problema cuando se está ejecutando la misma tarea?
+- ¿Debe producirse una determinada secuencia de sucesos para que ocurra el problema?
 - ¿Hay otras aplicaciones que den error al mismo tiempo?
 
-Responder a estos tipos de preguntas puede ayudarle a describir el entorno en el que se produce el problema y a correlacionar las dependencias. Recuerde que aunque varios problemas ocurran más o menos a la vez, no tienen por qué estar relacionados.
+La respuesta a este tipo de preguntas le ayudará a conocer el entorno en el que se produce el problema y establecer correlaciones de dependencias. Recuerde que aunque varios problemas hayan ocurrido al mismo tiempo estos no están necesariamente relacionados.
 
-### ¿Se puede reproducir el problema?
+### ¿Puede reproducirse el problema?
 
-Desde el punto de vista de la resolución de problemas, el problema ideal es el que se puede reproducir. Por lo general, cuando se puede reproducir un problema, se dispone de un conjunto más grande de herramientas o procedimientos que facilitan la investigación. Por lo tanto, los problemas que puede reproducir suelen ser más fáciles de depurar y resolver.
+Desde el punto de vista de la resolución de problemas, el problema ideal es el que se puede reproducir. Normalmente, cuando un problema se puede reproducir, dispone de un conjunto de herramientas o procedimientos más grande para ayudarle en la investigación. Por lo tanto, los problemas que puede reproducir suelen ser más fáciles de depurar y resolver.
 
-Sin embargo, los problemas que se pueden reproducir pueden tener una desventaja: si el problema tiene un impacto significativo en la empresa, no será deseable que vuelva a producirse. Si es posible, vuelva a crear el problema en un entorno de prueba o desarrollo, que generalmente ofrece más flexibilidad y control durante la investigación.
+No obstante, los problemas que puede reproducir pueden tener una desventaja: si el problema tiene un impacto empresarial importante, no desea que se repita. Si es posible, vuelva a crear el problema en un entorno de prueba o de desarrollo, que habitualmente ofrecen más flexibilidad y control durante la investigación.
 
-- ¿Se puede recrear el problema en un sistema de prueba?
+- ¿Se puede volver a crear el problema en un sistema de prueba?
 - ¿Hay varios usuarios o aplicaciones que encuentren el mismo tipo de problema?
-- ¿El problema puede reproducirse ejecutando un único mandato, un conjunto de mandatos o una aplicación específica?
+- ¿Se puede recrear el problema mediante la ejecución de un único mandato, un conjunto de mandatos, una aplicación concreta?
 
 
 ##  Limitaciones conocidas

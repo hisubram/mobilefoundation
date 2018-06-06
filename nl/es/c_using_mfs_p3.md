@@ -43,7 +43,7 @@ Siga estos pasos para crear una instancia de servicio de Db2 on Cloud:
 
 1. En la página *Visión general*, seleccione la sección **Crear nuevo servicio**.
 
-+ Su desea una instancia de servicio altamente disponible de {{site.data.keyword.Db2_on_Cloud_short}}, seleccione `Sí` en la opción **Configuración de alta disponibilidad**.
++ Si desea una instancia de servicio altamente disponible de {{site.data.keyword.Db2_on_Cloud_short}}, seleccione `Sí` en la opción **Configuración de alta disponibilidad**.
 
 + Revise los detalles del plan y pulse **Crear**.
 
@@ -76,7 +76,7 @@ En varios segundos, puede acceder a la página `Visión general`, que le ofrece 
 
     -	El `nombre de usuario` y la `contraseña` se generan de forma automática. Tiene acceso a ellos cuando el servidor está en ejecución.
 
-    Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de control en el que se puede ver lo siguiente:
+    Se inicia el proceso de suministro del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de instrumentos en el que se puede ver lo siguiente:
 
       -	El estado del servidor que se ejecuta (estado, tamaño).
 

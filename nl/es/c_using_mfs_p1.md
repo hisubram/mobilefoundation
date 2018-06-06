@@ -9,7 +9,7 @@ lastupdated:  "2018-03-07"
 #	Utilización del plan Developer
 {: #using_mobilefoundation_p1}
 
-Después de crear la instancia de servicio de {{site.data.keyword.mobilefoundation_short}} mediante el plan Developer, acceda a la página Visión general en {{site.data.keyword.Bluemix_notm}}. En esta página, se proporcionan guías de aprendizaje y vídeos para ayudarle a aprender a utilizar el servicio.
+Después de crear la instancia de servicio de {{site.data.keyword.mobilefoundation_short}} utilizando el plan Developer, acceda a la página Visión general en {{site.data.keyword.Bluemix_notm}}. En esta página, se le proporcionarán guías de aprendizaje y vídeos para ayudarle a empezar con el servicio.
 
 ## Cómo trabajar con el servidor de MobileFirst
 {: #start_mobilefoundation_p1}

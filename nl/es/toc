@@ -8,6 +8,8 @@ Mobile Foundation
     {: .navgroup id="learn"}
     index.md
     mdoverview.md
+    using_cli.md
+    direct_update.md
 
     {: .topicgroup}
     Enlaces relacionados
@@ -28,7 +30,7 @@ Mobile Foundation
 
     {: .topicgroup}
     Comunidad de desarrolladores
-        [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-mobile-services)
-        [dW Answers de IBM developerWorks](https://developer.ibm.com/answers/topics/bluemix-mobile-foundation/?smartspace=bluemix)
+        [StackOverflow](https://stackoverflow.com/questions/tagged/ibm-mobile-services)
+        [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/bluemix-mobile-foundation/?smartspace=bluemix)
         [Canal de Slack de MFP Dev](https://slackin.mybluemix.net)
     {: .navgroup-end}
