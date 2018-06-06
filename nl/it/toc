@@ -9,6 +9,8 @@ Mobile
     {: .navgroup id="learn"}
     index.md
     mdoverview.md
+    using_cli.md
+    direct_update.md
 
     {: .topicgroup}
     Link correlati

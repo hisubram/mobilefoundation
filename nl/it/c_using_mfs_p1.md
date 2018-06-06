@@ -11,7 +11,7 @@ lastupdated:  "2018-03-07"
 
 Dopo aver creato l'istanza del servizio {{site.data.keyword.mobilefoundation_short}} utilizzando il piano Developer, accedi alla pagina della panoramica in {{site.data.keyword.Bluemix_notm}}. In questa pagina, ti vengono forniti i video e le esercitazioni per aiutarti a iniziare a utilizzare il servizio.
 
-## Utilizzo del server MobileFirst 
+## Utilizzo del server MobileFirst
 {: #start_mobilefoundation_p1}
 * Puoi accedere e utilizzare immediatamente il server MobileFirst.
 
@@ -29,9 +29,9 @@ Dopo aver creato l'istanza del servizio {{site.data.keyword.mobilefoundation_sho
 
 *	Click **Launch Console** to launch the {{site.data.keyword.mfp_oc_short_notm}}.-->
 
-Puoi ora gestire le tue applicazioni mobili e i tuoi dispositivi mobili, utilizzare il tuo server come un backend mobile, inviare notifiche di push e altro ancora. 
+Puoi ora gestire le tue applicazioni mobili e i tuoi dispositivi mobili, utilizzare il tuo server come un backend mobile, inviare notifiche di push e altro ancora.
 
-## Servizio Mobile Analytics 
+## Servizio Mobile Analytics
 {: #adding_analytics_server_dev}
 
 Il server Mobile Analytics è incluso e preconfigurato con l'istanza del servizio del piano Mobile Foundation: Developer.

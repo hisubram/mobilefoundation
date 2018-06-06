@@ -2,14 +2,14 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-05"
+lastupdated:  "2018-03-22"
 
 ---
 
 #	Utilizzo del piano Professional Per Device
 {: #using_mobilefoundation_p5}
 
-Con il piano Professional Per Device gli utenti possono creare, verificare ed eseguire le applicazioni mobili nella produzione, indipendentemente dal numero di dispositivi o utenti mobili. Questo piano supporta le grandi distribuzioni e l'alta disponibilità.
+Con il piano Professional Per Device gli utenti possono creare, verificare ed eseguire le applicazioni mobili nella produzione, indipendentemente dal numero di dispositivi o utenti mobili, gli addebiti si basano sul numero di dispositivi client giornalieri. Questo piano supporta le grandi distribuzioni e l'alta disponibilità.
 Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device, leggi la seguente procedura introduttiva al servizio.
 
 ## Prerequisiti
@@ -34,7 +34,7 @@ Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_
 ### Impostazione della connessione all'istanza del servizio Db2 on Cloud
 {: #connect_dashdb_p5}
 
-Dopo che l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device è stata creata, vedrai la pagina *Panoramica* dove dovrai specificare le informazioni di connessione per l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, a cui dovrebbe collegarsi l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}. 
+Dopo che l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device è stata creata, vedrai la pagina *Panoramica* dove dovrai specificare le informazioni di connessione per l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, a cui dovrebbe collegarsi l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
 
 Puoi anche creare una nuova istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, se non ne hai una già esistente.
 

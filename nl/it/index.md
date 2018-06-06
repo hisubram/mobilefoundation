@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-12"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -136,7 +136,7 @@ Vai a [Using the Mobile Foundation service to set up MobileFirst Server ![Icona 
 
 Dopo aver creato e avviato la tua istanza del server Mobile Foundation, puoi seguire le seguenti istruzioni per registrare un'applicazione Android.
 
-  1.  Avvia {{site.data.keyword.mfp_oc_short_notm}} caricando l'URL: http://your-server-host:server-port/mfpconsole. Utilizza il `nomeutente` e la `password` generate durante il provisioning.
+  1.  Avvia {{site.data.keyword.mfp_oc_short_notm}} caricando l'URL: `http://<your-server-host>:<server-port>/mfpconsole`. Utilizza il `nomeutente` e la `password` generate durante il provisioning.
 
   + Nel **Dashboard** {{site.data.keyword.mfp_oc_short_notm}}, fai clic su **Nuovo** accanto a **Applicazioni**.
 
@@ -249,7 +249,7 @@ Dopo aver creato e avviato la tua istanza del server Mobile Foundation, puoi seg
 ## Passi successivi
 {: #nextsteps}
 
-Puoi seguire le [Quick Start tutorials ![Icona link esterno](../../icons/launch-glyph.svg "Quick Start tutorials")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} per utilizzare più applicazioni di esempio e per eplorare l'utilizzo di {{site.data.keyword.mobilefoundation_short}}. Quick Start dispone di esercitazioni che illustrano l'utilizzo di {{site.data.keyword.mobilefoundation_short}} per le applicazioni iOS, Android, Web, Cordova, Windows e Xamarin.
+Puoi seguire le [Quick Start tutorials ![Icona link esterno](../../icons/launch-glyph.svg "Quick Start tutorials")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} per utilizzare più applicazioni di esempio e per esplorare l'utilizzo di {{site.data.keyword.mobilefoundation_short}}. Quick Start dispone di esercitazioni che illustrano l'utilizzo di {{site.data.keyword.mobilefoundation_short}} per le applicazioni iOS, Android, Web, Cordova, Windows e Xamarin.
 
 # Link correlati
 {: #rellinks  notoc}

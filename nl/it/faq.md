@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-02-09"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -34,7 +34,7 @@ Durante l'applicazione dell'aggiornamento, la versione del server, come visto in
 
 > **Nota:**
 >  * Gli utenti non saranno in grado di applicare le loro modifiche e aggiornamenti alla loro istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
->  * Consulta [Ricreare il server nel piano Developer](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [Ricreare il server nel piano DeveloperPro](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Ricreare il server nel piano Professional Per Device](c_using_mfs_p4.html#recreate_mobilefoundation_p5) e [Ricreare il server nel piano Professional 1 Application](c_using_mfs_p2.html#recreate_mobilefoundation_p2) per comprendere la differenza nel comportamento dei piani quando viene fatto clic su **Ricrea**.
+>  * Consulta [Ricreare il server nel piano Professional Per Device](c_using_mfs_p4.html#recreate_mobilefoundation_p5) e [Ricreare il server nel piano Professional 1 Application](c_using_mfs_p2.html#recreate_mobilefoundation_p2) per comprendere la differenza nel comportamento dei piani quando viene fatto clic su **Ricrea**.
 >
 
 ## Come configuro il dominio personalizzato della mia istanza del server {{site.data.keyword.mobilefoundation_short}}?
