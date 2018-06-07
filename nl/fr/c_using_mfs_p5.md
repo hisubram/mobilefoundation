@@ -2,14 +2,15 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-05"
+lastupdated:  "2018-03-22"
 
 ---
 
 #	Utilisation du plan Professionnel par appareil
 {: #using_mobilefoundation_p5}
 
-Avec le plan Professionnel par appareil, les utilisateurs peuvent générer, tester et exécuter des applications mobiles en production, quel que soit le nombre d'utilisateurs ou d'appareils mobiles. Ce plan prend en charge les déploiements étendus et la haute disponibilité. Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par appareil, lisez la procédure ci-après pour commencer à l'utiliser.
+Avec le plan Professionnel par appareil, les utilisateurs peuvent générer, tester et exécuter des applications mobiles en production, quel que soit le nombre d'utilisateurs ou d'appareils mobiles, les frais dépendant du nombre d'appareils client utilisés quotidiennement. Ce plan prend en charge les déploiements étendus et la haute disponibilité.
+Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par appareil, lisez la procédure ci-après pour commencer à l'utiliser.
 
 ## Conditions prérequises
 {: #prerequisites_p5}

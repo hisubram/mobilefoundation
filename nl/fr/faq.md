@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-02-09"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -29,12 +29,12 @@ La mise à jour du service {{site.data.keyword.mobilefoundation_short}} sera mis
 ## Comment appliquer les mises à jour au service {{site.data.keyword.mobilefoundation_short}} ?
 {: #apply_update_mf}
 
-La mise à jour dans {{site.data.keyword.mobilefoundation_short}} peut être appliquée en cliquant sur la commande de recréation.
+La mise à jour dans {{site.data.keyword.mobilefoundation_short}} peut être appliquée en cliquant sur la commande **Recréer**.
 Lors de l'application de la mise à jour, la version du serveur, comme affichée dans {{site.data.keyword.mfp_oc_short_notm}}, sera modifiée pour indiquer la version de mise à jour du serveur.
 
 > **Remarque :**
 >  * Les utilisateurs ne seront pas en mesure d'appliquer leurs propres correctifs et mises à jour à leur instance de service {{site.data.keyword.mobilefoundation_short}}.
->  * Pour comprendre la différence de comportement d'un plan à un autre lorsque vous cliquez sur **Recréer*, consultez [Recréation du serveur dans le plan Développeur](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [Recréation du serveur dans le plan Développeur Pro](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Recréation du serveur dans le plan Professionnel par appareil](c_using_mfs_p4.html#recreate_mobilefoundation_p5) et [Recréation du serveur dans le plan Professionnel, 1 application](c_using_mfs_p2.html#recreate_mobilefoundation_p2).
+>  * Voir [Utilisation du plan Professionnel par capacité](c_using_mfs_p4.html#recreate_mobilefoundation_p5) et [Utilisation du plan Professionnel, 1 application](c_using_mfs_p2.html#recreate_mobilefoundation_p2) pour comprendre la différence de comportement d'un plan à un autre quand vous cliquez sur **Recréer*.
 >
 
 ## Comment configurer un domaine personnalisé pour mon instance de serveur {{site.data.keyword.mobilefoundation_short}} ?

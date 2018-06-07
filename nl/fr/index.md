@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-12"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -161,7 +161,7 @@ Accédez à [Using the Mobile Foundation service to set up MobileFirst Server![I
 
 Une fois votre instance de serveur Mobile Foundation créée et démarrée, vous pouvez suivre les étapes ci-après pour enregistrer une application Android.
 
-  1.  Lancez {{site.data.keyword.mfp_oc_short_notm}} en chargeant l'URL http://hôte-de-votre-serveur:port-serveur/mfpconsole. Utilisez le `nom d'utilisateur` et le `mot de passe` qui ont été générés au moment de la mise à disposition.
+  1.  Lancez {{site.data.keyword.mfp_oc_short_notm}} en chargeant l'URL `http://<your-server-host>:<server-port>/mfpconsole`. Utilisez le `nom d'utilisateur` et le `mot de passe` qui ont été générés au moment de la mise à disposition.
 
   + Dans le **Tableau de bord** de {{site.data.keyword.mfp_oc_short_notm}}, cliquez sur **Nouveau** en
 regard de **Applications**.

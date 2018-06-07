@@ -32,7 +32,7 @@ La mise à jour du service {{site.data.keyword.mobilefoundation_short}} sera mis
 ## Application des mises à jour
 {: #apply_update_mf}
 
-La mise à jour dans {{site.data.keyword.mobilefoundation_short}} peut être appliquée en cliquant sur la commande de recréation.
+La mise à jour dans {{site.data.keyword.mobilefoundation_short}} peut être appliquée en cliquant sur la commande **Recréer**.
 
 Lors de l'application de la mise à jour, la version du serveur, comme affichée dans {{site.data.keyword.mfp_oc_short_notm}}, sera modifiée pour indiquer la version de mise à jour du serveur.
 
