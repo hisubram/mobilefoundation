@@ -2,14 +2,14 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-05"
+lastupdated:  "2018-03-22"
 
 ---
 
 #	Professional Per Device-Plan verwenden
 {: #using_mobilefoundation_p5}
 
-Mit dem Professional Per Device-Plan können Benutzer mobile Anwendungen erstellen, testen und in Produktionsumgebungen ausführen, unabhängig von der Anzahl mobiler Benutzer oder Geräte. Dieser Plan unterstützt große Bereitstellungen und die Hochverfügbarkeit.
+Mit dem Professional Per Device-Plan können Benutzer mobile Anwendungen erstellen, testen und in Produktionsumgebungen ausführen, unabhängig von der Anzahl mobiler Benutzer oder Geräte. Die Gebühren basieren auf der Anzahl der täglichen Clientgeräte. Dieser Plan unterstützt große Bereitstellungen und die Hochverfügbarkeit.
 Nach der Erstellung der Serviceinstanz von {{site.data.keyword.mobilefoundation_short}}: Professional Per Device lesen Sie die folgende Prozedur, um die Arbeit mit dem Service zu beginnen.
 
 ## Voraussetzungen

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-12"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -131,7 +131,7 @@ Weitere Informationen zur Einführung in {{site.data.keyword.mobilefoundation_sh
 
 Nach dem Erstellen und Starten der Mobile Foundation-Serverinstanz können Sie die nachfolgend beschriebenen Schritte ausführen, um eine Android-Anwendung zu registrieren.
 
-  1.  Starten Sie {{site.data.keyword.mfp_oc_short_notm}}, indem Sie die folgende URL laden: http://your-server-host:server-port/mfpconsole. Verwenden Sie den `Benutzernamen` und das `Kennwort`, die bei der Bereitstellung generiert wurden.
+  1.  Starten Sie {{site.data.keyword.mfp_oc_short_notm}}, indem Sie folgende URL laden: `http://<your-server-host>:<server-port>/mfpconsole`. Verwenden Sie den `Benutzernamen` und das `Kennwort`, die bei der Bereitstellung generiert wurden.
 
   + Klicken Sie im {{site.data.keyword.mfp_oc_short_notm}}-**Dashboard** auf **Neu** neben **Anwendungen**.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-02-09"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -34,7 +34,7 @@ Bei der Anwendung der Aktualisierung wird die Version des Servers, die in der {{
 
 > **Hinweis:**
 >  * Benutzer können keine eigenen Fixes und Aktualisierungen auf ihre Instanz des {{site.data.keyword.mobilefoundation_short}}-Service anwenden.
->  * In [Server im Developer-Plan erneut erstellen](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [Server im DeveloperPro-Plan erneut erstellen](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Server im Professional Per Device-Plan erneut erstellen](c_using_mfs_p4.html#recreate_mobilefoundation_p5) und [Server im Professional 1 Application-Plan](c_using_mfs_p2.html#recreate_mobilefoundation_p2) werden die Unterschiede im Verhalten beim Klicken auf **Erneut erstellen** für die jeweiligen Pläne beschrieben.
+>  * Lesen Sie [Server in Professional Per Device-Plan neu erstellen](c_using_mfs_p4.html#recreate_mobilefoundation_p5) und [Server in Professional 1 Application-Plan neu erstellen](c_using_mfs_p2.html#recreate_mobilefoundation_p2), um den Unterschied im Verhalten zwischen den Plänen zu verstehen, wenn auf **Neu erstellen** geklickt wird.
 >
 
 ## Wie konfiguriere ich eine angepasste Domäne für meine {{site.data.keyword.mobilefoundation_short}}-Serverinstanz?
