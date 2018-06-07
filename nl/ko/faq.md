@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-02-09"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -34,7 +34,7 @@ lastupdated:  "2018-02-09"
 
 > **참고:**
 >  * 사용자는 고유 수정사항 및 업데이트를 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에 적용할 수 없습니다.
->  * **재작성**을 클릭하는 경우 플랜에서 발생하는 동작의 차이점을 파악하려면 [Developer 플랜에서 서버 재작성](c_using_mfs_p1.html#recreate_mobilefoundation_p1), [DeveloperPro 플랜에서 서버 재작성](c_using_mfs_p3.html#recreate_mobilefoundation_p3), [Professional Per Device 플랜에서 서버 재작성](c_using_mfs_p5.html#recreate_mobilefoundation_p5) 및 [Professional 1 Application 플랜에서 서버 재작성](c_using_mfs_p2.html#recreate_mobilefoundation_p2)을 참조하십시오.
+>  * **재작성**을 클릭하는 경우 플랜에서 발생하는 동작의 차이점을 파악하려면 [Professional Per Device 플랜에서 서버 재작성](c_using_mfs_p4.html#recreate_mobilefoundation_p5) 및 [Professional 1 Application 플랜에서 서버 재작성](c_using_mfs_p2.html#recreate_mobilefoundation_p2)을 참조하십시오.
 >
 
 ## 내 {{site.data.keyword.mobilefoundation_short}} 서버 인스턴스에 대해 어떻게 사용자 정의 도메인을 구성합니까?
@@ -44,12 +44,12 @@ lastupdated:  "2018-02-09"
 
 URL 또는 라우트는 {{site.data.keyword.Bluemix_notm}} `Region`을 기반으로 하는 기본 도메인 이름을 사용하여 작성됩니다.
 
-  |도메인 |  지역  |    
+  |도메인 |지역  |    
   |:----- | :----- |    
-  |`mybluemix.net` | 미국 남부 |    
-  |`eu-gb.mybluemix.net` | 영국  |
-  |`au-syd.mybluemix.net` | 시드니  |   
-  |`eu-de.mybluemix.net` | 프랑크푸르트 |   
+  |`mybluemix.net` |미국 남부 |    
+  |`eu-gb.mybluemix.net` |영국  |
+  |`au-syd.mybluemix.net` |시드니  |   
+  |`eu-de.mybluemix.net` |프랑크푸르트 |   
   {: caption="표 1. {{site.data.keyword.Bluemix_notm}}에서 지역을 기반으로 하는 애플리케이션 도메인 이름" caption-side="top"}
 
 자체 도메인을 사용할 수 있으려면 다음 단계를 수행하여 사용자 정의 도메인을 구성해야 합니다.

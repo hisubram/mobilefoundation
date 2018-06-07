@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-12"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -131,7 +131,7 @@ Professional 1 Application 플랜을 사용하면 Android, iOS, Windows 또는 �
 
 Mobile Foundation 서버 인스턴스를 작성하고 시작한 후에 아래 단계에 따라 Android 애플리케이션을 등록할 수 있습니다.
 
-  1.  URL(http://your-server-host:server-port/mfpconsole) 을 로드하여 {{site.data.keyword.mfp_oc_short_notm}}을 실행하십시오. 프로비저닝할 때 생성된 `username` 및 `password`를 사용하십시오.
+  1.  URL(`http://<your-server-host>:<server-port>/mfpconsole`)을 로드하여 {{site.data.keyword.mfp_oc_short_notm}}을 시작하십시오. 프로비저닝할 때 생성된 `username` 및 `password`를 사용하십시오.
 
   + {{site.data.keyword.mfp_oc_short_notm}} **대시보드**에서 **애플리케이션** 옆의 **새로 작성**을 클릭하십시오.
 

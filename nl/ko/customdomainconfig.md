@@ -19,12 +19,12 @@ lastupdated:  "2018-01-24"
 
 <!--container group is created with a--> URL 또는 라우트는 {{site.data.keyword.Bluemix_notm}} `Region`을 기반으로 하는 기본 도메인 이름을 사용하여 작성됩니다.
 
-  |도메인 |  지역  |    
+  |도메인 |지역  |    
   |:----- | :----- |    
-  |`mybluemix.net` | 미국 남부 |    
-  |`eu-gb.mybluemix.net` | 영국  |
-  |`au-syd.mybluemix.net` | 시드니  |   
-  |`eu-de.mybluemix.net` | 프랑크푸르트 |   
+  |`mybluemix.net` |미국 남부 |    
+  |`eu-gb.mybluemix.net` |영국  |
+  |`au-syd.mybluemix.net` |시드니  |   
+  |`eu-de.mybluemix.net` |프랑크푸르트 |   
   {: caption="표 1. {{site.data.keyword.Bluemix_notm}}에서 지역을 기반으로 하는 애플리케이션 도메인 이름" caption-side="top"}
 
 자체 도메인을 사용할 수 있으려면 다음 단계를 수행하여 사용자 정의 도메인을 구성해야 합니다.
