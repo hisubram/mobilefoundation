@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-03-12"
+lastupdated:  "2018-05-30"
 
 ---
 
@@ -59,8 +59,7 @@ Após criar uma instância do serviço {{site.data.keyword.mobilefoundation_shor
 
       1.  Selecione a {{site.data.keyword.Bluemix_notm}} `Organização` na qual a instância do serviço {{site.data.keyword.Db2_on_Cloud_short}} existe.
 
-      + Selecione {{site.data.keyword.Bluemix_notm}} `Space` em que a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, na lista de espaços disponíveis na
-`Organization` selecionada.
+      + Selecione {{site.data.keyword.Bluemix_notm}} `Space` em que a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, na lista de espaços disponíveis na `Organization` selecionada.
 
       + Selecione {{site.data.keyword.Db2_on_Cloud_short}} `Service name` e `Credentials` para se conectar à instância de serviço existente do {{site.data.keyword.Db2_on_Cloud_short}}.
 
@@ -82,14 +81,10 @@ mudá-la.
 
           -	O `username` e a `password` são gerados automaticamente para você. Você tem acesso a eles quando o servidor está funcionando.
 
-          O processo de fornecimento do servidor inicia. Esse processo leva aproximadamente 10 minutos e uma
-janela de mensagem indica o progresso dessa operação. Quando completo, um painel é exibido
-no qual é possível ver:
+          O processo de fornecimento do servidor inicia. Esse processo leva aproximadamente 10 minutos e uma janela de mensagem indica o progresso dessa operação. Quando completo, um painel é exibido no qual é possível ver:
             -	O status do servidor que está em execução (estado, tamanho).
-            -	A rota do servidor é criada para você. Use esta rota em seu aplicativo móvel para se
-conectar ao {{site.data.keyword.mfserver_short_notm}}.
-            -	Seu `nome do usuário` e `senha` para acessar o {{site.data.keyword.mfp_oc_short_notm}}. A `password` fica oculta. Clique
-no ícone **Mostrar senha** para visualizá-lo.
+            -	A rota do servidor é criada para você. Use esta rota em seu aplicativo móvel para se conectar ao {{site.data.keyword.mfserver_short_notm}}.
+            -	Seu `nome do usuário` e `senha` para acessar o {{site.data.keyword.mfp_oc_short_notm}}. A `password` fica oculta. Clique no ícone **Mostrar senha** para visualizá-lo.
 
       +	Clique em **Ativar console** para abrir o {{site.data.keyword.mfp_oc_short_notm}}.      
 
@@ -105,8 +100,7 @@ Depois de criar uma instância do serviço {{site.data.keyword.mobilefoundation_
 
       1.  Selecione a {{site.data.keyword.Bluemix_notm}} `Organização` na qual a instância do serviço {{site.data.keyword.Db2_on_Cloud_short}} existe.
 
-      + Selecione {{site.data.keyword.Bluemix_notm}} `Space` em que a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, na lista de espaços disponíveis na
-`Organization` selecionada.
+      + Selecione {{site.data.keyword.Bluemix_notm}} `Space` em que a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, na lista de espaços disponíveis na `Organization` selecionada.
 
       + Selecione {{site.data.keyword.Db2_on_Cloud_short}} `Service name` e `Credentials` para se conectar à instância de serviço existente do {{site.data.keyword.Db2_on_Cloud_short}}.
 
@@ -128,14 +122,10 @@ mudá-la.
       + O `username` e a `password` são gerados automaticamente para
 você. Você tem acesso a eles quando o servidor está funcionando.  
 
-        O processo de fornecimento do servidor inicia. Esse processo leva aproximadamente 10 minutos e uma
-janela de mensagem indica o progresso dessa operação. Quando completo, um painel é exibido
-no qual é possível ver:
+        O processo de fornecimento do servidor inicia. Esse processo leva aproximadamente 10 minutos e uma janela de mensagem indica o progresso dessa operação. Quando completo, um painel é exibido no qual é possível ver:
           -	O status do servidor que está em execução (estado, tamanho).
-          -	A rota do servidor é criada para você. Use esta rota em seu aplicativo móvel para se
-conectar ao {{site.data.keyword.mfserver_short_notm}}.
-          -	Seu `nome do usuário` e `senha` para acessar o {{site.data.keyword.mfp_oc_short_notm}}. A `password` fica oculta. Clique
-no ícone **Mostrar senha** para visualizá-lo.
+          -	A rota do servidor é criada para você. Use esta rota em seu aplicativo móvel para se conectar ao {{site.data.keyword.mfserver_short_notm}}.
+          -	Seu `nome do usuário` e `senha` para acessar o {{site.data.keyword.mfp_oc_short_notm}}. A `password` fica oculta. Clique no ícone **Mostrar senha** para visualizá-lo.
 
       +  Clique em **Ativar console** para abrir o {{site.data.keyword.mfp_oc_short_notm}}.  
 
@@ -150,7 +140,7 @@ Acesse [Usando o serviço do Mobile Foundation para configurar o MobileFirst Ser
 
 Após criar e iniciar a sua instância do servidor do Mobile Foundation, é possível seguir as etapas abaixo para registrar um aplicativo Android.
 
-  1.  Ative o {{site.data.keyword.mfp_oc_short_notm}} carregando a URL: http://your-server-host:server-port/mfpconsole. Use o `username` e `password` gerados no momento do fornecimento.
+  1.  Ative o {{site.data.keyword.mfp_oc_short_notm}} carregando a URL: `http://<your-server-host>:<server-port>/mfpconsole`. Use o `username` e `password` gerados no momento do fornecimento.
 
   + No {{site.data.keyword.mfp_oc_short_notm}} **Painel**, clique em **Novo** próximo a **Aplicativos**.
 
