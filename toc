@@ -12,6 +12,15 @@ Mobile Foundation
     direct_update.md
 
     {: .topicgroup}
+    JSONStore
+        jsonstore.md
+        cordova_jsonstore.md
+        ios_jsonstore.md
+        android_jsonstore.md
+        security_utilities.md
+        code_examples.md
+
+    {: .topicgroup}
     Related links
         [IBM MobileFirst Platform Foundation V8.0.0 product documentation](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
         [IBM MobileFirst Platform Developer Center](https://mobilefirstplatform.ibmcloud.com)
