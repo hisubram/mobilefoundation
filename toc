@@ -2,7 +2,7 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="mobile-foundation" audience="service" href="/docs/services/mobilefoundation/index.html"}
+{: .toc subcollection="mobile-foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation/index.html"}
 Mobile Foundation
 
     {: .navgroup id="learn"}
@@ -30,6 +30,7 @@ Mobile Foundation
     c_using_mfs_p1.md
     c_using_mfs_p5.md
     c_using_mfs_p2.md
+    export_import_apps_adapters.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
