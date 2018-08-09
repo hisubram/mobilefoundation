@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-08-03"
+lastupdated:  "2018-08-09"
 
 ---
 
@@ -19,6 +19,8 @@ lastupdated:  "2018-08-03"
 {:shortdesc}
 
 Using the Professional 1 Application plan a single application built on any or all of the supported operating platforms such as Android, iOS, Windows or mobile web, can be managed. The Developer plan is best suited for development and test. You can review all the available plans [here](https://console.bluemix.net/catalog/services/mobile-foundation).
+
+This getting started tutorial enables you to create a {{site.data.keyword.mobilefoundation_short}} service instance using one of the supported plans. You can then register an application, download and edit the application, deploy an adapter and finally test the application.
 
 ## Before you begin
 {: #prereqs}
@@ -244,7 +246,9 @@ After creating and starting your Mobile Foundation server instance, you can foll
 ## Next steps
 {: #nextsteps}
 
-You can follow the [Quick Start tutorials ![External link icon](../../icons/launch-glyph.svg "Quick Start tutorials")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} to work with more sample applications and to explore the working of {{site.data.keyword.mobilefoundation_short}}. Quick Start has tutorials explaining the working of {{site.data.keyword.mobilefoundation_short}} for  iOS, Android, Web, Cordova, Windows, and Xamarin apps.
+You can follow the [Quick Start tutorials ![External link icon](../../icons/launch-glyph.svg "Quick Start tutorials")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} to work with more sample applications and to explore the working of {{site.data.keyword.mobilefoundation_short}}.
+
+Quick Start has tutorials explaining the working of {{site.data.keyword.mobilefoundation_short}} for  iOS, Android, Web, Cordova, Windows, React Native, Ionic, and Xamarin apps.
 
 # Related Links
 {: #rellinks  notoc}
