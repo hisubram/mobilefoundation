@@ -198,7 +198,8 @@ The MobileFirst client-side API provides some security utilities to help protect
 
 Instead, store binary data on the file system, and store the file paths and other metadata inside a JSONStore collection. If you want to protect files like images, you can encode them as base64 strings, encrypt it, and write the output to disk. When it is time to decrypt the data, you can look up the metadata in a JSONStore collection, read the encrypted data from the disk, and decrypt it using the metadata that was stored. This metadata can include the key, salt, Initialization Vector (IV), type of file, path to the file, and others.
 
-> Learn more about [JSONStore Security Utilities](security-utilities.html).
+Learn more about [JSONStore Security Utilities](security_utilities.html#security_utilities).
+{: tip}
 
 ### Windows 8.1 Universal and Windows 10 UWP encryption
 {: #windows-81-universal-and-windows-10-uwp-encryption }

@@ -83,7 +83,7 @@ After you create an instance of the {{site.data.keyword.mobilefoundation_short}}
 
       +	Click **Launch Console** to open the {{site.data.keyword.mfp_oc_short_notm}}.      
 
-      To create a {{site.data.keyword.mobilefirst_notm}} server instance with advanced configuration for topology, security, and other server configuration, click **Start Server with Advanced Configuration**. See [Setting up advanced configuration](c_using_mfs_p4.html#using_mfs_advanced_p4), for more information.
+      To create a {{site.data.keyword.mobilefirst_notm}} server instance with advanced configuration for topology, security, and other server configuration, click **Start Server with Advanced Configuration**. See [Setting up advanced configuration](c_using_mfs_p5.html#using_mfs_advanced_p5), for more information.
       {: tip}
 
 ### For {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application plan
