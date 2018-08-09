@@ -10,7 +10,7 @@ lastupdated:  "2018-05-30"
 {:shortdesc: .shortdesc}
 
 
-# FAQ
+# FAQs
 
 This FAQ provides answers to common questions about the {{site.data.keyword.mobilefoundation_long}} service.
 {: shortdesc}
