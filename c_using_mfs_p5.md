@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-08-03"
+lastupdated:  "2018-09-26"
 
 ---
 
@@ -16,11 +16,11 @@ After you create the {{site.data.keyword.mobilefoundation_short}}: Professional 
 {: #prerequisites_p5}
 
 Consider the following before you configure  {{site.data.keyword.mobilefoundation_short}}: Professional Per Device service instance.
-* {{site.data.keyword.mobilefoundation_short}}: Professional Per Device is supported only with {{site.data.keyword.Db2_on_Cloud_short}} or {{site.data.keyword.composeForPostgreSQL}} {{site.data.keyword.Bluemix_notm}} plans.
+* {{site.data.keyword.mobilefoundation_short}}: Professional Per Device is supported only with {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} {{site.data.keyword.Bluemix_notm}} plans.
 
-* You should have access to the {{site.data.keyword.Db2_on_Cloud_short}} or {{site.data.keyword.composeForPostgreSQL}} service instance credentials before you can configure the settings of your {{site.data.keyword.mobilefoundation_short}} service instance.
+* You should have access to the {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance credentials before you can configure the settings of your {{site.data.keyword.mobilefoundation_short}} service instance.
 
-> **Note**: The {{site.data.keyword.Db2_on_Cloud_short}} or {{site.data.keyword.composeForPostgreSQL}} service instance can exist in any `Space` within your {{site.data.keyword.Bluemix_notm}} `Organization` or any other `Organization` that you have access to. Ensure that you have the permissions to access the `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} or {{site.data.keyword.composeForPostgreSQL}} service instance exists.
+> **Note**: The {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance can exist in any `Space` within your {{site.data.keyword.Bluemix_notm}} `Organization` or any other `Organization` that you have access to. Ensure that you have the permissions to access the `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} or {{site.data.keyword.composeForPostgreSQL}} service instance exists.
 
 
 ## Adding the database connection
@@ -34,9 +34,9 @@ After you create the {{site.data.keyword.mobilefoundation_short}}: Professional 
 ### Setting up connection to Db2 on Cloud service instance
 {: #connect_dashdb_p5}
 
-After the {{site.data.keyword.mobilefoundation_short}}: Professional Per Device service instance is created you will see the *Overview* page where you will need to specify the connection information for the {{site.data.keyword.Db2_on_Cloud_short}} or {{site.data.keyword.composeForPostgreSQL}} service instance, that the {{site.data.keyword.mobilefoundation_short}} service instance should connect to.
+After the {{site.data.keyword.mobilefoundation_short}}: Professional Per Device service instance is created you will see the *Overview* page where you will need to specify the connection information for the {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance, that the {{site.data.keyword.mobilefoundation_short}} service instance should connect to.
 
-You can also create a new {{site.data.keyword.Db2_on_Cloud_short}} or {{site.data.keyword.composeForPostgreSQL}} service instance, if you do not have one already existing.
+You can also create a new {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance, if you do not have one already existing.
 
 Follow these steps to create a new Db2 on Cloud service instance:
 

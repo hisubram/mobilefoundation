@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-02-14"
+lastupdated:  "2018-09-26"
 
 ---
 
@@ -19,9 +19,9 @@ After you create the {{site.data.keyword.mobilefoundation_short}} service instan
 Consider the following before you configure  {{site.data.keyword.mobilefoundation_short}}: Developer Pro service instance.
 * {{site.data.keyword.mobilefoundation_short}}: Developer Pro is supported only with {{site.data.keyword.Db2_on_Cloud_short}} {{site.data.keyword.Bluemix_notm}} plans.
 
-* You must have access to the {{site.data.keyword.Db2_on_Cloud_short}} service instance credentials before you can configure the settings of your {{site.data.keyword.mobilefoundation_short}} service instance.
+* You must have access to the {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) service instance credentials before you can configure the settings of your {{site.data.keyword.mobilefoundation_short}} service instance.
 
-> **Note**: The {{site.data.keyword.Db2_on_Cloud_short}} service instance can exist in any `Space` within your {{site.data.keyword.Bluemix_notm}} `Organization` or any other `Organization` that you have access to. Ensure that you have the permissions to access the `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists.
+> **Note**: The {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) service instance can exist in any `Space` within your {{site.data.keyword.Bluemix_notm}} `Organization` or any other `Organization` that you have access to. Ensure that you have the permissions to access the `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists.
 
 
 ## Adding the database connection
@@ -35,7 +35,7 @@ After you create the {{site.data.keyword.mobilefoundation_short}}: Developer Pro
 ### Setting up connection to Db2 on Cloud service instance
 {: #connect_dashdb_p3}
 
-After you create the {{site.data.keyword.mobilefoundation_short}} service instance using the Developer Pro plan, you see the *Overview* page where you need to specify the connection information for the {{site.data.keyword.Db2_on_Cloud_short}} service instance. The {{site.data.keyword.mobilefoundation_short}} service instance must connect to the specified {{site.data.keyword.Db2_on_Cloud_short}} service instance.
+After you create the {{site.data.keyword.mobilefoundation_short}} service instance using the Developer Pro plan, you see the *Overview* page where you need to specify the connection information for the {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) service instance. The {{site.data.keyword.mobilefoundation_short}} service instance must connect to the specified {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 
 If you do not have an existing {{site.data.keyword.Db2_on_Cloud_short}} service instance, you can create it.
 
