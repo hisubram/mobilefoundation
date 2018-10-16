@@ -33,15 +33,17 @@ node -v
 
 > **Note:** Minimum supported node.js version is **4.2.3**. Also, with the fast evolving node and npm packages, the {{site.data.keyword.mobilefoundation_short}} CLI may not be fully functional with all the available versions of node and npm including the latest versions. Ensure that node is on version **6.11.1** and npm version is **3.10.10**, for proper functioning of the CLI.
 
+> For MobileFirst CLI iFix versions *8.0.2018100112* and higher, you can use Node version versions 8.x or 10.x.
+
 To install the {{site.data.keyword.mobilefoundation_short}} CLI, run the following command:
 ```
-npm install -g mfpdev-cli
+npm install -g mfpdev-cli 
 ```
 {: codeblock}
 
 If the CLI .zip file was downloaded from the Download Center of the MobileFirst Operations Console, use the following command:
 ```
-npm install -g <path-to-mfpdev-cli.tgz>
+npm install -g <path-to-mfpdev-cli.tgz> 
 ```
 {: codeblock}
 
@@ -50,6 +52,38 @@ To install the CLI without optional dependencies add the `--no-optional` flag:
 npm install -g --no-optional path-to-mfpdev-cli.tgz
 ```
 {: codeblock}
+
+While installing MobileFirst CLI using Node 8, you may see few errors such as below in the terminal window:
+```
+> node-gyp rebuild
+
+gyp ERR! clean error 
+gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/bufferutil
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok 
+
+> utf-8-validate@1.2.2 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+> node-gyp rebuild
+
+gyp ERR! clean error 
+gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok 
+
+> fsevents@1.2.4 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/fsevents
+> node install
+```
+{: codeblock}
+
+This error is due a [known bug in node-gyp](https://github.com/nodejs/node-gyp/issues/1547). These errors can be ignored as this does not affect the functioning of the MobileFirst CLI. This is applicable for mfpdev-cli iFix level 8.0.2018100112 and higher. To overcome this error, use the --no-optional flag during installation.
 
 To confirm that the CLI is installed correctly, run the following command:
 ```
