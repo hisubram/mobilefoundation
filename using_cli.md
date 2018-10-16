@@ -82,7 +82,7 @@ gyp ERR! not ok
 > node install
 ```
 
-This error is due a [known bug in node-gyp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/nodejs/node-gyp/issues/1547){: new_window}. These errors can be ignored as this does not affect the functioning of the MobileFirst CLI. This is applicable for mfpdev-cli iFix level 8.0.2018100112 and higher. To overcome this error, use the --no-optional flag during installation.
+This error is due a [known bug in node-gyp ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/nodejs/node-gyp/issues/1547){: new_window}. These errors can be ignored as this does not affect the functioning of the MobileFirst CLI. This is applicable for mfpdev-cli iFix level 8.0.2018100112 and higher. To overcome this error, use the `--no-optional` flag during installation.
 
 To confirm that the CLI is installed correctly, run the following command:
 ```
