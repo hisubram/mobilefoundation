@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-09-26"
+lastupdated:  "2018-10-23"
 
 ---
 
@@ -87,18 +87,18 @@ In a few seconds, you can access the `Overview` page that provides you with  tut
 *	Click **Launch Console** to open the {{site.data.keyword.mfp_oc_short_notm}}.
 
 With the console you can manage your mobile apps, adapters and mobile devices, use your server as a mobile backend, send push notifications, and do more.
-
+<!--
 ##  Adding Mobile Analytics service
 {: #adding_analytics_server_prof}
 
  You can now monitor your mobile application on {{site.data.keyword.mobilefirst}} server by adding a Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
  Professional plan creates a Mobile Analytics service instance.
-
+-->
  <!--Users can also attach volumes to the containers to persist data. The volume once selected cannot be changed. 20 GB is the default file share space available to the user. If the user needs additional storage space to persist analytics data, he is required to buy additional file share and create a volume using this file share. He can then select this new volume while deploying the analytics server.
 
  For more information on adding volumes to {{site.data.keyword.containerlong}}, refer to [Storing persistent data in a volume by using the {{site.data.keyword.Bluemix_notm}} Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui){: new_window}.-->
-
+<!--
  * Click **Add Analytics** to add the Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
    The process of provisioning starts. This process takes few minutes, and a progress indicator indicates the progress of this operation.  
@@ -119,7 +119,7 @@ You can now delete the Mobile Analytics service that was added to the {{site.dat
 * Click **Delete Analytics** to delete the  Mobile Analytics service that has been added to the {{site.data.keyword.mobilefoundation_short}} service instance.
 
  Clicking **Delete Analytics** deletes the analytics server instance. The process of deleting analytics instance takes about 10 minutes. You can refresh the screen to view the updated status. Deletion of analytics instance reenables the **Add Analytics** button. If you choose to add the Mobile Analytics service again, you can click this button.
-
+-->
 
 ## Re-creating the MobileFirst server
 {: #recreate_mobilefoundation_p2}
