@@ -31,7 +31,7 @@ Consider the following before you configure  {{site.data.keyword.mobilefoundatio
 
 After you create the {{site.data.keyword.mobilefoundation_short}}: Professional Per Device service instance, follow the procedure to get started.
 
-### Setting up connection to Db2 on Cloud service instance
+### Setting up the database connection
 {: #connect_dashdb_p5}
 
 After the {{site.data.keyword.mobilefoundation_short}}: Professional Per Device service instance is created you will see the *Overview* page where you will need to specify the connection information for the {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance, that the {{site.data.keyword.mobilefoundation_short}} service instance should connect to.
