@@ -2,13 +2,13 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-08-09"
+lastupdated:  "2018-11-16"
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
-
+{:faq: data-hd-content-type='faq'}
 
 # FAQs
 
@@ -17,6 +17,7 @@ This FAQ provides answers to common questions about the {{site.data.keyword.mobi
 
 ## How do I know when updates to {{site.data.keyword.mobilefoundation_short}} service is made available?
 {: #maintupdates_mf}
+{: faq}
 
 {{site.data.keyword.mobilefoundation_short}} provisions a {{site.data.keyword.mfserver_short_notm}}. The updates to the {{site.data.keyword.mobilefoundation_short}} server are notified to the users. A notification will be shown in the service instance dashboard. The user can choose to apply the update to {{site.data.keyword.mobilefoundation_short}} during a maintenance window that is decided by him. You can choose to update the {{site.data.keyword.mobilefoundation_short}} server when it is convenient for you.
 
@@ -28,6 +29,7 @@ This FAQ provides answers to common questions about the {{site.data.keyword.mobi
 
 ## How do I apply the updates to {{site.data.keyword.mobilefoundation_short}} service?
 {: #apply_update_mf}
+{: faq}
 
 The update to {{site.data.keyword.mobilefoundation_short}} can be applied by clicking **Recreate**.
 On applying the update, the version of the server, as seen in the {{site.data.keyword.mfp_oc_short_notm}}, will be modified to indicate the server update version.
@@ -39,6 +41,7 @@ On applying the update, the version of the server, as seen in the {{site.data.ke
 
 ## How do I configure custom domain for my {{site.data.keyword.mobilefoundation_short}} server instance?
 {: #configcustomdomain}
+{: faq}
 
 {{site.data.keyword.mobilefoundation_short}} provisions a {{site.data.keyword.mfserver_short_notm}}, which is accessible using a URL having the  domain names based on the {{site.data.keyword.Bluemix_notm}} **Region**. You can also configure your own custom domain.
 
