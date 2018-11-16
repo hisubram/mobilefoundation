@@ -9,16 +9,16 @@ lastupdated:  "2018-11-16"
 #	Using the Developer plan
 {: #using_mobilefoundation_p1}
 
-After you create the {{site.data.keyword.mobilefoundation_short}} service instance using the Developer plan, access the Overview page on {{site.data.keyword.Bluemix_notm}}. On this page, you are provided with tutorials and videos to help you get started with the service.
+After you create the {{site.data.keyword.mobilefoundation_short}} service instance using the Developer plan, access the Overview page on {{site.data.keyword.Bluemix_notm}}. Here you're provided with tutorials and videos to help you get started with the service.
 
 ## Working with the MobileFirst server
 {: #start_mobilefoundation_p1}
 * You can instantly access and work with the MobileFirst Server.
 
-  This selection provisions an {{site.data.keyword.mfserver_long_notm}} with the following settings:
+  This selection creates an {{site.data.keyword.mfserver_long_notm}} with the following settings:
   *	1 GB of memory. This size is enough for development, light testing activities and small scale production workloads.
 
-  * To access the MobileFirst Server using CLI you will need the credentials, which are available when you click **Service credentials** from the left navigation pane of the IBM Cloud console.
+  * To access the MobileFirst Server using CLI you'll need the credentials, which are available when you click **Service credentials** from the left navigation pane of the IBM Cloud console.
 
 <!--  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
     *	The status of your server that is running (state, size).
@@ -35,12 +35,6 @@ You can now manage your mobile apps and mobile devices, use your server as a mob
 {: #adding_analytics_server_dev}
 
 Mobile Analytics server is included and preconfigured with the Mobile Foundation: Developer plan service instance.
-
-<!-- You can now monitor your mobile application on {{site.data.keyword.mobilefirst}} server by adding a Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance. Developer plan creates the Mobile Analytics service in a container group with a single node having 1 GB memory.
-
-* Click **Add Analytics** to add the Mobile Analytics service to the {{site.data.keyword.mobilefoundation_short}} service instance.
-
-  The process of provisioning starts. This process takes about 10 minutes, and a message window indicates the progress of this operation.  -->
 
 * Launch the Mobile Analytics service Console from the {{site.data.keyword.mfp_oc_short_notm}}.
 
