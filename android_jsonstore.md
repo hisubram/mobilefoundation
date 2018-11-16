@@ -30,14 +30,14 @@ lastupdated:  "2018-06-18"
 compile 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundationjsonstore:8.0.+'
 ```
 {: codeblock}
-3. Add the following to the "DefaultConfig" section of your build.gradle file.
+3. Add the following to the **DefaultConfig** section of your `build.gradle` file.
 ```
   ndk {
         abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
       }
  ```     
  {: codeblock}
- > **Note** : We add the abiFilters to ensure that the apps having JSONStore will run in any of the architectures specified above. This is required as JSONStore is dependent on a third party library which supports only these architectures .
+ > **Note** : We add the *abiFilters* to ensure that the apps having JSONStore will run in any of the architectures specified. Adding *abiFilters* is required as JSONStore depends on a third-party library, which supports only these architectures .
 
 ## Basic Usage
 {: #basic-usage }
@@ -45,7 +45,7 @@ compile 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundationjsonstore:8.0
 {: #open }
 Use `openCollections` to open one or more JSONStore collections.
 
-Starting or provisioning a collections means creating the persistent storage that contains the collection and documents, if it does not exists. If the persistent storage is encrypted and a correct password is passed, the necessary security procedures to make the data accessible are run.
+Starting or provisioning a collection means creating the persistent storage that contains the collection and documents, if it doesn't exist. If the persistent storage is encrypted and a correct password is passed, the necessary security procedures to make the data accessible are run.
 
 For optional features that you can enable at initialization time, see **Security, Multiple User Support** and **MobileFirst Adapter Integration** in the second part of this tutorial.
 
@@ -150,12 +150,12 @@ try {
 ```
 {: codeblock}
 
-This examples assumes that the document `{_id: 1, json: {name: 'yoel', age: 23} }` is in the collection.
+This example assumes that the document `{_id: 1, json: {name: 'yoel', age: 23} }` is in the collection.
 
 ### Remove
 {: #remove }
 Use `removeDocumentById` to delete a document from a collection.
-Documents are not erased from the collection until you call `markDocumentClean`. For more information, see the **MobileFirst Adapter Integration** section later in this tutorial.
+Documents aren't erased from the collection until you call `markDocumentClean`. For more information, see the **MobileFirst Adapter Integration** section.
 
 ```java
 Context context = getContext();
@@ -214,12 +214,12 @@ try {
 {: #advanced-usage }
 ### Security
 {: #security }
-You can secure all the collections in a store by passing a `JSONStoreInitOptions` object with a password to the `openCollections` function. If no password is passed, the documents of all the collections in the store are not encrypted.
+You can secure all the collections in a store by passing a `JSONStoreInitOptions` object with a password to the `openCollections` function. If no password is passed, the documents of all the collections in the store aren't encrypted.
 
 Some security metadata is stored in the shared preferences (Android).  
 The store is encrypted with a 256-bit Advanced Encryption Standard (AES) key. All keys are strengthened with Password-Based Key Derivation Function 2 (PBKDF2).
 
-Use `closeAll` to lock access to all the collections until you call `openCollections` again. If you think of `openCollections` as a login function you can think of `closeAll` as the corresponding logout function.
+Use `closeAll` to lock access to all the collections until you call `openCollections` again. If you think of `openCollections` as a login function, you can think of `closeAll` as the corresponding logout function.
 
 Use `changePassword` to change the password.
 
@@ -243,7 +243,7 @@ try {
 
 #### Multiple User Support
 {: #multiple-user-support }
-You can create multiple stores that contain different collections in a single MobileFirst application. The `openCollections` function can take an options object with a username. If no username is given, the default username is ""**jsonstore**"".
+You can create many stores that consist of different collections in a single MobileFirst application. The `openCollections` function can take an options object with a user name. If no user name is given, the default user name is "**jsonstore**".
 
 ```java
 Context context = getContext();
@@ -265,12 +265,12 @@ try {
 
 #### MobileFirst Adapter Integration
 {: #mobilefirst-adapter-integration }
-This section assumes that you are familiar with adapters. Adapter Integration is optional and provides ways to send data from a collection to an adapter and get data from an adapter into a collection.
-You can achieve these goals by using functions such as `WLResourceRequest` or your own instance of an `HttpClient` if you need more flexibility.
+This section assumes that you're familiar with adapters. Adapter Integration is optional and provides ways to send data from a collection to an adapter and get data from an adapter into a collection.
+If you need more flexibility, you can also achieve these goals by using the functions such as `WLResourceRequest` or your own instance of an `HttpClient`.
 
 #### Adapter Implementation
 {: #adapter-implementation }
-Create an adapter and name it "**JSONStoreAdapter**". Define it's procedures `addPerson`, `getPeople`, `pushPeople`, `removePerson`, and `replacePerson`.
+Create an adapter and name it "**JSONStoreAdapter**". Define its procedures `addPerson`, `getPeople`, `pushPeople`, `removePerson`, and `replacePerson`.
 
 ```javascript
 function getPeople() {
@@ -333,7 +333,7 @@ try {
 
 #### Get Push Required (Dirty Documents)
 {: #get-push-required-dirty-documents }
-Calling `findAllDirtyDocuments` returns and array of so called "dirty documents", which are documents that have local modifications that do not exist on the back-end system.
+Calling `findAllDirtyDocuments` returns and array of so called "dirty documents", which are documents that have local modifications that don't exist on the back-end system.
 
 ```java
 Context  context = getContext();
@@ -352,7 +352,7 @@ To prevent JSONStore from marking the documents as "dirty", pass the option `opt
 
 #### Push changes
 {: #push-changes }
-To push changes to an adapter, call the `findAllDirtyDocuments` to get a list of documents with modifications and then use `WLResourceRequest`. After the data is sent and a successful response is received make sure you call `markDocumentsClean`.
+To push changes to an adapter, call the `findAllDirtyDocuments` to get a list of documents with modifications and then use `WLResourceRequest`. After the data is sent and a successful response is received make sure, you call `markDocumentsClean`.
 
 ```java
 WLResponseListener responseListener = new WLResponseListener() {
@@ -387,8 +387,8 @@ try {
 
 ## Sample application
 {: #sample-application }
-The JSONStoreAndroid project contains a native Android application that utilizes the JSONStore API set.  
-Included is a JavaScript adapter Maven project.
+The `JSONStoreAndroid` project contains a native Android application that uses the JSONStore API.
+A JavaScript adapter maven project is included.
 
 ![Image of the sample application](images/android-native-screen.jpg)
 
