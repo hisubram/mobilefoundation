@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-10-23"
+lastupdated:  "2018-11-16"
 
 ---
 
@@ -123,6 +123,7 @@ You can now delete the Mobile Analytics service that has been added to the {{sit
 
  Clicking **Delete Analytics** deletes the analytics server instance. The process of deleting analytics instance takes about 10 minutes. You can refresh the screen to view the updated status. Deletion of analytics instance reenables the **Add Analytics** button. If you choose to add the Mobile Analytics service again, you can click this button.
 -->
+
 ## Re-creating the MobileFirst server
 {: #recreate_mobilefoundation_p5}
 
