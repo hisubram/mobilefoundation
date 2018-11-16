@@ -11,6 +11,7 @@ lastupdated:  "2018-09-26"
 {:screen:.screen}
 {:codeblock:.codeblock}
 {:tip: .tip}
+{:note: .note}
 
 # Getting started tutorial
 {: #gettingstartedtemplate}
@@ -126,7 +127,7 @@ After you create an instance of the {{site.data.keyword.mobilefoundation_short}}
       {: tip}
 
 Go to [Using the Mobile Foundation service to set up MobileFirst Server ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window} to learn more about getting started with {{site.data.keyword.mobilefoundation_short}}.
-{: tip}
+{: note}
 
 ## Step 3: Register your application in {{site.data.keyword.mobilefoundation_short}}
 {: #registerapp}

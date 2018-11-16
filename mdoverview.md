@@ -2,39 +2,44 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-11-16"
 
 ---
 
-#	About Mobile Foundation
+#	About
 {: #overview_mobilefoundation}
 
-The {{site.data.keyword.mobilefoundation_short}} service provides a way to quickly set up a {{site.data.keyword.mobilefirst}} server environment on {{site.data.keyword.Bluemix}}. You can then develop, test, and manage mobile apps from this cloud environment.
+{{site.data.keyword.mobilefoundation_short}} provides an integrated set of backend capabilities for Mobile, Web and Progressive Web Apps (PWA). Developers can choose to use front-end tools or frameworks of their choice and leverage the rich set of backend capabilities provided by {{site.data.keyword.mobilefoundation_short}} service. {{site.data.keyword.mobilefoundation_short}} SDKs are available for Cordova, iOS, Android, Xamarin, Windows 10, React Native and Mobile Web. 
 
-{{site.data.keyword.mobilefoundation_short}} provides users an easy and guided way to set up {{site.data.keyword.mfserver_short_notm}} <!--in the {{site.data.keyword.containerlong}} -->environment on {{site.data.keyword.Bluemix_notm}}.
+## Key capabilities offered by {{site.data.keyword.mobilefoundation_short}}
 
-{{site.data.keyword.mobilefoundation_short}} consists of the following components:
+### User Engagement
+{: #user_engagement}
 
-*	{{site.data.keyword.mfserver_long_notm}} is mobile-optimized middleware that serves as a gateway between applications, backend systems, and other cloud based services.
+Building engaging mobile apps is the key to the success of an app strategy for any business. User engagement can be built into apps using push notifications. {{site.data.keyword.mobilefoundation_short}} supports sending notifications to iOS, Android, and Windows 10 devices. Notifications can be sent to all users, a subset of users or to users based on their area of interest. Interactive and silent notifications are supported for relevant platforms. Personalisation is a key aspect for user engagement. You can segment the users and tailor apps for specific user segments with the **Live Update** capability.
 
-*	{{site.data.keyword.mfp_dr_long_notm}} components offer runtime client application programming interfaces (APIs) in the form of SDKs for iOS, Android, and Windows. These SDKs are designed to enhance security, governance, and usability.
+###  App Insights
+{: #app_insights}
 
-*	{{site.data.keyword.mfp_oc_long_notm}} is a web-based UI that enables simplified workflows for both the developer and the administrator to create, monitor, secure and administer applications and adapters.
+Obtain insights on app usage, app behaviour and user behaviour. Get operational insights for troubleshooting. Instrument the app and obtain business insights, which can be viewed as custom charts on the server side. Enable end users to report errors and issues in-app with a gesture.
 
-With {{site.data.keyword.mobilefoundation_short}}, you can perform the following functions:
+###  Security Framework
+{: #security_framework}
 
-*	Build apps for any mobile operating environment and device with your preferred development approach: native or hybrid.
+Extensive mobile channel-specific security. Protect data on the device, APIs and your brand from hackers and vulnerabilities. Offline data encryption, prevent man-in-the-middle attacks, deny access to lost or stolen devices, set up additional security for privileged operations, integrate with existing identity management solutions, protect from reverse engineering app code and much more.
 
-*	Connect and synchronize mobile apps with enterprise data, applications, and cloud services: including services from {{site.data.keyword.Bluemix_notm}}.
+###  Business Logic
+{: #business_logic}
 
-*	Secure the device, application, data, and network layer.
+Develop and run server-side code to connect to your backend systems. Build business logic as microservices using Liberty, NodeJS or Swift runtimes. Access the microservices by importing its swagger definition.
 
-*	Manage your mobile app portfolio from a single central interface and develop mobile apps by using your favorite IDEs and libraries.
+###  App Management
+{:  #app_management}
 
-*	Use scalable data services for online and offline data synchronization.
+Manage application versions and block outdated application versions. Skip app store approval and change your web resources directly.
 
-*	Configure unified push notifications for all supported mobile device operating systems.
+###  Cognitive APIs
+{:  #cognitive_apis}
 
-You can use the {{site.data.keyword.mfp_cli_long_notm}} (CLI) with the {{site.data.keyword.mobilefoundation_short}} to easily create and manage apps.
+Build smart apps by using Watson APIs (*Tone Analyzer, Language Translator, Discovery or Conversation*) in your mobile apps. This integration helps leverage the mobile channel security and obtain insights on the APIs.
 
-<!--{{site.data.keyword.mobilefoundation_short}} service provisions a container in your space in {{site.data.keyword.Bluemix_notm}}. You can see the details of the container that is created, view the container performance, and access the server logs from your {{site.data.keyword.Bluemix_notm}} dashboard.-->
