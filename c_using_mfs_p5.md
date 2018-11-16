@@ -88,42 +88,6 @@ The process of provisioning your server starts. This process takes about 10 minu
 
 With the console, you can manage your mobile apps, adapters, and mobile devices, use your server as a mobile backend, send push notifications, and do more.
 
-<!--
-##  Adding Mobile Analytics service
-{: #adding_analytics_server_p5}
-
- You can now monitor your mobile application on {{site.data.keyword.mobilefirst}} server by adding a Mobile Analytics service instance to the {{site.data.keyword.mobilefoundation_short}} instance.-->
-
- <!--The Professional plan creates the Mobile Analytics service in a container group, the user can customize the configuration by selecting the number of container nodes in the container group.
-
- Users can also attach volumes to the containers to persist data. The volume once selected cannot be changed. 20 GB is the default file share space available to the user. If the user needs additional storage space to persist analytics data, he is required to buy additional file share and create a volume using this file share. He can then select this new volume while deploying the analytics server.
-
- For more information on adding volumes to {{site.data.keyword.containerlong}}, refer to [Storing persistent data in a volume by using the {{site.data.keyword.Bluemix_notm}} Dashboard ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.ng.bluemix.net/docs/containers/container_volumes_ov.html#container_volumes_ui.html){: new_window}.-->
-<!--
-* Click **Add Analytics** to create and add a Mobile Analytics service instance to the {{site.data.keyword.mobilefoundation_short}} instance. -->
-
-<!--* You can choose the Mobile Analytics service configuration, the minimum supported configuration for the Analytics server is 2 nodes with 1 GB memory each, you can choose to create an Analytics server up to a maximum configuration of 32 nodes with 16 GB memory each.-->
-<!--
-The process of provisioning starts. This process takes few minutes, and a progress indicator displays the progress of this operation.  
-
-* Launch the Mobile Analytics service Console from the {{site.data.keyword.mfp_oc_short_notm}}.
-
-* Single sign-on is enabled between the {{site.data.keyword.mfserver_short_notm}} and the Mobile Analytics service. Mobile Analytics service is configured with the same LTPA keys and user credentials as the {{site.data.keyword.mfserver_short_notm}} server. You can use the same `username` and `password` to login to the Mobile Analytics console as used to login to the {{site.data.keyword.mfp_oc_short_notm}}.
-
-For more information on Mobile Analytics, you can refer to [MobileFirst Foundation Operational Analytics ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/analytics/){: new_window}.
-
-> **Note:** Deleting the {{site.data.keyword.mobilefoundation_short}} service instance removes the Mobile Analytics service instance.
-
-##  Deleting Mobile Analytics service
-{: #deleting_analytics_server_p5}
-
-You can now delete the Mobile Analytics service that has been added to the {{site.data.keyword.mobilefoundation_short}} service instance, from the {{site.data.keyword.mobilefoundation_short}} service dashboard.
-
-* Click **Delete Analytics** to delete the  Mobile Analytics service that was added to the {{site.data.keyword.mobilefoundation_short}} service instance.
-
- Clicking **Delete Analytics** deletes the analytics server instance. The process of deleting analytics instance takes about 10 minutes. You can refresh the screen to view the updated status. Deletion of analytics instance reenables the **Add Analytics** button. If you choose to add the Mobile Analytics service again, you can click this button.
--->
-
 ## Re-creating the MobileFirst server
 {: #recreate_mobilefoundation_p5}
 
