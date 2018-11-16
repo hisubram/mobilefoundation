@@ -2,7 +2,7 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="mobile-foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation/index.html"}
+{: .toc subcollection="mobile-foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation/index.html" path="services/mobilefoundation"}
 Mobile Foundation
 
     {: .navgroup id="learn"}
