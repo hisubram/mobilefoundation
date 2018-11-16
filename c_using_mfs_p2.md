@@ -109,4 +109,4 @@ Use the **Start Server with Advanced Configuration** from the `Overview` page to
 
       <!--- {{site.data.keyword.mobilefirst}} server farm can be created by configuring the number of nodes here.-->
 
-See [{{site.data.keyword.mobilefoundation_long}} documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}, for more details.
+See [{{site.data.keyword.mobilefoundation_long}} documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}, for more details.
