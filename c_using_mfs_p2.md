@@ -9,7 +9,7 @@ lastupdated:  "2018-11-16"
 #	Using the Professional 1 Application plan
 {: #using_mobilefoundation_p2}
 
-With the Professional 1 Application plan users can create 1 mobile application with multiple mobile operating systems.
+With the Professional 1 Application plan, users can create 1 mobile application with various mobile operating systems.
 After you create the {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application service instance, read the following procedure to get started with the service.
 
 ## Pre-requisites
@@ -34,13 +34,13 @@ After you create the {{site.data.keyword.mobilefoundation_short}}: Professional 
 ### Setting up connection to Db2 on Cloud service instance
 {: #connect_dashdb_p2}
 
-After the {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application service instance is created you will see the *Overview* page where you will need to specify the connection information for the {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance, that the {{site.data.keyword.mobilefoundation_short}} service instance should connect to.
+After the {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application service instance is created you'll see the *Overview* page. Here you'll need to specify the connection information for the {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance that the {{site.data.keyword.mobilefoundation_short}} service instance should connect to.
 
-You can also create a new {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance, if you do not have one already existing.
+If you don't have an existing Db2 on Cloud instance, you can create a new {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance.
 
 Follow these steps to create a new Db2 service instance:
 
-1. In the *Overview* page select **Create New Service** section.
+1. In the *Overview* page, select **Create New Service** section.
 
 + Select `Yes` on the **High availability configuration** option, if you want high available {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 
@@ -53,7 +53,7 @@ Follow these steps to connect to an existing {{site.data.keyword.Db2_on_Cloud_sh
 1. Select the {{site.data.keyword.Bluemix_notm}} `Organization` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists.
 
 + Select the {{site.data.keyword.Bluemix_notm}} `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists, from the list of spaces available in the selected `Organization`.   
-> **Note:** If you do not see listed the `Organization` and `Space` where your {{site.data.keyword.Db2_on_Cloud_short}} service instance exists then check if you are a member of that `Organization` and `Space`. You are required to have a *Developer* role access to the organization and space, as the {{site.data.keyword.mobilefoundation_short}} service accesses the credentials from the {{site.data.keyword.Db2_on_Cloud_short}} service.
+> **Note:** If you don't see listed the `Organization` and `Space` where your {{site.data.keyword.Db2_on_Cloud_short}} service instance exists, then check if you're a member of that `Organization` and `Space`. You're required to have a *Developer* role access to the organization and space. The {{site.data.keyword.mobilefoundation_short}} service accesses the credentials from the {{site.data.keyword.Db2_on_Cloud_short}} service.
 
 + Select the {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` and `Credentials` to connect to the existing  {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 
@@ -63,7 +63,7 @@ Follow these steps to connect to an existing {{site.data.keyword.Db2_on_Cloud_sh
 
 In a few seconds, you can access the `Overview` page that provides you with  tutorials and videos to help you get started with the  {{site.data.keyword.mobilefoundation_short}} service.
 
-> **Note**: You cannot change the {{site.data.keyword.Db2_on_Cloud_short}} service instance that is configured to be used by your {{site.data.keyword.mobilefoundation_short}} service instance. However, you can use the same {{site.data.keyword.Db2_on_Cloud_short}} service instance across multiple {{site.data.keyword.mobilefoundation_short}} service instances, as each {{site.data.keyword.mobilefoundation_short}} service instance creates its own schema in the selected {{site.data.keyword.Db2_on_Cloud_short}} service instance.
+> **Note**: You can't change the {{site.data.keyword.Db2_on_Cloud_short}} service instance that is configured to be used by your {{site.data.keyword.mobilefoundation_short}} service instance. However, you can use the same {{site.data.keyword.Db2_on_Cloud_short}} service instance across multiple {{site.data.keyword.mobilefoundation_short}} service instances, as each {{site.data.keyword.mobilefoundation_short}} service instance creates its own schema in the selected {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 
 
 ## Starting the MobileFirst server
@@ -71,12 +71,12 @@ In a few seconds, you can access the `Overview` page that provides you with  tut
 
 * To start the {{site.data.keyword.mfserver_short_notm}}, with default settings, click **Start Basic Server**.
 
-* This selection provisions an {{site.data.keyword.mfserver_long_notm}} with the following settings:
+* This selection creates an {{site.data.keyword.mfserver_long_notm}} with the following settings:
     -  1 GB of memory. This size is enough for development, moderate testing activities and small scale production workloads.
 
     -	The `username` and `password` is automatically generated for you. You have access to them when the server is up and running.
 
-    The process of provisioning your server starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
+    The process of creating your server starts. This process takes about 10 minutes, and a message window indicates the progress of this operation. When complete a dashboard is displayed where you can see:
 
       -	The status of your server that is running (state, size).
 
