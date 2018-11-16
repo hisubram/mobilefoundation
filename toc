@@ -19,11 +19,6 @@ Mobile Foundation
         android_jsonstore.md
         security_utilities.md
         code_examples.md
-
-    {: .topicgroup}
-    Related links
-        [IBM MobileFirst Platform Foundation V8.0.0 product documentation](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
-        [IBM MobileFirst Platform Developer Center](https://mobilefirstplatform.ibmcloud.com)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -31,6 +26,41 @@ Mobile Foundation
     c_using_mfs_p5.md
     c_using_mfs_p2.md
     export_import_apps_adapters.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    {: .topicgroup}
+    API
+        [Administration](https://console.stage1.bluemix.net/apidocs/mobile-foundation/mobile-foundation-administration)
+        [Analytics](https://mobile-analytics-dashboard.{DomainName}/analytics-service/) 
+
+    {: .topicgroup}
+    Client SDKs
+        [Android SDK](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.ibm.mobile.foundation%22%20AND%20a%3A%22ibmmobilefirstplatformfoundation%22)
+        [iOS SDK](https://cocoapods.org/pods/IBMMobileFirstPlatformFoundation)
+        [Cordova SDK](https://www.npmjs.com/package/cordova-plugin-mfp)
+        [React Native SDK](https://www.npmjs.com/package/react-native-ibm-mobilefirst)
+        [Windows SDK](https://www.nuget.org/packages/IBM.MobileFirstPlatformFoundation/)
+        [Web SDK](https://www.npmjs.com/package/ibm-mfp-web-sdk)
+
+    {: .topicgroup}
+    Analytics Client SDKs
+        [Android SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-android-analytics)
+        [iOS SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)
+        [Cordova SDK](https://www.npmjs.com/package/bms-core)
+        [Web SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-web-analytics/)
+    using_cli.md
+
+    {: .topicgroup}
+    Samples
+        [Using Mobile Foundation Push REST API Version 8 on a Node JS Server](https://github.com/thomassuedbroecker/MobileFirstPushV8OnNodeJS)
+        [Download or Upload large files to endpoints protected with Mobile Foundation security](https://github.com/mfpdev/handling-large-files-sample)
+        [Weather App](https://github.com/cshunger/WeatherProject)
+
+    {: .topicgroup}
+    Related links
+        [IBM MobileFirst Platform Foundation V8.0.0 product documentation](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
+        [IBM MobileFirst Platform Developer Center](https://mobilefirstplatform.ibmcloud.com)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
