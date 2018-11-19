@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-06-18"
+lastupdated:  "2018-11-19"
 
 ---
 
@@ -23,14 +23,14 @@ lastupdated:  "2018-06-18"
 
 ## Adding JSONStore
 {: #adding-jsonstore }
-1. Add the following to the existing `podfile`, located at the root of the Xcode project:
+1. Add the following to the existing `podfile`, at the root of the Xcode project:
 
    ```xml
    pod 'IBMMobileFirstPlatformFoundationJSONStore'
    ```
    {: codeblock}
 
-2. From a **Command-line** window, navigate to the root of the Xcode project and run the command: `pod install` - note that this action may take a while.
+2. From a command line window, go to the root of the Xcode project and run the command: `pod install` - note that this action may take a while.
 
 Whenever you want to use JSONStore, make sure that you import the JSONStore header:  
 Objective-C:
@@ -53,7 +53,7 @@ import IBMMobileFirstPlatformFoundationJSONStore
 {: #open }
 Use `openCollections` to open one or more JSONStore collections.
 
-Starting or provisioning a collections means creating the persistent storage that contains the collection and documents, if it does not exists.  
+Starting or creating a collection means creating the persistent storage that consists of the collection and documents, if it doesn't exist.  
 If the persistent storage is encrypted and a correct password is passed, the necessary security procedures to make the data accessible are run.
 
 For optional features that you can enable at initialization time, see **Security, Multiple User Support** and **MobileFirst Adapter Integration** in the second part of this tutorial.
@@ -149,12 +149,12 @@ do {
 ```
  {: codeblock}
 
-This examples assumes that the document `{_id: 1, json: {name: 'yoel', age: 23} }` is in the collection.
+This example assumes that the document `{_id: 1, json: {name: 'yoel', age: 23} }` is in the collection.
 
 ### Remove
 {: #remove }
 Use `removeWithIds` to delete a document from a collection.
-Documents are not erased from the collection until you call `markDocumentClean`. For more information, see the **MobileFirst Adapter Integration** section later in this tutorial.
+Documents aren’t erased from the collection until you call `markDocumentClean`. For more information, see the **MobileFirst Adapter Integration** section later in this tutorial.
 
 ```swift
 let collectionName:String = "people"
@@ -206,12 +206,12 @@ do {
 {: #advanced-usage }
 ### Security
 {: #security }
-You can secure all the collections in a store by passing a `JSONStoreOpenOptions` object with a password to the `openCollections` function. If no password is passed, the documents of all the collections in the store are not encrypted.
+You can secure all the collections in a store by passing a `JSONStoreOpenOptions` object with a password to the `openCollections` function. If no password is passed, the documents of all the collections in the store aren’t encrypted.
 
 Some security metadata is stored in the keychain (iOS).  
 The store is encrypted with a 256-bit Advanced Encryption Standard (AES) key. All keys are strengthened with Password-Based Key Derivation Function 2 (PBKDF2).
 
-Use `closeAllCollections` to lock access to all the collections until you call `openCollections` again. If you think of `openCollections` as a login function you can think of `closeAllCollections` as the corresponding logout function.
+Use `closeAllCollections` to lock access to all the collections until you call `openCollections` again. If you think of `openCollections` as a login function, you can think of `closeAllCollections` as the corresponding logout function.
 
 Use `changeCurrentPassword` to change the password.
 
@@ -233,7 +233,7 @@ do {
 
 ### Multiple User Support
 {: #multiple-user-support }
-You can create multiple stores that contain different collections in a single MobileFirst application. The `openCollections` function can take an options object with a username. If no username is given, the default username is "jsonstore".
+You can create many stores that consist of different collections in a single MobileFirst application. The `openCollections` function can take an options object with a user name. If no user name is given, the default username is `jsonstore`.
 
 ```swift
 let collection:JSONStoreCollection = JSONStoreCollection(name: "people")
@@ -253,13 +253,13 @@ do {
 
 ### MobileFirst Adapter Integration
 {: #mobilefirst-adapter-integration }
-This section assumes that you are familiar with adapters. Adapter Integration is optional and provides ways to send data from a collection to an adapter and get data from an adapter into a collection.
+This section assumes that you’re familiar with adapters. Adapter Integration is optional and provides ways to send data from a collection to an adapter and get data from an adapter into a collection.
 
 You can achieve these goals by using functions such as `WLResourceRequest`.
 
 #### Adapter Implementation
 {: #adapter-implementation }
-Create an adapter and name it "**People**". Define it's procedures `addPerson`,  `getPeople`, `pushPeople`, `removePerson`, and `replacePerson`.
+Create an adapter and name it "**People**". Define its procedures `addPerson`,  `getPeople`, `pushPeople`, `removePerson`, and `replacePerson`.
 
 ```javascript
 function getPeople() {
@@ -319,7 +319,7 @@ pull.sendWithDelegate(loadDelegate)
 
 #### Get Push Required (Dirty Documents)
 {: #get-push-required-dirty-documents }
-Calling `allDirty` returns and array of so called "dirty documents", which are documents that have local modifications that do not exist on the back-end system.
+Calling `allDirty` returns and array of so called "dirty documents", which are documents that have local modifications that don’t exist on the back-end system.
 
 ```swift
 let collectionName:String = "people"
@@ -337,7 +337,7 @@ To prevent JSONStore from marking the documents as "dirty", pass the option `and
 
 #### Push changes
 {: #push-changes }
-To push changes to an adapter, call the `allDirty` to get a list of documents with modifications and then use `WLResourceRequest`. After the data is sent and a successful response is received make sure you call `markDocumentsClean`.
+To push changes to an adapter, call the `allDirty` to get a list of documents with modifications and then use `WLResourceRequest`. After the data is sent and a successful response is received make sure, you call `markDocumentsClean`.
 
 ```swift
 // Start - PushToAdapter
@@ -372,8 +372,8 @@ do {
 
 ## Sample application
 {: #sample-application }
-The JSONStoreSwift project contains a native iOS Swift application that utilizes the JSONStore API set.  
-Also available is a JavaScript adapter Maven project.
+The JSONStoreSwift project contains a native iOS Swift application that uses the JSONStore API set.  
+Also, available is a JavaScript adapter Maven project.
 
 ![Image of the sample application](images/jsonstore-ios-screen.png)
 
