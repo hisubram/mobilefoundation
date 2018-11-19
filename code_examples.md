@@ -448,7 +448,7 @@ WL.JSONStore.get(collectionName)
 ```
 {: codeblock}
 
-### Start a transaction, add some data, remove a document, commit the transaction and roll back the transaction if there is a failure
+### Start a transaction, add some data, remove a document, commit the transaction and roll back the transaction if there's a failure
 {: transaction }
 ```javascript
 WL.JSONStore.startTransaction()
@@ -815,7 +815,7 @@ NSError* error = nil;
 ```
 {: codeblock}
 
-### Start a transaction, add some data, remove a document, commit the transaction and roll back the transaction if there is a failure
+### Start a transaction, add some data, remove a document, commit the transaction and roll back the transaction if there's a failure
 {: #ios-transaction }
 ```objc
 // Get the accessor to an already initialized collection.
@@ -1300,7 +1300,7 @@ catch (JSONStoreException ex) {
 ```
 {: codeblock}
 
-### Start a transaction, add some data, remove a document, commit the transaction and roll back the transaction if there is a failure
+### Start a transaction, add some data, remove a document, commit the transaction and roll back the transaction if there's a failure
 {: #android-transaction }
 ```java
 // Fill in the blank to get the Android application context.
