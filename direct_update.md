@@ -79,8 +79,8 @@ The `mfpdev app webupdate` command packages the updated web resources to a `.zip
       mfpdev app webupdate --build
       ```
       {: pre}
-  2. Load the MobileFirst Operations Console and click on the application entry.
-  3. Click on **Upload Web Resources File** to upload the packaged web resources.    
+  2. Load the MobileFirst Operations Console and click the application entry.
+  3. Click **Upload Web Resources File** to upload the packaged web resources.    
       ![Upload Direct Update .zip file from the console](images/upload-direct-update-package.png)
 
 Run the command `mfpdev help app webupdate` to learn more.
