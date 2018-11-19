@@ -15,15 +15,15 @@ lastupdated:  "2018-08-09"
 # Export and import applications and adapters
 {: #export_import_apps_adapters}
 
-From the {{site.data.keyword.mfp_oc_short_notm}}, under certain conditions, you can export an application or one of its versions, and later import it to a different server. You can also export and reimport adapters. Use this capability for reuse or back-up purposes or to migrate across {{site.data.keyword.mfserver_short_notm}} instances.
+From the {{site.data.keyword.mfp_oc_short_notm}}, under certain conditions, you can export an application or one of its versions, and later import it to a different server. You can also export and reimport adapters. Use this capability for reuse or back up purposes or to migrate across {{site.data.keyword.mfserver_short_notm}} instances.
 
-If you are granted the **mfpadmin** administrator role and the **mfpdeployer** deployer role, you can export one version or all versions of an application. The application or version is exported as a `.zip` compressed file, which saves the *application ID*, *descriptors*, *authenticity data*, and *web resources*. You can later import the archive to redeploy the application or version to the same or a different server.
+If you're granted the **mfpadmin** administrator role and the **mfpdeployer** deployer role, you can export one version or all versions of an application. The application or version is exported as a `.zip` compressed file, which saves the *application ID*, *descriptors*, *authenticity data*, and *web resources*. You can later import the archive to redeploy the application or version to the same or a different server.
 
 Carefully consider your use case:
-* The export file includes the application authenticity data. That data is specific to the build of a mobile app. The mobile app includes the URL of the server. Therefore, if you want to use another server, you must rebuild the app. Transferring only the exported app files would not work.
+* The export file includes the application authenticity data. That data is specific to the build of a mobile app. The mobile app includes the URL of the server. Hence, if you want to use another server, you must rebuild the app. Transferring only the exported app files wouldn't work.
 * Some artifacts might vary from one server to another. Push credentials are different depending on whether you work in a development or production environment.
-* The application runtime configuration (that contains the active/disabled state and the log profiles) can be transferred in some cases but not all.
-* Transferring web resources might not make sense in some cases, for example if you rebuild the app to use a new server.
+* The application runtime configuration (that contains the active or disabled state and the log profiles) can be transferred in some cases but not all.
+* Transferring web resources might not make sense in some cases, for example when you rebuild the app to use a new server.
 {: tip}
 
 ##  Prerequisite
@@ -37,7 +37,7 @@ Launch the {{site.data.keyword.mfp_oc_short_notm}}.
 1.  From the navigation sidebar, select an application or application version, or an adapter.
 
 2.  Select **Actions > Export Application** or **Export Version** or **Export Adapter**.
-     You are prompted to save the `.zip` archive file that encapsulates the exported resources. The aspect of the dialog box depends on your browser and the target folder depends on your browser settings.
+     You're prompted to save the `.zip` archive file that encapsulates the exported resources. The aspect of the dialog box depends on your browser and the target folder depends on your browser settings.
 
 3.   Save the archive file.
       The archive file name includes the name and version of the application or adapter, for example `export_applications_com.sample.zip`.
@@ -48,6 +48,6 @@ Launch the {{site.data.keyword.mfp_oc_short_notm}}.
 ##    Results
 {: #results}
 
-If you import to the same server, the application or version is not necessarily restored as it was exported. That is, the redeployment at import time does not remove subsequent modifications. Rather, if some application resources are modified between export time and redeployment at import time, only the resources that are included in the exported archive are redeployed in their original state.
+If you import to the same server, the application or version isn't necessarily restored as it was exported. That is, the redeployment at import time doesn't remove subsequent modifications. Rather, if some application resources are modified between export time and redeployment at import time, only the resources that are included in the exported archive are redeployed in their original state.
 <br/>
-For example, if you export an application with no authenticity data, then you upload authenticity data, and then you import the initial archive, the authenticity data is not erased.
+For example, if you export an application with no authenticity data, then you upload authenticity data, and then you import the initial archive, the authenticity data isn't erased.
