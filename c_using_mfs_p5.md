@@ -6,6 +6,13 @@ lastupdated:  "2018-11-16"
 
 ---
 
+{:new_window: target="_blank"}
+{:shortdesc: .shortdesc}
+{:screen:  .screen}
+{:codeblock:  .codeblock}
+{:tip: .tip}
+{:note: .note}
+
 #	Using the Professional Per Device plan
 {: #using_mobilefoundation_p5}
 
