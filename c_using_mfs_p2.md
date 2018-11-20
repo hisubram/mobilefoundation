@@ -13,7 +13,7 @@ lastupdated:  "2018-11-20"
 {:tip: .tip}
 {:note: .note}
 
-#	Set up Mobile Foundation using the Professional 1 Application plan
+#	Set up using the Professional 1 Application plan
 {: #using_mobilefoundation_p2}
 
 With the Professional 1 Application plan, users can create 1 mobile application with various mobile operating systems.

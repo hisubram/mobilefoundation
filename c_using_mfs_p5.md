@@ -13,7 +13,7 @@ lastupdated:  "2018-11-20"
 {:tip: .tip}
 {:note: .note}
 
-#	Set up Mobile Foundation using the Professional Per Device plan
+#	Set up using the Professional Per Device plan
 {: #using_mobilefoundation_p5}
 
 With the Professional Per Device plan users can build, test and run mobile applications in production, irrespective of the number of mobile users or devices. Charges are based on the number of daily client devices. This plan supports large deployments and High Availability.
