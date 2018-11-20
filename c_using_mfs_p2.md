@@ -70,8 +70,8 @@ Follow these steps to connect to an existing {{site.data.keyword.Db2_on_Cloud_sh
 
 In a few seconds, you can access the `Overview` page that provides you with  tutorials and videos to help you get started with the  {{site.data.keyword.mobilefoundation_short}} service.
 
-> **Note**: You can't change the {{site.data.keyword.Db2_on_Cloud_short}} service instance that is configured to be used by your {{site.data.keyword.mobilefoundation_short}} service instance. However, you can use the same {{site.data.keyword.Db2_on_Cloud_short}} service instance across multiple {{site.data.keyword.mobilefoundation_short}} service instances, as each {{site.data.keyword.mobilefoundation_short}} service instance creates its own schema in the selected {{site.data.keyword.Db2_on_Cloud_short}} service instance.
-
+You can't change the {{site.data.keyword.Db2_on_Cloud_short}} service instance that is configured to be used by your {{site.data.keyword.mobilefoundation_short}} service instance. However, you can use the same {{site.data.keyword.Db2_on_Cloud_short}} service instance across multiple {{site.data.keyword.mobilefoundation_short}} service instances, as each {{site.data.keyword.mobilefoundation_short}} service instance creates its own schema in the selected {{site.data.keyword.Db2_on_Cloud_short}} service instance.
+{: note}
 
 ## Starting the MobileFirst server
 {: #start_mobilefoundation_p2}
@@ -102,7 +102,8 @@ With the console you can manage your mobile apps, adapters and mobile devices, u
 
 * This action stops your existing server and deletes the data. A new server instance is created with an updated version, if available. This action takes a few minutes to complete.
 
-> **Note**: Data from your previous server instance including information on the apps and adapters is persisted in the configured {{site.data.keyword.Db2_on_Cloud_short}} service instance. This data is used to recreate your server.
+Data from your previous server instance including information on the apps and adapters is persisted in the configured {{site.data.keyword.Db2_on_Cloud_short}} service instance. This data is used to recreate your server.
+{: note}
 
 ##	Setting up advanced configuration
 {: #using_mfs_advanced_p2}
@@ -124,4 +125,3 @@ Mobile Analytics server is included and preconfigured with the Mobile Foundation
 For more information on Mobile Analytics, you can refer to [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}.
 
 See [{{site.data.keyword.mobilefoundation_long}} documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}, for more details.
-{: note}

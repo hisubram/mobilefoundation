@@ -27,8 +27,8 @@ Consider the following before you configure  {{site.data.keyword.mobilefoundatio
 
 * You should have access to the {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance credentials before you can configure the settings of your {{site.data.keyword.mobilefoundation_short}} service instance.
 
-> **Note**: The {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance can exist in any `Space` within your {{site.data.keyword.Bluemix_notm}} `Organization` or any other `Organization` that you have access to. Ensure that you have the permissions to access the `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} or {{site.data.keyword.composeForPostgreSQL}} service instance exists.
-
+The {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance can exist in any `Space` within your {{site.data.keyword.Bluemix_notm}} `Organization` or any other `Organization` that you have access to. Ensure that you have the permissions to access the `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} or {{site.data.keyword.composeForPostgreSQL}} service instance exists.
+{: note}
 
 ## Adding the database connection
 {: #configure_dashdb_p5}
@@ -60,8 +60,8 @@ Follow these steps to connect to an existing {{site.data.keyword.Db2_on_Cloud_sh
 1. Select the {{site.data.keyword.Bluemix_notm}} `Organization` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists.
 
 + Select the {{site.data.keyword.Bluemix_notm}} `Space` where the {{site.data.keyword.Db2_on_Cloud_short}} service instance exists, from the list of spaces available in the selected `Organization`.   
-> **Note:** If you don't see listed the `Organization` and `Space` where your {{site.data.keyword.Db2_on_Cloud_short}} service instance exists, then check if you're a member of that `Organization` and `Space`. You're required to have a *Developer* role access to the organization and space, as the {{site.data.keyword.mobilefoundation_short}} service accesses the credentials from the {{site.data.keyword.Db2_on_Cloud_short}} service.
-
+If you don't see listed the `Organization` and `Space` where your {{site.data.keyword.Db2_on_Cloud_short}} service instance exists, then check if you're a member of that `Organization` and `Space`. You're required to have a *Developer* role access to the organization and space, as the {{site.data.keyword.mobilefoundation_short}} service accesses the credentials from the {{site.data.keyword.Db2_on_Cloud_short}} service.
+{: note}
 + Select the {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` and `Credentials` to connect to the existing  {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 
 +  Test the connection to the specified {{site.data.keyword.Db2_on_Cloud_short}} service instance.
@@ -70,7 +70,8 @@ Follow these steps to connect to an existing {{site.data.keyword.Db2_on_Cloud_sh
 
 In a few seconds, you can access the `Overview` page that provides you with  tutorials and videos to help you get started with the  {{site.data.keyword.mobilefoundation_short}} service.
 
-> **Note**: You can't change the {{site.data.keyword.Db2_on_Cloud_short}} service instance that is configured to be used by your {{site.data.keyword.mobilefoundation_short}} service instance. However, you can use the same {{site.data.keyword.Db2_on_Cloud_short}} service instance across multiple {{site.data.keyword.mobilefoundation_short}} service instances, as each {{site.data.keyword.mobilefoundation_short}} service instance creates its own schema in the selected {{site.data.keyword.Db2_on_Cloud_short}} service instance.
+You can't change the {{site.data.keyword.Db2_on_Cloud_short}} service instance that is configured to be used by your {{site.data.keyword.mobilefoundation_short}} service instance. However, you can use the same {{site.data.keyword.Db2_on_Cloud_short}} service instance across multiple {{site.data.keyword.mobilefoundation_short}} service instances, as each {{site.data.keyword.mobilefoundation_short}} service instance creates its own schema in the selected {{site.data.keyword.Db2_on_Cloud_short}} service instance.
+{: note}
 
 ## Starting the MobileFirst server
 {: #start_mobilefoundation_p5}
@@ -102,7 +103,8 @@ With the console, you can manage your mobile apps, adapters, and mobile devices,
 
 * This action stops your existing server and deletes the data. A new server instance is created with an updated version, if available. This action takes a few minutes to complete.
 
-> **Note**: Data from your previous server instance including information on the apps and adapters is persisted in the configured {{site.data.keyword.Db2_on_Cloud_short}} service instance. This data is used to recreate your server.
+Data from your previous server instance including information on the apps and adapters is persisted in the configured {{site.data.keyword.Db2_on_Cloud_short}} service instance. This data is used to recreate your server.
+{: note}
 
 ##	Setting up advanced configuration
 {: #using_mfs_advanced_p5}
@@ -124,4 +126,3 @@ Mobile Analytics server is included and preconfigured with the Mobile Foundation
 For more information on Mobile Analytics, you can refer to [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}.
 
 See [{{site.data.keyword.mobilefoundation_long}} documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}, for more details.
-{: note}
