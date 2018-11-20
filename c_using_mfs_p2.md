@@ -107,6 +107,14 @@ Use the **Start Server with Advanced Configuration** from the `Overview` page to
 
   - **Instances** displays the number of nodes that are created.
 
-      <!--- {{site.data.keyword.mobilefirst}} server farm can be created by configuring the number of nodes here.-->
+## Mobile Analytics
+{: #mobile_analytics}
+
+Mobile Analytics server is included and preconfigured with the Mobile Foundation: Developer plan service instance.
+
+* Launch the Mobile Analytics Console from the {{site.data.keyword.mfp_oc_short_notm}}.
+
+For more information on Mobile Analytics, you can refer to [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}.
 
 See [{{site.data.keyword.mobilefoundation_long}} documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}, for more details.
+{: note}
