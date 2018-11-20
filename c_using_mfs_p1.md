@@ -13,7 +13,7 @@ lastupdated:  "2018-11-20"
 {:tip: .tip}
 {:note: .note}
 
-#	Using the Developer plan
+#	Set up Mobile Foundation using the Developer plan
 {: #using_mobilefoundation_p1}
 
 After you create the {{site.data.keyword.mobilefoundation_short}} service instance using the Developer plan, access the Overview page on {{site.data.keyword.Bluemix_notm}}. Here you're provided with tutorials and videos to help you get started with the service.
