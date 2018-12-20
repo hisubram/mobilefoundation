@@ -13,7 +13,7 @@ lastupdated:  "2018-12-20"
 {:tip: .tip}
 {:note: .note}
 
-# Migrating the Mobile Foundation service plan
+# Migrate the Mobile Foundation service plan
 
 Mobile Foundation instances created using the deprecated plans need to be updated to the new plans. Plan update may also be needed based on the instance usage.
 {: shortdesc}
