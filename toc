@@ -28,7 +28,6 @@ Mobile Foundation
         c_using_mfs_p5.md
         plan_migration.md
         export_import_apps_adapters.md
-
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
