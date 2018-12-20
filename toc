@@ -9,15 +9,6 @@ Mobile Foundation
     index.md
     mdoverview.md
     direct_update.md
-
-    {: .topicgroup}
-    JSONStore
-        jsonstore.md
-        cordova_jsonstore.md
-        ios_jsonstore.md
-        android_jsonstore.md
-        security_utilities.md
-        code_examples.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -28,6 +19,12 @@ Mobile Foundation
         c_using_mfs_p5.md
         plan_migration.md
         export_import_apps_adapters.md
+
+    {: .topicgroup}
+    Store offline data and sync
+        configure_offline_storage.md
+        advanced_jsonstore.md
+        sync_data_with_datasource.md        
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
