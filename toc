@@ -56,6 +56,13 @@ Mobile Foundation
         [Create custom Direct Update dialog](https://github.com/MobileFirst-Platform-Developer-Center/CustomDirectUpdate/tree/release80)
 
     {: .topicgroup}
+    Code patterns
+        [Develop hybrid mobile app with cloud native backend](https://developer.ibm.com/patterns/develop-hybrid-mobile-app-with-cloud-native-back-end/)
+        [Secure offline synchronization](https://developer.ibm.com/patterns/secure-offline-synchronization-ibm-mobile-foundation/)
+        [Demonstrate user authentication using LDAP server or social login](https://github.com/IBM/MFP-Auth-LDAP/)
+        [Configure tag based Push Notifications](https://github.com/IBM/tag-based-push-notifications)
+
+    {: .topicgroup}
     Related links
         [IBM MobileFirst Platform Foundation V8.0.0 product documentation](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
         [IBM MobileFirst Platform Developer Center](https://mobilefirstplatform.ibmcloud.com)
