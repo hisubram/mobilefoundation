@@ -47,11 +47,22 @@ Mobile Foundation
 
     {: .topicgroup}
     Analytics Client SDKs
-        [Android SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-android-analytics)
-        [iOS SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-swift-analytics)
-        [Cordova SDK](https://www.npmjs.com/package/bms-core)
-        [Web SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-web-analytics/)
+        [Android](services/mobilefoundation/android_sdk.html)
+        [iOS](services/mobilefoundation/ios_sdk.html)
+        [Cordova and Ionic](services/mobilefoundation/cordova_sdk.html)
+        [React Native](services/mobilefoundation/reactnative_sdk.html)
+        [Windows](services/mobilefoundation/windows_sdk.html)
+        [Web](services/mobilefoundation/web_sdk.html
     using_cli.md
+
+    {: .topicgroup}
+    Samples
+        [Cordova application using the JSONStore APIs](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCordova/tree/release80)
+        [Native iOS application using the JSONStore APIs](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreSwift/tree/release80)
+        [Native Android application using the JSONStore APIs](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAndroid)
+        [JSONStore code samples](services/mobilefoundation/jsonstore_code_examples.html)
+        [Security in JSONStore code samples](services/mobilefoundation/security_utilities.html)
+        [Create custom Direct Update dialog](https://github.com/MobileFirst-Platform-Developer-Center/CustomDirectUpdate/tree/release80)
 
     {: .topicgroup}
     Related links
