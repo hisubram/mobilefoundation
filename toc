@@ -21,17 +21,21 @@ Mobile Foundation
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    c_using_mfs_p1.md
-    c_using_mfs_p5.md
-    c_using_mfs_p2.md
-    export_import_apps_adapters.md
+    {: .topicgroup}
+    Set up Mobile Foundation
+        c_using_mfs_p1.md
+        c_using_mfs_p2.md
+        c_using_mfs_p5.md
+        plan_migration.md
+        export_import_apps_adapters.md
+
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     {: .topicgroup}
     API
         [Administration](https://console.stage1.bluemix.net/apidocs/mobile-foundation/mobile-foundation-administration)
-        [Analytics](https://mobile-analytics-dashboard.{DomainName}/analytics-service/) 
+        [Analytics](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)
 
     {: .topicgroup}
     Client SDKs
