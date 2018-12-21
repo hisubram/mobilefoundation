@@ -23,7 +23,6 @@ Mobile Foundation
     {: .topicgroup}
     Store offline data and sync
         configure_offline_storage.md
-        advanced_jsonstore.md
         sync_data_with_datasource.md        
     {: .navgroup-end}
 

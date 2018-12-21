@@ -539,3 +539,8 @@ try {
   // handle failure
 }
 ```
+
+## Advanced offline storage configuration
+{: #advanced_offline_storage}
+
+For advanced offline storage configuration, see [here](advanced_jsonstore.html).
