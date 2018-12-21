@@ -13,7 +13,7 @@ Mobile Foundation
     About
         mdoverview.md
         pricing.md
-        release_notes.md    
+        release_notes.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -29,6 +29,10 @@ Mobile Foundation
     Store offline data and sync
         configure_offline_storage.md
         sync_data_with_datasource.md
+
+    {: .topicgroup}
+      Updating your app content
+          update_web_content_in_app.md
 
     {: .topicgroup}
       Manage Application

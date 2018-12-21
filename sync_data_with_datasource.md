@@ -46,7 +46,7 @@ A JSONStore collection has to be initialized with a **Sync Policy** field. **Syn
   ```objc
   openOptions.syncPolicy = SYNC_DOWNSTREAM;
   ```
-
+  
   *Cordova*
   ```javascript
   collection.sync = {
@@ -67,7 +67,7 @@ A JSONStore collection has to be initialized with a **Sync Policy** field. **Syn
   ```objc
   openOptions.syncPolicy = SYNC_UPSTREAM;
   ```
-
+  
   *Cordova*
   ```javascript
   collection.sync = {
@@ -97,7 +97,7 @@ This configuration takes the adapter name that is deployed.
  ```objc
   openOptions.syncAdapterPath = @"JSONStoreCloudantSync";
  ```
-
+  
 *Cordova or Ionic*
  ```javascript
   collection.sync = {
@@ -128,8 +128,9 @@ This API performs a downstream sync if the calling collection has a sync policy 
  ```objc
   collection.sync(); //Here collection is the JSONStore collection object that was initialized
  ```
-
+  
 *Cordova*
  ```javascript
   WL.JSONStore.get(collectionName).sync();
  ```
+
