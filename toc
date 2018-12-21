@@ -25,6 +25,10 @@ Mobile Foundation
         export_import_apps_adapters.md
 
     {: .topicgroup}
+    Obtain application insights
+        visualize_insights_on_console.md
+
+    {: .topicgroup}
     Store offline data and sync
         configure_offline_storage.md
         sync_data_with_datasource.md
