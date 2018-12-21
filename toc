@@ -8,7 +8,12 @@ Mobile Foundation
     {: .navgroup id="learn"}
     index.md
     mdoverview.md
-    direct_update.md
+
+    {: .topicgroup}
+    About
+        mdoverview.md
+        pricing.md
+        release_notes.md    
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -23,7 +28,13 @@ Mobile Foundation
     {: .topicgroup}
     Store offline data and sync
         configure_offline_storage.md
-        sync_data_with_datasource.md        
+        sync_data_with_datasource.md
+
+    {: .topicgroup}
+      Manage Application
+          manage_app_versions.md
+          remote_disable_app_version.md
+          manage_devices.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
