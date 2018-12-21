@@ -49,7 +49,7 @@ Mobile Foundation
     API
         [Administration](https://console.stage1.bluemix.net/apidocs/mobile-foundation/mobile-foundation-administration)
         [Analytics](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)
-        [Client SDK APIs](services/mobilefoundation/client_sdk_api.html)
+        [SDK](services/mobilefoundation/client_sdk_api.html)
 
     {: .topicgroup}
     SDKs
