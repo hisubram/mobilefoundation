@@ -7,7 +7,6 @@ Mobile Foundation
 
     {: .navgroup id="learn"}
     index.md
-    mdoverview.md
 
     {: .topicgroup}
     About
