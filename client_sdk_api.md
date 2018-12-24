@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-12-21"
+lastupdated: "2018-12-24"
 
 ---
 
@@ -41,15 +41,15 @@ APIs for Cordova / Web applications.
     {: javascript }
 
 ### Objective C
-{: swift }
+{: objectc }
 APIs for native iOS applications.
-{: swift }
+{: objectc }
 * **[Client-side API ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://mobilefirstplatform.ibmcloud.com/api-ref/wl-ios-objc-apidoc/html/refobjc-worklight-ios/html/index.html)**   
     Use this API to develop native app for iOS environment.
-    {: swift }
+    {: objectc }
 * **[Client-side push API ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-ios-n-objc-apidoc/html/refobjc-mfp-push-ios-native/html/index.html)**  
     Use this push API to develop apps for the iOS environment.
-    {: swift }
+    {: objectc }
 
 ### Java
 {: java }
