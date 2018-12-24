@@ -53,12 +53,12 @@ Mobile Foundation
 
     {: .topicgroup}
     SDKs
-        [Android SDK](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.ibm.mobile.foundation%22%20AND%20a%3A%22ibmmobilefirstplatformfoundation%22)
-        [iOS SDK](https://cocoapods.org/pods/IBMMobileFirstPlatformFoundation)
-        [Cordova SDK](https://www.npmjs.com/package/cordova-plugin-mfp)
-        [React Native SDK](https://www.npmjs.com/package/react-native-ibm-mobilefirst)
-        [Windows SDK](https://www.nuget.org/packages/IBM.MobileFirstPlatformFoundation/)
-        [Web SDK](https://www.npmjs.com/package/ibm-mfp-web-sdk)
+        [Android](services/mobilefoundation/android_sdk.html)
+        [iOS](services/mobilefoundation/ios_sdk.html)
+        [Cordova and Ionic](services/mobilefoundation/cordova_sdk.html)
+        [React Native](services/mobilefoundation/reactnative_sdk.html)
+        [Windows](services/mobilefoundation/windows_sdk.html)
+        [Web](services/mobilefoundation/web_sdk.html)
     using_cli.md
 
     {: .topicgroup}
