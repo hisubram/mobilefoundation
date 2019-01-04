@@ -27,7 +27,8 @@ Mobile Foundation
     {: .topicgroup}
     Obtain application insights
         visualize_insights_on_console.md
-
+    add_sdk_to_app.md
+    
     {: .topicgroup}
     Store offline data and sync
         configure_offline_storage.md
