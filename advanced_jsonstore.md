@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-28"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 {:generic: .ph data-hd-programlang='generic'}
@@ -30,7 +30,7 @@ lastupdated: "2018-11-28"
 {: #adv_configure_offline_storage}
 
 Use the tabs above to see OS specific instructions on this page. Select **Java** for Android specific instructions, **Node** for Cordova specific instructions and **Swift** for iOS specific instructions.
-{: note}
+{: tip}
 
 ## Security in JSONStore
 {: #security_jsonstore} 
@@ -240,7 +240,6 @@ You can achieve these goals by using `WLResourceRequest` or `jQuery.ajax` if you
         return;
     }
    ```
-   {: codeblock}
    {: javascript}
 3. To load data from an adapter use `WLResourceRequest`.
    ```javascript
@@ -256,8 +255,7 @@ You can achieve these goals by using `WLResourceRequest` or `jQuery.ajax` if you
         alert("Failed to load data from adapter " + e.Messages);
     }
    ```
-   {: codeblock}
-   {: javascript}
+   {: javascript}   
 4. Calling `getPushRequired` returns an array of so called "dirty documents", which are documents that have local modifications that do not exist on the back-end system. These documents are sent to the adapter when `push` is called.
    ```javascript
    var collectionName = 'people';
@@ -271,6 +269,7 @@ You can achieve these goals by using `WLResourceRequest` or `jQuery.ajax` if you
    {: javascript}
    To prevent JSONStore from marking the documents as "dirty", pass the option `{markDirty:false}` to `add`, `replace`, and `remove`.
    {: tip} 
+   {: javascript}
 5. You can also use the `getAllDirty` API to retrieve the dirty documents.
    ```javascript
    WL.JSONStore.get(collectionName).getAllDirty()
@@ -308,8 +307,8 @@ You can achieve these goals by using `WLResourceRequest` or `jQuery.ajax` if you
         alert("Failed To Push Documents to Adapter");
     }
    ```
-   {: codeblock}
    {: javascript}
+   {: codeblock}
 7. Use `enhance` to extend the core API to fit your needs, by adding functions to a collection prototype. This example (the code snippet below) shows how to use `enhance` to add the function `getValue` that works on the `keyvalue` collection. It takes a key (string) as it's only parameter and returns a single result.
    ```javascript
    var collectionName = 'keyvalue';
@@ -330,8 +329,8 @@ You can achieve these goals by using `WLResourceRequest` or `jQuery.ajax` if you
         // handle failure
     }); 
    ```
-   {: codeblock}
    {: javascript}
+   {: codeblock}
 8. See the JSONStore sample for Cordova app from the **Samples** section. This project contains a Cordova application that uses the JSONStore API set. JavaScript adapter Maven project can be downloaded from [here](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80).
 {: javascript}
 
@@ -344,36 +343,6 @@ You can achieve these goals by using `WLResourceRequest`.
 
 1. Create an adapter and name it **People**.
 2. Define it's procedures `addPerson`, `getPeople`, `pushPeople`, `removePerson`, and `replacePerson`.
-   ```swift
-    function getPeople() {
-        var data = { peopleList : [{name: 'chevy', age: 23}, {name: 'yoel', age: 23}] };
-        WL.Logger.debug('Adapter: people, procedure: getPeople called.');
-        WL.Logger.debug('Sending data: ' + JSON.stringify(data));
-        return data;
-    }
-    function pushPeople(data) {
-        WL.Logger.debug('Adapter: people, procedure: pushPeople called.');
-        WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-        return;
-    }
-    function addPerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: addPerson called.');
-        WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-        return;
-    }
-    function removePerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: removePerson called.');
-        WL.Logger.debug('Got data from JSONStore to REMOVE: ' + data);
-        return;
-    }
-    function replacePerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: replacePerson called.');
-        WL.Logger.debug('Got data from JSONStore to REPLACE: ' + data);
-        return;
-    }
-   ```
-   {: codeblock}
-   {: swift}
 3. To load data from an adapter use `WLResourceRequest`.
    ```swift
     // Start - LoadFromAdapter
@@ -456,36 +425,6 @@ You can achieve these goals by using functions such as `WLResourceRequest` or yo
 
 1. Create an adapter and name it **JSONStoreAdapter**.
 2. Define it's procedures `addPerson`, `getPeople`, `pushPeople`, `removePerson`, and `replacePerson`.
-   ```javascript
-    function getPeople() {
-      var data = { peopleList : [{name: 'chevy', age: 23}, {name: 'yoel', age: 23}] };
-      WL.Logger.debug('Adapter: people, procedure: getPeople called.');
-      WL.Logger.debug('Sending data: ' + JSON.stringify(data));
-      return data;
-    }
-    function pushPeople(data) {
-      WL.Logger.debug('Adapter: people, procedure: pushPeople called.');
-      WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-      return;
-    }
-    function addPerson(data) {
-      WL.Logger.debug('Adapter: people, procedure: addPerson called.');
-      WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-      return;
-    }
-    function removePerson(data) {
-      WL.Logger.debug('Adapter: people, procedure: removePerson called.');
-      WL.Logger.debug('Got data from JSONStore to REMOVE: ' + data);
-      return;
-    }
-    function replacePerson(data) {
-      WL.Logger.debug('Adapter: people, procedure: replacePerson called.');
-      WL.Logger.debug('Got data from JSONStore to REPLACE: ' + data);
-      return;
-    }
-   ```
-   {: codeblock}
-   {: java}
 3. To load data from an adapter use `WLResourceRequest`.
    ```java
     WLResponseListener responseListener = new WLResponseListener() {
@@ -528,6 +467,7 @@ You can achieve these goals by using functions such as `WLResourceRequest` or yo
    {: java}
    To prevent JSONStore from marking the documents as "dirty", pass the option `options.setMarkDirty(false)` to `add`, `replace`, and `remove`.
    {: tip} 
+   {: java}
 5. To push changes to an adapter, call the `findAllDirtyDocuments` to get a list of documents with modifications and then use `WLResourceRequest`. After the data is sent and a successful response is received make sure you call `markDocumentsClean`.
    ```java
     WLResponseListener responseListener = new WLResponseListener() {

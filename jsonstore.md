@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated:  "2018-11-19"
+  years: 2018, 2019
+lastupdated:  "2019-01-04"
 
 ---
 
@@ -10,7 +10,9 @@ lastupdated:  "2018-11-19"
 {:codeblock: .codeblock}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
 {:pre: .pre}
+
 
 # Offline storage using JSONStore
 {: #overview }
@@ -159,10 +161,10 @@ JSONStore is similar to technologies such as LocalStorage, Indexed DB, Cordova S
 | Indexing	                                         |	     ✔ 	      |      -	    |     ✔	     |        ✔	           |         -	      |
 | Type of Storage	                                 | JSON documents | Key-value pairs | JSON documents | Relational (SQL) | Strings     |
 
-**Note:** Reliable Storage means that your data isn’t deleted unless one of the following events occurs:
-
+Reliable Storage means that your data isn’t deleted unless one of the following events occurs:
 * The application is removed from the device.
 * One of the methods that removes data is called.
+{: note}
 
 ## Multiple User Support
 {: #multiple-user-support }
@@ -285,7 +287,6 @@ var asyncOperation = function () {
   return deferred.promise();
 };
 ```
-{: codeblock}
 
 **Example promise usage**
 
@@ -295,7 +296,6 @@ asyncOperation.then(function (response) {
   // response = 'Hello'
 });
 ```
-{: codeblock}
 
 **Example callback definition**
 
@@ -306,7 +306,6 @@ var asyncOperation = function (callback) {
   }, 1000);
 };
 ```
-{: codeblock}
 
 **Example callback usage**
 
@@ -316,7 +315,6 @@ asyncOperation(function (response) {
   // response = 'Hello'
 });
 ```
-{: codeblock}
 
 **Example events**
 
@@ -329,7 +327,6 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
   // collectionName - Name of the collection
 });
 ```
-{: codeblock}
 
 ### Objective-C
 {: #objective-c }
@@ -361,7 +358,6 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
-{: codeblock}
 
 #### Android
 {: #android-example }
@@ -371,7 +367,6 @@ initOptions.setAnalytics(true);
 
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
-{: codeblock}
 
 #### JavaScript
 {: #java-script-example }
@@ -382,7 +377,6 @@ var options = {
 
 WL.JSONStore.init(..., options);
 ```
-{: codeblock}
 
 ## Working With External Data
 {: #working-with-external-data }
@@ -405,12 +399,13 @@ This source is how you get data from the external source into your internal sour
 {: #internal-data-source-api }
 This source is the JSONStore APIs that you can use to add JSON data to a collection.
 
-**Note:** You can populate the internal store with data that is read from a file, an input field, or hardcoded data in a variable. It doesn’t have to come exclusively from an external source that requires network communication.
+You can populate the internal store with data that is read from a file, an input field, or hardcoded data in a variable. It doesn’t have to come exclusively from an external source that requires network communication.
+{: note}
 
 All of the following code examples are written in pseudocode that looks similar to JavaScript.
 
-**Note:** Use  adapters for the Transport Layer. Some of the advantages of using adapters are XML to JSON, security, filtering, and decoupling of server-side code and client-side code.
-
+Use  adapters for the Transport Layer. Some of the advantages of using adapters are XML to JSON, security, filtering, and decoupling of server-side code and client-side code.
+{: note}
 **External data source: Backend REST endpoint**  
 Imagine that you have a REST endpoint that read data from a database and returns it as an array of JSON objects.
 
@@ -463,7 +458,9 @@ resource.send()
 ```
 {: codeblock}
 
-**Note:** You might want to take advantage of the `compressResponse`, `timeout`, and other parameters that can be passed to the `WLResourceRequest` API.  
+You might want to take advantage of the `compressResponse`, `timeout`, and other parameters that can be passed to the `WLResourceRequest` API.  
+{: note}
+
 Optionally, you can skip the adapter and use something like jQuery.ajax to directly contact the REST endpoint with the data that you want to store.
 
 ```javascript
@@ -599,7 +596,8 @@ This source is typically a database, REST or SOAP endpoint, among others, that r
 
 All of the following code examples are written in pseudocode that looks similar to JavaScript.
 
-**Note:** Use adapters for the Transport Layer. Some of the advantages of using adapters are XML to JSON, security, filtering, and decoupling of server-side code and client-side code.
+Use adapters for the Transport Layer. Some of the advantages of using adapters are XML to JSON, security, filtering, and decoupling of server-side code and client-side code.
+{: note}
 
 **Internal data source API: JSONStore**  
 After you get an accessor to the collection, call the `getAllDirty` API to get all documents that are marked as dirty. These documents have local-only changes that you want to send to the external data source through a transport layer.
@@ -650,7 +648,8 @@ You can choose to send dirty documents to an adapter. Assume that you have a `pe
 ```
 {: codeblock}
 
-**Note:** You might want to take advantage of the `compressResponse`, `timeout`, and other parameters that can be passed to the `WLResourceRequest` API.
+You might want to take advantage of the `compressResponse`, `timeout`, and other parameters that can be passed to the `WLResourceRequest` API.
+{: note}
 
 On the MobileFirst Server, the adapter has the `updatePeople` procedure, which might look like the following example:
 
@@ -797,7 +796,7 @@ Follow these steps to isolate the issue to more accurately report a problem.
 4. Look at the SQLite database file that is generated by JSONStore. Encryption must be turned off.
 
    * Android emulator:
-
+   
    ```bash
    $ adb shell
    $ cd /data/data/com.<app-name>/databases/wljsonstore
@@ -861,15 +860,14 @@ manually. This will remove the need for having platform specific code.
 
     * add the following function:  
     ```javascript                                         
-function initWL(){                                                     
+    function initWL(){                                                     
         var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
         : {};                                                                
         WL.Client.init(options);                                           
-}                                                                      
-```                                                                       
+    } 
+    ```                                                                     
 
-  This will wait for the `mfpjsonjsloaded` event (outside of `wlCommonInit`),
-this will ensure that the script has been loaded and will subsequently call `WL.Client.init` which will trigger `wlCommonInit`, this will then call `WL.JSONStore.init`.
+This will wait for the `mfpjsonjsloaded` event (outside of `wlCommonInit`), this will ensure that the script has been loaded and will subsequently call `WL.Client.init` which will trigger `wlCommonInit`, this will then call `WL.JSONStore.init`.
 
 ## Store internals
 {: #store-internals }
@@ -914,7 +912,7 @@ var errorObject = {
   res: {...} // Response from the server.
 }
 ```
-
+{: codeblock}
 Not all the key/value pairs are part of every error object. For example, the doc value is only available when the operation failed because of a document (for example the `remove` method in the `JSONStoreInstance` class) failed to remove a document.
 
 ### Objective-C
@@ -942,7 +940,7 @@ catch(JSONStoreException e) {
   // Handle error condition.
 }
 ```
-
+{: codeblock}
 ### List of error codes
 {: #list-of-error-codes }
 List of common error codes and their description:
