@@ -2,39 +2,44 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-11-27"
 
 ---
 
-#	关于 Mobile Foundation
+#	概述
 {: #overview_mobilefoundation}
 
-{{site.data.keyword.mobilefoundation_short}} 服务提供在 {{site.data.keyword.Bluemix}} 上快速设置 {{site.data.keyword.mobilefirst}} 服务器环境的方法。然后，可以从此云环境开发、测试和管理移动应用程序。
+{{site.data.keyword.mobilefoundation_short}} 为移动、Web 和渐进式 Web 应用程序 (PWA) 提供了一组集成的后端功能。开发者可以选择使用自行选择的前端工具或框架，并利用 {{site.data.keyword.mobilefoundation_short}} 服务提供的一组丰富的后端功能。针对 Cordova、iOS、Android、Xamarin、Windows 10、React Native 和 Mobile Web 提供了 {{site.data.keyword.mobilefoundation_short}} SDK。 
 
-{{site.data.keyword.mobilefoundation_short}} 可指导用户轻松地在 {{site.data.keyword.Bluemix_notm}} 上设置 {{site.data.keyword.mfserver_short_notm}}<!--in the {{site.data.keyword.containerlong}} -->环境。
+## {{site.data.keyword.mobilefoundation_short}} 提供的主要功能
 
-{{site.data.keyword.mobilefoundation_short}} 包含以下组件：
+### 用户参与
+{: #user_engagement}
 
-*	{{site.data.keyword.mfserver_long_notm}} 是移动优化的中间件，充当应用程序、后端系统和其他基于云的服务之间的网关。
+构建有吸引力的移动应用程序是任何企业的应用程序策略成功的关键。可以使用推送通知将用户参与构建到应用程序中。{{site.data.keyword.mobilefoundation_short}} 支持向 iOS、Android 和 Windows 10 设备发送通知。可以向所有用户、一部分用户或基于其感兴趣领域的用户发送通知。相关平台支持交互式和静默通知。个性化是用户参与的关键方面。您可以使用**实时更新**功能对用户分段，并针对特定用户分段定制应用程序。
 
-*	{{site.data.keyword.mfp_dr_long_notm}} 组件以适用于 iOS、Android 和 Windows 的 SDK 的形式，提供运行时客户机应用程序编程接口 (API)。这些 SDK 旨在加强安全、管理和易用性。
+###  应用程序洞察
+{: #app_insights}
 
-*	{{site.data.keyword.mfp_oc_long_notm}} 是基于 Web 的 UI，可使开发者和管理员创建、监视、保护和管理应用程序和适配器的工作流程大大简化。
+获取有关应用程序使用情况、应用程序行为和用户行为的洞察。获取运行洞察以进行故障诊断。检测应用程序并获得业务洞察，洞察可以在服务器端作为定制图表进行查看。支持最终用户使用手势报告应用程序内的错误和问题。
 
-使用 {{site.data.keyword.mobilefoundation_short}}，可以执行以下功能：
+###  安全框架
+{: #security_framework}
 
-*	使用首选开发方法（本机或混合）为任何移动操作环境和设备构建应用程序。
+有大量特定于移动通道的安全性。保护设备上的数据、API 和您的品牌免受黑客和漏洞攻击。脱机数据加密，防止中间人攻击，拒绝访问丢失或失窃的设备，为特权操作设置额外的安全性，与现有身份管理解决方案集成，防止对应用程序代码进行反向工程，等等。
 
-*	在移动应用程序与企业数据、应用程序和云服务（包括来自 {{site.data.keyword.Bluemix_notm}} 的服务）之间创建连接并同步。
+###  业务逻辑
+{: #business_logic}
 
-*	保护设备、应用程序、数据和网络层。
+开发并运行服务器端代码以连接到后端系统。使用 Liberty、NodeJS 或 Swift 运行时将业务逻辑构建为微服务。通过导入微服务的 Swagger 定义来访问微服务。
 
-*	从单一中央界面管理移动应用程序产品服务组合，并使用您喜欢的 IDE 和库开发移动应用程序。
+###  应用程序管理
+{:  #app_management}
 
-*	使用可扩展数据服务进行联机和脱机数据同步。
+管理应用程序版本并阻止过时的应用程序版本。跳过应用程序商店核准，而直接更改 Web 资源。
 
-*	为所有受支持的移动设备操作系统配置统一的推送通知。
+###  认知 API
+{:  #cognitive_apis}
 
-可以将 {{site.data.keyword.mfp_cli_long_notm}} (CLI) 与 {{site.data.keyword.mobilefoundation_short}} 搭配使用，轻松创建和管理应用程序。
+在移动应用程序中使用 Watson API（*Tone Analyzer、Language Translator、Discovery 或 Conversation*）来构建智能应用程序。此集成有助于利用移动通道安全性，并获得有关 API 的洞察。
 
-<!--{{site.data.keyword.mobilefoundation_short}} service provisions a container in your space in {{site.data.keyword.Bluemix_notm}}. You can see the details of the container that is created, view the container performance, and access the server logs from your {{site.data.keyword.Bluemix_notm}} dashboard.-->

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-05-04"
+lastupdated:  "2018-11-19"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated:  "2018-05-04"
 
 {{ site.data.keyword.mobilefoundation_short }} 提供了命令行界面 (CLI) 工具，供开发者 **mfpdev** 轻松管理 {{site.data.keyword.mobilefoundation_short}} 客户机和服务器工件。
 
-所有 `mfpdev` 命令可以通过交互或直接方式执行。在交互方式下，系统将提示您输入命令所需的参数，并且将使用部分缺省值。在直接方式下，参数必须随执行的命令一起提供。
+所有 `mfpdev` 命令可以通过交互或直接方式运行。在交互方式下，系统将提示您输入命令所需的参数，并且将使用部分缺省值。在直接方式下，参数必须随命令一起提供。
 
 
 ## 安装 {{site.data.keyword.mobilefoundation_short}} CLI
@@ -25,7 +25,7 @@ lastupdated:  "2018-05-04"
 
 {{site.data.keyword.mobilefoundation_short}} 在 [NPM 注册表 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www.npmjs.com){: new_window} 中作为 NPM 软件包提供。
 
-要安装 NPM 软件包，确保已安装 **node.js** 和 **npm**。请遵循 [nodejs.org ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://nodejs.org/){: new_window} 中的安装指示信息来安装 **node.js**。要确认 **node.js** 是否已正确安装，请运行以下命令：
+确保安装了 **node.js** 和 **npm** 以安装 NPM 包。请遵循 [nodejs.org ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://nodejs.org/){: new_window} 中的安装指示信息来安装 **node.js**。要确认 **node.js** 是否已正确安装，请运行以下命令：
 ```
 node -v
 ```
@@ -33,13 +33,15 @@ node -v
 
 > **注：**支持的最低 node.js 版本为 **4.2.3**。此外，在 Node 和 NPM 软件包快速更新时，{{site.data.keyword.mobilefoundation_short}} CLI 可能无法在所有可用的 Node 和 NPM 版本（包括最新版本）上以全功能运行。为了使 CLI 正常运行，请确保 Node 的版本为 **6.11.1**，NPM 的版本为 **3.10.10**。
 
+> 对于 MobileFirst CLI 临时修订版本 *8.0.2018100112* 和更高版本，可以使用 Node V8.x 或 V10.x。
+
 要安装 {{site.data.keyword.mobilefoundation_short}} CLI，请运行以下命令：
 ```
 npm install -g mfpdev-cli
 ```
 {: codeblock}
 
-如果已从 MobileFirst Operations Console 的下载中心下载 CLI .zip 文件，请使用以下命令：
+如果已从 MobileFirst Operations Console 的下载中心下载 CLI 压缩文件 (*.zip*)，请使用以下命令：
 ```
 npm install -g <path-to-mfpdev-cli.tgz>
 ```
@@ -50,6 +52,37 @@ npm install -g <path-to-mfpdev-cli.tgz>
 npm install -g --no-optional path-to-mfpdev-cli.tgz
 ```
 {: codeblock}
+
+使用 Node 8 安装 MobileFirst CLI 时，可能会在终端窗口中看到下面的其中一些错误：
+```
+> node-gyp rebuild
+
+gyp ERR! clean error 
+gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/bufferutil
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok 
+
+> utf-8-validate@1.2.2 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+> node-gyp rebuild
+
+gyp ERR! clean error 
+gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok 
+
+> fsevents@1.2.4 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/fsevents
+> node install
+```
+
+导致此错误的原因是 [node-gyp 中的已知错误 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://github.com/nodejs/node-gyp/issues/1547){: new_window}。可以忽略这些错误，因为它们不会影响 MobileFirst CLI 正常运行。此问题适用于 `mfpdev-cli` 临时修订级别 *8.0.2018100112* 和更高版本。要解决此错误，请在安装期间使用 `--no-optional` 标志。
 
 要确认 CLI 是否正确安装，请运行以下命令：
 ```
@@ -162,7 +195,7 @@ mfpdev app register
 ```
 {: codeblock}
 
-要向非缺省情况下使用的服务器和运行时注册应用程序，请运行以下命令：
+要向非缺省服务器和运行时注册应用程序，请使用以下命令：
 
 ```
 mfpdev app register <server> <runtime>
@@ -176,7 +209,7 @@ mfpdev app register -w windows8
 ```
 {: codeblock}
 
-支持指定要用于应用程序的后端服务器和运行时。此外，对于 Cordova 应用程序，支持进行其他若干方面的配置，例如系统消息的缺省语言，以及是否执行校验和安全性检查。还包含 Cordova 应用程序的其他配置参数。
+支持指定要用于应用程序的后端服务器和运行时。对于 Cordova 应用程序，此命令支持进行其他若干方面的配置，例如系统消息的缺省语言，以及是否执行校验和安全性检查。还包含 Cordova 应用程序的其他配置参数。
 
 ```
 mfpdev app config
@@ -204,14 +237,14 @@ mfpdev app preview
 ```
 {: codeblock}
 
-将 www 目录中包含的应用程序资源打包成 .zip 文件，以便可用于 Direct Update 进程。
+将 www 目录中提供的应用程序资源打包成压缩 (*.zip*) 文件，以便可用于 Direct Update 进程。
 
 ```
 mfpdev app webupdate
 ```
 {: codeblock}
 
-此命令将更新后的 Web 资源打包成 .zip 文件，并将其上传到注册的缺省 MobileFirst 服务器。可以在 `[cordova-project-root-folder]/mobilefirst/` 文件夹中找到打包的 Web 资源。
+此命令将更新后的 Web 资源打包成压缩 (*.zip*) 文件，并将其上传到注册的缺省 MobileFirst 服务器。可以在 `[cordova-project-root-folder]/mobilefirst/` 文件夹中找到打包的 Web 资源。
 
 要将 Web 资源上传到其他服务器实例中，请在命令中提供相应的服务器名称和运行时：
 
@@ -220,7 +253,7 @@ mfpdev app webupdate <server_name> <runtime>
 ```
 {: codeblock}
 
-可以使用 -build 参数来生成具有打包 Web 资源的 .zip 文件，但不将其上传到服务器。
+可以使用 -build 参数来生成具有打包 Web 资源的压缩 (*.zip*) 文件，但不将其上传到服务器。
 ```
 mfpdev app webupdate --build
 ```
@@ -249,7 +282,7 @@ mfpdev server info
 ```
 {: codeblock}
 
-将新的服务器定义添加到您的环境。
+将服务器定义添加到您的环境。
 
 ```
 mfpdev server add
