@@ -2,25 +2,85 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="mobile-foundation" audience="service" href="/docs/services/mobilefoundation/index.html"}
+{: .toc subcollection="mobile-foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation/index.html" path="services/mobilefoundation"}
 Mobile Foundation
 
     {: .navgroup id="learn"}
     index.md
-    mdoverview.md
+
+    {: .topicgroup}
+    A propos
+        mdoverview.md
+        pricing.md
+        release_notes.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    {: .topicgroup}
+    Configuration de Mobile Foundation
+        c_using_mfs_p1.md
+        c_using_mfs_p2.md
+        c_using_mfs_p5.md
+        plan_migration.md
+        export_import_apps_adapters.md
+
+    {: .topicgroup}
+    Obtention d'informations sur les applications
+        visualize_insights_on_console.md
+
+    {: .topicgroup}
+    Stockage des données hors ligne et synchronisation
+        configure_offline_storage.md
+        sync_data_with_datasource.md
+
+    {: .topicgroup}
+      Mise à jour du contenu de votre application
+          update_web_content_in_app.md
+
+    {: .topicgroup}
+      Gestion de l'application
+          manage_app_versions.md
+          remote_disable_app_version.md
+          manage_devices.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    {: .topicgroup}
+    API
+        [Administration](https://console.stage1.bluemix.net/apidocs/mobile-foundation/mobile-foundation-administration)
+        [Analyse](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)
+        [SDK](services/mobilefoundation/client_sdk_api.html)
+
+    {: .topicgroup}
+    SDK
+        [Android](services/mobilefoundation/android_sdk.html)
+        [iOS](services/mobilefoundation/ios_sdk.html)
+        [Cordova et Ionic](services/mobilefoundation/cordova_sdk.html)
+        [React Native](services/mobilefoundation/reactnative_sdk.html)
+        [Windows](services/mobilefoundation/windows_sdk.html)
+        [Web](services/mobilefoundation/web_sdk.html)
     using_cli.md
-    direct_update.md
+
+    {: .topicgroup}
+    Exemples
+        [Application Cordova utilisant les API JSONStore](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCordova/tree/release80)
+        [Application iOS native utilisant les API JSONStore](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreSwift/tree/release80)
+        [Application Android native utilisant les API JSONStore](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAndroid)
+        [Exemples de code JSONStore ](services/mobilefoundation/jsonstore_code_examples.html)
+        [Sécurité des exemples de code JSONStore](services/mobilefoundation/security_utilities.html)
+        [Création d'une boîte de dialogue personnalisée Mise à jour directe](https://github.com/MobileFirst-Platform-Developer-Center/CustomDirectUpdate/tree/release80)
+
+    {: .topicgroup}
+    Modèles de code
+        [Développement d'une application mobile hybride avec un système de back end natif dans le cloud](https://developer.ibm.com/patterns/develop-hybrid-mobile-app-with-cloud-native-back-end/)
+        [Sécurisation de la synchronisation hors ligne](https://developer.ibm.com/patterns/secure-offline-synchronization-ibm-mobile-foundation/)
+        [Démonstration de l'authentification utilisateur à l'aide d'un serveur LDAP ou d'une connexion sociale](https://github.com/IBM/MFP-Auth-LDAP/)
+        [Configuration de notifications push basées sur des balises ](https://github.com/IBM/tag-based-push-notifications)
 
     {: .topicgroup}
     Liens connexes
         [Documentation du produit IBM MobileFirst Platform Foundation V8.0.0](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
         [IBM MobileFirst Platform Developer Center](https://mobilefirstplatform.ibmcloud.com)
-    {: .navgroup-end}
-
-    {: .navgroup id="howto"}
-    c_using_mfs_p1.md
-    c_using_mfs_p5.md
-    c_using_mfs_p2.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

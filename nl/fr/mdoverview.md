@@ -2,39 +2,44 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-11-27"
 
 ---
 
-#	A propos de Mobile Foundation
+#	Présentation
 {: #overview_mobilefoundation}
 
-Le service {{site.data.keyword.mobilefoundation_short}} permet de configurer rapidement un environnement de serveur {{site.data.keyword.mobilefirst}} sur {{site.data.keyword.Bluemix}}. Vous pouvez développer, tester et gérer des applications mobiles depuis cet environnement de cloud.
+{{site.data.keyword.mobilefoundation_short}} fournit un ensemble intégré de fonctionnalités de back end pour les applications mobiles, Web et Web progressives (PWA). Les développeurs peuvent choisir d'utiliser les outils ou les infrastructures frontaux de leur choix et de tirer parti du riche ensemble de fonctionnalités de back end fournies par le service {{site.data.keyword.mobilefoundation_short}}. Des SDK {{site.data.keyword.mobilefoundation_short}} sont disponibles pour Cordova, iOS, Android, Xamarin, Windows 10, React Native et Mobile Web.  
 
-{{site.data.keyword.mobilefoundation_short}} offre aux utilisateurs une méthode facile et guidée pour configurer un environnement {{site.data.keyword.mfserver_short_notm}} <!--in the {{site.data.keyword.containerlong}} --> sur {{site.data.keyword.Bluemix_notm}}.
+## Principales fonctionnalités offertes par {{site.data.keyword.mobilefoundation_short}}
 
-{{site.data.keyword.mobilefoundation_short}} comprend les composants suivants :
+### Participation des utilisateurs
+{: #user_engagement}
 
-*	{{site.data.keyword.mfserver_long_notm}} est un middleware optimisé pour mobiles qui fait office de passerelle entre les applications, les systèmes dorsaux et d'autres services basés cloud.
+La création d'applications mobiles attrayantes est la clé du succès d'une stratégie d'applications pour toutes les entreprises. La participation des utilisateurs peut être intégrée aux applications à l'aide de notifications push. {{site.data.keyword.mobilefoundation_short}} prend en charge l'envoi de notifications aux appareils iOS, Android et Windows 10. Les notifications peuvent être envoyées à tous les utilisateurs, à un sous-ensemble d'utilisateurs ou à des utilisateurs en fonction de leur domaine d'intérêt. Les notifications interactives et silencieuses sont prises en charge pour les plateformes pertinentes. La personnalisation est un aspect clé de la participation des utilisateurs. Vous pouvez segmenter les utilisateurs et personnaliser les applications pour des segments d'utilisateurs spécifiques avec la fonctionnalité **Live Update**.
 
-*	Les composants {{site.data.keyword.mfp_dr_long_notm}} offrent des API de client d'exécution sous forme de kits SDK pour iOS, Android et Windows. Ces kits SDK sont conçus pour optimiser la sécurité, la gouvernance et la convivialité.
+###  Informations sur les applications
+{: #app_insights}
 
-*	La console {{site.data.keyword.mfp_oc_long_notm}} est une interface utilisateur basée Web qui offre tant au développeur qu'à l'administrateur des flux de travaux simplifiés pour la création, la surveillance, la sécurisation et la gestion d'applications et d'adaptateurs.
+Obtenez des informations sur l'utilisation et le comportement des applications et sur le comportement des utilisateurs. Obtenez des informations opérationnelles pour le dépannage. Instrumentez l'application et obtenez des informations métier qui peuvent être visualisées sous forme de graphiques personnalisés côté serveur. Permettez aux utilisateurs finaux de signaler des erreurs et des problèmes dans l'application avec un seul geste. 
 
-{{site.data.keyword.mobilefoundation_short}} vous permet d'utiliser les fonctions suivantes :
+###  Infrastructure de sécurité
+{: #security_framework}
 
-*	Construction d'applications pour n'importe quel environnement d'exploitation de mobile et périphérique avec votre approche de développement de prédilection : native ou hybride.
+Sécurité étendue spécifique au canal mobile. Protégez les données sur l'appareil, les API et votre marque contre les pirates informatiques et les vulnérabilités. Chiffrez des données hors connexion, prévenez les attaques d'interception, refusez l'accès à des appareils perdus ou volés, configurez une sécurité supplémentaire pour les opérations privilégiées, intégrez vos applications aux solutions de gestion des identités existantes, protégez-vous du code des applications d'ingénierie inverse et bien plus encore. 
 
-*	Connexion et synchronisation d'applications mobiles avec les données d'entreprise, les applications et les services cloud, notamment les services de {{site.data.keyword.Bluemix_notm}}.
+###  Logique métier
+{: #business_logic}
 
-*	Sécurisation du périphérique, de l'application, des données et de la couche réseau.
+Développez et exécutez du code côté serveur pour vous connecter à vos systèmes de back end. Construisez une logique métier sous forme de microservices à l'aide des environnements d'exécution Liberty, NodeJS ou Swift. Accédez aux microservices en important la définition swagger. 
 
-*	Gestion de votre portefeuille d'applications mobiles depuis une seule interface centralisée à l'aide des environnements IDE et des bibliothèques de votre choix.
+###  Gestion des applications
+{:  #app_management}
 
-*	Utilisation de services de données extensibles pour synchronisation des données en ligne et hors ligne.
+Gérez les versions d'applications et bloquez les versions obsolètes. Ignorez l'approbation du magasin d'applications et modifiez directement vos ressources Web. 
 
-*	Configuration de notifications 'push' unifiées pour tous les systèmes d'exploitation de périphérique mobile pris en charge.
+###  API cognitives 
+{:  #cognitive_apis}
 
-Vous pouvez utiliser l'interface de ligne de commande (CLI) d'{{site.data.keyword.mfp_cli_long_notm}} avec {{site.data.keyword.mobilefoundation_short}} pour créer et gérer sans difficulté des applications.
+Créez des applications intelligentes à l'aide des API Watson (*Tone Analyzer, Language Translator, Discovery ou Conversation*) dans vos applications mobiles. Cette intégration permet de tirer parti de la sécurité des canaux mobiles et d'obtenir des informations sur les API. 
 
-<!--{{site.data.keyword.mobilefoundation_short}} service provisions a container in your space in {{site.data.keyword.Bluemix_notm}}. You can see the details of the container that is created, view the container performance, and access the server logs from your {{site.data.keyword.Bluemix_notm}} dashboard.-->

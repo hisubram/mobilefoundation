@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-05-04"
+lastupdated:  "2018-11-19"
 
 ---
 
@@ -12,12 +12,12 @@ lastupdated:  "2018-05-04"
 {:tip: .tip}
 {:pre: .pre}
 
-#	Interface de ligne de commande {{ site.data.keyword.mobilefoundation_short }}
+#	Interface de ligne de commande (CLI) {{ site.data.keyword.mobilefoundation_short }}
 {: #using_mobilefoundation_cli}
 
-{{ site.data.keyword.mobilefoundation_short }} fournit un outil d'interface de ligne de commande pour le développeur **mfpdev** afin de faciliter la gestion du client {{site.data.keyword.mobilefoundation_short}} et des artefacts du serveur.
+{{ site.data.keyword.mobilefoundation_short }} fournit un outil d'interface de ligne de commande (CLI) pour le développeur **mfpdev** afin de faciliter la gestion du client {{site.data.keyword.mobilefoundation_short}} et des artefacts du serveur.
 
-Toutes les commandes `mfpdev` peuvent être exécutées en mode direct ou interactif. En mode interactif, l'utilisateur est invité à entrer les paramètres requis pour la commande et certaines valeurs par défaut sont utilisées. En mode direct, les paramètres doivent être fournis avec la commande en cours d'exécution.
+Toutes les commandes `mfpdev` peuvent être exécutées en mode direct ou interactif. En mode interactif, l'utilisateur est invité à entrer les paramètres requis pour la commande et certaines valeurs par défaut sont utilisées. En mode direct, les paramètres doivent être fournis avec la commande.
 
 
 ## Installation de l'interface de ligne de commande {{site.data.keyword.mobilefoundation_short}}
@@ -25,7 +25,7 @@ Toutes les commandes `mfpdev` peuvent être exécutées en mode direct ou intera
 
 {{site.data.keyword.mobilefoundation_short}} est disponible en tant que package NPM dans le [registre NPM![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.npmjs.com){: new_window}.
 
-Assurez-vous que **node.js** et **npm** sont installés pour installer les packages NPM. Suivez les instructions d'installation dans [nodejs.org ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://nodejs.org/){: new_window} pour installer **node.js**. Pour confirmer que **node.js** est installé correctement, exécutez la commande suivante :
+Vérifiez que **node.js** et **npm** sont installés pour installer les packages NPM. Suivez les instructions d'installation dans [nodejs.org ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://nodejs.org/){: new_window} pour installer **node.js**. Pour confirmer que **node.js** est installé correctement, exécutez la commande suivante :
 ```
 node -v
 ```
@@ -33,23 +33,56 @@ node -v
 
 > **Remarque :** la version node.js minimale prise en charge est la version **4.2.3**. De plus, avec les packages de noeud et npm en constante évolution, l'interface de ligne de commande {{site.data.keyword.mobilefoundation_short}} peut ne pas être totalement fonctionnelle avec toutes les versions de packages de noeud et npm disponibles, y compris les versions les plus récentes. Assurez-vous que le noeud est en version **6.11.1** et que npm est en version **3.10.10**, pour un fonctionnement correct de l'interface de ligne de commande.
 
+> Pour les versions de correctif temporaire de l'interface CLI MobileFirst *8.0.2018100112* et versions ultérieures, vous pouvez utiliser les versions de noeud 8.x ou 10.x.
+
 Pour installer l'interface de ligne de commande {{site.data.keyword.mobilefoundation_short}}, exécutez la commande suivante :
 ```
-npm install -g mfpdev-cli
+npm install -g mfpdev-cli 
 ```
 {: codeblock}
 
-Si le fichier .zip d'interface de ligne de commande a été téléchargé depuis le centre de téléchargement de MobileFirst Operations Console, utilisez la commande suivante :
+Si le fichier compressé d'interface CLI (*.zip*) a été téléchargé depuis le centre de téléchargement de MobileFirst Operations Console, utilisez la commande suivante :
 ```
-npm install -g <path-to-mfpdev-cli.tgz>
+npm install -g <path-to-mfpdev-cli.tgz> 
 ```
 {: codeblock}
 
-Pour installer l'interface de ligne de commande sans les dépendances facultatives, ajoutez l'indicateur `--no-optional` :
+Pour installer l'interface CLI sans les dépendances facultatives, ajoutez l'indicateur `--no-optional` :
 ```
 npm install -g --no-optional path-to-mfpdev-cli.tgz
 ```
 {: codeblock}
+
+Lors de l'installation de l'interface CLI MobileFirst à l'aide du noeud 8, vous pouvez voir quelques-unes des erreurs suivantes dans la fenêtre du terminal : 
+```
+> node-gyp rebuild
+
+gyp ERR! clean error 
+gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/bufferutil
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok 
+
+> utf-8-validate@1.2.2 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+> node-gyp rebuild
+
+gyp ERR! clean error 
+gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok 
+
+> fsevents@1.2.4 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/fsevents
+> node install
+```
+
+Cette erreur est due à un [bogue connu dans node-gyp![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/nodejs/node-gyp/issues/1547){: new_window}. Ces erreurs peuvent être ignorées car elles n'affectent pas le fonctionnement de l'interface CLI de MobileFirst. Ce problème concerne le niveau de correctif temporaire `mfpdev-cli` *8.0.2018100112* et les versions ultérieures. Pour surmonter cette erreur, utilisez l'indicateur `--no-optional` pendant l'installation. 
 
 Pour confirmer que l'interface de ligne de commande est installée correctement, exécutez la commande suivante :
 ```
@@ -165,7 +198,7 @@ mfpdev app register
 ```
 {: codeblock}
 
-Pour enregistrer une application sur un serveur et un environnement d'exécution qui ne sont pas ceux par défaut, utilisez :
+Pour enregistrer une application sur un serveur et un environnement d'exécution qui ne sont pas ceux par défaut, utilisez : 
 
 ```
 mfpdev app register <server> <runtime>
@@ -179,9 +212,7 @@ mfpdev app register -w windows8
 ```
 {: codeblock}
 
-Permet de spécifier le serveur de back end et le contexte d'exécution à utiliser pour votre application. De plus, pour les
-applications Cordova, permet de configurer plusieurs aspects supplémentaires tels que la langue par défaut pour les messages du système ou l'exécution d'un
-contrôle de sécurité de total de contrôle. D'autres paramètres de configuration sont inclus pour les applications Cordova.
+Permet de spécifier le serveur de back end et le contexte d'exécution à utiliser pour votre application. Pour les applications Cordova, cette commande vous permet de configurer plusieurs autres aspects, tels que la langue par défaut pour les messages système et la nécessité de procéder à une vérification de sécurité de total de contrôle. D'autres paramètres de configuration sont inclus pour les applications Cordova.
 
 ```
 mfpdev app config
@@ -202,14 +233,14 @@ mfpdev app push
 ```
 {: codeblock}
 
-Permet de prévisualiser votre application Cordova sans terminal réel présentant le type de plateforme cible. Vous pouvez afficher l'aperçu dans le simulateur de navigateur mobile ou dans votre navigateur Web.
+Permet de prévisualiser votre application Cordova sans appareil réel présentant le type de plateforme cible. Vous pouvez afficher l'aperçu dans le simulateur de navigateur mobile ou dans votre navigateur Web.
 
 ```
 mfpdev app preview
 ```
 {: codeblock}
 
-Conditionne les ressources d'application qui se trouvent dans le répertoire www dans un fichier .zip pouvant être utilisé pour le
+Conditionne les ressources d'application qui se trouvent dans le répertoire www dans un fichier compressé (*.zip*) pouvant être utilisé pour le
 processus de mise à jour directe.
 
 ```
@@ -217,7 +248,7 @@ mfpdev app webupdate
 ```
 {: codeblock}
 
-Cette commande conditionne les ressources web mises à jour dans un fichier .zip et les télécharge sur le serveur par défaut MobileFirst Server enregistré. Ce package de ressources web se trouve dans le dossier `[cordova-project-root-folder]/mobilefirst/`.
+Cette commande conditionne les ressources web mises à jour dans un fichier compressé (*.zip*) et les télécharge sur le serveur par défaut MobileFirst Server enregistré. Ce package de ressources web se trouve dans le dossier `[cordova-project-root-folder]/mobilefirst/`.
 
 Pour télécharger les ressources web sur une instance de serveur différente, fournissez le nom du serveur et l'environnement d'exécution en tant qu'élément de la commande :
 
@@ -226,7 +257,7 @@ mfpdev app webupdate <server_name> <runtime>
 ```
 {: codeblock}
 
-Vous pouvez utiliser le paramètre –build pour générer le fichier .zip avec le package de ressources web sans le télécharger sur un serveur.
+Vous pouvez utiliser le paramètre –build pour générer le fichier compressé (*.zip*) avec le package de ressources web sans le télécharger sur un serveur.
 ```
 mfpdev app webupdate --build
 ```
@@ -255,7 +286,7 @@ mfpdev server info
 ```
 {: codeblock}
 
-Ajoute une nouvelle définition de serveur dans votre environnement.
+Ajoute une définition de serveur à votre environnement.
 
 ```
 mfpdev server add
@@ -367,7 +398,7 @@ mfpdev adapter push
 ```
 {: codeblock}
 
-## Mise à jour et désinstallation de l'interface de ligne de commande {{site.data.keyword.mobilefoundation_short}}
+## Mise à jour et désinstallation de l'interface CLI {{site.data.keyword.mobilefoundation_short}}
 {: #update_uninstall_mf_cli}
 
 Pour mettre à jour l'interface de ligne de commande, exécutez la commande :
