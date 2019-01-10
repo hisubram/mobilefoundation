@@ -22,6 +22,15 @@ Updates to Mobile Foundation service are delivered through interim fixes (iFixes
 To learn more about the continuous delivery support model, refer to the [Mobile Foundation v8.0 CD support announcement ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/897/ENUS217-390/index.html&request_locale=en).
 {: note}
 
+## CD Update 04 (December 19th, 2018)
+{: #cd_update_4}
+
+* HTTP/2 Support for APNs Push Notifications.
+* React Native SDK for Push (react-native-ibm-mobilefirst-push 1.0.0) released.
+
+View the CD Update 04 announcement [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/blog/2018/12/24/8-0-cd-update-release/).
+{: note}
+
 ## CD Update 03 (November 5th, 2018)
 {: #cd_update_3}
 

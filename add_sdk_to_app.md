@@ -21,7 +21,7 @@ lastupdated:  "2019-01-04"
 {:javascript: .ph data-hd-programlang='javascript'}
 {:php: .ph data-hd-programlang='PHP'}
 {:swift: .ph data-hd-programlang='swift'}
-{:reactnative: .ph data-hd-programlang='React Native'}
+{:reactnative: .ph data-hd-programlang='reactnative'}
 {:csharp: .ph data-hd-programlang='csharp'}
 {:ios: .ph data-hd-programlang='iOS'}
 {:android: .ph data-hd-programlang='Android'}
