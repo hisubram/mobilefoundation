@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-05-04"
+lastupdated:  "2018-11-19"
 
 ---
 
@@ -15,9 +15,9 @@ lastupdated:  "2018-05-04"
 #	CLI de {{ site.data.keyword.mobilefoundation_short }}
 {: #using_mobilefoundation_cli}
 
-{{site.data.keyword.mobilefoundation_short}} proporciona una herramienta de interfaz de línea de mandatos (CLI) para que **mfpdev** del desarrollador gestione fácilmente los artefactos del cliente y del servidor de {{site.data.keyword.mobilefoundation_short}}.
+{{ site.data.keyword.mobilefoundation_short }} proporciona una herramienta de interfaz de línea de mandatos (CLI) a desarrolladores, **mfpdev**, para gestionar fácilmente los artefactos del cliente y del servidor de {{site.data.keyword.mobilefoundation_short}}.
 
-Todos los mandatos `mfpdev` pueden ejecutarse en modalidad directa o interactiva. En la modalidad interactiva, se solicitarán los parámetros necesarios para el mandato y se utilizarán algunos valores predeterminados. En la modalidad directa, se deben proporcionar parámetros con el mandato que se está ejecutando.
+Todos los mandatos `mfpdev` pueden ejecutarse en modalidad directa o interactiva. En la modalidad interactiva, se solicitarán los parámetros necesarios para el mandato y se utilizarán algunos valores predeterminados. En la modalidad directa, se deben proporcionar los parámetros con el mandato.
 
 
 ## Instalación de la CLI de {{site.data.keyword.mobilefoundation_short}}
@@ -25,7 +25,7 @@ Todos los mandatos `mfpdev` pueden ejecutarse en modalidad directa o interactiva
 
 {{site.data.keyword.mobilefoundation_short}} está disponible como un paquete de NPM en el [registro NPM ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://www.npmjs.com){: new_window}.
 
-Asegúrese de que **node.js** y **npm** estén instalados para poder instalar los paquetes NPM. Siga las instrucciones de instalación en [nodejs.org ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://nodejs.org/){: new_window} para instalar **node.js**. Para confirmar que **node.js** esté instalado correctamente, ejecute el mandato siguiente:
+Asegúrese de que **node.js** y **npm** estén instalados para instalar paquetes NPM. Siga las instrucciones de instalación en [nodejs.org ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://nodejs.org/){: new_window} para instalar **node.js**. Para confirmar que **node.js** esté instalado correctamente, ejecute el mandato siguiente:
 ```
 node -v
 ```
@@ -33,15 +33,17 @@ node -v
 
 > **Nota:** La versión de node.js mínima soportada es **4.2.3**. Además, con los paquetes de nodos y de npm de rápida evolución, la CLI de {{site.data.keyword.mobilefoundation_short}} podría no ser completamente funcional con todas las versiones disponibles del nodo y de npm, incluidas las versiones más recientes. Asegúrese de que el nodo se encuentra en la versión **6.11.1** y que la versión de npm es **3.10.10**, para el funcionamiento adecuado de la CLI.
 
+> Para las versiones de arreglos temporales de la CLI de MobileFirst *8.0.2018100112* y superiores, puede utilizar las versiones de Node 8.x o 10.x.
+
 Para instalar la CLI de {{site.data.keyword.mobilefoundation_short}}, ejecute el mandato siguiente:
 ```
-npm install -g mfpdev-cli
+npm install -g mfpdev-cli 
 ```
 {: codeblock}
 
-Si el archivo .zip de la CLI se ha descargado desde el Centro de descargas de la consola de operaciones de MobileFirst, utilice el mandato siguiente:
+Si el archivo comprimido (*.zip*) de la CLI se ha descargado desde el Centro de descargas de la consola de operaciones de MobileFirst, utilice el mandato siguiente:
 ```
-npm install -g <path-to-mfpdev-cli.tgz>
+npm install -g <path-to-mfpdev-cli.tgz> 
 ```
 {: codeblock}
 
@@ -50,6 +52,37 @@ Para instalar la CLI sin dependencias opcionales, añada el distintivo `--no-opt
 npm install -g --no-optional path-to-mfpdev-cli.tgz
 ```
 {: codeblock}
+
+Al instalar la CLI de MobileFirst utilizando Node 8, es posible que vea algunos de los siguientes errores en la ventana de terminal:
+```
+> node-gyp rebuild
+
+gyp ERR! clean error
+gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/bufferutil
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok
+
+> utf-8-validate@1.2.2 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+> node-gyp rebuild
+
+gyp ERR! clean error
+gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok
+
+> fsevents@1.2.4 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/fsevents
+> node install
+```
+
+Este error es debido a un [error conocido en node-gyp ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://github.com/nodejs/node-gyp/issues/1547){: new_window}. Estos errores se pueden ignorar puesto que no afectan al funcionamiento de la CLI de MobileFirst. El problema se puede aplicar al nivel de arreglo temporal de `mfpdev-cli` *8.0.2018100112* y superior. Para evitar este error, utilice el distintivo `--no-optional` durante la instalación.
 
 Para confirmar que la CLI esté instalada correctamente, ejecute el mandato siguiente:
 ```
@@ -162,7 +195,7 @@ mfpdev app register
 ```
 {: codeblock}
 
-Para registrar una app en un servidor y en un tiempo de ejecución que no sea el uso predeterminado:
+Para registrar una app en un servidor y en un tiempo de ejecución que no sean los predeterminados, utilice:
 
 ```
 mfpdev app register <server> <runtime>
@@ -176,7 +209,7 @@ mfpdev app register -w windows8
 ```
 {: codeblock}
 
-Permite especificar el tiempo de ejecución y el servidor de fondo para que los utilice su app. Además, para las app de Cordova, permite configurar varios aspectos adicionales como, por ejemplo, el idioma predeterminado para los mensajes del sistema o si es necesario realizar una suma de comprobación. Se incluyen otros parámetros de configuración para apps de Cordova.
+Permite especificar el tiempo de ejecución y el servidor de fondo para que los utilice su app. Para las apps de Cordova, este mandato permite configurar varios aspectos adicionales como, por ejemplo, el idioma predeterminado para los mensajes del sistema o si es necesario realizar una suma de comprobación. Se incluyen otros parámetros de configuración para apps de Cordova.
 
 ```
 mfpdev app config
@@ -204,14 +237,14 @@ mfpdev app preview
 ```
 {: codeblock}
 
-Empaqueta los recursos de la aplicación contenidos en el directorio www en un archivo .zip que se puede utilizar para el proceso de Direct Update.
+Empaqueta los recursos de la aplicación presentes en el directorio www en un archivo comprimido (*.zip*) que se puede utilizar para el proceso de Direct Update.
 
 ```
 mfpdev app webupdate
 ```
 {: codeblock}
 
-Este mandato empaquetará los recursos web actualizados en un archivo .zip y los cargará al servidor de MobileFirst predeterminado registrado. Los recursos web empaquetados se pueden encontrar en la carpeta `[cordova-project-root-folder]/mobilefirst/`.
+Este mandato empaquetará los recursos web actualizados en un archivo comprimido (*.zip*) y los cargará al servidor de MobileFirst predeterminado registrado. Los recursos web empaquetados se pueden encontrar en la carpeta `[cordova-project-root-folder]/mobilefirst/`.
 
 Para cargar los recursos web a distintas instancias de servidor, proporcione el nombre de servidor y el tiempo de ejecución como parte del mandato:
 
@@ -220,7 +253,7 @@ mfpdev app webupdate <server_name> <runtime>
 ```
 {: codeblock}
 
-Puede utilizar el parámetro –build para generar el archivo .zip con los recursos web empaquetados sin cargarlos en un servidor.
+Puede utilizar el parámetro –build para generar el archivo comprimido (*.zip*) con los recursos web empaquetados sin cargarlos en un servidor.
 ```
 mfpdev app webupdate --build
 ```
@@ -249,7 +282,7 @@ mfpdev server info
 ```
 {: codeblock}
 
-Añade una nueva definición de servidor en el entorno.
+Añade una definición de servidor en el entorno.
 
 ```
 mfpdev server add

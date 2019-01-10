@@ -53,7 +53,7 @@ Siga estos pasos para conectarse a una instancia de servicio existente de {{site
 1. Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}.
 
 + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}, en la lista de espacios disponibles en la `Organización` seleccionada.   
-> **Nota:** Si no ve la `Organización` y el `Espacio` donde existe su instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}} consulte si es miembro de la `Organización` y del `Espacio`. Se requiere el rol de *Desarrollador* para acceder a la organización y al espacio, ya que el servicio de {{site.data.keyword.mobilefoundation_short}} accede a las credenciales desde el servicio de {{site.data.keyword.Db2_on_Cloud_short}}.
+> **Nota:** Si no ve la `Organización` y el `Espacio` donde existe su instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}} consulte si es miembro de la `Organización` y del `Espacio`. Se requiere el rol de *Desarrollador* para acceder a la organización y al espacio, ya que el servicio {{site.data.keyword.mobilefoundation_short}} accede a las credenciales desde el servicio {{site.data.keyword.Db2_on_Cloud_short}}.
 
 + Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.Db2_on_Cloud_short}} para conectarse con la instancia  de servicio {{site.data.keyword.Db2_on_Cloud_short}} existente.
 
@@ -116,7 +116,7 @@ Para obtener más información sobre Mobile Analytics, puede consultar [MobileFi
 ##  Supresión del servicio de Mobile Analytics
 {: #deleting_analytics_server_p4}
 
-Ahora puede suprimir el servicio de Mobile Analytics que se ha añadido a la instancia de servicio de {{site.data.keyword.mobilefoundation_short}}, desde el panel de control de servicio de {{site.data.keyword.mobilefoundation_short}}.
+Ahora puede suprimir el servicio de Mobile Analytics que se ha añadido a la instancia de servicio de {{site.data.keyword.mobilefoundation_short}}, desde el panel de control del servicio {{site.data.keyword.mobilefoundation_short}}.
 
 * Pulse **Suprimir Analytics** para suprimir el servicio de Mobile Analytics que se ha añadido a la instancia de servicio de {{site.data.keyword.mobilefoundation_short}}.
 

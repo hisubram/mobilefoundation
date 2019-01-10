@@ -2,39 +2,44 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-11-27"
 
 ---
 
-#	Acerca de Mobile Foundation
+#	Visión general
 {: #overview_mobilefoundation}
 
-El servicio {{site.data.keyword.mobilefoundation_short}} ofrece un modo de configurar rápidamente un entorno de servidor de {{site.data.keyword.mobilefirst}} en {{site.data.keyword.Bluemix}}. Puede desarrollar, probar y gestionar apps móviles desde este entorno de nube.
+{{site.data.keyword.mobilefoundation_short}} proporciona un conjunto integrado de funciones de programa de fondo para móvil, web y apps web progresivas (PWA). Los desarrolladores pueden optar por utilizar herramientas o infraestructuras frontales de su elección y aprovechar el amplio conjunto de funciones de programa de fondo que proporciona el servicio {{site.data.keyword.mobilefoundation_short}}. Los SDK de {{site.data.keyword.mobilefoundation_short}} están disponibles para Cordova, iOS, Android, Xamarin, Windows 10, React Native y Mobile Web. 
 
-{{site.data.keyword.mobilefoundation_short}} ofrece a los usuarios un método sencillo y guiado para configurar {{site.data.keyword.mfserver_short_notm}} <!--in the {{site.data.keyword.containerlong}} -->el entorno en {{site.data.keyword.Bluemix_notm}}.
+## Funciones clave ofrecidas por {{site.data.keyword.mobilefoundation_short}}
 
-{{site.data.keyword.mobilefoundation_short}} consta de los componentes siguientes:
+### Fidelización del usuario
+{: #user_engagement}
 
-*	{{site.data.keyword.mfserver_long_notm}} es middleware optimizado para móvil que actúa como pasarela entre aplicaciones, sistemas de fondo y otros servicios basados en la nube.
+La creación de apps para móvil atractivas es la clave para el éxito de una estrategia de app en cualquier empresa. La fidelización del usuario se puede constituir en apps utilizando notificaciones push. {{site.data.keyword.mobilefoundation_short}} ofrece soporte al envío de notificaciones a dispositivos iOS, Android y Windows 10. Las notificaciones se pueden enviar a todos los usuarios, a un subconjunto de usuarios o a usuarios en función del área de interés. Se ofrece soporte a las notificaciones interactivas y silenciosas de plataformas relevantes. La personalización es un aspecto clave para la fidelización del usuario. Puede segmentar los usuarios y adaptar las apps a segmentos de usuarios específicos con la función **Live Update**.
 
-*	Los componentes de {{site.data.keyword.mfp_dr_long_notm}} ofrecen interfaces de programación de aplicaciones (API) cliente en tiempo de ejecución en los SDK para iOS, Android y Windows. Estos SDK están diseñados para mejorar la seguridad, el gobierno y la usabilidad.
+###  Conocimientos de apps
+{: #app_insights}
 
-*	{{site.data.keyword.mfp_oc_long_notm}} es una interfaz de usuario basada en la web que permite llevar a cabo flujos de trabajo simplificados para que el desarrollador y el administrador puedan crear, supervisar, proteger y administrar aplicaciones y adaptadores.
+Obtenga información sobre el uso de apps y el comportamiento de apps y usuarios. Obtenga conocimientos operativos sobre la resolución de problemas. Equipe la app y obtenga conocimientos empresariales, que se pueden ver como diagramas personalizados del lado del servidor. Habilite usuarios finales para que informen sobre errores y problemas de la app con un movimiento.
 
-Con {{site.data.keyword.mobilefoundation_short}}, puede realizar las funciones siguientes:
+###  Infraestructura de seguridad
+{: #security_framework}
 
-*	Crear apps para cualquier entorno operativo y dispositivo móvil con el enfoque de desarrollo preferido: nativo o híbrido.
+Amplia seguridad específica del canal móvil. Proteja datos del dispositivo, API y su marca de los piratas informáticos y las vulnerabilidades. Cifrado de datos fuera de línea, evite ataques de tipo man-in-the-middle, deniegue el acceso a dispositivos robados o perdidos, configure una seguridad adicional para operaciones con privilegios, intégrese con soluciones de gestión de identidad existentes, protéjase del código de app de ingeniería inversa y mucho más.
 
-*	Conectar y sincronizar apps móviles con datos empresariales, aplicaciones y servicios de nube, incluidos los servicios de {{site.data.keyword.Bluemix_notm}}.
+###  Lógica empresarial
+{: #business_logic}
 
-*	Proteger el dispositivo, la aplicación, los datos y la capa de red.
+Desarrolle y ejecute el código del lado del servidor para conectarse con los sistemas de fondo. Cree lógicas empresariales como microservicios utilizando los tiempos de ejecución Liberty, NodeJS o Swift. Acceda a los microservicios importando su definición Swagger.
 
-*	Gestionar la cartera de apps móviles desde una interfaz centralizada y desarrollar apps móviles utilizando los IDE y las bibliotecas favoritas.
+###  Gestión de apps
+{:  #app_management}
 
-*	Utilizar servicios de datos escalables para la sincronización de datos en línea y fuera de línea.
+Gestione versiones de aplicaciones y bloquee versiones de aplicaciones obsoletas. Omita la aprobación del almacén de apps y cambie los recursos web directamente.
 
-*	Configurar notificaciones push unificadas para todos los sistemas operativos de dispositivos móviles admitidos.
+###  API cognitivas
+{:  #cognitive_apis}
 
-Puede utilizar la {{site.data.keyword.mfp_cli_long_notm}} (CLI) con {{site.data.keyword.mobilefoundation_short}} para crear y gestionar apps con facilidad.
+Cree apps inteligentes utilizando API de Watson (*Tone Analyzer, Language Translator, Discovery o Conversation*) en sus apps para móvil. Esta integración le ayuda a optimizar la seguridad del canal móvil y a obtener información sobre las API.
 
-<!--{{site.data.keyword.mobilefoundation_short}} service provisions a container in your space in {{site.data.keyword.Bluemix_notm}}. You can see the details of the container that is created, view the container performance, and access the server logs from your {{site.data.keyword.Bluemix_notm}} dashboard.-->

@@ -22,7 +22,7 @@ lastupdated:  "2018-01-18"
 
 Cuando haya una actualización de {{site.data.keyword.mobilefoundation_short}}, se notificará su disponibilidad al usuario.  Se mostrará una notificación en el panel de control de la instancia del servicio. El usuario puede decidir aplicar la actualización a {{site.data.keyword.mobilefoundation_short}} durante la ventana de mantenimiento que considere.
 
-La actualización de servicio de {{site.data.keyword.mobilefoundation_short}} estará disponible cuando se actualice uno de los componentes siguientes.
+La actualización del servicio {{site.data.keyword.mobilefoundation_short}} estará disponible cuando se actualice uno de los componentes siguientes.
 
 * {{site.data.keyword.mfserver_short_notm}}.
 * La versión subyacente de Liberty.

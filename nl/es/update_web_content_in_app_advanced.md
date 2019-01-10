@@ -2,96 +2,22 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-05-11"
+lastupdated: "2018-12-21"
 
 ---
 
 {:shortdesc: .shortdesc}
-{:codeblock: .codeblock}
-{:screen: .screen}
+{:new_window: target="_blank"}
+{:note: .note}
 {:tip: .tip}
 {:pre: .pre}
+{:codeblock: .codeblock}
+{:screen: .screen}
 
-#	Direct Update en aplicaciones de Cordova
-{: #direct_update_cordova_apps}
+# Configuración avanzada de Direct Update
+{: #advanced_direct_update_configuration}
 
-Los recursos web (JavaScript, HTML, CSS o archivos de imagen) en aplicaciones de Cordova se pueden actualizar *instantáneamente (over-the-air, OTA)* con Direct Update. Mediante la característica Direct Update, las empresas pueden asegurarse de que los usuarios finales utilicen la versión más reciente de sus apps.
-Para actualizar una aplicación, los recursos web actualizados de la aplicación necesitan empaquetarse y cargarse al servidor de MobileFirst, utilizando la CLI de MobileFirst o desplegando un archivo de archivado generado. Direct Update se activará entonces automáticamente. Se aplicará entonces en cada solicitud de usuario a un recurso protegido.
-
-Se da soporte a Direct Update en las plataformas Cordova iOS y Cordova Android.
-
-A efectos de desarrollo y pruebas, los desarrolladores habitualmente utilizarán Direct Update simplemente subiendo un archivador al servidor de desarrollo. Aunque este proceso es fácil de implementar, no es seguro. Para esta fase, se utilizará un par de claves RSA internas extraídas de un certificado firmado automáticamente de MobileFirst incorporado.
-
-Sin embargo, para la fase de pruebas de preproducción o de producción, se recomienda implementar Direct Update seguro antes de publicar la aplicación en la tienda de apps. Una versión de Direct Update segura necesita una pareja de claves RSA extraídas de un certificado de servidor firmado por una autoridad de certificación (CA) real.
-
-* Tenga cuidado de no modificar la configuración del almacén de claves una vez que se publique la aplicación. Las actualizaciones descargadas no pueden autenticarse antes de volver a configurar la aplicación con una nueva clave pública y de volver a publicar la aplicación. Si no realiza los dos pasos anteriores, Direct Update fallará en el cliente.
-* Direct Update actualiza solo los recursos web de la aplicación. Si desea actualizar recursos nativos, se debe enviar una nueva versión de la aplicación a las respectivas tiendas de apps.
-* Cuando se utiliza la característica Direct Update y está habilitada la característica de suma de comprobación de recursos web, se establece una nueva base de suma de comprobación con cada Direct Update.
-* Si el servidor de MobileFirst se ha actualizado utilizando un fixpack, seguirá sirviendo a las actualizaciones directas correctamente. Sin embargo, si se sube un archivador de Direct Update compilado recientemente (archivo .zip), puede detener las actualizaciones en los clientes antiguos. La razón es que el archivado contiene la versión del plug-in de `cordova-plugin-mfp`. Antes de servir dicho archivador a un cliente móvil, el servidor compara la versión del cliente con la versión del plugin. Si ambas versiones son lo suficientemente cercanas (los tres dígitos más significativos son los mismos), Direct Update funcionará de forma normal. De lo contrario, el servidor de MobileFirst omitirá la actualización de forma silenciosa. Una solución para la discordancia de versiones es descargar el `cordova-plugin-mfp` con la misma versión que la del proyecto de Cordova original y volver a generar el archivado de Direct Update.
-* En condiciones óptimas, un único servidor de MobileFirst puede enviar datos a clientes a la velocidad de 250 MB por segundo. Si son necesarias velocidades más elevadas, considere la posibilidad de utilizar un clúster o un servicio de una CDN.
-{: tip}
-
-## ¿Cómo funciona Direct Update?
-{: #working_direct_update}
-
-Los recursos web de la aplicación inicialmente de empaquetan con la aplicación para asegurar primero una disponibilidad fuera de línea. Posteriormente, la aplicación busca actualizaciones en cada solicitud del servidor de MobileFirst.
-
->**Nota:** Una vez que se realice una Direct Update, se comprobará de nuevo tras 60 minutos.
-
-![Diagrama de cómo funciona la actualización directa](images/internal_function.jpg)
-
-Después de una actualización de Direct Update, la aplicación deja de utilizar los recursos web empaquetados de forma previa. En su lugar, utiliza los recursos web descargados desde el recinto de pruebas de la aplicación. Si la memoria caché de aplicaciones del dispositivo se borra, se utilizarán de nuevo los recursos web empaquetados originales.
-
->Una actualización de Direct Update se aplica únicamente a una versión específica. En otras palabras, las actualizaciones generadas para una aplicación con la versión 2.0 no se pueden aplicar a otra versión de la misma aplicación.
-
-## Creación y despliegue de recursos web actualizados
-{: #creating_deploying_updates}
-
-Los recursos web actualizados necesitan empaquetarse y cargarse en el servidor de MobileFirst.
-
-1. Abra una ventana de línea de mandatos y vaya a la raíz del proyecto de Cordova.
-2. Ejecute el mandato:
-  ```
-  mfpdev app webupdate
-  ```
-  {: pre}
-El mandato `mfpdev app webupdate` empaqueta los recursos web actualizados en un archivo `.zip` y los cargará al servidor de MobileFirst predeterminado ejecutándose en la estación de trabajo del desarrollador. Los recursos web empaquetados se pueden encontrar en la carpeta `[cordova-project-root-folder]/mobilefirst/`.
-
-**Pasos alternativos:**
-
-* Cree el archivo `.zip` y cárguelo en un servidor de MobileFirst distinto: `mfpdev app webupdate [server-name] [runtime-name]`.
-  Por ejemplo:
-  ```
-  mfpdev app webupdate myQAServer MyBankApps
-  ```
-  {: pre}
-
-* Cargue un archivo `.zip` generado de forma previa: `mfpdev app webupdate [server-name] [runtime-name] --file [path-to-packaged-web-resources]`.
-  Por ejemplo:
-  ```
-  mfpdev app webupdate myQAServer MyBankApps --file mobilefirst/ios/com.mfp.myBankApp-1.0.1.zip
-  ```
-  {: pre}
-
-* Cargue manualmente recursos web empaquetados en el servidor de MobileFirst:
-  1. Compile el archivo .zip sin cargarlo:
-      ```
-      mfpdev app webupdate --build
-      ```
-      {: pre}
-  2. Cargue la consola de operaciones de MobileFirst y pulse la entrada de aplicación.
-  3. Pulse en **Subir archivo de recursos web** para subir los recursos web empaquetados.    
-      ![Cargar el archivo .zip de Direct Update desde la consola](images/upload-direct-update-package.png)
-
-Ejecute el mandato `mfpdev help app webupdate` para obtener más información.
-{: tip}
-
-## Experiencia del usuario
-{: #user_experience}
-
-Una vez que se reciba una Direct Update, se mostrará un diálogo de forma predeterminada, y se le pedirá permiso al usuario para iniciar el proceso de actualización. Después de que el usuario lo apruebe, se visualiza un diálogo con una barra de progreso y los recursos web se descargan. La aplicación se recarga de forma automática cuando la actualización finaliza.
-
-![Ejemplo de actualización directa](images/direct-update-flow.png)
+Aquí se describe algunas de las formas más avanzadas en las que puede configurar y trabajar con la característica Direct Update.
 
 ## Personalización de la interfaz de usuario de Direct Update
 {: #customize_du_ui}
@@ -105,10 +31,10 @@ wl_DirectUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
 ```
 {: codeblock}
 
-*directUpdateData* es un objeto JSON que contiene la propiedad downloadSize que representa el tamaño de archivo (en bytes) del paquete de actualización que se descargará desde el servidor de MobileFirst.
+*directUpdateData* es un objeto JSON que contiene la propiedad downloadSize que representa el tamaño de archivo (en bytes) del paquete de actualización que se descargará desde el servidor de Mobile Foundation.
 *directUpdateContext* es un objeto JavaScript que expone las funciones .start() y .stop(), lo que inicia y detiene el flujo de Direct Update.
 
-Si los recursos web son más nuevos en el MobileFirst Server que en la aplicación, los datos de solicitud de Direct Update se añaden a la respuesta del servidor. Cuando el marco del lado del cliente de MobileFirst detecta esta solicitud de actualización directa, se invoca la función `wl_directUpdateChallengeHandler.handleDirectUpdate`.
+Si los recursos web son más nuevos en el servidor de Mobile Foundation que en la aplicación, los datos de solicitud de Direct Update se añaden a la respuesta del servidor. Cuando el marco del lado del cliente de Mobile Foundation detecta esta solicitud de actualización directa, se invoca la función `wl_directUpdateChallengeHandler.handleDirectUpdate`.
 
 La función proporciona un diseño predeterminado de Direct Update: Un diálogo de mensaje predeterminado que se muestra cuando hay disponible una Direct Update y una pantalla de progreso predeterminada que se muestra cuando se inicia el proceso de actualización directa. Puede implementar el comportamiento personalizado de la interfaz de usuario de Direct Update o personalizar el recuadro de diálogo de Direct Update sustituyendo esta función e implementando su propia lógica.
 
@@ -133,10 +59,10 @@ wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
 ```
 {: codeblock}
 
-El proceso de Direct Update se inicia ejecutando el método `directUpdateContext.start()` siempre que el usuario pulsa el botón de diálogo. Se muestra la pantalla de progreso predeterminada, que se asemeja a la de versiones anteriores del servidor de MobileFirst.
+El proceso de Direct Update se inicia ejecutando el método `directUpdateContext.start()` siempre que el usuario pulsa el botón de diálogo. Se muestra la pantalla de progreso predeterminada, que se asemeja a la de versiones anteriores del servidor de Mobile Foundation.
 
 Este método da soporte a los siguientes tipos de invocación:
-* Cuando no se especifican parámetros, el servidor de MobileFirst utiliza la pantalla de progreso predeterminada.
+* Cuando no se especifican parámetros, el servidor de Mobile Foundation utiliza la pantalla de progreso predeterminada.
 * Cuando se proporciona una función de escucha como, por ejemplo, `directUpdateContext.start(directUpdateCustomListener)`, el proceso de Direct Update se ejecuta en un segundo plano mientras envía sucesos de ciclo de vida al escucha. El escucha personalizado debe implementar los siguientes métodos:
 
 ```JavaScript
@@ -204,7 +130,7 @@ wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
 ```
 {: codeblock}
 
-### Escenario: Ejecución de actualizaciones directas sin una interfaz de usuario
+## Ejecución de actualizaciones directas sin una interfaz de usuario
 {: #scenario-running-ui-less-direct-updates }
 {{site.data.keyword.mobilefoundation_short}} da soporte a las actualizaciones directas sin una interfaz de usuario cuando la aplicación se encuentra en un segundo plano.
 
@@ -243,53 +169,50 @@ wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
 ```
 {: codeblock}
 
-**Nota:** Cuando la aplicación se envía a un segundo plano, se suspende el proceso de actualización directa.
+Cuando la aplicación se envía a un segundo plano, se suspende el proceso de actualización directa.
+{: note}
 
-### Escenario: Cómo manejar una anomalía de una actualización directa
+## Cómo manejar una anomalía de una actualización directa
 {: #scenario-handling-a-direct-update-failure }
-Este escenario muestra cómo manejar una anomalía en una actualización directa que puede ser originada, por ejemplo, por una pérdida de conectividad. En este escenario, el usuario deja de poder utilizar la app incluso en la modalidad de fuera de línea. Se visualiza un diálogo ofreciendo al usuario la opción de intentarlo de nuevo.
+Esta sección muestra cómo manejar una anomalía en una actualización directa que puede ocurrir, por ejemplo, por una pérdida de conectividad. En este escenario, el usuario deja de poder utilizar la app incluso en la modalidad de fuera de línea. Se visualiza un diálogo ofreciendo al usuario la opción de intentarlo de nuevo.
 
-Cree una variable global para almacenar el contexto de la actualización directa de forma que lo puede utilizar más tarde cuando el proceso de actualización directa falle. Por ejemplo:
+1.  Cree una variable global para almacenar el contexto de la actualización directa de forma que lo puede utilizar más tarde cuando el proceso de actualización directa falle. Por ejemplo:
+    ```JavaScript
+    var savedDirectUpdateContext;
+    ```
+    {: codeblock}
 
-```JavaScript
-var savedDirectUpdateContext;
-```
-{: codeblock}
+2.  Implemente un manejador de desafío de actualización directa. Aquí se guarda el contexto de la actualización directa. Por ejemplo:
+    ```JavaScript
+    wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, directUpdateContext){
 
-Implemente un manejador de desafío de actualización directa. Aquí se guarda el contexto de la actualización directa. Por ejemplo:
+      savedDirectUpdateContext = directUpdateContext; // save direct update context
 
-```JavaScript
-wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, directUpdateContext){
-
-  savedDirectUpdateContext = directUpdateContext; // save direct update context
-
-  var downloadSizeInMB = (directUpdateData.downloadSize / 1048576).toFixed(1).replace(".", WL.App.getDecimalSeparator());
+      var downloadSizeInMB = (directUpdateData.downloadSize / 1048576).toFixed(1).replace(".", WL.App.getDecimalSeparator());
   var directUpdateMsg = WL.Utils.formatString(WL.ClientMessages.directUpdateNotificationMessage, downloadSizeInMB);
 
-  WL.SimpleDialog.show(WL.ClientMessages.directUpdateNotificationTitle, directUpdateMsg, [{
-    text : WL.ClientMessages.update,
+      WL.SimpleDialog.show(WL.ClientMessages.directUpdateNotificationTitle, directUpdateMsg, [{
+        text : WL.ClientMessages.update,
     handler : function() {
-      directUpdateContext.start(directUpdateCustomListener);
+          directUpdateContext.start(directUpdateCustomListener);
     }
-  }]);
+      }]);
+    };
+    ```
+    {: codeblock}
+
+3.  Cree una función que inicie el proceso de actualización directa utilizando el contexto de la actualización directa. Por ejemplo:
+    ```JavaScript
+    restartDirectUpdate = function () {
+      savedDirectUpdateContext.start(directUpdateCustomListener); // use saved direct update context to restart direct update
 };
-```
-{: codeblock}
+    ```
+    {: codeblock}
 
-Cree una función que inicie el proceso de actualización directa utilizando el contexto de la actualización directa. Por ejemplo:
-
-```JavaScript
-restartDirectUpdate = function () {
-  savedDirectUpdateContext.start(directUpdateCustomListener); // use saved direct update context to restart direct update
-};
-```
-{: codeblock}
-
-Implemente `directUpdateCustomListener`. Añada una comprobación de estado en el método `onFinish`. Si el estado se inicia con `FAILURE`, abra un modal solo de diálogo con la opción **Intentar de nuevo**. Por ejemplo:
-
-```JavaScript
-var directUpdateCustomListener = {
-  onStart: function(totalSize){
+4.  Implemente `directUpdateCustomListener`. Añada una comprobación de estado en el método `onFinish`. Si el estado se inicia con `FAILURE`, abra un modal solo de diálogo con la opción **Intentar de nuevo**. Por ejemplo:
+    ```JavaScript
+    var directUpdateCustomListener = {
+      onStart: function(totalSize){
     alert('onStart: totalSize = ' + totalSize + 'Byte');
   },
   onProgress: function(status,totalSize,completeSize){
@@ -299,53 +222,46 @@ var directUpdateCustomListener = {
     alert('onFinish: status = ' + status);
     var pos = status.indexOf("FAILURE");
     if (pos > -1) {
-      WL.SimpleDialog.show('Update Failed', 'Press try again button', [ {
-        text : "Try Again",
+          WL.SimpleDialog.show('Update Failed', 'Press try again button', [ {
+            text : "Try Again",
         handler : restartDirectUpdate // restart direct update
       }]);
     }
-  }
-};
-```
-{: codeblock}
+      }
+    };
+    ```
+    {: codeblock}
 
-Cuando el usuario pulsa el botón **Try Again**, la aplicación reinicia el proceso de actualización directa.
+    Cuando el usuario pulsa el botón **Try Again**, la aplicación reinicia el proceso de actualización directa.
+    {: note}
 
 ## Actualizaciones directas completas y delta
 {: #delta-and-full-direct-update }
 Las actualizaciones directas de tipo delta (actualizaciones de diferencias) permiten que una aplicación descargue solo los archivos que han cambiado desde la última actualización en lugar de descargar todos los recursos web de la aplicación. Esto reduce el tiempo de descarga, conserva el ancho de banda y mejora la experiencia global del usuario.
 
-> <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> **Importante:** Una **actualización delta** solo es posible si los recursos web de la aplicación del cliente están una versión por debajo de versión de la aplicación actualmente desplegada en el servidor. Las aplicaciones de cliente que están más de una versión por detrás de la aplicación desplegada actualmente (es decir, la aplicación se desplegó en el servidor al menos dos veces desde que la aplicación de cliente se actualizó), recibirán una **actualización completa** (es decir, se descargarán y actualizarán todos los recursos web).
+Una **actualización delta** solo es posible si los recursos web de la aplicación del cliente están una versión por debajo de versión de la aplicación actualmente desplegada en el servidor. Las aplicaciones de cliente que están más de una versión por detrás de la aplicación desplegada actualmente (es decir, la aplicación se desplegó en el servidor al menos dos veces desde que la aplicación de cliente se actualizó), recibirán una **actualización completa** (es decir, se descargarán y actualizarán todos los recursos web).
+{: note}
 
-
-## Aplicación de ejemplo
-{: #sample-application }
-[Pulse para descargar el proyecto de Cordova de ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://github.com/MobileFirst-Platform-Developer-Center/CustomDirectUpdate/tree/release80).  
-
-### Uso de ejemplo
-{: #sample-usage }
-Siga el archivo README.md del ejemplo para obtener instrucciones.
+Consulte el ejemplo de Direct Update para la app Cordova en la sección **Ejemplos**. Esta aplicación muestra cómo crear un diálogo de Direct Update personalizado en lugar de un diálogo predeterminado.  
 
 ## Soporte de CDN
 {: #cdn_support}
 
-Puede configurar que se sirvan solicitudes de Direct Update desde una CDN (red de entrega de contenidos) en lugar de desde el servidor de MobileFirst.
+Puede configurar que se sirvan solicitudes de Direct Update desde una CDN (red de entrega de contenidos) en lugar de desde el servidor de Mobile Foundation.
 
-### Ventajas de utilizar una CDN
-{: #advantages-of-using-a-cdn }
-Utilizar una CDN en lugar del servidor de MobileFirst para servir solicitudes de Direct Update tiene las siguientes ventajas:
+Utilizar una CDN en lugar del servidor de Mobile Foundation para servir solicitudes de Direct Update tiene las siguientes ventajas:
 
-* Elimina las sobrecargas de red del servidor de MobileFirst.
-* Aumenta las tasas de transferencia superiores al límite de 250 MB/segundo al servir solicitudes desde un servidor de MobileFirst.
+* Elimina las sobrecargas de red del servidor de Mobile Foundation.
+* Aumenta las tasas de transferencia superiores al límite de 250 MB/segundo al servir solicitudes desde un servidor de Mobile Foundation.
 * Asegura una experiencia de Direct Update más uniforme a todos los usuarios independientemente de su ubicación geográfica.
 
 ### Requisitos generales
 {: #general-requirements }
 Para dar servicio a las solicitudes de Direct Update desde una CDN, asegúrese de que la configuración cumple las siguientes condiciones:
 
-* La CDN debe ser un proxy inverso frente al servidor de MobileFirst (o frente a otro proxy inverso, si es necesario).
-* Al crear la aplicación desde el entorno de desarrollo, configure el servidor de destino en el host y el puerto de la CDN en lugar del host y del puerto del servidor de MobileFirst. Por ejemplo, al ejecutar el mandato de la CLI de MobileFirst `mfpdev server add`, proporcione el host y el puerto de la CDN.
-* En el panel de administración de la CDN, debe marcar las siguientes URL de Direct Update para almacenarlas en la memoria caché para asegurarse de que la CDN pase todas las solicitudes al servidor de MobileFirst, excepto para las solicitudes de Direct Update. Para las solicitudes de Direct Update, la CDN determina si obtuvo el contenido. Si lo ha obtenido, lo devolverá sin ir al servidor de MobileFirst; si no lo ha obtenido, irá al servidor de MobileFirst, obtendrá el archivado de Direct Update (archivo .zip) y lo almacenará para las siguientes solicitudes para dicho URL específico. Para aplicaciones compiladas con la v8.0 de {{site.data.keyword.mobilefoundation_short}}, el URL de Direct Update es: `PROTOCOLO://DOMINIO:PUERTO/VÍA_CONTEXTO/api/directupdate/VERSIÓN/SUMA_COMPROBACIÓN/TIPO`.
+* La CDN debe ser un proxy inverso frente al servidor de Mobile Foundation (o frente a otro proxy inverso, si es necesario).
+* Al crear la aplicación desde el entorno de desarrollo, configure el servidor de destino en el host y el puerto de la CDN en lugar del host y del puerto del servidor de Mobile Foundation. Por ejemplo, al ejecutar el mandato de la CLI de Mobile Foundation `mfpdev server add`, proporcione el host y el puerto de la CDN.
+* En el panel de administración de la CDN, debe marcar las siguientes URL de Direct Update para almacenarlas en la memoria caché para asegurarse de que la CDN pase todas las solicitudes al servidor de Mobile Foundation, excepto para las solicitudes de Direct Update. Para las solicitudes de Direct Update, la CDN determina si obtuvo el contenido. Si lo ha obtenido, lo devolverá sin ir al servidor de Mobile Foundation; si no lo ha obtenido, irá al servidor de Mobile Foundation, obtendrá el archivado de Direct Update (archivo .zip) y lo almacenará para las siguientes solicitudes para dicho URL específico. Para aplicaciones compiladas con la v8.0 de {{site.data.keyword.mobilefoundation_short}}, el URL de Direct Update es: `PROTOCOLO://DOMINIO:PUERTO/VÍA_CONTEXTO/api/directupdate/VERSIÓN/SUMA_COMPROBACIÓN/TIPO`.
 El prefijo `PROTOCOLO://DOMINIO:PUERTO/VÍA_CONTEXTO` es el mismo para todas las solicitudes de tiempo de ejecución. Por ejemplo: `http://my.cdn.com:9080/mfp/api/directupdate/0.0.1/742914155/full?appId=com.ibm.DirectUpdateTestApp&clientPlatform=android`
 
 En el ejemplo, hay parámetros de solicitud adicionales que también son parte de la solicitud.
@@ -356,16 +272,16 @@ En el ejemplo, hay parámetros de solicitud adicionales que también son parte d
 
 ### Ejemplo de configuración de CDN
 {: #example-cdn-configuration }
-Este ejemplo se basa en la utilización de la configuración de la CDN de Akamai que almacena en caché el archivador de Direct Update. Las tareas siguientes las completa el administrador de red, el administrador de MobileFirst y el administrador de Akamai:
+Este ejemplo se basa en la utilización de la configuración de la CDN de Akamai que almacena en caché el archivador de Direct Update. Las tareas siguientes las completa el administrador de red, el administrador de Mobile Foundation y el administrador de Akamai:
 
 #### Administrador de red
 {: #network-administrator }
-Cree otro dominio en el DNS para el servidor de MobileFirst. Por ejemplo, si el dominio del servidor es `yourcompany.com`, necesitará crear un dominio adicional como, por ejemplo, `cdn.yourcompany.com`.
+Cree otro dominio en el DNS para el servidor de Mobile Foundation. Por ejemplo, si el dominio del servidor es `yourcompany.com`, necesitará crear un dominio adicional como, por ejemplo, `cdn.yourcompany.com`.
 En el DNS para el nuevo dominio `cdn.yourcompany.com`, establecerá un `CNAME` al nombre de dominio que Akamai proporcione. Por ejemplo, `yourcompany.com.akamai.net`.
 
-#### Administrador de MobileFirst
-{: #mobilefirst-administrator }
-Establezca el nuevo dominio `cdn.yourcompany.com` como un URL del servidor de MobileFirst para las aplicaciones de MobileFirst. Por ejemplo, para la tarea del creador de Ant, la propiedad será:
+#### Administrador de Mobile Foundation
+{: #mobilefoundation-administrator }
+Establezca el nuevo dominio `cdn.yourcompany.com` como un URL del servidor de Mobile Foundation para las aplicaciones de Mobile Foundation. Por ejemplo, para la tarea del creador de Ant, la propiedad será:
 ```xml
 <property name="wl.server" value="http://cdn.yourcompany.com/${contextPath}/"/>
 ```
@@ -377,7 +293,7 @@ Establezca el nuevo dominio `cdn.yourcompany.com` como un URL del servidor de Mo
 
     ![Establezca el nombre de host de la propiedad en el valor del nuevo dominio](images/direct_update_cdn_3.jpg)
 
-2. En el separador Regla predeterminada, configure el host y el puerto del servidor de MobileFirst originales, y establezca el valor **Custom Forward Host Header** al dominio recién creado.
+2. En el separador Regla predeterminada, configure el host y el puerto del servidor de Mobile Foundation originales, y establezca el valor **Custom Forward Host Header** al dominio recién creado.
 
     ![Establezca el valor Custom Forward Host Header al dominio recién creado](images/direct_update_cdn_4.jpg)
 
@@ -403,14 +319,13 @@ Establezca el nuevo dominio `cdn.yourcompany.com` como un URL del servidor de Mo
 | Forzar la reevaluación de objetos obsoletos | Servir obsoleto si no es posible validar |
 | Edad máxima | 3 minutos |
 
-
 ## Direct Update seguro
 {: #secure-dc }
 
-Inhabilitado de forma predeterminada, Direct Update seguro impide a un atacante de terceros alterar los recursos web que se transmiten desde el servidor de MobileFirst (o desde una CDN (Content Delivery Network, red de entrega de contenido)) a la aplicación cliente.
+Inhabilitado de forma predeterminada, Direct Update seguro impide a un atacante de terceros alterar los recursos web que se transmiten desde el servidor de Mobile Foundation (o desde una CDN (Content Delivery Network, red de entrega de contenido)) a la aplicación cliente.
 
 **Para habilitar la autenticación de Direct Update:**  
-Mediante la herramienta de su elección, extraiga la clave pública del almacén de claves del servidor de MobileFirst y conviértala a base64.  
+Mediante la herramienta de su elección, extraiga la clave pública del almacén de claves del servidor de Mobile Foundation y conviértala a base64.  
 El valor generado se debería utilizar entonces tal como se indica a continuación:
 
 1. Abra una ventana de **línea de mandatos** y vaya a la raíz del proyecto de Cordova.
@@ -419,15 +334,16 @@ El valor generado se debería utilizar entonces tal como se indica a continuaci�
 
 Cualquier entrega futura de Direct Update a aplicaciones de cliente estarán protegidas mediante la autenticidad de Direct Update.
 
-Para asegurarse de que Direct Update funcione, debe desplegarse un archivo de almacén de claves definido por el usuario en el servidor de MobileFirst y debe incluirse una copia de la clave pública coincidente en la aplicación de cliente desplegada.
+Para asegurarse de que Direct Update funcione, debe desplegarse un archivo de almacén de claves definido por el usuario en el servidor de Mobile Foundation y debe incluirse una copia de la clave pública coincidente en la aplicación de cliente desplegada.
 
-En este tema se describe cómo vincular una clave pública a nuevas aplicaciones de cliente y a aplicaciones de cliente existentes que se hayan actualizado. Para obtener más información sobre cómo configurar el almacén de claves del servidor de MobileFirst, consulte [Configuración del almacén de claves del servidor de MobileFirst ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/configuring-the-mobilefirst-server-keystore/){: new_window}
+En este tema se describe cómo vincular una clave pública a nuevas aplicaciones de cliente y a aplicaciones de cliente existentes que se hayan actualizado. Para obtener más información sobre cómo configurar el almacén de claves del servidor de Mobile Foundation, consulte [Configuración del almacén de claves del servidor de Mobile Foundation ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/configuring-the-mobilefirst-server-keystore/){: new_window}
 
 El servidor incorpora un almacén de claves que sirve para probar Direct Update de forma segura en las fases de desarrollo.
 
->**Nota:** Después de vincular la clave pública con la aplicación de cliente y de recompilarla, no necesita subirla de nuevo a {{ site.data.keys.mf_server }}. Sin embargo, si con anterioridad publicó la aplicación en el mercado, sin la clave pública, necesitará publicarla de nuevo.
+Después de vincular la clave pública con la aplicación de cliente y de recompilarla, no necesita subirla de nuevo a {{ site.data.keys.mf_server }}. Sin embargo, si con anterioridad publicó la aplicación en el mercado, sin la clave pública, necesitará publicarla de nuevo.
+{: note}
 
-Para fines de desarrollo, se proporciona la siguiente clave pública ficticia predeterminada con el servidor de MobileFirst:
+Para fines de desarrollo, se proporciona la siguiente clave pública ficticia predeterminada con el servidor de Mobile Foundation:
 
 ```xml
 -----BEGIN PUBLIC KEY-----
@@ -448,14 +364,16 @@ pdGIdLtkrhzbqHFwXE0v3dt+lnLf21wRPIqYHaEu+EB/A4dLO6hm+IjBeu/No7H7TBFm
 ```
 {: codeblock}
 
-**Importante:** No utilice la clave pública para fines de producción.
+No utilice la clave pública para fines de producción.
+{: note}
 
 ### Generación y despliegue del almacén de claves
 {: #generating-and-deploying-the-keystore }
 Hay muchas herramientas disponibles para generar certificados y extraer las claves públicas de un almacén de claves. En el siguiente ejemplo se muestran los procedimientos con el programa de utilidad keytool del JDK y openSSL.
 
 1. Extraiga la clave pública del archivo de almacén de claves que se ha desplegado en {{ site.data.keys.mf_server }}.  
-   >**Nota:** La clave pública debe estar codificada en Base64.
+   La clave pública debe estar codificada en Base64.
+   {: note}
 
    Por ejemplo, supongamos que el nombre de alias es `mfp-server` y que el archivo del almacén de claves es **keystore.jks**.  
    Para generar un certificado, emita el siguiente mandato:
@@ -474,7 +392,8 @@ Hay muchas herramientas disponibles para generar certificados y extraer las clav
    ```
    {: codeblock}
 
-   > **Nota:** Con únicamente la herramienta de claves no es posible extraer claves públicas en formato Base64.
+   Con únicamente la herramienta de claves no es posible extraer claves públicas en formato Base64.
+   {: note}
 
 2. Siga uno de los siguientes procedimientos:
     * Copie el texto resultante, sin los marcadores `BEGIN PUBLIC KEY` y `END PUBLIC KEY` en el archivo de propiedades mfpclient de la aplicación, inmediatamente después de `wlSecureDirectUpdatePublicKey`.

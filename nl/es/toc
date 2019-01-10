@@ -2,25 +2,85 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="mobile-foundation" audience="service" href="/docs/services/mobilefoundation/index.html"}
+{: .toc subcollection="mobile-foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation/index.html" path="services/mobilefoundation"}
 Mobile Foundation
 
     {: .navgroup id="learn"}
     index.md
-    mdoverview.md
+
+    {: .topicgroup}
+    Acerca de
+        mdoverview.md
+        pricing.md
+        release_notes.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    {: .topicgroup}
+    Configurar Mobile Foundation
+        c_using_mfs_p1.md
+        c_using_mfs_p2.md
+        c_using_mfs_p5.md
+        plan_migration.md
+        export_import_apps_adapters.md
+
+    {: .topicgroup}
+    Obtener información de la aplicación
+        visualize_insights_on_console.md
+
+    {: .topicgroup}
+    Almacenado sincronización y datos fuera de línea
+        configure_offline_storage.md
+        sync_data_with_datasource.md
+
+    {: .topicgroup}
+      Actualización del contenido de la app
+          update_web_content_in_app.md
+
+    {: .topicgroup}
+      Gestionar aplicación
+          manage_app_versions.md
+          remote_disable_app_version.md
+          manage_devices.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    {: .topicgroup}
+    API
+        [Administración](https://console.stage1.bluemix.net/apidocs/mobile-foundation/mobile-foundation-administration)
+        [Analytics](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)
+        [SDK](services/mobilefoundation/client_sdk_api.html)
+
+    {: .topicgroup}
+    SDK
+        [Android](services/mobilefoundation/android_sdk.html)
+        [iOS](services/mobilefoundation/ios_sdk.html)
+        [Cordova e Ionic](services/mobilefoundation/cordova_sdk.html)
+        [React Native](services/mobilefoundation/reactnative_sdk.html)
+        [Windows](services/mobilefoundation/windows_sdk.html)
+        [Web](services/mobilefoundation/web_sdk.html)
     using_cli.md
-    direct_update.md
+
+    {: .topicgroup}
+    Ejemplos
+        [Aplicación Cordova mediante las API de JSONStore](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCordova/tree/release80)
+        [Aplicación de iOS nativo mediante las API de JSONStore](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreSwift/tree/release80)
+        [Aplicación de Android nativa mediante las API de JSONStore](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAndroid)
+        [Ejemplos de código de JSONStore](services/mobilefoundation/jsonstore_code_examples.html)
+        [Seguridad en los ejemplos de código de JSONStore](services/mobilefoundation/security_utilities.html)
+        [Crear un diálogo de Direct Update personalizado](https://github.com/MobileFirst-Platform-Developer-Center/CustomDirectUpdate/tree/release80)
+
+    {: .topicgroup}
+    Patrones de código
+        [Desarrollar una app móvil híbrida con el programa de fondo nativo en la nube](https://developer.ibm.com/patterns/develop-hybrid-mobile-app-with-cloud-native-back-end/)
+        [Sincronización fuera de línea segura](https://developer.ibm.com/patterns/secure-offline-synchronization-ibm-mobile-foundation/)
+        [Demostrar la autenticación de usuario utilizando el servidor LDAP o el inicio de sesión en redes sociales ](https://github.com/IBM/MFP-Auth-LDAP/)
+        [Configurar las notificaciones push basadas en etiquetas](https://github.com/IBM/tag-based-push-notifications)
 
     {: .topicgroup}
     Enlaces relacionados
         [Documentación del producto IBM MobileFirst Platform Foundation V8.0.0](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
         [IBM MobileFirst Platform Developer Center](https://mobilefirstplatform.ibmcloud.com)
-    {: .navgroup-end}
-
-    {: .navgroup id="howto"}
-    c_using_mfs_p1.md
-    c_using_mfs_p5.md
-    c_using_mfs_p2.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
