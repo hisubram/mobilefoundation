@@ -2,25 +2,85 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="mobile-foundation" audience="service" href="/docs/services/mobilefoundation/index.html"}
+{: .toc subcollection="mobile-foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation/index.html" path="services/mobilefoundation"}
 Mobile Foundation
 
     {: .navgroup id="learn"}
     index.md
-    mdoverview.md
+
+    {: .topicgroup}
+    關於
+        mdoverview.md
+        pricing.md
+        release_notes.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    {: .topicgroup}
+    設定 Mobile Foundation
+        c_using_mfs_p1.md
+        c_using_mfs_p2.md
+        c_using_mfs_p5.md
+        plan_migration.md
+        export_import_apps_adapters.md
+
+    {: .topicgroup}
+    取得應用程式見解
+        visualize_insights_on_console.md
+
+    {: .topicgroup}
+    儲存離線資料並同步
+        configure_offline_storage.md
+        sync_data_with_datasource.md
+
+    {: .topicgroup}
+      更新應用程式內容
+          update_web_content_in_app.md
+
+    {: .topicgroup}
+      管理應用程式
+          manage_app_versions.md
+          remote_disable_app_version.md
+          manage_devices.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    {: .topicgroup}
+    API
+        [管理](https://console.stage1.bluemix.net/apidocs/mobile-foundation/mobile-foundation-administration)
+        [Analytics](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)
+        [SDK](services/mobilefoundation/client_sdk_api.html)
+
+    {: .topicgroup}
+    SDK
+        [Android](services/mobilefoundation/android_sdk.html)
+        [iOS](services/mobilefoundation/ios_sdk.html)
+        [Cordova 及 Ionic](services/mobilefoundation/cordova_sdk.html)
+        [React Native](services/mobilefoundation/reactnative_sdk.html)
+        [Windows](services/mobilefoundation/windows_sdk.html)
+        [Web](services/mobilefoundation/web_sdk.html)
     using_cli.md
-    direct_update.md
+
+    {: .topicgroup}
+    範例
+        [使用 JSONStore API 的 Cordova 應用程式](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCordova/tree/release80)
+        [使用 JSONStore API 的原生 iOS 應用程式](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreSwift/tree/release80)
+        [使用 JSONStore API 的原生 Android 應用程式](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAndroid)
+        [JSONStore 程式碼範例](services/mobilefoundation/jsonstore_code_examples.html)
+        [JSONStore 程式碼範例中的安全](services/mobilefoundation/security_utilities.html)
+        [建立自訂直接更新對話框](https://github.com/MobileFirst-Platform-Developer-Center/CustomDirectUpdate/tree/release80)
+
+    {: .topicgroup}
+    程式碼型樣
+        [使用雲端原生後端來開發混合式行動應用程式](https://developer.ibm.com/patterns/develop-hybrid-mobile-app-with-cloud-native-back-end/)
+        [保護離線同步化安全](https://developer.ibm.com/patterns/secure-offline-synchronization-ibm-mobile-foundation/)
+        [使用 LDAP 伺服器或社交登入示範使用者鑑別](https://github.com/IBM/MFP-Auth-LDAP/)
+        [配置標籤型推送通知](https://github.com/IBM/tag-based-push-notifications)
 
     {: .topicgroup}
     相關鏈結
         [IBM MobileFirst Platform Foundation 8.0.0 版產品說明文件](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
         [IBM MobileFirst Platform 開發人員中心](https://mobilefirstplatform.ibmcloud.com)
-    {: .navgroup-end}
-
-    {: .navgroup id="howto"}
-    c_using_mfs_p1.md
-    c_using_mfs_p5.md
-    c_using_mfs_p2.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

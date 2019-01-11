@@ -2,39 +2,44 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-11-27"
 
 ---
 
-#	關於 Mobile Foundation
+#	概觀
 {: #overview_mobilefoundation}
 
-{{site.data.keyword.mobilefoundation_short}} 服務提供一種方式，可在 {{site.data.keyword.Bluemix}} 上快速設定 {{site.data.keyword.mobilefirst}} 伺服器環境。然後，您可以從這個雲端環境中開發、測試及管理行動應用程式。
+{{site.data.keyword.mobilefoundation_short}} 提供適用於「行動」、Web 及「漸進 Web 應用程式 (PWA)」的整合後端功能集。開發人員可以選擇使用其選擇的前端工具或架構，並運用 {{site.data.keyword.mobilefoundation_short}} 服務所提供的豐富後端功能集。{{site.data.keyword.mobilefoundation_short}} SDK 適用於 Cordova、iOS、Android、Xamarin、Windows 10、React Native 及 Mobile Web。 
 
-{{site.data.keyword.mobilefoundation_short}} 提供一種簡單的引導方式，讓使用者在 {{site.data.keyword.Bluemix_notm}} 上設定 {{site.data.keyword.mfserver_short_notm}} <!--in the {{site.data.keyword.containerlong}} -->環境。
+## {{site.data.keyword.mobilefoundation_short}} 提供的重要功能
 
-{{site.data.keyword.mobilefoundation_short}} 是由下列元件組成：
+### 使用者參與
+{: #user_engagement}
 
-*	{{site.data.keyword.mfserver_long_notm}} 是一個行動最佳化中介軟體，可作為應用程式、後端系統與其他雲端型服務之間的閘道。
+建置吸引人的行動應用程式是任何企業的應用程式策略成功的關鍵。使用者參與可以使用推送通知來建置至應用程式。{{site.data.keyword.mobilefoundation_short}} 支援將通知傳送給 iOS、Android 及 Windows 10 裝置。您可以根據感興趣的區域，將通知傳送給所有使用者、一部分的使用者或使用者。相關平台支援互動式及無聲自動通知。個人化是使用者參與的關鍵層面。您可以使用**即時更新**功能，針對特定的使用者區段來分段使用者以及修改應用程式。
 
-*	{{site.data.keyword.mfp_dr_long_notm}}元件以 SDK 形式提供適用於 iOS、Android 及 Windows 的運行環境用戶端應用程式設計介面 (API)。這些 SDK 的設計目的在於加強安全、控管及使用性。
+###  應用程式見解
+{: #app_insights}
 
-*	{{site.data.keyword.mfp_oc_long_notm}}是一種可簡化工作流程的 Web 型使用者介面，讓開發人員及管理者建立、監視、保護以及管理應用程式和配接器。
+取得應用程式使用情形、應用程式行為及使用者行為的見解。取得作業見解以進行疑難排解。檢測應用程式並取得商業見解，而這些可以在伺服器端檢視為自訂圖表。可讓一般使用者使用手勢報告應用程式中的錯誤及問題。
 
-利用 {{site.data.keyword.mobilefoundation_short}}，您可以執行下列功能：
+###  安全架構
+{: #security_framework}
 
-*	使用您偏好的開發方法（原生或混合式），建置任何行動作業環境及裝置的應用程式。
+廣泛的行動頻道特定安全。保護裝置上的資料、API 及品牌，不受駭客及漏洞的攻擊。離線資料加密、防止攔截式攻擊、拒絕存取遺失或遭竊裝置、設定特許作業的額外安全、與現有身分管理解決方案整合、防止進行反向工程應用程式碼等等。
 
-*	連接及同步化行動應用程式與企業資料、應用程式及雲端服務（包括來自 {{site.data.keyword.Bluemix_notm}} 的服務）。
+###  商業邏輯
+{: #business_logic}
 
-*	保護裝置、應用程式、資料及網路層的安全。
+開發並執行伺服器端程式碼，以連接至後端系統。使用 Liberty、NodeJS 或 Swift 運行環境，將商業邏輯建置為微服務。藉由匯入微服務的 Swagger 定義來存取微服務。
 
-*	從單一中央介面管理行動應用程式資料夾，以及使用您最愛的 IDE 及程式庫來開發行動應用程式。
+###  應用程式管理
+{:  #app_management}
 
-*	使用可擴充資料服務來進行線上及離線資料同步化。
+管理應用程式版本，並封鎖過時的應用程式版本。跳過應用程式商店核准，並直接變更 Web 資源。
 
-*	配置所有受支援行動裝置作業系統的統一推送通知。
+###  認知 API
+{:  #cognitive_apis}
 
-您可以搭配使用 {{site.data.keyword.mfp_cli_long_notm}} (CLI) 與 {{site.data.keyword.mobilefoundation_short}}，輕鬆地建立及管理應用程式。
+在行動應用程式中使用 Watson API（*Tone Analyzer、Language Translator、Discovery 或 Conversation*）來建置智慧型應用程式。此整合可協助運用行動頻道安全，並取得對 API 的見解。
 
-<!--{{site.data.keyword.mobilefoundation_short}} service provisions a container in your space in {{site.data.keyword.Bluemix_notm}}. You can see the details of the container that is created, view the container performance, and access the server logs from your {{site.data.keyword.Bluemix_notm}} dashboard.-->
