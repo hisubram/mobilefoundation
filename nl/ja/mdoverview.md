@@ -2,39 +2,44 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-11-27"
 
 ---
 
-#	Mobile Foundation について
+#	概説
 {: #overview_mobilefoundation}
 
-{{site.data.keyword.mobilefoundation_short}} サービスにより、{{site.data.keyword.Bluemix}} 上で {{site.data.keyword.mobilefirst}} サーバー環境を迅速にセットアップする方法が提供されます。 その後、このクラウド環境からモバイル・アプリを開発、テスト、および管理できます。
+{{site.data.keyword.mobilefoundation_short}} は、モバイル・アプリ、Web アプリ、および Progressive Web Apps (PWA) 用の統合されたバックエンド機能セットを提供します。開発者は、選択したフロントエンド・ツールまたはフレームワークを使用でき、{{site.data.keyword.mobilefoundation_short}} サービスが提供する豊富なバックエンド機能セットを活用できます。{{site.data.keyword.mobilefoundation_short}} SDK は、Cordova、iOS、Android、Xamarin、Windows 10、React Native、および Mobile Web で使用可能です。 
 
-{{site.data.keyword.mobilefoundation_short}} は、{{site.data.keyword.Bluemix_notm}} 上に{{site.data.keyword.mfserver_short_notm}} <!--in the {{site.data.keyword.containerlong}} -->環境をセットアップするための簡単な方法をガイド付きでユーザーに提供します。
+## {{site.data.keyword.mobilefoundation_short}} が提供する主な機能
 
-{{site.data.keyword.mobilefoundation_short}} は、以下のコンポーネントで構成されています。
+### ユーザー・エンゲージメント
+{: #user_engagement}
 
-*	{{site.data.keyword.mfserver_long_notm}} は、アプリケーション、バックエンド・システム、およびその他のクラウド・ベース・サービス間のゲートウェイとして機能する、モバイルに最適化されたミドルウェアです。
+魅力的なモバイル・アプリの構築は、あらゆるビジネスのアプリ戦略を成功させるための鍵です。プッシュ通知を使用して、ユーザー・エンゲージメントをアプリに組み込むことができます。{{site.data.keyword.mobilefoundation_short}} は、iOS デバイス、Android デバイス、および Windows 10 デバイスへの通知の送信をサポートします。通知は、すべてのユーザー、ユーザーのサブセット、またはユーザーの関心分野に基づいてそのユーザーのまとまりに送信できます。 対話式通知およびサイレント通知が関連プラットフォーム用にサポートされています。パーソナライズは、ユーザー・エンゲージメントの重要な側面です。ユーザーをセグメント化し、**ライブ・アップデート**機能を使用して特定のユーザー・セグメント用にアプリを調整できます。
 
-*	{{site.data.keyword.mfp_dr_long_notm}} コンポーネントは、ランタイム・クライアントのアプリケーション・プログラミング・インターフェース (API) を SDK の形式で iOS、Android、および Windows 用に提供します。 これらの SDK は、セキュリティー、ガバナンス、およびユーザビリティーを強化するために設計されています。
+###  アプリ洞察
+{: #app_insights}
 
-*	{{site.data.keyword.mfp_oc_long_notm}} は、開発者と管理者がどちらも単純化されたワークフローでアプリケーションとアダプターの作成、モニター、保護、および管理を行うことを可能にする、Web ベースの UI です。
+アプリの使用状況、アプリの動作、およびユーザーの動作についての洞察を得ます。トラブルシューティングのための運用上の洞察を得ます。アプリケーションを計測し、サーバー・サイドでカスタム・グラフとして表示できるビジネス上の洞察を得ます。エンド・ユーザーがジェスチャーを使用してエラーやアプリ内の問題を報告できるようにします。
 
-{{site.data.keyword.mobilefoundation_short}} を使用すると、以下の機能を実行できます。
+###  セキュリティー・フレームワーク
+{: #security_framework}
 
-*	希望する開発アプローチ (ネイティブまたはハイブリッド) を使用して、任意のモバイル・オペレーティング環境とデバイス用のアプリを作成します。
+モバイル・チャネル固有の高度なセキュリティー。デバイス、API、および製品のデータをハッカーや脆弱性から保護します。データ暗号化のオフライン化、中間者攻撃の防止、紛失したデバイスまたは盗難されたデバイスへのアクセスの拒否、特権操作のための追加セキュリティーのセットアップ、既存の ID 管理ソリューションとの統合、アプリケーション・コードのリバース・エンジニアリングからの保護などを行います。
 
-*	モバイル・アプリをエンタープライズ・データ、アプリケーション、およびクラウド・サービス ({{site.data.keyword.Bluemix_notm}} のサービスを含む) と接続して同期します。
+###  ビジネス・ロジック
+{: #business_logic}
 
-*	デバイス、アプリケーション、データ、およびネットワーク層を保護します。
+バックエンド・システムに接続するためのサーバー・サイド・コードを開発して実行します。Liberty、NodeJS、または Swift ランタイムを使用して、ビジネス・ロジックをマイクロサービスとしてビルドします。マイクロサービスに、その swagger 定義をインポートすることによってアクセスします。
 
-*	単一の中央のインターフェースからモバイル・アプリのポートフォリオを管理し、好みの IDE およびライブラリーを使用してモバイル・アプリを開発します。
+###  アプリ管理
+{:  #app_management}
 
-*	オンラインおよびオフラインのデータの同期にスケーラブルなデータ・サービスを使用します。
+アプリケーション・バージョンを管理し、古いアプリケーション・バージョンをブロックします。アプリケーション・ストア承認をスキップし、Web リソースを直接変更します。
 
-*	サポートされるすべてのモバイル・デバイス・オペレーティング・システム用に統合されたプッシュ通知を構成します。
+###  コグニティブ API
+{:  #cognitive_apis}
 
-{{site.data.keyword.mobilefoundation_short}} とともに {{site.data.keyword.mfp_cli_long_notm}} (CLI) を使用して、アプリを簡単に作成して管理できます。
+モバイル・アプリで Watson API (*Tone Analyzer、Language Translator、Discovery、または Conversation*) を使用して、スマートなアプリを作成できます。この統合は、モバイル・チャネル・セキュリティーを活用すること、および API に関する洞察を得ることを支援します。
 
-<!--{{site.data.keyword.mobilefoundation_short}} service provisions a container in your space in {{site.data.keyword.Bluemix_notm}}. You can see the details of the container that is created, view the container performance, and access the server logs from your {{site.data.keyword.Bluemix_notm}} dashboard.-->

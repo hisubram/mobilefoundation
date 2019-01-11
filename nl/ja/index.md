@@ -2,23 +2,26 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-05-30"
+lastupdated:  "2018-11-16"
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
-{:screen:.screen}
-{:codeblock:.codeblock}
+{:screen:  .screen}
+{:codeblock:  .codeblock}
 {:tip: .tip}
+{:note: .note}
 
 # 入門チュートリアル
 {: #gettingstartedtemplate}
 
-{{site.data.keyword.mobilefoundation_long}} は、エンタープライズ・モバイル・アプリの開発、テスト、操作に使用する {{site.data.keyword.mfp_full}} 環境のセットアップを迅速に処理します。 {{site.data.keyword.mobilefoundation_short}} は、「開発者」、「デバイス当たりのプロフェッショナル」、「プロフェッショナル 1 アプリケーション」という、異なるサービス・プランの下で使用可能です。
-{:shortdesc}
+{{site.data.keyword.mobilefoundation_long}} は、エンタープライズ・モバイル・アプリケーションの開発、テスト、および実行に使用できる {{site.data.keyword.mfp_full}} 環境のセットアップを迅速に行えるようにします。{{site.data.keyword.mobilefoundation_short}} には、「開発者」、「デバイス当たりのプロフェッショナル」、「プロフェッショナル 1 アプリケーション」というサービス・プランが用意されています。
+{: shortdesc}
 
-「プロフェッショナル 1 アプリケーション」プランを使用して、Android、iOS、Windows、モバイル Web などの、サポートされるいずれかまたはすべての作動プラットフォームで構築された単一アプリケーションを管理できます。 「開発者」プランは、開発とテストに最適です。 すべての使用可能なプランは [ここ](https://console.bluemix.net/catalog/services/mobile-foundation) で確認できます。
+「プロフェッショナル 1 アプリケーション」プランを使用すると、サポートされる任意のオペレーティング・システム上にビルドされた単一アプリケーションを管理できます。サポートされるオペレーティング・システムは、Android、iOS、Windows、またはモバイル Web です。「開発者」プランは、開発とテストに最適です。 すべての使用可能なプランは [ここ](https://console.bluemix.net/catalog/services/mobile-foundation) で確認できます。
+
+この入門チュートリアルでは、サポートされるプランのいずれかを使用して {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを作成できます。その後、アプリケーションを登録できます。登録されたアプリケーションをダウンロードして編集し、アダプターをデプロイし、最後にアプリケーションをテストします。
 
 ## 始めに
 {: #prereqs}
@@ -28,7 +31,7 @@ lastupdated:  "2018-05-30"
 ## ステップ 1: {{site.data.keyword.mobilefoundation_short}} サービスのインスタンスの作成
 {: #step1create}
 
-1. {{site.data.keyword.Bluemix_notm}} **「カタログ」**で、**「{{site.data.keyword.mobilefoundation_short}}」**を選択します。 サービス構成画面が開きます。
+1. {{site.data.keyword.Bluemix_notm}} ** カタログ**で、[**{{site.data.keyword.mobilefoundation_short}}**](https://{domainName}/catalog/services/mobile-foundation) を選択します。サービス構成画面が開きます。
 2. サービス・インスタンスに名前を付けます。または、事前設定された名前を使用します。
 3. サービス・インスタンスを作成する地域、組織、およびスペースを選択します。
 4. **「価格プラン」**を選択し、**「作成」**をクリックします。
@@ -41,49 +44,49 @@ lastupdated:  "2018-05-30"
 
 {{site.data.keyword.mobilefoundation_short}}: 「開発者」のインスタンスを作成した後、以下のステップを実行することでモバイル・チャネルの作成を開始できます。
 
-* MobileFirst Server に即座にアクセスして作業を行うことができます。
+* Mobile Foundation Server に即座にアクセスして作業を行うことができます。
 
-  この選択により、以下の設定で {{site.data.keyword.mfserver_long_notm}} がプロビジョンされます。
+  この選択により、以下の設定で {{site.data.keyword.mfserver_long_notm}} が作成されます。
   *	1 GB のメモリー。 開発アクティビティー、簡単なテスト・アクティビティー、および小規模な実動ワークロードには、このサイズで十分です。
 
-  * CLI を使用して MobileFirst Server にアクセスするには、IBM Cloud コンソールの左側のナビゲーション・ペインで**「サービス資格情報」**をクリックして表示される、資格情報が必要です。
+  * CLI を使用して Mobile Foundation Server にアクセスするには、IBM Cloud コンソールの左側のナビゲーション・ペインで**「サービス資格情報」**をクリックして表示される、資格情報が必要です。
 
 ### 「{{site.data.keyword.mobilefoundation_short}}: デバイス当たりのプロフェッショナル」プランの場合
 {: #buildchannelprofdeviceplan}
 
 「{{site.data.keyword.mobilefoundation_short}}: デバイス当たりのプロフェッショナル」サービスのインスタンスの作成後に、以下のステップを実行することでモバイル・チャネルの作成を開始できます。
 
-  1.  {{site.data.keyword.Bluemix_notm}} 上の既存の {{site.data.keyword.Db2_on_Cloud_short}} サービスに接続します。
+  1.  {{site.data.keyword.Bluemix_notm}} 上の既存の {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービスに接続します。
 
-      1.  {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `組織`を選択します。
+      1.  {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `組織` を選択します。
 
-      + 選択した`組織`で使用可能なスペースのリストから、{{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `スペース`を選択します。
+      + 選択した`組織`で使用可能なスペースのリストから、{{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `スペース` を選択します。
 
-      + 既存の {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスに接続するための {{site.data.keyword.Db2_on_Cloud_short}} `サービス名` および `資格情報` を選択します。
+      + 既存の {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスに接続するための {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} `サービス名` および`資格情報` を選択します。
 
-      + **「接続のテスト」**をクリックして、選択した {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスへの接続をテストします。
+      + **「接続のテスト」**をクリックして、選択した {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスへの接続をテストします。
 
-      + **「追加」**をクリックした後、選択した {{site.data.keyword.Db2_on_Cloud_short}} サービスについて確認を求めるポップアップ・ウィンドウで**「続行」**をクリックします。 このアクションにより、構成された {{site.data.keyword.Db2_on_Cloud_short}} データベース・サービス・インスタンスで必要な表が作成されます。
+      + **「追加」**をクリックした後、選択した {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービスについて確認を求めるポップアップ・ウィンドウで**「続行」**をクリックします。 このアクションにより、構成された {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} データベース・サービス・インスタンスで必要な表が作成されます。
 
-      > **注:** {{site.data.keyword.Db2_on_Cloud_short}} 接続を {{site.data.keyword.mobilefoundation_short}} インスタンスに追加した後は、それを変更することはできません。
-
+      {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} 接続を {{site.data.keyword.mobilefoundation_short}} インスタンスに追加した後は、それを変更することはできません。
+      {: note} 
   2.  サーバーを作成して始動します。
 
       1. デフォルト構成を使用して {{site.data.keyword.mobilefirst_notm}} サーバー・インスタンスを作成します。**「基本サーバーの始動」**をクリックします。
 
       + この選択により、以下の設定で {{site.data.keyword.mfserver_long_notm}} がプロビジョンされます。
-          -  2 個のノード (それぞれ 1 GB のメモリーを装備)。 開発アクティビティー、中程度のテスト・アクティビティー、および小規模な実動ワークロードには、このサイズが適しています。
+          - 2 個のノード (それぞれ 1 GB のメモリーを装備)。 開発アクティビティー、中程度のテスト・アクティビティー、および小規模な実動ワークロードには、このサイズが適しています。
 
           -	`ユーザー名`と`パスワード`は、自動的に生成されます。 サーバーの稼働中にこれらにアクセスできます。
 
-          サーバーのプロビジョン・プロセスが始動します。 このプロセスには約 10 分かかり、メッセージ・ウィンドウにはこの操作の進行が示されます。 完了すると、以下のことを確認できるダッシュボードが表示されます。
+          サーバーを作成するプロセスが開始されます。このプロセスには約 10 分かかり、メッセージ・ウィンドウにはこの操作の進行が示されます。 完了すると、以下のことを確認できるダッシュボードが表示されます。
             -	実行中のサーバーの状況 (状態、サイズ)。
             -	サーバーの経路が作成されます。 {{site.data.keyword.mfserver_short_notm}} に接続するには、モバイル・アプリケーションでこの経路を使用します。
             -	{{site.data.keyword.mfp_oc_short_notm}} にアクセスするための個人の`ユーザー名` と`パスワード`。 `パスワード` は非表示です。 表示するには**「パスワードの表示」**アイコンをクリックします。
 
       +	**「コンソールの起動」**をクリックして {{site.data.keyword.mfp_oc_short_notm}} を開きます。      
 
-      トポロジー、セキュリティー、およびその他のサーバー構成について拡張構成を使用して {{site.data.keyword.mobilefirst_notm}} サーバー・インスタンスを作成するには、**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**をクリックします。 詳しくは、[拡張構成のセットアップ](c_using_mfs_p4.html#using_mfs_advanced_p4)を参照してください。
+      トポロジー、セキュリティー、およびその他のサーバー構成について拡張構成を使用して {{site.data.keyword.mobilefirst_notm}} サーバー・インスタンスを作成するには、**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**をクリックします。 詳しくは、[拡張構成のセットアップ](c_using_mfs_p5.html#using_mfs_advanced_p5)を参照してください。
       {: tip}
 
 ### {{site.data.keyword.mobilefoundation_short}}: 「1 つの商用アプリケーション」プランの場合
@@ -91,19 +94,20 @@ lastupdated:  "2018-05-30"
 
 「{{site.data.keyword.mobilefoundation_short}}: プロフェッショナル 1 アプリケーション」サービスのインスタンスの作成後に、以下のステップを実行することでモバイル・チャネルの作成を開始できます。
 
-  1.  {{site.data.keyword.Bluemix_notm}} 上の既存の {{site.data.keyword.Db2_on_Cloud_long}} サービスに接続します。
+  1.  {{site.data.keyword.Bluemix_notm}} 上の既存の {{site.data.keyword.Db2_on_Cloud_long}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL_full}} サービスに接続します。
 
-      1.  {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `組織`を選択します。
+      1.  {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `組織` を選択します。
 
-      + 選択した`組織`で使用可能なスペースのリストから、{{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `スペース`を選択します。
+      + 選択した`組織`で使用可能なスペースのリストから、{{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `スペース` を選択します。
 
-      + 既存の {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスに接続するための {{site.data.keyword.Db2_on_Cloud_short}} `サービス名` および `資格情報` を選択します。
+      + 既存の {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスに接続するための {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} `サービス名` および`資格情報` を選択します。
 
-      + **「接続のテスト」**をクリックして、選択した {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスへの接続をテストします。
+      + **「接続のテスト」**をクリックして、選択した {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスへの接続をテストします。
 
-      + **「追加」**をクリックした後、選択した {{site.data.keyword.Db2_on_Cloud_short}} サービスについて確認を求めるポップアップ・ウィンドウで**「続行」**をクリックします。 このアクションにより、構成された {{site.data.keyword.Db2_on_Cloud_short}} データベース・サービス・インスタンスで必要な表が作成されます。
+      + **「追加」**をクリックした後、選択した {{site.data.keyword.Db2_on_Cloud_short}} または {{site.data.keyword.composeForPostgreSQL}} サービスについて確認を求めるポップアップ・ウィンドウで**「続行」**をクリックします。 このアクションにより、構成された {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} データベース・サービス・インスタンスで必要な表が作成されます。
 
-      > **注:** {{site.data.keyword.Db2_on_Cloud_short}} 接続を {{site.data.keyword.mobilefoundation_short}} インスタンスに追加した後は、それを変更することはできません。
+      {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} 接続を {{site.data.keyword.mobilefoundation_short}} インスタンスに追加した後は、それを変更することはできません。
+      {: note}
 
   2.  サーバーを作成して始動します。
 
@@ -113,7 +117,7 @@ lastupdated:  "2018-05-30"
 
       + `ユーザー名` と `パスワード` は自動的に生成されます。 サーバーの稼働中にこれらにアクセスできます。  
 
-        サーバーのプロビジョン・プロセスが始動します。 このプロセスには約 10 分かかり、メッセージ・ウィンドウにはこの操作の進行が示されます。 完了すると、以下のことを確認できるダッシュボードが表示されます。
+        サーバーを作成するプロセスが開始されます。このプロセスには約 10 分かかり、メッセージ・ウィンドウにはこの操作の進行が示されます。 完了すると、以下のことを確認できるダッシュボードが表示されます。
           -	実行中のサーバーの状況 (状態、サイズ)。
           -	サーバーの経路が作成されます。 {{site.data.keyword.mfserver_short_notm}} に接続するには、モバイル・アプリケーションでこの経路を使用します。
           -	{{site.data.keyword.mfp_oc_short_notm}} にアクセスするための個人の`ユーザー名` と`パスワード`。 `パスワード` は非表示です。 表示するには**「パスワードの表示」**アイコンをクリックします。
@@ -124,14 +128,14 @@ lastupdated:  "2018-05-30"
       {: tip}
 
 {{site.data.keyword.mobilefoundation_short}} の使用の開始について詳しくは、[Using the Mobile Foundation service to set up MobileFirst Server (Mobile Foundation サービスを使用した、MobileFirst Server のセットアップ)![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window}を参照してください。
-{: tip}
+{: note}
 
 ## ステップ 3: アプリケーションの {{site.data.keyword.mobilefoundation_short}} への登録
 {: #registerapp}
 
-Mobile Foundation サーバー・インスタンスを作成して始動した後、次の手順に従って、Android アプリケーションを登録できます。
+Mobile Foundation サーバー・インスタンスを作成して始動した後、次の手順を実行して Android アプリケーションを登録できます。
 
-  1.  URL: `http://<your-server-host>:<server-port>/mfpconsole` をロードして、{{site.data.keyword.mfp_oc_short_notm}} を起動します。プロビジョニング時に生成された`ユーザー名`と`パスワード`を使用します。
+  1.  URL: `http://<your-server-host>:<server-port>/mfpconsole` をロードして、{{site.data.keyword.mfp_oc_short_notm}} を呼び出します。 プロビジョニング時に生成された`ユーザー名`と`パスワード`を使用します。
 
   + {{site.data.keyword.mfp_oc_short_notm}} **「ダッシュボード」**で、**「アプリケーション」**の横にある**「新規」**をクリックします。
 
@@ -200,7 +204,7 @@ Mobile Foundation サーバー・インスタンスを作成して始動した�
                     }
 
                     @Override
-                    public void onFailure(WLFailResponse wlFailResponse) {
+            public void onFailure(WLFailResponse wlFailResponse) {
                         Log.i("MobileFirst Quick Start", "Failure: " + wlFailResponse.getErrorMsg());
                     }
                 });
@@ -235,8 +239,8 @@ Mobile Foundation サーバー・インスタンスを作成して始動した�
    {: tip}
 
   2. Android Studio で、**「アプリの実行 (Run App)」**をクリックします。
-     * デバイス・エミュレーターにアプリが起動したことが示されます。
-     * 起動したアプリケーションの**「MobileFirst Server の ping (Ping MobileFirst Server)」**ボタンをクリックします。「`Connected to MobileFirst Server`」が表示されます。
+     * デバイス・エミュレーターにアプリが開始したことが示されます。
+     * アプリケーションの**「MobileFirst Server の ping (Ping MobileFirst Server)」**をクリックします。「`Connected to MobileFirst Server`」が表示されます。
      * アプリケーションが MobileFirst Server に接続できた場合は、デプロイした Java アダプターを使用してリソース要求呼び出しが行われます。
      * その後、アダプターの応答は、Android Studio の LogCat ビューに出力されます。
 
@@ -244,7 +248,9 @@ Mobile Foundation サーバー・インスタンスを作成して始動した�
 ## 次のステップ
 {: #nextsteps}
 
-[Quick Start チュートリアル ![外部リンク・アイコン](../../icons/launch-glyph.svg "Quick Start チュートリアル")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} に従って、さらに多くのサンプル・アプリケーションを操作したり {{site.data.keyword.mobilefoundation_short}} の機能を検討したりすることができます。 Quick Start には、iOS、Android、Web、Cordova、Windows、Xamarin の各アプリの {{site.data.keyword.mobilefoundation_short}} の動作を説明するチュートリアルがあります。
+[Quick Start チュートリアル ![外部リンク・アイコン](../../icons/launch-glyph.svg "Quick Start チュートリアル")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} に従って、さらに多くのサンプル・アプリケーションを操作したり {{site.data.keyword.mobilefoundation_short}} の機能を検討したりすることができます。
+
+Quick Start には、iOS、Android、Web、Cordova、Windows、React Native、Ionic、Xamarin の各アプリの {{site.data.keyword.mobilefoundation_short}} の動作を説明するチュートリアルがあります。
 
 # 関連リンク
 {: #rellinks  notoc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-05-04"
+lastupdated:  "2018-11-19"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated:  "2018-05-04"
 
 {{ site.data.keyword.mobilefoundation_short }} には、{{site.data.keyword.mobilefoundation_short}} クライアント成果物およびサーバー成果物を簡単に管理するための、開発者向けのコマンド・ライン・インターフェース (CLI) ツール **mfpdev** が用意されています。
 
-すべての `mfpdev` コマンドは、対話モードまたは直接モードで実行できます。対話モードでは、そのコマンドに必要なパラメーターの入力を求めるプロンプトが出され、いくつかのデフォルト値が使用されます。直接モードでは、実行するコマンドと一緒にパラメーターを指定する必要があります。
+すべての `mfpdev` コマンドは、対話モードまたは直接モードで実行できます。 対話モードでは、コマンドに必要なパラメーターの入力を求めるプロンプトが出され、一部ではデフォルト値が使用されます。直接モードでは、実行するコマンドと一緒にパラメーターを指定する必要があります。
 
 
 ## {{site.data.keyword.mobilefoundation_short}} CLI のインストール
@@ -25,31 +25,64 @@ lastupdated:  "2018-05-04"
 
 {{site.data.keyword.mobilefoundation_short}} は、NPM パッケージとして [NPM レジストリー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.npmjs.com){: new_window} で入手できます。
 
-NPM パッケージをインストールするために **node.js** と **npm** がインストールされていることを確認します。**node.js** をインストールするには、[nodejs.org ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://nodejs.org/){: new_window} のインストール手順に従ってください。**node.js** が適切にインストールされていることを確認するには、以下のコマンドを実行します。
+NPM パッケージをインストールするため、**node.js** および **npm** がインストール済みであることを確認してください。**node.js** をインストールするには、[nodejs.org ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://nodejs.org/){: new_window} のインストール手順に従ってください。 **node.js** が正しくインストールされているかどうかを確認するには、以下のコマンドを実行します。
 ```
 node -v
 ```
 {: codeblock}
 
-> **注:** サポートされている node.js の最小バージョンは **4.2.3** です。また、急速に進化している node と npm のパッケージでは、{{site.data.keyword.mobilefoundation_short}} CLI は、最新バージョンも含めて、node と npm のすべての利用可能なバージョンで完全には機能しない可能性があります。CLI が適切に機能するように、node がバージョン **6.11.1** であり、npm のバージョンが **3.10.10** であるようにしてください。
+> **注:** サポートされている node.js の最小バージョンは **4.2.3** です。 また、急速に進化している node と npm のパッケージでは、{{site.data.keyword.mobilefoundation_short}} CLI は、最新バージョンも含めて、node と npm のすべての利用可能なバージョンで完全には機能しない可能性があります。 CLI が適切に機能するように、node がバージョン **6.11.1** であり、npm のバージョンが **3.10.10** であるようにしてください。
+
+> MobileFirst CLI 暫定修正バージョン *8.0.2018100112* 以上では、Node バージョン 8.x または 10.x を使用できます。
 
 {{site.data.keyword.mobilefoundation_short}} CLI をインストールするには、以下のコマンドを実行します。
 ```
-npm install -g mfpdev-cli
+npm install -g mfpdev-cli 
 ```
 {: codeblock}
 
-CLI の .zip ファイルを MobileFirst Operations Console のダウンロード・センターからダウンロードした場合は、次のコマンドを使用します。
+CLI の圧縮ファイル (*.zip*) を MobileFirst Operations Console のダウンロード・センターからダウンロードした場合は、次のコマンドを使用します。
 ```
-npm install -g <path-to-mfpdev-cli.tgz>
+npm install -g <path-to-mfpdev-cli.tgz> 
 ```
 {: codeblock}
 
-オプションの依存関係を使用しないで CLI をインストールするには、`--no-optional` フラグを追加します。
+オプションの従属関係を含めずに CLI をインストールするには、`--no-optional` フラグを追加して、次のようにします。
 ```
 npm install -g --no-optional path-to-mfpdev-cli.tgz
 ```
 {: codeblock}
+
+Node 8 を使用して MobileFirst CLI をインストールしているときに、端末ウィンドウに以下のエラーのいくつかが表示されることがあります。
+```
+> node-gyp rebuild
+
+gyp ERR! clean error 
+gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/bufferutil
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok 
+
+> utf-8-validate@1.2.2 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+> node-gyp rebuild
+
+gyp ERR! clean error 
+gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok 
+
+> fsevents@1.2.4 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/fsevents
+> node install
+```
+
+このエラーの原因は、[node-gyp の既知のバグ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/nodejs/node-gyp/issues/1547){: new_window} です。これらのエラーは、MobileFirst CLI の機能に影響を与えないため無視できます。この問題は `mfpdev-cli` 暫定修正レベル *8.0.2018100112* 以降に適用されます。このエラーに対処するには、インストール時に `--no-optional` フラグを使用します。
 
 CLI が正しくインストールされていることを確認するには、以下のコマンドを実行します。
 ```
@@ -106,7 +139,7 @@ mfpdev config
 ```
 {: codeblock}
 
-オペレーティング・システム、メモリー使用量、ノード・バージョン、コマンド・ライン・インターフェースのバージョンなど、環境に関する情報を表示します。現行ディレクトリーが Cordova アプリケーションである場合、Cordova の `cordova info` コマンドで提供される情報も表示されます。
+オペレーティング・システム、メモリー使用量、ノード・バージョン、コマンド・ライン・インターフェースのバージョンなど、環境に関する情報を表示します。 現行ディレクトリーが Cordova アプリケーションである場合、Cordova の `cordova info` コマンドで提供される情報も表示されます。
 
 ```
 mfpdev info
@@ -144,7 +177,7 @@ mfpdev -no-color
 ### mfpdev help
 {: #mfpdev_help}
 
-MobileFirst CLI (mfpdev) コマンドのヘルプを表示します。引数としてコマンド名を指定すると、各コマンド・タイプまたは各コマンドの詳細なヘルプ・テキストが表示されます。例えば、`mfpdev help server add` のように入力します。
+MobileFirst CLI (mfpdev) コマンドのヘルプを表示します。 引数としてコマンド名を指定すると、各コマンド・タイプまたは各コマンドの詳細なヘルプ・テキストが表示されます。 例えば、`mfpdev help server add` のように入力します。
 
 ```
 mfpdev help <command name>
@@ -162,21 +195,21 @@ mfpdev app register
 ```
 {: codeblock}
 
-デフォルトの使用ではないサーバーとランタイムにアプリケーションを登録するには、以下のようにします。
+デフォルトではないサーバーおよびランタイムにアプリケーションを登録するには、以下のようにします。
 
 ```
 mfpdev app register <server> <runtime>
 ```
 {: codeblock}
 
-Cordova Windows プラットフォームの場合、`-w <platform>` 引数をコマンドに追加する必要があります。platform 引数は、登録する Windows プラットフォームのコンマ区切りリストです。有効な値は windows、windows8、および windowsphone8 です。
+Cordova Windows プラットフォームの場合、`-w <platform>` 引数をコマンドに追加する必要があります。 platform 引数は、登録する Windows プラットフォームのコンマ区切りリストです。 有効な値は windows、windows8、および windowsphone8 です。
 
 ```
 mfpdev app register -w windows8
 ```
 {: codeblock}
 
-アプリケーションで使用するバックエンド・サーバーおよびランタイムを指定できます。さらに、Cordova アプリケーションの場合、システム・メッセージのデフォルト言語やチェックサム・セキュリティー検査を実行するかどうかなどのさまざまな側面も構成できます。Cordova アプリケーションでは、その他の構成パラメーターが含まれます。
+アプリケーションで使用するバックエンド・サーバーおよびランタイムを指定できます。 Cordova アプリケーションの場合、このコマンドを使用すると、システム・メッセージのデフォルト言語やチェックサム・セキュリティー検査を実行するかどうかなど、さらにいくつかの側面を構成できます。Cordova アプリケーションでは、その他の構成パラメーターが含まれます。
 
 ```
 mfpdev app config
@@ -197,21 +230,21 @@ mfpdev app push
 ```
 {: codeblock}
 
-ターゲット・プラットフォーム・タイプの実際のデバイスがなくても Cordova アプリケーションをプレビューできます。モバイル・ブラウザー・シミュレーターか Web ブラウザーのいずれかでプレビューを表示できます。
+ターゲット・プラットフォーム・タイプの実際のデバイスがなくても Cordova アプリケーションをプレビューできます。 モバイル・ブラウザー・シミュレーターか Web ブラウザーのいずれかでプレビューを表示できます。
 
 ```
 mfpdev app preview
 ```
 {: codeblock}
 
-www ディレクトリーに入っているアプリケーション・リソースを、ダイレクト・アップデート・プロセスで使用できる .zip ファイルにパッケージします。
+www ディレクトリーにあるアプリケーション・リソースを、ダイレクト・アップデート・プロセスで使用できる圧縮 (*.zip*) ファイルにパッケージ化します。
 
 ```
 mfpdev app webupdate
 ```
 {: codeblock}
 
-このコマンドにより、更新された Web リソースが .zip ファイルにパッケージ化され、登録済みのデフォルトの MobileFirst Server にアップロードされます。パッケージ化された Web リソースは、`[cordova-project-root-folder]/mobilefirst/` フォルダー内にあります。
+このコマンドにより、更新された Web リソースが圧縮 (*.zip*) ファイルにパッケージ化され、登録済みのデフォルトの MobileFirst Server にアップロードされます。 パッケージ化された Web リソースは、`[cordova-project-root-folder]/mobilefirst/` フォルダー内にあります。
 
 Web リソースを別のサーバー・インスタンスにアップロードするには、コマンドの一部としてサーバー名とランタイムを指定します。
 
@@ -220,7 +253,7 @@ mfpdev app webupdate <server_name> <runtime>
 ```
 {: codeblock}
 
-–build パラメーターを使用すると、パッケージ化された Web リソースで .zip ファイルを生成し、サーバーへのアップロードは行いません。
+–build パラメーターを使用すると、パッケージ化された Web リソースが含まれた圧縮 (*.zip*) ファイルを、サーバーにアップロードすることなく生成できます。
 ```
 mfpdev app webupdate --build
 ```
@@ -249,7 +282,7 @@ mfpdev server info
 ```
 {: codeblock}
 
-新規サーバー定義を環境に追加します。
+サーバー定義を環境に追加します。
 
 ```
 mfpdev server add
