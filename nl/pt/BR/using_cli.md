@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-05-04"
+lastupdated:  "2018-11-19"
 
 ---
 
@@ -15,10 +15,9 @@ lastupdated:  "2018-05-04"
 #	CLI do {{ site.data.keyword.mobilefoundation_short }}
 {: #using_mobilefoundation_cli}
 
-O {{ site.data.keyword.mobilefoundation_short }} fornece uma ferramenta Interface da linha de comandos (CLI) para o desenvolvedor **mfpdev** para gerenciar facilmente os artefatos do cliente e do servidor do {{site.data.keyword.mobilefoundation_short}}.
+{{ site.data.keyword.mobilefoundation_short }} fornece uma ferramenta de Interface da Linha de Comandos (CLI) para o desenvolvedor **mfpdev**, para gerenciar facilmente os artefatos do cliente e do servidor do {{site.data.keyword.mobilefoundation_short}}.
 
-Todos os comandos `mfpdev` podem ser executados no modo interativo ou direto. No modo interativo, os
-parâmetros necessários para o comando serão solicitados e alguns valores padrão serão usados. No modo direto, os parâmetros devem ser fornecidos com o comando que estiver sendo executado.
+Todos os comandos `mfpdev` podem ser executados no modo interativo ou direto. Os parâmetros necessários para o comando serão solicitados e alguns valores padrão serão usados no modo interativo. No modo direto, os parâmetros devem ser fornecidos junto com o comando.
 
 
 ## Instalando o {{site.data.keyword.mobilefoundation_short}} CLI
@@ -26,8 +25,7 @@ parâmetros necessários para o comando serão solicitados e alguns valores padr
 
 O {{site.data.keyword.mobilefoundation_short}} está disponível como um pacote de NPM no [registro de NPM ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.npmjs.com){: new_window}.
 
-Certifique-se de que **node.js** e **npm** estejam instalados para instalar os pacotes NPM. Siga as instruções de instalação em [nodejs.org ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://nodejs.org/){: new_window} para instalar o **node.js**. Para confirmar que o **node.js** está instalado corretamente,
-execute o seguinte comando:
+Assegure-se de que **node.js** e **npm** estejam instalados para instalar pacotes NPM. Siga as instruções de instalação em [nodejs.org ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://nodejs.org/){: new_window} para instalar o **node.js**. Para confirmar se o **node.js** está instalado corretamente, execute o comando a seguir:
 ```
 -v nó
 ```
@@ -35,15 +33,17 @@ execute o seguinte comando:
 
 > **Nota:** a versão de node.js mínima suportada é **4.2.3**. Além disso, com a rápida evolução do nó e dos pacotes npm, a CLI do {{site.data.keyword.mobilefoundation_short}} pode não ser totalmente funcional com todas as versões disponíveis de nó e npm, incluindo as versões mais recentes. Certifique-se de que o nó esteja na versão **6.11.1** e que a versão de npm seja **3.10.10** para o funcionamento adequado da CLI.
 
+> Para a correção temporária da CLI do MobileFirst versões *8.0.2018100112* e superior, é possível usar o Node versões 8.x ou 10.x.
+
 Para instalar a CLI do {{site.data.keyword.mobilefoundation_short}}, execute o seguinte comando:
 ```
--g instala npm mfpdev-cli
+-g instala npm mfpdev-cli 
 ```
 {: codeblock}
 
-Se o arquivo .zip da CLI foi transferido por download do centro de download do MobileFirst Operations Console, use o seguinte comando:
+Se o arquivo compactado da CLI (*.zip*) foi transferido por download por meio do Centro de Download do MobileFirst Operations Console, use o comando a seguir:
 ```
-npm install -g <path-to-mfpdev-cli.tgz>
+npm install -g <path-to-mfpdev-cli.tgz> 
 ```
 {: codeblock}
 
@@ -52,6 +52,35 @@ Para instalar a CLI sem dependências opcionais, inclua a sinalização `--no-op
 -g instala npm -- sem caminho opcional-to-mfpdev-cli.tgz
 ```
 {: codeblock}
+
+Ao instalar a CLI do MobileFirst usando o Node 8, você pode ver alguns dos erros a seguir na janela do terminal:
+```
+> node-gyp rebuild
+
+gyp ERR! clean error gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/bufferutil
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok 
+
+> utf-8-validate@1.2.2 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+> node-gyp rebuild
+
+gyp ERR! clean error gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok 
+
+> fsevents@1.2.4 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/fsevents
+> node install
+```
+
+Esse erro é devido a um [erro conhecido no nó-gyp ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/nodejs/node-gyp/issues/1547){: new_window}. Esses erros podem ser ignorados já que isso não afeta o funcionamento da CLI do MobileFirst. Esse problema é aplicável para o nível de correção temporária `mfpdev-cli` *8.0.2018100112* e superior. Para superar esse erro, use a sinalização `--no-optional` durante a instalação.
 
 Para confirmar que a CLI está instalada corretamente, execute o seguinte comando:
 ```
@@ -69,9 +98,9 @@ A ajuda da CLI será impressa como saída.
      mfpdev <command> [opções]
 
  DESCRIÇÃO
-     A interface da linha de comandos (CLI) do IBM MobileFirst Foundation é uma linha de comandos para desenvolver aplicativos MobileFirst. 
-A linha de comandos pode ser usada sozinha ou em conjunto com o IBM MobileFirst Foundation Operations Console. Algumas funções estão
+     A interface da linha de comandos (CLI) do IBM MobileFirst Foundation é uma linha de comandos para desenvolver aplicativos MobileFirst. A linha de comandos pode ser usada sozinha ou em conjunto com o IBM MobileFirst Foundation Operations Console. Algumas funções estão
 disponíveis somente da linha de comandos e não do console.
+
      Para obter mais informações e um exemplo passo a passo do uso da CLI, consulte o IBM Knowledge Center para a sua versão do IBM
 MobileFirst Foundation em https://www.ibm.com/support/knowledgecenter.
      ...
@@ -149,8 +178,7 @@ Cor-Não mfpdev
 ### Mfpdev ajuda
 {: #mfpdev_help}
 
-Exibe ajuda para comandos da CLI (mfpdev) do MobileFirst. Com o nome do comando como um argumento, ela exibe texto de
-ajuda mais específico para cada tipo de comando ou comando. Por exemplo, `mfpdev helpserver add`.
+Exibe ajuda para comandos da CLI (mfpdev) do MobileFirst. Com o nome do comando como um argumento, isso exibe texto de ajuda mais específico para cada tipo de comando ou comando. Por exemplo, `mfpdev helpserver add`.
 
 ```
 mfpdev help <command name>
@@ -168,15 +196,14 @@ Registro do aplicativo mfpdev
 ```
 {: codeblock}
 
-Para registrar um aplicativo para um servidor e tempo de execução que não sejam o uso padrão:
+Para registrar um app em um servidor não padrão e no tempo de execução, use:
 
 ```
 mfpdev app register <server> <runtime>
 ```
 {: codeblock}
 
-Para a plataforma Windows Cordova, o argumento `-w <platform>` deve ser incluído no comando. O argumento da
-plataforma é uma lista separada por vírgula das plataformas Windows a serem registradas. Os valores válidos são Windows, windows8 e
+Para a plataforma Windows Cordova, o argumento `-w <platform>` deve ser incluído no comando. O argumento da plataforma é uma lista separada por vírgula das plataformas Windows a serem registradas. Os valores válidos são Windows, windows8 e
 windowsphone8.
 
 ```
@@ -184,9 +211,7 @@ Mfpdev aplicativo registrar -w windows8
 ```
 {: codeblock}
 
-Permite especificar o servidor de backend e o tempo de execução a serem usados para o seu aplicativo. Além disso, para
-aplicativos Cordova, permite configurar vários aspectos adicionais, tais como o idioma padrão para mensagens do sistema e se uma
-verificação de segurança de soma de verificação será executada. Outros parâmetros de configuração são incluídos para aplicativos Cordova.
+Permite especificar o servidor de backend e o tempo de execução a serem usados para o seu aplicativo. Para apps Cordova, esse comando permite configurar vários aspectos adicionais, como o idioma padrão para mensagens do sistema e se deve fazer uma verificação de segurança de soma de verificação. Outros parâmetros de configuração são incluídos para aplicativos Cordova.
 
 ```
 Configapp mfpdev
@@ -214,15 +239,14 @@ mfpdev app preview
 ```
 {: codeblock}
 
-Empacota os recursos de aplicativo contidos no diretório www em um arquivo .zip que pode ser usado para o processo de
-atualização direta.
+Empacota os recursos de aplicativo presentes no diretório www em um arquivo compactado (*.zip*) que pode ser usado para o processo de atualização direta.
 
 ```
 Webupdate app mfpdev
 ```
 {: codeblock}
 
-Esse comando compacta os recursos da web atualizados para um arquivo .zip e faz upload dele para o servidor MobileFirst padrão registrado. Os recursos da web empacotados podem ser localizados na pasta `[cordova-project-root-folder]/mobilefirst/`.
+Esse comando empacotará os recursos da web atualizados para um arquivo compactado (*.zip*) e fará upload dele para o MobileFirst Server padrão registrado. Os recursos da web empacotados podem ser localizados na pasta `[cordova-project-root-folder]/mobilefirst/`.
 
 Para fazer upload dos recursos da web para a instância do servidor diferente, forneça o nome do servidor e o tempo de
 execução como parte do comando:
@@ -232,8 +256,7 @@ mfpdev app webupdate <server_name> <runtime>
 ```
 {: codeblock}
 
-É possível usar o parâmetro -build para gerar o arquivo .zip com os recursos da web compactados sem carregá-lo
-para um servidor.
+É possível usar o parâmetro -build para gerar o arquivo compactado (*.zip*) com os recursos da web empacotados sem fazer upload dele para um servidor.
 ```
 Webupdate app mfpdev -- compilação
 ```
@@ -245,7 +268,7 @@ Webupdate aplicativo mfpdev -- arquivo mobilefirst/com.ibm.test-android-1.0.0.zi
 ```
 {: codeblock}
 
-Há também a opção de criptografar o conteúdo do pacote utilizando o parâmetro -encrypt:
+Há também a opção de criptografar o conteúdo do pacote usando o parâmetro -encrypt:
 ```
 Webupdate aplicativo mfpdev -- encrypt
 ```
@@ -262,7 +285,7 @@ Informações do servidor mfpdev
 ```
 {: codeblock}
 
-Inclui uma nova definição de servidor para o seu ambiente.
+Inclui uma definição do servidor em seu ambiente.
 
 ```
 Servidor mfpdev add
@@ -374,7 +397,7 @@ Comando de adaptador mfpdev
 ```
 {: codeblock}
 
-## Atualizando e Desinstalando {{site.data.keyword.mobilefoundation_short}} CLI
+## Atualizando e desinstalando a CLI do {{site.data.keyword.mobilefoundation_short}}
 {: #update_uninstall_mf_cli}
 
 Para atualizar a interface da linha de comandos, execute o comando:

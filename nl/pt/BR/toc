@@ -2,25 +2,85 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="mobile-foundation" audience="service" href="/docs/services/mobilefoundation/index.html"}
+{: .toc subcollection="mobile-foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation/index.html" path="services/mobilefoundation"}
 Mobile Foundation
 
     {: .navgroup id="learn"}
     index.md
-    mdoverview.md
+
+    {: .topicgroup}
+    Sobre
+        mdoverview.md
+        pricing.md
+        release_notes.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    {: .topicgroup}
+    Configurar o Mobile Foundation
+        c_using_mfs_p1.md
+        c_using_mfs_p2.md
+        c_using_mfs_p5.md
+        plan_migration.md
+        export_import_apps_adapters.md
+
+    {: .topicgroup}
+    Obter insights do aplicativo
+        visualize_insights_on_console.md
+
+    {: .topicgroup}
+    Armazenar dados off-line e sincronizar
+        configure_offline_storage.md
+        sync_data_with_datasource.md
+
+    {: .topicgroup}
+      Atualizando seu conteúdo de app
+          update_web_content_in_app.md
+
+    {: .topicgroup}
+      Gerenciar aplicativo
+          manage_app_versions.md
+          remote_disable_app_version.md
+          manage_devices.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    {: .topicgroup}
+    API
+        [Administração](https://console.stage1.bluemix.net/apidocs/mobile-foundation/mobile-foundation-administration)
+        [Analytics](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)
+        [SDK](services/mobilefoundation/client_sdk_api.html)
+
+    {: .topicgroup}
+    SDKs
+        [Android](services/mobilefoundation/android_sdk.html)
+        [iOS](services/mobilefoundation/ios_sdk.html)
+        [Cordova e Ionic](services/mobilefoundation/cordova_sdk.html)
+        [React Native](services/mobilefoundation/reactnative_sdk.html)
+        [Windows](services/mobilefoundation/windows_sdk.html)
+        [Web](services/mobilefoundation/web_sdk.html)
     using_cli.md
-    direct_update.md
+
+    {: .topicgroup}
+    Amostras
+        [Aplicativo Cordova usando as APIs JSONStore](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCordova/tree/release80)
+        [Aplicativo iOS nativo usando as APIs JSONStore](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreSwift/tree/release80)
+        [Aplicativo Android nativo usando as APIs JSONStore](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAndroid)
+        [Amostras de código do JSONStore](services/mobilefoundation/jsonstore_code_examples.html)
+        [Segurança em amostras de código do JSONStore](services/mobilefoundation/security_utilities.html)
+        [Criar diálogo customizado de Direct Update](https://github.com/MobileFirst-Platform-Developer-Center/CustomDirectUpdate/tree/release80)
+
+    {: .topicgroup}
+    Padrões de código
+        [Desenvolver app móvel híbrido com back-end nativo de nuvem](https://developer.ibm.com/patterns/develop-hybrid-mobile-app-with-cloud-native-back-end/)
+        [Sincronização off-line segura](https://developer.ibm.com/patterns/secure-offline-synchronization-ibm-mobile-foundation/)
+        [Demonstrar a autenticação do usuário usando o servidor LDAP ou login social](https://github.com/IBM/MFP-Auth-LDAP/)
+        [Configurar notificações push baseadas em tag](https://github.com/IBM/tag-based-push-notifications)
 
     {: .topicgroup}
     Links relacionados
         [Documentação do produto IBM MobileFirst Platform Foundation V8.0.0](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
         [IBM MobileFirst Platform Developer Center](https://mobilefirstplatform.ibmcloud.com)
-    {: .navgroup-end}
-
-    {: .navgroup id="howto"}
-    c_using_mfs_p1.md
-    c_using_mfs_p5.md
-    c_using_mfs_p2.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
