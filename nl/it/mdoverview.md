@@ -2,39 +2,44 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-01-18"
+lastupdated:  "2018-11-27"
 
 ---
 
-#	Informazioni su Mobile Foundation
+#	Panoramica
 {: #overview_mobilefoundation}
 
-Il servizio {{site.data.keyword.mobilefoundation_short}} fornisce un modo per impostare rapidamente un ambiente {{site.data.keyword.mobilefirst}} Server su{{site.data.keyword.Bluemix}}. Puoi quindi sviluppare, testare e gestire applicazioni mobili da questo ambiente cloud.
+{{site.data.keyword.mobilefoundation_short}} fornisce un set integrato di funzionalità di backend per le applicazioni mobili, web e PWA (Progressive Web App). Gli sviluppatori possono scegliere di utilizzare framework o strumenti di front-end di loro scelta e avvalersi del set completo di funzionalità di backend fornito dal servizio {{site.data.keyword.mobilefoundation_short}}. Gli SDK {{site.data.keyword.mobilefoundation_short}} sono disponibili per Cordova, iOS, Android, Xamarin, Windows 10, React Native e Web mobile. 
 
-{{site.data.keyword.mobilefoundation_short}} fornisce agli utenti un modo facile e guidato per impostare l'ambiente {{site.data.keyword.mfserver_short_notm}} <!--in the {{site.data.keyword.containerlong}} --> su {{site.data.keyword.Bluemix_notm}}.
+## Funzionalità chiave offerte da {{site.data.keyword.mobilefoundation_short}}
 
-{{site.data.keyword.mobilefoundation_short}} è costituito dai seguenti componenti:
+### Coinvolgimento dell'utente
+{: #user_engagement}
 
-*	{{site.data.keyword.mfserver_long_notm}} è un middleware ottimizzato per i dispositivi mobili che funge da gateway tra applicazioni, sistemi di backend e altri servizi basati sul cloud.
+la creazione di applicazioni mobili coinvolgenti è la chiave per il successo di una strategia dell'applicazione per qualsiasi attività di business. Il coinvolgimento dell'utente può essere integrato nelle applicazioni utilizzando le notifiche di push. {{site.data.keyword.mobilefoundation_short}} supporta l'invio di notifiche a dispositivi iOS, Android e Windows 10. Le notifiche possono essere inviate a tutti gli utenti, a un sottoinsieme di utenti oppure agli utenti in base allo loro area di interesse. Le notifiche interattive e non interattive sono supportate per le piattaforme pertinenti. La personalizzazione è l'aspetto chiave del coinvolgimento dell'utente. Puoi segmentare gli utenti e personalizzare le applicazioni per gli specifici segmenti di utenti con la funzionalità **Live Update**.
 
-*	I componenti di {{site.data.keyword.mfp_dr_long_notm}} offrono delle API (application programming interface) del client di runtime nel formato di SDK per iOS, Android e Windows. Tali SDK sono progettati per migliorare sicurezza, governance e utilizzabilità.
+###  Informazioni approfondite sulle applicazioni
+{: #app_insights}
 
-*	{{site.data.keyword.mfp_oc_long_notm}} è un'interfaccia utente basata sul web che abilita dei flussi di lavoro semplificati sia per lo sviluppatore che per l'amministratore per creare, monitorare, proteggere e amministrare applicazioni e adattatori.
+Ottieni informazioni approfondite sull'utilizzo delle applicazioni, sulla modalità di funzionamento delle applicazioni e sul comportamento degli utenti. Ottieni informazioni approfondite operative per la risoluzione dei problemi. Dota di strumentazione l'applicazione e ottieni informazioni approfondite sull'attività di business, che possono essere visualizzate come grafici personalizzati sul lato server. Abilita gli utenti finali a segnalare errori e problemi interni all'applicazione con un gesto.
 
-Con {{site.data.keyword.mobilefoundation_short}}, puoi eseguire le seguenti funzioni:
+###  Framework di sicurezza
+{: #security_framework}
 
-*	Creare applicazioni per tutti i dispositivi e gli ambienti operativi mobili con il tuo approccio di sviluppo preferito: nativo o ibrido.
+Sicurezza specifica per il canale mobile completa. Proteggi i dati sul dispositivo, le API e il tuo marchio da hacker e vulnerabilità. La crittografia dei dati offline impedisce gli attacchi di tipo man-in-the-middle, rifiuta l'accesso ai dispositivi persi o rubali, configura della sicurezza aggiuntiva per le operazioni privilegiate, si integra con le soluzioni di gestione dell'identità esistenti, protegge dal codice applicativo di retroingegnerizzazione e molto altro ancora.
 
-*	Connettere e sincronizzare le applicazioni mobili con dati dell'azienda, applicazioni e servizi cloud, inclusi i servizi da {{site.data.keyword.Bluemix_notm}}.
+###  Logica di business
+{: #business_logic}
 
-*	Proteggere il dispositivo, l'applicazione, i dati e la connettività.
+Sviluppa ed esegui il codice lato server per stabilire una connessione ai tuoi sistemi di backend. Crea la logica di business come microservizi utilizzando runtime Liberty, NodeJS o Swift. Accedi ai microservizi importandone la definizione swagger.
 
-*	Gestire il tuo portfolio dell'applicazione mobile da una sola interfaccia centrale e sviluppare le applicazioni mobili utilizzando le tue IDE e librerie preferite.
+###  Gestione delle applicazioni
+{:  #app_management}
 
-*	Utilizzare servizi di dati scalabili per la sincronizzazione dei dati online e offline.
+Gestisci le versioni dell'applicazione e blocca le versioni dell'applicazione obsolete. Salta l'approvazione dell'app store e modifica le tue risorse web direttamente.
 
-*	Configurare notifiche push unificate per tutti i sistemi operativi di dispositivo mobile supportati.
+###  API cognitive
+{:  #cognitive_apis}
 
-Puoi utilizzare la CLI ({{site.data.keyword.mfp_cli_long_notm}}) con {{site.data.keyword.mobilefoundation_short}} per creare e gestire facilmente le applicazioni.
+Crea delle applicazioni smart utilizzando le API Watson (*Tone Analyzer, Language Translator, Discovery o Conversation*) nelle tue applicazioni mobili. Questa integrazione aiuta a sfruttare la sicurezza del canale mobile e a ottenere informazioni approfondite sulle API.
 
-<!--{{site.data.keyword.mobilefoundation_short}} service provisions a container in your space in {{site.data.keyword.Bluemix_notm}}. You can see the details of the container that is created, view the container performance, and access the server logs from your {{site.data.keyword.Bluemix_notm}} dashboard.-->

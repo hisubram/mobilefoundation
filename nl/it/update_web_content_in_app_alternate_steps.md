@@ -1,0 +1,45 @@
+---
+
+copyright:
+  years: 2018
+lastupdated: "2018-12-21"
+
+---
+
+{:shortdesc: .shortdesc}
+{:new_window: target="_blank"}
+{:note: .note}
+{:tip: .tip}
+{:pre: .pre}
+{:codeblock: .codeblock}
+{:screen: .screen}
+
+# Procedura alternativa per aggiornare i contenuti web nella tua applicazione
+{: #alternate_steps_to_update_app_web_content}
+
+Di seguito sono elencati alcuni dei modi alternativi per aggiornare i contenuti web nella tua applicazione.
+
+* Crea il file `.zip` e caricalo in un altro server Mobile Foundation: `mfpdev app webupdate [server-name] [runtime-name]`.
+  Ad esempio:
+  ```bash
+  mfpdev app webupdate myQAServer MyBankApps
+  ```
+
+* Carica un file `.zip` precedentemente generato: `mfpdev app webupdate [server-name] [runtime-name] --file [path-to-packaged-web-resources]`.
+  Ad esempio:
+  ```bash
+  mfpdev app webupdate myQAServer MyBankApps --file mobilefirst/ios/com.mfp.myBankApp-1.0.1.zip
+  ```
+
+* Carica manualmente le risorse web impacchettate nel server Mobile Foundation:
+  1. Crea il file .zip senza caricarlo:
+      ```bash
+      mfpdev app webupdate --build
+      ```
+      {: pre}
+  2. Carica la Mobile Foundation Operations Console e fai clic sulla voce dell'applicazione.
+  3. Fai clic su **Carica il file delle risorse web** per caricare le risorse web impacchettate.    
+      ![Carica il file .zip dell'aggiornamento diretto dalla console](images/upload-direct-update-package.png)
+
+Immetti il comando `mfpdev help app webupdate` per ulteriori informazioni.
+{: tip}

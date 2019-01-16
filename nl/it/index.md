@@ -2,23 +2,26 @@
 
 copyright:
   years: 2016, 2018
-lastupdated:  "2018-05-30"
+lastupdated:  "2018-11-16"
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
-{:screen:.screen}
-{:codeblock:.codeblock}
+{:screen:  .screen}
+{:codeblock:  .codeblock}
 {:tip: .tip}
+{:note: .note}
 
 # Esercitazione introduttiva
 {: #gettingstartedtemplate}
 
-{{site.data.keyword.mobilefoundation_long}} accelera la configurazione di un ambiente {{site.data.keyword.mfp_full}} utilizzando il quale è possibile sviluppare, testare e utilizzare applicazioni mobili aziendali. {{site.data.keyword.mobilefoundation_short}} è disponibile nei seguenti piani di servizio: Developer, Professional Per Device e Professional 1 Application.
-{:shortdesc}
+{{site.data.keyword.mobilefoundation_long}} accelera la configurazione di un ambiente {{site.data.keyword.mfp_full}} che ti consente di sviluppare, testare ed eseguire applicazioni mobili aziendali. {{site.data.keyword.mobilefoundation_short}} offre i seguenti diversi piani di servizio: Developer, Professional Per Device e Professional 1 Application.
+{: shortdesc}
 
-Mediante il piano Professional 1 Application è possibile gestire una singola applicazione creata on una o tutte le piattaforme operative supportate quali  Android, iOS, Windows o Web mobili. Il piano Developer è consigliato per lo sviluppo e le operazioni di test. Puoi rivedere tutti i piani disponibili [qui](https://console.bluemix.net/catalog/services/mobile-foundation).
+Utilizzando il piano Professional 1 Application è possibile gestire una singola applicazione basata su uno qualsiasi dei sistemi operativi supportati. I sistemi operativi supportati sono Android, iOS, Windows o web mobile. Il piano Developer è consigliato per lo sviluppo e le operazioni di test. Puoi rivedere tutti i piani disponibili [qui](https://console.bluemix.net/catalog/services/mobile-foundation).
+
+Questa esercitazione introduttiva ti consente di creare un'istanza del servizio {{site.data.keyword.mobilefoundation_short}} con uno dei piani supportati. Quindi, puoi registrare un'applicazione. Scarica e modifica l'applicazione registrata, distribuisci un adattatore e infine verifica l'applicazione.
 
 ## Prima di iniziare
 {: #prereqs}
@@ -28,7 +31,7 @@ Avrai bisogno di un account {{site.data.keyword.Bluemix}} e di un'istanza del se
 ## Passo 1: crea un'istanza del servizio {{site.data.keyword.mobilefoundation_short}}
 {: #step1create}
 
-1. Nel **Catalogo** {{site.data.keyword.Bluemix_notm}}, seleziona **{{site.data.keyword.mobilefoundation_short}}**. Viene aperta la schermata di configurazione del servizio.
+1. Nel **catalogo** {{site.data.keyword.Bluemix_notm}}, seleziona [**{{site.data.keyword.mobilefoundation_short}}**](https://{domainName}/catalog/services/mobile-foundation). Viene aperta la schermata di configurazione del servizio.
 2. Fornisci un nome alla tua istanza del servizio o utilizza un nome preimpostato.
 3. Scegli la regione, l'organizzazione e lo spazio in cui desideri creare l'istanza del servizio.
 4. Seleziona il tuo **Piano dei prezzi** e fai clic su **Crea**.
@@ -41,42 +44,42 @@ Avrai bisogno di un account {{site.data.keyword.Bluemix}} e di un'istanza del se
 
 Dopo che hai creato un'istanza di {{site.data.keyword.mobilefoundation_short}}: Developer, puoi iniziare a creare il tuo canale mobile completando la seguente procedura.
 
-* Puoi accedere e utilizzare immediatamente il server MobileFirst.
+* Puoi accedere e lavorare immediatamente con il server Mobile Foundation.
 
-  Questa selezione fornisce un {{site.data.keyword.mfserver_long_notm}} con le seguenti impostazioni:
+  Questa selezione crea un {{site.data.keyword.mfserver_long_notm}} con le seguenti impostazioni:
   *	1 GB di memoria. Questa dimensione è sufficiente per lo sviluppo, per delle attività leggere di test e i carichi di lavoro di produzione su piccola scala.
 
-  * Per accedere al server MobileFirst utilizzando la CLI avrai bisogno delle credenziali, che sono disponibili quando fai clic su **Credenziali del servizio** dal pannello di navigazione di sinistra della console IBM Cloud.
+  * Per accedere al server Mobile Foundation utilizzando la CLI ti serviranno le credenziali, che sono disponibili quando fai clic su **Credenziali del servizio** dal pannello di navigazione a sinistra della console IBM Cloud.
 
 ### Per il piano {{site.data.keyword.mobilefoundation_short}}: Professional Per Device
 {: #buildchannelprofdeviceplan}
 
 Dopo che hai creato un'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device, puoi iniziare a creare il tuo canale mobile completando la seguente procedura.
 
-  1.  Connettiti a un servizio {{site.data.keyword.Db2_on_Cloud_short}} esistente su {{site.data.keyword.Bluemix_notm}}.
+  1.  Connettiti a un servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} esistente su {{site.data.keyword.Bluemix_notm}}.
 
-      1.  Seleziona l'`Organizzazione` {{site.data.keyword.Bluemix_notm}} dove è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}.
+      1.  Seleziona l'`Organizzazione` {{site.data.keyword.Bluemix_notm}} in cui è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}}.
 
-      + Seleziona lo `Spazio`  {{site.data.keyword.Bluemix_notm}} in cui è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, dall'elenco di spazi disponibili nell'`Organizzazione` selezionata.
+      + Seleziona lo `Spazio` {{site.data.keyword.Bluemix_notm}} in cui è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}}, dall'elenco di spazi disponibili nell'`Organizzazione` selezionata.
 
-      + Seleziona il `Nome servizio` e le `Credenziali` {{site.data.keyword.Db2_on_Cloud_short}} per connetterti all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} esistente.
+      + Seleziona il `Nome servizio` e le `Credenziali` di {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} per connetterti all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} esistente.
 
-      + Verifica la connessione all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} selezionata facendo clic su **Verifica connessione**.
+      + Verifica la connessione all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} selezionata facendo clic su **Verifica connessione**.
 
-      + Fai clic su **Aggiungi** e poi su **Continua** nella finestra a comparsa che richiede la conferma sul servizio {{site.data.keyword.Db2_on_Cloud_short}} selezionato. Questa azione crea le tabelle richieste nell'istanza del servizio database {{site.data.keyword.Db2_on_Cloud_short}} configurato.
+      + Fai clic su **Aggiungi** e quindi su **Continua** nella finestra a comparsa che richiede conferma sul servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} selezionato. Questa azione crea le tabelle richieste nell'istanza del servizio database {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} configurata.
 
-      > **Nota:** dopo aver aggiunto una connessione {{site.data.keyword.Db2_on_Cloud_short}} all'istanza {{site.data.keyword.mobilefoundation_short}} non ti sarà possibile modificarla.
-
+      Dopo aver aggiunto una connessione {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} all'istanza {{site.data.keyword.mobilefoundation_short}}, non potrai modificarla.
+      {: note} 
   2.  Crea e avvia il server.
 
       1. Crea un'istanza del server {{site.data.keyword.mobilefirst_notm}} con la configurazione predefinita, fai clic su **Avvia server di base**.
 
       + Questa selezione fornisce un {{site.data.keyword.mfserver_long_notm}} con le seguenti impostazioni:
-          -  2 nodi con 1 GB di memoria ognuno. Questa dimensione è buona per lo sviluppo, per delle attività moderate di test e i carichi di lavoro di produzione su piccola scala.
+          - Due nodi con 1 GB di memoria ciascuno. Questa dimensione è buona per lo sviluppo, per delle attività moderate di test e i carichi di lavoro di produzione su piccola scala.
 
           -	Il `nome utente` e la `password` ti vengono generati automaticamente. Disporrai dell'accesso ad essi quando il server è avviato e in esecuzione.
 
-          Viene avviato il processo di provisioning del tuo server. Questo processo impiega circa 10 minuti e una finestra di messaggio
+          Inizia il processo di creazione del tuo server. Questo processo impiega circa 10 minuti e una finestra di messaggio
 indica l'avanzamento di questa operazione. Al suo completamento, viene visualizzato un dashboard
 dove puoi vedere:
             -	Lo stato del tuo server in esecuzione (stato, dimensione).
@@ -85,7 +88,7 @@ dove puoi vedere:
 
       +	Fai clic su **Avvia console** per aprire {{site.data.keyword.mfp_oc_short_notm}}.      
 
-      Per creare un'istanza del server {{site.data.keyword.mobilefirst_notm}} con la configurazione avanzata per topologia, sicurezza e altra configurazione del server, fai clic su **Avvia server con la configurazione avanzata**. Vedi [Impostazione della configurazione avanzata](c_using_mfs_p4.html#using_mfs_advanced_p4) per ulteriori informazioni.
+      Per creare un'istanza del server {{site.data.keyword.mobilefirst_notm}} con la configurazione avanzata per topologia, sicurezza e altra configurazione del server, fai clic su **Avvia server con la configurazione avanzata**. Vedi [Impostazione della configurazione avanzata](c_using_mfs_p5.html#using_mfs_advanced_p5) per ulteriori informazioni.
       {: tip}
 
 ### Per il piano {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application
@@ -93,19 +96,20 @@ dove puoi vedere:
 
 Dopo che hai creato un'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, puoi iniziare a creare il tuo canale mobile completando la seguente procedura.
 
-  1.  Connettiti a un servizio {{site.data.keyword.Db2_on_Cloud_long}} esistente su {{site.data.keyword.Bluemix_notm}}.
+  1.  Connettiti a un servizio {{site.data.keyword.Db2_on_Cloud_long}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL_full}} esistente su {{site.data.keyword.Bluemix_notm}}.
 
-      1.  Seleziona l'`Organizzazione` {{site.data.keyword.Bluemix_notm}} dove è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}.
+      1.  Seleziona l'`Organizzazione` {{site.data.keyword.Bluemix_notm}} in cui è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}}.
 
-      + Seleziona lo `Spazio`  {{site.data.keyword.Bluemix_notm}} in cui è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, dall'elenco di spazi disponibili nell'`Organizzazione` selezionata.
+      + Seleziona lo `Spazio` {{site.data.keyword.Bluemix_notm}} in cui è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}}, dall'elenco di spazi disponibili nell'`Organizzazione` selezionata.
 
-      + Seleziona il `Nome servizio` e le `Credenziali` {{site.data.keyword.Db2_on_Cloud_short}} per connetterti all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} esistente.
+      + Seleziona il `Nome servizio` e le `Credenziali` di {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} per connetterti all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} esistente.
 
-      + Verifica la connessione all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} selezionata facendo clic su **Verifica connessione**.
+      + Verifica la connessione all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} selezionata facendo clic su **Verifica connessione**.
 
-      + Fai clic su **Aggiungi** e poi su **Continua** nella finestra a comparsa che richiede la conferma sul servizio {{site.data.keyword.Db2_on_Cloud_short}} selezionato. Questa azione crea le tabelle richieste nell'istanza del servizio database {{site.data.keyword.Db2_on_Cloud_short}} configurato.
+      + Fai clic su **Aggiungi** e quindi su **Continua** nella finestra a comparsa che richiede conferma sul servizio {{site.data.keyword.Db2_on_Cloud_short}} o {{site.data.keyword.composeForPostgreSQL}} selezionato. Questa azione crea le tabelle richieste nell'istanza del servizio database {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} configurata.
 
-      > **Nota:** dopo aver aggiunto una connessione {{site.data.keyword.Db2_on_Cloud_short}} all'istanza {{site.data.keyword.mobilefoundation_short}} non ti sarà possibile modificarla.
+      Dopo aver aggiunto una connessione {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} all'istanza {{site.data.keyword.mobilefoundation_short}}, non potrai modificarla.
+      {: note}
 
   2.  Crea e avvia il server.
 
@@ -116,7 +120,7 @@ Dopo che hai creato un'istanza del servizio {{site.data.keyword.mobilefoundation
       + Il `nome utente` e la `password` ti vengono generati
 automaticamente. Disporrai dell'accesso ad essi quando il server è avviato e in esecuzione.  
 
-        Viene avviato il processo di provisioning del tuo server. Questo processo impiega circa 10 minuti e una finestra di messaggio
+        Inizia il processo di creazione del tuo server. Questo processo impiega circa 10 minuti e una finestra di messaggio
 indica l'avanzamento di questa operazione. Al suo completamento, viene visualizzato un dashboard
 dove puoi vedere:
           -	Lo stato del tuo server in esecuzione (stato, dimensione).
@@ -129,14 +133,14 @@ dove puoi vedere:
       {: tip}
 
 Vai a [Using the Mobile Foundation service to set up MobileFirst Server ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window} per ulteriori informazioni introduttive a {{site.data.keyword.mobilefoundation_short}}.
-{: tip}
+{: note}
 
 ## Passo 3: registra la tua applicazione in {{site.data.keyword.mobilefoundation_short}}
 {: #registerapp}
 
-Dopo aver creato e avviato la tua istanza del server Mobile Foundation, puoi seguire le seguenti istruzioni per registrare un'applicazione Android.
+Dopo aver creato e avviato la tua istanza del server Mobile Foundation, puoi completare la seguente procedura per registrare un'applicazione Android.
 
-  1.  Avvia {{site.data.keyword.mfp_oc_short_notm}} caricando l'URL: `http://<your-server-host>:<server-port>/mfpconsole`. Utilizza il `nomeutente` e la `password` generate durante il provisioning.
+  1.  Richiama {{site.data.keyword.mfp_oc_short_notm}} caricando l'URL: `http://<your-server-host>:<server-port>/mfpconsole`. Utilizza il `nomeutente` e la `password` generate durante il provisioning.
 
   + Nel **Dashboard** {{site.data.keyword.mfp_oc_short_notm}}, fai clic su **Nuovo** accanto a **Applicazioni**.
 
@@ -160,7 +164,7 @@ Dopo aver creato e avviato la tua istanza del server Mobile Foundation, puoi seg
 ## Passo 5: modifica l'applicazione di esempio
 {: #editapp}
 
-  1. Importa l'applicazione Android di esempio scaricata, dal precedente passo, in Android Studio.
+  1. Importa l'applicazione Android di esempio scaricata, dal passo precedente, in Android Studio.
 
   + Dal menu della barra laterale **Progetto** in Android Studio, seleziona il file **app → java → com.ibm.mfpstarterandroid → ServerConnectActivity.java**.
 
@@ -240,8 +244,8 @@ Dopo aver creato e avviato la tua istanza del server Mobile Foundation, puoi seg
    {: tip}
 
   2. Fai clic su **Esegui applicazione** in Android Studio.
-     * Visualizzerai l'applicazione avviata in un emulatore di dispositivo.
-     * Fai clic sul pulsante **Esegui ping del server MobileFirst** nella tua applicazione avviata, sarà visualizzato `Connected to MobileFirst Server`.
+     * Vedrai l'applicazione avviata su un emulatore di dispositivo.
+     * Fai clic su **Esegui ping del server MobileFirst** nella tua applicazione e verrà quindi visualizzato `Connected to MobileFirst Server`.
      * Se l'applicazione è riuscita a collegarsi al server MobileFirst, avrà luogo una chiamata di richiesta della risorsa utilizzando l'adattatore Java distribuito.
      * La risposta dell'adattatore viene quindi stampata nella vista LogCat di Android Studio.
 
@@ -249,7 +253,9 @@ Dopo aver creato e avviato la tua istanza del server Mobile Foundation, puoi seg
 ## Passi successivi
 {: #nextsteps}
 
-Puoi seguire le [Quick Start tutorials ![Icona link esterno](../../icons/launch-glyph.svg "Quick Start tutorials")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} per utilizzare più applicazioni di esempio e per esplorare l'utilizzo di {{site.data.keyword.mobilefoundation_short}}. Quick Start dispone di esercitazioni che illustrano l'utilizzo di {{site.data.keyword.mobilefoundation_short}} per le applicazioni iOS, Android, Web, Cordova, Windows e Xamarin.
+Puoi seguire le [Quick Start tutorials ![Icona link esterno](../../icons/launch-glyph.svg "Quick Start tutorials")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} per utilizzare più applicazioni di esempio e per esplorare l'utilizzo di {{site.data.keyword.mobilefoundation_short}}.
+
+Quick Start dispone di esercitazioni che illustrano l'utilizzo di {{site.data.keyword.mobilefoundation_short}} per le applicazioni iOS, Android, Web, Cordova, Windows, React Native, Ionic e Xamarin.
 
 # Link correlati
 {: #rellinks  notoc}
