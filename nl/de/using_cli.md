@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated:  "2018-05-04"
+lastupdated:  "2018-11-19"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated:  "2018-05-04"
 
 {{ site.data.keyword.mobilefoundation_short }} bietet eine Befehlszeilenschnittstelle (Command Line Interface, CLI) als Werkzeug für Entwickler-**mfpdev** zur einfachen Verwaltung der {{site.data.keyword.mobilefoundation_short}}-Client- und Serverartefakte.
 
-Alle `mfpdev`-Befehle können entweder im interaktiven oder im Direktmodus ausgeführt werden. Im interaktiven Modus werden Sie zur Eingabe der für den Befehl erforderlichen Parameter aufgefordert und es werden einige Standardwerte verwendet. Im Direktmodus müssen die Parameter mit dem jeweils ausgeführten Befehl angegeben werden.
+Alle `mfpdev`-Befehle können entweder im interaktiven oder im Direktmodus ausgeführt werden. Im interaktiven Modus werden Sie zur Eingabe der für den Befehl erforderlichen Parameter aufgefordert und es werden einige Standardwerte verwendet. Im Direktmodus müssen die Parameter zusammen mit dem Befehl angegeben werden. 
 
 
 ## {{site.data.keyword.mobilefoundation_short}}-CLI installieren
@@ -25,7 +25,7 @@ Alle `mfpdev`-Befehle können entweder im interaktiven oder im Direktmodus ausge
 
 {{site.data.keyword.mobilefoundation_short}} ist als NPM-Paket in der [NPM-Registry ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.npmjs.com){: new_window} verfügbar.
 
-Stellen Sie sicher, dass **node.js** und **npm** installiert sind, damit die NPM-Pakete installiert werden. Befolgen Sie die Installationsanweisungen unter [nodejs.org ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://nodejs.org/){: new_window} für die Installation von **node.js**. Um zu überprüfen, ob **node.js** ordnungsgemäß installiert ist, führen Sie den folgenden Befehl aus:
+Stellen Sie sicher, dass **node.js** und **npm** installiert sind, um NPM-Pakete zu installieren. Befolgen Sie die Installationsanweisungen unter [nodejs.org ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://nodejs.org/){: new_window} für die Installation von **node.js**. Um zu überprüfen, ob **node.js** ordnungsgemäß installiert ist, führen Sie den folgenden Befehl aus:
 ```
 node -v
 ```
@@ -33,15 +33,17 @@ node -v
 
 > **Hinweis:** Die unterstützte Node.js-Mindestversion ist **4.2.3**. Zudem funktioniert die {{site.data.keyword.mobilefoundation_short}}-CLI angesichts der sich häufig ändernden Node.js- und NPM-Pakete möglicherweise nicht mit allen verfügbaren Knoten- und NPM-Versionen, auch nicht allen neuesten Versionen. Stellen Sie sicher, dass der Knoten die Version **6.11.1** und NPM die Version **3.10.10** hat, damit die CLI gut funktioniert.
 
+> Für die Version *8.0.2018100112* und höher des vorläufigen Fixes für die MobileFirst-CLI können Sie die Node-Versionen 8.x oder 10.x verwenden. 
+
 Um die {{site.data.keyword.mobilefoundation_short}}-CLI zu installieren, führen Sie den folgenden Befehl aus:
 ```
-npm install -g mfpdev-cli
+npm install -g mfpdev-cli 
 ```
 {: codeblock}
 
-Wenn die ZIP-Datei für die CLI vom Download-Center der MobileFirst Operations Console heruntergeladen wurde, verwenden Sie den folgenden Befehl:
+Wenn die komprimierte CLI-Datei (*.zip*) vom Download-Center der MobileFirst Operations Console heruntergeladen wurde, verwenden Sie den folgenden Befehl:
 ```
-npm install -g <path-to-mfpdev-cli.tgz>
+npm install -g <path-to-mfpdev-cli.tgz> 
 ```
 {: codeblock}
 
@@ -50,6 +52,37 @@ Um die CLI ohne optionale Abhängigkeiten zu installieren, fügen Sie das Flag `
 npm install -g --no-optional path-to-mfpdev-cli.tgz
 ```
 {: codeblock}
+
+Bei der Installation der MobileFirst-CLI mithilfe von Node 8 werden im Terminalfenster möglicherweise einige der folgenden Fehler angezeigt: 
+```
+> node-gyp rebuild
+
+gyp ERR! clean error
+gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/bufferutil
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok
+
+> utf-8-validate@1.2.2 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+> node-gyp rebuild
+
+gyp ERR! clean error
+gyp ERR! stack Error: EACCES: permission denied, rmdir 'build'
+gyp ERR! System Darwin 18.0.0
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /usr/local/lib/node_modules/mfpdev-cli/node_modules/utf-8-validate
+gyp ERR! node -v v8.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok
+
+> fsevents@1.2.4 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/fsevents
+> node install
+```
+
+Dieser Fehler wird durch einen [bekannten Programmfehler in node-gyp ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/nodejs/node-gyp/issues/1547){: new_window} verursacht. Diese Fehler können ignoriert werden, da sie sich nicht auf die Funktionsweise der MobileFirst-CLI auswirken. Dieses Problem bezieht sich auf das vorläufige Fix Version *8.0.2018100112* und höher von `mfpdev-cli`. Verwenden Sie während der Installation das Flag `--no-optional`, um diesen Fehler zu beheben. 
 
 Um zu überprüfen, ob die **CLI** korrekt installiert ist, führen Sie den folgenden Befehl aus:
 ```
@@ -162,21 +195,21 @@ mfpdev app register
 ```
 {: codeblock}
 
-Um eine App bei einem Server und einer Laufzeit zu registrieren, der/die kein Standardserver bzw. keine Standardlaufzeit, gehen Sie folgendermaßen vor:
+Um eine App bei einem Server und einer Laufzeit zu registrieren, der/die kein Standardserver bzw. keine Standardlaufzeit ist, gehen Sie folgendermaßen vor:
 
 ```
 mfpdev app register <server> <runtime>
 ```
 {: codeblock}
 
-Bei einer Cordova-Windows-Plattform muss dem Befehl das Argument `-w <platform>` hinzugefügt werden. Das Plattform-Argument ist eine durch Kommas getrennte Liste der zu registrierenden Windows-Plattformen. Gültige Werte sind windows, windows8 und windowsphone8.
+Bei einer Cordova-Windows-Plattform muss dem Befehl das Argument `-w <platform>` hinzugefügt werden. Das Plattformargument ist eine durch Kommas getrennte Liste der zu registrierende Windows-Plattformen. Gültige Werte sind windows, windows8 und windowsphone8.
 
 ```
 mfpdev app register -w windows8
 ```
 {: codeblock}
 
-Ermöglicht die Angabe des Back-End-Servers und der Laufzeit, der/die für Ihre App verwendet werden soll. Zusätzlich ermöglicht der Befehl bei Cordova-Apps das Konfigurieren mehrerer zusätzlicher Aspekte wie z. B. die Standardsprache für Systemnachrichten und ob eine Kontrollsummen-Sicherheitsprüfung durchgeführt werden soll. Weitere Konfigurationsparameter sind für Cordova-Apps enthalten.
+Ermöglicht die Angabe des Back-End-Servers und der Laufzeit, der/die für Ihre App verwendet werden soll. Bei Cordova-Apps ermöglicht der Befehl das Konfigurieren mehrerer zusätzlicher Aspekte wie z. B. die Standardsprache für Systemnachrichten und ob eine Kontrollsummen-Sicherheitsprüfung durchgeführt werden soll. Weitere Konfigurationsparameter sind für Cordova-Apps enthalten.
 
 ```
 mfpdev app config
@@ -204,14 +237,14 @@ mfpdev app preview
 ```
 {: codeblock}
 
-Packt die Anwendungsressourcen im www.Verzeichnis in eine ZIP-Datei, die für den direkten Aktualisierungsprozess verwendet werden kann.
+Packt die Anwendungsressourcen im www.Verzeichnis in eine komprimierte Datei (*.zip*), die für den direkten Aktualisierungsprozess verwendet werden kann. 
 
 ```
 mfpdev app webupdate
 ```
 {: codeblock}
 
-Dieser Befehl packt die aktualisierten Webressourcen in eine ZIP-Datei und lädt diese an den registrierten Standard-MobileFirst Server hoch. Die gepackten Webressourcen sind im Ordner `[cordova-project-root-folder]/mobilefirst/` zu finden.
+Dieser Befehl packt die aktualisierten Webressourcen in eine komprimierte Datei (*.zip*) und lädt diese an den registrierten Standard-MobileFirst Server hoch. Die gepackten Webressourcen sind im Ordner `[cordova-project-root-folder]/mobilefirst/` zu finden.
 
 Um die Webressourcen an eine andere Serverinstanz hochzuladen, geben Sie den Servernamen und die Laufzeit als Teil des Befehls an:
 
@@ -220,7 +253,7 @@ mfpdev app webupdate <server_name> <runtime>
 ```
 {: codeblock}
 
-Sie können den Parameter –build zum Generieren der ZIP-Datei mit den gepackten Webressourcen verwenden, ohne sie an einen Server hochzuladen.
+Sie können den Parameter –build zum Generieren der komprimierten Datei (*.zip*) mit den gepackten Webressourcen verwenden, ohne sie an einen Server hochzuladen.
 ```
 mfpdev app webupdate --build
 ```
@@ -232,7 +265,7 @@ mfpdev app webupdate --file mobilefirst/com.ibm.test-android-1.0.0.zip
 ```
 {: codeblock}
 
-Es gibt auch die Option, den Inhalt des Pakets mit dem Parameter –encrypt zu verschlüsseln:
+Es gibt auch die Option, den Inhalt des Pakets mit dem Parameter -encrypt zu verschlüsseln:
 ```
 mfpdev app webupdate --encrypt
 ```
@@ -249,7 +282,7 @@ mfpdev server info
 ```
 {: codeblock}
 
-Fügt eine neue Serverdefinition zu Ihrer Umgebung hinzu.
+Fügt eine Serverdefinition zu Ihrer Umgebung hinzu. 
 
 ```
 mfpdev server add
