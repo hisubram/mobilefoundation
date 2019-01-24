@@ -82,7 +82,7 @@ Mobile Foundation
     Related links
         [IBM MobileFirst Platform Foundation V8.0.0 product documentation](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
         [IBM MobileFirst Platform Developer Center](https://mobilefirstplatform.ibmcloud.com)
-        [IBM Cloud Blog](https://www.ibm.com/blogs/bluemix/)        
+        [IBM Cloud Blog - Mobile](https://www.ibm.com/blogs/bluemix/?s=Mobile)        
     {: .navgroup-end}
 
     {: .navgroup id="help"}
