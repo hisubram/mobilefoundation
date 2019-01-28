@@ -21,7 +21,13 @@ Building engaging mobile apps is the key to the success of an app strategy for a
 ###  App Insights
 {: #app_insights}
 
-Obtain insights on app usage, app behaviour and user behaviour. Get operational insights for troubleshooting. Instrument the app and obtain business insights, which can be viewed as custom charts on the server side. Enable end users to report errors and issues in-app with a gesture.
+To keep your user engagement relevant and active you must obtain insights into how your application is performing with users.   The Mobile Analytics feature of Mobile Foundation provides this capability with in-built visualizations (charts and tables).  With very minimal instrumentation of your application you can readily visualize, on the Mobile Analytics console, actionable insights such as:
+- **User Onboarding Patterns**: Do you have new users onboarding, do you have existing users returning to your application?
+- **Usage Patterns**: At what times is your application most and least used, is it meeting it's business relevance in this regard?
+- **Backend Performance**: What are the most used functions of your backend systems and what has been their response time and stability, is there a need to re-balance your backend?
+- **Application Stability**: How stable has been your application over time and if there has been crashes what are the causes (crash logs), should your application design / implementation be fixed?
+- **In-App User Experience**: What is the actual interactive experience your users are undergoing while they use the app and how do they feel, should you revisit your user-study?
+- **Custom Trails**:  Custom charts defined and plotted around custom data that is logged as part of application specific trails and flows, flexibility to extend and define your own insights that can help your business decisions too.
 
 ###  Security Framework
 {: #security_framework}
