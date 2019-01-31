@@ -24,8 +24,18 @@ Mobile Foundation
         plan_migration.md
         export_import_apps_adapters.md
 
+	{: .topicgroup}
+    Secure an app end-to-end
+        prevent_man_in_the_middle_attack.md
+        obfuscate_resources.md
+        basic_authentication.md
+        step_up_authentication.md
+        protecting_adapters.md
+        prevent_tampered_apps_accessing_backend.md
+        
     {: .topicgroup}
     Obtain application insights
+        instrument_an_app.md
         visualize_insights_on_console.md
     add_sdk_to_app.md
     
@@ -43,6 +53,10 @@ Mobile Foundation
           manage_app_versions.md
           remote_disable_app_version.md
           manage_devices.md
+
+    {: .topicgroup}
+    Integrate with other IBM Cloud services
+        integrate_secure_gateway.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
