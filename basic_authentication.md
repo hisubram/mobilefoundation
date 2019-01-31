@@ -154,9 +154,10 @@ For example,
 
 For example,
 
-    ```
-    <jndiEntry jndiName="mfp/mfp.security.refreshtoken.enabled.apps" value='"com.sample.android.myapp1;com.sample.android.myapp2"'/>
-    ```            
+```xml
+<jndiEntry jndiName="mfp/mfp.security.refreshtoken.enabled.apps" value='"com.sample.android.myapp1;com.sample.android.myapp2"'/>
+```
+{: codeblock}
 Use different bundle ids for different platforms.
 
 **Refresh token response structure**

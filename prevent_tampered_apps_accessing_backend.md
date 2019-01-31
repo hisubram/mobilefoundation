@@ -118,6 +118,9 @@ The dynamic app authenticity is configurable from MobileFirst Console. The inter
 
 For enabling static app authenticity and to switch between validation types, use the mfpadm CLI:
 
-```mfpadm --url=  --user=  --passwordfile= --secure=false app version [RUNTIME] [APPNAME] [ENVIRONMENT] [VERSION] set authenticity-validation TYPE```
+```bash
+mfpadm --url=  --user=  --passwordfile= --secure=false app version [RUNTIME] [APPNAME] [ENVIRONMENT] [VERSION] set authenticity-validation TYPE
+```
+{: codeblock}
 
 TYPE can either be dynamic or static.
