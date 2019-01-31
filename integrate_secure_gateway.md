@@ -100,10 +100,10 @@ The destination is now configured. Secure Gateway service will populate cloud ho
 
 ![Destination Tab](images/AcmeCloudPopulate.gif)
 
-### Configuring Secure Gateway service with Mobile Foundation and MobileFirst Adapter
+### Configuring Secure Gateway service with Mobile Foundation and Mobile Foundation Adapter
 {: #configuration_sg_mfp}
 
-In this tutorial, we will use Mobile Foundation service instance on IBM Cloud to configure the MobileFirst server. The Mobile Foundation service on IBM cloud helps to provision the MobileFirst server on Liberty runtime as a Cloud foundry application. The Mobile Foundation service allows you to take any MobileFirst project developed on a local environment and run it on IBM Cloud.
+In this tutorial, we will use Mobile Foundation service instance on IBM Cloud to configure the Mobile Foundation server. The Mobile Foundation service on IBM cloud helps to provision the Mobile Foundation server on Liberty runtime as a Cloud foundry application. The Mobile Foundation service allows you to take any Mobile Foundation project developed on a local environment and run it on IBM Cloud.
 
 ### Mobile Foundation server setup on IBM cloud
 {: #mf_server_setup}
@@ -116,7 +116,7 @@ From the Mobile Foundation service console, create the [Mobile Foundation server
 ### Building and deploying Mobile Foundation Adapter
 {: #deploying_mf_adapter}
 
-In this tutorial, we will connect to the Secure Gateway endpoint using a Mobile Foundation adapter. [Download ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/MobileFirst-Platform-Developer-Center/Adapters/tree/release80/JavaHTTP) the Mobile Foundation Java HTTP adapter.
+In this tutorial, we will connect to the Secure Gateway endpoint using a Mobile Foundation adapter. [Download ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/MobileFirst-Platform-Developer-Center/Adapters/tree/release80/JavaHTTP) the Mobile Foundation JavaHTTP adapter.
 
 Build and deploy the adapter in Mobile Foundation Operations console using [mfpdev-cli](using_cli.html) commands.
 ```bash
@@ -128,24 +128,24 @@ mfpdev adapter deploy
 Learn about building and deploying adapters from [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/).
 {: tip}
  
-Provide the cloud host and port details for the resource endpoint in the HTTP Adapter, got from the previous section. 
+Provide the cloud host and port details for the resource endpoint in the JavaHTTP adapter, got from the previous section. 
 
 ![AdapterConfiguration ](images/AdapterConfiguration.png)
 
 where `cap-sg-prd-5.securegateway.appdomain.cloud` and `18946` are Secure Gateway host and port respectively.
  
-The MobileFirst adapter is now configured and the Mobile Foundation service is now enabled to work with an on-premise system within the enterprise using the Secure Gateway service.
+The Mobile Foundation adapter is now configured and the Mobile Foundation service is now enabled to work with an on-premise system within the enterprise using the Secure Gateway service.
 
 ### Creating and registering Mobile Foundation sample app
 {: #registering_sample_app}
 
-Download the Mobile Foundation sample app created using [IBM Digital App Builder ](https://epwt-www.mybluemix.net/software/support/trial/cst/programwebsite.wss?siteId=505&tabId=939&w=ua0vqv&p=za6q9ljnm) from [here](https://github.com/MobileFirst-Platform-Developer-Center/MFPSecureGatewayIonic/), follow the instructions under the `Readme` and register the app in the Mobile Foundation Operations console.
+Download the Mobile Foundation sample app from [here](https://github.com/MobileFirst-Platform-Developer-Center/MFPSecureGatewayIonic/), follow the instructions under the `Readme` and register the app in the Mobile Foundation Operations console.
 
 Run the app, provide credentials to log in and click the *Login* button. Click *Fetch Acme Writers* button to call your on-premise endpoint through Secure Gateway using the JavaHTTP Adapter deployed in your Mobile Foundation Operations console. Receive the desired data from the on-premise environment.
 
 ![App receive on-premise data](images/AcmePublishersApp.gif)
 
-You can connect to multiple on-premise endpoints by configuring multiple destinations on the Secure Gateway service and by deploying MobileFirst adapters to connect to the respective cloud host of the endpoint. You can also configure the Secure Gateway service with additional security to ensure that the communication to the endpoint happens over HTTPS and application-side security. You can find the [details here](https://cloud.ibm.com/docs/services/SecureGateway/index.html).
+You can connect to multiple on-premise endpoints by configuring multiple destinations on the Secure Gateway service and by deploying Mobile Foundation adapters to connect to the respective cloud host of the endpoint. You can also configure the Secure Gateway service with additional security to ensure that the communication to the endpoint happens over HTTPS and application-side security. You can find the [details here](https://cloud.ibm.com/docs/services/SecureGateway/index.html).
 
 
 ## Summary
