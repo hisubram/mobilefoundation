@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-22"
+lastupdated: "2019-02-01"
 
 ---
 
@@ -17,138 +17,58 @@ lastupdated: "2018-11-22"
 # Visualize insights on the console
 {: #visualize_insights_on_console}
 
-From the MobileFirst Analytics Console you can view and configure the Analytics reports, manage alerts, and view client logs. Launch the Analytics Console from the Mobile Foundation Operations Console by clicking the **Analytics Console** from the left navigation.
+To visualize insights from the analytics data captured and sent from your application, you must launch the Mobile Analytics console by clicking the **Analytics Console** option from the left navigation of the Mobile Foundation Operations console.
 
-The Analytics Console is launched and the default dashboard appears. If a client application has already sent logs and analytics data to the server, the relevant reports are created and displayed. From the dashboard, you can review analytics data that is collected. This analytics data could be related to application crashes, application sessions, and server processing time. Additionally, you can create custom charts and manage alerts.
+The Mobile Analytics Console can be run in two modes:
+  - **Demo Mode ON** which is purely for demonstration purposes showing the different analytics views (charts and tables) using simulated data feeds.
+  - **Demo Mode OFF** which shows the various analytics views based on realtime data feeds coming from your applications [instrumented for Mobile Analytics](instrument_an_app.html)
+  
+All analytics views can be pruned by applying filters around *application name*, *version*, *device OS* and *time period* thus allowing you to obtain insights from different perspectives.
 
-In addition to an at-a-glance view of your mobile analytics, the analytics feature includes the capability to perform a raw search against client logs, captured client crash data, and any extra data that you explicitly provide through client API function calls that feed into Mobile Analytics.
+To visualize insights for your application ensure that:
+  - Your application is appropriately instrumented to capture and send the relevant analytics data to Mobile Analytics service.
+  - You have turned OFF the Demo mode in the Analytics console
+  - You apply the right fiters.  For example, ensure you select a time period when your application has been deployed in the field and is active with users.
 
-## Monitoring app data
-{: #monitoring_app_data}
+The Mobile Analytics console provides different types of analysis of your mobile application usage and performance as categorized in the left navigation pane of the Analytics console.  The following sections detail the different analytics views: 
 
-Mobile Analytics provides monitoring and analytics for your mobile applications. You can record application logs and monitor data with the Mobile Analytics Client SDK. Developers can control when to send this data to the Mobile Analytics Service. When the data is delivered to Mobile Analytics, you can use the Mobile Analytics console to get analytics insights about your mobile applications, devices, and application logs.
 
-Some of the insights that can be derived:
-
-**Pre-defined metrics**
-
-With pre-defined metrics you can answer questions such as:
-* How many new users do I have?
-* How many people are actively using my application?
-* How frequently are people using my application?
-* What time of day are people using my application?
-* What device models do my users prefer?
-* When should I deprecate support for legacy operating systems?
-* Which applications are experiencing performance issues?
-
-**Custom events**
-
-By adding your own custom events, you can answer questions such as:
-* What features are used most and least?
-* Where are users entering and leaving my app?
-* What activities are users viewing most?
-* Are users completing workflows in the app (for example, conversion funnels)?
-
-## Reports that can be visualized: Users
+## Users
 {: #reports_visualized_users}
+This view helps you get insigts into 'User Onboarding Patterns' such as the number of active users who have used the app within a specified date range and a comparison of the number of new users versus existing users returning to use your app.
+The charts in this view can be filtered on *app name*, *operating system* or *operating system version*.
 
-This report displays a chart showing the number of active users who have used the app within a specified date range. Report also shows the number of new users who are unique users who are using the app for the first time, for the specified date range.
-The charts can be filtered on app name, operating system or operating system versions.
-
-## Reports that can be visualized: Sessions
+## Sessions
 {: #reports_visualized_sessions}
+This view helps you get insights into your application's 'Usage Patterns' in terms of *App Sessions* for the specified date range. A session is recorded when an app is brought to the foreground of a device.  You will get insights to what times of the day your application is most and least used and this can lead to useful business insights. The charts in this view can be filtered on *app name*, *operating system* or *operating system version*.
 
-This report displays a chart showing App Sessions for the specified date range. A session is recorded when an app is brought to the foreground of a device. The charts can be filtered on app name, operating system or operating system versions.
-
-## Reports that can be visualized: Network Requests
+## Network Requests
 {: #reports_visualized_network_requests}
+This view helps you get insights about your application's experience as it makes API calls to the backend systems.  This view has tables and charts that provides a peek into what are the most used functions of your backend systems and what has been their response time and stability and if you should consider rebalancing your backend support systems.
 
-Visualize network request data for your applications in the Mobile Analytics console.
+This view contains charts that plot against a given data range the Average RoundTrip Time of your application's outbound API calls, the number of requests made per API call, the number of succeeded requests versus failed ones grouped by the response codes.  The charts in this view can be filtered on app name, operating system or operating system versions.
 
-Data is available for the following measurements:
-
-**Round Trip Time** - defines the length of time, measured in milliseconds, that it takes for your app to make network requests.
-**Request Count** - displays how often an app makes network requests. Data also displays as an average.
-The charts can be filtered on app name, operating system or operating system versions.
-
-## Reports that can be visualized: Crashes
+## Crashes
 {: #reports_visualized_crashes}
+This view helps you with insights as to how stable your application has been over a selected time period and helps you decide if your application design / implementation should be fixed.  It provides charts that contrasts the number of crashes against the total number of uses and the overall crash rate.  The charts in this view can be filtered on *app name*, *operating system* or *operating system version*.
 
-You can view information about your application crashes in the Mobile Analytics console to better monitor and troubleshoot your applications.
 
-On the Crashes page, the **Crash Overview** table shows the following data columns:
-
-**Application**: application name<br/>
-**Crashes**: total number of crashes for that app<br/>
-**Total Uses**: total number of times a user opens and closes that app<br/>
-**Crash Rate**: percentage of crashes per use<br/>
-You can quickly see information about your application crashes the Crashes table. The Crashes bar graph shows a histogram of crashes over time.<br/>
-
-You can display crash data in two ways:
-
-1.  Display crash rate: Crash rate over time
-2.  Display total crashes: Total crashes over time
-
-## Reports that can be visualized: Troubleshooting
+## Troubleshooting
 {: #reports_visualized_troubleshooting}
+This view provides all the necessary information an application developer might need to troubleshoot an application.  This view provides a more detailed analysis of your application's crashes in terms of the devices affected, the host OS, specific time of the crash, the stacktrace at the time of the crash and also crash logs that can be downloaded for a more detailed analysis.  
 
-The **Troubleshooting** page in the Mobile Analytics console offers a granular view of your app crashes, using the **Crash Summary** table.
-
-The **Crash Summary** table is sortable and includes the following data columns:
-
-* Crashes
-* Devices
-* Last Crash
-* Application
-* OS
-* Message
-
-Click the + icon next to any entry to display the **Crash Details** table, which includes the following columns:
-
-* Time Crashed
-* Application Version
-* OS Version
-* Device Model
-* Device ID
-* Download: Link to download the logs that led up to the crash
-
-Expand any entry in the **Crash Details** table to get more details, including a stacktrace.
-
-The data for the **Crash Summary** table is populated by querying the fatal level app logs. If your application doesn’t collect fatal application logs, no data is available.
+Crash logs are gathered by looking up for app logs that have been logged at the FATAL level.  The Analytics Client SDK for Android and iOS native handles uncaught exceptions and logs details about them as FATAL level log messages.  However, in the case of Cordova any crashes at the JavaScript layer needs to be handled by the developer and crash logs sent to the Mobile Analytics service to be viewed and analysed in the Mobile Analytics console.
 {: note}
 
 
-## Reports that can be visualized: User Feedback
+## User Feedback
 {: #reports_visualized_userfeedback}
+This view provides insights into the actual interactive experience your users are undergoing while they use the app and how do they feel about it.
 
-User Feedback provides for in-app feedback analysis using Mobile Analytics.
-With this feature of Mobile Analytics -
-* **Users and Testers** can record and send feedback and bug reports from the app, as they run and use the application.
-* **App owners** get a deeper sense of the application's user experience with this context rich user feedback.
-* **Developers** however, receive accurate application contexts to diagnose and fix bugs or feature gaps.
+* **App owners** can get a detailed, context rich view of bugs and other feedback sent by **Users and Testers**  as recorded while running the application
+* **Developers** can receive accurate application contexts to diagnose and fix bugs or feature gaps.
+* **App owners** and **Developers** can use this view to also manage actions on feedback received such as recording comments or links to issues created in bug-tracking systems.  An overall review status can also be set to each feedback to help in summarizing actions taken on user feedback.
 
-### Enabling User Feedback
-{: #enable_user_feedback}
-
-Complete the following steps to enable your mobile application to capture user feedback.
-
-#### Instrument your app
-{: #instrument_app}
-
-* Instrument your mobile app to enter the feedback mode. Call the API `Analytics.triggerFeedbackMode();` to invoke the feedback-mode. <!--For more information, refer to the documentation [here](instrument_an_app.html)-->.
-* The API can be called on any application event such as buttons, menu actions or gestures.
-
-#### Receive user feedback
-{: #receive_feedback}
-
-* Users and testers of your app can switch over to the feedback mode by triggering the application action that is instrumented for feedback.
-* From within the feedback mode, rich contextual feedback along with a screen capture can be gathered and sent to Mobile Analytics.
-
-#### Analyze the user feedback
-{: #analyze_feedback}
-
-* Mobile Analytics receives and consolidates the rich contextual feedback sent from mobile applications.
-* Log on to the Mobile Analytics console and select **User Feedback** option to view the feedback.
-* An app owner can review the feedback, add comments and tag the feedback with a review status. Comments could typically be actions planned such as links to Git issues, which are created to work on the feedback or comments could be statement justifying why no action is required on the feedback.
-* The review status can be used to efficiently manage feedback by categorizing them under one of the different review status options.
+## Custom Charts
+This view extends Mobile Analytics to custom cases where **App owners** and **Developers** would like to build their own, application specific analytics.   Using this facility you can build your own analytics views (charts, tables etc.) around standard analytics data that is captured by the Client SDK and also custom data or application specific data that is logged.  See [here](build_custom_charts.html) for more information about this extended analytics facility.
 
