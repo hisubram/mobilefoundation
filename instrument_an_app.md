@@ -782,10 +782,12 @@ The Mobile Analytics SDK enables you to instrument your web application.
 ## Next steps
 {: #next_steps}
 
-Mobile Foundation provides REST APIs to help developers with importing (POST) and exporting (GET) analytics data.
+Try a simple sample from [here](https://github.com/MobileFirst-Platform-Developer-Center/mfp-analytics-samples).  In less than 5 minutes you will be able to run the sample application and get a feel of what the API discussed on this page do.  You will also be able to notice how analytics show up as different insights on the Analytics console.  
+
+Mobile Foundation Analytics Service provides REST APIs to help developers with importing (POST) and exporting (GET) analytics data.
 
 Try out the analytics REST API on Swagger Docs from [here](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/).
 
-{: note}
 
-You can now go to the Mobile Analytics Console to see usage analytics, such as new devices and total devices using your application. You can also monitor your application by creating custom charts, setting alerts and monitoring app crashes.
+
+

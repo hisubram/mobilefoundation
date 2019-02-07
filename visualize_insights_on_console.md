@@ -21,7 +21,7 @@ To visualize insights from the analytics data captured and sent from your applic
 
 The Mobile Analytics Console can be run in two modes:
   - **Demo Mode ON** which is purely for demonstration purposes showing the different analytics views (charts and tables) using simulated data feeds.
-  - **Demo Mode OFF** which shows the various analytics views based on realtime data feeds coming from your applications [instrumented for Mobile Analytics](instrument_an_app.html)
+  - **Demo Mode OFF** which shows the various analytics views based on realtime data feeds coming from your applications [instrumented for Mobile Analytics](instrument_an_app.html).
   
 All analytics views can be pruned by applying filters around *application name*, *version*, *device OS* and *time period* thus allowing you to obtain insights from different perspectives.
 
