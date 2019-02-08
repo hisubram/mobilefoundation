@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016, 2018
+  years: 2016, 2019
 lastupdated:  "2018-11-20"
 
 ---
@@ -41,7 +41,7 @@ lastupdated:  "2018-11-20"
 ### Db2 on Cloud サービス・インスタンスへの接続のセットアップ
 {: #connect_dashdb_p2}
 
-「{{site.data.keyword.mobilefoundation_short}}: プロフェッショナル 1 アプリケーション」サービス・インスタンスが作成されると、*「概要」*ページが表示されます。ここでは、 {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスが接続する必要のある、{{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスの接続情報を指定する必要があります。
+「{{site.data.keyword.mobilefoundation_short}}: プロフェッショナル 1 アプリケーション」サービス・インスタンスが作成されると、*「概要」*ページが表示されます。 ここでは、 {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスが接続する必要のある、{{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスの接続情報を指定する必要があります。
 
 既存の Db2 on Cloud インスタンスがない場合は、新規 {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスを作成できます。
 
@@ -83,7 +83,7 @@ lastupdated:  "2018-11-20"
 
     -	`ユーザー名` と `パスワード` は自動的に生成されます。 サーバーの稼働中にこれらにアクセスできます。
 
-    サーバーを作成するプロセスが開始されます。このプロセスには約 10 分かかり、メッセージ・ウィンドウにはこの操作の進行が示されます。 完了すると、以下のことを確認できるダッシュボードが表示されます。
+    サーバーを作成するプロセスが開始されます。 このプロセスには約 10 分かかり、メッセージ・ウィンドウにはこの操作の進行が示されます。 完了すると、以下のことを確認できるダッシュボードが表示されます。
 
       -	実行中のサーバーの状況 (状態、サイズ)。
 

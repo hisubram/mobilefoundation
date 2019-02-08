@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-27"
 
 ---
@@ -17,9 +17,18 @@ lastupdated: "2018-11-27"
 # リリース・ノート
 {: #release_notes}
 
-Mobile Foundation サービスに対する更新は、暫定修正 (iFix) および継続的デリバリー更新 (CD Update) を通じて配信されます。iFix および CD Update は累積的です。フィーチャーの更新は CD Update で配信されます。
+Mobile Foundation サービスに対する更新は、暫定修正 (iFix) および継続的デリバリー更新 (CD Update) を通じて配信されます。 iFix および CD Update は累積的です。 フィーチャーの更新は CD Update で配信されます。
 
 継続的デリバリー・サポート・モデルについて詳しくは、[Mobile Foundation v8.0 CD サポート発表 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/897/ENUS217-390/index.html&request_locale=en) を参照してください。
+{: note}
+
+## CD Update 04 (2018 年 12 月 19 日)
+{: #cd_update_4}
+
+* APNs プッシュ通知の HTTP/2 サポート。
+* React Native SDK for Push (react-native-ibm-mobilefirst-push 1.0.0) のリリース。
+
+[ここ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/blog/2018/12/24/8-0-cd-update-release/) で CD Update 04 発表を参照してください。
 {: note}
 
 ## CD Update 03 (2018 年 11 月 5 日)

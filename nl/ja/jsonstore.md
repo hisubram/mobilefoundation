@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated:  "2018-11-19"
+  years: 2018, 2019
+lastupdated:  "2019-01-04"
 
 ---
 
@@ -10,7 +10,9 @@ lastupdated:  "2018-11-19"
 {:codeblock: .codeblock}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
 {:pre: .pre}
+
 
 # JSONStore を使用したオフライン・ストレージ
 {: #overview }
@@ -25,7 +27,7 @@ lastupdated:  "2018-11-19"
 * 多数のユーザーのサポート
 * 保管データの AES 256 暗号化 により、セキュリティーと機密性が提供されます。 1 つのデバイスに複数のユーザーが存在する場合、パスワード保護を使用して、ユーザー別に保護をセグメント化することが可能です。
 
-1 つのストアが多数のコレクションを含み、各コレクションが多数のドキュメントを含むことが可能です。 また、複数のストアからなる 1 つの MobileFirst アプリケーションを持つこともできます。詳しくは、JSONStore の『複数ユーザー・サポート』を参照してください。
+1 つのストアが多数のコレクションを含み、各コレクションが多数のドキュメントを含むことが可能です。 また、複数のストアからなる 1 つの MobileFirst アプリケーションを持つこともできます。 詳しくは、JSONStore の『複数ユーザー・サポート』を参照してください。
 
 ## サポート・レベル
 {: #support-level }
@@ -83,7 +85,7 @@ JSONStore コレクションは、データベース用語の表に似ていま�
 
 追加の検索フィールドは、索引付けされているが、保管された JSON データの一部ではないキーです。 これらのフィールドは、(JSON コレクション内の) 値が索引付けされたキーを定義し、検索をより素早く行うために使用できます。
 
-有効なデータ型は、String、Boolean、Number、および Integer です。これらは単に型のヒントであり、型の妥当性検査はありません。 また、これらの型によって、索引付け可能なフィールドの保管方法が決定されます。 例えば、`{age: 'number'}` は 1 を 1.0 として索引付けし、`{age: 'integer'}` は 1 を 1 として索引付けします。
+有効なデータ型は、String、Boolean、Number、および Integer です。 これらは単に型のヒントであり、型の妥当性検査はありません。 また、これらの型によって、索引付け可能なフィールドの保管方法が決定されます。 例えば、`{age: 'number'}` は 1 を 1.0 として索引付けし、`{age: 'integer'}` は 1 を 1 として索引付けします。
 
 **検索フィールドおよび追加の検索フィールド**
 
@@ -159,10 +161,10 @@ JSONStore は、LocalStorage、Indexed DB、Cordova Storage API、Cordova File A
 | 索引付け	                                         |	     ✔ 	      |      -	    |     ✔	     |        ✔	           |         -	      |
 | ストレージのタイプ	                                 | JSON ドキュメント | 鍵と値のペア | JSON ドキュメント | リレーショナル (SQL) | ストリング     |
 
-**注:** 信頼性の高いストレージ は、以下のイベントのいずれかが発生しない限り、データが削除されないことを意味します。
-
+信頼性の高いストレージ は、以下のイベントのいずれかが発生しない限り、データが削除されないことを意味します。
 * アプリケーションがデバイスから除去された。
 * データを除去するメソッドのいずれかが呼び出された。
+{: note}
 
 ## 複数ユーザー・サポート
 {: #multiple-user-support }
@@ -209,9 +211,9 @@ MobileFirst クライアント・サイド API は、ユーザーのデータを
 {: #windows-81-universal-and-windows-10-uwp-encryption }
 ストア内のすべてのコレクションは、暗号化により保護することができます。
 
-JSONStore は、基礎となるデータベース・テクノロジーとして [SQLCipher ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://sqlcipher.net/){: new_window} を使用します。SQLCipher は、Zetetic LLC 製作の SQLite ビルドであり、暗号化のレイヤーをデータベースに追加します。
+JSONStore は、基礎となるデータベース・テクノロジーとして [SQLCipher ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://sqlcipher.net/){: new_window} を使用します。 SQLCipher は、Zetetic LLC 製作の SQLite ビルドであり、暗号化のレイヤーをデータベースに追加します。
 
-JSONStore は、すべてのプラットフォームで SQLCipher を使用します。 Android および iOS では、Community Edition とも呼ばれる無料オープン・ソース・バージョンの SQLCipher が使用可能です。これは、Mobile Foundation に組み込まれている JSONStore のバージョンに取り込まれています。SQLCipher の Windows バージョンは、商用ライセンスの下でのみ入手可能であり、Mobile Foundation が直接再配布することはできません。
+JSONStore は、すべてのプラットフォームで SQLCipher を使用します。 Android および iOS では、Community Edition とも呼ばれる無料オープン・ソース・バージョンの SQLCipher が使用可能です。これは、Mobile Foundation に組み込まれている JSONStore のバージョンに取り込まれています。 SQLCipher の Windows バージョンは、商用ライセンスの下でのみ入手可能であり、Mobile Foundation が直接再配布することはできません。
 
 代わりに、Windows 8 Universal 用の JSONStore に SQLite が基本データベースとして組み込まれています。 これらのプラットフォームのいずれかでデータを暗号化するには、独自のバージョンの SQLCipher を獲得して、Mobile Foundation に組み込まれている SQLite バージョンをスワップアウトする必要があります。
 
@@ -256,7 +258,7 @@ JSONStore のパフォーマンスに影響する可能性のある要因は、�
 {: #cpu }
 * 索引付けを行う add メソッドを呼び出す際、使用される検索フィールドと追加の検索フィールドの数量はパフォーマンスに影響します。 find メソッドの照会に使用する値にのみ索引を付けてください。
 * デフォルトでは、JSONStore はそのドキュメントに対するローカルでの変更をトラッキングします。 add、remove、および replace の各 API を使用する際に `markDirty` フラグを **false** に設定すればこの動作を無効にすることができ、数サイクルを節約できます。
-* セキュリティーを有効にすると、`init` API または `open` API や、コレクション内のドキュメントを処理する他の操作に、いくらかのオーバーヘッドが加わります。 セキュリティーが本当に必要かどうかを検討してください。例えば、open API は、暗号化と暗号化解除に使用される暗号鍵を生成しなければならないため、暗号化によりかなり遅くなります。
+* セキュリティーを有効にすると、`init` API または `open` API や、コレクション内のドキュメントを処理する他の操作に、いくらかのオーバーヘッドが加わります。 セキュリティーが本当に必要かどうかを検討してください。 例えば、open API は、暗号化と暗号化解除に使用される暗号鍵を生成しなければならないため、暗号化によりかなり遅くなります。
 * `replace` API および `remove` API は、コレクション全体を調べてすべてのオカレンスの置き換えおよび除去を行う必要があるため、コレクション・サイズに依存します。 各レコードを調べる必要があるため、暗号化の使用時にはそれらのレコードをすべて暗号化解除する必要があり、大幅に遅くなります。 このパフォーマンス・ヒットは、大きいコレクションでは顕著です。
 * `count` API は、相対的に費用がかかります。 ただし、そのコレクションのカウントを保持する変数を保持することができます。 内容をコレクションに保管したり、コレクションから除去したりするたびに、この変数を更新してください。
 * `find` API (`find`、`findAll`、および `findById`) は、すべてのドキュメントを暗号化解除して一致があるかどうかを確認する必要があるため、暗号化によって影響を受けます。 照会ごとの find について、制限が渡された場合は、その結果の制限に達したときに停止するため高速になる可能性があります。 JSONStore は、残りのドキュメントを暗号化解除して他の検索結果が残っているかどうかを確認する必要はありません。
@@ -285,7 +287,6 @@ var asyncOperation = function () {
   return deferred.promise();
 };
 ```
-{: codeblock}
 
 **promise の使用例**
 
@@ -295,7 +296,6 @@ asyncOperation.then(function (response) {
   // response = 'Hello'
 });
 ```
-{: codeblock}
 
 **コールバックの定義例**
 
@@ -306,7 +306,6 @@ var asyncOperation = function (callback) {
   }, 1000);
 };
 ```
-{: codeblock}
 
 **コールバックの使用例**
 
@@ -316,7 +315,6 @@ asyncOperation(function (response) {
   // response = 'Hello'
 });
 ```
-{: codeblock}
 
 **イベントの例**
 
@@ -329,15 +327,14 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
   // collectionName - Name of the collection
 });
 ```
-{: codeblock}
 
 ### Objective-C
 {: #objective-c }
-JSONStore 用のネイティブ iOS API を使用すると、すべての操作は同期ディスパッチ・キューに追加されます。 この動作により、メイン・スレッドではないスレッド上で、ストアに作用する操作が順番に実行されることが確実になります。詳しくは、Apple 資料の [Grand Central Dispatch (GCD) ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window} を参照してください。
+JSONStore 用のネイティブ iOS API を使用すると、すべての操作は同期ディスパッチ・キューに追加されます。 この動作により、メイン・スレッドではないスレッド上で、ストアに作用する操作が順番に実行されることが確実になります。 詳しくは、Apple 資料の [Grand Central Dispatch (GCD) ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window} を参照してください。
 
 ### Java™
 {: #java }
-JSONStore 用のネイティブ Android API を使用すると、すべての操作がメイン・スレッドで実行されます。振る舞いを非同期にするには、スレッドを作成するか、スレッド・プールを使用する必要があります。 すべてのストア操作はスレッド・セーフです。
+JSONStore 用のネイティブ Android API を使用すると、すべての操作がメイン・スレッドで実行されます。 振る舞いを非同期にするには、スレッドを作成するか、スレッド・プールを使用する必要があります。 すべてのストア操作はスレッド・セーフです。
 
 ## 分析
 {: #analytics }
@@ -345,7 +342,7 @@ JSONStore に関する重要な分析情報を収集することができます�
 
 ### ファイル情報
 {: #file-information }
-分析フラグを **true** に設定して JSONStore API が呼び出された場合、ファイル情報はアプリケーション・セッションごとに 1 回収集されます。アプリケーション・セッションは、アプリケーションがメモリーにロードされたときに始まり、アプリケーションがメモリーから除去されたときに終わるものとして定義されます。 この情報を使用して、アプリケーション内で JSONStore コンテンツが使用しているスペース量を知ることができます。
+分析フラグを **true** に設定して JSONStore API が呼び出された場合、ファイル情報はアプリケーション・セッションごとに 1 回収集されます。 アプリケーション・セッションは、アプリケーションがメモリーにロードされたときに始まり、アプリケーションがメモリーから除去されたときに終わるものとして定義されます。 この情報を使用して、アプリケーション内で JSONStore コンテンツが使用しているスペース量を知ることができます。
 
 ### パフォーマンス・メトリック
 {: #performance-metrics }
@@ -361,7 +358,6 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
-{: codeblock}
 
 #### Android
 {: #android-example }
@@ -371,7 +367,6 @@ initOptions.setAnalytics(true);
 
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
-{: codeblock}
 
 #### JavaScript
 {: #java-script-example }
@@ -382,7 +377,6 @@ var options = {
 
 WL.JSONStore.init(..., options);
 ```
-{: codeblock}
 
 ## 外部データを使用した作業
 {: #working-with-external-data }
@@ -405,12 +399,13 @@ WL.JSONStore.init(..., options);
 {: #internal-data-source-api }
 このソースは、コレクションに JSON データを追加するために使用できる JSONStore API です。
 
-**注:** 内部ストアには、ファイル、入力フィールド、または変数内のハードコーディングされたデータから読み取られるデータを取り込むことができます。 このデータのソースは、ネットワーク通信を必要とする外部ソースに限られる必要はありません。
+内部ストアには、ファイル、入力フィールド、または変数内のハードコーディングされたデータから読み取られるデータを取り込むことができます。 このデータのソースは、ネットワーク通信を必要とする外部ソースに限られる必要はありません。
+{: note}
 
 以下のコード例はすべて、JavaScript に類似した疑似コードで書かれています。
 
-**注:** トランスポート層の場合、アダプターを使用します。 アダプターを使用することの利点として、XML から JSONへの変換、セキュリティー、フィルタリング、サーバー・サイド・コードとクライアント・サイド・コードの分離などが挙げられます。
-
+トランスポート層の場合、アダプターを使用します。 アダプターを使用することの利点として、XML から JSONへの変換、セキュリティー、フィルタリング、サーバー・サイド・コードとクライアント・サイド・コードの分離などが挙げられます。
+{: note}
 **外部データ・ソース: バックエンド REST エンドポイント**  
 データベースからデータを読み取り、それを JSON オブジェクトの配列として返す REST エンドポイントがあると想定してください。
 
@@ -463,7 +458,9 @@ resource.send()
 ```
 {: codeblock}
 
-**注:** `WLResourceRequest` API に渡すことができる `compressResponse`、`timeout`、または他のパラメーターを活用することもできます。  
+`WLResourceRequest` API に渡すことができる `compressResponse`、`timeout`、または他のパラメーターを活用することもできます。  
+{: note}
+
 オプションで、アダプターをスキップし、jQuery.ajax などを使用して、保存したいデータを持つ REST エンドポイントに直接アクセスすることができます。
 
 ```javascript
@@ -599,10 +596,11 @@ accessor.remove(doc, {markDirty: true})
 
 以下のコード例はすべて、JavaScript に類似した疑似コードで書かれています。
 
-**注:** トランスポート層の場合、アダプターを使用します。 アダプターを使用することの利点として、XML から JSONへの変換、セキュリティー、フィルタリング、サーバー・サイド・コードとクライアント・サイド・コードの分離などが挙げられます。
+トランスポート層の場合、アダプターを使用します。 アダプターを使用することの利点として、XML から JSONへの変換、セキュリティー、フィルタリング、サーバー・サイド・コードとクライアント・サイド・コードの分離などが挙げられます。
+{: note}
 
 **内部データ・ソース API: JSONStore**  
-コレクションへのアクセサーを取得したら、`getAllDirty` API を呼び出して、ダーティーとマークされたすべてのドキュメントを取得します。これらのドキュメントは、トランスポート層を通じて外部データ・ソースに送りたいローカルのみの変更を含むものです。
+コレクションへのアクセサーを取得したら、`getAllDirty` API を呼び出して、ダーティーとマークされたすべてのドキュメントを取得します。 これらのドキュメントは、トランスポート層を通じて外部データ・ソースに送りたいローカルのみの変更を含むものです。
 
 ```javascript
 var accessor = WL.JSONStore.get('people');
@@ -650,7 +648,8 @@ accessor.getAllDirty()
 ```
 {: codeblock}
 
-**注:** `WLResourceRequest` API に渡すことができる `compressResponse`、`timeout`、または他のパラメーターを活用することもできます。
+`WLResourceRequest` API に渡すことができる `compressResponse`、`timeout`、または他のパラメーターを活用することもできます。
+{: note}
 
 MobileFirst Server では、アダプターに以下の例のような `updatePeople` プロシージャーがあります。
 
@@ -797,7 +796,7 @@ $.when.apply(this, arrayOfPromises)
 4. JSONStore により生成された SQLite データベース・ファイルを調べます。 暗号化はオフにする必要があります。
 
    * Android エミュレーターの場合:
-
+   
    ```bash
    $ adb shell
    $ cd /data/data/com.<app-name>/databases/wljsonstore
@@ -860,15 +859,14 @@ $.when.apply(this, arrayOfPromises)
 
     * 次の関数を追加します。  
     ```javascript                                         
-function initWL(){                                                     
+    function initWL(){                                                     
         var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
         : {};                                                                
         WL.Client.init(options);                                           
-}                                                                      
-```                                                                       
+    } 
+    ```                                                                     
 
-  これは、mfpjsonjsloaded イベントを (wlCommonInit の外部で) 待機します。
-これにより、確実にスクリプトがロードされるので、wlCommonInit をトリガーする WL.Client.init をその後に呼び出してから、WL.JSONStore.init を呼び出します。
+これは、`mfpjsonjsloaded` イベントを (`wlCommonInit` の外部で) 待機します。これにより、スクリプトがロードされたことを確認してから、`wlCommonInit` をトリガーする `WL.Client.init` を呼び出します。それにより、`WL.JSONStore.init` が呼び出されます。
 
 ## ストア内部
 {: #store-internals }
@@ -876,23 +874,23 @@ JSONStore データの保管方法の例を確認します。
 
 この簡素化された例には、以下の主要な要素があります。
 
-* _id は固有 ID です (例えば、AUTO INCREMENT PRIMARY KEY)。
-* json には、保管されている JSON オブジェクトの正確な表現が含まれています。
-* name および age は検索フィールドです。
-* key は追加の検索フィールドです。
+* `_id` は固有 ID です (例えば、AUTO INCREMENT PRIMARY KEY)。
+* `json` には、保管されている JSON オブジェクトの正確な表現が含まれています。
+* `name` および age は検索フィールドです。
+* `key` は追加の検索フィールドです。
 
 | _id | key | name | age | JSON |
 |-----|-----|------|-----|------|
 | 1   | c   | carlos | 99 | {name: 'carlos', age: 99} |
 | 2   | t   | tim   | 100 | {name: 'tim', age: 100} |
 
-{_id : 1}、{name: 'carlos'}、{age: 99}、{key: 'c'} のいずれかの照会またはこれらの照会の組み合わせを使用して検索を行った場合に返される文書は {_id: 1, json: {name: 'carlos', age: 99} } です。
+`{_id : 1}、{name: 'carlos'}`、`{age: 99}、{key: 'c'}` のいずれかの照会またはこれらの照会の組み合わせを使用して検索を行った場合に返される文書は `{_id: 1, json: {name: 'carlos', age: 99} }` です。
 
 その他の内部 JSONStore フィールドは以下のとおりです。
 
-* _dirty: 文書がダーティーとマーク付けされているかどうかを判別します。 このフィールドは、文書に対する変更をトラッキングする上で役立ちます。
-* _deleted: 文書に削除済みかどうかのマークを付けます。 このフィールドは、コレクションからオブジェクトを削除したり、後でそれらのオブジェクトをバックエンドでの変更のトラッキングに使用したり、これらのオブジェクトを削除するかどうかを決定したりする上で役立ちます。
-* _operation: 文書で最後に実行される操作 (例えば、置換) を反映するストリング。
+* `_dirty`: 文書がダーティーとマーク付けされているかどうかを判別します。 このフィールドは、文書に対する変更をトラッキングする上で役立ちます。
+* `_deleted`: 文書に削除済みかどうかのマークを付けます。 このフィールドは、コレクションからオブジェクトを削除したり、後でそれらのオブジェクトをバックエンドでの変更のトラッキングに使用したり、これらのオブジェクトを削除するかどうかを決定したりする上で役立ちます。
+* `_operation`: 文書で最後に実行される操作 (例えば、置換) を反映するストリング。
 
 ## JSONStore エラー
 {: #jsonstore-errors }
@@ -900,7 +898,7 @@ JSONStore データの保管方法の例を確認します。
 {: #javascript }
 JSONStore は、エラー・オブジェクトを使用して、障害の原因に関するメッセージを返します。
 
-JSONStore 操作 (例えば、JSONStoreInstance クラスの find メソッドや add メソッド) 中にエラーが発生した場合、エラー・オブジェクトが返されます。 これは障害の原因に関する情報を提供します。
+JSONStore 操作 (例えば、`JSONStoreInstance` クラスの `find` メソッドや `add` メソッド) 中にエラーが発生した場合、エラー・オブジェクトが返されます。 これは障害の原因に関する情報を提供します。
 
 ```javascript
 var errorObject = {
@@ -913,12 +911,12 @@ var errorObject = {
   res: {...} // Response from the server.
 }
 ```
-
-すべてのキー/値のペアがすべてのエラー・オブジェクトの一部であるとは限りません。 例えば、doc 値は、ある文書 (例えば、JSONStoreInstance クラスの remove メソッド) がある文書を削除できなかったために操作が失敗した場合にのみ使用可能です。
+{: codeblock}
+すべてのキー/値のペアがすべてのエラー・オブジェクトの一部であるとは限りません。 例えば、doc 値は、ある文書 (例えば、`JSONStoreInstance` クラスの `remove` メソッド) がある文書を削除できなかったために操作が失敗した場合にのみ使用可能です。
 
 ### Objective-C
 {: #objective-c }
-失敗する可能性があるすべての API が、NSError オブジェクトへのアドレスを使用するエラー・パラメーターを取ります。 エラーが通知されないようにするには、nil で渡すことができます。 操作が失敗した場合、エラーと userInfo (存在する場合) を含む NSError がアドレスに取り込まれます。 userInfo には追加の詳細 (例えば、障害の原因となった文書) が含まれていることがあります。
+失敗する可能性があるすべての API が、NSError オブジェクトへのアドレスを使用するエラー・パラメーターを取ります。 エラーが通知されないようにするには、`nil` で渡すことができます。 操作が失敗した場合、エラーと `userInfo` (存在する場合) を含む NSError がアドレスに取り込まれます。 `userInfo` には追加の詳細 (例えば、障害の原因となった文書) が含まれていることがあります。
 
 ```objc
 // This NSError points to an error if one occurs.
@@ -930,7 +928,7 @@ NSError* error = nil;
 
 ### Java
 {: #java }
-すべての Java API 呼び出しが、発生したエラーに応じて特定の例外をスローします。 それぞれの例外を個別に処理することも、すべての JSONStore 例外のアンブレラとして JSONStoreException を catch することもできます。
+すべての Java API 呼び出しが、発生したエラーに応じて特定の例外をスローします。 それぞれの例外を個別に処理することも、すべての JSONStore 例外のアンブレラとして `JSONStoreException` を catch することもできます。
 
 ```java
 try {
@@ -941,72 +939,72 @@ catch(JSONStoreException e) {
   // Handle error condition.
 }
 ```
-
+{: codeblock}
 ### エラー・コードのリスト
 {: #list-of-error-codes }
 一般的なエラー・コードとその説明のリスト:
 
 |エラー・コード      | 説明 |
 |----------------|-------------|
-| -100 UNKNOWN_FAILURE | 認識できないエラー。 |
-| -75 OS\_SECURITY\_FAILURE | このエラー・コードは requireOperatingSystemSecurity フラグに関連しています。 このエラーは、destroy API が、オペレーティング・システムのセキュリティー (パスコード・フォールバックによるタッチ ID) によって保護されているセキュリティー・メタデータを削除できない場合や、init API または open API がセキュリティー・メタデータを見つけることができない場合に発生する可能性があります。 また、デバイスがオペレーティング・システムのセキュリティーをサポートしない場合に、オペレーティング・システムのセキュリティーの使用が要求された場合にも発生する可能性があります。 |
-| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore はクローズされています。 最初に JSONStore クラスで open メソッドの呼び出しを試行して、ストアへのアクセスを有効にしてください。  |
-| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | トランザクションのロールバック中に問題が発生しました。 |
-| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION | トランザクションの進行中に removeCollection を呼び出すことはできません。  |
-| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | 進行中のトランザクションがある場合は destroy を呼び出すことはできません。 |
-| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | 実行中トランザクションがある場合は closeAll を呼び出すことはできません。  |
-| -44 TRANSACTION\_FAILURE\_DURING\_INIT | 進行中のトランザクションがある場合はストアを初期化できません。 |
-| -43 TRANSACTION_FAILURE | トランザクションの問題が発生しました。 |
-| -42 NO\_TRANSACTION\_IN\_PROGRESS | 進行中のトランザクションがない場合は、トランザクションのロールバックをコミットできません。 |
-| -41 TRANSACTION\_IN\_POGRESS | 別のトランザクションの進行中には新規トランザクションを開始できません。 |
-| -40 FIPS\_ENABLEMENT\_FAILURE | FIPS に何らかの問題があります。
-| -24 JSON\_STORE\_FILE\_INFO\_ERROR | ファイル・システムからのファイル情報の取得中に問題が発生しました。 |
-| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | コレクションからの文書の置き換え中に問題が発生しました。 |
-| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | コレクションからの文書の削除中に問題が発生しました。 |
-| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | データ保護鍵 (DPK) の保管中に問題が発生しました。 |
-| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | 入力データの索引付け中に問題が発生しました。 |
-| -12 INVALID\_SEARCH\_FIELD\_TYPES | searchFields に渡しているタイプが string、integer、number、または boolean であることを確認してください。  |
-| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | 文書の配列に対する操作 (例えば、replace メソッド) は、特定の文書での動作時には失敗することがあります。 失敗した文書が返され、トランザクションはロールバックされます。 Android では、サポートされないアーキテクチャーで JSONStore を使用しようとした場合もこのエラーが発生します。  |
-| -10 ACCEPT\_CONDITION\_FAILED | ユーザーが指定した accept 関数が false を返しました。 |
-| -9 OFFSET\_WITHOUT\_LIMIT | オフセットを使用するには、制限を指定する必要もあります。 |
-| -8 INVALID\_LIMIT\_OR\_OFFSET | 検証エラー。正整数でなければなりません。 |
-| -7 INVALID_USERNAME | 検証エラー ([A から Z]、[a から z]、および [0 から 9] のみでなければなりません)。 |
-| -6 USERNAME\_MISMATCH\_DETECTED | ログアウトするには、JSONStore ユーザーは最初に closeAll メソッドを呼び出す必要があります。 一度に存在できるユーザーは 1 人だけです。 |
-| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED | ストアのコンテンツを保持するファイルを削除しようとしたときに、destroy メソッドの問題が発生しました。 |
-| -4 DESTROY\_REMOVE\_KEYS\_FAILED | キーチェーン (iOS) または共有のユーザー設定 (Android) をクリアしようとしたときに destroy メソッドの問題が発生しました。 |
-| -3 INVALID\_KEY\_ON\_PROVISION | 暗号化されたストアに誤ったパスワードが渡されました。 |
-| -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | 検索フィールドが動的ではありません。 新しい検索フィールドを使用して init メソッドまたは open メソッドを呼び出す前に、destroy メソッドまたは removeCollection メソッドを呼び出さずに検索フィールドを変更することはできません。 このエラーは、検索フィールドの名前またはタイプを変更した場合に発生する可能性があります。 例: {key: 'string'} から {key: 'number'} または {myKey: 'string'} から {theKey: 'string'}。 |
-| -1 PERSISTENT\_STORE\_FAILURE | 一般的なエラー。 ネイティブ・コードで誤動作が発生しました。init メソッドが呼び出された可能性があります。|
-| 0 SUCCESS | JSONStore ネイティブ・コードは成功を示すために 0 を返すことがあります。 |
-| 1 BAD\_PARAMETER\_EXPECTED\_INT | 検証エラー。 |
-| 2 BAD\_PARAMETER\_EXPECTED\_STRING | 検証エラー。 |
-| 3 BAD\_PARAMETER\_EXPECTED\_FUNCTION | 検証エラー。 |
-| 4 BAD\_PARAMETER\_EXPECTED\_ALPHANUMERIC\_STRING | 検証エラー。 |
-| 5 BAD\_PARAMETER\_EXPECTED\_OBJECT | 検証エラー。 |
-| 6 BAD\_PARAMETER\_EXPECTED\_SIMPLE\_OBJECT | 検証エラー。 |
-| 7 BAD\_PARAMETER\_EXPECTED\_DOCUMENT | 検証エラー。 |
-| 8 FAILED\_TO\_GET\_UNPUSHED\_DOCUMENTS\_FROM\_DB | ダーティーのマークが付けられたすべての文書を選択する照会が失敗しました。 照会の SQL の例は、SELECT * FROM [collection] WHERE _dirty > 0 です。 |
-| 9 NO\_ADAPTER\_LINKED\_TO\_COLLECTION | JSONStoreCollection クラスで push メソッドや load メソッドなどの関数を使用するには、アダプターを init メソッドに渡す必要があります。 |
-| 10 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ARRAY\_OF\_DOCUMENTS | 検証エラー。 |
-| 11 INVALID\_PASSWORD\_EXPECTED\_ALPHANUMERIC\_STRING\_WITH\_LENGTH\_GREATER\_THAN\_ZERO | 検証エラー。 |
-| 12 ADAPTER_FAILURE | WL.Client.invokeProcedure の呼び出しで問題 (具体的にはアダプターへの接続の問題) が発生しました。 このエラーは、バックエンドの呼び出しを試行したアダプターでの障害とは異なります。 |
-| 13 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ID | 検証エラー。 |
-| 14 CAN\_NOT\_REPLACE\_DEFAULT\_FUNCTIONS | 既存の関数 (find と add) を置き換えるために JSONStoreCollection クラスで enhance メソッドを呼び出すことは許可されていません。 |
-| 15 COULD\_NOT\_MARK\_DOCUMENT\_PUSHED | push が文書をアダプターに送信しましたが、JSONStore は文書をダーティーではないとマーク付けできません。 |
-| 16 COULD\_NOT\_GET\_SECURE\_KEY | パスワードを使用してコレクションを開始するには、「セキュアなランダム・トークン」が返されるため、{{ site.data.keys.mf_server }} への接続が必要です。 IBM Worklight V5.0.6 以降では、開発者は、オプション・オブジェクトを介して {localKeyGen: true} をローカルで init メソッドに渡すことでセキュアなランダム・トークンを生成できます。 |
-| 17 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER | WL.Client.invokeProcedure が障害コールバックを呼び出したため、データをロードできませんでした。 |
-| 18 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER\_INVALID\_LOAD\_OBJ | init メソッドに渡されたロード・オブジェクトが、検証に合格しませんでした。 |
-| 19 INVALID\_KEY\_IN\_LOAD\_OBJECT | add メソッドの呼び出し時にロード・オブジェクトで使用されたキーに問題があります。 |
-| 20 UNDEFINED\_PUSH\_OPERATION | ダーティーな文書をサーバーにプッシュするためのプロシージャーが定義されていません。 例えば、init メソッド (新規文書はダーティーで、操作は「add」) と push メソッド (操作「add」で新規文書を検索) が呼び出されたが、追加プロシージャーを使用する add キーが、コレクションにリンクされたアダプターに見つかりませんでした。 アダプターのリンクは、init メソッド内で行われます。 |
+| -100 UNKNOWN_FAILURE | Unrecognized error. |
+| -75 OS\_SECURITY\_FAILURE | This error code is related to the requireOperatingSystemSecurity flag. It can occur if the destroy API fails to remove security metadata that is protected by operating system security (Touch ID with passcode fallback), or the init or open APIs are unable to locate the security metadata. It can also fail if the device does not support operating system security, but operating system security usage was requested. |
+| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore is closed. Try calling the open method in the JSONStore class class first to enable access to the store. |
+| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | There was a problem with rolling back the transaction. |
+| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION |Cannot call removeCollection while a transaction is in progress. |
+| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | Cannot call destroy while there are transactions in progress. |
+| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | Cannot call closeAll while there are transactions in place. |
+| -44 TRANSACTION\_FAILURE\_DURING\_INIT | Cannot initialize a store while there are transactions in progress. |
+| -43 TRANSACTION_FAILURE | There was a problem with transactions. |
+| -42 NO\_TRANSACTION\_IN\_PROGRESS | Cannot commit to rolled back a transaction when there is no transaction is progress |
+| -41 TRANSACTION\_IN\_POGRESS | Cannot start a new transaction while another transaction is in progress. |
+| -40 FIPS\_ENABLEMENT\_FAILURE |Something is wrong with FIPS. |
+| -24 JSON\_STORE\_FILE\_INFO\_ERROR | Problem getting the file information from the file system. |
+| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | Problem replacing documents from a collection. |
+| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | Problem removing documents from a collection. |
+| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | Problem storing the Data Protection Key (DPK). |
+| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | Problem indexing input data. |
+| -12 INVALID\_SEARCH\_FIELD\_TYPES | Check that the types that you are passing to the searchFields are stringinteger,number, orboolean. |
+| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | An operation on an array of documents, for example the replace method can fail while it works with a specific document. The document that failed is returned and the transaction is rolled back. On Android, this error also occurs when trying to use JSONStore on unsupported architectures. |
+| -10 ACCEPT\_CONDITION\_FAILED | The accept function that the user provided returned false. |
+| -9 OFFSET\_WITHOUT\_LIMIT | To use offset, you must also specify a limit. |
+| -8 INVALID\_LIMIT\_OR\_OFFSET | Validation error, must be a positive integer. |
+| -7 INVALID_USERNAME | Validation error (Must be [A-Z] or [a-z] or [0-9] only). |
+| -6 USERNAME\_MISMATCH\_DETECTED | To log out, a JSONStore user must call the closeAll method first. There can be only one user at a time. |
+| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED |A problem with the destroy method while it tried to delete the file that holds the contents of the store. |
+| -4 DESTROY\_REMOVE\_KEYS\_FAILED | Problem with the destroy method while it tried to clear the keychain (iOS) or shared user preferences (Android). |
+| -3 INVALID\_KEY\_ON\_PROVISION | Passed the wrong password to an encrypted store. |
+| -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | Search fields are not dynamic. It is not possible to change search fields without calling the destroy method or the removeCollection method before you call the init or openmethod with the new search fields. This error can occur if you change the name or type of the search field. For example: {key: 'string'} to {key: 'number'} or {myKey: 'string'} to {theKey: 'string'}. |
+| -1 PERSISTENT\_STORE\_FAILURE | Generic Error. A malfunction in native code, most likely calling the init method. |
+| 0 SUCCESS | 場合によっては、成功を示す 0 が JSONStore ネイティブ・コードから返されることがあります。|
+| 1 BAD\_PARAMETER\_EXPECTED\_INT | 検証エラー。|
+| 2 BAD\_PARAMETER\_EXPECTED\_STRING | 検証エラー。|
+| 3 BAD\_PARAMETER\_EXPECTED\_FUNCTION | 検証エラー。|
+| 4 BAD\_PARAMETER\_EXPECTED\_ALPHANUMERIC\_STRING | 検証エラー。|
+| 5 BAD\_PARAMETER\_EXPECTED\_OBJECT | 検証エラー。|
+| 6 BAD\_PARAMETER\_EXPECTED\_SIMPLE\_OBJECT | 検証エラー。|
+| 7 BAD\_PARAMETER\_EXPECTED\_DOCUMENT | 検証エラー。|
+| 8 FAILED\_TO\_GET\_UNPUSHED\_DOCUMENTS\_FROM\_DB |ダーティーとマークされたすべてのドキュメントを選択する照会が失敗しました。SQL 照会の例: SELECT * FROM [collection] WHERE _dirty > 0 |
+| 9 NO\_ADAPTER\_LINKED\_TO\_COLLECTION |JSONStoreCollection クラスの push や load メソッドなどの関数を使用するには、init メソッドにアダプターを渡す必要があります。|
+| 10 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ARRAY\_OF\_DOCUMENTS | 検証エラー |
+| 11 INVALID\_PASSWORD\_EXPECTED\_ALPHANUMERIC\_STRING\_WITH\_LENGTH\_GREATER\_THAN\_ZERO | 検証エラー |
+| 12 ADAPTER_FAILURE | WL.Client.invokeProcedure の呼び出しに関する問題、特にアダプターへの接続に関する問題。このエラーは、バックエンドの呼び出しを試行するアダプターの障害とは異なります。|
+| 13 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ID | 検証エラー |
+| 14 CAN\_NOT\_REPLACE\_DEFAULT\_FUNCTIONS |JSONStoreCollection クラスの enhance メソッドを呼び出して既存の関数 (find および add) を置き換えることは許可されません。|
+| 15 COULD\_NOT\_MARK\_DOCUMENT\_PUSHED |プッシュでドキュメントがアダプターに送信されましたが、JSONStore がドキュメントを「非ダーティー」とマークできませんでした。|
+| 16 COULD\_NOT\_GET\_SECURE\_KEY |パスワードを使用してコレクションを開始するには、{{ site.data.keys.mf_server }} への接続が必要です。これは「セキュア・ランダム・トークン」を返すためです。IBM  Worklight  V5.0.6 以降では、開発者は、options オブジェクトを介して init メソッドに {localKeyGen: true} を渡すことで、セキュア・ランダム・トークンをローカルで生成できます。|
+| 17 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER |WL.Client.invokeProcedure が失敗時コールバックを呼び出したため、データをロードできませんでした。|
+| 18 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER\_INVALID\_LOAD\_OBJ |init メソッドに渡された load オブジェクトが検証に失格しました。|
+| 19 INVALID\_KEY\_IN\_LOAD\_OBJECT |add メソッドの呼び出し時に load オブジェクトに使用されたキーに問題があります。|
+| 20 UNDEFINED\_PUSH\_OPERATION |ダーティー・ドキュメントをサーバーにプッシュするように定義されているプロシージャーがありません。例えば、init メソッド (新規文書はダーティーで、操作は「add」) と push メソッド (操作「add」で新規文書を検索) が呼び出されたが、追加プロシージャーを使用する add キーが、コレクションにリンクされたアダプターに見つかりませんでした。 アダプターのリンクは、init メソッド内で行われます。 |
 | 21 INVALID\_ADD\_INDEX\_KEY | 追加の検索フィールドで問題が発生しました。 |
-| 22 INVALID\_SEARCH\_FIELD | いずれかの検索フィールドが無効です。 渡されるどの検索フィールドも _id、json、_deleted、_operation ではないことを確認してください。 |
-| 23 ERROR\_CLOSING\_ALL | 一般的なエラー。 ネイティブ・コードが closeAll メソッドを呼び出したときにエラーが発生しました。 |
+| 22 INVALID\_SEARCH\_FIELD | いずれかの検索フィールドが無効です。 渡した検索フィールドが _id、json、_deleted、_operation でないことを確認してください。|
+| 23 ERROR\_CLOSING\_ALL | 一般エラー。ネイティブ・コードが closeAll メソッドを呼び出したときにエラーが発生しました。 |
 | 24 ERROR\_CHANGING\_PASSWORD | パスワードを変更できません。 例えば、渡された古いパスワードが誤っていました。 |
 | 25 ERROR\_DURING\_DESTROY | 一般的なエラー。 ネイティブ・コードが destroy メソッドを呼び出したときにエラーが発生しました。|
 | 26 ERROR\_CLEARING\_COLLECTION | 一般的なエラー。 ネイティブ・コードが removeCollection メソッドを呼び出したときにエラーが発生しました。 |
 | 27 INVALID\_PARAMETER\_FOR\_FIND\_BY\_ID | 検証エラー。|
 | 28 INVALID\_SORT\_OBJECT | いずれかの JSON オブジェクトが無効であるため、ソートのために指定された配列が無効です。 正しい構文は、各オブジェクトにプロパティーが 1 つだけ含まれる JSON オブジェクトの配列です。 このプロパティーは、ソート基準と、昇順で検索するのか降順で検索するのかを指定してフィールドを検索します。 例: {searchField1 : "ASC"}。 |
 | 29 INVALID\_FILTER\_ARRAY | 結果のフィルター処理に指定された配列が無効です。 この配列の正しい構文は、各ストリングが検索フィールドまたは内部 JSONStore フィールドのいずれかになっているストリングの配列です。 詳しくは、『ストア内部』を参照してください。|
-| 30 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_OBJECTS | 配列が JSON オブジェクトのみの配列ではない場合の検証エラー。 |
-| 31 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_CLEAN\_DOCUMENTS | 検証エラー。 |
-| 32 BAD\_PARAMETER\_WRONG\_SEARCH\_CRITERIA | 検証エラー。 |
+| 30 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_OBJECTS |JSON オブジェクトのみで構成された配列でない場合に、検証エラーが発生します。|
+| 31 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_CLEAN\_DOCUMENTS | 検証エラー。|
+| 32 BAD\_PARAMETER\_WRONG\_SEARCH\_CRITERIA | 検証エラー。|

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-24"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2018-12-24"
 {:ruby: .ph data-hd-programlang='ruby'}
 {:c#: .ph data-hd-programlang='c#'}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:ios: .ph data-hd-programlang='iOS'}
 {:python: .ph data-hd-programlang='python'}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:php: .ph data-hd-programlang='PHP'}
@@ -37,19 +38,19 @@ Cordova / Web アプリケーション用の API。
     JavaScript プッシュ API を使用して、クライアント・サイド・アプリケーションでプッシュ関数を実行できます。
     {: javascript }
 * **[Web 分析 API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://mobilefirstplatform.ibmcloud.com/api-ref/wl-web-analytics-client-js-apidoc/html/refjavascript-web-analytics-client/html/index.html)**  
-    Web JavaScript API を使用して、Web アプリ用の MobileFirst 分析を開発できます。この API はピュア JavaScript で作成されており、他のプラットフォーム SDK に依存しません。
+    Web JavaScript API を使用して、Web アプリ用の MobileFirst 分析を開発できます。 この API はピュア JavaScript で作成されており、他のプラットフォーム SDK に依存しません。
     {: javascript }
 
 ### Objective C
-{: objectc }
+{: ios }
 ネイティブ iOS アプリケーション用の API。
-{: objectc }
+{: ios }
 * **[クライアント・サイドの API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://mobilefirstplatform.ibmcloud.com/api-ref/wl-ios-objc-apidoc/html/refobjc-worklight-ios/html/index.html)**   
     この API を使用して、iOS 環境用のネイティブ・アプリケーションを開発します。
-    {: objectc }
+    {: ios }
 * **[クライアント・サイドのプッシュ API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-ios-n-objc-apidoc/html/refobjc-mfp-push-ios-native/html/index.html)**  
     このプッシュ API を使用して、iOS 環境用のアプリケーションを開発します。
-    {: objectc }
+    {: ios }
 
 ### Java
 {: java }

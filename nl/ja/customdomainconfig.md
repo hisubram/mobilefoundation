@@ -14,7 +14,7 @@ lastupdated:  "2018-11-19"
 # Mobile Foundation サーバーのカスタム・ドメインの構成
 {: #configcustomdomain}
 
-{{site.data.keyword.mobilefoundation_short}} は、{{site.data.keyword.Bluemix_notm}} **地域**に基づいたドメイン名を含む URL を使用してアクセス可能な {{site.data.keyword.mfserver_short_notm}} を作成します。独自のカスタム・ドメインを構成することも可能です。
+{{site.data.keyword.mobilefoundation_short}} は、{{site.data.keyword.Bluemix_notm}} **地域**に基づいたドメイン名を含む URL を使用してアクセス可能な {{site.data.keyword.mfserver_short_notm}} を作成します。 独自のカスタム・ドメインを構成することも可能です。
 {: shortdesc}
 
 この URL や経路は、{{site.data.keyword.Bluemix_notm}} `地域`に基づいたデフォルト・ドメイン名を使用して作成されます。

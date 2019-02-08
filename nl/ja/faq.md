@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-16"
 
 ---
@@ -43,7 +43,7 @@ lastupdated:  "2018-11-16"
 {: #configcustomdomain}
 {: faq}
 
-{{site.data.keyword.mobilefoundation_short}} は、{{site.data.keyword.Bluemix_notm}} **地域**に基づいたドメイン名を含む URL を使用してアクセス可能な {{site.data.keyword.mfserver_short_notm}} をプロビジョンします。独自のカスタム・ドメインを構成することも可能です。
+{{site.data.keyword.mobilefoundation_short}} は、{{site.data.keyword.Bluemix_notm}} **地域**に基づいたドメイン名を含む URL を使用してアクセス可能な {{site.data.keyword.mfserver_short_notm}} をプロビジョンします。 独自のカスタム・ドメインを構成することも可能です。
 
 この URL や経路は、{{site.data.keyword.Bluemix_notm}} `地域`に基づいたデフォルト・ドメイン名を使用して作成されます。
 

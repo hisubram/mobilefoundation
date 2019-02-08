@@ -243,7 +243,7 @@ Context  context = getContext();
 
 #### 複数ユーザー・サポート
 {: #multiple-user-support }
-単一の MobileFirst アプリケーションに、さまざまなコレクションからなる多数のストアを作成できます。`openCollections` 関数はオプション・オブジェクトとユーザー名を受け取ります。 ユーザー名が指定されていない場合、デフォルトのユーザー名 "**jsonstore**" が使用されます。
+単一の MobileFirst アプリケーションに、さまざまなコレクションからなる多数のストアを作成できます。 `openCollections` 関数はオプション・オブジェクトとユーザー名を受け取ります。 ユーザー名が指定されていない場合、デフォルトのユーザー名 "**jsonstore**" が使用されます。
 
 ```java
 Context  context = getContext();
