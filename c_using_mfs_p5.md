@@ -117,7 +117,7 @@ Use the **Start Server with Advanced Configuration** from the `Overview` page to
   - **Instances** displays the number of instances that are created.
 
 ## Mobile Analytics
-{: #mobile_analytics}
+{: #mobile_analytics_p5}
 
 Mobile Analytics server is included and preconfigured with the Mobile Foundation: Developer plan service instance.
 

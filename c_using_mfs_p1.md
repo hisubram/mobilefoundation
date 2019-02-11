@@ -30,7 +30,7 @@ After you create the {{site.data.keyword.mobilefoundation_short}} service instan
 You can now manage your mobile apps and mobile devices, use your server as a mobile backend, send push notifications, and do more.
 
 ## Mobile Analytics
-{: #mobile_analytics}
+{: #mobile_analytics_p1}
 
 Mobile Analytics server is included and preconfigured with the Mobile Foundation: Developer plan service instance.
 
