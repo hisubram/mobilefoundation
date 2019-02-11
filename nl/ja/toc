@@ -89,7 +89,7 @@ Mobile Foundation
     コード・パターン
         [Develop hybrid mobile app with cloud native backend](https://developer.ibm.com/patterns/develop-hybrid-mobile-app-with-cloud-native-back-end/)
         [Secure mobile offline synchronization](https://developer.ibm.com/patterns/secure-offline-synchronization-ibm-mobile-foundation/)
-        [LDAP サーバーまたはソーシャル・ログインを使用したユーザー認証のデモ](https://github.com/IBM/MFP-Auth-LDAP/)
+        [LDAP サーバーまたはソーシャル・ログインを使用したユーザー認証のデモ](https://developer.ibm.com/patterns/implementing-mobile-user-authentication/)
         [タグに基づくプッシュ通知の構成](https://github.com/IBM/tag-based-push-notifications)
 
     {: .topicgroup}
