@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -30,9 +30,9 @@ lastupdated: "2019-01-04"
 # Configure Offline Storage
 {: #configure_offline_storage}
 
-The Mobile Foundation JSONStore is an optional client-side API that provides a lightweight, document-oriented storage system. JSONStore enables persistent storage of JSON documents. Documents in an application are available in JSONStore even when the device that is running the application is offline. This persistent, always-available storage can be useful to give users access to documents when, for example, there's no network connection available in the device. For an overview of JSONStore concepts and terminology, see [here](jsonstore.html).
+The Mobile Foundation JSONStore is an optional client-side API that provides a lightweight, document-oriented storage system. JSONStore enables persistent storage of JSON documents. Documents in an application are available in JSONStore even when the device that is running the application is offline. This persistent, always-available storage can be useful to give users access to documents when, for example, there's no network connection available in the device. For an overview of JSONStore concepts and terminology, see [here](/docs/services/mobilefoundation/jsonstore.html).
 
-For advanced offline storage configuration, see [here](advanced_jsonstore.html).
+For advanced offline storage configuration, see [here](/docs/services/mobilefoundation/advanced_jsonstore.html).
 {: note}
 
 ### Configure offline storage for Cordova or Ionic apps

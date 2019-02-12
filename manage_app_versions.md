@@ -38,6 +38,6 @@ Using the Mobile Foundation Operations console you can monitor and manage access
    *  Export version
 
 
-See [Managing devices](manage_devices.html), to learn about managing devices. See [Remotely disable an app version](remote_disable_app_version.html), to learn about remotely disabling a specific version of an app.
+See [Managing devices](/docs/services/mobilefoundation/manage_devices.html), to learn about managing devices. See [Remotely disable an app version](/docs/services/mobilefoundation/remote_disable_app_version.html), to learn about remotely disabling a specific version of an app.
 {: note}
 

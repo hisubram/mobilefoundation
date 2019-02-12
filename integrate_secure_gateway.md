@@ -22,7 +22,7 @@ When you build enterprise mobile apps, you often want to integrate your apps wit
 This tutorial explains how to access HTTP endpoints in your on-premise data center from Mobile Foundation adapters running on IBM cloud, using Secure Gateway service.
 
 ## Prerequisite
-{: #prereq}
+{: #prereq_int_sec_gw}
 
 To complete this tutorial, you will need a HTTP endpoint within your  enterprise firewall that exposes the systems of record data. Alternatively, create a test endpoint in your local environment using [this sample ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/MobileFirst-Platform-Developer-Center/MFPSecureGatewayIonic/tree/master/NodeJSHTTPProject) `Node.js` project.
 
@@ -118,7 +118,7 @@ From the Mobile Foundation service console, create the [Mobile Foundation server
 
 In this tutorial, we will connect to the Secure Gateway endpoint using a Mobile Foundation adapter. [Download ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/MobileFirst-Platform-Developer-Center/Adapters/tree/release80/JavaHTTP) the Mobile Foundation JavaHTTP adapter.
 
-Build and deploy the adapter in Mobile Foundation Operations console using [mfpdev-cli](using_cli.html) commands.
+Build and deploy the adapter in Mobile Foundation Operations console using [mfpdev-cli](/docs/services/mobilefoundation/using_cli.html) commands.
 ```bash
 mfpdev adapter build 
 mfpdev adapter deploy
@@ -149,7 +149,7 @@ You can connect to multiple on-premise endpoints by configuring multiple destina
 
 
 ## Summary
-{: #summary}
+{: #summary_int_sec_gw}
 
 Using this tutorial you should be able to establish a secure connection between the Mobile Foundation adapters running on IBM Cloud and an on-premise HTTP endpoint, using the Secure Gateway service.
 

@@ -21,7 +21,7 @@ To visualize insights from the analytics data captured and sent from your applic
 
 The Mobile Analytics Console can be run in two modes:
   - **Demo Mode ON** which is purely for demonstration purposes showing the different analytics views (charts and tables) using simulated data feeds.
-  - **Demo Mode OFF** which shows the various analytics views based on realtime data feeds coming from your applications [instrumented for Mobile Analytics](instrument_an_app.html).
+  - **Demo Mode OFF** which shows the various analytics views based on realtime data feeds coming from your applications [instrumented for Mobile Analytics](/docs/services/mobilefoundation/instrument_an_app.html).
   
 All analytics views can be pruned by applying filters around *application name*, *version*, *device OS* and *time period* thus allowing you to obtain insights from different perspectives.
 
@@ -70,5 +70,5 @@ This view provides insights into the actual interactive experience your users ar
 * **App owners** and **Developers** can use this view to also manage actions on feedback received such as recording comments or links to issues created in bug-tracking systems.  An overall review status can also be set to each feedback to help in summarizing actions taken on user feedback.
 
 ## Custom Charts
-This view extends Mobile Analytics to custom cases where **App owners** and **Developers** would like to build their own, application specific analytics.   Using this facility you can build your own analytics views (charts, tables etc.) around standard analytics data that is captured by the Client SDK and also custom data or application specific data that is logged.  See [here](build_custom_charts.html) for more information about this extended analytics facility.
+This view extends Mobile Analytics to custom cases where **App owners** and **Developers** would like to build their own, application specific analytics.   Using this facility you can build your own analytics views (charts, tables etc.) around standard analytics data that is captured by the Client SDK and also custom data or application specific data that is logged.  See [here](/docs/services/mobilefoundation/build_custom_charts.html) for more information about this extended analytics facility.
 

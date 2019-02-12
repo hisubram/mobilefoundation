@@ -105,4 +105,4 @@ If you have technical questions about developing or deploying an app with {{site
 
 For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} forum. Include the `bluemix` and  `mobilefirst` tags.
 
-For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/docs/get-support/getstarttssup.html#typesofsupport  ){: new_window}.
+For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/docs/get-support/getstarttssup.html#typesofsupport){: new_window}.

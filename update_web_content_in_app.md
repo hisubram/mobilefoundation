@@ -53,9 +53,9 @@ After you've made changes to your web resources, you can package and upload them
   ```
   The `mfpdev app webupdate` command packages the updated web resources to a `.zip` file and uploads it to the default Mobile Foundation server running in the developer workstation. The packaged web resources can be found at the `[cordova-project-root-folder]/mobilefirst/` folder.
 
-For alternate steps to update web content in your app, see [here](update_web_content_in_app_alternate_steps.html).
+For alternate steps to update web content in your app, see [here](/docs/services/mobilefoundation/update_web_content_in_app_alternate_steps.html).
 
 ## Advanced Direct Update configuration
 {: #advanced_direct_update_config}
 
-For advanced topics on Direct Update configuration, see [here](update_web_content_in_app_advanced.html).
+For advanced topics on Direct Update configuration, see [here](/docs/services/mobilefoundation/update_web_content_in_app_advanced.html).

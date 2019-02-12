@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2019-01-04"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,14 +14,14 @@ lastupdated:  "2019-01-04"
 {:pre: .pre}
 
 
-# Offline storage using JSONStore
-{: #overview }
+# JSONStore
+{: #jsonstore }
 The {{site.data.keyword.mobilefoundation_short}} **JSONStore** is an optional client-side API that provides a lightweight, document-oriented storage system. JSONStore enables persistent storage of **JSON documents**. Documents in an application are available in JSONStore even when the device that is running the application is offline. This persistent, always-available storage can be useful to give users access to documents when, for example, there's no network connection available in the device.
 
 Because it’s familiar to developers, relational database terminology is used in this documentation at times to help explain JSONStore. There are many differences between a relational database and JSONStore however. For example, the strict schema that is used to store data in relational databases is different from JSONStore's approach. With JSONStore, you can store any JSON content, and index the content that you need to search.
 
 ## Key features
-{: #key-features }
+{: #key-features-jsonstore }
 * Data indexing for efficient searching
 * Mechanism for tracking local-only changes to the stored data
 * Support for many users
@@ -30,7 +30,7 @@ Because it’s familiar to developers, relational database terminology is used i
 A single store can have many collections, and each collection can have many documents. It’s also possible to have a MobileFirst application that consists of multiple stores. For information, see JSONStore multiple user support.
 
 ## Support level
-{: #support-level }
+{: #support-level-jsonstore }
 * JSONStore is supported in Native iOS and Android applications (no support for native Windows (Universal and UWP)).
 * JSONStore is supported in Cordova iOS, Android and Windows (Universal and UWP) applications.
 
@@ -175,7 +175,7 @@ The init (JavaScript) or open (Native iOS and Native Android) API can take an op
 An example use case would be various employees that share a physical device (for example an iPad or Android tablet) and a MobileFirst application. Multiple user support is useful when the employees work different shifts and handle private data from different customers, while they use the MobileFirst application.
 
 ## Security
-{: #security }
+{: #security-jsonstore }
 You can secure all of the collections in a store by encrypting them.
 
 To encrypt all of the collections in a store, pass a password to the `init` (JavaScript) or `open` (Native iOS and Native Android) API. If no password is passed, none of the documents in the store collections are encrypted.
@@ -204,7 +204,7 @@ To decrypt the data, you can look up the metadata in a JSONStore collection, rea
 
 This metadata can include the key, salt, Initialization Vector (IV), type of file, path to the file, and others.
 
-Learn more about [JSONStore Security Utilities](security_utilities.html#security_utilities).
+Learn more about [JSONStore Security Utilities](/docs/services/mobilefoundation/security_utilities.html#security_utilities).
 {: tip}
 
 ### Windows 8.1 Universal and Windows 10 UWP encryption
@@ -237,17 +237,17 @@ If you don’t need encryption, the JSONStore is fully functional (minus encrypt
    {: codeblock}
 
 ## Performance
-{: #performance }
+{: #performance-jsonstore }
 The following are factors that can affect JSONStore performance.
 
 ### Network
-{: #network }
+{: #network-jsonstore }
 * Check network connectivity before you perform operations, such as sending all dirty documents to an adapter.
 * The amount of data that is sent over the network to a client heavily affects performance. Send only the data that is required by the application, instead of copying everything inside your backend database.
 * If you’re using an adapter, consider setting the compressResponse flag to true. That way, responses are compressed, which generally uses less bandwidth and has a faster transfer time than without compression.
 
 ### Memory
-{: #memory }
+{: #memory-jsonstore }
 * When you use the JavaScript API, JSONStore documents are serialized and deserialized as Strings between the Native (Objective-C, Java, or C#) Layer and the JavaScript Layer. One way to mitigate possible memory issues is by using limit and offset when you use the find API. That way, you limit the amount of memory that is allocated for the results and can implement things like pagination (show X number of results per page).
 * Instead of using long key names that are eventually serialized and deserialized as Strings, consider mapping those long key names into smaller ones (for example: `myVeryVeryVerLongKeyName` to `k` or `key`). Ideally, you map them to short key names when you send them from the adapter to the client, and map them to the original long key names when you send data back to the backend.
 * Consider splitting the data inside a store into various collections. Have small documents over various collections instead of monolithic documents in a single collection. This consideration depends on how closely related the data is and the use cases for said data.
@@ -255,7 +255,7 @@ The following are factors that can affect JSONStore performance.
 * JavaScript and Java™ have garbage collectors, while Objective-C has Automatic Reference Counting. Allow it to work, but don’t depend on it entirely. Try to null references that are no longer used and use profiling tools to check that memory usage is going down when you expect it to go down.
 
 ### CPU
-{: #cpu }
+{: #cpu-jsonstore }
 * The amount of search fields and extra search fields that are used affect performance when you call the add method, which does the indexing. Only index the values that are used in queries for the find method.
 * By default, JSONStore tracks local changes to its documents. This behavior can be disabled, hence saving a few cycles, by setting the `markDirty` flag to **false** when you use the add, remove, and replace APIs.
 * Enabling security adds some overhead to the `init` or `open` APIs and other operations that work with documents inside the collection. Consider whether security is really required. For example, the open API is much slower with encryption because it must generate the encryption keys that are used for encryption and decryption.
@@ -264,9 +264,9 @@ The following are factors that can affect JSONStore performance.
 * The `find` APIs (`find`, `findAll`, and `findById`) are affected by encryption, since they must decrypt every document to see whether it’s a match or not. For find by query, if a limit is passed, it’s potentially faster as it stops when it reaches the limit of results. JSONStore doesn’t need to decrypt the rest of the documents to figure out if any other search results remain.
 
 ## Concurrency
-{: #concurrency }
+{: #concurrency-jsonstore }
 ### JavaScript
-{: #javascript }
+{: #javascript-jsonstore }
 Most of the operations that can be performed on a collection, such as add and find, are asynchronous. These operations return a jQuery promise that is resolved when the operation completes successfully and rejected when a failure occurs. These promises are similar to success and failure callbacks.
 
 A jQuery Deferred is a promise that can be resolved or rejected. The following examples aren’t specific to JSONStore, but are intended to help you understand their usage in general.
@@ -329,15 +329,15 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 ```
 
 ### Objective-C
-{: #objective-c }
+{: #objective-c-jsonstore }
 When you use the Native iOS API for JSONStore, all operations are added to a synchronous dispatch queue. This behavior ensures that operations that touch the store are run in order on a thread that isn't the main thread. For more information, see the Apple documentation at [Grand Central Dispatch (GCD) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window}.
 
 ### Java™
-{: #java }
+{: #java-jsonstore }
 When you use the Native Android API for JSONStore, all operations are run on the main thread. You must create threads or use thread pools to have asynchronous behavior. All store operations are thread-safe.
 
 ## Analytics
-{: #analytics }
+{: #analytics-jsonstore }
 You can collect key pieces of analytics information that are related to JSONStore
 
 ### File information
@@ -349,7 +349,7 @@ If the JSONStore API is called with the analytics flag set to **true**, then the
 Performance metrics are collected every time a JSONStore API is called with information about the start and end times of an operation. You can use this information to determine how much time various operations take in milliseconds.
 
 ### Examples
-{: #examples }
+{: #examples-jsonstore }
 #### iOS
 {: #ios-example}
 ```objc
@@ -767,7 +767,7 @@ The backend accepts or rejects changes, and then relays a response back to the c
 After documents are marked as clean, they don’t show up in the output from the `getAllDirty` API.
 
 ## Troubleshooting
-{: #troubleshooting }
+{: #troubleshooting-jsonstore }
 
 ## Provide information when you ask for help
 {: #provide-information-when-you-ask-for-help }
@@ -829,7 +829,7 @@ Follow these steps to isolate the issue to more accurately report a problem.
 6. Use the debugger.
 
 ## Common issues
-{: #common-issues }
+{: #common-issues-jsonstore }
 Understanding the following JSONStore characteristics can help resolve some of the common issues that you might encounter.  
 
 * The only way to store binary data in JSONStore is to first encode it in base64. Store file names or paths instead of the actual files in JSONStore.
@@ -896,7 +896,7 @@ The other internal JSONStore fields are:
 ## JSONStore errors
 {: #jsonstore-errors }
 ### JavaScript
-{: #javascript }
+{: #javascript-errors }
 JSONStore uses an error object to return messages about the cause of failures.
 
 When an error occurs during a JSONStore operation (for example the `find`, and `add` methods in the `JSONStoreInstance` class) an error object is returned. It provides information about the cause of the failure.
@@ -916,7 +916,7 @@ var errorObject = {
 Not all the key/value pairs are part of every error object. For example, the doc value is only available when the operation failed because of a document (for example the `remove` method in the `JSONStoreInstance` class) failed to remove a document.
 
 ### Objective-C
-{: #objective-c }
+{: #objective-c-errors }
 All of the APIs that might fail take an error parameter that takes an address to an NSError object. If you don not want to be notified of errors, you can pass in `nil`. When an operation fails, the address is populated with an NSError, which has an error and some potential `userInfo`. The `userInfo` might contain extra details (for example, the document that caused the failure).
 
 ```objc
@@ -928,7 +928,7 @@ NSError* error = nil;
 ```
 
 ### Java
-{: #java }
+{: #java-errors }
 All of the Java API calls throw a certain exception, depending on the error that happened. You can either handle each exception separately, or you can catch `JSONStoreException` as an umbrella for all JSONStore exceptions.
 
 ```java

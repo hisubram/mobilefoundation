@@ -780,7 +780,7 @@ The Mobile Analytics SDK enables you to instrument your web application.
     {: web}
 
 ## Next steps
-{: #next_steps}
+{: #next_steps_analytics}
 
 Try a simple sample from [here](https://github.com/MobileFirst-Platform-Developer-Center/mfp-analytics-samples).  In less than 5 minutes you will be able to run the sample application and get a feel of what the API discussed on this page do.  You will also be able to notice how analytics show up as different insights on the Analytics console.  
 
