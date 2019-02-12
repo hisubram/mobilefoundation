@@ -2,12 +2,12 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-26"
+lastupdated:  "2019-02-11"
 
 ---
 
-##	iOS SDKs
-{: #ios_sdk}
+#	iOS
+{: #ios_sdk_api}
 
 Download the iOS SDKs from CocoaPods.
 

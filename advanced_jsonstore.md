@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 {:generic: .ph data-hd-programlang='generic'}
@@ -27,11 +27,11 @@ lastupdated: "2019-01-04"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Advanced offline storage configuration 
-{: #adv_configure_offline_storage}
+# Advanced JSONStore 
+{: #advanced_jsonstore}
 
 ## Security in JSONStore
-{: #security_jsonstore} 
+{: #security_jsonstore}
 
 <!--### Cordova
 {: security_jsonstore_cordova}-->
