@@ -64,16 +64,16 @@ Mobile Foundation
     API
         [Administration](https://cloud.ibm.com/apidocs/mobile-foundation/mobile-foundation-administration)
         [Analytics](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)
-        [SDK](services/mobilefoundation/client_sdk_api.html)
+        client_sdk_api.md
 
     {: .topicgroup}
     SDKs
-        [Android](services/mobilefoundation/android_sdk.html)
-        [iOS](services/mobilefoundation/ios_sdk.html)
-        [Cordova and Ionic](services/mobilefoundation/cordova_sdk.html)
-        [React Native](services/mobilefoundation/reactnative_sdk.html)
-        [Windows](services/mobilefoundation/windows_sdk.html)
-        [Web](services/mobilefoundation/web_sdk.html)
+        android_sdk.md
+        ios_sdk.md
+        cordova_sdk.md
+        reactnative_sdk.md
+        windows_sdk.md
+        web_sdk.md
     using_cli.md
 
     {: .topicgroup}
