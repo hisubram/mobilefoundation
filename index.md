@@ -31,7 +31,7 @@ You'll need a {{site.data.keyword.Bluemix}} account and an instance of the {{sit
 ## Step 1: Create an instance of {{site.data.keyword.mobilefoundation_short}} service
 {: #step1create}
 
-1. In the {{site.data.keyword.Bluemix_notm}} **catalog**, select [**{{site.data.keyword.mobilefoundation_short}}**](https://{domainName}/catalog/services/mobile-foundation). The service configuration screen opens.
+1. In the {{site.data.keyword.Bluemix_notm}} **catalog**, select [**{{site.data.keyword.mobilefoundation_short}}**](https://cloud.ibm.com/catalog/services/mobile-foundation). The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
 3. Choose the region, organization and space where you would want to create the service instance.
 4. Select your **Pricing Plan** and click **Create**.
