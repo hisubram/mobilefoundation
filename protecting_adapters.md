@@ -24,9 +24,6 @@ lastupdated: "2018-11-19"
 # Protecting adapters
 {: #protecting_adapters}
 
-## Protecting adapter resources
-{: #protecting_adapters_resources}
-
 In your adapter, you can specify the protecting scope for a Java method or JavaScript resource procedure, or for an entire Java resource class, as outlined in the following [Java](#protect-java-adapter-resources) and [JavaScript](#protect-javascript-adapter-resources) sections. A scope is defined as a string of one or more space-separated scope elements (“scopeElement1 scopeElement2 …”), or null to apply the default scope.
 
 The default MobileFirst scope is `RegisteredClient`, which require an access token for accessing the resource and verifies that the resource request is from an application that is registered with MobileFirst Server. This protection is always applied, unless you [disable resource protection](#disabling-resource-protection). Therefore, even if you do not set a scope for your resource, it is still protected.
@@ -95,8 +92,8 @@ The following code protects a `userName` procedure with a scope that contains `U
 ```
 {: codeblock}
 
-## Disabling resource protection
-{: #disabling-resource-protection}
+## Disabling adapter resource protection
+{: #disabling-adapter-resource-protection}
 
 You can disable the [default MobileFirst resource protection](#protecting_adapters_resources) for a specific Java or JavaScript adapter resource, or for an entire Java class, as outlined in the following Java and JavaScript sections. When resource protection is disabled, the MobileFirst security framework does not require a token to access the resource.
 

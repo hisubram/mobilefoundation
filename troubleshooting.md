@@ -13,8 +13,8 @@ lastupdated: "2018-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Troubleshooting
-{: #troubleshooting}
+# General troubleshooting
+{: #general-troubleshooting}
 
 To isolate and resolve problems with your {{site.data.keyword.IBM_notm}} products, you can use the troubleshooting information. This information contains instructions for using the problem-determination resources that are provided with your {{site.data.keyword.IBM_notm}} products, including {{site.data.keyword.mobilefoundation_short}}.
 {: shortdesc}

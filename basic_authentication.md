@@ -41,7 +41,7 @@ Application developers protect access to their resources by defining the require
 
 A MobileFirst access token is a digitally signed entity that describes the authorization permissions of a client. After the client’s authorization request for a specific scope is granted, and the client is authenticated, the authorization server’s token endpoint sends the client an HTTP response that contains the requested access token.
 
-#### Structure
+#### Structure of access token
 
 The MobileFirst access token contains the following information:
 
@@ -116,7 +116,7 @@ MobileFirst Refresh Token
 
 A MobileFirst refresh token is a digitally signed entity like access token that describes the authorization permissions of a client. Refresh token can be used to get new access token of the same scope. After the client’s authorization request for a specific scope is granted and the client is authenticated, the authorization server’s token endpoint sends the client an HTTP response that contains the requested access token and refresh token. When the access token expires, the client sends refresh token to authorization server’s token endpoint to get a new set of access token and refresh token.
 
-#### Structure
+#### Structure of refresh token
 
 Similar to the MobileFirst access token, the MobileFirst refresh token contains the following information:
 
@@ -200,8 +200,8 @@ The following predefined security checks are available:
 * LTPA-based single sign-on (SSO)
 * Direct Update
 
-#### Challenge Handlers
-{: #challengehandlers}
+#### Challenge Handler entity
+{: #challengehandler_entity}
 
 When trying to access a protected resource, the client may be faced with a challenge. A challenge is a question, a security test, a prompt by the server to make sure that the client is allowed to access this resource. Most commonly, this challenge is a request for credentials, such as a user name and password.
 
@@ -305,8 +305,8 @@ In your adapter, you can specify the protecting scope for a Java method or JavaS
 
 You can disable the default MobileFirst resource protection for a specific Java or JavaScript adapter resource, or for an entire Java class, as outlined in the following Java and JavaScript sections. When resource protection is disabled, the MobileFirst security framework does not require a token to access the resource.
 
-#### Disabling Java resource protection
-{: #disablejavaresprotection}
+#### Disabling Java resource OAuth protection
+{: #disablejavaresoauthprotection}
 
 To entirely disable OAuth protection for a Java resource method or class, add the `@OAuthSecurity` annotation to the resource or class declaration, and set the value of the `enabled` element to `false`:
 
@@ -341,8 +341,8 @@ The following code disables resource protection for a `MyUnprotectedResources` c
     }
 ```
 
-#### Disabling JavaScript resource protection
-{: #diablejavascriptresprotection}
+#### Disabling JavaScript resource OAuth protection
+{: #disablejavascriptresoauthprotection}
 
 To entirely disable OAuth protection for a JavaScript adapter resource (procedure), in the **adapter.xml** file, set the `secured` attribute of the <procedure> element to `false`:
 
@@ -360,8 +360,8 @@ The following code disables resource protection for a `userName` procedure:
 <procedure name="userName" secured="false">
 ```
 
-### Unprotected resources
-{: #unprotectedresources}
+### Defining unprotected resources
+{: #defunprotectedresources}
 
 An unprotected resource is a resource that does not require an access token. The MobileFirst security framework does not manage access to unprotected resources, and does not validate or check the identity of clients that access these resources. Therefore, features such as Direct Update, blocking device access, or remotely disabling an application, are not supported for unprotected resources.
 

@@ -265,7 +265,7 @@ The following are factors that can affect JSONStore performance.
 
 ## Concurrency
 {: #concurrency-jsonstore }
-### JavaScript
+### Concurrency in JavaScript
 {: #javascript-jsonstore }
 Most of the operations that can be performed on a collection, such as add and find, are asynchronous. These operations return a jQuery promise that is resolved when the operation completes successfully and rejected when a failure occurs. These promises are similar to success and failure callbacks.
 
@@ -328,11 +328,11 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 });
 ```
 
-### Objective-C
+### Concurrency in Objective-C
 {: #objective-c-jsonstore }
 When you use the Native iOS API for JSONStore, all operations are added to a synchronous dispatch queue. This behavior ensures that operations that touch the store are run in order on a thread that isn't the main thread. For more information, see the Apple documentation at [Grand Central Dispatch (GCD) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window}.
 
-### Java™
+### Concurrency in Java 
 {: #java-jsonstore }
 When you use the Native Android API for JSONStore, all operations are run on the main thread. You must create threads or use thread pools to have asynchronous behavior. All store operations are thread-safe.
 
@@ -348,9 +348,7 @@ If the JSONStore API is called with the analytics flag set to **true**, then the
 {: #performance-metrics }
 Performance metrics are collected every time a JSONStore API is called with information about the start and end times of an operation. You can use this information to determine how much time various operations take in milliseconds.
 
-### Examples
-{: #examples-jsonstore }
-#### iOS
+### JSONStore example for iOS
 {: #ios-example}
 ```objc
 JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
@@ -359,7 +357,7 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
 
-#### Android
+### JSONStore example for Android
 {: #android-example }
 ```java
 JSONStoreInitOptions initOptions = new JSONStoreInitOptions();
@@ -368,7 +366,7 @@ initOptions.setAnalytics(true);
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
 
-#### JavaScript
+### JSONStore example for JavaScript
 {: #java-script-example }
 ```javascript
 var options = {
@@ -387,16 +385,16 @@ You can work with external data in several different concepts: **Pull** and **Pu
 Many systems use the term pull to refer to getting data from an external source.  
 There are three important pieces:
 
-#### External data source
-{: #external-data-source }
+#### Pull from external data source
+{: #external-data-source-pull }
 This source can be a database, a REST or SOAP API, or many others. The only requirement is that it must be accessible from either the MobileFirst Server or directly from the client application. Ideally, you want this source to return data in JSON format.
 
-#### Transport Layer
-{: #transport-layer }
+#### Transport Layer for Pull
+{: #transport-layer-pull }
 This source is how you get data from the external source into your internal source, a JSONStore collection inside the store. One alternative is an adapter.
 
-#### Internal data source API
-{: #internal-data-source-api }
+#### Internal data source API for Pull
+{: #internal-data-source-api-pull }
 This source is the JSONStore APIs that you can use to add JSON data to a collection.
 
 You can populate the internal store with data that is read from a file, an input field, or hardcoded data in a variable. It doesn’t have to come exclusively from an external source that requires network communication.
@@ -582,15 +580,15 @@ Many systems use the term push to refer to sending data to an external source.
 
 There are three important pieces:
 
-#### Internal data source API
+#### Internal data source API for Push
 {: #internal-data-source-api-push }
 This source is the JSONStore API that returns documents with local-only changes (dirty).
 
-#### Transport Layer
+#### Transport Layer for Push
 {: #transport-layer-push }
 This source is how you want to contact the external data source to send the changes.
 
-#### External data source
+#### Push to external data source
 {: #external-data-source-push }
 This source is typically a database, REST or SOAP endpoint, among others, that receives the updates that the client made to the data.
 
@@ -766,7 +764,7 @@ The backend accepts or rejects changes, and then relays a response back to the c
 
 After documents are marked as clean, they don’t show up in the output from the `getAllDirty` API.
 
-## Troubleshooting
+## Troubleshooting JSONStore
 {: #troubleshooting-jsonstore }
 
 ## Provide information when you ask for help
@@ -895,7 +893,7 @@ The other internal JSONStore fields are:
 
 ## JSONStore errors
 {: #jsonstore-errors }
-### JavaScript
+### JavaScript errors
 {: #javascript-errors }
 JSONStore uses an error object to return messages about the cause of failures.
 
@@ -915,7 +913,7 @@ var errorObject = {
 {: codeblock}
 Not all the key/value pairs are part of every error object. For example, the doc value is only available when the operation failed because of a document (for example the `remove` method in the `JSONStoreInstance` class) failed to remove a document.
 
-### Objective-C
+### Objective-C errors
 {: #objective-c-errors }
 All of the APIs that might fail take an error parameter that takes an address to an NSError object. If you don not want to be notified of errors, you can pass in `nil`. When an operation fails, the address is populated with an NSError, which has an error and some potential `userInfo`. The `userInfo` might contain extra details (for example, the document that caused the failure).
 
@@ -927,7 +925,7 @@ NSError* error = nil;
 [JSONStore destroyDataAndReturnError:&error];
 ```
 
-### Java
+### Java errors
 {: #java-errors }
 All of the Java API calls throw a certain exception, depending on the error that happened. You can either handle each exception separately, or you can catch `JSONStoreException` as an umbrella for all JSONStore exceptions.
 

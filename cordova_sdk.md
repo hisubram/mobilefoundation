@@ -6,7 +6,7 @@ lastupdated:  "2019-02-11"
 
 ---
 
-#	Cordova and Ionic
+#	Cordova and Ionic SDK
 {: #cordova_ionic_sdk_api}
 
 Download the Cordova SDKs from npm.

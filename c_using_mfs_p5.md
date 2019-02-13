@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated:  "2018-11-20"
 With the Professional Per Device plan users can build, test and run mobile applications in production, irrespective of the number of mobile users or devices. Charges are based on the number of daily client devices. This plan supports large deployments and High Availability.
 After you create the {{site.data.keyword.mobilefoundation_short}}: Professional Per Device service instance, read the following procedure to get started with the service.
 
-## Pre-requisites
+## Pre-requisites in Professional Per Device plan
 {: #prerequisites_p5}
 
 Consider the following before you configure  {{site.data.keyword.mobilefoundation_short}}: Professional Per Device service instance.
@@ -73,7 +73,7 @@ In a few seconds, you can access the `Overview` page that provides you with  tut
 You can't change the {{site.data.keyword.Db2_on_Cloud_short}} service instance that is configured to be used by your {{site.data.keyword.mobilefoundation_short}} service instance. However, you can use the same {{site.data.keyword.Db2_on_Cloud_short}} service instance across multiple {{site.data.keyword.mobilefoundation_short}} service instances, as each {{site.data.keyword.mobilefoundation_short}} service instance creates its own schema in the selected {{site.data.keyword.Db2_on_Cloud_short}} service instance.
 {: note}
 
-## Starting the MobileFirst server
+## Starting the MobileFirst server created using Professional Per Device plan
 {: #start_mobilefoundation_p5}
 
 * To start the {{site.data.keyword.mfserver_short_notm}}, with default settings, click **Start Basic Server**.
@@ -96,7 +96,7 @@ The process of creating your server starts. This process takes about 10 minutes,
 
 With the console, you can manage your mobile apps, adapters, and mobile devices, use your server as a mobile backend, send push notifications, and do more.
 
-## Re-creating the MobileFirst server
+## Re-creating the MobileFirst server when using Professional Per Device plan
 {: #recreate_mobilefoundation_p5}
 
 *	Click **Recreate** to re-create the server.
@@ -106,7 +106,7 @@ With the console, you can manage your mobile apps, adapters, and mobile devices,
 Data from your previous server instance including information on the apps and adapters is persisted in the configured {{site.data.keyword.Db2_on_Cloud_short}} service instance. This data is used to recreate your server.
 {: note}
 
-##	Setting up advanced configuration
+##	Setting up advanced configuration in Professional Per Device plan
 {: #using_mfs_advanced_p5}
 
 Use the **Start Server with Advanced Configuration** from the `Overview` page to create the server with advanced or custom settings. You can also update the server settings to customize your server configuration by clicking the **Settings** tab. {{site.data.keyword.mobilefoundation_short}} gives you access to some advanced settings.
@@ -116,7 +116,7 @@ Use the **Start Server with Advanced Configuration** from the `Overview` page to
 
   - **Instances** displays the number of instances that are created.
 
-## Mobile Analytics
+## Mobile Analytics in Professional Per Device plan
 {: #mobile_analytics_p5}
 
 Mobile Analytics server is included and preconfigured with the Mobile Foundation: Developer plan service instance.

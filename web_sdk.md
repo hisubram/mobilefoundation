@@ -6,7 +6,7 @@ lastupdated:  "2019-02-11"
 
 ---
 
-#	Web
+#	Web SDK
 {: #web_sdk_api}
 
 Download the Web SDKs from npm.

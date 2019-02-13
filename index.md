@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-16"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated:  "2018-11-16"
 {:note: .note}
 
 # Getting started tutorial
-{: #gettingstartedtemplate}
+{: #getting-started}
 
 {{site.data.keyword.mobilefoundation_long}} expedites the setting up of an {{site.data.keyword.mfp_full}} environment using which you can develop, test, and run enterprise mobile apps. {{site.data.keyword.mobilefoundation_short}} offers the following different service plans: Developer, Professional Per Device, and Professional 1 Application.
 {: shortdesc}
@@ -24,7 +24,7 @@ Using the Professional 1 Application plan a single application built on any of t
 This getting started tutorial enables you to create a {{site.data.keyword.mobilefoundation_short}} service instance using one of the supported plans. You can then register an application. Download and edit the registered application, deploy an adapter and finally test the application.
 
 ## Before you begin
-{: #prereqs}
+{: #prereqs-gs}
 
 You'll need a {{site.data.keyword.Bluemix}} account and an instance of the {{site.data.keyword.mobilefoundation_short}} service.
 
@@ -246,7 +246,7 @@ After creating and starting your Mobile Foundation server instance, you can carr
 
 
 ## Next steps
-{: #nextsteps}
+{: #nextsteps-gs}
 
 You can follow the [Quick Start tutorials ![External link icon](../../icons/launch-glyph.svg "Quick Start tutorials")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} to work with more sample applications and to explore the working of {{site.data.keyword.mobilefoundation_short}}.
 

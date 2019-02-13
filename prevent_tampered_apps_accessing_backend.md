@@ -97,8 +97,8 @@ To use the BTS tool in Xcode:
 
 The tool should be used when building a production version of the application.
 
-## Troubleshooting
-{: #troubleshooting}
+## Troubleshooting application authenticity
+{: #troubleshooting-app-authenticity}
 
 ### Reset
 {: #trblreset}

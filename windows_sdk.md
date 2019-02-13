@@ -6,7 +6,7 @@ lastupdated:  "2019-02-11"
 
 ---
 
-#	Windows
+#	Windows SDK
 {: #windows_sdk_api}
 
 Download the Windows SDKs from nuget.

@@ -15,7 +15,6 @@ lastupdated:  "2018-11-19"
 #	Security Utilities
 {: #security_utilities}
 
-## Overview
 The Mobile Foundation client-side API provides some security utilities to help protect your user's data. Features like JSONStore are great if you want to protect JSON objects. However, it’s not suggested to store binary blobs in a JSONStore collection.
 
 Instead, store binary data on the file system, and store the file paths and other metadata inside a JSONStore collection. If you want to protect files like images, you can encode them as base64 strings, encrypt it, and write the output to disk. To decrypt the data, you can look up the metadata in a JSONStore collection. Read the encrypted data from the disk, and decrypt it using the metadata that was stored. This metadata can include the key, salt, Initialization Vector (IV), type of file, path to the file, and others.
@@ -36,24 +35,23 @@ At a high level, the SecurityUtils API provides the following APIs:
 ## Setup
 Ensure that you import the following files to use the JSONStore security utilities APIs.
 
-### iOS
+### Set up iOS
 
 ```objc
 #import "WLSecurityUtils.h"
 ```
 
-### Android
+### Set up Android
 
 ```java
 import com.worklight.wlclient.api.SecurityUtils
 ```
 
-### JavaScript
+### Set up JavaScript
 No setup is required.
 
-## Examples
-### iOS
-#### Encryption and decryption
+## Examples for iOS
+### Encryption and decryption in iOS
 
 ```objc
 // User provided password, hardcoded only for simplicity.
@@ -87,7 +85,7 @@ NSString* decryptedString = [WLSecurityUtils decryptWithKey:key
 ```
 {: codeblock}
 
-#### Encode and decode base64
+### Encode and decode base64 in iOS
 
 ```objc
 // Input string.
@@ -102,7 +100,7 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-#### Get remote random
+### Get remote random in iOS
 
 ```objc
 [WLSecurityUtils getRandomStringFromServerWithBytes:32
@@ -117,8 +115,8 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-### Android
-#### Encryption and decryption
+## Examples for Android
+### Encryption and decryption in Android
 
 ```java
 String password = "HelloPassword";
@@ -136,7 +134,7 @@ String decipheredText = SecurityUtils.decrypt(key, encryptedObject);
 ```
 {: codeblock}
 
-#### Encode and decode base64
+### Encode and decode base64 in Android
 
 ```java
 import android.util.Base64;
@@ -153,7 +151,7 @@ String decodedText = new String(base64Decoded, "UTF-8");
 ```
 {: codeblock}
 
-#### Get remote random
+### Get remote random in Android
 
 ```java
 Context context; // This is the current Activity's context.
@@ -176,7 +174,7 @@ SecurityUtils.getRandomStringFromServer(byteLength, context, listener);
 ```
 {: codeblock}
 
-#### Get local random
+### Get local random in Android
 
 ```java
 int byteLength = 32;
@@ -184,8 +182,8 @@ String randomString = SecurityUtils.getRandomString(byteLength);
 ```
 {: codeblock}
 
-### JavaScript
-#### Encryption and decryption
+## Examples for JavaScript
+### Encryption and decryption in JavaScript
 
 ```javascript
 // Keep the key in a variable so that it can be passed to the encrypt and decrypt API.
@@ -233,7 +231,7 @@ WL.SecurityUtils.keygen({
 ```
 {: codeblock}
 
-#### Encode and decode base64
+### Encode and decode base64 in JavaScript
 
 ```javascript
 WL.SecurityUtils.base64Encode('Hello World!')
@@ -249,7 +247,7 @@ WL.SecurityUtils.base64Encode('Hello World!')
 ```
 {: codeblock}
 
-#### Get remote random
+### Get remote random in JavaScript
 
 ```javascript
 WL.SecurityUtils.remoteRandomString(32)
@@ -262,7 +260,7 @@ WL.SecurityUtils.remoteRandomString(32)
 ```
 {: codeblock}
 
-#### Get local random
+### Get local random in JavaScript
 
 ```javascript
 WL.SecurityUtils.localRandomString(32)

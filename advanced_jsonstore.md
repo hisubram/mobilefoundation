@@ -34,7 +34,7 @@ lastupdated: "2019-02-12"
 {: #security_jsonstore}
 
 <!--### Cordova
-{: security_jsonstore_cordova}-->
+{: #security_jsonstore_cordova}-->
 
 You can secure all the collections in a store by passing a password to the `init` function. If no password is passed, the documents of all the collections in the store are not encrypted.
 {: cordova}

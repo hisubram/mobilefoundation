@@ -45,7 +45,7 @@ The following sections will provide the details for these steps, for each of the
 ### Instrument an Android application
 {: #instrument_android_app}
 {: android}
-#### Step 1: Import and install the Mobile Analytics Client SDK
+#### Step 1: Import and install the Mobile Analytics Client SDK for Android
 {: #install_analytics_sdk_android }
 {: android}
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation)
@@ -779,7 +779,7 @@ The Mobile Analytics SDK enables you to instrument your web application.
     The logged custom data can be plotted over custom charts you can define in the Mobile Analytics console to derive custom insights.
     {: web}
 
-## Next steps
+## What to do next?
 {: #next_steps_analytics}
 
 Try a simple sample from [here](https://github.com/MobileFirst-Platform-Developer-Center/mfp-analytics-samples).  In less than 5 minutes you will be able to run the sample application and get a feel of what the API discussed on this page do.  You will also be able to notice how analytics show up as different insights on the Analytics console.  

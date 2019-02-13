@@ -81,7 +81,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 {: codeblock}
 {: cordova}
 
-#### Get an accessor to your JSONStore collection
+#### Get an accessor to your Cordova JSONStore collection
 {: #get_jsonstore_cordova} 
 {: cordova}
 
@@ -97,7 +97,7 @@ var people = WL.JSONStore.get(collectionName);
 The variable *people* can now be used to perform operations on the *people* collection such as `add`, `find`, and `replace`.
 {: cordova}
 
-#### Add documents to a collection
+#### Add documents to a Cordova collection
 {: #add_jsonstore_cordova} 
 {: cordova}
 
@@ -118,7 +118,7 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 {: codeblock}
 {: cordova}
 
-#### Find documents inside a collection
+#### Find documents inside a Cordova collection
 {: #find_jsonstore_cordova} 
 {: cordova}
 
@@ -169,7 +169,7 @@ else {
 {: codeblock}
 {: cordova}
 
-#### Replace documents inside a collection
+#### Replace documents inside a Cordova collection
 {: #replace_jsonstore_cordova} 
 {: cordova}
 
@@ -195,7 +195,7 @@ WL.JSONStore.get(collectionName).replace(document, options).then(function (numbe
 This examples assumes that the document `{_id: 1, json: {name: 'yoel', age: 23} }` is in the collection.
 {: cordova}
 
-#### Remove documents from a collection
+#### Remove documents from a Cordova collection
 {: #remove_jsonstore_cordova} 
 {: cordova}
 
@@ -216,14 +216,14 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: codeblock}
 {: cordova}
 
-#### Remove an entire collection
+#### Remove an entire Cordova collection
 {: #remove_collection_jsonstore_cordova} 
 {: cordova}
 
 Use `removeCollection` to delete all the documents that are stored inside a collection. This operation is similar to dropping a table in database terms.
 {: cordova}
 
-#### Destroy JSONStore
+#### Destroy Cordova JSONStore
 {: #destroy_jsonstore_cordova} 
 {: cordova}
 
@@ -274,7 +274,7 @@ Follow the [Adding the Mobile Foundation SDK to iOS applications ![External link
    {: codeblock}
    {: ios}
 
-#### Open JSONStore collection: iOS
+#### Open iOS JSONStore collection 
 {: #open_ios} 
 {: ios}
 
@@ -296,7 +296,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Get an accessor to your JSONStore collection
+#### Get an accessor to your iOS JSONStore collection
 {: #get_jsonstore_ios} 
 {: ios}
 
@@ -313,7 +313,7 @@ let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWit
 The variable collection can now be used to perform operations on the `people` collection such as `add`, `find`, and `replace`.
 {: ios}
 
-#### Add documents to a collection
+#### Add documents to an iOS collection
 {: #add_jsonstore_ios} 
 {: ios}
 
@@ -335,7 +335,7 @@ do  {
 {: codeblock}
 {: ios}
 
-#### Find documents inside a collection
+#### Find documents inside an iOS collection
 {: #find_jsonstore_ios} 
 {: ios}
 
@@ -362,7 +362,7 @@ do  {
 {: codeblock}
 {: ios}
 
-#### Replace documents inside a collection
+#### Replace documents inside an iOS collection
 {: #replace_jsonstore_ios} 
 {: ios}
 
@@ -393,7 +393,7 @@ do {
 This example assumes that the document `{_id: 1, json: {name: 'yoel', age: 23} }` is in the collection.
 {: ios}
 
-#### Remove documents from a collection
+#### Remove documents from an iOS collection
 {: #remove_jsonstore_ios} 
 {: ios}
 
@@ -413,7 +413,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Remove an entire collection
+#### Remove an entire iOS collection
 {: #remove_collection_jsonstore_ios} 
 {: ios}
 
@@ -433,7 +433,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Destroy JSONStore
+#### Destroy an iOS JSONStore
 {: #destroy_jsonstore_ios} 
 {: ios}
 
@@ -488,7 +488,7 @@ Follow the [Adding the Mobile Foundation SDK to Android applications ![External 
    {: note}
    {: android}
 
-#### Open JSONStore collection: Android
+#### Open an Android JSONStore collection
 {: #open_android} 
 {: android}
 
@@ -512,7 +512,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Get an accessor to your JSONStore collection
+#### Get an accessor to your Android JSONStore collection
 {: #get_jsonstore_android} 
 {: android}
 
@@ -535,7 +535,7 @@ try {
 The variable collection can now be used to perform operations on the `people` collection such as `add`, `find`, and `replace`.
 {: android}
 
-#### Add documents to a collection
+#### Add documents to an Android collection
 {: #add_jsonstore_android} 
 {: android}
 
@@ -560,7 +560,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Find documents inside a collection
+#### Find documents inside an Android collection
 {: #find_jsonstore_android} 
 {: android}
 
@@ -589,7 +589,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Replace documents inside a collection
+#### Replace documents inside an Android collection
 {: #replace_jsonstore_android} 
 {: android}
 
@@ -617,7 +617,7 @@ try {
 This example assumes that the document `{_id: 1, json: {name: 'yoel', age: 23} }` is in the collection.
 {: android}
 
-#### Remove documents from a collection
+#### Remove documents from an Android collection
 {: #remove_jsonstore_android} 
 {: android}
 
@@ -641,7 +641,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Remove an entire collection
+#### Remove an entire Android collection
 {: #remove_collection_jsonstore_android} 
 {: android}
 
@@ -662,7 +662,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Destroy JSONStore
+#### Destroy an Android JSONStore
 {: #destroy_jsonstore_android} 
 {: android}
 

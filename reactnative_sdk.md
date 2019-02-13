@@ -6,7 +6,7 @@ lastupdated:  "2019-02-11"
 
 ---
 
-#	React Native
+#	React Native SDK
 {: #reactnative_sdk_api}
 
 Download the React Native SDKs from npm.

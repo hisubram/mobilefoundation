@@ -55,7 +55,7 @@ After you've made changes to your web resources, you can package and upload them
 
 For alternate steps to update web content in your app, see [here](/docs/services/mobilefoundation/update_web_content_in_app_alternate_steps.html).
 
-## Advanced Direct Update configuration
-{: #advanced_direct_update_config}
+## Direct Update advanced configuration
+{: #direct_update_advanced_config}
 
 For advanced topics on Direct Update configuration, see [here](/docs/services/mobilefoundation/update_web_content_in_app_advanced.html).

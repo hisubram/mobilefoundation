@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -34,15 +34,15 @@ node app.js
 ```
 {: codeblock}
 
-## Integration Scenario with Secure Gateway service
+## Integration scenario with Secure Gateway service
 {: #secure_gateway}
 
 The following image illustrates the architecture used in the integration scenario explained in this tutorial.
 
 ![Architecture Diagram](images/SecureGatewayArchi.png)
 
-## Implementing the integration
-{: #implementing_integration}
+## Implementing the Secure Gateway integration
+{: #implementing_sg_integration}
 
 ### Create a Secure Gateway service instance
 Log in to IBM Cloud and create an instance of the [Secure Gateway service](https://cloud.ibm.com/catalog/services/secure-gateway/). 

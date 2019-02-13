@@ -6,7 +6,7 @@ lastupdated:  "2019-02-11"
 
 ---
 
-#	iOS
+#	iOS SDK
 {: #ios_sdk_api}
 
 Download the iOS SDKs from CocoaPods.

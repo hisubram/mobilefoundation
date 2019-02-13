@@ -6,7 +6,7 @@
 Mobile Foundation
 
     {: .navgroup id="learn"}
-    getting-started.md
+    index.md
 
     {: .topicgroup}
     About
@@ -81,8 +81,8 @@ Mobile Foundation
         [Cordova application using the JSONStore APIs](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCordova/tree/release80)
         [Native iOS application using the JSONStore APIs](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreSwift/tree/release80)
         [Native Android application using the JSONStore APIs](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAndroid)
-        [JSONStore code samples](services/mobilefoundation/jsonstore_code_examples.html)
-        [Security in JSONStore code samples](services/mobilefoundation/security_utilities.html)
+        jsonstore_code_examples.md
+        security_utilities.md
         [Create custom Direct Update dialog](https://github.com/MobileFirst-Platform-Developer-Center/CustomDirectUpdate/tree/release80)
 
     {: .topicgroup}
@@ -102,7 +102,7 @@ Mobile Foundation
     {: .navgroup id="help"}
     faq.md
     troubleshooting.md
-    [Contacting support](https://console.bluemix.net/docs/get-support/howtogetsupport.html)
+    [Contacting support](https://cloud.ibm.com/docs/get-support/howtogetsupport.html#getting-customer-support)
 
     {: .topicgroup}
     Developer community
