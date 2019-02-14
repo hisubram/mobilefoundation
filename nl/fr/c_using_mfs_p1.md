@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016, 2018
+  years: 2016, 2019
 lastupdated:  "2018-11-20"
 
 ---
@@ -13,7 +13,7 @@ lastupdated:  "2018-11-20"
 {:tip: .tip}
 {:note: .note}
 
-#	Configuration à l'aide du plan Développeur 
+#	Configuration à l'aide du plan Développeur
 {: #using_mobilefoundation_p1}
 
 Après avoir créé l'instance de service {{site.data.keyword.mobilefoundation_short}} utilisant le

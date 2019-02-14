@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016, 2018
+  years: 2016, 2019
 lastupdated:  "2018-11-27"
 
 ---
@@ -21,12 +21,18 @@ La creación de apps para móvil atractivas es la clave para el éxito de una es
 ###  Conocimientos de apps
 {: #app_insights}
 
-Obtenga información sobre el uso de apps y el comportamiento de apps y usuarios. Obtenga conocimientos operativos sobre la resolución de problemas. Equipe la app y obtenga conocimientos empresariales, que se pueden ver como diagramas personalizados del lado del servidor. Habilite usuarios finales para que informen sobre errores y problemas de la app con un movimiento.
+Para que la fidelización del usuario sea relevante y activa, debe obtener información sobre el rendimiento de la aplicación con los usuarios. La característica Mobile Analytics de Mobile Foundation proporciona esta posibilidad con visualizaciones incorporadas (gráficos y tablas). Con una instrumentación muy mínima de la aplicación, puede visualizar información procesable fácilmente en la consola de Mobile Analytics, como por ejemplo:
+- **Patrones de incorporación de usuario**: ¿tiene nuevos usuarios que se incorporan a la aplicación? ¿Tiene usuarios que vuelven a su aplicación?
+- **Patrones de uso**: ¿en qué momento se utiliza más y menos la aplicación? A este respecto, ¿responde a la relevancia de su negocio?
+- **Rendimiento de fondo**: ¿cuáles son las funciones más utilizadas de los sistemas de fondo y cuál ha sido su tiempo de respuesta y su estabilidad? ¿Es necesario reequilibrar el programa de fondo?
+- **Estabilidad de aplicación**: ¿qué estabilidad ha tenido la aplicación a lo largo del tiempo? Si se han producido fallos, ¿cuáles son las causas (registros de bloqueo)? ¿Se debe corregir el diseño/la implementación de la aplicación?
+- **Experiencia de usuario integrada en la aplicación**: ¿cuál es la experiencia interactiva real que están viviendo los usuarios mientras utilizan la app? ¿Cómo se sienten? ¿Debe volver a consultar el estudio de usuarios?
+- **Rastreos personalizados**: gráficos personalizados definidos y trazados en torno a los datos personalizados que se registran como parte de los rastreos y flujos específicos de la aplicación, flexibilidad para ampliar y definir sus propios conocimientos que pueden facilitar también sus decisiones empresariales.
 
 ###  Infraestructura de seguridad
 {: #security_framework}
 
-Amplia seguridad específica del canal móvil. Proteja datos del dispositivo, API y su marca de los piratas informáticos y las vulnerabilidades. Cifrado de datos fuera de línea, evite ataques de tipo man-in-the-middle, deniegue el acceso a dispositivos robados o perdidos, configure una seguridad adicional para operaciones con privilegios, intégrese con soluciones de gestión de identidad existentes, protéjase del código de app de ingeniería inversa y mucho más.
+Amplia seguridad específica del canal móvil. Proteja datos del dispositivo, API y su marca de los piratas informáticos y las vulnerabilidades. Cifrado de datos fuera de línea, evite ataques de suplantación de identidad, deniegue el acceso a dispositivos robados o perdidos, configure una seguridad adicional para operaciones con privilegios, intégrese con soluciones de gestión de identidad existentes, protéjase del código de app de ingeniería inversa y mucho más.
 
 ###  Lógica empresarial
 {: #business_logic}

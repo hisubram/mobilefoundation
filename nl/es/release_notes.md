@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-27"
 
 ---
@@ -20,6 +20,15 @@ lastupdated: "2018-11-27"
 Las actualizaciones del servicio de Mobile Foundation se proporcionan mediante arreglos temporales (iFixes) y actualizaciones de entrega continua. Los iFixes y las actualizaciones de entrega continua son acumulativos. Las actualizaciones de características se proporcionan en la actualización de entrega continua.
 
 Para obtener más información sobre el modelo de soporte de entrega continua, consulte el [Anuncio de soporte de la entrega continua de Mobile Foundation v8.0![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/897/ENUS217-390/index.html&request_locale=en).
+{: note}
+
+## Actualización de entrega continua 04 (19 de diciembre de 2018)
+{: #cd_update_4}
+
+* Soporte de HTTP/2 para notificaciones push de APN.
+* Se ha publicado el SDK de React Native para Push (react-native-ibm-mobilefirst-push 1.0.0).
+
+Visualice el anuncio de la actualización de entrega continua 04 [aquí ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://mobilefirstplatform.ibmcloud.com/blog/2018/12/24/8-0-cd-update-release/).
 {: note}
 
 ## Actualización de entrega continua 03 (5 de noviembre de 2018)

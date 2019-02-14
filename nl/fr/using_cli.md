@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-19"
 
 ---
@@ -53,7 +53,7 @@ npm install -g --no-optional path-to-mfpdev-cli.tgz
 ```
 {: codeblock}
 
-Lors de l'installation de l'interface CLI MobileFirst à l'aide du noeud 8, vous pouvez voir quelques-unes des erreurs suivantes dans la fenêtre du terminal : 
+Lors de l'installation de l'interface CLI MobileFirst à l'aide du noeud 8, vous pouvez voir quelques-unes des erreurs suivantes dans la fenêtre du terminal :
 ```
 > node-gyp rebuild
 
@@ -82,7 +82,7 @@ gyp ERR! not ok
 > node install
 ```
 
-Cette erreur est due à un [bogue connu dans node-gyp![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/nodejs/node-gyp/issues/1547){: new_window}. Ces erreurs peuvent être ignorées car elles n'affectent pas le fonctionnement de l'interface CLI de MobileFirst. Ce problème concerne le niveau de correctif temporaire `mfpdev-cli` *8.0.2018100112* et les versions ultérieures. Pour surmonter cette erreur, utilisez l'indicateur `--no-optional` pendant l'installation. 
+Cette erreur est due à un [bogue connu dans node-gyp![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/nodejs/node-gyp/issues/1547){: new_window}. Ces erreurs peuvent être ignorées car elles n'affectent pas le fonctionnement de l'interface CLI de MobileFirst. Ce problème concerne le niveau de correctif temporaire `mfpdev-cli` *8.0.2018100112* et les versions ultérieures. Pour surmonter cette erreur, utilisez l'indicateur `--no-optional` pendant l'installation.
 
 Pour confirmer que l'interface de ligne de commande est installée correctement, exécutez la commande suivante :
 ```
@@ -191,14 +191,14 @@ mfpdev help <command name>
 ### mfpdev app
 {: #mfpdev_app}
 
-Enregistre votre application avec un serveur MobileFirst Server.
+Enregistre votre application avec un serveur MobileFirst.
 
 ```
 mfpdev app register
 ```
 {: codeblock}
 
-Pour enregistrer une application sur un serveur et un environnement d'exécution qui ne sont pas ceux par défaut, utilisez : 
+Pour enregistrer une application sur un serveur et un environnement d'exécution qui ne sont pas ceux par défaut, utilisez :
 
 ```
 mfpdev app register <server> <runtime>
@@ -248,7 +248,7 @@ mfpdev app webupdate
 ```
 {: codeblock}
 
-Cette commande conditionne les ressources web mises à jour dans un fichier compressé (*.zip*) et les télécharge sur le serveur par défaut MobileFirst Server enregistré. Ce package de ressources web se trouve dans le dossier `[cordova-project-root-folder]/mobilefirst/`.
+Cette commande conditionne les ressources web mises à jour dans un fichier compressé (*.zip*) et les télécharge sur le serveur MobileFirst par défaut enregistré. Ce package de ressources web se trouve dans le dossier `[cordova-project-root-folder]/mobilefirst/`.
 
 Pour télécharger les ressources web sur une instance de serveur différente, fournissez le nom du serveur et l'environnement d'exécution en tant qu'élément de la commande :
 
@@ -279,7 +279,7 @@ mfpdev app webupdate --encrypt
 ### mfpdev server
 {: #mfpdev_server}
 
-Affiche des informations relatives au serveur MobileFirst Server.
+Affiche des informations relatives au serveur MobileFirst.
 
 ```
 mfpdev server info
@@ -328,7 +328,7 @@ mfpdev server console <server-name>
 ```
 {: codeblock}
 
-Annule l'enregistrement des applications et retire les adaptateurs du serveur MobileFirst Server.
+Annule l'enregistrement des applications et retire les adaptateurs du serveur MobileFirst.
 
 ```
 mfpdev server clean
@@ -359,7 +359,7 @@ mfpdev adapter build all
 ```
 {: codeblock}
 
-Déploie un adaptateur sur le serveur MobileFirst Server.
+Déploie un adaptateur sur le serveur MobileFirst.
 
 ```
 mfpdev adapter deploy
@@ -372,14 +372,14 @@ mfpdev adapter deploy <server_name>
 ```
 {: codeblock}
 
-Détecte tous les adaptateurs dans le répertoire actuel et ses sous-répertoires et les déploie sur le serveur MobileFirst Server.
+Détecte tous les adaptateurs dans le répertoire actuel et ses sous-répertoires et les déploie sur le serveur MobileFirst.
 
 ```
 mfpdev adapter deploy all
 ```
 {: codeblock}
 
-Appelle une procédure d'adaptateur sur le serveur MobileFirst Server.
+Appelle une procédure d'adaptateur sur le serveur MobileFirst.
 
 ```
 mfpdev adapter call

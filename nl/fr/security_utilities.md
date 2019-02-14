@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-19"
 
 ---
@@ -12,7 +12,7 @@ lastupdated:  "2018-11-19"
 {:tip: .tip}
 {:pre: .pre}
 
-#	Utilitaires de sécurité 
+#	Utilitaires de sécurité
 {: #security_utilities}
 
 ## Présentation
@@ -21,25 +21,23 @@ protéger les objets JSON. Cependant, il est déconseillé de stocker des objets
 
 A la place, stockez les données binaires dans le système de fichiers, et stockez les chemins d'accès aux fichiers et d'autres métadonnées dans une
 collection JSONStore. Si vous voulez protéger des fichiers tels que des images, vous pouvez les coder sous forme de chaînes base64, les chiffrer et écrire
-la sortie sur le disque.Pour déchiffrer les données, vous pouvez rechercher les métadonnées dans une collection JSONStore. Lisez les données chiffrées à partir du disque et déchiffrez-les à l'aide des métadonnées stockées. Ces métadonnées peuvent inclure la clé, le sel de cryptage, le vecteur d'initialisation, le type de fichier, le chemin d'accès au fichier, etc.
+la sortie sur le disque. Pour déchiffrer les données, vous pouvez rechercher les métadonnées dans une collection JSONStore. Lisez les données chiffrées à partir du disque et déchiffrez-les à l'aide des métadonnées stockées. Ces métadonnées peuvent inclure la clé, le sel de cryptage, le vecteur d'initialisation, le type de fichier, le chemin d'accès au fichier, etc.
 
 Globalement, l'API SecurityUtils fournit les API suivantes :
 
 * Génération de clé - plutôt que de transmettre un mot de passe directement à la fonction de chiffrement, cette fonction de génération de clé utilise la fonction PBKDF2 (Password-Based Key Derivation Function 2) pour générer une clé forte de 256 bits pour l'API de chiffrement. Elle admet un paramètre spécifiant le nombre
-d'itérations.
-Plus le nombre est élevé, plus un agresseur informatique aura besoin de temps pour attaquer votre clé par force brute. Utilisez une valeur
+d'itérations. Plus le nombre est élevé, plus un agresseur informatique aura besoin de temps pour attaquer votre clé par force brute. Utilisez une valeur
 d'au moins 10 000. Le sel de cryptage doit être unique et complique le travail des agresseurs informatiques qui se servent d'informations de hachage
 existantes pour pirater votre mot de passe. Utilisez une longueur de 32 octets.
 * Chiffrement - l'entrée est chiffrée avec la norme AES (Advanced Encryption Standard). L'API admet une clé qui est générée avec l'API de génération de
 clé. En interne, elle génère un vecteur d'initialisation sécurisé qui est utilisé pour ajouter un ordre aléatoire au premier chiffrement par
-bloc. Le texte est chiffré.
-Si vous voulez chiffrer une image ou un autre format binaire, convertissez votre fichier binaire en texte base64 à l'aide de
+bloc. Le texte est chiffré. Si vous voulez chiffrer une image ou un autre format binaire, convertissez votre fichier binaire en texte base64 à l'aide de
 ces API. Cette fonction de chiffrement renvoie un objet composé des parties suivantes :
     * ct (texte chiffré)
     * IV
     * v (version, qui permet à l'API d'évoluer tout en restant compatible avec une version précédente)
 * Déchiffrement - prend la sortie de l'API de chiffrement comme entrée, et déchiffre le texte chiffré en texte en clair.
-* Chaîne aléatoire distante - obtient une chaîne hexadécimale aléatoire en contactant un générateur aléatoire sur MobileFirst Server. La valeur par défaut est 20 octets, mais vous pouvez indiquer un nombre jusqu'à 64 octets.
+* Chaîne aléatoire distante - obtient une chaîne hexadécimale aléatoire en contactant un générateur aléatoire sur le serveur MobileFirst. La valeur par défaut est 20 octets, mais vous pouvez indiquer un nombre jusqu'à 64 octets.
 * Chaîne aléatoire locale - obtient une chaîne hexadécimale aléatoire en en générant une localement, à la différence de l'API de chaîne aléatoire
 distante, qui requiert un accès au réseau. La valeur par défaut est 32 octets et il n'y a pas de valeur maximale. La durée de l'opération est proportionnelle au nombre d'octets.
 * Codage base64 - applique le codage base64 à une chaîne. En cas d'application du codage base64, étant donné la nature de l'algorithme, la taille des
@@ -62,7 +60,7 @@ import com.worklight.wlclient.api.SecurityUtils
 ```
 
 ### JavaScript
-Aucune configuration n'est requise. 
+Aucune configuration n'est requise.
 
 ## Exemples
 ### iOS

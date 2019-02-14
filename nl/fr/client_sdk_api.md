@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-24"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2018-12-24"
 {:ruby: .ph data-hd-programlang='ruby'}
 {:c#: .ph data-hd-programlang='c#'}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:ios: .ph data-hd-programlang='iOS'}
 {:python: .ph data-hd-programlang='python'}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:php: .ph data-hd-programlang='PHP'}
@@ -24,7 +25,7 @@ lastupdated: "2018-12-24"
 {:reactnative: .ph data-hd-programlang='reactnative'}
 {:csharp: .ph data-hd-programlang='csharp'}
 
-# Interface de programmation (API) pour les plateformes client prises en charge 
+# Interface de programmation (API) pour les plateformes client prises en charge
 
 ### JavaScript
 {: javascript }
@@ -34,22 +35,22 @@ API pour applications Cordova / Web.
     Vous pouvez utiliser l'API JavaScript pour développer des applications pour tous les environnements.
     {: javascript }
 * **[API push côté client ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-hybrid-cordova-js-apidoc/html/refjavascript-mfp-push-hybrid/html/index.html)**  
-Vous pouvez utiliser l'API push JavaScript pour exécuter des fonctions push dans les applications côté client.
+    Vous pouvez utiliser l'API push JavaScript pour exécuter des fonctions push dans les applications côté client.
     {: javascript }
 * **[API d'analyse Web ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://mobilefirstplatform.ibmcloud.com/api-ref/wl-web-analytics-client-js-apidoc/html/refjavascript-web-analytics-client/html/index.html)**  
     Vous pouvez utiliser l'API JavaScript Web pour développer l'analyse MobileFirst pour vos applications Web. Cette API est écrite en JavaScript pur et ne dépend d'aucun autre SDK de plateforme.
     {: javascript }
 
 ### Objective C
-{: objectc }
+{: ios }
 API pour applications iOS natives.
-{: objectc }
+{: ios }
 * **[API côté client ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://mobilefirstplatform.ibmcloud.com/api-ref/wl-ios-objc-apidoc/html/refobjc-worklight-ios/html/index.html)**   
     Utilisez cette API pour développer une application native pour un environnement iOS.
-    {: objectc }
+    {: ios }
 * **[API push côté client ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-ios-n-objc-apidoc/html/refobjc-mfp-push-ios-native/html/index.html)**  
     Utilisez cette API push pour développer des applications pour l'environnement iOS.
-    {: objectc }
+    {: ios }
 
 ### Java
 {: java }
@@ -71,10 +72,10 @@ API pour applications React Native.
 {: reactnative }
 
 * **[API côté client ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://mobilefirstplatform.ibmcloud.com/api-ref/ibm-mobile-first-reactnative/html/refreactnative-mfp-apidoc/html/index.html)**   
-Utilisez cette API pour développer des applications React Native.
+    Utilisez cette API pour développer des applications React Native.
     {: reactnative }
 * **[API JSONStore côté client ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://mobilefirstplatform.ibmcloud.com/api-ref/ibm-mobile-first-reactnative-jsonstore/html/refreactnative-jsonstore-mfp-apidoc/html/index.html)**   
-Vous pouvez utiliser l'API JSONStore pour travailler avec le magasin dans l'environnement React Native.
+    Vous pouvez utiliser l'API JSONStore pour travailler avec le magasin dans l'environnement React Native.
     {: reactnative }
 
 ### C Sharp

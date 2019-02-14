@@ -45,7 +45,7 @@ compile 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundationjsonstore:8.0
 {: #open }
 Utilisez `openCollections` pour ouvrir une ou plusieurs collections JSONStore.
 
-Démarrer ou mettre à disposition une collection signifie créer le stockage persistant contenant la collection et les documents, s'il n'existe pas. Si le stockage persistant est chiffré et qu'un mot de passe correct est transmis, les procédures de sécurité nécessaires pour rendre les données accessibles sont exécutées. 
+Démarrer ou mettre à disposition une collection signifie créer le stockage persistant contenant la collection et les documents, s'il n'existe pas. Si le stockage persistant est chiffré et qu'un mot de passe correct est transmis, les procédures de sécurité nécessaires pour rendre les données accessibles sont exécutées.
 
 Pour les fonctionnalités facultatives que vous pouvez activer au moment de l'initialisation, voir **Sécurité, Prise en charge de plusieurs utilisateurs** et **Intégration de l'adaptateur MobileFirst** dans la deuxième partie de ce tutoriel.
 
@@ -152,9 +152,10 @@ try {
 
 Cet exemple suppose que le document `{_id: 1, json: {name: 'yoel', age: 23} }` se trouve dans la collection.
 
-### Suppression 
+### Suppression
 {: #remove }
-Utilisez `removeDocumentById` pour supprimer un document d'une collection. Les documents ne sont pas effacés de la collection tant que vous n'avez pas appelé `markDocumentClean`. Pour plus d'informations, voir la section **Intégration de l'adaptateur MobileFirst**.
+Utilisez `removeDocumentById` pour supprimer un document d'une collection.
+Les documents ne sont pas effacés de la collection tant que vous n'avez pas appelé `markDocumentClean`. Pour plus d'informations, voir la section **Intégration de l'adaptateur MobileFirst**.
 
 ```java
 Context context = getContext();
@@ -172,9 +173,9 @@ try {
 ```
 {: codeblock}
 
-### Suppression d'une collection 
+### Suppression d'une collection
 {: #remove-collection }
-Utilisez `removeCollection` pour supprimer tous les documents stockés dans une collection. Cette opération est similaire à la suppression d'une table en termes de base de données. 
+Utilisez `removeCollection` pour supprimer tous les documents stockés dans une collection. Cette opération est similaire à la suppression d'une table en termes de base de données.
 
 ```java
 Context context = getContext();
@@ -209,20 +210,19 @@ try {
 ```
 {: codeblock}
 
-## Utilisation avancée 
+## Utilisation avancée
 {: #advanced-usage }
 ### Sécurité
 {: #security }
 Vous pouvez sécuriser toutes les collections d'un magasin en transmettant un objet `JSONStoreInitOptions` avec un mot de passe à la fonction `openCollections`. Si aucun mot de passe n'est transmis, les documents de toutes les collections du magasin ne sont pas chiffrés.
 
-Certaines métadonnées de sécurité sont stockées dans les préférences partagées (Android).   
+Certaines métadonnées de sécurité sont stockées dans les préférences partagées (Android).  
 Le magasin est chiffré avec une clé AES (Advanced
-Encryption Standard) 256 bits. Toutes les clés sont renforcées avec PBKDF2 (Password-Based Key Derivation Function 2). 
+Encryption Standard) 256 bits. Toutes les clés sont renforcées avec PBKDF2 (Password-Based Key Derivation Function 2).
 
-Utilisez `closeAll` pour verrouiller l'accès à toutes les collections jusqu'à ce que vous rappeliez `openCollections`. Si vous pensez que `openCollections` est une fonction de connexion, vous pouvez considérer `closeAll` comme la fonction de déconnexion correspondante. 
+Utilisez `closeAll` pour verrouiller l'accès à toutes les collections jusqu'à ce que vous rappeliez `openCollections`. Si vous pensez que `openCollections` est une fonction de connexion, vous pouvez considérer `closeAll` comme la fonction de déconnexion correspondante.
 
 Utilisez `changePassword` pour changer le mot de passe.
-
 
 ```java
 Context context = getContext();
@@ -244,7 +244,7 @@ try {
 
 #### Prise en charge de plusieurs utilisateurs
 {: #multiple-user-support }
-Vous pouvez créer un grand nombre de magasins contenant différentes collections dans une même application MobileFirst. La fonction `openCollections` accepte un objet options avec un nom d'utilisateur. Si aucun nom d'utilisateur n'est fourni, le nom d'utilisateur par défaut est "**jsonstore**". 
+Vous pouvez créer un grand nombre de magasins contenant différentes collections dans une même application MobileFirst. La fonction `openCollections` accepte un objet options avec un nom d'utilisateur. Si aucun nom d'utilisateur n'est fourni, le nom d'utilisateur par défaut est "**jsonstore**".
 
 ```java
 Context context = getContext();
@@ -264,11 +264,12 @@ try {
 ```
 {: codeblock}
 
-#### Intégration de l'adaptateur MobileFirst 
+#### Intégration de l'adaptateur MobileFirst
 {: #mobilefirst-adapter-integration }
-Cette section suppose que vous connaissez les adaptateurs. L'intégration de l'adaptateur est facultative et permet d'envoyer des données d'une collection à un adaptateur et d'obtenir les données d'un adaptateur dans une collection. Si vous avez besoin de plus de flexibilité, vous pouvez également atteindre ces objectifs à l'aide de fonctions telles que `WLResourceRequest` ou de votre propre instance d'un `HttpClient`.
+Cette section suppose que vous connaissez les adaptateurs. L'intégration de l'adaptateur est facultative et permet d'envoyer des données d'une collection à un adaptateur et d'obtenir les données d'un adaptateur dans une collection.
+Si vous avez besoin de plus de flexibilité, vous pouvez également atteindre ces objectifs à l'aide de fonctions telles que `WLResourceRequest` ou de votre propre instance d'un `HttpClient`.
 
-#### Implémentation d'adaptateur 
+#### Implémentation d'adaptateur
 {: #adapter-implementation }
 Créez un adaptateur et nommez-le "**JSONStoreAdapter**". Définissez ses procédures `addPerson`, `getPeople`, `pushPeople`, `removePerson` et `replacePerson`.
 
@@ -290,16 +291,16 @@ function addPerson(data) {
         return;
     }
     function removePerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: removePerson called.');
+	WL.Logger.debug('Adapter: people, procedure: removePerson called.');
         WL.Logger.debug('Got data from JSONStore to REMOVE: ' + data);
         return;
     }
     function replacePerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: replacePerson called.');
+	WL.Logger.debug('Adapter: people, procedure: replacePerson called.');
         WL.Logger.debug('Got data from JSONStore to REPLACE: ' + data);
         return;
     }
-   ```
+```
 {: codeblock}
 
 #### Chargement de données à partir de l'adaptateur MobileFirst
@@ -310,16 +311,16 @@ Pour charger des données depuis un adaptateur, utilisez `WLResourceRequest`.
 WLResponseListener responseListener = new WLResponseListener() {
   @Override
       public void onFailure(final WLFailResponse response) {
-        // handle failure
+    // handle failure
 }
-@Override
+  @Override
       public void onSuccess(WLResponse response) {
-        try {
+    try {
       JSONArray loadedDocuments = response.getResponseJSON().getJSONArray("peopleList");
         } catch(Exception e) {
-          // error decoding JSON data
+      // error decoding JSON data
         }
-      }
+  }
 };
 
 try {
@@ -331,9 +332,9 @@ try {
 ```
 {: codeblock}
 
-#### Obtention du push requise (documents modifiés) 
+#### Obtention du push requise (documents modifiés)
 {: #get-push-required-dirty-documents }
-L'appel de `findAllDirtyDocuments` renvoie un tableau de "documents modifiés", qui sont des documents dont les modifications locales n'existent pas sur le système de back end. 
+L'appel de `findAllDirtyDocuments` renvoie un tableau de "documents modifiés", qui sont des documents dont les modifications locales n'existent pas sur le système de back end.
 
 ```java
 Context  context = getContext();
@@ -348,10 +349,9 @@ try {
 ```
 {: codeblock}
 
-   Pour empêcher JSONStore de marquer les documents comme "modifiés", transmettez l'option `options.setMarkDirty(false)` à `add`, `replace` et `remove`.
-   
+Pour empêcher JSONStore de marquer les documents comme "modifiés", transmettez l'option `options.setMarkDirty(false)` à `add`, `replace` et `remove`.
 
-#### Envoi (push) de modifications 
+#### Envoi (push) de modifications
 {: #push-changes }
 Pour transmettre les modifications à un adaptateur, appelez la fonction `findAllDirtyDocuments` pour obtenir une liste des documents modifiés, puis utilisez `WLResourceRequest`. Une fois que les données sont envoyées et une réponse est reçue vérifiez, vous appelez `markDocumentsClean`.
 
@@ -361,34 +361,35 @@ WLResponseListener responseListener = new WLResponseListener() {
   public void onFailure(final WLFailResponse response) {
     // handle failure
 }
-@Override
+  @Override
       public void onSuccess(WLResponse response) {
-        // handle success
+    // handle success
       }
-    };
+};
     Context context = getContext();
 
-    try {
+try {
   String collectionName = "people";
       JSONStoreCollection collection = WLJSONStore.getInstance(context).getCollectionByName(collectionName);
       List<JSONObject> dirtyDocuments = people.findAllDirtyDocuments();
 
-      JSONObject payload = new JSONObject();
+  JSONObject payload = new JSONObject();
       payload.put("people", dirtyDocuments);
 
-      WLResourceRequest request = new WLResourceRequest(new URI("/adapters/JSONStoreAdapter/pushPeople"), WLResourceRequest.POST);
+  WLResourceRequest request = new WLResourceRequest(new URI("/adapters/JSONStoreAdapter/pushPeople"), WLResourceRequest.POST);
   request.send(payload, responseListener);
 } catch(JSONStoreException e) {
   // handle failure
     } catch (URISyntaxException e) {
-      // handle error
+  // handle error
 }
 ```
 {: codeblock}
 
 ## Application exemple
 {: #sample-application }
-Le projet `JSONStoreAndroid` contient une application Android native qui utilise l'API JSONStore. Un projet maven d'adaptateur JavaScript est inclus. 
+Le projet `JSONStoreAndroid` contient une application Android native qui utilise l'API JSONStore.
+Un projet maven d'adaptateur JavaScript est inclus.
 
 ![Image de l'exemple d'application](images/android-native-screen.jpg)
 

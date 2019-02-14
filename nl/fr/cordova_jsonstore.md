@@ -12,7 +12,7 @@ lastupdated:  "2018-06-18"
 {:tip: .tip}
 {:pre: .pre}
 
-#	JSONStore dans les applications Cordova 
+#	JSONStore dans les applications Cordova
 {: #cordova_jsonstore}
 
 ## Prérequis
@@ -22,9 +22,9 @@ lastupdated:  "2018-06-18"
 
 ## Ajout de JSONStore
 {: #adding-jsonstore }
-Pour ajouter un plug-in JSONStore à votre application Cordova : 
+Pour ajouter un plug-in JSONStore à votre application Cordova :
 
-1. Ouvrez une fenêtre **Ligne de commande** et accédez au dossier de votre projet Cordova. 
+1. Ouvrez une fenêtre **Ligne de commande** et accédez au dossier de votre projet Cordova.
 2. Exécutez la commande : `cordova plugin add cordova-plugin-mfp-jsonstore`.
 
 ![Ajout d'une fonctionnalité JSONStore](images/jsonstore-add-plugin.png)
@@ -33,9 +33,9 @@ Pour ajouter un plug-in JSONStore à votre application Cordova :
 {: #basic-usage }
 ### Initialisation
 {: #initialize }
-Utilisez `init` pour ouvrir une ou plusieurs collections JSONStore.   
+Utilisez `init` pour ouvrir une ou plusieurs collections JSONStore.  
 
-Démarrer ou mettre à disposition une collection signifie créer le stockage persistant contenant la collection et les documents, s'il n'existe pas. Si le stockage persistant est chiffré et qu'un mot de passe correct est transmis, les procédures de sécurité nécessaires pour rendre les données accessibles sont exécutées. 
+Démarrer ou mettre à disposition une collection signifie créer le stockage persistant contenant la collection et les documents, s'il n'existe pas. Si le stockage persistant est chiffré et qu'un mot de passe correct est transmis, les procédures de sécurité nécessaires pour rendre les données accessibles sont exécutées.
 
 ```javascript
 var collections = {
@@ -56,7 +56,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 
 ### Obtention
 {: #get }
-Utilisez `get` pour créer un accesseur à la collection. Vous devez appeler `init` avant d'appeler get, faute de quoi, le résultat de `get` est undefined.
+Utilisez `get` pour créer un accesseur à la collection.Vous devez appeler `init` avant d'appeler get, faute de quoi, le résultat de `get` est undefined.
 
 ```javascript
 var collectionName = 'people';
@@ -85,11 +85,11 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 
 ### Recherche
 {: #find }
-* Utilisez `find` pour localiser un document dans une collection à l'aide d'une requête.   
-* Utilisez `findAll` pour extraire tous les documents d'une collection.   
+* Utilisez `find` pour localiser un document dans une collection à l'aide d'une requête.  
+* Utilisez `findAll` pour extraire tous les documents d'une collection.  
 * Utilisez `findById` pour rechercher par l'identifiant unique du document.  
 
-Le comportement par défaut pour find consiste à effectuer une recherche "floue". 
+Le comportement par défaut pour find consiste à effectuer une recherche "floue".
 
 ```javascript
 var query = {name: 'yoel'};
@@ -121,7 +121,7 @@ else {
   };
   WL.JSONStore.get(collectionName).find(query, options).then(function (res) {
     // handle success - results (array of documents found)
-}).fail(function (errorObject) {
+  }).fail(function (errorObject) {
     // handle failure
   });
 }
@@ -130,7 +130,7 @@ else {
 
 ### Remplacement
 {: #replace }
-Utilisez `replace` pour modifier des documents dans une collection. La zone que vous utilisez pour effectuer le remplacement est `_id`, l'identifiant unique du document.
+Utilisez `replace` pour modifier des documents dans une collection.La zone que vous utilisez pour effectuer le remplacement est `_id`, l'identifiant unique du document.
 
 ```javascript
 var document = {
@@ -149,10 +149,10 @@ WL.JSONStore.get(collectionName).replace(document, options).then(function (numbe
 
 Cet exemple suppose que le document `{_id: 1, json: {name: 'yoel', age: 23} }` se trouve dans la collection.
 
-### Suppression 
+### Suppression
 {: #remove }
-Utilisez `remove` pour supprimer un document d'une collection.   
-Les documents ne sont pas effacés de la collection tant que vous n'avez pas appelé push.   
+Utilisez `remove` pour supprimer un document d'une collection.  
+Les documents ne sont pas effacés de la collection tant que vous n'avez pas appelé push.  
 
 > Pour plus d'informations, voir la section **Intégration de l'adaptateur MobileFirst** plus avant dans ce tutoriel.
 
@@ -168,9 +168,9 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 ```
 {: codeblock}
 
-### Suppression d'une collection 
+### Suppression d'une collection
 {: #remove-collection }
-Utilisez `removeCollection` pour supprimer tous les documents stockés dans une collection. Cette opération est similaire à la suppression d'une table en termes de base de données. 
+Utilisez `removeCollection` pour supprimer tous les documents stockés dans une collection. Cette opération est similaire à la suppression d'une table en termes de base de données.
 
 ```javascript
 var collectionName = 'people';
@@ -182,7 +182,7 @@ WL.JSONStore.get(collectionName).removeCollection().then(function (removeCollect
 ```
 {: codeblock}
 
-## Utilisation avancée 
+## Utilisation avancée
 {: #advanced-usage }
 ### Destruction
 {: #destory }
@@ -191,7 +191,7 @@ Utilisez `destroy` pour supprimer les données suivantes :
 * Tous les documents
 * Toutes les collections
 * Tous les magasins (voir "**Prise en charge de plusieurs utilisateurs**" plus avant dans ce tutoriel)
-* Toutes les métadonnées et artefacts de sécurité JSONStore (voir **Sécurité** plus avant dans ce tutoriel)  
+* Toutes les métadonnées et artefacts de sécurité JSONStore (voir **Sécurité** plus avant dans ce tutoriel)
 
 ```javascript
 var collectionName = 'people';
@@ -207,14 +207,12 @@ WL.JSONStore.destroy().then(function () {
 {: #security }
 Vous pouvez sécuriser toutes les collections d'un magasin en transmettant un mot de passe à la fonction `init`. Si aucun mot de passe n'est transmis, les documents de toutes les collections du magasin ne sont pas chiffrés.
 
-
-Le chiffrement des données est disponible uniquement sur les environnements Android, iOS, Windows 8.1 Universal et Windows 10 UWP.   
-Certaines métadonnées de sécurité sont stockées dans la *chaîne de certificats* (iOS), les *préférences partagées* (Android) ou le *casier des données d'identification* (Windows 8.1).   
+Le chiffrement des données est disponible uniquement sur les environnements Android, iOS, Windows 8.1 Universal et Windows 10 UWP.  
+Certaines métadonnées de sécurité sont stockées dans la *chaîne de certificats* (iOS), les *préférences partagées* (Android) ou le *casier des données d'identification* (Windows 8.1).  
 Le magasin est chiffré avec une clé AES (Advanced
-Encryption Standard) 256 bits. Toutes les clés sont renforcées avec PBKDF2 (Password-Based Key Derivation Function 2). 
+Encryption Standard) 256 bits. Toutes les clés sont renforcées avec PBKDF2 (Password-Based Key Derivation Function 2).
 
 Utilisez `closeAll` pour verrouiller l'accès à toutes les collections jusqu'à ce que vous rappeliez `init`. Si vous pensez que `init` est une fonction de connexion, vous pouvez considérer `closeAll` comme la fonction de déconnexion correspondante. Utilisez `changePassword` pour changer le mot de passe.
-
 
 ```javascript
 var collections = {
@@ -231,16 +229,16 @@ WL.JSONStore.init(collections, options).then(function () {
 ```
 {: codeblock}
 
-#### Chiffrement 
+#### Chiffrement
 {: #encryption }
-*iOS uniquement*. Par défaut, le SDK Cordova MobileFirst pour iOS s'appuie sur des API fournies par iOS pour le chiffrement. Si vous préférez remplacer ceci par OpenSSL : 
+*iOS uniquement*. Par défaut, le SDK Cordova MobileFirst pour iOS s'appuie sur des API fournies par iOS pour le chiffrement. Si vous préférez remplacer ceci par OpenSSL :
 
 1. Ajoutez le plug in cordova-plugin-mfp-encrypt-utils : `cordova plugin add cordova-plugin-mfp-encrypt-utils`.
 2. Dans la logique applicative, utilisez : `WL.SecurityUtils.enableNativeEncryption(false)` pour activer l'option OpenSSL.
 
 ### Prise en charge de plusieurs utilisateurs
 {: #multiple-user-support }
-Vous pouvez créer plusieurs magasins contenant différentes collections dans une même application MobileFirst. La fonction `init` accepte un objet options avec un nom d'utilisateur. Si aucun nom d'utilisateur n'est fourni, le nom d'utilisateur par défaut est **jsonstore**.
+Vous pouvez créer plusieurs magasins contenant différentes collections dans une même application MobileFirst.La fonction `init` accepte un objet options avec un nom d'utilisateur. Si aucun nom d'utilisateur n'est fourni, le nom d'utilisateur par défaut est **jsonstore**.
 
 ```javascript
 var collections = {
@@ -257,17 +255,16 @@ WL.JSONStore.init(collections, options).then(function () {
 ```
 {: codeblock}
 
-### Intégration de l'adaptateur MobileFirst 
+### Intégration de l'adaptateur MobileFirst
 {: #mobilefirst-adapter-integration }
-Cette section suppose que vous connaissez les adaptateurs.   
+Cette section suppose que vous connaissez les adaptateurs.  
 
-L'intégration de l'adaptateur est facultative et permet d'envoyer des données d'une collection à un adaptateur et d'obtenir les données d'un adaptateur dans une collection.   
+L'intégration de l'adaptateur est facultative et permet d'envoyer des données d'une collection à un adaptateur et d'obtenir les données d'un adaptateur dans une collection.  
 Vous pouvez atteindre ces objectifs à l'aide de `WLResourceRequest` ou `jQuery.ajax` si vous avez besoin de plus de flexibilité.
 
-
-### Implémentation d'adaptateur 
+### Implémentation d'adaptateur
 {: #adapter-implementation }
-Créez un adaptateur et nommez-le "**JSONStoreAdapter**".   
+Créez un adaptateur et nommez-le "**JSONStoreAdapter**".  
 Définissez ses procédures `addPerson`, `getPeople`, `pushPeople`, `removePerson` et `replacePerson`.
 
 ```javascript
@@ -288,16 +285,16 @@ function addPerson(data) {
         return;
     }
     function removePerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: removePerson called.');
+	WL.Logger.debug('Adapter: people, procedure: removePerson called.');
         WL.Logger.debug('Got data from JSONStore to REMOVE: ' + data);
         return;
     }
     function replacePerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: replacePerson called.');
+	WL.Logger.debug('Adapter: people, procedure: replacePerson called.');
         WL.Logger.debug('Got data from JSONStore to REPLACE: ' + data);
         return;
     }
-   ```
+```
 {: codeblock}
 
 
@@ -307,7 +304,7 @@ Pour charger des données depuis un adaptateur, utilisez `WLResourceRequest`.
 
 ```javascript
 try {
-      var resource = new WLResourceRequest("adapters/JSONStoreAdapter/getPeople", WLResourceRequest.GET);
+     var resource = new WLResourceRequest("adapters/JSONStoreAdapter/getPeople", WLResourceRequest.GET);
      resource.send()
      .then(function (responseFromAdapter) {
           var data = responseFromAdapter.responseJSON.peopleList;
@@ -320,41 +317,41 @@ try {
 ```
 {: codeblock}
 
-#### Obtention du push requise (documents modifiés) 
+#### Obtention du push requise (documents modifiés)
 {: #get-push-required-dirty-documents }
 L'appel de `getPushRequired` renvoie un tableau de *"documents modifiés"*, qui sont des documents dont les modifications locales n'existent pas sur le système de back end. Ces documents sont envoyés à l'adaptateur lorsque `push` est appelé.
 
 ```javascript
-   var collectionName = 'people';
+var collectionName = 'people';
    WL.JSONStore.get(collectionName).getPushRequired().then(function (dirtyDocuments) {
-        // handle success
+    // handle success
 }).fail(function (error) {
-    // handle failure
+  // handle failure
 });
 ```
 {: codeblock}
 
 Pour empêcher JSONStore de marquer les documents comme "modifiés", transmettez l'option `{markDirty:false}` à `add`, `replace` et `remove`
 
-Vous pouvez également utiliser l'API `getAllDirty` pour extraire les documents modifiés: 
+Vous pouvez également utiliser l'API `getAllDirty` pour extraire les documents modifiés:
 
 ```javascript
-   WL.JSONStore.get(collectionName).getAllDirty()
-    .then(function (dirtyDocuments) {
-        // handle success
+WL.JSONStore.get(collectionName).getAllDirty()
+.then(function (dirtyDocuments) {
+    // handle success
     }).fail(function (errorObject) {
-        // handle failure
+    // handle failure
 });
 ```
 {: codeblock}
 
-#### Envoi (push) de modifications 
+#### Envoi (push) de modifications
 {: #push }
 Pour transmettre les modifications à un adaptateur, appelez la fonction `getAllDirty` pour obtenir une liste des documents modifiés, puis utilisez `WLResourceRequest`. Une fois les données envoyées et la réponse reçue, veillez à appeler `markClean`.
 
 ```javascript
 try {
-      var collectionName = "people";
+     var collectionName = "people";
      var dirtyDocs;
 
      WL.JSONStore.get(collectionName)
@@ -366,48 +363,49 @@ try {
         resource.setQueryParameter('params', [dirtyDocs]);
         return resource.send();
         }).then(function (responseFromAdapter) {
-          return WL.JSONStore.get(collectionName).markClean(dirtyDocs);
+        return WL.JSONStore.get(collectionName).markClean(dirtyDocs);
         }).then(function (res) {
-          //handle success
+	  //handle success
         }).fail(function (errorObject) {
-          // Handle failure.
-        });
+       // Handle failure.
+     });
 
 } catch (e) {
-        alert("Failed To Push Documents to Adapter");
+    alert("Failed To Push Documents to Adapter");
     }
-   ```
+```
 {: codeblock}
 
 ### Amélioration
 {: #enhance }
-Utilisez `enhance` pour étendre l'API principale à vos besoins en ajoutant des fonctions à un prototype de collection. Cet exemple (extrait de code ci-dessous) montre comment utiliser `enhance` pour ajouter la fonction `getValue` qui fonctionne sur la collection `keyvalue`. Cet exemple utilise une `key` (clé) (chaîne) comme seul paramètre et renvoie un résultat unique.
+Utilisez `enhance` pour étendre l'API principale à vos besoins en ajoutant des fonctions à un prototype de collection.
+Cet exemple (extrait de code ci-dessous) montre comment utiliser `enhance` pour ajouter la fonction `getValue` qui fonctionne sur la collection `keyvalue`. Cet exemple utilise une `key` (clé) (chaîne) comme seul paramètre et renvoie un résultat unique.
 
 ```javascript
-   var collectionName = 'keyvalue';
+var collectionName = 'keyvalue';
     WL.JSONStore.get(collectionName).enhance('getValue', function (key) {
-        var deferred = $.Deferred();
+    var deferred = $.Deferred();
         var collection = this;
         //Do an exact search for the key
         collection.find({key: key}, {exact:true, limit: 1}).then(deferred.resolve, deferred.reject);
         return deferred.promise();
     });
 
-    //Usage:
+//Usage:
     var key = 'myKey';
     WL.JSONStore.get(collectionName).getValue(key).then(function (result) {
-        // handle success
+    // handle success
         // result contains an array of documents with the results from the find
     }).fail(function () {
-        // handle failure
+    // handle failure
 });
 ```
 {: codeblock}
 
 ## Application exemple
 {: #sample-application }
-Le projet JSONStoreSwift contient une application Cordova qui utilise le jeu d'API JSONStore.   
-Un projet Maven d'adaptateur JavaScript est inclus. 
+Le projet JSONStoreSwift contient une application Cordova qui utilise le jeu d'API JSONStore.  
+Un projet Maven d'adaptateur JavaScript est inclus.
 
 ![Exemple d'application JSONStore](images/jsonstore-cordova.png)
 

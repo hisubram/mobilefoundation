@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-12-21"
 
 ---
@@ -14,15 +14,16 @@ lastupdated: "2018-12-21"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Configuration avancée de la mise à jour directe 
+# Configuration avancée de la mise à jour directe
 {: #advanced_direct_update_configuration}
 
-Vous trouverez ci-dessous une description des moyens avancés permettant de configurer et d'utiliser la fonction de Mise à jour directe. 
+Vous trouverez ci-dessous une description des moyens avancés permettant de configurer et d'utiliser la fonction de Mise à jour directe.
 
 ## Personnalisation de l'interface utilisateur Mise à jour directe
 {: #customize_du_ui}
 
-L'interface utilisateur Mise à jour directe présentée à l'utilisateur final peut être personnalisée. Ajoutez le code suivant à la fonction `wlCommonInit()` dans **index.js** :
+L'interface utilisateur Mise à jour directe présentée à l'utilisateur final peut être personnalisée.
+Ajoutez le code suivant à la fonction `wlCommonInit()` dans **index.js** :
 ```JavaScript
 wl_DirectUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, directUpdateContext) {
     // Implement custom Direct Update logic
@@ -39,7 +40,7 @@ La fonction fournit un style Mise à jour directe par défaut : elle propose une
 
 Dans le code exemple ci-après, une fonction `handleDirectUpdate` implémente un message personnalisé dans la boîte de dialogue Mise à jour directe. Ajoutez ce code dans le fichier `www/js/index.js` du projet Cordova.
 Autres exemples d'interface utilisateur Mise à jour directe personnalisée :
-* Boîte de dialogue créée à l'aide d'une infrastructure JavaScript tiers (comme Dojo ou jQuery Mobile, Ionic, …)
+* Boîte de dialogue qui est créée en utilisant une infrastructure JavaScript tiers (comme Dojo ou jQuery Mobile, Ionic, …)
 * Interface utilisateur entièrement native en exécutant un plug-in Cordova
 * Autre HTML qui est présenté à l'utilisateur avec des options et autres.
 
@@ -74,7 +75,9 @@ var directUpdateCustomListener = {
 
 Les méthodes d'écouteur sont démarrées au cours du processus de mise à jour directe selon les règles suivantes :
 * `onStart` est appelé avec le paramètre `totalSize` qui contient la taille du fichier de mise à jour.
-* `onProgress` est appelé plusieurs fois avec le statut `DOWNLOAD_IN_PROGRESS`, `totalSize`, et `completedSize` (le volume qui est téléchargé jusqu'à présent).
+* `onProgress` est appelé plusieurs fois avec le statut
+`DOWNLOAD_IN_PROGRESS`, `totalSize`, et
+`completedSize` (le volume qui est téléchargé jusqu'à présent).
 * `onProgress` est appelé avec le statut `UNZIP_IN_PROGRESS`.
 * `onFinish` est appelé avec l'un des codes de statut finaux suivants :
 
@@ -130,14 +133,16 @@ wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
 
 ## Exécution de mises à jour directes sans interface utilisateur
 {: #scenario-running-ui-less-direct-updates }
-{{site.data.keyword.mobilefoundation_short}} prend en charge la mise à jour directe sans interface utilisateur lorsque l'application est au premier plan.
+{{site.data.keyword.mobilefoundation_short}}
+prend en charge la mise à jour directe sans interface utilisateur lorsque l'application est au premier plan.
 
 Pour exécuter des mises à jour directes sans interface utilisateur, implémentez `directUpdateCustomListener`. Indiquez les implémentations de fonctions vides dans les méthodes `onStart` et `onProgress`. Les implémentations vides causent l'exécution du processus de mise à jour directe en arrière-plan.
 
 Pour terminer le processus de mise à jour directe, l'application doit être rechargée. Les options suivantes sont disponibles :
 * La méthode `onFinish` peut aussi être vide. Dans ce cas, la mise à jour directe s'applique après le redémarrage de l'application.
 * Vous pouvez implémenter une boîte de dialogue personnalisée qui informe ou impose à l'utilisateur de redémarrer l'application. (Voir l'exemple suivant.)
-* La méthode `onFinish` peut appliquer un rechargement de l'application en appelant `WL.Client.reloadApp()`.
+* La méthode `onFinish` peut appliquer un rechargement de l'application en appelant
+`WL.Client.reloadApp()`.
 
 Voici un exemple d'implémentation de `directUpdateCustomListener` :
 
@@ -172,7 +177,7 @@ Lorsque l'application est transmise à l'arrière-plan, le processus de mise à 
 
 ## Traitement d'un échec de mise à jour directe
 {: #scenario-handling-a-direct-update-failure }
-Cette section montre comment gérer un échec de mise à jour directe qui pourrait se produire en raison, par exemple, de la perte de connectivité. Dans ce scénario, l'utilisateur est empêché d'utiliser l'application mobile y compris en mode hors ligne. Une boîte de dialogue est affichée offrant à l'utilisateur la possibilité de faire une nouvelle tentative.
+Cette section montre comment gérer un échec de mise à jour directe qui pourrait se produire en raison, par exemple, de la perte de connectivité. Dans ce scénario, l'utilisateur est empêché d'utiliser l'application mobile y compris en mode hors ligne. Une boîte de dialogue est affichée offrant à l'utilisateur la possibilité d'essayer à nouveau.
 
 1.  Créez une variable globale pour stocker le contexte de mise à jour directe de sorte que vous pouvez l'utiliser ultérieurement lorsque le processus de mise à jour directe échoue. Exemple :
     ```JavaScript
@@ -241,7 +246,7 @@ Les mises à jour directe delta permettent à une application de ne télécharge
 Une **mise à jour delta** n'est possible que si les ressources web de l'application client sont une version derrière l'application qui est actuellement déployée sur le serveur. Les applications client qui sont plusieurs versions en arrière par rapport à l'application déployée actuellement (ce qui signifie que l'application a été déployée sur le serveur au moins deux fois depuis la mise à jour de l'application client), reçoivent une **mise à jour complète** (l'intégralité des ressources web sont dans ce cas déployées et mises à jour).
 {: note}
 
-Voir l'exemple Mise à jour directe pour l'application Cordova dans la section **Exemples**. Cette application montre comment créer une boîte de dialogue Mise à jour directe personnalisée à la place de la boîte de dialogue fournie par défaut.   
+Voir l'exemple Mise à jour directe pour l'application Cordova dans la section **Exemples**. Cette application montre comment créer une boîte de dialogue Mise à jour directe personnalisée à la place de la boîte de dialogue fournie par défaut.  
 
 ## Prise en charge CDN
 {: #cdn_support}
@@ -263,10 +268,13 @@ Pour mettre à disposition des demandes de mise à jour directe depuis un résea
 * Dans le panneau d'administration CDN, vous devez marquer les URL de mise à jour directe ci-après pour une mise en cache afin de vous assurer que le réseau CDN transmet toutes les demandes au serveur Mobile Foundation, à l'exception des demandes de Mise à jour directe. Pour celles-ci, le réseau CDN détermine s'il a obtenu le contenu. Si tel est le cas, il le renvoie sans passer par le serveur Mobile Foundation ; dans le cas contraire, il accède au serveur Mobile Foundation, obtient l'archive Mise à jour directe (fichier .zip) et la stocke pour les demandes suivantes relatives à cette URL spécifique. Pour les applications qui sont générées avec la version v8.0 de {{site.data.keyword.mobilefoundation_short}}, l'URL Mise à jour directe est : `PROTOCOL://DOMAIN:PORT/CONTEXT_PATH/api/directupdate/VERSION/CHECKSUM/TYPE`.
 Le préfixe `PROTOCOL://DOMAIN:PORT/CONTEXT_PATH` est constant pour toutes les demandes d'exécution. Exemple : `http://my.cdn.com:9080/mfp/api/directupdate/0.0.1/742914155/full?appId=com.ibm.DirectUpdateTestApp&clientPlatform=android`
 
-Dans l'exemple, des paramètres de demande supplémentaires, qui font partie de la demande, ont été ajoutés.
+Dans
+l'exemple, des paramètres de demande supplémentaires, qui font partie de la demande, ont été ajoutés.
 
-* Le réseau CDN doit autoriser la mise en cache des paramètres de demande. Deux archives de mise à jour directe ne peuvent être différentes que parce qu'elles comportent des paramètres de demande différents.
-* Le réseau CDN doit prendre en charge la durée de vie dans la réponse de mise à jour directe. Cette prise en charge est nécessaire pour que plusieurs mises à jour directes puissent être effectuées pour la même version.
+* Le réseau CDN doit autoriser la mise en cache des paramètres de demande. Deux archives de mise à jour directe ne peuvent
+être différentes que parce qu'elles comportent des paramètres de demande différents.
+* Le réseau CDN doit prendre en charge la durée de vie dans la réponse de mise à jour directe. Cette prise en charge est
+nécessaire pour que plusieurs mises à jour directes puissent être effectuées pour la même version.
 * Le réseau CDN ne doit pas changer ou retirer les en-têtes HTTP qui sont utilisés dans le protocole serveur-client.
 
 ### Configuration CDN exemple
@@ -276,10 +284,11 @@ qui met en cache l'archive de mise à jour directe. Les tâches suivantes sont e
 
 #### Administrateur réseau
 {: #network-administrator }
-Crée un autre domaine dans le système de noms de domaine pour votre serveur Mobile Foundation. Ainsi, si votre domaine de serveur est `yourcompany.com`, vous devez créer un domaine supplémentaire, par exemple `cdn.yourcompany.com`.
+Crée un autre domaine dans le système de noms de domaine pour votre serveur Mobile Foundation. Ainsi, si votre domaine de serveur
+est `yourcompany.com`, vous devez créer un domaine supplémentaire, par exemple `cdn.yourcompany.com`.
 Dans le système de noms de domaine pour votre nouveau domaine `cdn.yourcompany.com`, définissez un nom `CNAME` dans le nom de domaine qui est fourni par Akamai. Exemple : `yourcompany.com.akamai.net`.
 
-#### Administrateur Mobile Foundation 
+#### Administrateur Mobile Foundation
 {: #mobilefoundation-administrator }
 Définit le nouveau domaine `cdn.yourcompany.com` comme URL du serveur Mobile Foundation pour les applications Mobile Foundation. Ainsi, pour la tâche de générateur Ant, la propriété est :
 ```xml
@@ -297,7 +306,8 @@ Définit le nouveau domaine `cdn.yourcompany.com` comme URL du serveur Mobile Fo
 
     ![Définition de la valeur Custom Forward Host Header sur le domaine nouvellement créé](images/direct_update_cdn_4.jpg)
 
-3. Dans la liste **Caching Option**, sélectionnez **No Store**.
+3. Dans la liste **Caching Option**, sélectionnez **No
+Store**.
 
     ![Dans la liste Caching Option list, sélectionnez No Store](images/direct_update_cdn_5.jpg)
 
@@ -305,11 +315,15 @@ Définit le nouveau domaine `cdn.yourcompany.com` comme URL du serveur Mobile Fo
 
     ![Configuration des critères de mise en correspondance en fonction de l'URL de mise à jour directe de l'application](images/direct_update_cdn_6.jpg)
 
-5. Configurez le comportement de clé de cache pour utiliser tous les paramètres de demande dans la clé de cache (nécessaire pour mettre en cache différentes archives de mise à jour directe pour différentes applications ou versions). Par exemple, dans la liste **Behavior**, sélectionnez `Include all parameters (preserve order from request)`.
+5. Configurez le comportement de clé de cache pour utiliser tous les paramètres de demande dans la clé de cache (nécessaire pour mettre en cache
+différentes archives de mise à jour directe pour différentes applications ou versions). Par exemple,
+dans la liste **Behavior**, sélectionnez `Include all parameters (preserve
+order from request)`.
 
     ![Configurez le comportement de clé de cache pour utiliser tous les paramètres de demande dans la clé de cache](images/direct_update_cdn_8.jpg)
 
-6. Définissez des valeurs similaires aux valeurs ci-après afin de configurer le comportement de mise en cache pour mettre en cache l'adresse URL de mise à jour directe et pour définir la durée de vie.
+6. Définissez des valeurs similaires aux valeurs ci-après afin de configurer le comportement de mise en cache pour mettre en cache l'adresse URL de mise à
+jour directe et pour définir la durée de vie.
 
       ![Définition des valeurs pour configurer le comportement de mise en cache](images/direct_update_cdn_7.jpg)
 
@@ -336,7 +350,8 @@ Toutes les transmissions par mise à jour directe aux applications client seront
 
 Pour que la mise à jour directe puisse fonctionner, un fichier de magasin de clés défini par l'utilisateur doit être déployé sur le serveur Mobile Foundation et une copie de la clé publique correspondante doit être incluse dans l'application client déployée.
 
-Cette rubrique explique comment lier une clé publique à de nouvelles applications client et à des applications client existantes qui ont été mises à niveau. Pour plus d'informations sur la configuration du magasin de clés dans le serveur Mobile Foundation, voir [Configuring the Mobile Foundation server keystore![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/configuring-the-mobilefirst-server-keystore/){: new_window}
+Cette rubrique explique comment lier une clé publique à de nouvelles applications client et à des applications client existantes qui ont été mises à
+niveau. Pour plus d'informations sur la configuration du magasin de clés dans le serveur Mobile Foundation, voir [Configuring the Mobile Foundation server keystore![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/configuring-the-mobilefirst-server-keystore/){: new_window}
 
 Le serveur fournit un magasin de clés intégré qui peut être utilisé pour tester la mise à jour directe sécurisée pour les phases de développement.
 
@@ -369,10 +384,12 @@ N'utilisez pas la clé publique à des fins de production.
 
 ### Génération et déploiement du magasin de clés
 {: #generating-and-deploying-the-keystore }
-De nombreux outils sont disponibles pour la génération de certificats et l'extraction de clés publiques depuis un magasin de clés. L'exemple ci-dessous illustre les procédures à suivre avec l'utilitaire de clé du kit Java Development Kit et OpenSSL.
+De nombreux outils sont disponibles pour la génération de certificats et l'extraction de clés publiques depuis un magasin de clés. L'exemple ci-dessous
+illustre les procédures à suivre avec l'utilitaire de clé du kit Java Development Kit et OpenSSL.
 
 1. Procédez à l'extraction de la clé publique depuis le fichier de magasin de clés qui est déployé sur le serveur {{ site.data.keys.mf_server }}.  
-La clé publique doit être codée en Base64.{: note}
+   La clé publique doit être codée en Base64.
+   {: note}
 
    Par exemple, supposez que le nom d'alias est `mfp-server` et que le fichier de magasin de clés est **keystore.jks**.  
    Pour générer un certificat, émettez la commande suivante :
@@ -391,7 +408,8 @@ La clé publique doit être codée en Base64.{: note}
    ```
    {: codeblock}
 
-   keytool seul ne peut pas extraire les clés publiques au format Base64.{: note}
+   keytool seul ne peut pas extraire les clés publiques au format Base64.
+   {: note}
 
 2. Effectuez l'une des procédures suivantes :
     * Copiez le texte généré, sans les marqueurs `BEGIN PUBLIC KEY` et `END PUBLIC KEY`, dans le fichier de propriétés mfpclient de l'application, immédiatement après `wlSecureDirectUpdatePublicKey`.

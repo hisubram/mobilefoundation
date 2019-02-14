@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016, 2018
+  years: 2016, 2019
 lastupdated:  "2018-11-20"
 
 ---
@@ -83,7 +83,7 @@ No puede cambiar la instancia de servicio {{site.data.keyword.Db2_on_Cloud_short
 
     -	El `nombre de usuario` y la `contraseña` se generan de forma automática. Tiene acceso a ellos cuando el servidor está en ejecución.
 
-Se inicia el proceso de creación del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de instrumentos en el que se puede ver lo siguiente:
+Se inicia el proceso de creación del servidor. Este proceso dura unos 10 minutos y un mensaje indica el progreso de la operación. Una vez finalizado, se muestra un panel de control en el que se puede ver lo siguiente:
 
   -	El estado del servidor que se ejecuta (estado, tamaño).
 

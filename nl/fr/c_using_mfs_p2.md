@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016, 2018
+  years: 2016, 2019
 lastupdated:  "2018-11-20"
 
 ---
@@ -13,7 +13,7 @@ lastupdated:  "2018-11-20"
 {:tip: .tip}
 {:note: .note}
 
-#	Configuration à l'aide du plan Professionnel, 1 application 
+#	Configuration à l'aide du plan Professionnel, 1 application
 {: #using_mobilefoundation_p2}
 
 Les utilisateurs du plan Professionnel, 1 application peuvent créer une application mobile avec différents systèmes d'exploitation mobiles.

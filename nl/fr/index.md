@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016, 2018
+  years: 2016, 2019
 lastupdated:  "2018-11-16"
 
 ---
@@ -21,7 +21,7 @@ lastupdated:  "2018-11-16"
 
 Grâce au plan Professionnel, 1 application, vous pouvez gérer une application unique créée sur l'un quelconque des systèmes d'exploitation pris en charge. Les systèmes d'exploitation pris en charge sont Android, iOS, Windows ou le Web mobile. Le plan Développeur convient particulièrement au développement et au test. Vous pouvez voir tous les plans disponibles [ici](https://console.bluemix.net/catalog/services/mobile-foundation).
 
-Ce tutoriel d'initiation vous permet de créer une instance de service {{site.data.keyword.mobilefoundation_short}} à l'aide de l'un des plans pris en charge. Vous pouvez ensuite enregistrer une application. Téléchargez et éditez l'application enregistrée, déployez un adaptateur et enfin testez l'application. 
+Ce tutoriel d'initiation vous permet de créer une instance de service {{site.data.keyword.mobilefoundation_short}} à l'aide de l'un des plans pris en charge. Vous pouvez ensuite enregistrer une application. Téléchargez et éditez l'application enregistrée, déployez un adaptateur et enfin testez l'application.
 
 ## Avant de commencer
 {: #prereqs}
@@ -86,7 +86,8 @@ Après avoir créé une instance du service {{site.data.keyword.mobilefoundation
 
       +	Cliquez sur **Lancer la console** pour ouvrir la console {{site.data.keyword.mfp_oc_short_notm}}.      
 
-      Pour créer une instance de serveur {{site.data.keyword.mobilefirst_notm}} avec la configuration avancée de la topologie, de la sécurité et d'autres paramètres de configuration du serveur, cliquez sur **Démarrer le serveur avec la configuration avancée**. Pour plus d'informations, consultez [Mise en place d'une configuration avancée](c_using_mfs_p5.html#using_mfs_advanced_p5).      {: tip}
+      Pour créer une instance de serveur {{site.data.keyword.mobilefirst_notm}} avec la configuration avancée de la topologie, de la sécurité et d'autres paramètres de configuration du serveur, cliquez sur **Démarrer le serveur avec la configuration avancée**. Pour plus d'informations, consultez [Mise en place d'une configuration avancée](c_using_mfs_p5.html#using_mfs_advanced_p5).
+      {: tip}
 
 ### Pour le plan {{site.data.keyword.mobilefoundation_short}} : Professionnel, 1 application
 {: #buildchannelprof1appplan}
@@ -163,7 +164,7 @@ Une fois votre instance de serveur Mobile Foundation créée et démarrée, vous
   + Dans la barre de menus latérale **Project** d'Android Studio, sélectionnez le fichier **app → java → com.ibm.mfpstarterandroid → ServerConnectActivity.java**.
 
     * Ajoutez les importations suivantes
-```java
+      ```java
       import java.net.URI;
       import java.net.URISyntaxException;
       import android.util.Log;
@@ -232,7 +233,7 @@ Une fois votre instance de serveur Mobile Foundation créée et démarrée, vous
 ## Etape 7 : testez l'application
 {: #testapp}
 
-  1. Dans la barre de menus latérale **Project** d'Android Studio, sélectionnez le fichier **app → src → main →assets → mfpclient.properties** et éditez les propriétés `protocol`, `host` et `port` avec des valeurs correctes correspondant à votre instance MobileFirst Server.
+  1. Dans la barre de menus latérale **Project** d'Android Studio, sélectionnez le fichier **app → src → main →assets → mfpclient.properties** et éditez les propriétés `protocol`, `host` et `port` avec des valeurs correctes correspondant à votre instance de serveur MobileFirst. 
 
    Ces valeurs sont normalement https (pour le protocole), *adresse-de-votre-serveur* et 443 (pour le numéro de port).
    {: tip}
@@ -240,7 +241,7 @@ Une fois votre instance de serveur Mobile Foundation créée et démarrée, vous
   2. Dans Android Studio, cliquez sur **Run App** (ou option équivalente de la version française).
      * L'application doit démarrer dans un émulateur d'appareil mobile.
      * Cliquez sur **Ping MobileFirst Server** dans votre application. Vous devez voir s'afficher le message `Connected to MobileFirst Server`.
-     * Si l'application est parvenue à se connecter à l'instance MobileFirst Server, une demande de ressource (WLResourceRequest) utilisant l'adaptateur Java déployé sera émise.
+     * Si l'application est parvenue à se connecter à l'instance de serveur MobileFirst, une demande de ressource (WLResourceRequest) utilisant l'adaptateur Java déployé sera émise.
      * La réponse de l'adaptateur sera ensuite imprimée dans la vue LogCat d'Android Studio.
 
 

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-16"
 
 ---
@@ -19,8 +19,7 @@ Cette FAQ fournit les réponses aux questions courantes sur le service {{site.da
 {: #maintupdates_mf}
 {: faq}
 
-{{site.data.keyword.mobilefoundation_short}} crée un serveur {{site.data.keyword.mfserver_short_notm}}. Les mises à jour du serveur {{site.data.keyword.mobilefoundation_short}} sont notifiées aux utilisateurs. Une notification apparaît dans le tableau de bord de l'instance de service. L'utilisateur peut choisir d'appliquer la mise à jour dans {{site.data.keyword.mobilefoundation_short}} lors d'une fenêtre de maintenance dont il décide de la date d'exécution.Vous pouvez choisir de mettre à jour le serveur {{site.data.keyword.mobilefoundation_short}} quand cela vous arrange.
-
+{{site.data.keyword.mobilefoundation_short}} crée un serveur {{site.data.keyword.mfserver_short_notm}}. Les mises à jour du serveur {{site.data.keyword.mobilefoundation_short}} sont notifiées aux utilisateurs. Une notification apparaît dans le tableau de bord de l'instance de service. L'utilisateur peut choisir d'appliquer la mise à jour dans {{site.data.keyword.mobilefoundation_short}} lors d'une fenêtre de maintenance dont il décide de la date d'exécution. Vous pouvez choisir de mettre à jour le serveur {{site.data.keyword.mobilefoundation_short}} quand cela vous arrange.
 
 La mise à jour du service {{site.data.keyword.mobilefoundation_short}} sera mise à disposition quand l'un des composants suivants est mis à jour.
 

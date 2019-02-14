@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated:  "2018-11-19"
+  years: 2018, 2019
+lastupdated:  "2019-01-04"
 
 ---
 
@@ -10,11 +10,13 @@ lastupdated:  "2018-11-19"
 {:codeblock: .codeblock}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
 {:pre: .pre}
+
 
 # Stockage hors ligne à l'aide de JSONStore
 {: #overview }
-**JSONStore** {{site.data.keyword.mobilefoundation_short}} est une API facultative côté client qui fournit un système de stockage léger, orienté document. JSONStore active le stockage persistant de **documents JSON**. Les documents dans une application sont disponibles dans JSONStore même si l'appareil qui exécute l'application est déconnecté. Ce stockage permanent et toujours disponible peut être utile pour donner aux utilisateurs un accès aux documents lorsque, par exemple, aucune connexion réseau n'est disponible sur l'appareil. 
+**JSONStore** {{site.data.keyword.mobilefoundation_short}} est une API facultative côté client qui fournit un système de stockage léger, orienté document. JSONStore active le stockage persistant de **documents JSON**. Les documents dans une application sont disponibles dans JSONStore même si l'appareil qui exécute l'application est déconnecté. Ce stockage permanent et toujours disponible peut être utile pour donner aux utilisateurs un accès aux documents lorsque, par exemple, aucune connexion réseau n'est disponible sur l'appareil.
 
 Dans la mesure où elle est familière aux développeurs, la terminologie des bases de données relationnelles est parfois utilisée dans cette documentation pour expliquer JSONStore. Cependant, il existe de nombreuses différences entre une base de données relationnelle et JSONStore. Par exemple, le schéma strict qui est utilisé pour
 stocker des données dans les bases de données relationnelles est différent de l'approche suivie dans JSONStore. Avec JSONStore, vous pouvez stocker n'importe quel contenu JSON, et indexer le contenu dans lequel vous devez effectuer une recherche.
@@ -174,10 +176,10 @@ JSONStore est similaire aux technologies telles que LocalStorage, Indexed DB, l'
 | Indexation	                                         |	     ✔ 	      |      -	    |     ✔	     |        ✔	           |         -	      |
 | Type de stockage	                                 | Documents JSON | Paires clé-valeur | Documents JSON | Relationnel (SQL) | Chaînes     |
 
-**Remarque :** Stockage fiable signifie que vos données ne sont supprimées que si l'un des événements suivants se produit :
-
+Si le stockage est fiable, cela signifie que vos données ne sont supprimées que si l'un des événements suivants se produit :
 * L'application est supprimée de l'appareil.
 * L'une des méthodes de suppression de données est appelée.
+{: note}
 
 ## Prise en charge de plusieurs utilisateurs
 {: #multiple-user-support }
@@ -211,11 +213,11 @@ Lorsque JSONStore ouvre pour la première fois une collection avec un mot de pas
 dans
 le magasin), il a besoin d'un jeton aléatoire. Ce jeton aléatoire peut être obtenu auprès du client ou du serveur.
 
-Lorsque la clé localKeyGen se trouve dans l'implémentation JavaScript de l'API JSONStore et que sa valeur est true, un jeton sécurisé par chiffrement est généré localement. Sinon, le jeton est généré en contactant le serveur, ce qui nécessite une connectivité à MobileFirst Server. Ce jeton n'est requis que lorsqu'un magasin est ouvert pour la première fois avec un mot de passe. Les implémentations natives (Objective-C et Java) génèrent un jeton sécurisé par chiffrement localement par défaut ou vous pouvez transmettre un jeton via l'option secureRandom.
+Lorsque la clé localKeyGen se trouve dans l'implémentation JavaScript de l'API JSONStore et que sa valeur est true, un jeton sécurisé par chiffrement est généré localement. Sinon, le jeton est généré en contactant le serveur, ce qui nécessite une connectivité au serveur MobileFirst. Ce jeton n'est requis que lorsqu'un magasin est ouvert pour la première fois avec un mot de passe. Les implémentations natives (Objective-C et Java) génèrent un jeton sécurisé par chiffrement localement par défaut ou vous pouvez transmettre un jeton via l'option secureRandom.
 
 Les deux solutions suivantes sont possibles :
 * ouvrir un magasin hors ligne et faire confiance au client pour générer ce jeton aléatoire (moins sécurisé) ou 
-* ouvrir le magasin avec accès à MobileFirst Server (nécessite une connectivité) et faire confiance au serveur (plus sécurisé)
+* ouvrir le magasin avec accès au serveur MobileFirst (nécessite une connectivité) et faire confiance au serveur (plus sécurisé)
 
 ### Utilitaires de sécurité
 {: #security-utilities }
@@ -330,7 +332,6 @@ var asyncOperation = function () {
   return deferred.promise();
 };
 ```
-{: codeblock}
 
 **Exemple d'utilisation de promesse**
 
@@ -340,7 +341,6 @@ asyncOperation.then(function (response) {
   // response = 'Hello'
 });
 ```
-{: codeblock}
 
 **Exemple de définition de rappel**
 
@@ -351,7 +351,6 @@ var asyncOperation = function (callback) {
   }, 1000);
 };
 ```
-{: codeblock}
 
 **Exemple d'utilisation de rappel**
 
@@ -361,7 +360,6 @@ asyncOperation(function (response) {
   // response = 'Hello'
 });
 ```
-{: codeblock}
 
 **Exemple d'événements**
 
@@ -374,7 +372,6 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
   // collectionName - Name of the collection
 });
 ```
-{: codeblock}
 
 ### Objective-C
 {: #objective-c }
@@ -410,7 +407,6 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
-{: codeblock}
 
 #### Android
 {: #android-example }
@@ -420,7 +416,6 @@ initOptions.setAnalytics(true);
 
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
-{: codeblock}
 
 #### JavaScript
 {: #java-script-example }
@@ -431,7 +426,6 @@ var options = {
 
 WL.JSONStore.init(..., options);
 ```
-{: codeblock}
 
 ## Utilisation de données externes
 {: #working-with-external-data }
@@ -445,7 +439,7 @@ Trois éléments sont importants :
 
 #### Source de données externe
 {: #external-data-source }
-Il peut s'agir d'une base de données, d'une API REST ou SOAP, etc. La seule condition requise est qu'elle soit accessible depuis MobileFirst Server ou directement depuis l'application client. Dans
+Il peut s'agir d'une base de données, d'une API REST ou SOAP, etc. La seule condition requise est qu'elle soit accessible depuis le serveur MobileFirst ou directement depuis l'application client. Dans
 l'idéal, elle doit renvoyer les données au format JSON.
 
 #### Couche transport
@@ -458,14 +452,16 @@ magasin. Vous pouvez aussi utiliser un adaptateur.
 {: #internal-data-source-api }
 Cette source correspond aux API JSONStore que vous pouvez utiliser pour ajouter des données JSON à une collection.
 
-**Remarque :** Vous pouvez remplir le magasin interne avec les données lues à partir d'un fichier, d'un champ de saisie ou de données codées en dur dans une variable. Elle ne doivent pas nécessairement provenir exclusivement d'une source externe nécessitant une communication réseau.
+vous pouvez remplir le magasin interne avec des données qui sont lues depuis un fichier, une zone d'entrée ou des données codées
+en dur dans une variable. Elle ne doivent pas nécessairement provenir exclusivement d'une source externe nécessitant une communication réseau.
+{: note}
 
 Tous les exemples de code ci-dessous sont écrits dans un pseudocode
 similaire à
 JavaScript.
 
-**Remarque :** Utilisez des adaptateurs pour la couche de transport. L'utilisation d'adaptateurs présente certains avantages, notamment le passage de XML à JSON, la sécurité, le filtrage et le découplage du code côté serveur et du code côté client.
-
+Utilisez des adaptateurs pour la couche transport. L'utilisation d'adaptateurs présente certains avantages, notamment le passage de XML à JSON, la sécurité, le filtrage et le découplage du code côté serveur et du code côté client.
+{: note}
 **Source de données externe : noeud final REST de back end**  
 Supposez que vous disposez d'un noeud final REST qui lit des données depuis une base de données et les renvoie sous forme de tableau d'objets
 JSON.
@@ -520,7 +516,11 @@ resource.send()
 ```
 {: codeblock}
 
-**Remarque :** Vous pouvez tirer parti des paramètres `compressResponse`, `timeout`, et d'autres paramètres pouvant être transmis à l'API `WLResourceRequest`.  
+il peut être judicieux de tirer parti des paramètres `compressResponse`, `timeout` et
+d'autres paramètres
+pouvant être transmis à l'API `WLResourceRequest`.  
+{: note}
+
 Vous pouvez éventuellement ignorer l'adaptateur et utiliser un élément tel que jQuery.ajax pour contacter directement le noeud final REST avec les données que vous souhaitez stocker.
 
 ```javascript
@@ -672,7 +672,8 @@ Tous les exemples de code ci-dessous sont écrits dans un pseudocode
 similaire à
 JavaScript.
 
-**Remarque :** Utilisez des adaptateurs pour la couche de transport. L'utilisation d'adaptateurs présente certains avantages, notamment le passage de XML à JSON, la sécurité, le filtrage et le découplage du code côté serveur et du code côté client.
+Utilisez des adaptateurs pour la couche transport. L'utilisation d'adaptateurs présente certains avantages, notamment le passage de XML à JSON, la sécurité, le filtrage et le découplage du code côté serveur et du code côté client.
+{: note}
 
 **API de source de données interne : JSONStore**  
 Une fois que vous avez obtenu un accesseur à la collection, appelez l'API `getAllDirty` pour obtenir tous les documents marqués comme modifiés. Ces documents comportent des modifications locales seulement que vous voulez envoyer à la source de données
@@ -724,7 +725,10 @@ Vous pouvez choisir d'envoyer des documents modifiés à un adaptateur. Supposon
 ```
 {: codeblock}
 
-**Remarque :** Vous pouvez tirer parti des paramètres `compressResponse`, `timeout`, et d'autres paramètres pouvant être transmis à l'API `WLResourceRequest`.
+il peut être judicieux de tirer parti des paramètres `compressResponse`, `timeout` et
+d'autres paramètres
+pouvant être transmis à l'API `WLResourceRequest`.
+{: note}
 
 Sur le serveur MobileFirst, l'adaptateur comporte la procédure `updatePeople` qui peut se présenter comme suit :
 
@@ -872,7 +876,7 @@ Procédez comme suit afin d'isoler le problème et de le signaler plus précisé
 4. Reportez-vous au fichier de base de données SQLite généré par JSONStore. Le chiffrement doit être désactivé.
 
    * Emulateur Android :
-
+   
    ```bash
    $ adb shell
    $ cd /data/data/com.<app-name>/databases/wljsonstore
@@ -936,16 +940,16 @@ Pour garantir l'ordre des événements `mfpjsonjsloaded` et `mfpjsloaded`, le d�
 
     * ajoutez la fonction suivante :  
     ```javascript                                         
-function initWL(){                                                     
+    function initWL(){                                                     
         var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
         : {};                                                                
         WL.Client.init(options);                                           
-    }                                                                      
-    ```                                                                       
+    } 
+    ```                                                                     
 
-  Cela permet d'attendre l'événement `mfpjsonjsloaded` (en dehors de `wlCommonInit`), cela garantit le chargement du script et appelle ensuite `WL.Client.init` qui déclenchera `wlCommonInit`, lequel appellera ensuite `WL.JSONStore.init`.
+Cela permet d'attendre l'événement `mfpjsonjsloaded` (en dehors de `wlCommonInit`), cela garantit le chargement du script et appelle ensuite `WL.Client.init` qui déclenchera `wlCommonInit`, lequel appellera ensuite `WL.JSONStore.init`.
 
-## Stockage des éléments internes
+## Eléments internes de stockage 
 {: #store-internals }
 Voir un exemple de la manière dont les données JSONStore sont stockées.
 
@@ -989,8 +993,8 @@ var errorObject = {
   res: {...} // Response from the server.
 }
 ```
-
-Les paires clé-valeur n'apparaissent pas toutes dans chaque objet erreur. Par exemple, la valeur doc est disponible uniquement lorsque l'opération échoue après l'échec d'un document (par exemple, la méthode `remove` dans la classe `JSONStoreInstance`) qui n'est pas parvenu à retirer un document.
+{: codeblock}
+Les paires clé-valeur n'apparaissent pas toutes dans chaque objet erreur. Par exemple, la valeur doc est disponible uniquement lorsque l'opération échoue suite à un problème lié à un document (par exemple, la méthode `remove` dans la classe `JSONStoreInstance` ne parvient pas à retirer un document).
 
 ### Objective-C
 {: #objective-c }
@@ -1006,7 +1010,7 @@ NSError* error = nil;
 
 ### Java
 {: #java }
-Tous les appels d'API Java lancent une certaine exception, selon l'erreur qui s'est produite. Vous pouvez traiter chaque exception séparément, ou intercepter `JSONStoreException` pour toutes les autres exceptions JSONStore.
+Tous les appels d'API Java lancent une certaine exception, selon l'erreur qui s'est produite. Vous pouvez traiter chaque exception séparément, ou intercepter `JSONStoreException` pour traiter toutes les exceptions JSONStore.
 
 ```java
 try {
@@ -1017,7 +1021,7 @@ catch(JSONStoreException e) {
   // Handle error condition.
 }
 ```
-
+{: codeblock}
 ### Liste des codes d'erreur
 {: #list-of-error-codes }
 Liste des codes d'erreur courants et leur description :
@@ -1032,7 +1036,7 @@ Liste des codes d'erreur courants et leur description :
 | -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | Impossible d'appeler destroy tant que des transactions sont en cours. |
 | -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | Impossible d'appeler closeAll tant que des transactions sont en place. |
 | -44 TRANSACTION\_FAILURE\_DURING\_INIT | Impossible d'initialiser un magasin tant que des transactions sont en cours. |
-| -43 TRANSACTION_FAILURE | Un problème est survenu avec des transactions. |
+| -43 TRANSACTION_FAILURE | Un problème lié aux transactions est survenu. |
 | -42 NO\_TRANSACTION\_IN\_PROGRESS | Impossible de valider l'annulation d'une transaction lorsqu'aucune transaction n'est en cours |
 | -41 TRANSACTION\_IN\_POGRESS | Impossible de démarrer une nouvelle transaction lorsqu'une autre transaction est en cours. |
 | -40 FIPS\_ENABLEMENT\_FAILURE |Un problème lié à FIPS est survenu. |
@@ -1067,7 +1071,7 @@ Liste des codes d'erreur courants et leur description :
 | 11 INVALID\_PASSWORD\_EXPECTED\_ALPHANUMERIC\_STRING\_WITH\_LENGTH\_GREATER\_THAN\_ZERO | Erreur de validation |
 | 12 ADAPTER_FAILURE | Problème lors de l'appel de WL.Client.invokeProcedure, en particulier problème de connexion à l'adaptateur. Cette erreur est différente d'une défaillance de l'adaptateur qui tente d'appeler un serveur. |
 | 13 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ID | Erreur de validation |
-| 14 CAN\_NOT\_REPLACE\_DEFAULT\_FUNCTIONS | cL'appel de la méthode enhance de la classe JSONStoreCollection pour remplacer une fonction existante (find et add) n'est pas autorisé. |
+| 14 CAN\_NOT\_REPLACE\_DEFAULT\_FUNCTIONS | L'appel de la méthode enhance de la classe JSONStoreCollection pour remplacer une fonction existante (find et add) n'est pas autorisé. |
 | 15 COULD\_NOT\_MARK\_DOCUMENT\_PUSHED | Push envoie le document à un adaptateur, mais JSONStore ne parvient pas à marquer le document comme non modifié. |
 | 16 COULD\_NOT\_GET\_SECURE\_KEY | Pour initier une collection avec un mot de passe, une connexion au {{ site.data.keys.mf_server }} doit être établie, car celui-ci renvoie un 'jeton aléatoire sécurisé'. IBM Worklight version 5.0.6 et versions ultérieures permet aux développeurs de générer le jeton aléatoire sécurisé en transmettant {localKeyGen: true} à la méthode init via l'objet options. |
 | 17 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER | Impossible de charger les données car WL.Client.invokeProcedure a appelé le rappel d'échec. |
@@ -1082,7 +1086,7 @@ Liste des codes d'erreur courants et leur description :
 | 26 ERROR\_CLEARING\_COLLECTION | Erreur générique. Une erreur s'est produite lorsque le code natif a appelé la méthode removeCollection. |
 | 27 INVALID\_PARAMETER\_FOR\_FIND\_BY\_ID | Erreur de validation. |
 | 28 INVALID\_SORT\_OBJECT | Le tableau fourni pour le tri n'est pas valide car l'un des objets JSON n'est pas valide. La syntaxe correcte est un tableau d'objets JSON, où chaque objet contient une seule propriété. Cette propriété recherche la zone en fonction de laquelle procéder au tri, et détermine si le tri est croissant ou décroissant. Par exemple : {searchField1 : "ASC"}. |
-| 29 INVALID\_FILTER\_ARRAY | Le tableau fourni pour filtrer les résultats n'est pas valide. La syntaxe correcte pour ce tableau est un tableau de chaînes, dans lequel chaque chaîne est une zone de recherche ou une zone JSONStore interne. Pour plus d'informations, voir Stockage des éléments internes. |
+| 29 INVALID\_FILTER\_ARRAY | Le tableau fourni pour filtrer les résultats n'est pas valide. La syntaxe correcte pour ce tableau est un tableau de chaînes, dans lequel chaque chaîne est une zone de recherche ou une zone JSONStore interne. Pour plus d'informations, voir Eléments internes de stockage. |
 | 30 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_OBJECTS | Erreur de validation lorsque le tableau n'est pas un tableau composé uniquement d'objets JSON. |
 | 31 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_CLEAN\_DOCUMENTS | Erreur de validation. |
 | 32 BAD\_PARAMETER\_WRONG\_SEARCH\_CRITERIA | Erreur de validation. |

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016, 2018
+  years: 2016, 2019
 lastupdated:  "2018-11-20"
 
 ---
@@ -13,10 +13,11 @@ lastupdated:  "2018-11-20"
 {:tip: .tip}
 {:note: .note}
 
-#	Configuration à l'aide du plan Professionnel par appareil 
+#	Configuration à l'aide du plan Professionnel par appareil
 {: #using_mobilefoundation_p5}
 
-Avec le plan Professionnel par appareil, les utilisateurs peuvent générer, tester et exécuter des applications mobiles en production, quel que soit le nombre d'utilisateurs ou d'appareils mobiles. Les frais sont basés sur le nombre d'appareils client quotidiens. Ce plan prend en charge les déploiements étendus et la haute disponibilité. Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par appareil, lisez la procédure ci-après pour commencer à l'utiliser.
+Avec le plan Professionnel par appareil, les utilisateurs peuvent générer, tester et exécuter des applications mobiles en production, quel que soit le nombre d'utilisateurs ou d'appareils mobiles. Les frais sont basés sur le nombre d'appareils client quotidiens. Ce plan prend en charge les déploiements étendus et la haute disponibilité.
+Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par appareil, lisez la procédure ci-après pour commencer à l'utiliser.
 
 ## Conditions prérequises
 {: #prerequisites_p5}
@@ -78,7 +79,9 @@ Vous ne pouvez pas changer l'instance de service {{site.data.keyword.Db2_on_Clou
 * Pour démarrer le serveur {{site.data.keyword.mfserver_short_notm}} avec les réglages par défaut, cliquez sur **Démarrer le serveur de base**.
 
 * Cette sélection crée une instance {{site.data.keyword.mfserver_long_notm}} avec les réglages suivants :
-    -  Deux noeuds avec 1 Go de mémoire chacun. Cette taille convient aux activités de développement et aux activités de test modérées, ainsi qu'aux charges de travail de production à petite échelle.
+    -  Deux noeuds avec 1 Go de mémoire chacun. Cette taille
+convient aux activités de développement et aux activités de test modérées, ainsi qu'aux charges
+de travail de production à petite échelle.
 
     -	Le `nom d'utilisateur` et le `mot de passe` sont générés automatiquement pour vous. Vous pouvez y accéder une fois que le serveur est en opération.
 
@@ -93,7 +96,9 @@ Le processus de création de votre serveur commence. Ce processus prend environ 
 *	Cliquez sur **Lancer la console** pour ouvrir la console {{site.data.keyword.mfp_oc_short_notm}}.
 
 
-Elle vous permet de gérer vos applications, adaptateurs et appareils mobiles, ainsi que l'utilisation de votre serveur en tant que serveur dorsal mobile, l'envoi de notifications push, etc.
+Elle vous permet de gérer vos applications, adaptateurs et
+appareils mobiles, ainsi que l'utilisation de votre serveur en
+tant que serveur dorsal mobile, l'envoi de notifications push, etc.
 
 ## Recréation du serveur MobileFirst
 {: #recreate_mobilefoundation_p5}
@@ -108,7 +113,8 @@ Les données de votre instance de serveur précédente, y compris les informatio
 ##	Mise en place d'une configuration avancée
 {: #using_mfs_advanced_p5}
 
-L'option **Démarrer le serveur avec la configuration avancée** de la page `Présentation` permet de créer le serveur avec des réglages avancés ou personnalisés. Vous pouvez également modifier les réglages du serveur pour personnaliser sa configuration en cliquant sur l'onglet **Paramètres**. {{site.data.keyword.mobilefoundation_short}} vous permet d'accéder à certains paramètres avancés.
+L'option **Démarrer le serveur avec la configuration avancée** de la page `Présentation` permet de créer le serveur avec des réglages avancés ou personnalisés. Vous pouvez également modifier les réglages du serveur pour personnaliser sa
+configuration en cliquant sur l'onglet **Paramètres**. {{site.data.keyword.mobilefoundation_short}} vous permet d'accéder à certains paramètres avancés.
 
 *	Dans l'onglet **Topologie**, vous pouvez sélectionner la taille du serveur, ainsi que le nombre d'instances dont vous avez besoin. Avec sa mémoire de 1 Go, le serveur par défaut est suffisant pour le développement et des tests peu intensifs.
   - Sélectionnez la taille appropriée pour votre serveur compte tenu de vos besoins.

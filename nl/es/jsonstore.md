@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated:  "2018-11-19"
+  years: 2018, 2019
+lastupdated:  "2019-01-04"
 
 ---
 
@@ -10,7 +10,9 @@ lastupdated:  "2018-11-19"
 {:codeblock: .codeblock}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
 {:pre: .pre}
+
 
 # Almacenamiento fuera de línea utilizando JSONStore
 {: #overview }
@@ -136,8 +138,7 @@ var query2 = {name: 'carlos', age: 99};
 {: #query-parts }
 Las partes de consulta se utilizan para crear búsquedas más avanzadas. Algunas operaciones de JSONStore como, por ejemplo, algunas versiones de `find` o `count` utilizan partes de consulta. La información dentro de la parte de consulta está unida mediante sentencias `AND` y `OR`. El criterio de búsqueda solo devuelve una coincidencia si todos elementos de la parte de consulta se evalúan como **true**. Utilice una o varias partes de consulta para buscar coincidencias que satisfagan una o varias de las partes de consulta.
 
-Las búsquedas con partes de consulta solo funcionan con campos de búsqueda de nivel superior. Por ejemplo: `name` y no `name.first`. Utilice varias recopilaciones donde todos los campos de búsqueda sean de nivel superior para resolver este comportamiento. Las operaciones de partes de consulta que funcionan con campos de búsqueda de nivel superior son:
-`equal`, `notEqual`, `like`, `notLike`, `rightLike`, `notRightLike`, `leftLike` y `notLeftLike`. El comportamiento es indeterminado si utiliza campos de búsqueda que no sean de un nivel superior.
+Las búsquedas con partes de consulta solo funcionan con campos de búsqueda de nivel superior. Por ejemplo: `name` y no `name.first`. Utilice varias recopilaciones donde todos los campos de búsqueda sean de nivel superior para resolver este comportamiento. Las operaciones de partes de consulta que funcionan con campos de búsqueda de nivel superior son: `equal`, `notEqual`, `like`, `notLike`, `rightLike`, `notRightLike`, `leftLike` y `notLeftLike`. El comportamiento es indeterminado si utiliza campos de búsqueda que no sean de un nivel superior.
 
 ## Tabla de características
 {: #features-table }
@@ -149,21 +150,21 @@ JSONStore es similar a otras tecnologías como, por ejemplo, LocalStorage, Index
 
 | Característica                                            | JSONStore      | LocalStorage | IndexedDB | Cordova storage API | Cordova file API |
 |----------------------------------------------------|----------------|--------------|-----------|---------------------|------------------|
-| Soporte Android (aplicaciones nativas y Cordova)|	     ✔ 	      |      ✔	    |     ✔	     |        ✔	           |         ✔	      |
-| Soporte iOS (aplicaciones nativas y Cordova)	     |	     ✔ 	      |      ✔	    |     ✔	     |        ✔	           |         ✔	      |
-| Windows 8.1 Universal y Windows 10 UWP (aplicaciones Cordova)          |	     ✔ 	      |      ✔	    |     ✔	     |        -	           |         ✔	      |
+| Soporte Android (aplicaciones nativas y Cordova)|	     ✔ 	      |     ✔	     |        ✔	           |         ✔	      |         ✔	      |
+| Soporte iOS (aplicaciones nativas y Cordova)	     |	     ✔ 	      |     ✔	     |        ✔	           |         ✔	      |         ✔	      |
+| Windows 8.1 Universal y Windows 10 UWP (aplicaciones Cordova)          |	     ✔ 	      |     ✔	     |     ✔	     |        -	           |         ✔	      |
 | Cifrado de datos	                                 |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
-| Máximo almacenamiento	                                 |Espacio disponible |    ~5 MB     |   ~5 MB 	 | Espacio disponible	   | Espacio disponible  |
-| Almacenamiento fiable (ver nota)	                     |	     ✔ 	      |      -	    |     -	     |        ✔	           |         ✔	      |
+| Máximo almacenamiento	                                 |Espacio disponible |    ~5 MB     |   ~5 MB 	 | Espacio disponible  | Espacio disponible  |
+| Almacenamiento fiable (ver nota)	                     |	     ✔ 	      |      -	    |     -	     |         ✔	      |         ✔	      |
 | Mantener seguimiento de cambios locales	                     |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
 | Soporte a varios usuarios                                 |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
-| Indexación	                                         |	     ✔ 	      |      -	    |     ✔	     |        ✔	           |         -	      |
+| Indexación	                                         |	     ✔ 	      |      -	    |        ✔	           |        ✔	           |         -	      |
 | Tipo de almacenamiento	                                 | Documentos JSON | Valores clave-valor | Documentos JSON | Relacional (SQL) | Series     |
 
-**Nota:** Almacenamiento fiable significa que no se suprimen los datos a no ser que se produzca una de las siguientes situaciones:
-
+Almacenamiento fiable significa que no se suprimen los datos a no ser que se produzca una de las siguientes situaciones:
 * La aplicación se elimina del dispositivo.
 * Se llama a uno de los métodos que eliminan los datos.
+{: note}
 
 ## Soporte a múltiples usuarios
 {: #multiple-user-support }
@@ -286,7 +287,6 @@ var asyncOperation = function () {
   return deferred.promise();
 };
 ```
-{: codeblock}
 
 **Ejemplo de uso de promesa**
 
@@ -296,7 +296,6 @@ asyncOperation.then(function (response) {
   // response = 'Hello'
 });
 ```
-{: codeblock}
 
 **Ejemplo de definición de devolución de llamada**
 
@@ -307,7 +306,6 @@ var asyncOperation = function (callback) {
   }, 1000);
 };
 ```
-{: codeblock}
 
 **Ejemplo de uso de devolución de llamada**
 
@@ -317,7 +315,6 @@ asyncOperation(function (response) {
   // response = 'Hello'
 });
 ```
-{: codeblock}
 
 **Sucesos de ejemplo**
 
@@ -330,7 +327,6 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
   // collectionName - Name of the collection
 });
 ```
-{: codeblock}
 
 ### Objective-C
 {: #objective-c }
@@ -362,7 +358,6 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
-{: codeblock}
 
 #### Android
 {: #android-example }
@@ -372,7 +367,6 @@ initOptions.setAnalytics(true);
 
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
-{: codeblock}
 
 #### JavaScript
 {: #java-script-example }
@@ -383,7 +377,6 @@ var options = {
 
 WL.JSONStore.init(..., options);
 ```
-{: codeblock}
 
 ## Cómo trabajar con datos externos
 {: #working-with-external-data }
@@ -406,12 +399,13 @@ Este origen es cómo obtiene datos desde el origen externo en su origen interno,
 {: #internal-data-source-api }
 Este origen son las API de JSONStore que se pueden utilizar para añadir datos JSON a una recopilación.
 
-**Nota:** El almacén interno se puede cumplimentar con datos que se leen desde un archivo, un campo de entrada o datos codificados mediante programación para una variable. No tienen que venir de una forma exclusiva desde un origen externo que precisa comunicación de red.
+El almacén interno se puede cumplimentar con datos que se leen desde un archivo, un campo de entrada o datos codificados mediante programación para una variable. No tienen que venir de una forma exclusiva desde un origen externo que precisa comunicación de red.
+{: note}
 
 Todos los siguientes ejemplos de código están escritos en un pseudocódigo similar a JavaScript.
 
-**Nota:** Utilice adaptadores para la capa de transporte. Algunas de las ventajas de utilizar adaptadores son conversión XML a JSON, seguridad, filtrado, desacoplamiento de código del lado del cliente y de código del lado del servidor.
-
+Utilice adaptadores para la capa de transporte. Algunas de las ventajas de utilizar adaptadores son conversión XML a JSON, seguridad, filtrado, desacoplamiento de código del lado del cliente y de código del lado del servidor.
+{: note}
 **Origen de datos externo: punto final REST de fondo**  
 Imagine que tiene un punto final REST que lee datos de una base de datos y devuelve una matriz de objetos JSON.
 
@@ -464,7 +458,9 @@ resource.send()
 ```
 {: codeblock}
 
-**Nota:** Podría desear aprovecharse de `compressResponse`, `timeout` y de otros parámetros que se pueden pasar a la API `WLResourceRequest`.  
+Podría desear aprovecharse de `compressResponse`, `timeout` y de otros parámetros que se pueden pasar a la API `WLResourceRequest`.  
+{: note}
+
 Opcionalmente, puede omitir el adaptador y utilizar algo como jQuery.ajax para contactar directamente al punto final REST con los datos almacenados.
 
 ```javascript
@@ -600,7 +596,8 @@ Este origen de datos es habitualmente una base de datos, un punto final REST o S
 
 Todos los siguientes ejemplos de código están escritos en un pseudocódigo similar a JavaScript.
 
-**Nota:** Utilice adaptadores para la capa de transporte. Algunas de las ventajas de utilizar adaptadores son conversión XML a JSON, seguridad, filtrado, desacoplamiento de código del lado del cliente y de código del lado del servidor.
+Utilice adaptadores para la capa de transporte. Algunas de las ventajas de utilizar adaptadores son conversión XML a JSON, seguridad, filtrado, desacoplamiento de código del lado del cliente y de código del lado del servidor.
+{: note}
 
 **API de origen de datos interno: JSONStore**  
 Después de obtener un accesor para la recopilación, llame a la API `getAllDirty` para obtener todos los elementos marcados como "sucios". Estos documentos tienen cambios únicamente locales que desea enviar al origen de datos externo a través de una capa de transporte.
@@ -651,7 +648,8 @@ Puede elegir enviar documentos "sucios" a un adaptador. Se presupone que tiene e
 ```
 {: codeblock}
 
-**Nota:** Podría desear aprovecharse de `compressResponse`, `timeout` y de otros parámetros que se pueden pasar a la API `WLResourceRequest`.
+Podría desear aprovecharse de `compressResponse`, `timeout` y de otros parámetros que se pueden pasar a la API `WLResourceRequest`.
+{: note}
 
 En el servidor de MobileFirst, el adaptador tiene el procedimiento `updatePeople`, que podría ser como el del siguiente ejemplo:
 
@@ -798,7 +796,7 @@ Siga estos pasos para aislar el problema y notificarlo de forma más precisa.
 4. Busque en el archivo de base de datos SQLite que ha generado JSONStore. El cifrado debe estar desactivado.
 
    * Emulador de Android:
-
+   
    ```bash
    $ adb shell
    $ cd /data/data/com.<app-name>/databases/wljsonstore
@@ -866,21 +864,20 @@ function initWL(){
         var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
         : {};                                                                
         WL.Client.init(options);                                           
-}                                                                      
-```                                                                       
+    } 
+    ```                                                                     
 
-  Esperará al suceso `mfpjsonjsloaded` (fuera de `wlCommonInit`),
-lo que garantizará que el script se ha cargado y que llama posteriormente a `WL.Client.init` que iniciará `wlCommonInit`; este llamará después a `WL.JSONStore.init`.
+Esperará al suceso `mfpjsonjsloaded` (fuera de `wlCommonInit`), lo que garantizará que el script se ha cargado y que llama posteriormente a `WL.Client.init`, que iniciará `wlCommonInit`; este llamará después a `WL.JSONStore.init`.
 
-## Store internals
+## Almacenar internos
 {: #store-internals }
 Visualice un ejemplo sobre cómo se almacenan los datos de JSONStore.
 
 Los elementos clave de este ejemplo simplificado son:
 
-* `_id` es el identificador único (for ejemplo, AUTO INCREMENT PRIMARY KEY).
+* `_id` es el identificador único (por ejemplo, AUTO INCREMENT PRIMARY KEY).
 * `json` contiene una representación exacta del objeto JSON que se almacena.
-* `name` y antigüedad son campos de búsqueda.
+* `name` y age son campos de búsqueda.
 * `key` es un campo de búsqueda adicional.
 
 | _id | key | name | age | JSON |
@@ -896,13 +893,13 @@ Los otros campos de JSONStore internos son:
 * `_deleted`: Marca un documento como suprimido o no suprimido. Este campo es útil para eliminar objetos de la recopilación, utilizarlos posteriormente para realizar un seguimiento de los cambios con el programa de fondo y decidir si desea eliminarlos o no.
 * `_operation`: Una serie que refleja la última operación que se debe realizar en el documento (por ejemplo, sustituir).
 
-## JSONStore errors
+## Errores de JSONStore
 {: #jsonstore-errors }
 ### JavaScript
 {: #javascript }
 JSONStore utiliza un objeto de error para devolver mensajes sobre la causa de los errores.
 
-Cuando se produce un error durante una operación de JSONStore (por ejemplo, los métodos `find` y `add` en la clase `JSONStoreInstance`) se devuelve un objeto de error. Proporciona información sobre la causa de la anomalía.
+Cuando se produce un error durante una operación de JSONStore (por ejemplo, los métodos `find` y `add` en la clase `JSONStoreInstance`), se devuelve un objeto de error. Proporciona información sobre la causa de la anomalía.
 
 ```javascript
 var errorObject = {
@@ -915,8 +912,8 @@ var errorObject = {
   res: {...} // Response from the server.
 }
 ```
-
-No todos los pares de clave/valor forman parte de cada objeto de error. Por ejemplo, el valor de doc solo está disponible cuando la operación ha fallado debido a que un documento (por ejemplo el método `remove` en la clase `JSONStoreInstance`) no ha podido eliminar otro documento.
+{: codeblock}
+No todos los pares de clave/valor forman parte de cada objeto de error. Por ejemplo, el valor de doc solo está disponible cuando la operación ha fallado debido a que un documento (por ejemplo, el método `remove` en la clase `JSONStoreInstance`) no ha podido eliminar otro documento.
 
 ### Objective-C
 {: #objective-c }
@@ -943,8 +940,8 @@ catch(JSONStoreException e) {
   // Handle error condition.
 }
 ```
-
-### List of error codes
+{: codeblock}
+### Lista de códigos de error
 {: #list-of-error-codes }
 Lista de códigos de error comunes y su descripción:
 
@@ -952,28 +949,30 @@ Lista de códigos de error comunes y su descripción:
 |----------------|-------------|
 | -100 UNKNOWN_FAILURE | Error no reconocido. |
 | -75 OS\_SECURITY\_FAILURE | Este código de error está relacionado con el distintivo requireOperatingSystemSecurity. Se puede producir si la API destroy no puede eliminar los metadatos de seguridad protegidos por la seguridad del sistema operativo (Touch ID con recuperación tras error del código de acceso) o las API init u open no pueden localizar los metadatos de seguridad. También puede fallar si el dispositivo no ofrece soporte a la seguridad del sistema operativo, aunque haya solicitado el uso de la seguridad del sistema operativo. |
-| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore se cierra. Intente llamar al método open en la clase de JSONStore class primero para habilitar el acceso al almacén. | | -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | Se ha producido un problema al retrotraer la transacción. |
-| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION | No se puede llamar a removeCollection mientras la transacción está en curso. |
+| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore se cierra. Intente llamar al método open en la clase de JSONStore primero para habilitar el acceso al almacén. |
+| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | Se ha producido un problema al retrotraer la transacción. |
+| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION | No se puede llamar a removeCollection mientras hay una transacción en curso. |
 | -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | No se puede llamar a destroy mientras haya transacciones en curso. |
-| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | No se puede llamar a closeAll mientras disponga de transacciones. |
+| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | No se puede llamar a closeAll mientras haya transacciones en curso. |
 | -44 TRANSACTION\_FAILURE\_DURING\_INIT | No se puede inicializar un almacenamiento mientras haya transacciones en curso. |
 | -43 TRANSACTION_FAILURE | Ha habido un problema con las transacciones. |
-| -42 NO\_TRANSACTION\_IN\_PROGRESS | No se puede confirmar como retrotraída una transacción cuando no hay ninguna transacción en curso |
+| -42 NO\_TRANSACTION\_IN\_PROGRESS | No se puede confirmar como retrotraída una transacción cuando no hay ninguna transacción en curso. |
 | -41 TRANSACTION\_IN\_POGRESS | No se puede iniciar una nueva transacción mientras haya otra transacción en curso. |
 | -40 FIPS\_ENABLEMENT\_FAILURE | Se ha producido un problema con FIPS. |
 | -24 JSON\_STORE\_FILE\_INFO\_ERROR | Se ha producido un problema al obtener información de archivo del sistema de archivos. |
 | -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | Se ha producido un problema al reemplazar archivos de la recopilación. |
-| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | Se ha producido un problema al eliminar documentos de una recopilación.|
+| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | Se ha producido un problema al eliminar documentos de una recopilación. |
 | -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | Se ha producido un problema al almacenar la clave de protección de datos (DPK). |
 | -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | Se ha producido un problema con la indexación de datos de entrada. |
-| -12 INVALID\_SEARCH\_FIELD\_TYPES | Comprobar que los tipos que está pasando a searchFields son string, integer, number o boolean. |
+| -12 INVALID\_SEARCH\_FIELD\_TYPES | Compruebe que los tipos que está pasando a searchFields son string, integer, number o boolean. |
 | -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | Una operación en una matriz de documentos, por ejemplo, el método replace puede fallar mientras trabaja con un documento específico. El documento que ha fallado se devuelve y la transacción se retrotrae. En Android, este error también se produce al intentar utilizar JSONStore en arquitecturas no soportadas. |
 | -10 ACCEPT\_CONDITION\_FAILED | La función de aceptación que el usuario ha proporcionado ha devuelto false. |
 | -9 OFFSET\_WITHOUT\_LIMIT | Para utilizar el lapso temporal, también debe especificar un límite. |
 | -8 INVALID\_LIMIT\_OR\_OFFSET | Error de validación, debe ser un entero positivo. |
 | -7 INVALID_USERNAME | Error de validación (Solo debe ser [A-Z] o [a-z] o [0-9]). |
 | -6 USERNAME\_MISMATCH\_DETECTED | Para cerrar sesión, un usuario de JSONStore debe llamar primero al método closeAll. Solo puede haber un usuario al mismo tiempo. |
-| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED | Se ha producido un problema con el método destroy mientras intentaba suprimir el archivo que contiene el contenido del almacén. | | -4 DESTROY\_REMOVE\_KEYS\_FAILED | Se ha producido un problema con el método destroy mientras intentaba borrar la cadena de claves (iOS) o las preferencias de usuario compartido (Android).|
+| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED | Se ha producido un problema con el método destroy mientras intentaba suprimir el archivo que contiene el contenido del almacén. |
+| -4 DESTROY\_REMOVE\_KEYS\_FAILED | Se ha producido un problema con el método destroy mientras intentaba borrar la cadena de claves (iOS) o las preferencias de usuario compartido (Android). |
 | -3 INVALID\_KEY\_ON\_PROVISION | Se ha enviado la contraseña incorrecta a un almacén cifrado. |
 | -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | Los campos de búsqueda no son dinámicos. No es posible cambiar los campos de búsqueda sin llamar los métodos destroy o removeCollection antes de llamar los métodos init u open con los nuevos campos de búsqueda. Este error se puede producir si cambia el nombre o el tipo del campo de búsqueda. Por ejemplo: {key: 'string'} a {key: 'number'} o {myKey: 'string'} a {theKey: 'string'}. |
 | -1 PERSISTENT\_STORE\_FAILURE | Error genérico. Un funcionamiento incorrecto en el código nativo; lo más probable es que se haya producido en la llamada del método init. |
@@ -985,23 +984,23 @@ Lista de códigos de error comunes y su descripción:
 | 5 BAD\_PARAMETER\_EXPECTED\_OBJECT | Error de validación. |
 | 6 BAD\_PARAMETER\_EXPECTED\_SIMPLE\_OBJECT | Error de validación. |
 | 7 BAD\_PARAMETER\_EXPECTED\_DOCUMENT | Error de validación. |
-| 8 FAILED\_TO\_GET\_UNPUSHED\_DOCUMENTS\_FROM\_DB | La consulta que selecciona todos los documentos marcados como modificados ha fallado. Un ejemplo en SQL de la consulta sería: SELECT * FROM [collection] WHERE _dirty > 0. |
+| 8 FAILED\_TO\_GET\_UNPUSHED\_DOCUMENTS\_FROM\_DB |La consulta que selecciona todos los documentos marcados como modificados ha fallado. Un ejemplo en SQL de la consulta sería: SELECT * FROM [collection] WHERE _dirty > 0. |
 | 9 NO\_ADAPTER\_LINKED\_TO\_COLLECTION | Para utilizar las funciones como los métodos push y load en la clase JSONStoreCollection, debe pasarse un adaptador al método init. |
 | 10 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ARRAY\_OF\_DOCUMENTS | Error de validación |
 | 11 INVALID\_PASSWORD\_EXPECTED\_ALPHANUMERIC\_STRING\_WITH\_LENGTH\_GREATER\_THAN\_ZERO | Error de validación |
 | 12 ADAPTER_FAILURE | Se ha producido un problema en la llamada de WL.Client.invokeProcedure, específicamente en la conexión con el adaptador. Este error es distinto al error en el adaptador que intenta llamar a un programa de fondo. |
-| 13 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ID | Error de validación|
+| 13 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ID | Error de validación |
 | 14 CAN\_NOT\_REPLACE\_DEFAULT\_FUNCTIONS | La llamada del método de mejora en la clase JSONStoreCollection para sustituir una función existente (buscar y añadir) no está permitida. |
 | 15 COULD\_NOT\_MARK\_DOCUMENT\_PUSHED | Push envía el documento a un adaptador, pero JSONStore no puede marcar el documento como no modificado. |
-| 16 COULD\_NOT\_GET\_SECURE\_KEY | Para iniciar una recopilación con una contraseña, debe haber conectividad con el {{ site.data.keys.mf_server }} puesto que devuelve una 'señal aleatoria segura'. IBM  Worklight V5.0.6 permite a los desarrolladores generar la señal aleatoria segura pasando de manera local {localKeyGen: true} al método init mediante el objeto de opciones. |
-| 17 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER | No ha podido cargar datos porque WL.Client.invokeProcedure ha llamado a la devolución de llamadas de error. |
+| 16 COULD\_NOT\_GET\_SECURE\_KEY | Para iniciar una recopilación con una contraseña, debe haber conectividad con el {{ site.data.keys.mf_server }}, puesto que devuelve una 'señal aleatoria segura'. IBM  Worklight V5.0.6 permite a los desarrolladores generar la señal aleatoria segura pasando de manera local {localKeyGen: true} al método init mediante el objeto de opciones. |
+| 17 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER | No se han podido cargar los datos porque WL.Client.invokeProcedure ha llamado a la devolución de llamadas de error. |
 | 18 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER\_INVALID\_LOAD\_OBJ | El objeto de carga que se ha pasado al método init no ha superado la validación. |
 | 19 INVALID\_KEY\_IN\_LOAD\_OBJECT | Se ha producido un problema con la clave utilizada en el objeto de carga al llamar al método de adición. |
 | 20 UNDEFINED\_PUSH\_OPERATION | No se ha definido ningún procedimiento para enviar documentos modificados al servidor. Por ejemplo: el método init (nuevo documento modificado, operación = 'add') y el método push (busca el nuevo documento con la operación = 'add') se han llamado, pero no se ha encontrado ninguna clave de adición con el procedimiento de adición en el adaptador enlazado a la recopilación. El enlace de un adaptador se realiza en el método init. |
 | 21 INVALID\_ADD\_INDEX\_KEY | Se ha producido un problema con los campos de búsqueda adicionales. |
-| 22 INVALID\_SEARCH\_FIELD | Uno de los campos de búsqueda no es válido. Compruebe que ninguno de los campos de búsqueda que se han pasado sean _id,json,_deleted, o _operation. |
-| 23 ERROR\_CLOSING\_ALL | Error genérico. Se ha producido un error cuando en la llamada del código nativo al método closeAll. |
-| 24 ERROR\_CHANGING\_PASSWORD | No se ha podido cambiar la contraseña. La contraseña antigua era incorrecta, por ejemplo. |
+| 22 INVALID\_SEARCH\_FIELD | Uno de los campos de búsqueda no es válido. Compruebe que ninguno de los campos de búsqueda que se han pasado sean _id,json,_deleted, u _operation. |
+| 23 ERROR\_CLOSING\_ALL | Error genérico. Se ha producido un error al llamar el código nativo al método closeAll. |
+| 24 ERROR\_CHANGING\_PASSWORD | No se puede cambiar la contraseña. La contraseña antigua era incorrecta, por ejemplo. |
 | 25 ERROR\_DURING\_DESTROY | Error genérico. Se ha producido un error en la llamada del código nativo al método destroy. |
 | 26 ERROR\_CLEARING\_COLLECTION | Error genérico. Se ha producido un error en la llamada del código nativo al método removeCollection. |
 | 27 INVALID\_PARAMETER\_FOR\_FIND\_BY\_ID | Error de validación. |

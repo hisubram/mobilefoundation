@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-23"
 
 ---
@@ -12,7 +12,7 @@ lastupdated:  "2018-11-23"
 {:tip: .tip}
 {:pre: .pre}
 
-#	Exemples de code JSONStore 
+#	Exemples de code JSONStore
 {: #code_samples}
 
 ## Cordova
@@ -272,7 +272,7 @@ WL.JSONStore.changePassword(oldPassword, newPassword, username)
 ```
 {: codeblock}
 
-### Push - obtenir tous les documents marqués comme étant modifiés, les envoyer à un adaptateur et les marquer comme propres 
+### Push - obtenir tous les documents marqués comme étant modifiés, les envoyer à un adaptateur et les marquer comme propres
 {: #push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
 ```javascript
 var collectionName = 'people';
@@ -313,7 +313,7 @@ WL.JSONStore.get(collectionName)
 ```
 {: codeblock}
 
-### Pull - obtenir de nouvelles données d'un adaptateur 
+### Pull - obtenir de nouvelles données d'un adaptateur
 {: #pull-get-new-data-from-an-adapter }
 ```javascript
 var collectionName = 'people';
@@ -376,7 +376,8 @@ WL.JSONStore.get(collectionName)
 
 .then(function (isDocumentDirty) {
   // Handle success.
-// isDocumentDirty - true if dirty, false otherwise.
+
+  // isDocumentDirty - true if dirty, false otherwise.
 })
 
 .fail(function (errorObject) {
@@ -414,7 +415,8 @@ WL.JSONStore.get(collectionName)
 
 .then(function () {
   // Handle success.
-// Note: You must call the 'init' API to re-use the empty collection.
+
+  // Note: You must call the 'init' API to re-use the empty collection.
   // See the 'clear' API if you just want to remove all data that is inside.
 })
 
@@ -435,7 +437,8 @@ WL.JSONStore.get(collectionName)
 
 .then(function () {
   // Handle success.
-// Note: You might want to use the 'removeCollection' API
+
+  // Note: You might want to use the 'removeCollection' API
   // instead if you want to change the search fields.
 })
 
@@ -717,7 +720,7 @@ newPassword = nil;
 ```
 {: codeblock}
 
-### Push - obtenir tous les documents marqués comme étant modifiés, les envoyer à un adaptateur et les marquer comme propres 
+### Push - obtenir tous les documents marqués comme étant modifiés, les envoyer à un adaptateur et les marquer comme propres
 {: #ios-push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
 ```objc
 // Get the accessor to an already initialized collection.
@@ -737,7 +740,7 @@ int numCleaned = [[people markDocumentsClean:dirtyDocs error:&error] intValue];
 ```
 {: codeblock}
 
-### Pull - obtenir de nouvelles données d'un adaptateur 
+### Pull - obtenir de nouvelles données d'un adaptateur
 {: #ios-pull-get-new-data-from-an-adapter }
 ```objc
 // Get the accessor to an already initialized collection.
@@ -745,6 +748,7 @@ JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:
 
 // This object will point to an error if one occurs.
 NSError* error = nil;
+
 
 // ACTION REQUIRED: Get data (e.g. Adapter).
 // For this example, it is hardcoded.
@@ -926,19 +930,18 @@ AsyncTask<Context, Void, Void> aTask = new AsyncTask<Context, Void, Void>() {
           collections.add(peopleCollection);
 
           // Optional options object.
-  JSONStoreInitOptions initOptions = new JSONStoreInitOptions();
+          JSONStoreInitOptions initOptions = new JSONStoreInitOptions();
 
           // Optional username, default 'jsonstore'.
-  initOptions.setUsername("carlos");
+          initOptions.setUsername("carlos");
 
           // Optional password, default no password.
-  initOptions.setPassword("123");
+          initOptions.setPassword("123");
 
-  initOptions.setSecureRandom(secureRandom);
+          initOptions.setSecureRandom(secureRandom);
 
           // Open the collection.
-
-  WLJSONStore.getInstance(context).openCollections(collections, initOptions);
+          WLJSONStore.getInstance(context).openCollections(collections, initOptions);
 
           // Other JSONStore operations (e.g. add, remove, replace, etc.) go here.
         }
@@ -1013,7 +1016,7 @@ try {
 
   // Documents will be located with their '_id' field
 // and replaced with the data in the 'json' field.
-JSONObject replaceDoc = new JSONObject("{_id: 1, json: {name: 'carlitos', age: 99}}");
+  JSONObject replaceDoc = new JSONObject("{_id: 1, json: {name: 'carlitos', age: 99}}");
 
   // Mark data as dirty (true = yes, false = no), default true.
   JSONStoreReplaceOptions replaceOptions = new JSONStoreReplaceOptions();
@@ -1072,7 +1075,7 @@ try {
   JSONStoreCollection peopleCollection  = WLJSONStore.getInstance(ctx).getCollectionByName("people");
 
   // Count all documents that match the query.
-JSONStoreQueryParts countQuery = new JSONStoreQueryParts();
+  JSONStoreQueryParts countQuery = new JSONStoreQueryParts();
   JSONStoreQueryPart part = new JSONStoreQueryPart();
 
   // Exact match.
@@ -1151,7 +1154,7 @@ finally {
 ```
 {: codeblock}
 
-### Push - obtenir tous les documents marqués comme étant modifiés, les envoyer à un adaptateur et les marquer comme propres 
+### Push - obtenir tous les documents marqués comme étant modifiés, les envoyer à un adaptateur et les marquer comme propres
 {: #android-push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
 ```java
 // Fill in the blank to get the Android application context.
@@ -1168,13 +1171,13 @@ try {
 
   peopleCollection.markDocumentsClean(allDirtyDocuments);
 }  catch (JSONStoreException ex) {
-          // Handle failure for any of the previous JSONStore operations
+  // Handle failure for any of the previous JSONStore operations
   throw ex;
 }
 ```
 {: codeblock}
 
-### Pull - obtenir de nouvelles données d'un adaptateur 
+### Pull - obtenir de nouvelles données d'un adaptateur
 {: #android-pull-get-new-data-from-an-adapter }
 ```java
 // Fill in the blank to get the Android application context.
@@ -1195,7 +1198,7 @@ try {
   changeOptions.setAddNew(true);
 
   // Mark data as dirty (true = yes, false = no), default false.
-    changeOptions.setMarkDirty(true);
+  changeOptions.setMarkDirty(true);
 
   // The following example assumes that 'id' and 'ssn' are search fields,
   // default will use all search fields
@@ -1265,8 +1268,7 @@ try {
   // Get the already initialized collection.
   JSONStoreCollection peopleCollection  = WLJSONStore.getInstance(ctx).getCollectionByName("people");
 
-  // Remove the collection.
-The collection object is
+  // Remove the collection. The collection object is
   // no longer usable.
   peopleCollection.removeCollection();
 }
@@ -1329,6 +1331,7 @@ catch (JSONStoreException ex) {
   throw ex;
 } catch (JSONException ex) {
   // Handle failure for any JSON parsing issues.
+
   // An exception occured. Take care of it to prevent further damage.
   WLJSONStore.getInstance(ctx).rollbackTransaction();
 
