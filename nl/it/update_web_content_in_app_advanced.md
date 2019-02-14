@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-12-21"
 
 ---
@@ -182,7 +182,7 @@ Questa sezione illustra come gestire un errore di aggiornamento diretto che potr
     ```
     {: codeblock}
 
-2.  Implementa un gestore di verifica dell'aggiornamento diretto. Salva il contesto dell'aggiornamento diretto qui. Ad esempio:
+2.  Implementa un gestore delle verifiche dell'aggiornamento diretto. Salva il contesto dell'aggiornamento diretto qui. Ad esempio:
     ```JavaScript
     wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, directUpdateContext){
 

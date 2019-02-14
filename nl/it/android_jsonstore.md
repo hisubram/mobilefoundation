@@ -348,7 +348,7 @@ try {
 ```
 {: codeblock}
 
-   Per evitare che JSONStore contrassegni i documenti come "dirty", passa l'opzione `options.setMarkDirty(false)` a `add`, `replace` e `remove`.
+Per evitare che JSONStore contrassegni i documenti come "dirty", passa l'opzione `options.setMarkDirty(false)` a `add`, `replace` e `remove`.
 
 #### Esegui il push delle modifiche
 {: #push-changes }

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-19"
 
 ---
@@ -17,7 +17,7 @@ lastupdated:  "2018-11-19"
 
 {{ site.data.keyword.mobilefoundation_short }} fornisce uno strumento della riga di comando (CLI) per lo sviluppatore **mfpdev**, per gestire facilmente le risorse di client e server {{site.data.keyword.mobilefoundation_short}}.
 
-Tutti i comandi `mfpdev` possono essere eseguiti in modalità interattiva o diretta. Nella modalità interattiva, verranno richiesti i parametri obbligatori per il comando e verranno utilizzati alcuni valori predefiniti. Nella modalità diretta, i parametri devono essere forniti insieme al comando 
+Tutti i comandi `mfpdev` possono essere eseguiti in modalità interattiva o diretta. Nella modalità interattiva, verranno richiesti i parametri obbligatori per il comando e verranno utilizzati alcuni valori predefiniti. Nella modalità diretta, i parametri devono essere forniti insieme al comando
 
 
 ## Installazione della CLI {{site.data.keyword.mobilefoundation_short}}

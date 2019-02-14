@@ -122,6 +122,4 @@ Mobile Analytics server is included and preconfigured with the Mobile Foundation
 
 * Launch the Mobile Analytics Console from the {{site.data.keyword.mfp_oc_short_notm}}.
 
-For more information on Mobile Analytics, you can refer to [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}.
-
-See [{{site.data.keyword.mobilefoundation_long}} documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}, for more details.
+For more information on Mobile Analytics, you can refer [here](/docs/services/mobilefoundation/instrument_an_app.html){: new_window}.

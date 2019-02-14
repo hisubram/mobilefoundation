@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-19"
 
 ---
@@ -167,7 +167,7 @@ WLRequestListener listener = new WLRequestListener(){
   }
 
   @Override
-            public void onFailure(WLFailResponse wlFailResponse) {
+  public void onFailure(WLFailResponse wlFailResponse) {
     // Implement the failure handler.
     }
 };

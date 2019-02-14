@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-27"
 
 ---
@@ -34,4 +34,4 @@ Il piano Professional 1 Application consente agli utenti di creare, testare ed e
 ## Professional Per Device
 {: #prof_per_device}
 
-Il piano Professional Per Device consente agli utenti di creare, testare ed eseguire fino a 5 applicazioni mobili su Mobile Foundation in produzione. Mobile Analytics viene offerto senza alcun costo aggiuntivo con gli eventi conservati per 6 mesi. La fatturazione a tuo carico è basata sul numero di dispositivi client connessi al giorno. Questo piano supporta ampie distribuzioni e alta disponibilità. Questo piano richiede che tu disponga di un'istanza del servizio IBM Db2 (qualsiasi piano diverso dal piano **Lite**) o un'istanza del servizio Compose for PostgreSQL, di cui viene eseguita la creazione e la fatturazione separatamente. Questo piano crea un server Mobile Foundation su *Liberty for Java*, iniziando con un minimo di 2 nodi di 1 GB. Gli addebiti di *Liberty for Java* sono fatturati separatamente e non sono inclusi come parte di questo piano. 
+Il piano Professional Per Device consente agli utenti di creare, testare ed eseguire fino a 5 applicazioni mobili su Mobile Foundation in produzione. Mobile Analytics viene offerto senza alcun costo aggiuntivo con gli eventi conservati per 6 mesi. La fatturazione a tuo carico è basata sul numero di dispositivi client connessi al giorno. Questo piano supporta ampie distribuzioni e alta disponibilità. Questo piano richiede che tu disponga di un'istanza del servizio IBM Db2 (qualsiasi piano diverso dal piano **Lite**) o un'istanza del servizio Compose for PostgreSQL, di cui viene eseguita la creazione e la fatturazione separatamente. Questo piano crea un server Mobile Foundation su *Liberty for Java*, iniziando con un minimo di 2 nodi di 1 GB. Gli addebiti di *Liberty for Java* sono fatturati separatamente e non sono inclusi come parte di questo piano.

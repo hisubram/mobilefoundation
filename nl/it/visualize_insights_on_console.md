@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-22"
 
 ---
@@ -103,7 +103,7 @@ La tabella **Crash Summary** è ordinabile e include le seguenti colonne di dati
 * OS
 * Message
 
-Fai clic sull'icona + accanto a qualsiasi voce per visualizzare la tabella **Crash Details**, che include le seguenti colonne: 
+Fai clic sull'icona + accanto a qualsiasi voce per visualizzare la tabella **Crash Details**, che include le seguenti colonne:
 
 * Time Crashed
 * Application Version
@@ -112,7 +112,7 @@ Fai clic sull'icona + accanto a qualsiasi voce per visualizzare la tabella **Cra
 * Device ID
 * Download: link per scaricare i log che hanno portato all'arresto anomalo
 
-Espandi qualsiasi voce nella tabella **Crash Details** per ottenere ulteriori dettagli, compresa una traccia di stack. 
+Espandi qualsiasi voce nella tabella **Crash Details** per ottenere ulteriori dettagli, compresa una traccia di stack.
 
 I dati per la tabella **Crash Summary** vengono popolati eseguendo query dei log dell'applicazione del livello errore irreversibile. Se l'applicazione non raccoglie i log delle applicazioni degli errori irreversibili, non è disponibile alcun dato.
 {: note}

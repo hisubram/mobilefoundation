@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-24"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2018-12-24"
 {:ruby: .ph data-hd-programlang='ruby'}
 {:c#: .ph data-hd-programlang='c#'}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:ios: .ph data-hd-programlang='iOS'}
 {:python: .ph data-hd-programlang='python'}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:php: .ph data-hd-programlang='PHP'}
@@ -41,15 +42,15 @@ API per applicazioni Cordova/web
     {: javascript }
 
 ### Objective C
-{: objectc }
+{: ios }
 API per applicazioni iOS native.
-{: objectc }
+{: ios }
 * **[Client-side API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](http://mobilefirstplatform.ibmcloud.com/api-ref/wl-ios-objc-apidoc/html/refobjc-worklight-ios/html/index.html)**   
     Utilizza questa API per sviluppare un'applicazione nativa per l'ambiente iOS.
-    {: objectc }
+    {: ios }
 * **[Client-side push API ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-ios-n-objc-apidoc/html/refobjc-mfp-push-ios-native/html/index.html)**  
     Utilizza questa API push per sviluppare applicazioni per l'ambiente iOS.
-    {: objectc }
+    {: ios }
 
 ### Java
 {: java }

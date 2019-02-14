@@ -56,7 +56,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 
 ### Ottieni (get)
 {: #get }
-Utilizza `get` per creare un accessor alla raccolta. Devi richiamare `init` prima di richiamare get, altrimenti il risultato di `get` sarà indefinito.
+Utilizza `get` per creare un accessor alla raccolta.Devi richiamare `init` prima di richiamare get, altrimenti il risultato di `get` sarà indefinito.
 
 ```javascript
 var collectionName = 'people';
@@ -130,7 +130,7 @@ else {
 
 ### Sostituisci (replace)
 {: #replace }
-Utilizza `replace` per modificare i documenti all'interno di una raccolta. Il campo che usi per eseguire la sostituzione è `_id`, l'identificativo univoco del documento.
+Utilizza `replace` per modificare i documenti all'interno di una raccolta.Il campo che usi per eseguire la sostituzione è `_id`, l'identificativo univoco del documento.
 
 ```javascript
 var document = {
@@ -184,7 +184,7 @@ WL.JSONStore.get(collectionName).removeCollection().then(function (removeCollect
 
 ## Utilizzo avanzato
 {: #advanced-usage }
-### destroy
+### Elimina permanentemente (destroy)
 {: #destory }
 Utilizza `destroy` per rimuovere i seguenti dati:
 
@@ -237,7 +237,7 @@ WL.JSONStore.init(collections, options).then(function () {
 
 ### Supporto di più utenti
 {: #multiple-user-support }
-Puoi creare più archivi che contengono raccolte differenti in una singola applicazione MobileFirst. La funzione `init` può prendere un oggetto options con un nome utente. Se non viene dato alcun nome utente, il nome utente predefinito è **jsonstore**.
+Puoi creare più archivi che contengono raccolte differenti in una singola applicazione MobileFirst.La funzione `init` può prendere un oggetto options con un nome utente. Se non viene dato alcun nome utente, il nome utente predefinito è **jsonstore**.
 
 ```javascript
 var collections = {
@@ -263,7 +263,7 @@ Puoi raggiungere questi obiettivi utilizzando `WLResourceRequest` o `jQuery.ajax
 
 ### Implementazione dell'adattatore
 {: #adapter-implementation }
-Crea un adattatore e denominalo "**JSONStoreAdapter**".   
+Crea un adattatore e denominalo "**JSONStoreAdapter**".  
 Definisci le sue procedure `addPerson`, `getPeople`, `pushPeople`, `removePerson` e `replacePerson`.
 
 ```javascript
@@ -330,7 +330,7 @@ WL.JSONStore.get(collectionName).getPushRequired().then(function (dirtyDocuments
 ```
 {: codeblock}
 
-   Per evitare che JSONStore contrassegni i documenti come "dirty", passa l'opzione `{markDirty:false}` a `add`, `replace` e `remove`
+Per evitare che JSONStore contrassegni i documenti come "dirty", passa l'opzione `{markDirty:false}` a `add`, `replace` e `remove`
 
 Puoi anche utilizzare l'API `getAllDirty` per richiamare i documenti dirty:
 

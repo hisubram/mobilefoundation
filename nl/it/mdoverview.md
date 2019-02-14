@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016, 2018
+  years: 2016, 2019
 lastupdated:  "2018-11-27"
 
 ---
@@ -21,7 +21,13 @@ la creazione di applicazioni mobili coinvolgenti è la chiave per il successo di
 ###  Informazioni approfondite sulle applicazioni
 {: #app_insights}
 
-Ottieni informazioni approfondite sull'utilizzo delle applicazioni, sulla modalità di funzionamento delle applicazioni e sul comportamento degli utenti. Ottieni informazioni approfondite operative per la risoluzione dei problemi. Dota di strumentazione l'applicazione e ottieni informazioni approfondite sull'attività di business, che possono essere visualizzate come grafici personalizzati sul lato server. Abilita gli utenti finali a segnalare errori e problemi interni all'applicazione con un gesto.
+Per mantenere in primo piano e attivo il coinvolgimento dei tuoi utenti, devi ottenere informazioni approfondite sulla qualità delle prestazioni della tua applicazione presso gli utenti. La funzione Mobile Analytics di Mobile Foundation fornisce questa funzionalità con visualizzazioni integrate (grafici e tabelle). Con una strumentazione veramente minima della tua applicazione, puoi prontamente visualizzare, sulla console Mobile Analytics, informazioni approfondite su cui eseguire operazioni quali:
+- **I modelli di onboarding degli utenti**: hai dei nuovi utenti che stanno eseguendo l'onboarding, hai degli utenti esistenti che stanno ritornando alla tua applicazione?
+- **I modelli di utilizzo**: quando la tua applicazione è più utilizzata e meno utilizzata e, a tale proposito, sta soddisfacendo i suoi obiettivi aziendali?
+- **Le prestazioni di backend**: quali sono le funzioni più usate dei tuoi sistemi di backend, quale ne è stato il tempo di risposta e com'è la loro stabilità, è necessario ribilanciare il tuo backend?
+- **La stabilità delle applicazioni**: quanto è stata stabile la tua applicazione nel corso del tempo e, se si sono verificati degli arresti anomali, quali ne sono le cause (log degli arresti anomali), bisogna correggere la progettazione e/o l'implementazione della tua applicazione?
+- **L'esperienza degli utenti all'interno delle applicazioni**: qual è l'effettiva esperienza interattiva dei tuoi utenti quando usano l'applicazione e come si sentono, devi rivisitare la tua analisi degli utenti dell'applicazione?
+- **Le tracce personalizzate**: grafici personalizzati definiti e tracciati intorno ai dati personalizzati registrati come parte di tracce e flussi specifici per le applicazioni, flessibilità di estendere e definire le tue informazioni approfondite che possono anche essere di ausilio per le tue decisioni aziendali.
 
 ###  Framework di sicurezza
 {: #security_framework}

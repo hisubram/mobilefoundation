@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-29"
 
 ---
@@ -20,10 +20,10 @@ lastupdated: "2018-11-29"
 
 L'accesso ai dispositivi e lo stato dei dispositivi possono essere gestiti dalla Mobile Foundation Operations Console. Un dispositivo è identificato in modo univoco con un identificativo denominato ID dispositivo, assegnato dall'SDK client Mobile Foundation. Puoi anche impostare un nome di visualizzazione per il tuo dispositivo. Entrambi i campi di ID dispositivo e nome di visualizzazione del dispositivo sono indicizzati per la ricerca.
 
-Gli sviluppatori di applicazioni possono utilizzare il metodo `setDeviceDisplayName` della classe `WLClient` per impostare il nome di visualizzazione del dispositivo. Vedi [qui](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/javascript/client/) per la documentazione di `WLClient`. Gli sviluppatori di adattatori Java possono anche impostare il nome di visualizzazione del dispositivo utilizzando il metodo `setDeviceDisplayName` della classe `com.ibm.mfp.server.registration.external.model MobileDeviceData`.
+Gli sviluppatori di applicazioni possono utilizzare il metodo `setDeviceDisplayName` della classe `WLClient` per impostare il nome di visualizzazione del dispositivo. Vedi [qui](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/javascript/client/) per la documentazione di `WLClient`. Gli sviluppatori di adattatori Java possono anche impostare il nome di visualizzazione del dispositivo utilizzando il metodo `setDeviceDisplayName` della classe `com.ibm.mfp.server.registration.external.model MobileDeviceData`. 
 {: tip}
 
-Il server Mobile Foundation conserva le informazioni sullo stato per ogni dispositivo che accede al server.
+Il server Mobile Foundation conserva le informazioni sullo stato per ogni dispositivo che accede al server. 
 I valori di stato possibili sono:
 * Attivo
 * Perso 
@@ -59,5 +59,5 @@ Lo stato **Scaduto** è uno stato speciale impostato dal server Mobile Foundatio
    {: note}
 
 
-Non **annullare la registrazione** di un dispositivo se si intendeva **bloccare** il dispositivo. L'annullamento della registrazione di un dispositivo rimuove tutti i dati correlati al dispositivo. Se un utente prova ad accedere al server Mobile Foundation utilizzando lo stesso dispositivo, gli viene richiesto di registrare il dispositivo e la registrazione creerà un nuovo ID dispositivo per il dispositivo nel server. Ciò significa che il dispositivo riottiene l'accesso al server Mobile Foundation.
+Non **annullare la registrazione** di un dispositivo se si intendeva **bloccare** il dispositivo. L'annullamento della registrazione di un dispositivo rimuove tutti i dati correlati al dispositivo. Se un utente prova ad accedere al server Mobile Foundation utilizzando lo stesso dispositivo, gli viene richiesto di registrare il dispositivo e la registrazione creerà un nuovo ID dispositivo per il dispositivo nel server. Ciò significa che il dispositivo riottiene l'accesso al server Mobile Foundation. 
 {: important}
