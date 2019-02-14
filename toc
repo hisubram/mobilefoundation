@@ -13,6 +13,16 @@ Mobile Foundation
         mdoverview.md
         pricing.md
         release_notes.md
+
+    {: .topicgroup}
+    Offline Storage
+        jsonstore.md
+        advanced_jsonstore.md
+
+    {: .topicgroup}
+    Direct Update
+        advanced_direct_update_configuration.md
+        alternate_steps_to_update_app_web_content_in_app.md   
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -45,8 +55,9 @@ Mobile Foundation
         sync_data_with_datasource.md
 
     {: .topicgroup}
-      Updating your app content
-          update_web_content_in_app.md
+    Updating your app content
+        update_web_content_in_app.md
+    export_import_apps_adapters.md    
 
     {: .topicgroup}
       Manage Application

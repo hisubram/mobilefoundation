@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-02-14"
 
 ---
 
@@ -14,8 +14,8 @@ lastupdated: "2018-12-21"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Alternate steps to update web content in your app
-{: #alternate_steps_to_update_app_web_content}
+# Alternate steps to update web content in app
+{: #alternate_steps_to_update_app_web_content_in_app}
 
 Listed below are some of the alternate ways to update the web content in your app.
 
