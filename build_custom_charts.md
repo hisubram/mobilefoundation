@@ -28,16 +28,16 @@ Supported datasets:
  * App Sessions
  * Custom Data
  * Network Transactions
-
- Supported chart types
+ 
+Supported chart types:
  * Bar Graph
  * Flow Chart
  * Line Graph
- * Metric Group
+ * Metric Group 
  * Pie Chart
  * Table
-
-The selection of the dataset, the chart type to plot, definition of the chart characteristics, and data filters to apply can be pulled together into a Custom Chart Definition and saved.  You may create and save as many Custom Chart definitions as you need. Saved Custom Charts show up on the Custom Charts view with the relevant analytics data plotted.
+ 
+The selection of the dataset, the chart type to plot, definition of the chart characteristics, and data filters to apply can be pulled together into a Custom Chart Definition and saved.  You may create and save as many Custom Chart definitions as you need. Saved Custom Charts show up on the Custom Charts view with the relevant analytics data plotted. 
 
 ## Creating a custom chart
 {: #creating_custom_chart}
