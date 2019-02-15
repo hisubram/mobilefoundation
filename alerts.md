@@ -15,16 +15,21 @@ lastupdated: "2018-11-23"
 {:screen: .screen}
 
 # Set up alerts
-{: #setting_up_alerts}
+{: #set_up_alerts}
 
-Mobile Analytics provides the alerts feature, which allows you to define alerts to monitor your applications. You can configure thresholds, which if exceeded, trigger alerts to notify the Mobile Analytics console monitor. The triggered alerts can be visualized on the console, or the alerts can be handled by a custom webhook. This feature provides the means for detecting application log errors and application crashes from server log errors. Reactive thresholds and alerts keep you from having to sift through your logs data.
+Mobile Analytics provides the Alerts feature, which allows you to define alerts to monitor your applications. You can configure thresholds, which if exceeded triggers alerts to notify the Mobile Analytics console monitor. The triggered alerts can be visualized on the console or can be configured to be relayed to a custom webhook for appropriate handling.
 
-## Creating an alert definition for application logs
+This feature provides the means for detecting and alerting threshold breaches observed over application error logs, application crashes and network transactions. Reactive thresholds and alerts bring agility in responses to application performance conditions without having to continuously monitor the corresponding views / charts.
+
+This feature is in BETA.
+{: note}
+
+The following sections detail the creation, management of alerts and their viewing on the Mobile Analytics console.
+
+## Creating an alert definition for Application Logs (App Logs)
 {: #creating_alert_def}
 
-You can create an alert definition that is based on application logs.
-
-In this example, you use application's log data to create an alert definition. Alert condition is checked in all application logs, which were received in the last 5 minutes, and continues to check every 5 minutes, until the alert definition is disabled or deleted. An alert is triggered for each device that sends three or more application error logs with the same application name and version.
+You can create an alert definition that is based on App Logs.  For example if you wish to monitor your application logs every 5 minutes to check if your application of a specific version has logged errors more than three times then here is how you can go about setting this up.
 
 1.  In the Mobile Analytics console, click **Definitions** to go to the alert definitions page.
 2.  Click **Create Alert**.
@@ -51,11 +56,13 @@ In this example, you use application's log data to create an alert definition. A
 
 You've now created an alert definition to trigger an alert at the end of every 5 minute interval when the number of app logs reached the threshold of 3 or more error logs.
 
+This alert stays live and active, monitoring by the setup frequency until the alert defintion is disabled or deleted.
+{: note}
+
 ## Creating an alert definition for application crashes
 {: #creating_alert_crashes}
 
-You can create an alert definition to monitor application crashes.
-In this example, you use application crash data to create an alert definition. This alert monitors all application crashes in the last 2 minutes, and continues to check every 2 minutes, until the alert definition is disabled or deleted. An alert is triggered for every application that crashed 5 or more times. 
+Here is an example of setting up alerts around application crashes.  This alert monitors in every two minutes, all application crashes and triggers an alert if the number of crashes observed crosses a count of 5.
 
 1.  In the Mobile Analytics console, click **Definitions** to go to the alert definitions page.
 2.  Click **Create Alert**.
@@ -77,6 +84,9 @@ In this example, you use application crash data to create an alert definition. T
       * **Authentication Type**
       * **POST Request Body**
 5. Click **Save**.  
+
+This alert stays live and active, monitoring by the setup frequency until the alert defintion is disabled or deleted.
+{: note}
 
 ## Managing alert definitions
 {: #managing_alert_def}
