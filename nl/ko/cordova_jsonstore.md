@@ -15,7 +15,7 @@ lastupdated:  "2018-06-18"
 #	Cordova 애플리케이션의 JSONStore
 {: #cordova_jsonstore}
 
-## 선행 조건
+## 전제조건
 {: #prerequisites }
 * [JSONStore 개요](jsonstore.html)를 읽으십시오.
 * MobileFirst Cordova SDK가 프로젝트에 추가되었는지 확인하십시오. [Cordova 애플리케이션에 Mobile Foundation SDK 추가 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/cordova/){: new_window} 튜토리얼에 따르십시오.
@@ -35,7 +35,7 @@ Cordova 애플리케이션에 JSONStore 플러그인을 추가하려면 다음�
 {: #initialize }
 `init`를 사용하여 하나 이상의 JSONStore 콜렉션을 시작하십시오.  
 
-콜렉션 시작 또는 프로비저닝은 콜렉션 및 문서를 포함하는 지속적 스토리지가 없는 경우 이를 작성하는 것을 의미합니다. 지속적 스토리지가 암호화되고 올바른 비밀번호가 전달되면 데이터에 액세스할 수 있도록 하는 데 필요한 보안 프로시저가 실행됩니다. 
+콜렉션 시작 또는 프로비저닝은 콜렉션 및 문서를 포함하는 지속적 스토리지가 없는 경우 이를 작성하는 것을 의미합니다. 지속적 스토리지가 암호화되고 올바른 비밀번호가 전달되면 데이터에 액세스할 수 있도록 하는 데 필요한 보안 프로시저가 실행됩니다.
 
 ```javascript
 var collections = {
@@ -56,7 +56,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 
 ### 가져오기
 {: #get }
-콜렉션에 대한 액세서를 작성하려면 `get`을 사용하십시오. get을 호출하기 전에 `init`를 호출해야 합니다. 그렇지 않으면 `get`의 결과가 정의되지 않습니다. 
+콜렉션에 대한 액세서를 작성하려면 `get`을 사용하십시오.get을 호출하기 전에 `init`를 호출해야 합니다. 그렇지 않으면 `get`의 결과가 정의되지 않습니다.
 
 ```javascript
 var collectionName = 'people';
@@ -64,7 +64,7 @@ var people = WL.JSONStore.get(collectionName);
 ```
 {: codeblock}
 
-이제 `people` 변수를 사용하여 `people` 콜렉션에 대한 오퍼레이션(예: `add`, `find` 및 `replace`)을 수행할 수 있습니다. 
+이제 `people` 변수를 사용하여 `people` 콜렉션에 대한 오퍼레이션(예: `add`, `find` 및 `replace`)을 수행할 수 있습니다.
 
 ### 추가
 {: #add }
@@ -130,7 +130,7 @@ else {
 
 ### 대체
 {: #replace }
-콜렉션 내부의 문서를 수정하려면 `replace`를 사용하십시오. 대체를 수행하는 데 사용하는 필드는 문서 고유 ID인 `_id`입니다.
+콜렉션 내부의 문서를 수정하려면 `replace`를 사용하십시오.대체를 수행하는 데 사용하는 필드는 문서 고유 ID인 `_id`입니다.
 
 ```javascript
 var document = {
@@ -208,7 +208,7 @@ WL.JSONStore.destroy().then(function () {
 `init` 함수에 비밀번호를 전달하여 저장소에 있는 모든 콜렉션을 보호할 수 있습니다. 비밀번호가 전달되지 않으면 저장소에 있는 모든 콜렉션의 문서가 암호화되지 않습니다.
 
 데이터 암호화는 Android, iOS, Windows 8.1 Universal 및 Windows 10 UWP 환경에서만 사용 가능합니다.  
-일부 보안 메타데이터는 *키 체인*(iOS), *공유 환경 설정*(Android) 또는 *인증 정보 보관*(Windows 8.1)에 저장됩니다.   
+일부 보안 메타데이터는 *키 체인*(iOS), *공유 환경 설정*(Android) 또는 *인증 정보 보관*(Windows 8.1)에 저장됩니다.  
 저장소는 256비트 고급 암호화 표준(AES) 키로 암호화됩니다. 모든 키는 PBKDF2(Password-Based Key Derivation Function 2)로 강화됩니다.
 
 `init`를 다시 호출할 때까지 모든 콜렉션에 대한 액세스를 잠그려면 `closeAll`을 사용하십시오. `init`를 로그인 함수로 고려하는 경우 `closeAll`을 해당 로그아웃 함수로 고려할 수 있습니다. 비밀번호를 변경하려면 `changePassword`를 사용하십시오.
@@ -237,7 +237,7 @@ WL.JSONStore.init(collections, options).then(function () {
 
 ### 다중 사용자 지원
 {: #multiple-user-support }
-단일 MobileFirst 애플리케이션에 여러 콜렉션을 포함하는 여러 저장소를 작성할 수 있습니다. `init` 함수는 사용자 이름을 사용하여 옵션 오브젝트를 가져올 수 있습니다. 사용자 이름이 제공되지 않는 경우 기본 사용자 이름은 **jsonstore**입니다.
+단일 MobileFirst 애플리케이션에 여러 콜렉션을 포함하는 여러 저장소를 작성할 수 있습니다.`init` 함수는 사용자 이름을 사용하여 옵션 오브젝트를 가져올 수 있습니다. 사용자 이름이 제공되지 않는 경우 기본 사용자 이름은 **jsonstore**입니다.
 
 ```javascript
 var collections = {
@@ -256,14 +256,14 @@ WL.JSONStore.init(collections, options).then(function () {
 
 ### MobileFirst 어댑터 통합
 {: #mobilefirst-adapter-integration }
-이 절에서는 사용자가 어댑터에 익숙하다고 가정합니다.   
+이 절에서는 사용자가 어댑터에 익숙하다고 가정합니다.  
 
 어댑터 통합은 선택사항이며 콜렉션의 데이터를 어댑터로 전송하고 어댑터의 데이터를 콜렉션으로 가져오는 방법을 제공합니다.  
 보다 유연해야 하는 경우 `WLResourceRequest` 또는 `jQuery.ajax`를 사용하여 이러한 목표를 달성할 수 있습니다.
 
 ### 어댑터 구현
 {: #adapter-implementation }
-어댑터를 작성하고 이름을 "**JSONStoreAdapter**"로 지정하십시오.   
+어댑터를 작성하고 이름을 "**JSONStoreAdapter**"로 지정하십시오.  
 해당 프로시저 `addPerson`, `getPeople`, `pushPeople`, `removePerson` 및 `replacePerson`을 정의하십시오.
 
 ```javascript
@@ -318,7 +318,7 @@ try {
 
 #### 푸시 가져오기 필요(더티 문서)
 {: #get-push-required-dirty-documents }
-`getPushRequired`를 호출하면 백엔드 시스템에 존재하지 않는 로컬 수정사항이 있는 문서인 *"더티 문서"*라는 배열이 리턴됩니다. 이러한 문서는 `push` 호출 시 어댑터에 전송됩니다. 
+`getPushRequired`를 호출하면 백엔드 시스템에 존재하지 않는 로컬 수정사항이 있는 문서인 *"더티 문서"*라는 배열이 리턴됩니다. 이러한 문서는 `push` 호출 시 어댑터에 전송됩니다.
 
 ```javascript
 var collectionName = 'people';
@@ -330,9 +330,9 @@ WL.JSONStore.get(collectionName).getPushRequired().then(function (dirtyDocuments
 ```
 {: codeblock}
 
-JSONStore에서 문서를 "더티"로 표시하지 않게 하려면 `{markDirty:false}` 옵션을 `add`, `replace` 및 `remove`에 전달하십시오. 
+JSONStore에서 문서를 "더티"로 표시하지 않게 하려면 `{markDirty:false}` 옵션을 `add`, `replace` 및 `remove`에 전달하십시오.
 
-`getAllDirty` API를 사용하여 더티 문서를 검색할 수도 있습니다. 
+`getAllDirty` API를 사용하여 더티 문서를 검색할 수도 있습니다.
 
 ```javascript
 WL.JSONStore.get(collectionName).getAllDirty()
@@ -408,7 +408,7 @@ JavaScript 어댑터 Maven 프로젝트가 포함되어 있습니다.
 
 ![JSONStore 샘플 앱](images/jsonstore-cordova.png)
 
-Cordova 프로젝트를 [다운로드하려면 클릭](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCordova/tree/release80)하십시오.   
+Cordova 프로젝트를 [다운로드하려면 클릭](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCordova/tree/release80)하십시오.  
 어댑터 Maven 프로젝트를 [다운로드하려면 클릭](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)하십시오.  
 
 ### 샘플 사용법

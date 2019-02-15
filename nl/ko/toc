@@ -24,10 +24,21 @@ Mobile Foundation
         plan_migration.md
         export_import_apps_adapters.md
 
+	{: .topicgroup}
+    앱 엔드-투-엔드 보안
+        prevent_man_in_the_middle_attack.md
+        obfuscate_resources.md
+        basic_authentication.md
+        step_up_authentication.md
+        protecting_adapters.md
+        prevent_tampered_apps_accessing_backend.md
+        
     {: .topicgroup}
     애플리케이션 인사이트 얻기
+        instrument_an_app.md
         visualize_insights_on_console.md
-
+    add_sdk_to_app.md
+    
     {: .topicgroup}
     오프라인 데이터 저장 및 동기화
         configure_offline_storage.md
@@ -42,6 +53,10 @@ Mobile Foundation
           manage_app_versions.md
           remote_disable_app_version.md
           manage_devices.md
+
+    {: .topicgroup}
+    다른 IBM 클라우드 서비스와 통합
+        integrate_secure_gateway.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -64,15 +79,15 @@ Mobile Foundation
     {: .topicgroup}
     샘플
         [JSONStore API를 사용하는 Cordova 애플리케이션](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCordova/tree/release80)
-        [JSONStore API를 사용하는 고유 iOS 애플리케이션](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreSwift/tree/release80)
-        [JSONStore API를 사용하는 고유 Android 애플리케이션](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAndroid)
+        [JSONStore API를 사용하는 네이티브 iOS 애플리케이션](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreSwift/tree/release80)
+        [JSONStore API를 사용하는 네이티브 Android 애플리케이션](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAndroid)
         [JSONStore 코드 샘플](services/mobilefoundation/jsonstore_code_examples.html)
         [JSONStore의 보안 코드 샘플](services/mobilefoundation/security_utilities.html)
         [사용자 정의 직접 업데이트 작성 대화 상자](https://github.com/MobileFirst-Platform-Developer-Center/CustomDirectUpdate/tree/release80)
 
     {: .topicgroup}
     코드 패턴
-        [클라우드 고유 백엔드를 사용하여 하이브리드 모바일 앱 개발](https://developer.ibm.com/patterns/develop-hybrid-mobile-app-with-cloud-native-back-end/)
+        [클라우드 네이티브 백엔드를 사용하여 하이브리드 모바일 앱 개발](https://developer.ibm.com/patterns/develop-hybrid-mobile-app-with-cloud-native-back-end/)
         [보안 오프라인 동기화](https://developer.ibm.com/patterns/secure-offline-synchronization-ibm-mobile-foundation/)
         [LDAP 서버 또는 소셜 로그인을 사용하여 사용자 인증 시연](https://github.com/IBM/MFP-Auth-LDAP/)
         [푸시 알림을 기반으로 태그 구성](https://github.com/IBM/tag-based-push-notifications)
@@ -81,6 +96,7 @@ Mobile Foundation
     관련 링크
         [IBM MobileFirst Platform Foundation V8.0.0 제품 문서](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
         [IBM MobileFirst Platform Developer Center](https://mobilefirstplatform.ibmcloud.com)
+        [IBM Cloud 블로그 - 모바일](https://www.ibm.com/blogs/bluemix/?s=Mobile)
     {: .navgroup-end}
 
     {: .navgroup id="help"}

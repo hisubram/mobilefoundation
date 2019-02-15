@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-28"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 {:generic: .ph data-hd-programlang='generic'}
@@ -16,8 +16,9 @@ lastupdated: "2018-11-28"
 {:swift: .ph data-hd-programlang='swift'}
 {:curl: .ph data-hd-programlang='curl'}
 {:generic: .ph data-hd-operatingsystem='generic'}
-{:ios: .ph data-hd-operatingsystem='iOS'}
-{:android: .ph data-hd-operatingsystem='Android'}
+{:ios: .ph data-hd-programlang='iOS'}
+{:android: .ph data-hd-programlang='Android'}
+{:cordova: .ph data-hd-programlang='Cordova'}
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:tip: .tip}
@@ -29,9 +30,6 @@ lastupdated: "2018-11-28"
 # Erweiterte Konfiguration von Offlinespeicher 
 {: #adv_configure_offline_storage}
 
-Verwenden Sie die Registerkarten oben, um betriebssystemspezifische Anweisungen auf dieser Seite anzuzeigen. Wählen Sie **Java** für Android-spezifische Anweisungen aus, **Knoten** für Cordova-spezifische Anweisungen und **Swift** für iOS-spezifische Anweisungen.
-{: note}
-
 ## Sicherheit in JSONStore
 {: #security_jsonstore} 
 
@@ -39,41 +37,41 @@ Verwenden Sie die Registerkarten oben, um betriebssystemspezifische Anweisungen 
 {: security_jsonstore_cordova}-->
 
 Sie können alle Sammlungen in einem Speicher sichern, indem Sie ein Kennwort an die Funktion `init` übergeben. Wenn kein Kennwort übergeben wird, werden die Dokumente aller Sammlungen im Speicher nicht verschlüsselt.
-{: javascript}
+{: cordova}
 
 Die Datenverschlüsselung ist nur in Android-, iOS-, Windows 8.1 Universal- und Windows 10 UWP-Umgebungen verfügbar.
 Einige Sicherheitsmetadaten werden in der Schlüsselkette (iOS), den gemeinsam genutzten Vorgaben (Android) oder dem Fach für Berechtigungsnachweise (Windows 8.1) gespeichert.
 Der Speicher wird mit einem 256-Bit-AES-Schlüssel (AES - Advanced Encryption Standard) verschlüsselt. Alle Schlüssel werden mit Password-Based Key Derivation Function 2 (PBKDF2) verstärkt.
-{: javascript}
+{: cordova}
 
 Sperren Sie mit `closeAll` den Zugriff auf alle Sammlungen, bis Sie `init` erneut aufrufen. Wenn Sie sich `init` als eine Anmeldefunktion vorstellen, können Sie `closeAll` als die entsprechende Abmeldefunktion betrachten. Ändern Sie das Kennwort mit `changePassword`.
-{: javascript}
+{: cordova}
 
 Die Verschlüsselung wird nur in iOS unterstützt. Standardmäßig verwendet das Mobile Foundation Cordova-SDK für iOS zur Verschlüsselung APIs, die von iOS bereitgestellt werden. Gehen Sie wie folgt vor, wenn Sie diese lieber durch OpenSSL ersetzen möchten:
-{: javascript}
+{: cordova}
 
 * Fügen Sie das Plug-in `cordova-plugin-mfp-encrypt-utils` hinzu: 
   ```bash
   cordova plugin add cordova-plugin-mfp-encrypt-utils.
   ```
 * Verwenden Sie in der Anwendungslogik `WL.SecurityUtils.enableNativeEncryption(false)`, um die Option für OpenSSL zu aktivieren.
-{: javascript}
+{: cordova}
 
 <!--### iOS
 {: #security_jsonstore_ios} -->
 
 Sie können alle Sammlungen in einem Speicher sichern, indem Sie ein `JSONStoreOpenOptions`-Objekt mit einem Kennwort an die Funktion `openCollections` übergeben. Wenn kein Kennwort übergeben wird, werden die Dokumente aller Sammlungen im Speicher nicht verschlüsselt.
-{: swift}
+{: ios}
 
 Einige Sicherheitsmetadaten werden in der Schlüsselkette (iOS) gespeichert.
 Der Speicher wird mit einem 256-Bit-AES-Schlüssel (AES - Advanced Encryption Standard) verschlüsselt. Alle Schlüssel werden mit Password-Based Key Derivation Function 2 (PBKDF2) verstärkt.
-{: swift}
+{: ios}
 
 Sperren Sie mit `closeAllCollections` den Zugriff auf alle Sammlungen, bis Sie `openCollections` erneut aufrufen. Wenn Sie sich `openCollections` als eine Anmeldefunktion vorstellen, können Sie `closeAllCollections` als die entsprechende Abmeldefunktion betrachten.
 {: ios}
 
 Ändern Sie das Kennwort mit `changeCurrentPassword`.
-{: swift}
+{: ios}
 
 ```swift
 let collection:JSONStoreCollection = JSONStoreCollection(name: "people")
@@ -90,23 +88,23 @@ do {
 }
 ```
 {: codeblock}
-{: swift}
+{: ios}
 
 <!--### Android
 {: #security_jsonstore_android} -->
 
 Sie können alle Sammlungen in einem Speicher sichern, indem Sie ein `JSONStoreInitOptions`-Objekt mit einem Kennwort an die Funktion `openCollections` übergeben. Wenn kein Kennwort übergeben wird, werden die Dokumente aller Sammlungen im Speicher nicht verschlüsselt.
-{: java}
+{: android}
 
 Einige Sicherheitsmetadaten werden in gemeinsam genutzten Vorgaben (Android) gespeichert.
 Der Speicher wird mit einem 256-Bit-AES-Schlüssel (AES - Advanced Encryption Standard) verschlüsselt. Alle Schlüssel werden mit Password-Based Key Derivation Function 2 (PBKDF2) verstärkt.
-{: java}
+{: android}
 
 Sperren Sie mit `closeAllCollections` den Zugriff auf alle Sammlungen, bis Sie `openCollections` erneut aufrufen. Wenn Sie sich `openCollections` als eine Anmeldefunktion vorstellen, können Sie `closeAllCollections` als die entsprechende Abmeldefunktion betrachten.
-{: java}
+{: android}
 
 Ändern Sie das Kennwort mit `changeCurrentPassword`.
-{: java}
+{: android}
 
 ```java
 Context context = getContext();
@@ -122,10 +120,10 @@ try {
   // Erfolg behandeln
 } catch(JSONStoreException e) {
   // Fehler behandeln
-}
+      }
 ```
 {: codeblock}
-{: java}
+{: android}
 
 ## Unterstützung mehrerer Benutzer in JSONStore
 {: #multiple_user_jsonstore} 
@@ -134,7 +132,7 @@ try {
 {: #multiple_user_jsonstore_cordova} -->
 
 Sie können in einer einzigen MobileFirst-Anwendung mehrere Speicher erstellen, die verschiedene Sammlungen enthalten. Die Funktion `init` kann ein Optionsobjekt mit einem Benutzernamen annehmen. Wenn kein Benutzername angegeben wird, lautet der Standardbenutzername *jsonstore*.
-{: javascript}
+{: cordova}
 
 ```javascript
 var collections = {
@@ -150,13 +148,13 @@ WL.JSONStore.init(collections, options).then(function () {
 });
 ```
 {: codeblock}
-{: javascript}
+{: cordova}
 
 <!--### iOS
 {: #multiple_user_jsonstore_ios} -->
 
 Sie können in einer einzigen MobileFirst-Anwendung mehrere Speicher erstellen, die verschiedene Sammlungen enthalten. Die Funktion `init` kann ein Optionsobjekt mit einem Benutzernamen annehmen. Wenn kein Benutzername angegeben wird, lautet der Standardbenutzername *jsonstore*.
-{: swift}
+{: ios}
 
 ```swift
 let collection:JSONStoreCollection = JSONStoreCollection(name: "people")
@@ -173,13 +171,13 @@ do {
 }
 ```
 {: codeblock}
-{: swift}
+{: ios}
 
 <!--### Android
 {: #multiple_user_jsonstore_android} -->
 
 Sie können in einer einzigen Mobile Foundation-Anwendung mehrere Speicher erstellen, die verschiedene Sammlungen enthalten. Die Funktion `openCollections` kann ein Optionsobjekt mit einem Benutzernamen annehmen. Wenn kein Benutzername angegeben wird, lautet der Standardbenutzername *jsonstore*.
-{: java}
+{: android}
 
 ```java
 Context context = getContext();
@@ -195,10 +193,10 @@ try {
   // Erfolg behandeln
 } catch(JSONStoreException e) {
   // Fehler behandeln
-}
+      }
 ```
 {: codeblock}
-{: java}
+{: android}
 
 ## Adapterintegration
 {: #adapter_integration}
@@ -208,7 +206,7 @@ try {
 
 Die Adapterintegration ist optional und bietet Möglichkeiten zum Senden von Daten aus einer Sammlung an einen Adapter und zum Abrufen von Daten aus einem Adapter in eine Sammlung.
 Sie können diese Ziele mithilfe von `WLResourceRequest` oder `jQuery.ajax` erreichen, wenn Sie mehr Flexibilität benötigen.
-{: javascript}
+{: cordova}
 
 1. Erstellen Sie einen Adapter mit dem Namen **JSONStoreAdapter**.
 2. Definieren Sie seine Prozeduren `addPerson`, `getPeople`, `pushPeople`, `removePerson` und `replacePerson`.
@@ -240,8 +238,7 @@ Sie können diese Ziele mithilfe von `WLResourceRequest` oder `jQuery.ajax` erre
         return;
     }
    ```
-   {: codeblock}
-   {: javascript}
+   {: cordova}
 3. Verwenden Sie `WLResourceRequest`, um Daten von einem Adapter zu laden.
    ```javascript
    try {
@@ -256,8 +253,7 @@ Sie können diese Ziele mithilfe von `WLResourceRequest` oder `jQuery.ajax` erre
         alert("Failed to load data from adapter " + e.Messages);
     }
    ```
-   {: codeblock}
-   {: javascript}
+   {: cordova}   
 4. Beim Aufruf von `getPushRequired` wird ein Array so genannter "vorläufiger Dokumente" zurückgegeben. Dies sind Dokumente mit lokalen Änderungen, die auf dem Back-End-System nicht vorhanden sind. Diese Dokumente werden an den Adapter gesendet, wenn  `push` aufgerufen wird.
    ```javascript
    var collectionName = 'people';
@@ -268,9 +264,10 @@ Sie können diese Ziele mithilfe von `WLResourceRequest` oder `jQuery.ajax` erre
    });
    ```
    {: codeblock}
-   {: javascript}
+   {: cordova}
    Damit JSONStore die Dokumente nicht als "vorläufig" markiert, müssen Sie die Option `{markDirty:false}` an `add`, `replace` und `remove` übergeben.
    {: tip} 
+   {: cordova}
 5. Sie können die vorläufigen Dokumente auch mit der API `getAllDirty` abrufen.
    ```javascript
    WL.JSONStore.get(collectionName).getAllDirty()
@@ -278,10 +275,10 @@ Sie können diese Ziele mithilfe von `WLResourceRequest` oder `jQuery.ajax` erre
         // Erfolg behandeln
     }).fail(function (errorObject) {
         // Fehler behandeln
-    });
+});
    ```
-   {: javascript}
    {: codeblock}
+   {: cordova}
 6. Wenn Sie Änderungen per Push-Operation an einen Adapter übergeben wollen, müssen Sie `getAllDirty` aufrufen, um eine Liste der Dokumente mit Änderungen abzurufen, und danach `WLResourceRequest` verwenden. Nachdem die Daten gesendet wurden und eine erfolgreiche Antwort empfangen wurde, müssen Sie `markClean` aufrufen.
    ```javascript
    try {
@@ -309,7 +306,7 @@ Sie können diese Ziele mithilfe von `WLResourceRequest` oder `jQuery.ajax` erre
     }
    ```
    {: codeblock}
-   {: javascript}
+   {: cordova}
 7. Erweitern Sie die API-Kerndefinitionen mit `enhance` entsprechend Ihren Anforderungen, indem Sie Funktionen zu einem Sammlungsprototyp hinzufügen. In diesem Beispiel (dem nachstehenden Code-Snippet) wird gezeigt, wie Sie mithilfe von `enhance` die Funktion `getValue` hinzufügen, die sich auf die Sammlung `keyvalue` auswirkt. Sie nimmt als einzigen Parameter "key" (eine Zeichenfolge) an und gibt ein einziges Ergebnis zurück.
    ```javascript
    var collectionName = 'keyvalue';
@@ -328,52 +325,22 @@ Sie können diese Ziele mithilfe von `WLResourceRequest` oder `jQuery.ajax` erre
         // Das Ergebnis ist ein Array mit Dokumenten mit den Ergebnissen der Suche.
     }).fail(function () {
         // Fehler behandeln
-    });
+    }); 
    ```
    {: codeblock}
-   {: javascript}
+   {: cordova}
 8. Im Bereich **Beispiele** finden Sie das JSONStore-Beispiel für Cordova-Apps. Dieses Projekt enthält eine Cordova-Anwendung, die das JSONStore-API-Set verwendet. [Hier](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80) können Sie ein JavaScript-Adapter-Maven-Projekt herunterladen.
-{: javascript}
+{: cordova}
 
 <!--### iOS
 {: #adapter_integration_ios}-->
 
 Die Adapterintegration ist optional und bietet Möglichkeiten zum Senden von Daten aus einer Sammlung an einen Adapter und zum Abrufen von Daten aus einem Adapter in eine Sammlung.
 Sie können diese Ziele mithilfe von `WLResourceRequest` erreichen.
-{: swift}
+{: ios}
 
 1. Erstellen Sie einen Adapter und geben Sie ihm den Namen **People**.
 2. Definieren Sie seine Prozeduren `addPerson`, `getPeople`, `pushPeople`, `removePerson` und `replacePerson`.
-   ```swift
-    function getPeople() {
-        var data = { peopleList : [{name: 'chevy', age: 23}, {name: 'yoel', age: 23}] };
-        WL.Logger.debug('Adapter: people, procedure: getPeople called.');
-        WL.Logger.debug('Sending data: ' + JSON.stringify(data));
-        return data;
-    }
-    function pushPeople(data) {
-        WL.Logger.debug('Adapter: people, procedure: pushPeople called.');
-        WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-        return;
-    }
-    function addPerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: addPerson called.');
-        WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-        return;
-    }
-    function removePerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: removePerson called.');
-        WL.Logger.debug('Got data from JSONStore to REMOVE: ' + data);
-        return;
-    }
-    function replacePerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: replacePerson called.');
-        WL.Logger.debug('Got data from JSONStore to REPLACE: ' + data);
-        return;
-    }
-   ```
-   {: codeblock}
-   {: swift}
 3. Verwenden Sie `WLResourceRequest`, um Daten von einem Adapter zu laden.
    ```swift
     // Start - LoadFromAdapter
@@ -396,8 +363,8 @@ Sie können diese Ziele mithilfe von `WLResourceRequest` erreichen.
     pull.sendWithDelegate(loadDelegate)
    ```
    {: codeblock}
-   {: swift}
-4. Beim Aufruf von `allDirty` wird ein Array so genannter "vorläufiger Dokumente" zurückgegeben. Dies sind Dokumente mit lokalen Änderungen, die auf dem Back-End-System nicht vorhanden sind. 
+   {: ios}
+4. Beim Aufruf von `allDirty` wird ein Array so genannter "vorläufiger Dokumente" zurückgegeben. Dies sind Dokumente mit lokalen Änderungen, die auf dem Back-End-System nicht vorhanden sind.
    ```swift
     let collectionName:String = "people"
     let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWithName(collectionName)
@@ -409,7 +376,7 @@ Sie können diese Ziele mithilfe von `WLResourceRequest` erreichen.
     }
    ```
    {: codeblock}
-   {: swift}
+   {: ios}
    Damit JSONStore die Dokumente nicht als "vorläufig" markiert, müssen Sie die Option `{markDirty:false}` an `add`, `replace` und `remove` übergeben.
    {: tip} 
 5. Wenn Sie Änderungen per Push-Operation an einen Adapter übergeben wollen, müssen Sie `allDirty` aufrufen, um eine Liste der Dokumente mit Änderungen abzurufen, und danach `WLResourceRequest` verwenden. Nachdem die Daten gesendet wurden und eine erfolgreiche Antwort empfangen wurde, müssen Sie `markDocumentsClean` aufrufen.
@@ -443,49 +410,19 @@ Sie können diese Ziele mithilfe von `WLResourceRequest` erreichen.
     }
    ```
    {: codeblock}
-   {: swift}
+   {: ios}
 6. Laden Sie das native iOS-Swift-Anwendungsprojekt aus dem Bereich **Beispiele** herunter. Das Projekt enthält eine native iOS-Swift-Anwendung, die das JSONStore-API-Set verwendet. [Hier](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80) können Sie ein JavaScript-Adapter-Maven-Projekt herunterladen.
-{: swift}
+{: ios}
 
 <!--### Android
 {: #adapter_integration_android}-->
 
 Die Adapterintegration ist optional und bietet Möglichkeiten zum Senden von Daten aus einer Sammlung an einen Adapter und zum Abrufen von Daten aus einem Adapter in eine Sammlung.
 Sie können diese Ziele mithilfe von Funktionen wie `WLResourceRequest` oder mit Ihrer eigenen Instanz von `HttpClient` erreichen, wenn Sie mehr Flexibilität benötigen.
-{: java}
+{: android}
 
 1. Erstellen Sie einen Adapter mit dem Namen **JSONStoreAdapter**.
 2. Definieren Sie seine Prozeduren `addPerson`, `getPeople`, `pushPeople`, `removePerson` und `replacePerson`.
-   ```javascript
-    function getPeople() {
-      var data = { peopleList : [{name: 'chevy', age: 23}, {name: 'yoel', age: 23}] };
-      WL.Logger.debug('Adapter: people, procedure: getPeople called.');
-      WL.Logger.debug('Sending data: ' + JSON.stringify(data));
-      return data;
-    }
-    function pushPeople(data) {
-      WL.Logger.debug('Adapter: people, procedure: pushPeople called.');
-      WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-      return;
-    }
-    function addPerson(data) {
-      WL.Logger.debug('Adapter: people, procedure: addPerson called.');
-      WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-      return;
-    }
-    function removePerson(data) {
-      WL.Logger.debug('Adapter: people, procedure: removePerson called.');
-      WL.Logger.debug('Got data from JSONStore to REMOVE: ' + data);
-      return;
-    }
-    function replacePerson(data) {
-      WL.Logger.debug('Adapter: people, procedure: replacePerson called.');
-      WL.Logger.debug('Got data from JSONStore to REPLACE: ' + data);
-      return;
-    }
-   ```
-   {: codeblock}
-   {: java}
 3. Verwenden Sie `WLResourceRequest`, um Daten von einem Adapter zu laden.
    ```java
     WLResponseListener responseListener = new WLResponseListener() {
@@ -511,8 +448,8 @@ Sie können diese Ziele mithilfe von Funktionen wie `WLResourceRequest` oder mit
     }
    ```
    {: codeblock}
-   {: java}
-4. Beim Aufruf von `findAllDirtyDocuments` wird ein Array so genannter "vorläufiger Dokumente" zurückgegeben. Dies sind Dokumente mit lokalen Änderungen, die auf dem Back-End-System nicht vorhanden sind. 
+   {: android}
+4. Beim Aufruf von `findAllDirtyDocuments` wird ein Array so genannter "vorläufiger Dokumente" zurückgegeben. Dies sind Dokumente mit lokalen Änderungen, die auf dem Back-End-System nicht vorhanden sind.
    ```java
     Context  context = getContext();
     try {
@@ -525,9 +462,10 @@ Sie können diese Ziele mithilfe von Funktionen wie `WLResourceRequest` oder mit
     }
    ```
    {: codeblock}
-   {: java}
+   {: android}
    Damit JSONStore die Dokumente nicht als "vorläufig" markiert, müssen Sie die Option `options.setMarkDirty(false)` an `add`, `replace` und `remove` übergeben.
    {: tip} 
+   {: android}
 5. Wenn Sie Änderungen per Push-Operation an einen Adapter übergeben wollen, müssen Sie `findAllDirtyDocuments` aufrufen, um eine Liste der Dokumente mit Änderungen abzurufen, und danach `WLResourceRequest` verwenden. Nachdem die Daten gesendet wurden und eine erfolgreiche Antwort empfangen wurde, müssen Sie `markDocumentsClean` aufrufen.
    ```java
     WLResponseListener responseListener = new WLResponseListener() {
@@ -559,6 +497,6 @@ Sie können diese Ziele mithilfe von Funktionen wie `WLResourceRequest` oder mit
     }
    ```
    {: codeblock}
-   {: java}
-6. Laden Sie das native Android-Anwendungsprojekt aus dem Bereich **Beispiele** herunter. Das Projekt enthält eine native Android-Anwendung, die das JSONStore-API-Set verwendet. [Hier](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80) können Sie ein JavaScript-Adapter-Maven-Projekt herunterladen.
-{: java}
+   {: android}
+6. Laden Sie das native Android-Anwendungsprojekt aus dem Bereich **Beispiele** herunter. Das Projekt enthält eine native Android-Anwendung, die das JSONStore-API-Set verwendet. [Hier](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80) können Sie ein JavaScript-Adapter-Maven-Projekt herunterladen. 
+{: android}

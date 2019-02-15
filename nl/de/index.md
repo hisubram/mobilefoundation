@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016, 2018
+  years: 2016, 2019
 lastupdated:  "2018-11-16"
 
 ---
@@ -56,15 +56,15 @@ Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Devel
 
 Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Professional Per Device-Service erstellt haben, können Sie mit der Erstellung Ihres mobilen Kanals beginnen, indem Sie die folgenden Schritte ausführen.
 
-  1.  Stellen Sie auf dem {{site.data.keyword.Bluemix_notm}} eine Verbindung zu einer vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz her. 
+  1.  Stellen Sie auf dem {{site.data.keyword.Bluemix_notm}} eine Verbindung zu einer vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz her.
 
       1.  Wählen Sie die {{site.data.keyword.Bluemix_notm}}-`Organisation` aus, in der die {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz vorhanden ist.
 
       + Wählen Sie den {{site.data.keyword.Bluemix_notm}}-`Bereich`, in dem sich die {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz befindet, in der Liste der Bereiche aus, die in der ausgewählten `Organisation` verfügbar sind.
 
-      + Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.Db2_on_Cloud_short}} (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz herzustellen. 
+      + Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.Db2_on_Cloud_short}} (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz herzustellen.
 
-      + Testen Sie die Verbindung zu der ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz, indem Sie auf **Testverbindung** klicken. 
+      + Testen Sie die Verbindung zu der ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz, indem Sie auf **Testverbindung** klicken.
 
       + Klicken Sie auf **Hinzufügen** und anschließend auf **Weiter** in dem Popup-Fenster, in dem Sie zur Bestätigung des ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Service aufgefordert werden. Mit dieser Aktion werden die erforderlichen Tabellen in der konfigurierten {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Datenbankserviceinstanz erstellt.
 
@@ -94,15 +94,15 @@ Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Profe
 
 Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application-Service erstellt haben, können Sie mit der Erstellung Ihres mobilen Kanals beginnen, indem Sie die folgenden Schritte ausführen.
 
-  1.  Stellen Sie auf dem {{site.data.keyword.Bluemix_notm}} eine Verbindung zu einer vorhandenen {{site.data.keyword.Db2_on_Cloud_long}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL_full}}-Serviceinstanz her. 
+  1.  Stellen Sie auf dem {{site.data.keyword.Bluemix_notm}} eine Verbindung zu einer vorhandenen {{site.data.keyword.Db2_on_Cloud_long}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL_full}}-Serviceinstanz her.
 
       1.  Wählen Sie die {{site.data.keyword.Bluemix_notm}}-`Organisation` aus, in der die {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz vorhanden ist.
 
       + Wählen Sie den {{site.data.keyword.Bluemix_notm}}-`Bereich`, in dem sich die {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz befindet, in der Liste der Bereiche aus, die in der ausgewählten `Organisation` verfügbar sind.
 
-      + Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.Db2_on_Cloud_short}} (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz herzustellen. 
+      + Wählen Sie den `Servicenamen` und die `Berechtigungsnachweise` für {{site.data.keyword.Db2_on_Cloud_short}} (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}} aus, um eine Verbindung zur vorhandenen {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz herzustellen.
 
-      + Testen Sie die Verbindung zu der ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz, indem Sie auf **Testverbindung** klicken. 
+      + Testen Sie die Verbindung zu der ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz, indem Sie auf **Testverbindung** klicken.
 
       + Klicken Sie auf **Hinzufügen** und anschließend auf **Weiter** in dem Popup-Fenster, in dem Sie zur Bestätigung des ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}- oder {{site.data.keyword.composeForPostgreSQL}}-Service aufgefordert werden. Mit dieser Aktion werden die erforderlichen Tabellen in der konfigurierten {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Datenbankserviceinstanz erstellt.
 

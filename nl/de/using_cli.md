@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-19"
 
 ---
@@ -17,7 +17,7 @@ lastupdated:  "2018-11-19"
 
 {{ site.data.keyword.mobilefoundation_short }} bietet eine Befehlszeilenschnittstelle (Command Line Interface, CLI) als Werkzeug für Entwickler-**mfpdev** zur einfachen Verwaltung der {{site.data.keyword.mobilefoundation_short}}-Client- und Serverartefakte.
 
-Alle `mfpdev`-Befehle können entweder im interaktiven oder im Direktmodus ausgeführt werden. Im interaktiven Modus werden Sie zur Eingabe der für den Befehl erforderlichen Parameter aufgefordert und es werden einige Standardwerte verwendet. Im Direktmodus müssen die Parameter zusammen mit dem Befehl angegeben werden. 
+Alle `mfpdev`-Befehle können entweder im interaktiven oder im Direktmodus ausgeführt werden. Im interaktiven Modus werden Sie zur Eingabe der für den Befehl erforderlichen Parameter aufgefordert und es werden einige Standardwerte verwendet. Im Direktmodus müssen die Parameter zusammen mit dem Befehl angegeben werden.
 
 
 ## {{site.data.keyword.mobilefoundation_short}}-CLI installieren
@@ -33,7 +33,7 @@ node -v
 
 > **Hinweis:** Die unterstützte Node.js-Mindestversion ist **4.2.3**. Zudem funktioniert die {{site.data.keyword.mobilefoundation_short}}-CLI angesichts der sich häufig ändernden Node.js- und NPM-Pakete möglicherweise nicht mit allen verfügbaren Knoten- und NPM-Versionen, auch nicht allen neuesten Versionen. Stellen Sie sicher, dass der Knoten die Version **6.11.1** und NPM die Version **3.10.10** hat, damit die CLI gut funktioniert.
 
-> Für die Version *8.0.2018100112* und höher des vorläufigen Fixes für die MobileFirst-CLI können Sie die Node-Versionen 8.x oder 10.x verwenden. 
+> Für die Version *8.0.2018100112* und höher des vorläufigen Fixes für die MobileFirst-CLI können Sie die Node-Versionen 8.x oder 10.x verwenden.
 
 Um die {{site.data.keyword.mobilefoundation_short}}-CLI zu installieren, führen Sie den folgenden Befehl aus:
 ```
@@ -53,7 +53,7 @@ npm install -g --no-optional path-to-mfpdev-cli.tgz
 ```
 {: codeblock}
 
-Bei der Installation der MobileFirst-CLI mithilfe von Node 8 werden im Terminalfenster möglicherweise einige der folgenden Fehler angezeigt: 
+Bei der Installation der MobileFirst-CLI mithilfe von Node 8 werden im Terminalfenster möglicherweise einige der folgenden Fehler angezeigt:
 ```
 > node-gyp rebuild
 
@@ -82,7 +82,7 @@ gyp ERR! not ok
 > node install
 ```
 
-Dieser Fehler wird durch einen [bekannten Programmfehler in node-gyp ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/nodejs/node-gyp/issues/1547){: new_window} verursacht. Diese Fehler können ignoriert werden, da sie sich nicht auf die Funktionsweise der MobileFirst-CLI auswirken. Dieses Problem bezieht sich auf das vorläufige Fix Version *8.0.2018100112* und höher von `mfpdev-cli`. Verwenden Sie während der Installation das Flag `--no-optional`, um diesen Fehler zu beheben. 
+Dieser Fehler wird durch einen [bekannten Programmfehler in node-gyp ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/nodejs/node-gyp/issues/1547){: new_window} verursacht. Diese Fehler können ignoriert werden, da sie sich nicht auf die Funktionsweise der MobileFirst-CLI auswirken. Dieses Problem bezieht sich auf das vorläufige Fix Version *8.0.2018100112* und höher von `mfpdev-cli`. Verwenden Sie während der Installation das Flag `--no-optional`, um diesen Fehler zu beheben.
 
 Um zu überprüfen, ob die **CLI** korrekt installiert ist, führen Sie den folgenden Befehl aus:
 ```
@@ -237,7 +237,7 @@ mfpdev app preview
 ```
 {: codeblock}
 
-Packt die Anwendungsressourcen im www.Verzeichnis in eine komprimierte Datei (*.zip*), die für den direkten Aktualisierungsprozess verwendet werden kann. 
+Packt die Anwendungsressourcen im www.Verzeichnis in eine komprimierte Datei (*.zip*), die für den direkten Aktualisierungsprozess verwendet werden kann.
 
 ```
 mfpdev app webupdate
@@ -282,7 +282,7 @@ mfpdev server info
 ```
 {: codeblock}
 
-Fügt eine Serverdefinition zu Ihrer Umgebung hinzu. 
+Fügt eine Serverdefinition zu Ihrer Umgebung hinzu.
 
 ```
 mfpdev server add

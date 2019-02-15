@@ -131,7 +131,7 @@ try {
 
 ### Replace
 {: #replace }
-Verwenden Sie `replaceDocument`, um Dokumente in einer Sammlung zu ändern. Zum Ersetzen verwenden Sie das Feld `_id`, die eindeutige Dokumentkennung. 
+Verwenden Sie `replaceDocument`, um Dokumente in einer Sammlung zu ändern. Zum Ersetzen verwenden Sie das Feld `_id`, die eindeutige Dokumentkennung.
 
 ```java
 Context context = getContext();
@@ -216,11 +216,10 @@ try {
 {: #security }
 Sie können alle Sammlungen in einem Speicher sichern, indem Sie ein `JSONStoreInitOptions`-Objekt mit einem Kennwort an die Funktion `openCollections` übergeben. Wenn kein Kennwort übergeben wird, werden die Dokumente aller Datensammlungen im Geschäft nicht verschlüsselt.
 
-Einige Sicherheitsmetadaten werden in gemeinsam genutzten Vorgaben (Android) gespeichert.
-  
+Einige Sicherheitsmetadaten werden in gemeinsam genutzten Vorgaben (Android) gespeichert.  
 Der Speicher wird mit einem 256-Bit-AES-Schlüssel (AES - Advanced Encryption Standard) verschlüsselt. Alle Schlüssel werden mit Password-Based Key Derivation Function 2 (PBKDF2) verstärkt.
 
-Sperren Sie mit `closeAll` den Zugriff auf alle Sammlungen, bis Sie `openCollections` erneut aufrufen. Wenn Sie sich `openCollections` als eine Anmeldefunktion vorstellen, können Sie `closeAll` als die entsprechende Abmeldefunktion betrachten. 
+Sperren Sie mit `closeAll` den Zugriff auf alle Sammlungen, bis Sie `openCollections` erneut aufrufen. Wenn Sie sich `openCollections` als eine Anmeldefunktion vorstellen, können Sie `closeAll` als die entsprechende Abmeldefunktion betrachten.
 
 Ändern Sie das Kennwort mit `changePassword`.
 
@@ -266,8 +265,8 @@ try {
 
 #### MobileFirst-Adapterintegration
 {: #mobilefirst-adapter-integration }
-In diesem Abschnitt wird davon ausgegangen, dass Sie sich mit Adaptern auskennen. Die Adapterintegration ist optional und bietet Möglichkeiten zum Senden von Daten aus einer Sammlung an einen Adapter und zum Abrufen von Daten aus einem Adapter in eine Sammlung. Wenn Sie mehr Flexibilität benötigen, können Sie diese Ziele auch mithilfe von Funktionen wie `WLResourceRequest` oder mit Ihrer eigenen Instanz von `HttpClient` erreichen.
-
+In diesem Abschnitt wird davon ausgegangen, dass Sie sich mit Adaptern auskennen. Die Adapterintegration ist optional und bietet Möglichkeiten zum Senden von Daten aus einer Sammlung an einen Adapter und zum Abrufen von Daten aus einem Adapter in eine Sammlung.
+Wenn Sie mehr Flexibilität benötigen, können Sie diese Ziele auch mithilfe von Funktionen wie `WLResourceRequest` oder mit Ihrer eigenen Instanz von `HttpClient` erreichen.
 
 #### Adapterimplementierung
 {: #adapter-implementation }
@@ -334,7 +333,7 @@ try {
 
 #### getPushRequired (vorläufige Dokumente)
 {: #get-push-required-dirty-documents }
-Beim Aufruf von `findAllDirtyDocuments` wird ein Array so genannter "vorläufiger Dokumente" zurückgegeben. Dies sind Dokumente mit lokalen Änderungen, die auf dem Back-End-System nicht vorhanden sind. 
+Beim Aufruf von `findAllDirtyDocuments` wird ein Array so genannter "vorläufiger Dokumente" zurückgegeben. Dies sind Dokumente mit lokalen Änderungen, die auf dem Back-End-System nicht vorhanden sind.
 
 ```java
 Context  context = getContext();
@@ -388,7 +387,8 @@ try {
 
 ## Beispielanwendung
 {: #sample-application }
-Das Projekt `JSONStoreAndroid` enthält eine native Android-Anwendung, die die JSONStore-API verwendet. Darin ist ein JavaScript-Adapter-Maven-Projekt enthalten.
+Das Projekt `JSONStoreAndroid` enthält eine native Android-Anwendung, die die JSONStore-API verwendet.
+Darin ist ein JavaScript-Adapter-Maven-Projekt enthalten.
 
 ![Abbildung der Beispielanwendung](images/android-native-screen.jpg)
 

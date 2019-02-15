@@ -15,11 +15,11 @@ lastupdated:  "2018-11-19"
 #	Android 애플리케이션의 JSONStore
 {: #android_jsonstore}
 
-## 선행 조건
+## 전제조건
 {: #prerequisites }
 
 * [JSONStore 개요](jsonstore.html)를 읽으십시오.
-* MobileFirst 고유 SDK가 Android Studio 프로젝트에 추가되었는지 확인하십시오. [Android 애플리케이션에 MobileFirst SDK 추가 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/android/) 튜토리얼에 따르십시오.
+* MobileFirst 네이티브 SDK가 Android Studio 프로젝트에 추가되었는지 확인하십시오. [Android 애플리케이션에 MobileFirst SDK 추가 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/android/) 튜토리얼에 따르십시오.
 
 ## JSONStore 추가
 {: #adding-jsonstore }
@@ -45,7 +45,7 @@ compile 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundationjsonstore:8.0
 {: #open }
 하나 이상의 JSONStore 콜렉션을 열려면 `openCollections`를 사용하십시오.
 
-콜렉션 시작 또는 프로비저닝은 콜렉션 및 문서를 포함하는 지속적 스토리지가 없는 경우 이를 작성하는 것을 의미합니다. 지속적 스토리지가 암호화되고 올바른 비밀번호가 전달되면 데이터에 액세스할 수 있도록 하는 데 필요한 보안 프로시저가 실행됩니다. 
+콜렉션 시작 또는 프로비저닝은 콜렉션 및 문서를 포함하는 지속적 스토리지가 없는 경우 이를 작성하는 것을 의미합니다. 지속적 스토리지가 암호화되고 올바른 비밀번호가 전달되면 데이터에 액세스할 수 있도록 하는 데 필요한 보안 프로시저가 실행됩니다.
 
 초기화 시 사용으로 설정할 수 있는 선택적 기능은 이 튜토리얼의 두 번째 파트에 있는 **보안, 다중 사용자 지원** 및 **MobileFirst 어댑터 통합**을 참조하십시오.
 
@@ -67,7 +67,7 @@ try {
 
 ### 가져오기
 {: #get }
-콜렉션에 대한 액세서를 작성하려면 `getCollectionByName`을 사용하십시오. `getCollectionByName`을 호출하기 전에 `openCollections`를 먼저 호출해야 합니다. 
+콜렉션에 대한 액세서를 작성하려면 `getCollectionByName`을 사용하십시오. `getCollectionByName`을 호출하기 전에 `openCollections`를 먼저 호출해야 합니다.
 
 ```java
 Context context = getContext();
@@ -81,7 +81,7 @@ try {
 ```
 {: codeblock}
 
-이제 `collection` 변수를 사용하여 `people` 콜렉션에 대한 오퍼레이션(예: `add`, `find` 및 `replace`)을 수행할 수 있습니다. 
+이제 `collection` 변수를 사용하여 `people` 콜렉션에 대한 오퍼레이션(예: `add`, `find` 및 `replace`)을 수행할 수 있습니다.
 
 ### 추가
 {: #add }
@@ -266,7 +266,7 @@ try {
 #### MobileFirst 어댑터 통합
 {: #mobilefirst-adapter-integration }
 이 절에서는 사용자가 어댑터에 익숙하다고 가정합니다. 어댑터 통합은 선택사항이며 콜렉션의 데이터를 어댑터로 전송하고 어댑터의 데이터를 콜렉션으로 가져오는 방법을 제공합니다.
-보다 유연해야 하는 경우 `WLResourceRequest`와 같은 함수를 사용하거나 고유 `HttpClient` 인스턴스를 사용하여 이러한 목표를 달성할 수도 있습니다. 
+보다 유연해야 하는 경우 `WLResourceRequest`와 같은 함수를 사용하거나 고유 `HttpClient` 인스턴스를 사용하여 이러한 목표를 달성할 수도 있습니다.
 
 #### 어댑터 구현
 {: #adapter-implementation }
@@ -348,7 +348,7 @@ try {
 ```
 {: codeblock}
 
-JSONStore에서 문서를 "더티"로 표시하지 않게 하려면 `options.setMarkDirty(false)` 옵션을 `add`, `replace` 및 `remove`에 전달하십시오. 
+JSONStore에서 문서를 "더티"로 표시하지 않게 하려면 `options.setMarkDirty(false)` 옵션을 `add`, `replace` 및 `remove`에 전달하십시오.
 
 #### 변경사항 푸시
 {: #push-changes }
@@ -387,12 +387,12 @@ try {
 
 ## 샘플 애플리케이션
 {: #sample-application }
-`JSONStoreAndroid` 프로젝트에는 JSONStore API를 사용하는 고유 Android 애플리케이션이 포함되어 있습니다.
+`JSONStoreAndroid` 프로젝트에는 JSONStore API를 사용하는 네이티브 Android 애플리케이션이 포함되어 있습니다.
 JavaScript 어댑터 Maven 프로젝트가 포함됩니다.
 
 ![샘플 애플리케이션의 이미지](images/android-native-screen.jpg)
 
-고유 Android 프로젝트를 [다운로드하려면 클릭](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAndroid)하십시오.  
+네이티브 Android 프로젝트를 [다운로드하려면 클릭](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAndroid)하십시오.  
 어댑터 Maven 프로젝트를 [다운로드하려면 클릭](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)하십시오.  
 
 ### 샘플 사용법

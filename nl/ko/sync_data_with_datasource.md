@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-23"
 
 ---
@@ -34,7 +34,7 @@ JSONStore 콜렉션 및 Cloudant 데이터베이스 간의 동기화 방법은 *
 JSONStore 콜렉션은 **동기화 정책** 필드로 초기화되어야 합니다. **동기화 정책**은 다음 세 개의 정책 중 하나일 수 있습니다.
 
 * `SYNC_DOWNSTREAM`
-   Cloudant에서 JSONStore 콜렉션으로 데이터를 다운로드하려는 경우 `SYNC_DOWNSTREAM` 정책을 사용하십시오. 일반적으로 이 정책은 오프라인 스토리지에 필요한 정적 데이터에 사용됩니다(예: 카탈로그에 있는 항목의 가격 목록). 디바이스에서 콜렉션이 초기화될 때마다 원격 Couldant 데이터베이스에서 데이터를 새로 고칩니다. 처음에는 전체 데이터베이스가 다운로드되지만 다음 새로 고치기 시에는 원격 데이터베이스에서 작성된 변경사항으로 구성된 델타만 다운로드됩니다.
+   Cloudant에서 JSONStore 콜렉션으로 데이터를 다운로드하려는 경우 `SYNC_DOWNSTREAM` 정책을 사용하십시오. 일반적으로 이 정책은 오프라인 스토리지에 필요한 정적 데이터에 사용됩니다 (예: 카탈로그에 있는 항목의 가격 목록). 디바이스에서 콜렉션이 초기화될 때마다 원격 Couldant 데이터베이스에서 데이터를 새로 고칩니다. 처음에는 전체 데이터베이스가 다운로드되지만 다음 새로 고치기 시에는 원격 데이터베이스에서 작성된 변경사항으로 구성된 델타만 다운로드됩니다.
   **사용법:**
 
   *Android*
@@ -106,7 +106,7 @@ JSONStore 콜렉션은 **동기화 정책** 필드로 초기화되어야 합니�
  ```
 
 * [여기](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCloudantSync/)에서 `JSONStoreSync` 어댑터를 다운로드하고 `src/main/adapter-resources/adapter.xml` 경로에서 Cloudant 인증 정보를 구성하여 Mobile Foundation 서버에 배치하십시오.
-* Mobile Foundation Operations Console에서 백엔드 Cloudant 데이터베이스에 대한 인증 정보를 구성하십시오.
+* Mobile Foundation Operations 콘솔에서 백엔드 Cloudant 데이터베이스에 대한 인증 정보를 구성하십시오.
 
 ### 수동으로 동기화 오퍼레이션 수행
 {: #performing_sync_manual}

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-19"
 
 ---
@@ -18,23 +18,23 @@ lastupdated:  "2018-11-19"
 ## Übersicht
 Die clientseitige Mobile Foundation-API stellt einige Sicherheitsdienstprogramme bereit, mit denen Sie die Daten Ihrer Benutzer schützen können. Funktionen wie JSONStore sind ausgezeichnet für den Schutz Ihrer JSON-Objekte geeignet. Es wird jedoch nicht empfohlen, binäre Blobs in einer JSONStore-Sammlung zu speichern.
 
-Speichern Sie Binärdaten stattdessen im Dateisystem und speichern Sie die Dateipfade und andere Metadaten in einer JSONStore-Sammlung. Wenn Sie Dateien wie Bilder schützen möchten, können Sie sie als Base64-Zeichenfolgen codieren, sie verschlüsseln und die Ausgabe auf Platte schreiben. Um die Daten zu entschlüsseln, können Sie die Metadaten in einer JSONStore-Sammlung suchen. Lesen Sie die verschlüsselten Daten von der Platte und entschlüsseln Sie sie mithilfe der gespeicherten Metadaten. Diese Metadaten können den Schlüssel, Initialisierungsvektor (IV), Dateityp, Dateipfad, das Salt und andere Attribute enthalten. 
+Speichern Sie Binärdaten stattdessen im Dateisystem und speichern Sie die Dateipfade und andere Metadaten in einer JSONStore-Sammlung. Wenn Sie Dateien wie Bilder schützen möchten, können Sie sie als Base64-Zeichenfolgen codieren, sie verschlüsseln und die Ausgabe auf Platte schreiben. Um die Daten zu entschlüsseln, können Sie die Metadaten in einer JSONStore-Sammlung suchen. Lesen Sie die verschlüsselten Daten von der Platte und entschlüsseln Sie sie mithilfe der gespeicherten Metadaten. Diese Metadaten können den Schlüssel, Initialisierungsvektor (IV), Dateityp, Dateipfad, das Salt und andere Attribute enthalten.
 
-Als übergeordnete API stellt SecurityUtils die folgenden APIs bereit: 
+Als übergeordnete API stellt SecurityUtils die folgenden APIs bereit:
 
-* Schlüsselgenerierung: Die Funktion für Schlüsselgenerierung übergibt ein Kennwort nicht direkt an die Verschlüsselungsfunktion, sondern generiert mit PBKDF2 (Password-Based Key Derivation Function v2) einen 256-Bit-Schlüssel für die Verschlüsselungs-API. Die Funktion akzeptiert einen Parameter für die Anzahl der Iterationen. Je größer diese Anzahl ist, desto länger würde ein Angreifer benötigen, um Ihren Schlüssel zu knacken. Verwenden Sie mindestens einen Wert von 10.000. Das Salt muss eindeutig sein und macht es Angreifern schwer, Ihr Kennwort mit vorhandenen Hashinformationen zu entschlüsseln. Verwenden Sie eine Länge von 32 Byte. 
-* Verschlüsselung: Die Eingabe wird nach AES (Advanced Encryption Standard) verschlüsselt. Die API verwendet einen Schlüssel, der von der API für Schlüsselgenerierung generiert wurde. Intern generiert sie einen sicheren IV, der die Randomisierung der ersten Blockverschlüsselung verstärkt. Text wird verschlüsselt. Wenn Sie ein Bild oder ein anderes Binärformat verschlüsseln möchten, wandeln Sie Ihre Binärdaten mit diesen APIs in Base64-Text um. Diese Verschlüsselungsfunktion gibt ein aus folgenden Teilen bestehendes Objekt zurück: 
+* Schlüsselgenerierung: Die Funktion für Schlüsselgenerierung übergibt ein Kennwort nicht direkt an die Verschlüsselungsfunktion, sondern generiert mit PBKDF2 (Password-Based Key Derivation Function v2) einen 256-Bit-Schlüssel für die Verschlüsselungs-API. Die Funktion akzeptiert einen Parameter für die Anzahl der Iterationen. Je größer diese Anzahl ist, desto länger würde ein Angreifer benötigen, um Ihren Schlüssel zu knacken. Verwenden Sie mindestens einen Wert von 10.000. Das Salt muss eindeutig sein und macht es Angreifern schwer, Ihr Kennwort mit vorhandenen Hashinformationen zu entschlüsseln. Verwenden Sie eine Länge von 32 Byte.
+* Verschlüsselung: Die Eingabe wird nach AES (Advanced Encryption Standard) verschlüsselt. Die API verwendet einen Schlüssel, der von der API für Schlüsselgenerierung generiert wurde. Intern generiert sie einen sicheren IV, der die Randomisierung der ersten Blockverschlüsselung verstärkt. Text wird verschlüsselt. Wenn Sie ein Bild oder ein anderes Binärformat verschlüsseln möchten, wandeln Sie Ihre Binärdaten mit diesen APIs in Base64-Text um. Diese Verschlüsselungsfunktion gibt ein aus folgenden Teilen bestehendes Objekt zurück:
     * ct (Chiffriertext, der auch als verschlüsselter Text bezeichnet wird)
     * IV
     * v (Version, um die Weiterentwicklung der API bei gleichzeitig weiter bestehender Kompatibilität mit einer früheren Version zu ermöglichen)
-* Entschlüsselung: Die Ausgabe der Verschlüsselungs-API wird als Eingabe verwendet. Der Chiffriertext oder der verschlüsselte Text wird als Klartext entschlüsselt. 
-* Ferne zufällige Zeichenfolge: Über den Kontakt zu einem Zufallsgenerator auf dem MobileFirst-Server wird eine zufällige hexadezimale Zeichenfolge abgerufen. Die Standardlänge liegt bei 20 Byte. Sie können diesen Wert aber auf bis zu 64 Byte erhöhen. 
-* Lokale zufällige Zeichenfolge: Im Gegensatz zur API für die ferne Zeichenfolge, die Netzzugriff erfordert, wird hier lokal eine zufällige hexadezimale Zeichenfolge generiert und abgerufen. Die Standardlänge liegt bei 32 Byte. Es gibt keinen Maximalwert. Die Operationszeit steigt proportional mit der Bytezahl. 
-* Base64-Codierung: Diese API wendet auf eine Zeichenfolge die Base64-Codierung an. Aufgrund des verwendeten Algorithmus bedeutet eine Base64-Codierung, dass sich die Größe der ursprünglichen Daten um etwa das 1,37-Fache erhöht. 
-* Base64-Decodierung: Diese API wendet auf eine Base64-codierte Zeichenfolge die Base64-Decodierung an. 
+* Entschlüsselung: Die Ausgabe der Verschlüsselungs-API wird als Eingabe verwendet. Der Chiffriertext oder der verschlüsselte Text wird als Klartext entschlüsselt.
+* Ferne zufällige Zeichenfolge: Über den Kontakt zu einem Zufallsgenerator auf dem MobileFirst-Server wird eine zufällige hexadezimale Zeichenfolge abgerufen. Die Standardlänge liegt bei 20 Byte. Sie können diesen Wert aber auf bis zu 64 Byte erhöhen.
+* Lokale zufällige Zeichenfolge: Im Gegensatz zur API für die ferne Zeichenfolge, die Netzzugriff erfordert, wird hier lokal eine zufällige hexadezimale Zeichenfolge generiert und abgerufen. Die Standardlänge liegt bei 32 Byte. Es gibt keinen Maximalwert. Die Operationszeit steigt proportional mit der Bytezahl.
+* Base64-Codierung: Diese API wendet auf eine Zeichenfolge die Base64-Codierung an. Aufgrund des verwendeten Algorithmus bedeutet eine Base64-Codierung, dass sich die Größe der ursprünglichen Daten um etwa das 1,37-Fache erhöht.
+* Base64-Decodierung: Diese API wendet auf eine Base64-codierte Zeichenfolge die Base64-Decodierung an.
 
 ## Einrichtung
-Sie müssen die folgenden Dateien importieren, um die APIs der JSONStore-Sicherheitsdienstprogramme verwenden zu können. 
+Sie müssen die folgenden Dateien importieren, um die APIs der JSONStore-Sicherheitsdienstprogramme verwenden zu können.
 
 ### iOS
 
@@ -49,7 +49,7 @@ import com.worklight.wlclient.api.SecurityUtils
 ```
 
 ### JavaScript
-Es ist keine Einrichtung erforderlich. 
+Es ist keine Einrichtung erforderlich.
 
 ## Beispiele
 ### iOS

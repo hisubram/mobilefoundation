@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-12-21"
 
 ---
@@ -41,7 +41,7 @@ Mobile Foundation 서버의 웹 리소스가 애플리케이션보다 최신인 
 아래 예제 코드에서 `handleDirectUpdate` 함수는 직접 업데이트 대화 상자에서 사용자 정의 메시지를 구현합니다. Cordova 프로젝트의 `www/js/index.js` 파일에 이 코드를 추가하십시오.
 사용자 정의된 직접 업데이트 UI의 추가 예제는 다음과 같습니다.
 * 서드파티 JavaScript 프레임워크(예: Dojo 또는 jQuery Mobile, Ionic 등)를 사용하여 작성되는 대화 상자
-* Cordova 플러그인 실행을 통한 완전한 고유 UI
+* Cordova 플러그인 실행을 통한 완전한 네이티브 UI
 * 옵션과 함께 사용자에게 표시되는 대체 HTML 등
 
 ```JavaScript

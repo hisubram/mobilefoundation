@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-12-20"
 
 ---
@@ -34,9 +34,9 @@ Wenn Sie sich in einem veralteten Plan befinden, müssen Sie eine Migration auf 
 
 ## Unterstützte Planmigrationen
 
-* Der *Developer*-Plan (veraltet) kann nur auf den neuen *Developer*-Plan migriert werden. 
-* Der *Developer Pro *-Plan (veraltet) kann nur auf den *Professional Per Device*- oder *Professional 1 Application*-Plan migriert werden. 
-* Der *Professional Per Capacity*-Plan (veraltet) kann nur auf den *Professional Per Device*- oder *Professional 1 Application*-Plan migriert werden. 
-* Der *Professional Per Device*-Plan (veraltet) kann nur auf den *Professional 1 Application*-Plan migriert werden. 
-* Der *Professional 1 Application*-Plan (veraltet) kann nur auf den *Professional Per Device*-Plan migriert werden. 
-* Für den neuen *Developer*-Plan wird die Planaktualisierung nicht unterstützt. 
+* Der *Developer*-Plan (veraltet) kann nur auf den neuen *Developer*-Plan migriert werden.
+* Der *Developer Pro *-Plan (veraltet) kann nur auf den *Professional Per Device*- oder *Professional 1 Application*-Plan migriert werden.
+* Der *Professional Per Capacity*-Plan (veraltet) kann nur auf den *Professional Per Device*- oder *Professional 1 Application*-Plan migriert werden.
+* Der *Professional Per Device*-Plan (veraltet) kann nur auf den *Professional 1 Application*-Plan migriert werden.
+* Der *Professional 1 Application*-Plan (veraltet) kann nur auf den *Professional Per Device*-Plan migriert werden.
+* Für den neuen *Developer*-Plan wird die Planaktualisierung nicht unterstützt.

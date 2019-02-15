@@ -22,7 +22,7 @@ lastupdated:  "2018-06-18"
 
 ## JSONStore hinzufügen
 {: #adding-jsonstore }
-Gehen Sie wie folgt vor, um ein JSONStore-Plug-in zu Ihrer Cordova-Anwendung hinzuzufügen: 
+Gehen Sie wie folgt vor, um ein JSONStore-Plug-in zu Ihrer Cordova-Anwendung hinzuzufügen:
 
 1. Öffnen Sie ein **Befehlszeilenfenster** und navigieren Sie zu Ihrem Cordova-Projektordner.
 2. Führen Sie den folgenden Befehl aus: `cordova plugin add cordova-plugin-mfp-jsonstore`.
@@ -56,7 +56,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 
 ### Get
 {: #get }
-Verwenden Sie `get`, um einen Zugriffsmechanismus für die Sammlung zu erstellen. Sie müssen `init` vor "get" aufrufen. Andernfalls ist das Ergebnis von `get` nicht definiert.
+Verwenden Sie `get`, um einen Zugriffsmechanismus für die Sammlung zu erstellen.Sie müssen `init` vor "get" aufrufen. Andernfalls ist das Ergebnis von `get` nicht definiert.
 
 ```javascript
 var collectionName = 'people';
@@ -85,11 +85,11 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 
 ### Find
 {: #find }
-* Verwenden Sie `find`, um mithilfe einer Abfrage ein Dokument in einer Sammlung zu lokalisieren.   
-* Verwenden Sie `findAll`, um alle Dokumente in einer Sammlung abzurufen.   
+* Verwenden Sie `find`, um mithilfe einer Abfrage ein Dokument in einer Sammlung zu lokalisieren.  
+* Verwenden Sie `findAll`, um alle Dokumente in einer Sammlung abzurufen.  
 * Verwenden Sie `findById`, um nach der eindeutigen Dokumentkennung zu suchen.  
 
-Das Standardverhalten von "find" ist eine "unscharfe" Suche. 
+Das Standardverhalten von "find" ist eine "unscharfe" Suche.
 
 ```javascript
 var query = {name: 'yoel'};
@@ -130,7 +130,7 @@ else {
 
 ### Replace
 {: #replace }
-Verwenden Sie `replace`, um Dokumente in einer Sammlung zu ändern. Zum Ersetzen verwenden Sie das Feld `_id`, die eindeutige Dokumentkennung. 
+Verwenden Sie `replace`, um Dokumente in einer Sammlung zu ändern.Zum Ersetzen verwenden Sie das Feld `_id`, die eindeutige Dokumentkennung.
 
 ```javascript
 var document = {
@@ -151,8 +151,8 @@ Bei diesem Beispiel wird davon ausgegangen, dass sich das Dokument `{_id: 1, jso
 
 ### Remove
 {: #remove }
-Verwenden Sie `remove`, um ein Dokument aus einer Sammlung zu löschen.   
-Dokumente werden erst aus der Sammlung entfernt, wenn Sie "push" aufrufen.   
+Verwenden Sie `remove`, um ein Dokument aus einer Sammlung zu löschen.  
+Dokumente werden erst aus der Sammlung entfernt, wenn Sie "push" aufrufen.  
 
 > Weitere Informationen finden Sie unten in diesem Lernprogramm im Abschnitt **MobileFirst-Adapterintegration**.
 
@@ -205,11 +205,10 @@ WL.JSONStore.destroy().then(function () {
 
 ### Sicherheit
 {: #security }
-Sie können alle Sammlungen in einem Speicher sichern, indem Sie ein Kennwort an die Funktion `init` übergeben.
-Wenn kein Kennwort übergeben wird, werden die Dokumente aller Sammlungen im Speicher nicht verschlüsselt. 
+Sie können alle Sammlungen in einem Speicher sichern, indem Sie ein Kennwort an die Funktion `init` übergeben. Wenn kein Kennwort übergeben wird, werden die Dokumente aller Sammlungen im Speicher nicht verschlüsselt.
 
-Die Datenverschlüsselung ist nur in Android-, iOS-, Windows 8.1 Universal- und Windows 10 UWP-Umgebungen verfügbar.   
-Einige Sicherheitsmetadaten werden in der *Schlüsselkette* (iOS), den *gemeinsam genutzten Vorgaben* (Android) oder dem *Fach für Berechtigungsnachweise* (Windows 8.1) gespeichert.   
+Die Datenverschlüsselung ist nur in Android-, iOS-, Windows 8.1 Universal- und Windows 10 UWP-Umgebungen verfügbar.  
+Einige Sicherheitsmetadaten werden in der *Schlüsselkette* (iOS), den *gemeinsam genutzten Vorgaben* (Android) oder dem *Fach für Berechtigungsnachweise* (Windows 8.1) gespeichert.  
 Der Speicher wird mit einem 256-Bit-AES-Schlüssel (AES - Advanced Encryption Standard) verschlüsselt. Alle Schlüssel werden mit Password-Based Key Derivation Function 2 (PBKDF2) verstärkt.
 
 Sperren Sie mit `closeAll` den Zugriff auf alle Sammlungen, bis Sie `init` erneut aufrufen. Wenn Sie sich `init` als eine Anmeldefunktion vorstellen, können Sie `closeAll` als die entsprechende Abmeldefunktion betrachten. Ändern Sie das Kennwort mit `changePassword`.
@@ -231,15 +230,14 @@ WL.JSONStore.init(collections, options).then(function () {
 
 #### Verschlüsselung
 {: #encryption }
-*nur iOS*. Standardmäßig verwendet das MobileFirst Cordova-SDK für iOS zur Verschlüsselung APIs, die von iOS bereitgestellt werden. Gehen Sie wie folgt vor, wenn Sie diese lieber durch OpenSSL ersetzen möchten: 
+*nur iOS*. Standardmäßig verwendet das MobileFirst Cordova-SDK für iOS zur Verschlüsselung APIs, die von iOS bereitgestellt werden. Gehen Sie wie folgt vor, wenn Sie diese lieber durch OpenSSL ersetzen möchten:
 
 1. Fügen sie das Plug-in "cordova-plugin-mfp-encrypt-utils" hinzu: `cordova plugin add cordova-plugin-mfp-encrypt-utils`.
 2. Verwenden Sie in der Anwendungslogik `WL.SecurityUtils.enableNativeEncryption(false)`, um die Option für OpenSSL zu aktivieren.
 
-
 ### Unterstützung mehrerer Benutzer
 {: #multiple-user-support }
-Sie können in einer einzigen MobileFirst-Anwendung mehrere Speicher erstellen, die verschiedene Sammlungen enthalten. Die Funktion `init` kann ein Optionsobjekt mit einem Benutzernamen annehmen. Wenn kein Benutzername vergeben wird, lautet der Standardbenutzername **jsonstore**.
+Sie können in einer einzigen MobileFirst-Anwendung mehrere Speicher erstellen, die verschiedene Sammlungen enthalten.Die Funktion `init` kann ein Optionsobjekt mit einem Benutzernamen annehmen. Wenn kein Benutzername vergeben wird, lautet der Standardbenutzername **jsonstore**.
 
 ```javascript
 var collections = {
@@ -258,14 +256,14 @@ WL.JSONStore.init(collections, options).then(function () {
 
 ### MobileFirst-Adapterintegration
 {: #mobilefirst-adapter-integration }
-In diesem Abschnitt wird davon ausgegangen, dass Sie sich mit Adaptern auskennen.   
+In diesem Abschnitt wird davon ausgegangen, dass Sie sich mit Adaptern auskennen.  
 
-Die Adapterintegration ist optional und bietet Möglichkeiten zum Senden von Daten aus einer Sammlung an einen Adapter und zum Abrufen von Daten aus einem Adapter in eine Sammlung.   
-Sie können diese Ziele mithilfe von `WLResourceRequest` oder `jQuery.ajax` erreichen, wenn Sie mehr Flexibilität benötigen. 
+Die Adapterintegration ist optional und bietet Möglichkeiten zum Senden von Daten aus einer Sammlung an einen Adapter und zum Abrufen von Daten aus einem Adapter in eine Sammlung.  
+Sie können diese Ziele mithilfe von `WLResourceRequest` oder `jQuery.ajax` erreichen, wenn Sie mehr Flexibilität benötigen.
 
 ### Adapterimplementierung
 {: #adapter-implementation }
-Erstellen Sie einen Adapter mit dem Namen "**JSONStoreAdapter**".   
+Erstellen Sie einen Adapter mit dem Namen "**JSONStoreAdapter**".  
 Definieren Sie seine Prozeduren `addPerson`, `getPeople`, `pushPeople`, `removePerson` und `replacePerson`.
 
 ```javascript
@@ -327,12 +325,12 @@ var collectionName = 'people';
 WL.JSONStore.get(collectionName).getPushRequired().then(function (dirtyDocuments) {
     // Erfolg behandeln
 }).fail(function (error) {
-    // Fehler behandeln
+  // Fehler behandeln
 });
 ```
 {: codeblock}
 
-   Damit JSONStore die Dokumente nicht als "vorläufig" markiert, müssen Sie die Option `{markDirty:false}` an `add`, `replace` und `remove` übergeben. 
+Damit JSONStore die Dokumente nicht als "vorläufig" markiert, müssen Sie die Option `{markDirty:false}` an `add`, `replace` und `remove` übergeben.
 
 Sie können auch die API  ` getAllDirty `  verwenden, um die schmutzigen Dokumente abzurufen:
 
@@ -380,7 +378,7 @@ try {
 ### Enhance
 {: #enhance }
 Erweitern Sie die API-Kerndefinitionen mit `enhance` entsprechend Ihren Anforderungen, indem Sie Funktionen zu einem Sammlungsprototyp hinzufügen.
-In diesem Beispiel (dem nachstehenden Code-Snippet) wird gezeigt, wie Sie mithilfe von `enhance` die Funktion `getValue` hinzufügen, die sich auf die Sammlung `keyvalue` auswirkt. Sie nimmt als einzigen Parameter `key` (eine Zeichenfolge) an und gibt ein einziges Ergebnis zurück. 
+In diesem Beispiel (dem nachstehenden Code-Snippet) wird gezeigt, wie Sie mithilfe von `enhance` die Funktion `getValue` hinzufügen, die sich auf die Sammlung `keyvalue` auswirkt. Sie nimmt als einzigen Parameter `key` (eine Zeichenfolge) an und gibt ein einziges Ergebnis zurück.
 
 ```javascript
 var collectionName = 'keyvalue';
@@ -405,8 +403,8 @@ WL.JSONStore.get(collectionName).getValue(key).then(function (result) {
 
 ## Beispielanwendung
 {: #sample-application }
-Das JSONStoreSwift-Projekt enthält eine Cordova-Anwendung, die das JSONStore-API-Set verwendet.   
-Darin ist ein JavaScript-Adapter-Maven-Projekt enthalten. 
+Das JSONStoreSwift-Projekt enthält eine Cordova-Anwendung, die das JSONStore-API-Set verwendet.  
+Darin ist ein JavaScript-Adapter-Maven-Projekt enthalten.
 
 ![JSONStore-Beispielapp](images/jsonstore-cordova.png)
 

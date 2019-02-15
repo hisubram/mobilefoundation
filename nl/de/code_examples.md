@@ -1165,7 +1165,7 @@ try {
   JSONStoreCollection peopleCollection  = WLJSONStore.getInstance(ctx).getCollectionByName("people");
 
   // Prüfen, ob Dokument mit _id 3 vorläufig ist.
-List<JSONObject> allDirtyDocuments = peopleCollection.findAllDirtyDocuments();
+  List<JSONObject> allDirtyDocuments = peopleCollection.findAllDirtyDocuments();
 
   // Behandlung vorläufiger Dokumente (z. B. durch Aufruf eines Adapters).
 

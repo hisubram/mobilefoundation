@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-22"
 
 ---
@@ -17,7 +17,7 @@ lastupdated: "2018-11-22"
 # 콘솔에서 인사이트 시각화
 {: #visualize_insights_on_console}
 
-MobileFirst Analytics 콘솔에서 Analytics 보고서를 보고 구성하며 경보를 관리하고 클라이언트 로그를 볼 수 있습니다. 왼쪽 탐색에서 **Analytics 콘솔**을 클릭하여 Mobile Foundation Operations Console에서 Analytics 콘솔을 실행하십시오.
+MobileFirst Analytics 콘솔에서 Analytics 보고서를 보고 구성하며 경보를 관리하고 클라이언트 로그를 볼 수 있습니다. 왼쪽 탐색에서 **Analytics 콘솔**을 클릭하여 Mobile Foundation Operations 콘솔에서 Analytics 콘솔을 실행하십시오.
 
 Analytics 콘솔이 실행되고 기본 대시보드가 표시됩니다. 클라이언트 애플리케이션이 이미 로그 및 분석 데이터를 서버에 전송한 경우 관련 보고서가 작성되고 표시됩니다. 대시보드에서 수집된 분석 데이터를 검토할 수 있습니다. 이 분석 데이터는 애플리케이션 충돌, 애플리케이션 세션 및 서버 처리 시간과 관련될 수 있습니다. 또한 사용자 정의 차트를 작성하고 경보를 관리할 수 있습니다.
 
@@ -44,7 +44,7 @@ Mobile Analytics는 모바일 애플리케이션에 대한 모니터링 및 분�
 **사용자 정의 이벤트**
 
 자체 사용자 정의 이벤트를 추가하여 다음과 같은 질문에 답변할 수 있습니다.
-* 가장 많이 사용되는 기능과 가장 적게 사용되는 기능은 무엇입니까? 
+* 가장 많이 사용되는 기능과 가장 적게 사용되는 기능은 무엇입니까?
 * 사용자가 맵에 들어가고 맵을 나가는 위치는 어디입니까?
 * 사용자가 가장 많이 보는 활동은 무엇입니까?
 * 사용자가 앱에서 워크플로우를 완료합니까(예: 변환 퍼널)?
@@ -121,7 +121,7 @@ Mobile Analytics 콘솔의 **문제점 해결** 페이지에서는 **충돌 요�
 ## 시각화할 수 있는 보고서: 사용자 피드백
 {: #reports_visualized_userfeedback}
 
-사용자 피드백은 Mobile Analytics를 사용하여 앱 내 피드백 분석을 제공합니다.
+사용자 피드백은 Mobile Analytics를 사용하여 인앱(in-app) 피드백 분석을 제공합니다.
 Mobile Analytics의 이 기능을 사용하여 다음을 수행할 수 있습니다.
 * **사용자 및 테스터**는 애플리케이션을 실행하고 사용할 때 앱에서 피드백 및 버그 보고서를 기록하고 전송할 수 있습니다.
 * **앱 소유자**는 다양한 컨텍스트의 사용자 피드백을 사용하여 더 심층적으로 애플리케이션의 사용자 경험을 파악할 수 있습니다.
@@ -135,7 +135,7 @@ Mobile Analytics의 이 기능을 사용하여 다음을 수행할 수 있습니
 #### 앱 인스트루먼트
 {: #instrument_app}
 
-* 피드백 모드로 전환하도록 모바일 앱을 인스트루먼트하십시오. `Analytics.triggerFeedbackMode();` API를 호출하여 피드백 모드를 호출하십시오.<!--For more information, refer to the documentation [here](instrument_an_app.html)-->.
+* 피드백 모드로 전환하도록 모바일 앱을 인스트루먼트하십시오. `Analytics.triggerFeedbackMode();` API를 호출하여 피드백 모드를 호출하십시오. <!--For more information, refer to the documentation [here](instrument_an_app.html)-->.
 * 단추, 메뉴 조치 또는 제스처와 같은 모든 애플리케이션 이벤트에서 API를 호출할 수 있습니다.
 
 #### 사용자 피드백 수신

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-29"
 
 ---
@@ -18,11 +18,11 @@ lastupdated: "2018-11-29"
 
 이 절에서는 특정 모바일 운영 체제의 특정 애플리케이션 버전에 대한 사용자 액세스를 사용 안함으로 설정하는 방법과 사용자에게 사용자 정의 메시지를 제공하는 방법을 설명합니다.
 
-Mobile Foundation Operations Console을 사용하여 앱 액세스를 관리할 수 있습니다.
+Mobile Foundation Operations 콘솔을 사용하여 앱 액세스를 관리할 수 있습니다.
 
 1. 콘솔 탐색 사이드바의 **애플리케이션** 섹션에서 애플리케이션 버전을 선택한 후 **관리** 탭을 선택하십시오.
 2. 상태를 **액세스 사용 안함**으로 변경하십시오.
-3. **최신 버전의 URL** 필드에서 새 애플리케이션 버전의 URL(일반적으로 해당 공용 또는 개인용 앱 스토어에 있음)을 제공하십시오.
+3. **최신 버전의 URL** 필드에서 새 애플리케이션 버전의 URL(일반적으로 해당 공용 또는 개인용 앱 스토어에 있음)을 제공하십시오. 
    일부 환경에서는 Application Center에서 애플리케이션 버전의 세부사항 보기에 직접 액세스할 수 있도록 URL을 제공합니다. [애플리케이션 특성](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/appcenter/appcenter-console/#application-properties)을 참조하십시오.
    {: tip}
 

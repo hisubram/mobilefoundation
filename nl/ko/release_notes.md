@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-27"
 
 ---
@@ -20,6 +20,15 @@ lastupdated: "2018-11-27"
 Mobile Foundation 서비스에 대한 업데이트는 임시 수정사항(iFixs) 및 지속적 딜리버리 업데이트(CD 업데이트)를 통해 제공됩니다. iFixs 및 CD 업데이트는 누적됩니다. 기능 업데이트는 CD 업데이트에서 제공됩니다.
 
 지속적 딜리버리 지원 모델에 대해 자세히 알아보려면 [Mobile Foundation v8.0 CD 지원 공지사항 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/897/ENUS217-390/index.html&request_locale=en)을 참조하십시오.
+{: note}
+
+## CD 업데이트 04(2018년 12월 19일)
+{: #cd_update_4}
+
+* HTTP/2의 APN 푸시 알림이 지원됩니다.
+* React Native SDK for Push(react-native-ibm-mobilefirst-push 1.0.0)가 릴리스되었습니다.
+
+[여기 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/blog/2018/12/24/8-0-cd-update-release/)에서 CD 업데이트 04 공지사항을 보십시오.
 {: note}
 
 ## CD 업데이트 03(2018년 11월 5일)

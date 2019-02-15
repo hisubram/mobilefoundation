@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-24"
+  years: 2018, 2019
+lastupdated: "2019-01-04"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2018-12-24"
 {:ruby: .ph data-hd-programlang='ruby'}
 {:c#: .ph data-hd-programlang='c#'}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:ios: .ph data-hd-programlang='iOS'}
 {:python: .ph data-hd-programlang='python'}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:php: .ph data-hd-programlang='PHP'}
@@ -41,19 +42,19 @@ Cordova/웹 애플리케이션용 API입니다.
     {: javascript }
 
 ### Objective C
-{: objectc }
-고유 iOS 애플리케이션용 API입니다.
-{: objectc }
+{: ios }
+네이티브 iOS 애플리케이션용 API입니다.
+{: ios }
 * **[클라이언트 측 API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://mobilefirstplatform.ibmcloud.com/api-ref/wl-ios-objc-apidoc/html/refobjc-worklight-ios/html/index.html)**   
-    이 API를 사용하여 iOS 환경용 고유 앱을 개발할 수 있습니다.
-    {: objectc }
+    이 API를 사용하여 iOS 환경용 네이티브 앱을 개발할 수 있습니다.
+    {: ios }
 * **[클라이언트 측 푸시 API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-ios-n-objc-apidoc/html/refobjc-mfp-push-ios-native/html/index.html)**  
     이 푸시 API를 사용하여 iOS 환경용 앱을 개발할 수 있습니다.
-    {: objectc }
+    {: ios }
 
 ### Java
 {: java }
-고유 Android 애플리케이션용 API입니다.
+네이티브 Android 애플리케이션용 API입니다.
 {: java }
 * **[클라이언트 측 API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://mobilefirstplatform.ibmcloud.com/api-ref/wl-android-n-java-apidoc/html/refjava-worklight-android-native/html/index.html)**  
     Java API를 사용하여 Android 환경용 앱을 개발할 수 있습니다.
@@ -67,7 +68,7 @@ Cordova/웹 애플리케이션용 API입니다.
 
 ### React Native
 {: reactnative }
-고유 React Native 애플리케이션용 API입니다.
+React Native 애플리케이션용 API입니다.
 {: reactnative }
 
 * **[클라이언트 측 API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://mobilefirstplatform.ibmcloud.com/api-ref/ibm-mobile-first-reactnative/html/refreactnative-mfp-apidoc/html/index.html)**   
@@ -79,7 +80,7 @@ Cordova/웹 애플리케이션용 API입니다.
 
 ### C Sharp
 {: csharp}
-고유 Windows 10 UWP, Windows 8 Universal, Xamarin.iOS 및 Xamarin.Android 애플리케이션용 API입니다.
+네이티브 Windows 10 UWP, Windows 8 Universal, Xamarin.iOS 및 Xamarin.Android 애플리케이션용 API입니다.
 {: csharp}
 * **[Windows 10 Universal Windows Platform, Windows 8 Universal, Xamarin.iOS 및 Xamarin.Android 앱용 클라이언트 측 API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_api.pdf)**  
     C# API를 사용하여 Windows 10 UWP(Universal Windows Platform), Windows 8 Universal, Xamarin.iOS 및 Xamarin.Android 환경을 위한 앱을 개발할 수 있습니다.

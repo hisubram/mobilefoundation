@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-12-21"
 
 ---
@@ -17,7 +17,7 @@ lastupdated: "2018-12-21"
 # Erweiterte Konfiguration für Direct Update
 {: #advanced_direct_update_configuration}
 
-In diesem Abschnitt werden einige der erweiterten Verfahren zum Konfigurieren von Direct Update und zum Arbeiten mit dieser Funktion beschrieben. 
+In diesem Abschnitt werden einige der erweiterten Verfahren zum Konfigurieren von Direct Update und zum Arbeiten mit dieser Funktion beschrieben.
 
 ## Direct Update-Benutzerschnittstelle anpassen
 {: #customize_du_ui}
@@ -242,7 +242,7 @@ Delta-Direct Updates ermöglichen einer Anwendung das Herunterladen nur derjenig
 Ein **Delta-Update** ist nur dann möglich, wenn die Webressourcen der Clientanwendung um genau eine Version hinter der aktuell auf dem Server implementierten Anwendung liegen. Clientanwendungen, die mehr als eine Version hinter der aktuell implementierten Anwendung liegen (d. h. die Anwendung wurde seit der Aktualisierung der Clientanwendung mindestens zweimal auf dem Server implementiert), erhalten eine **vollständiges Update** (d. h. sämtliche Webressourcen werden heruntergeladen und aktualisiert).
 {: note}
 
-Im Bereich **Beispiele** finden Sie das Direct Update-Beispiel für Cordova-Apps. Diese Anwendung veranschaulicht, wie ein angepasster Direct Update-Dialog anstelle des standardmäßig bereitgestellten Dialogs erstellt wird.   
+Im Bereich **Beispiele** finden Sie das Direct Update-Beispiel für Cordova-Apps. Diese Anwendung veranschaulicht, wie ein angepasster Direct Update-Dialog anstelle des standardmäßig bereitgestellten Dialogs erstellt wird.  
 
 ## CDN-Unterstützung
 {: #cdn_support}

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-19"
 
 ---
@@ -177,7 +177,7 @@ mfpdev -no-color
 ### mfpdev help
 {: #mfpdev_help}
 
-MobileFirst CLI(mfpdev) 명령에 대한 도움말을 표시합니다. 명령어를 인수로 사용하여 각 명령 유형 또는 명령에 대한 자세한 도움말 텍스트를 표시합니다(예: `mfpdev help server add`).
+MobileFirst CLI(mfpdev) 명령에 대한 도움말을 표시합니다. 명령어를 인수로 사용하여 각 명령 유형 또는 명령에 대한 자세한 도움말 텍스트를 표시합니다 (예: `mfpdev help server add`).
 
 ```
 mfpdev help <command name>
