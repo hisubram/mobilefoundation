@@ -47,6 +47,7 @@ Mobile Foundation
     Obtain application insights
         instrument_an_app.md
         visualize_insights_on_console.md
+        alerts.md
     add_sdk_to_app.md
 
     {: .topicgroup}
