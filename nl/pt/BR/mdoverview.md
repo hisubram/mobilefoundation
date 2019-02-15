@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016, 2018
+  years: 2016, 2019
 lastupdated:  "2018-11-27"
 
 ---
@@ -21,7 +21,13 @@ Construir apps móveis de engajamento é a chave para o sucesso de uma estratég
 ###  Insights de app
 {: #app_insights}
 
-Obtenha insights sobre o uso do app, comportamento do app e comportamento do usuário. Obtenha insights operacionais para resolução de problemas. Instrumente o app e obtenha insights de negócios, que podem ser visualizados como gráficos customizados no lado do servidor. Permita que os usuários finais relatem erros e problemas no app com um gesto.
+Para manter seu engajamento de usuário relevante e ativo, deve-se obter insights sobre como o seu aplicativo está sendo executado com os usuários. O recurso Mobile Analytics do Mobile Foundation fornece esse recurso com visualizações integradas (gráficos e tabelas).  Com uma instrumentação mínima de seu aplicativo, é possível visualizar prontamente, no console do Mobile Analytics, insights acionáveis, tais como:
+- **Padrões de migração do usuário**: você tem novos usuários migrando; você tem usuários existentes retornando para seu aplicativo?
+- **Padrões de uso**: em que momentos seu aplicativo é mais e menos usado; ele está atendendo à relevância de seus negócios em relação a issp?
+- **Desempenho de back-end**: quais são as funções mais usadas de seus sistemas de back-end e quais têm sido seus tempos de resposta e estabilidade; há necessidade de rebalancear seu back-end?
+- **Estabilidade do aplicativo**: quão estável tem sido seu aplicativo ao longo do tempo e se houve travamentos, quais são as causas (logs de travamento); seu design de aplicativo/implementação deve ser corrigido?
+- **Experiência do usuário no app**: qual é a experiência interativa real pela qual seus usuários estão passando enquanto usam o app e como se sentem; você deve revisitar seu estudo do usuário?
+- **Trilhas customizadas**: gráficos customizados definidos e representados graficamente em torno de dados customizados que são registrados como parte de trilhas e fluxos específicos do aplicativo, flexibilidade para ampliar e definir seus próprios insights que podem ajudar suas decisões de negócios também.
 
 ###  Estrutura de segurança
 {: #security_framework}

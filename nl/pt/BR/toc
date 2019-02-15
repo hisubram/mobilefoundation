@@ -24,10 +24,21 @@ Mobile Foundation
         plan_migration.md
         export_import_apps_adapters.md
 
+	{: .topicgroup}
+    Proteger um app de ponta a ponta
+        prevent_man_in_the_middle_attack.md
+        obfuscate_resources.md
+        basic_authentication.md
+        step_up_authentication.md
+        protecting_adapters.md
+        prevent_tampered_apps_accessing_backend.md
+        
     {: .topicgroup}
     Obter insights do aplicativo
+        instrument_an_app.md
         visualize_insights_on_console.md
-
+    add_sdk_to_app.md
+    
     {: .topicgroup}
     Armazenar dados off-line e sincronizar
         configure_offline_storage.md
@@ -42,6 +53,10 @@ Mobile Foundation
           manage_app_versions.md
           remote_disable_app_version.md
           manage_devices.md
+
+    {: .topicgroup}
+    Integrar com outros serviços IBM Cloud
+        integrate_secure_gateway.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -80,7 +95,8 @@ Mobile Foundation
     {: .topicgroup}
     Links relacionados
         [Documentação do produto IBM MobileFirst Platform Foundation V8.0.0](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html)
-        [IBM MobileFirst Platform Developer Center](https://mobilefirstplatform.ibmcloud.com)
+        [ IBM MobileFirst Platform Developer Center ](https://mobilefirstplatform.ibmcloud.com)
+        [Blog do IBM Cloud - Dispositivo móvel](https://www.ibm.com/blogs/bluemix/?s=Mobile)
     {: .navgroup-end}
 
     {: .navgroup id="help"}

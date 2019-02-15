@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-29"
 
 ---
@@ -22,7 +22,7 @@ Nesta seção, discutiremos o como desativar o acesso de usuário a uma versão 
 
 1. Selecione sua versão do aplicativo na seção **Aplicativos** da barra lateral de navegação do console e, em seguida, selecione a guia **Gerenciamento** do aplicativo.
 2. Mude o status para **Acesso desativado**.
-3. Forneça uma URL para a nova versão do aplicativo (geralmente, no armazenamento de app público ou privado apropriado), no campo **URL da versão mais recente**.
+3. Forneça uma URL para a nova versão do aplicativo (geralmente, no armazenamento de app público ou privado apropriado), no campo **URL da versão mais recente**. 
    Para alguns ambientes, o Application Center fornece uma URL para acessar a visualização de detalhes de uma versão do aplicativo diretamente. Veja [Propriedades do aplicativo](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/appcenter/appcenter-console/#application-properties).
    {: tip}
 

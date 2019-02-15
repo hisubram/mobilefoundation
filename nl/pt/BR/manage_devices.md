@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-29"
 
 ---
@@ -20,10 +20,10 @@ lastupdated: "2018-11-29"
 
 O acesso ao dispositivo e o estado do dispositivo podem ser gerenciados por meio do Mobile Foundation Operations Console. Um dispositivo é identificado exclusivamente com um identificador chamado ID do dispositivo, designado pelo SDK do cliente do Mobile Foundation. Também é possível configurar um nome de exibição para seu dispositivo. O ID do dispositivo e os campos de nome de exibição do dispositivo são indexados para procura.
 
-Os desenvolvedores de aplicativos podem usar o método `setDeviceDisplayName` da classe `WLClient` para configurar o nome de exibição do dispositivo. Veja [aqui](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/javascript/client/) para a documentação do `WLClient`. Os desenvolvedores de adaptador Java também podem configurar o nome de exibição do dispositivo usando o método `setDeviceDisplayName` da classe `com.ibm.mfp.server.registration.external.model MobileDeviceData`.
+Os desenvolvedores de aplicativos podem usar o método `setDeviceDisplayName` da classe `WLClient` para configurar o nome de exibição do dispositivo. Veja [aqui](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/javascript/client/) para a documentação do `WLClient`. Os desenvolvedores de adaptador Java também podem configurar o nome de exibição do dispositivo usando o método `setDeviceDisplayName` da classe `com.ibm.mfp.server.registration.external.model MobileDeviceData`. 
 {: tip}
 
-O servidor Mobile Foundation mantém as informações de status para cada dispositivo que acessa o servidor.
+O servidor Mobile Foundation mantém as informações de status para cada dispositivo que acessa o servidor. 
 Os valores de status possíveis são:
 * Ativo
 * Perdido 
@@ -59,5 +59,5 @@ O status **Expirado** é um status especial que é configurado pelo servidor Mob
    {: note}
 
 
-Não **Cancele o registro** de um dispositivo, se você pretende **Bloquear** o dispositivo. Cancelar o registro de um dispositivo remove todos os dados relacionados ao dispositivo. Se um usuário tenta acessar o servidor Mobile Foundation usando o mesmo dispositivo, ele é solicitado a registrar o dispositivo e o registro criará um novo ID de dispositivo para o dispositivo no servidor. Isso significa que o dispositivo recupera o acesso ao servidor Mobile Foundation.
+Não **Cancele o registro** de um dispositivo, se você pretende **Bloquear** o dispositivo. Cancelar o registro de um dispositivo remove todos os dados relacionados ao dispositivo. Se um usuário tenta acessar o servidor Mobile Foundation usando o mesmo dispositivo, ele é solicitado a registrar o dispositivo e o registro criará um novo ID de dispositivo para o dispositivo no servidor. Isso significa que o dispositivo recupera o acesso ao servidor Mobile Foundation. 
 {: important}

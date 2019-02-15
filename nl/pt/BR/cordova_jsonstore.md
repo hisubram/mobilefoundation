@@ -110,7 +110,7 @@ if(age == "" || isNaN(age)){ alert("Please enter a valid age to find"); } else {
 
 ### Substituir
 {: #replace }
-Use `replace` para modificar documentos dentro de uma coleção. O campo usado para executar a substituição é `_id`, o identificador exclusivo do documento.
+Use `replace` para modificar documentos dentro de uma coleção.O campo usado para executar a substituição é `_id`, o identificador exclusivo do documento.
 
 ```javascript
 var document = {
@@ -202,7 +202,7 @@ WL.JSONStore.init(collections, options).then(function () {
 
 ### Suporte a múltiplos usuários
 {: #multiple-user-support }
-É possível criar múltiplos armazenamentos contendo diferentes coleções em um único aplicativo MobileFirst. A função `init` pode tomar um objeto de opções com um nome de usuário. Se nenhum nome de usuário for fornecido, o nome do usuário padrão será **jsonstore**.
+É possível criar múltiplos armazenamentos contendo diferentes coleções em um único aplicativo MobileFirst.A função `init` pode tomar um objeto de opções com um nome de usuário. Se nenhum nome de usuário for fornecido, o nome do usuário padrão será **jsonstore**.
 
 ```javascript
 var collections = {

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-27"
 
 ---
@@ -20,6 +20,15 @@ lastupdated: "2018-11-27"
 As atualizações para o serviço Mobile Foundation são entregues por meio de correções temporárias (iFixes) e atualizações de entrega contínua (Atualização de CD). Os iFixes e as Atualizações de CD são acumulativos. As atualizações de recursos são entregues na Atualização de CD.
 
 Para saber mais sobre o modelo de suporte de entrega contínua, consulte o [Anúncio de suporte do CD do Mobile Foundation v8.0 ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/897/ENUS217-390/index.html&request_locale=en).
+{: note}
+
+## CD Update 04 (19 de dezembro de 2018)
+{: #cd_update_4}
+
+* Suporte de HTTP/2 para Notificações push de APNs.
+* React Native SDK for Push (react-native-ibm-mobilefirst-push 1.0.0) liberado.
+
+Visualize o anúncio de Atualização do CD 04 [aqui ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://mobilefirstplatform.ibmcloud.com/blog/2018/12/24/8-0-cd-update-release/).
 {: note}
 
 ## Atualização de CD 03 (5 de novembro de 2018)

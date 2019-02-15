@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-16"
 
 ---
@@ -36,9 +36,7 @@ Ao aplicar esta atualização, a versão do servidor, conforme visto no {{site.d
 
 > **Nota:**
 >  * Os usuários não serão capazes de aplicar suas próprias correções e atualizações em sua instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
->  * Consulte [Recriando o servidor no plano Professional
-Per Device](c_using_mfs_p5.html#recreate_mobilefoundation_p5) e [Recriando o servidor no plano Professional 1
-Application](c_using_mfs_p2.html#recreate_mobilefoundation_p2) para entender a diferença no comportamento entre os planos quando Recriar* é clicado.
+>  * Consulte [Recriando o servidor no plano Professional Per Device](c_using_mfs_p5.html#recreate_mobilefoundation_p5) e [Recriando o servidor no plano Professional 1 Application](c_using_mfs_p2.html#recreate_mobilefoundation_p2) para entender a diferença no comportamento entre os planos quando **Recriar** é clicado.
 >
 
 ## Como eu configuro o domínio customizado para a minha instância de servidor do {{site.data.keyword.mobilefoundation_short}}?

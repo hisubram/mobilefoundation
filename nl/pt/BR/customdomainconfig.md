@@ -35,6 +35,6 @@ Para poder usar seu próprio domínio, será necessário configurar o domínio c
 
 + Configure uma rota para o servidor usar seu domínio customizado.
 
-+ Acesse o provedor DNS de seu domínio e incluir uma entrada CNAME, que roteará o tráfego de seu domínio para a rota padrão do {{site.data.keyword.Bluemix_notm}} em que o servidor está em execução.
++ Acesse o provedor DNS de seu domínio e incluir uma entrada CNAME, que roteará o tráfego de seu domínio para a rota padrão do {{site.data.keyword.Bluemix_notm}}, em que o servidor está em execução.
 
 + Se quiser configurar `https` para seu domínio customizado, faça upload do certificado SSL para seu domínio no {{site.data.keyword.Bluemix_notm}}. Para fazer isso, acesse **Gerenciar organizações > DOMÍNIOS**, selecione o domínio customizado para o qual você deseja configurar o certificado SSL, clique em **Fazer upload de certificado** para fazer upload do certificado SSL para seu domínio. Consulte [este post ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window} para obter mais informações.
