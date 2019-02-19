@@ -251,12 +251,3 @@ After creating and starting your Mobile Foundation server instance, you can carr
 You can follow the [Quick Start tutorials ![External link icon](../../icons/launch-glyph.svg "Quick Start tutorials")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} to work with more sample applications and to explore the working of {{site.data.keyword.mobilefoundation_short}}.
 
 Quick Start has tutorials explaining the working of {{site.data.keyword.mobilefoundation_short}} for  iOS, Android, Web, Cordova, Windows, React Native, Ionic, and Xamarin apps.
-
-# Related Links
-{: #rellinks  notoc}
-
-## Related Links
-{: #general notoc}
-
-*	[IBM MobileFirst Platform Foundation V8.0.0 product documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}
-*	[IBM MobileFirst Platform Developer Center ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com){: new_window}
