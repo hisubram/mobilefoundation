@@ -298,7 +298,7 @@ You can also manually edit the application’s configuration JSON file with the 
 #### Protecting adapter resources
 {: #protectadapterres}
 
-In your adapter, you can specify the protecting scope for a Java method or JavaScript resource procedure, or for an entire Java resource class. A scope is defined as a string of one or more space-separated scope elements (“scopeElement1 scopeElement2 …”), or null to apply the default scope. For more details on protecting adapter resources, refer to [Protecting Adapters](/docs/services/mobilefoundation/protecting_adapters.html).
+In your adapter, you can specify the protecting scope for a Java method or JavaScript resource procedure, or for an entire Java resource class. A scope is defined as a string of one or more space-separated scope elements (“scopeElement1 scopeElement2 …”), or null to apply the default scope. For more details on protecting adapter resources, refer to [Protecting Adapters](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
 
 ### Disabling resource protection
 {: #disablingresprotection}

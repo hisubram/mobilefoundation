@@ -22,7 +22,10 @@ lastupdated: "2018-12-21"
 {:php: .ph data-hd-programlang='PHP'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# APIs for Cordova / Web applications (Javascript)
+# Javascript Client SDK API
+{: #javascript_client_sdk_api}
+
+## APIs for Cordova / Web applications (Javascript)
 
 The following table lists the functions that you can perform in Javascript applications, and the corresponding API method.
 

@@ -14,12 +14,12 @@ lastupdated:  "2019-02-12"
 {:note: .note}
 
 # Getting started tutorial
-{: #getting-started}
+{: #getting-started-tutorial}
 
 {{site.data.keyword.mobilefoundation_long}} expedites the setting up of an {{site.data.keyword.mfp_full}} environment using which you can develop, test, and run enterprise mobile apps. {{site.data.keyword.mobilefoundation_short}} offers the following different service plans: Developer, Professional Per Device, and Professional 1 Application.
 {: shortdesc}
 
-Using the Professional 1 Application plan a single application built on any of the supported operating systems can be managed. The supported operating systems are Android, iOS, Windows or mobile Web. The Developer plan is best suited for development and test. You can review all the available plans [here](https://console.bluemix.net/catalog/services/mobile-foundation).
+Using the Professional 1 Application plan a single application built on any of the supported operating systems can be managed. The supported operating systems are Android, iOS, Windows or mobile Web. The Developer plan is best suited for development and test. You can review all the available plans [here](https://cloud.ibm.com/catalog/services/mobile-foundation).
 
 This getting started tutorial enables you to create a {{site.data.keyword.mobilefoundation_short}} service instance using one of the supported plans. You can then register an application. Download and edit the registered application, deploy an adapter and finally test the application.
 
@@ -31,7 +31,7 @@ You'll need a {{site.data.keyword.Bluemix}} account and an instance of the {{sit
 ## Step 1: Create an instance of {{site.data.keyword.mobilefoundation_short}} service
 {: #step1create}
 
-1. In the {{site.data.keyword.Bluemix_notm}} **catalog**, select [**{{site.data.keyword.mobilefoundation_short}}**](https://{domainName}/catalog/services/mobile-foundation). The service configuration screen opens.
+1. In the {{site.data.keyword.Bluemix_notm}} **catalog**, select [**{{site.data.keyword.mobilefoundation_short}}**](https://cloud.ibm.com/catalog/services/mobile-foundation). The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
 3. Choose the region, organization and space where you would want to create the service instance.
 4. Select your **Pricing Plan** and click **Create**.
@@ -86,7 +86,7 @@ After you create an instance of the {{site.data.keyword.mobilefoundation_short}}
 
       +	Click **Launch Console** to open the {{site.data.keyword.mfp_oc_short_notm}}.      
 
-      To create a {{site.data.keyword.mobilefirst_notm}} server instance with advanced configuration for topology, security, and other server configuration, click **Start Server with Advanced Configuration**. See [Setting up advanced configuration](c_using_mfs_p5.html#using_mfs_advanced_p5), for more information.
+      To create a {{site.data.keyword.mobilefirst_notm}} server instance with advanced configuration for topology, security, and other server configuration, click **Start Server with Advanced Configuration**. See [Setting up advanced configuration](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5), for more information.
       {: tip}
 
 ### For {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application plan
@@ -124,7 +124,7 @@ After you create an instance of the {{site.data.keyword.mobilefoundation_short}}
 
       +  Click **Launch Console** to open the {{site.data.keyword.mfp_oc_short_notm}}.  
 
-      To create a {{site.data.keyword.mobilefirst_notm}} server instance with advanced configuration for topology, security, and other server configuration, click **Start Server with Advanced Configuration**. See [Setting up advanced configuration](c_using_mfs_p2.html#using_mfs_advanced_p2), for more information.
+      To create a {{site.data.keyword.mobilefirst_notm}} server instance with advanced configuration for topology, security, and other server configuration, click **Start Server with Advanced Configuration**. See [Setting up advanced configuration](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2), for more information.
       {: tip}
 
 Go to [Using the Mobile Foundation service to set up MobileFirst Server ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window} to learn more about getting started with {{site.data.keyword.mobilefoundation_short}}.

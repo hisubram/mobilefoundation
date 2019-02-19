@@ -61,7 +61,7 @@ Create a custom chart using the following steps:
 ## Obtaining custom insights from custom data logs
 {: #creating_custom_chart_for_client_logs}    
 
-If you wish to gain deeper custom insights such as users trail across the application then firstly you should capture the relevant user trail information such as page chosen or option selected or button clicked as custom data and log them.  See the topic on [instrumenting your app](/docs/services/mobilefoundation/instrument_your_app.html#instrument_your_app), on how to log custom data.
+If you wish to gain deeper custom insights such as users trail across the application then firstly you should capture the relevant user trail information such as page chosen or option selected or button clicked as custom data and log them.  See the topic on [instrumenting your app](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app), on how to log custom data.
 
 Next, create a custom chart defintion with Custom Data as the EventType and choose a Chart Type. As you proceed to define  **Chart Properties** or **Chart Filters** you will notice the Custom Data types and values showing up in the drop down boxes.  Make the relevant selections for the kind of insight you are looking for.  
 
@@ -135,3 +135,4 @@ The resulting pie chart shows the breakdown of app sessions that were closed by 
 
 The table is useful when you want to see the raw data. Building a table is as simple as adding columns for the raw data that you want to see.
 Since not all properties are required for specific event types, null values can appear in your table. If you want to prevent these rows from appearing in your table, add an *Exists* filter for a specific property in the **Chart Filters** tab
+

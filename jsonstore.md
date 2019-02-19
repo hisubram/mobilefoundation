@@ -204,7 +204,7 @@ To decrypt the data, you can look up the metadata in a JSONStore collection, rea
 
 This metadata can include the key, salt, Initialization Vector (IV), type of file, path to the file, and others.
 
-Learn more about [JSONStore Security Utilities](/docs/services/mobilefoundation/security_utilities.html#security_utilities).
+Learn more about [JSONStore Security Utilities](/docs/services/mobilefoundation?topic=mobilefoundation-security_utilities#security_utilities).
 {: tip}
 
 ### Windows 8.1 Universal and Windows 10 UWP encryption

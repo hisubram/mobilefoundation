@@ -113,7 +113,7 @@ Mobile Foundation
     {: .navgroup id="help"}
     faq.md
     troubleshooting.md
-    [Contacting support](https://cloud.ibm.com/docs/get-support/howtogetsupport.html#getting-customer-support)
+    [Contacting support](/docs/get-support?topic=get-support-howtogetsupport#getting-customer-support)
 
     {: .topicgroup}
     Developer community

@@ -26,6 +26,7 @@ lastupdated: "2019-02-11"
 {:csharp: .ph data-hd-programlang='csharp'}
 
 # Client SDKs
+{: #client_sdks}
 
 ## Application Programming Interface (API) for the supported client platforms
 
@@ -33,7 +34,7 @@ lastupdated: "2019-02-11"
 {: javascript }
 APIs for Cordova / Web applications.
 {: javascript }
-* **[Client-side API](/docs/services/mobilefoundation/javascript_client_sdk_api.html)**  
+* **[Client-side API](/docs/services/mobilefoundation?topic=mobilefoundation-javascript_client_sdk_api#javascript_client_sdk_api)**  
     You can use JavaScript API to develop apps for all environments.
     {: javascript }
 * **[Client-side push API ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-hybrid-cordova-js-apidoc/html/refjavascript-mfp-push-hybrid/html/index.html)**  

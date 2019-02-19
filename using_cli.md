@@ -12,8 +12,8 @@ lastupdated:  "2018-11-19"
 {:tip: .tip}
 {:pre: .pre}
 
-#	{{ site.data.keyword.mobilefoundation_short }} CLI
-{: #using_mobilefoundation_cli}
+#	Mobile Foundation CLI
+{: #mobile_foundation_cli}
 
 {{ site.data.keyword.mobilefoundation_short }} provides a Command Line Interface (CLI) tool for the developer **mfpdev**, to easily manage the {{site.data.keyword.mobilefoundation_short}} client and server artifacts.
 

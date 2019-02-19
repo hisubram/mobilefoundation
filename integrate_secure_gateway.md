@@ -118,7 +118,7 @@ From the Mobile Foundation service console, create the [Mobile Foundation server
 
 In this tutorial, we will connect to the Secure Gateway endpoint using a Mobile Foundation adapter. [Download ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/MobileFirst-Platform-Developer-Center/Adapters/tree/release80/JavaHTTP) the Mobile Foundation JavaHTTP adapter.
 
-Build and deploy the adapter in Mobile Foundation Operations console using [mfpdev-cli](/docs/services/mobilefoundation/using_cli.html) commands.
+Build and deploy the adapter in Mobile Foundation Operations console using [mfpdev-cli](/docs/services/mobilefoundation?topic=mobilefoundation-mobile_foundation_cli#mobile_foundation_cli) commands.
 ```bash
 mfpdev adapter build 
 mfpdev adapter deploy
@@ -145,7 +145,7 @@ Run the app, provide credentials to log in and click the *Login* button. Click *
 
 ![App receive on-premise data](images/AcmePublishersApp.gif)
 
-You can connect to multiple on-premise endpoints by configuring multiple destinations on the Secure Gateway service and by deploying Mobile Foundation adapters to connect to the respective cloud host of the endpoint. You can also configure the Secure Gateway service with additional security to ensure that the communication to the endpoint happens over HTTPS and application-side security. You can find the [details here](https://cloud.ibm.com/docs/services/SecureGateway/index.html).
+You can connect to multiple on-premise endpoints by configuring multiple destinations on the Secure Gateway service and by deploying Mobile Foundation adapters to connect to the respective cloud host of the endpoint. You can also configure the Secure Gateway service with additional security to ensure that the communication to the endpoint happens over HTTPS and application-side security. You can find the [details here](/docs/services/SecureGateway?topic=securegateway-getting-started-with-sg#getting-started-with-sg).
 
 
 ## Summary

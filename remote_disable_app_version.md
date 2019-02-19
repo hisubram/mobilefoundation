@@ -14,7 +14,7 @@ lastupdated: "2018-11-29"
 {:screen: .screen}
 
 # Remotely disable an app version
-{: #remote_disable_app_version}
+{: #remotely_disable_an_app_version}
 
 In this section we will discuss how-to to disable user access to a specific version of an application on a specific mobile operating system, and how-to provide a custom message to the user.
 

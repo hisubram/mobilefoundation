@@ -183,4 +183,4 @@ The certificate pinning method returns a promise:
 
 Later, if a secured request is made to a server whose certificate is not pinned, the ``onFailure`` callback of the specific request (for example, ``obtainAccessToken`` or ``WLResourceRequest``) is called.
 
->Learn more about the certificate pinning API method in the [API Reference](/docs/services/mobilefoundation/client_sdk_api.html).
+>Learn more about the certificate pinning API method in the [API Reference](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks).

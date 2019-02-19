@@ -36,5 +36,5 @@ Mobile Analytics server is included and preconfigured with the Mobile Foundation
 
 * Launch the Mobile Analytics Console from the {{site.data.keyword.mfp_oc_short_notm}}.
 
-For more information on instrumenting your app using Mobile Analytics, you can refer [here](/docs/services/mobilefoundation/instrument_an_app.html){: new_window}.
+For more information on instrumenting your app using Mobile Analytics, you can refer [here](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.
 
