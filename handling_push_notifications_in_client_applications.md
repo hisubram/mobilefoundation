@@ -633,7 +633,8 @@ Alternatively you can call `MFPPush.sharedInstance().methodName()` for each inst
 If the `push.mobileclient` scope is mapped to a **security check**, you need to make sure matching **challenge handlers** exist and are registered before using any of the Push APIs.
 {: ios}
 
-> Learn more about challenge handlers in the [credential validation](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/credentials-validation/ios/) tutorial.
+Learn more about challenge handlers in the [credential validation](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/credentials-validation/ios/) tutorial.
+{: note}
 {: ios}
 
 #### Client-side
@@ -875,7 +876,8 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 {: codeblock}
 {: ios}
 
-> Learn more about handling notifications in iOS from the Apple documentation: [http://bit.ly/1ESSGdQ](http://bit.ly/1ESSGdQ)
+Learn more about handling notifications in iOS from the [Apple documentation](http://bit.ly/1ESSGdQ).
+{: note}
 {: ios}
 
 ### Handling Push Notifications in Cordova
@@ -912,8 +914,9 @@ For information about Silent or Interactive notifications in iOS, see:
 Create a new Cordova project or use an existing one, and add one or more of the supported platforms: iOS, Android, Windows.
 {: cordova}
 
-> If the {{ site.data.keyword.mobilefirst_notm }} Cordova SDK is not already present in the project, follow the instructions in the [Adding the {{ site.data.keyword.mobilefirst_notm }} SDK to Cordova applications](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/cordova/) tutorial.
+If the {{ site.data.keyword.mobilefirst_notm }} Cordova SDK is not already present in the project, follow the instructions in the [Adding the {{ site.data.keyword.mobilefirst_notm }} SDK to Cordova applications](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/cordova/) tutorial.
 {: cordova}
+{: note}
 
 #### Adding the Push plug-in
 {: #adding-the-push-plug-in }
@@ -943,7 +946,8 @@ The iOS platform requires an additional step.
 In Xcode, enable push notifications for your application in the **Capabilities** screen.
 {: cordova}
 
->**Important:** the bundleId selected for the application must match the AppId that you have previously created in the Apple Developer site.
+The bundleId selected for the application must match the AppId that you have previously created in the Apple Developer site.
+{: important}
 {: cordova}
 
 ![image of where is the capability in Xcode](images/push-capability.png)
@@ -1239,7 +1243,8 @@ Alternatively you can call `MFPPush.GetInstance().methodName()` for each instanc
 If the `push.mobileclient` scope is mapped to a **security check**, you need to make sure matching **challenge handlers** exist and are registered before using any of the Push APIs.
 {: windows}
 
-> Learn more about challenge handlers in the [credential validation](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/credentials-validation/windows-8-10/) tutorial.
+Learn more about challenge handlers in the [credential validation](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/credentials-validation/windows-8-10/) tutorial.
+{: note}
 {: windows}
 
 #### Client-side
