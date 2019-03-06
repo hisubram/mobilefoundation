@@ -28,8 +28,8 @@ lastupdated: "2019-02-28"
 {:cordova: .ph data-hd-programlang='Cordova'}
 {:xml: .ph data-hd-programlang='xml'}
 
-# Configure and send push notifications
-{: #configure_and_send_push_notifications}
+# Push Notifications
+{: #push_notifications}
 
 Notifications is the ability of a mobile device to receive messages that are "pushed" from a server. Notifications are received regardless of whether the application is currently running in the foreground or background.  
 {: shortdesc}

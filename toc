@@ -15,6 +15,10 @@ Mobile Foundation
         release_notes.md
 
     {: .topicgroup}
+    Push Notifications
+        about_push_notifications.md
+
+    {: .topicgroup}
     Offline Storage
         jsonstore.md
         advanced_jsonstore.md
@@ -36,7 +40,6 @@ Mobile Foundation
 
 	{: .topicgroup}
     Configure and Send Push Notifications
-        configure_and_send_push_notifications.md
         configure_push_notifications.md
         send_push_notifications.md
 	    handling_push_notifications_in_client_applications.md
