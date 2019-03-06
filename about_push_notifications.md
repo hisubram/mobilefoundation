@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-06"
 
 ---
 
@@ -324,9 +324,3 @@ Follow through the below required setup of the server-side and client-side in or
 * [Configure Push Notifications](/docs/services/mobilefoundation?topic=mobilefoundation-configure_push_notifications#configure_push_notifications)
 * [Send Push Notifications](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications)
 * [Handling push notifications in Client applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_client_applications#handling_push_notifications_in_client_applications)
-    * [Silent Notifications](/docs/services/mobilefoundation?topic=mobilefoundation-silent_notifications#silent_notifications)
-    * [Interactive Notifications](/docs/services/mobilefoundation?topic=mobilefoundation-interactive_notifications#interactive_notifications)
-    * [Handling push notifications in Cordova applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_cordova#handling_push_notifications_in_cordova)
-    * [Handling push notifications in iOS applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_ios#handling_push_notifications_in_ios)
-    * [Handling push notifications in Android applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_android#handling_push_notifications_in_android)
-    * [Handling push notifications in Windows applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_windows#handling_push_notifications_in_windows)
