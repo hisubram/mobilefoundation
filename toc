@@ -39,13 +39,15 @@ Mobile Foundation
         configure_and_send_push_notifications.md
         configure_push_notifications.md
         send_push_notifications.md
-	handling_push_notifications_in_client_applications.md
-		silent_notifications.md
-		interactive_notifications.md
-		handling_push_notifications_in_cordova.md
-		handling_push_notifications_in_ios.md
-		handling_push_notifications_in_android.md
-		handling_push_notifications_in_windows.md
+        
+        {: .topicgroup}
+	    handling_push_notifications_in_client_applications.md
+		    silent_notifications.md
+		    interactive_notifications.md
+		    handling_push_notifications_in_cordova.md
+		    handling_push_notifications_in_ios.md
+		    handling_push_notifications_in_android.md
+		    handling_push_notifications_in_windows.md
 
 	{: .topicgroup}
     Secure an app end-to-end
