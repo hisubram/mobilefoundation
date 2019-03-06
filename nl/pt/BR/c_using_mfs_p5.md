@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated:  "2018-11-20"
 Com o plano Professional Per Device, os usuários podem construir, testar e executar aplicativos móveis em produção, independentemente do número de usuários ou dispositivos móveis. Os encargos são baseados no número de dispositivos do cliente diários. Esse plano suporta implementações grandes e alta disponibilidade.
 Após criar a instância de serviço {{site.data.keyword.mobilefoundation_short}}: Professional Per Device, leia o procedimento a seguir para iniciar o serviço.
 
-## Pré-requisitos
+## Pré-requisitos no plano do Professional Per Device
 {: #prerequisites_p5}
 
 Considere o seguinte antes de configurar a instância de serviço {{site.data.keyword.mobilefoundation_short}}: Professional Per Device.
@@ -73,7 +73,7 @@ Em alguns segundos, é possível acessar a página `Overview` que fornece tutori
 Não é possível mudar a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} que está configurada para ser usada por sua instância de serviço do {{site.data.keyword.mobilefoundation_short}}. No entanto, é possível usar a mesma instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} em múltiplas instâncias de serviço {{site.data.keyword.mobilefoundation_short}}, uma vez que cada instância de serviço {{site.data.keyword.mobilefoundation_short}} cria seu próprio esquema na instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} selecionada.
 {: note}
 
-## Iniciando o servidor do MobileFirst
+## Iniciando o servidor do MobileFirst criado usando o plano do Professional Per Device
 {: #start_mobilefoundation_p5}
 
 * Para iniciar o {{site.data.keyword.mfserver_short_notm}}, com as configurações padrão, clique em **Iniciar servidor básico**.
@@ -96,7 +96,7 @@ O processo de criação do servidor é iniciado. Esse processo leva aproximadame
 
 Com o console, é possível gerenciar seus aplicativos móveis, adaptadores e dispositivos móveis, usar o servidor como um backend móvel, enviar notificações push e muito mais.
 
-## Recriando o servidor do MobileFirst
+## Recriando o servidor do MobileFirst ao usar o plano do Professional Per Device
 {: #recreate_mobilefoundation_p5}
 
 *	Clique em **Recriar** para recriar o servidor.
@@ -106,7 +106,7 @@ Com o console, é possível gerenciar seus aplicativos móveis, adaptadores e di
 Os dados de sua instância de servidor anterior, incluindo informações sobre os apps e os adaptadores, são persistidos na instância de serviço configurada do {{site.data.keyword.Db2_on_Cloud_short}}. Esses dados são usados para recriar seu servidor.
 {: note}
 
-##	Definindo a configuração avançada
+##	Definindo a configuração avançada no plano do Professional Per Device
 {: #using_mfs_advanced_p5}
 
 Use **Iniciar servidor com a configuração avançada** na página `Visão geral` para criar o servidor com configurações avançadas ou customizadas. Também é possível atualizar as configurações do servidor para customizar a configuração do servidor clicando na guia **Configurações**. O {{site.data.keyword.mobilefoundation_short}} fornece acesso a algumas configurações avançadas.
@@ -117,13 +117,11 @@ e o número de instâncias do servidor com base em sua necessidade. O servidor p
 
   - **Instâncias** exibe o número de instâncias que são criadas.
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Mobile Analytics no plano do Professional Per Device
+{: #mobile_analytics_p5}
 
 O servidor Mobile Analytics está incluído e é pré-configurado com o Mobile Foundation: instância de serviço do plano Developer.
 
 * Ativar o Mobile Analytics Console por meio do {{site.data.keyword.mfp_oc_short_notm}}.
 
-Para obter mais informações sobre o Mobile Analytics, é possível consultar [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}.
-
-Consulte a documentação do [{{site.data.keyword.mobilefoundation_long}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}, para obter mais detalhes.
+Para obter mais informações sobre o Mobile Analytics, é possível consultar [aqui](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.

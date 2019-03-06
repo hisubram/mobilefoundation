@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 {:generic: .ph data-hd-programlang='generic'}
@@ -27,14 +27,14 @@ lastupdated: "2019-01-04"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Configuração avançada do armazenamento off-line 
-{: #adv_configure_offline_storage}
+# JSONStore avançado 
+{: #advanced_jsonstore}
 
 ## Segurança no JSONStore
-{: #security_jsonstore} 
+{: #security_jsonstore}
 
 <!--### Cordova
-{: security_jsonstore_cordova}-->
+{: #security_jsonstore_cordova}-->
 
 É possível proteger todas as coleções de um armazenamento, passando uma senha para a função `init`. Se nenhuma senha for passada, os documentos de todas as coleções no armazenamento não serão criptografados.
 {: cordova}

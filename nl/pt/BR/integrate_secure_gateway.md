@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -22,7 +22,7 @@ Ao construir apps móveis corporativos, você deseja muitas vezes integrar os ap
 Este tutorial explica como acessar terminais HTTP em seu data center local por meio de adaptadores do Mobile Foundation em execução no IBM Cloud, usando o serviço Secure Gateway.
 
 ## Pré-requisito
-{: #prereq}
+{: #prereq_int_sec_gw}
 
 Para concluir este tutorial, você precisará de um terminal HTTP dentro de seu firewall corporativo que exponha os sistemas de dados de registro. Como alternativa, crie um terminal de teste em seu ambiente local usando [este projeto `Node.js` de amostra ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/MobileFirst-Platform-Developer-Center/MFPSecureGatewayIonic/tree/master/NodeJSHTTPProject).
 
@@ -33,15 +33,15 @@ npm install node app.js
 ```
 {: codeblock}
 
-## Cenário de integração com o serviço Secure Gateway
+## Cenário de integração com o serviço do Secure Gateway
 {: #secure_gateway}
 
 A imagem a seguir ilustra a arquitetura usada no cenário de integração explicado neste tutorial.
 
 ![Architecture Diagram](images/SecureGatewayArchi.png)
 
-## Implementando a integração
-{: #implementing_integration}
+## Implementando a integração do Secure Gateway
+{: #implementing_sg_integration}
 
 ### Criar uma instância de serviço Secure Gateway
 Efetue login no IBM Cloud e crie uma instância do [serviço Secure Gateway](https://cloud.ibm.com/catalog/services/secure-gateway/). 
@@ -67,7 +67,7 @@ De dentro de seu novo gateway na guia **Clientes**, clique em **Conectar cliente
 
 É possível usar qualquer um dos clientes de sua preferência e executar o cliente Secure Gateway em seu ambiente local. As etapas para configurar o cliente Secure Gateway estão disponíveis no console do Secure Gateway.
 
-Neste tutorial, usaremos a opção de contêiner do Docker para executar o cliente Secure Gateway.
+Neste tutorial, usaremos a opção de contêiner do Docker para executar o cliente Secure Gateway. 
 Siga as etapas abaixo:
 *   Instale o Docker em sua máquina local, se ele ainda não estiver instalado.
 *   Ative um terminal e execute o cliente Secure Gateway em um contêiner usando o comando mostrado no console de serviço.
@@ -117,7 +117,7 @@ No console de serviço do Mobile Foundation, crie o [Servidor Mobile Foundation 
 
 Neste tutorial, nos conectaremos ao terminal do Secure Gateway usando um adaptador do Mobile Foundation. [Faça download ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://github.com/MobileFirst-Platform-Developer-Center/Adapters/tree/release80/JavaHTTP) do adaptador JavaHTTP do Mobile Foundation.
 
-Construa e implemente o adaptador no console do Mobile Foundation Operations usando os comandos [mfpdev-cli](using_cli.html).
+Construa e implemente o adaptador no console do Mobile Foundation Operations usando os comandos [mfpdev-cli](/docs/services/mobilefoundation?topic=mobilefoundation-mobile_foundation_cli#mobile_foundation_cli).
 ```bash
 mfpdev adapter build 
 mfpdev adapter deploy
@@ -144,11 +144,11 @@ Execute o app, forneça credenciais para efetuar login e clique no botão *Login
 
 ![App receive on-premise data](images/AcmePublishersApp.gif)
 
-É possível conectar-se a múltiplos terminais locais, configurando diversos destinos no serviço Secure Gateway e implementando adaptadores do Mobile Foundation para se conectar ao respectivo host de nuvem do terminal. Também é possível configurar o serviço Secure Gateway com segurança adicional para garantir que a comunicação com o terminal aconteça sobre a segurança HTTPS e do lado do aplicativo. É possível localizar os  [ detalhes aqui ](https://cloud.ibm.com/docs/services/SecureGateway/index.html).
+É possível conectar-se a múltiplos terminais locais, configurando diversos destinos no serviço Secure Gateway e implementando adaptadores do Mobile Foundation para se conectar ao respectivo host de nuvem do terminal. Também é possível configurar o serviço Secure Gateway com segurança adicional para garantir que a comunicação com o terminal aconteça sobre a segurança HTTPS e do lado do aplicativo. É possível localizar os  [ detalhes aqui ](/docs/services/SecureGateway?topic=securegateway-getting-started-with-sg#getting-started-with-sg).
 
 
 ## Resumo
-{: #summary}
+{: #summary_int_sec_gw}
 
 Usando este tutorial, você deve ser capaz de estabelecer uma conexão segura entre os adaptadores do Mobile Foundation em execução no IBM Cloud e um terminal HTTP local, usando o serviço Secure Gateway.
 

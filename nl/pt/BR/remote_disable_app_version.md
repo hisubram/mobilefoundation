@@ -14,7 +14,7 @@ lastupdated: "2018-11-29"
 {:screen: .screen}
 
 # Desativar remotamente uma versão do aplicativo
-{: #remote_disable_app_version}
+{: #remotely_disable_an_app_version}
 
 Nesta seção, discutiremos o como desativar o acesso de usuário a uma versão específica de um aplicativo em um sistema operacional de dispositivo móvel específico e como fornecer uma mensagem customizada para o usuário.
 

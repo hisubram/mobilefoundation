@@ -21,7 +21,7 @@ Construir apps móveis de engajamento é a chave para o sucesso de uma estratég
 ###  Insights de app
 {: #app_insights}
 
-Para manter seu engajamento de usuário relevante e ativo, deve-se obter insights sobre como o seu aplicativo está sendo executado com os usuários. O recurso Mobile Analytics do Mobile Foundation fornece esse recurso com visualizações integradas (gráficos e tabelas).  Com uma instrumentação mínima de seu aplicativo, é possível visualizar prontamente, no console do Mobile Analytics, insights acionáveis, tais como:
+Para manter seu engajamento de usuário relevante e ativo, deve-se obter insights sobre como o seu aplicativo está sendo executado com os usuários.   O recurso Mobile Analytics do Mobile Foundation fornece esse recurso com visualizações integradas (gráficos e tabelas).  Com uma instrumentação mínima de seu aplicativo, é possível visualizar prontamente, no console do Mobile Analytics, insights acionáveis, tais como:
 - **Padrões de migração do usuário**: você tem novos usuários migrando; você tem usuários existentes retornando para seu aplicativo?
 - **Padrões de uso**: em que momentos seu aplicativo é mais e menos usado; ele está atendendo à relevância de seus negócios em relação a issp?
 - **Desempenho de back-end**: quais são as funções mais usadas de seus sistemas de back-end e quais têm sido seus tempos de resposta e estabilidade; há necessidade de rebalancear seu back-end?

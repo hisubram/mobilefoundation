@@ -2,12 +2,12 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-26"
+lastupdated:  "2019-02-11"
 
 ---
 
-##	SDKs do Windows
-{: #windows_sdk}
+#	SDK do Windows
+{: #windows_sdk_api}
 
 Faça download dos SDKs do Windows por meio do nuget.
 

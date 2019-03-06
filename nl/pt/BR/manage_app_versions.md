@@ -38,6 +38,6 @@ Usando o Mobile Foundation Operations Console, é possível monitorar e gerencia
    *  Exportar versão
 
 
-Veja [Gerenciando dispositivos](manage_devices.html) para aprender sobre o gerenciamento de dispositivos. Veja [Desativar remotamente uma versão do aplicativo](remote_disable_app_version.html) para aprender sobre a desativação remota de uma versão específica de um app.
+Veja [Gerenciando dispositivos](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices) para aprender sobre o gerenciamento de dispositivos. Veja [Desativar remotamente uma versão do aplicativo](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version) para aprender sobre a desativação remota de uma versão específica de um app.
 {: note}
 

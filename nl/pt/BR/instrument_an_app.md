@@ -45,7 +45,7 @@ As seções a seguir fornecerão os detalhes para essas etapas, para cada uma da
 ### Instrumentar um aplicativo Android
 {: #instrument_android_app}
 {: android}
-#### Etapa 1: importar e instalar o SDK do Mobile Analytics Client
+#### Etapa 1: importar e instalar o SDK do Mobile Analytics Client for Android
 {: #install_analytics_sdk_android }
 {: android}
 [![Central do Maven](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation)
@@ -81,7 +81,7 @@ e inclua uma dependência de compilação para o SDK do cliente
   {: android}
 
   A primeira dependência é para o SDK do Mobile Analytics Client capturar e criar log de eventos de tempo de execução do aplicativo
-e a segunda é permitir que o feedback do usuário no app interaja com o usuário do aplicativo. A segunda dependência será necessária somente se você ativar o feedback do usuário no app
+e a segunda é permitir que o feedback do usuário no app interaja com o usuário do aplicativo. A segunda dependência será necessária somente se você ativar o feedback do usuário no app 
   {: android}
 
 4. Sincronize seu projeto com Gradle clicando em **Ferramentas &gt; Android &gt; Projeto de sincronização com arquivos Gradle**.
@@ -116,7 +116,7 @@ e a segunda é permitir que o feedback do usuário no app interaja com o usuári
 {: #instrument_app_based_on_data_android }
 {: android}
 
-1. Inicialize seu aplicativo para capturar e enviar dados de analítica para o serviço Mobile Analytics. Em primeiro lugar, inclua as instruções `import` a seguir no início de seu aplicativo ou classe de atividade:
+1. Inicialize seu aplicativo para capturar e enviar dados de analítica para o serviço Mobile Analytics.  Em primeiro lugar, inclua as instruções `import` a seguir no início de seu aplicativo ou classe de atividade:
 {: android}
 
    ```Java
@@ -489,7 +489,7 @@ O plug-in do Mobile Analytics Cordova permite instrumentar seu aplicativo móvel
 
 1. Em aplicativos Cordova, nenhuma configuração é necessária e a inicialização é integrada. 
 
-   Antes de chamar qualquer um dos métodos analíticos abaixo, deve-se assegurar que seu aplicativo integre o código necessário para autenticar e autorizar o dispositivo com o serviço MobileFoundation. Essa é uma etapa comum que é necessária para todos os aplicativos de serviço do Mobile Foundation e não é específica para a captura de dados de Analítica. <!--  Refer <need to link doc that talks about auth> -->
+   Antes de chamar qualquer um dos métodos analíticos abaixo, deve-se assegurar que seu aplicativo integre o código necessário para autenticar e autorizar o dispositivo com o serviço MobileFoundation.  Essa é uma etapa comum que é necessária para todos os aplicativos de serviço do Mobile Foundation e não é específica para a captura de dados de Analítica. <!--  Refer <need to link doc that talks about auth> -->
    {: cordova}
 
    Com a inicialização completa, agora seu aplicativo está ativado para capturar informações do dispositivo e logs de SDK do Mobile Analytics sem código adicional incluído.  Quaisquer API e código adicionais discutidos nas seções a seguir são opcionais e podem ser incluídos com base em que tipo de dados de analítica você deseja capturar.
@@ -686,7 +686,7 @@ O SDK do Mobile Analytics permite que você instrumente seu aplicativo da web.
     {: codeblock}
     {: web}
 
-   Antes de chamar qualquer um dos métodos analíticos abaixo, deve-se assegurar que seu aplicativo integre o código necessário para autenticar e autorizar o dispositivo com o serviço MobileFoundation. Essa é uma etapa comum que é necessária para todos os aplicativos de serviço do Mobile Foundation e não é específica para a captura de dados de Analítica. <!--  Refer <need to link doc that talks about auth> -->
+   Antes de chamar qualquer um dos métodos analíticos abaixo, deve-se assegurar que seu aplicativo integre o código necessário para autenticar e autorizar o dispositivo com o serviço MobileFoundation.  Essa é uma etapa comum que é necessária para todos os aplicativos de serviço do Mobile Foundation e não é específica para a captura de dados de Analítica. <!--  Refer <need to link doc that talks about auth> -->
    {: web}
 
    Com a inicialização completa, agora seu aplicativo está ativado para capturar informações do dispositivo e logs de SDK do Mobile Analytics sem código adicional incluído.  Quaisquer API e código adicionais discutidos nas seções a seguir são opcionais e podem ser incluídos com base em que tipo de dados de analítica você deseja capturar.
@@ -781,13 +781,15 @@ O SDK do Mobile Analytics permite que você instrumente seu aplicativo da web.
     Os dados customizados registrados podem ser plotados sobre gráficos customizados que podem ser definidos no console Mobile Analytics para derivar insights customizados.
     {: web}
 
-## Próximas etapas
-{: #next_steps}
+## O que fazer em seguida?
+{: #next_steps_analytics}
 
-O Mobile Foundation fornece APIs de REST para ajudar os desenvolvedores a importar (POST) e exportar (GET) dados de analítica.
+Tente uma amostra simples de [aqui](https://github.com/MobileFirst-Platform-Developer-Center/mfp-analytics-samples). Em menos de 5 minutos, você será capaz de executar o aplicativo de amostra e obter uma sensação do que a API discutida nessa página faz. Você também será capaz de observar como a analítica é mostrada como diferentes insights no console do Analytics.  
+
+O Mobile Foundation Analytics Service fornece APIs de REST para ajudar os desenvolvedores a importarem (POST) e exportarem (GET) dados de analítica.
 
 Experimente a API REST de analítica no Swagger Docs [aqui](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/).
 
-{: note}
 
-Agora é possível acessar o Mobile Analytics Console para ver a analítica de uso, como novos dispositivos e dispositivos totais usando seu aplicativo. Também é possível monitorar seu aplicativo criando gráficos customizados, configurando alertas e monitorando travamentos de app.
+
+

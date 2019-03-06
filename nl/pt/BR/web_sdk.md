@@ -2,12 +2,12 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-26"
+lastupdated:  "2019-02-11"
 
 ---
 
-##	SDKs da web
-{: #rweb_sdk}
+#	SDK da Web
+{: #web_sdk_api}
 
 Faça download dos SDKs da web por meio do npm.
 

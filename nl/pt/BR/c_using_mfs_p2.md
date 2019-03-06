@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated:  "2018-11-20"
 Com o plano Professional 1 Application, os usuários podem criar 1 aplicativo móvel com vários sistemas operacionais de dispositivo móvel.
 Depois de criar a instância de serviço {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, leia o procedimento a seguir para iniciar o serviço.
 
-## Pré-requisitos
+## Pré-requisitos para plano do Professional 1 Application
 {: #prerequisites_p2}
 
 Considere o seguinte antes de configurar a instância de serviço {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application.
@@ -30,10 +30,10 @@ Considere o seguinte antes de configurar a instância de serviço {{site.data.ke
 > **Nota**: a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} (qualquer plano diferente do plano **Lite**) ou {{site.data.keyword.composeForPostgreSQL}} pode existir em qualquer `Space` dentro de sua `Organization` do {{site.data.keyword.Bluemix_notm}} ou em qualquer outra `Organization` à qual você tem acesso. Assegure-se de que tenha as permissões para acessar o `Space` no qual a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} ou do {{site.data.keyword.composeForPostgreSQL}} existe.
 
 
-## Incluindo a conexão com o banco de dados
+## Configure a conexão com o banco de dados
 {: #configure_dashdb_p2}
 
-###  Primeiras etapas
+###  Primeiras etapas na configuração
 {: #firststeps_p2}
 
 Após criar a instância de serviço do {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, siga o procedimento para iniciar.
@@ -74,7 +74,7 @@ Em alguns segundos, é possível acessar a página `Overview` que fornece tutori
 Não é possível mudar a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} que está configurada para ser usada por sua instância de serviço do {{site.data.keyword.mobilefoundation_short}}. No entanto, é possível usar a mesma instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} em múltiplas instâncias de serviço {{site.data.keyword.mobilefoundation_short}}, uma vez que cada instância de serviço {{site.data.keyword.mobilefoundation_short}} cria seu próprio esquema na instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} selecionada.
 {: note}
 
-## Iniciando o servidor do MobileFirst
+## Iniciando o servidor do MobileFirst criado usando o plano do Professional 1 Application
 {: #start_mobilefoundation_p2}
 
 * Para iniciar o {{site.data.keyword.mfserver_short_notm}}, com as configurações padrão, clique em **Iniciar servidor básico**.
@@ -104,7 +104,7 @@ Com o console, é possível
 gerenciar seus aplicativos móveis, adaptadores e dispositivos móveis, usar seu servidor como um
 backend móvel, enviar notificações push e muito mais.
 
-## Recriando o servidor do MobileFirst
+## Recriando o servidor do MobileFirst ao usar o plano do Professional 1 Application
 {: #recreate_mobilefoundation_p2}
 
 *	Clique em **Recriar** para recriar o servidor.
@@ -115,7 +115,7 @@ demora alguns minutos para ser concluída.
 Os dados de sua instância de servidor anterior, incluindo informações sobre os apps e os adaptadores, são persistidos na instância de serviço configurada do {{site.data.keyword.Db2_on_Cloud_short}}. Esses dados são usados para recriar seu servidor.
 {: note}
 
-##	Definindo a configuração avançada
+##	Definindo a configuração avançada no plano do Professional 1 Application
 {: #using_mfs_advanced_p2}
 
 Use **Iniciar servidor com a configuração avançada** na página `Visão geral` para criar o servidor com configurações avançadas ou customizadas. Também é possível
@@ -128,13 +128,11 @@ e o número de instâncias do servidor com base em sua necessidade. O servidor p
 
   - **Instâncias** exibe o número de nós criados.
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Mobile Analytics no plano do Professional 1 Application
+{: #mobile_analytics_p2}
 
 O servidor Mobile Analytics está incluído e é pré-configurado com o Mobile Foundation: instância de serviço do plano Developer.
 
 * Ativar o Mobile Analytics Console por meio do {{site.data.keyword.mfp_oc_short_notm}}.
 
-Para obter mais informações sobre o Mobile Analytics, é possível consultar [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}.
-
-Consulte a documentação do [{{site.data.keyword.mobilefoundation_long}} ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}, para obter mais detalhes.
+Para obter mais informações sobre o Mobile Analytics, é possível consultar [aqui](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.

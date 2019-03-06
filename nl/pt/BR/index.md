@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-16"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,24 +14,24 @@ lastupdated:  "2018-11-16"
 {:note: .note}
 
 # Tutorial de Introdução
-{: #gettingstartedtemplate}
+{: #getting-started-tutorial}
 
 O {{site.data.keyword.mobilefoundation_long}} expede a configuração de um ambiente do {{site.data.keyword.mfp_full}} por meio do qual é possível desenvolver, testar e executar apps móveis corporativos. O {{site.data.keyword.mobilefoundation_short}} oferece os diferentes planos de serviços a seguir: Developer, Professional Per Device e Professional 1 Application.
 {: shortdesc}
 
-Usando o plano Professional 1 Application, um único aplicativo construído em qualquer um dos sistemas operacionais suportados pode ser gerenciado. Os sistemas operacionais suportados são Android, iOS, Windows ou web móvel. O plano do Desenvolvedor é mais adequado para desenvolvimento e teste. É possível revisar todos os planos disponíveis [aqui](https://console.bluemix.net/catalog/services/mobile-foundation).
+Usando o plano Professional 1 Application, um único aplicativo construído em qualquer um dos sistemas operacionais suportados pode ser gerenciado. Os sistemas operacionais suportados são Android, iOS, Windows ou web móvel. O plano do Desenvolvedor é mais adequado para desenvolvimento e teste. É possível revisar todos os planos disponíveis [aqui](https://cloud.ibm.com/catalog/services/mobile-foundation).
 
 Este tutorial de introdução permite criar uma instância de serviço do {{site.data.keyword.mobilefoundation_short}} usando um dos planos suportados. É possível, então, registrar um aplicativo. Faça download e edite o aplicativo registrado, implemente um adaptador e, finalmente, teste o aplicativo.
 
 ## Antes de iniciar
-{: #prereqs}
+{: #prereqs-gs}
 
 Você precisará de uma conta do {{site.data.keyword.Bluemix}} e de uma instância do serviço {{site.data.keyword.mobilefoundation_short}}.
 
 ## Etapa 1: criar uma instância do serviço do {{site.data.keyword.mobilefoundation_short}}
 {: #step1create}
 
-1. No **catálogo** do {{site.data.keyword.Bluemix_notm}}, selecione [**{{site.data.keyword.mobilefoundation_short}}**](https://{domainName}/catalog/services/mobile-foundation). A tela de configuração de
+1. No catálogo do {{site.data.keyword.Bluemix_notm}} ****, selecione [**{{site.data.keyword.mobilefoundation_short}}**](https://cloud.ibm.com/catalog/services/mobile-foundation). A tela de configuração de
 serviço é aberta.
 2. Dê à sua instância de serviço um nome ou use o nome predefinido.
 3. Escolha a região, a organização e o espaço em que você gostaria de criar a instância de serviço.
@@ -91,7 +91,7 @@ no ícone **Mostrar senha** para visualizá-lo.
 
       +	Clique em **Ativar console** para abrir o {{site.data.keyword.mfp_oc_short_notm}}.      
 
-      Para criar uma instância de servidor do {{site.data.keyword.mobilefirst_notm}} com configuração avançada para topologia, segurança e outra configuração do servidor, clique em **Iniciar servidor com configuração avançada**. Consulte [Instalando a configuração avançada](c_using_mfs_p5.html#using_mfs_advanced_p5), para obter mais informações.
+      Para criar uma instância de servidor do {{site.data.keyword.mobilefirst_notm}} com configuração avançada para topologia, segurança e outra configuração do servidor, clique em **Iniciar servidor com configuração avançada**. Consulte [Instalando a configuração avançada](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5), para obter mais informações.
       {: tip}
 
 ### Para {{site.data.keyword.mobilefoundation_short}}: plano Aplicativo 1 do profissional
@@ -134,7 +134,7 @@ no ícone **Mostrar senha** para visualizá-lo.
 
       +  Clique em **Ativar console** para abrir o {{site.data.keyword.mfp_oc_short_notm}}.  
 
-      Para criar uma instância de servidor do {{site.data.keyword.mobilefirst_notm}} com configuração avançada para topologia, segurança e outra configuração do servidor, clique em **Iniciar servidor com configuração avançada**. Consulte [Instalando a configuração avançada](c_using_mfs_p2.html#using_mfs_advanced_p2), para obter mais informações.
+      Para criar uma instância de servidor do {{site.data.keyword.mobilefirst_notm}} com configuração avançada para topologia, segurança e outra configuração do servidor, clique em **Iniciar servidor com configuração avançada**. Consulte [Instalando a configuração avançada](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2), para obter mais informações.
       {: tip}
 
 Acesse [Usando o serviço do Mobile Foundation para configurar o MobileFirst Server ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window} para saber mais sobre a introdução ao {{site.data.keyword.mobilefoundation_short}}.
@@ -252,17 +252,8 @@ Depois de criar e iniciar a instância do servidor Mobile Foundation, é possív
 
 
 ## Próximas etapas
-{: #nextsteps}
+{: #nextsteps-gs}
 
 É possível seguir os [Tutoriais de iniciação rápida![Ícone de link externo](../../icons/launch-glyph.svg "Tutoriais de iniciação rápida")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} para trabalhar com mais aplicativos de amostra e explorar o funcionamento do {{site.data.keyword.mobilefoundation_short}}.
 
 A Iniciação rápida tem tutoriais explicando o trabalho de apps {{site.data.keyword.mobilefoundation_short}} para iOS, Android, Web, Cordova, Windows, React Native, Ionic e Xamarin.
-
-# Links relacionados
-{: #rellinks  notoc}
-
-## Links relacionados
-{: #general notoc}
-
-*	[Documentação do produto IBM MobileFirst Platform Foundation V8.0.0![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}
-*	[IBM MobileFirst Platform Developer Center![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://mobilefirstplatform.ibmcloud.com){: new_window}

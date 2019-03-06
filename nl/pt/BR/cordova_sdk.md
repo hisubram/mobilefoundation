@@ -2,12 +2,12 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-26"
+lastupdated:  "2019-02-11"
 
 ---
 
-##	SDKs Cordova e Ionic
-{: #cordova_ionic_sdk}
+#	SDK do Cordova e do Ionic
+{: #cordova_ionic_sdk_api}
 
 Faça download dos SDKs Cordova por meio do npm.
 

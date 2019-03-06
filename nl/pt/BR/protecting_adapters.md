@@ -24,9 +24,6 @@ lastupdated: "2018-11-19"
 # Protegendo adaptadores
 {: #protecting_adapters}
 
-## Protegendo recursos do adaptador
-{: #protecting_adapters_resources}
-
 Em seu adaptador, é possível especificar o escopo de proteção para um método Java ou procedimento de recurso JavaScript ou para uma classe de recursos Java inteira, conforme descrito nas seções [Java](#protect-java-adapter-resources) e [JavaScript](#protect-javascript-adapter-resources) a seguir. Um escopo é definido como uma sequência de um ou mais elementos de escopo separados por espaço (“scopeElement1 scopeElement2 …”) ou nulo para aplicar o escopo padrão.
 
 O escopo padrão do MobileFirst é `RegisteredClient`, que requer um token de acesso para acessar o recurso e verifica se a solicitação de recurso é de um aplicativo que está registrado com o MobileFirst Server. Essa proteção é sempre aplicada, a menos que você [desative a proteção de recurso](#disabling-resource-protection). Portanto, mesmo se você não configurar um escopo para seu recurso, ele ainda estará protegido.
@@ -95,8 +92,8 @@ O código a seguir protege um procedimento `userName` com um escopo que contém 
 ```
 {: codeblock}
 
-## Desativando a proteção de recurso
-{: #disabling-resource-protection}
+## Desativando a proteção de recurso de adaptador
+{: #disabling-adapter-resource-protection}
 
 É possível desativar a [proteção de recurso padrão do MobileFirst](#protecting_adapters_resources) de um recurso de adaptador Java ou JavaScript específico ou de uma classe Java inteira, conforme descrito nas seções Java e JavaScript a seguir. Quando a proteção de recurso está desativada, a estrutura de segurança do MobileFirst não requer que um token acesse o recurso.
 

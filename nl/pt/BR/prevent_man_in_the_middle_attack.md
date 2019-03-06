@@ -183,4 +183,4 @@ O método de fixação de certificado retorna uma promessa:
 
 Posteriormente, se uma solicitação segura for feita para um servidor cujo certificado não estiver fixado, o retorno de chamada ``onFailure`` da solicitação específica (por exemplo, ``obtainAccessToken`` ou ``WLResourceRequest``) será chamado.
 
->Saiba mais sobre o método de API de fixação de certificado na [Referência de API](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/).
+>Saiba mais sobre o método de API de fixação de certificado na [Referência de API](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks).

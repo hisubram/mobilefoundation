@@ -15,7 +15,6 @@ lastupdated:  "2018-11-19"
 #	Utilitários de segurança
 {: #security_utilities}
 
-## Visão geral
 A API do lado do cliente do Mobile Foundation fornece alguns utilitários de segurança para ajudar a proteger os dados de seu usuário. Recursos como o JSONStore são ótimos se você deseja proteger objetos JSON. No entanto, não é sugerido armazenar blobs binários em uma coleção JSONStore.
 
 Em vez disso, armazene dados binários no sistema de arquivos e armazene os caminhos de arquivo e outros metadados dentro de uma coleção JSONStore. Se desejar proteger arquivos como imagens, será possível codificá-los como sequências base64, criptografá-los e gravar a saída no disco. Para decriptografar os dados, é possível consultar os metadados em uma coleção do JSONStore. Leia os dados criptografados no disco e decriptografe-os usando os metadados que foram armazenados. Esses metadados podem incluir a chave, o salt, o Vetor de inicialização (IV), o tipo de arquivo, o caminho para o arquivo e outros.
@@ -36,24 +35,23 @@ Em um alto nível, a API SecurityUtils fornece as APIs a seguir:
 ## Instalar
 Assegure-se de importar os arquivos a seguir para usar as APIs de utilitários de segurança do JSONStore.
 
-### iOS
+### Configurar o iOS
 
 ```objc
 #import "WLSecurityUtils.h"
 ```
 
-### Android
+### Configurar o Android
 
 ```java
 import com.worklight.wlclient.api.SecurityUtils
 ```
 
-### JavaScript
+### Configurar o JavaScript
 Nenhuma configuração é necessária.
 
-## Exemplos
-### iOS
-#### Criptografia e decriptografia
+## Exemplos para o iOS
+### Criptografia e decriptografia no iOS
 
 ```objc
 // User provided password, hardcoded only for simplicity.
@@ -87,7 +85,7 @@ NSString* decryptedString = [WLSecurityUtils decryptWithKey:key
 ```
 {: codeblock}
 
-#### Codificar e decodificar base64
+### Codifique e decodifique base64 no iOS
 
 ```objc
 // Input string.
@@ -102,7 +100,7 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-#### Obter aleatório remoto
+### Obtenha aleatório remoto no iOS
 
 ```objc
 [WLSecurityUtils getRandomStringFromServerWithBytes:32
@@ -117,8 +115,8 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-### Android
-#### Criptografia e decriptografia
+## Exemplos para o Android
+### Criptografia e decriptografia no Android
 
 ```java
 String password = "HelloPassword";
@@ -136,7 +134,7 @@ String decipheredText = SecurityUtils.decrypt(key, encryptedObject);
 ```
 {: codeblock}
 
-#### Codificar e decodificar base64
+### Codifique e decodifique base64 no Android
 
 ```java
 import android.util.Base64;
@@ -153,7 +151,7 @@ String decodedText = new String(base64Decoded, "UTF-8");
 ```
 {: codeblock}
 
-#### Obter aleatório remoto
+### Obtenha aleatório remoto no Android
 
 ```java
 Context context; // This is the current Activity's context.
@@ -175,7 +173,7 @@ SecurityUtils.getRandomStringFromServer(byteLength, context, listener);
 ```
 {: codeblock}
 
-#### Obter aleatório local
+### Obtenha aleatório local no Android
 
 ```java
 int byteLength = 32;
@@ -183,8 +181,8 @@ String randomString = SecurityUtils.getRandomString(byteLength);
 ```
 {: codeblock}
 
-### JavaScript
-#### Criptografia e decriptografia
+## Exemplos para o JavaScript
+### Criptografia e decriptografia em JavaScript
 
 ```javascript
 // Keep the key in a variable so that it can be passed to the encrypt and decrypt API.
@@ -232,7 +230,7 @@ WL.SecurityUtils.keygen({
 ```
 {: codeblock}
 
-#### Codificar e decodificar base64
+### Codifique e decodifique base64 no JavaScript
 
 ```javascript
 WL.SecurityUtils.base64Encode('Hello World!')
@@ -248,7 +246,7 @@ WL.SecurityUtils.base64Encode('Hello World!')
 ```
 {: codeblock}
 
-#### Obter aleatório remoto
+### Obtenha aleatório remoto no JavaScript
 
 ```javascript
 WL.SecurityUtils.remoteRandomString(32)
@@ -261,7 +259,7 @@ WL.SecurityUtils.remoteRandomString(32)
 ```
 {: codeblock}
 
-#### Obter aleatório local
+### Obtenha aleatório local no JavaScript
 
 ```javascript
 WL.SecurityUtils.localRandomString(32)

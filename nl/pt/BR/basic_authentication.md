@@ -41,7 +41,7 @@ Os desenvolvedores de aplicativos protegem o acesso a seus recursos definindo o 
 
 Um token de acesso do MobileFirst é uma entidade assinada digitalmente que descreve as permissões de autorização de um cliente. Depois que a solicitação de autorização do cliente para um escopo específico é concedida e o cliente é autenticado, o terminal de token do servidor de autorizações envia ao cliente uma resposta HTTP que contém o token de acesso solicitado.
 
-#### Estrutura
+#### Estrutura de token de acesso
 
 O token de acesso do MobileFirst contém as informações a seguir:
 
@@ -116,7 +116,7 @@ Token de Atualização MobileFirst
 
 Um token de atualização do MobileFirst é uma entidade assinada digitalmente, como o token de acesso que descreve as permissões de autorização de um cliente. O token de atualização pode ser usado para obter um novo token de acesso do mesmo escopo. Depois que a solicitação de autorização do cliente para um escopo específico é concedida e o cliente é autenticado, o terminal de token do servidor de autorizações envia ao cliente uma resposta HTTP que contém o token de acesso e o token de atualização solicitados. Quando o token de acesso expira, o cliente envia o token de atualização para o terminal de token do servidor de autorizações para obter um novo conjunto de tokens de acesso e de atualização.
 
-#### Estrutura
+#### Estrutura de token de atualização
 
 Semelhante ao token de acesso do MobileFirst, o token de atualização do MobileFirst contém as informações a seguir:
 
@@ -200,8 +200,8 @@ As verificações de segurança predefinidas a seguir estão disponíveis:
 * Conexão única baseada em LTPA (SSO)
 * Direct Update
 
-#### Manipuladores de Desafio
-{: #challengehandlers}
+#### Entidade do Challenge Handler
+{: #challengehandler_entity}
 
 Ao tentar acessar um recurso protegido, o cliente pode ser confrontado com um desafio. Um desafio é uma pergunta, um teste de segurança, um prompt do servidor para se certificar de que o cliente tenha permissão para acessar esse recurso. Mais comumente, esse desafio é uma solicitação para credenciais, como um nome de usuário e uma senha.
 
@@ -298,15 +298,15 @@ Também é possível editar manualmente o arquivo JSON de configuração do apli
 #### Protegendo recursos do adaptador
 {: #protectadapterres}
 
-Em seu adaptador, é possível especificar o escopo de proteção para um método Java, um procedimento de recurso JavaScript ou para uma classe de recurso Java inteira. Um escopo é definido como uma sequência de um ou mais elementos de escopo separados por espaço (“scopeElement1 scopeElement2 …”) ou nulo para aplicar o escopo padrão. Para obter mais detalhes sobre como proteger recursos do adaptador, consulte [Protegendo adaptadores](https://console.bluemix.net/docs/services/mobilefoundation/protecting_adapters.html).
+Em seu adaptador, é possível especificar o escopo de proteção para um método Java, um procedimento de recurso JavaScript ou para uma classe de recurso Java inteira. Um escopo é definido como uma sequência de um ou mais elementos de escopo separados por espaço (“scopeElement1 scopeElement2 …”) ou nulo para aplicar o escopo padrão. Para obter mais detalhes sobre como proteger recursos do adaptador, consulte [Protegendo adaptadores](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
 
 ### Desativando a proteção de recurso
 {: #disablingresprotection}
 
 É possível desativar a proteção de recurso padrão do MobileFirst de um recurso de adaptador Java ou JavaScript específico ou de uma classe Java inteira, conforme descrito nas seções Java e JavaScript a seguir. Quando a proteção de recurso está desativada, a estrutura de segurança do MobileFirst não requer que um token acesse o recurso.
 
-#### Desativando a proteção de recurso Java
-{: #disablejavaresprotection}
+#### Desativando a proteção de OAuth de recurso de Java
+{: #disablejavaresoauthprotection}
 
 Para desativar completamente a proteção de OAuth para um método ou classe de recurso Java, inclua a anotação `@OAuthSecurity` na declaração do recurso ou da classe e configure o valor do elemento `enabled` como `false`:
 
@@ -336,8 +336,8 @@ O código a seguir desativa a proteção de recurso para uma classe `MyUnprotect
     }
 ```
 
-#### Desativando a proteção de recurso JavaScript
-{: #diablejavascriptresprotection}
+#### Desativando a proteção de OAuth de recurso do Javascript
+{: #disablejavascriptresoauthprotection}
 
 Para desativar completamente a proteção de OAuth para um recurso de adaptador JavaScript (procedimento), no arquivo **adapter.xml**, configure o atributo `secured` do elemento <procedure> como `false`:
 
@@ -355,8 +355,8 @@ O código a seguir desativa a proteção de recurso de um procedimento `userName
 <procedure name="userName" secured="false">
 ```
 
-### Recursos desprotegidos
-{: #unprotectedresources}
+### Definindo recursos desprotegidos
+{: #defunprotectedresources}
 
 Um recurso desprotegido é um recurso que não requer um token de acesso. A estrutura de segurança do MobileFirst não gerencia o acesso a recursos desprotegidos e não valida nem verifica a identidade de clientes que acessam esses recursos. Portanto, recursos, como Atualização direta, bloqueio de acesso ao dispositivo ou desativação remota de um aplicativo, não são suportados para recursos desprotegidos.
 

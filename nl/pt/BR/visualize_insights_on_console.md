@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-22"
+lastupdated: "2019-02-01"
 
 ---
 
@@ -17,141 +17,58 @@ lastupdated: "2018-11-22"
 # Visualizar insights no console
 {: #visualize_insights_on_console}
 
-No MobileFirst Analytics Console, é possível visualizar e configurar os relatórios do Analytics, gerenciar alertas e visualizar logs do cliente. Ative o Console de analítica por meio do Mobile Foundation Operations Console, clicando no **Console de analítica** na navegação esquerda.
+Para visualizar insights dos dados de analítica capturados e enviados de seu aplicativo, deve-se iniciar o console do Mobile Analytics clicando na opção **Console de analítica** da navegação à esquerda do console do Mobile Foundation Operations.
 
-O Console de analítica é ativado e o painel padrão aparece. Se um aplicativo cliente já enviou logs e dados de analítica para o servidor, os relatórios relevantes serão criados e exibidos. No painel, é possível revisar os dados de analítica que são coletados. Esses dados de analítica podem estar relacionados a travamentos do aplicativo, sessões do aplicativo e tempo de processamento do servidor. Além disso, é possível criar gráficos customizados e gerenciar alertas.
+O Mobile Analytics Console pode ser executado em dois modos:
+  - **Modo Demo LIGADO** que é puramente para propósitos de demonstração mostrando as diferentes visualizações de analítica (gráficos e tabelas) usando feeds de dados simulados.
+  - **Modo Demo DESLIGADO** que mostra as várias visualizações de analítica com base nos feeds de dados em tempo real provenientes de seus aplicativos [instrumentados para o Mobile Analytics](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app).
+  
+Todas as visualizações de analítica podem ser removidas aplicando filtros em torno do *nome do aplicativo*, *versão*, *S.O. do dispositivo* e *período de tempo*, permitindo, assim, que você obtenha insights por meio de diferentes perspectivas.
 
-Além de uma visualização de visão rápida de sua analítica móvel, o recurso de analítica inclui a capacidade de executar uma procura bruta com relação aos logs do cliente, dados de travamento do cliente capturados e quaisquer dados extras que você fornecer explicitamente por meio de chamadas de função da API do cliente que se alimentam no Mobile Analytics.
+Para visualizar insights para o seu aplicativo, assegure-se de que:
+  - O seu aplicativo esteja instrumentado de forma apropriada para capturar e enviar os dados de analítica relevantes para o serviço do Mobile Analytics.
+  - Você desligou o modo Demo no console do Analytics
+  - Você aplica os filtros corretos. Por exemplo, assegure-se de selecionar um período de tempo em que o seu aplicativo tenha sido implementado no campo e esteja ativo com usuários.
 
-## Monitorando dados do aplicativo
-{: #monitoring_app_data}
+O console do Mobile Analytics fornece diferentes tipos de análise de seu uso de aplicativo móvel e desempenho, conforme categorizado na área de janela de navegação esquerda do console do Analytics. As seções a seguir detalham as diferentes visualizações de analítica: 
 
-O Mobile Analytics fornece monitoramento e analítica para seus aplicativos móveis. É possível registrar logs de aplicativo e monitorar dados com o SDK do Mobile Analytics Client. Os desenvolvedores podem controlar quando enviar esses dados para o Mobile Analytics Service. Quando os dados são entregues para o Mobile Analytics, é possível usar o console do Mobile Analytics para obter insights analíticos sobre seus aplicativos móveis, dispositivos e logs de aplicativo.
 
-Alguns dos insights que podem ser derivados:
-
-**Métricas predefinidas**
-
-Com as métricas predefinidas, é possível responder perguntas como:
-* Quantos novos usuários eu tenho?
-* Quantas pessoas estão usando ativamente meu aplicativo?
-* Com que frequência as pessoas estão usando meu aplicativo?
-* Que hora do dia as pessoas estão usando meu aplicativo?
-* Quais modelos de dispositivo meus usuários preferem?
-* Quando deverei descontinuar o suporte para sistemas operacionais legados?
-* Quais aplicativos estão tendo problemas de desempenho?
-
-**Eventos customizados**
-
-Incluindo seus próprios eventos customizados, é possível responder perguntas como:
-* Quais recursos são mais e menos usados?
-* Onde os usuários estão entrando e saindo do meu app?
-* Quais atividades os usuários estão visualizando mais?
-* Os usuários estão concluindo fluxos de trabalho no app (por exemplo, funis de conversão)?
-
-## Relatórios que podem ser visualizados: usuários
+## Usuários
 {: #reports_visualized_users}
+Esta visualização o ajuda a obter insigts sobre 'Padrões de migração do usuário', como o número de usuários ativos que usaram o app dentro de um intervalo de data especificado e uma comparação do número de novos usuários versus usuários existentes que retornam para usar o seu app.
+Os gráficos nesta visualização podem ser filtrados no *nome do app*, no *sistema operacional* ou na *versão do sistema operacional*.
 
-Esse relatório exibe um gráfico mostrando o número de usuários ativos que usaram o app dentro de um intervalo de data especificado. O relatório também mostra o número de novos usuários que são usuários exclusivos que estão usando o app pela primeira vez para o intervalo de data especificado.
-Os gráficos podem ser filtrados pelo nome do app, pelo sistema operacional ou pelas versões do sistema operacional.
-
-## Relatórios que podem ser visualizados: sessões
+## Sessões
 {: #reports_visualized_sessions}
+Esta visualização o ajuda a obter insights sobre os 'Padrões de uso' de seu aplicativo em termos de *Sessões do app* para o intervalo de data especificado. Uma sessão é registrada quando um app é trazido para o primeiro plano de um dispositivo.  Você obterá insights sobre as horas do dia em que o seu aplicativo é mais e menos usado e isso poderá levar a insights úteis sobre os seus negócios. Os gráficos nesta visualização podem ser filtrados no *nome do app*, no *sistema operacional* ou na *versão do sistema operacional*.
 
-Esse relatório exibe um gráfico mostrando Sessões de app para o intervalo de data especificado. Uma sessão é registrada quando um app é trazido para o primeiro plano de um dispositivo. Os gráficos podem ser filtrados pelo nome do app, pelo sistema operacional ou pelas versões do sistema operacional.
-
-## Relatórios que podem ser visualizados: solicitações de rede
+## Solicitações de rede
 {: #reports_visualized_network_requests}
+Esta visualização o ajuda a obter insights sobre a experiência de seu aplicativo, pois ele faz chamadas de API para os sistemas back-end. Esta visualização tem tabelas e gráficos que fornecem uma visão geral sobre quais são as funções mais usadas de seus sistemas back-end e qual tem sido o seu tempo de resposta e estabilidade e se é necessário considerar o rebalanceamento de seus sistemas de suporte de back-end.
 
-Visualize os dados da solicitação de rede para seus aplicativos no console do Mobile Analytics.
+Esta visualização contém gráficos que plotam com relação a um determinado intervalo de dados o Tempo Médio de RoundTrip de chamadas de API de saída de seu aplicativo, o número de solicitações feitas por chamada de API, o número de solicitações bem-sucedidas versus as que falharam agrupadas pelos códigos de resposta. Os gráficos nesta visualização podem ser filtrados no nome do app, no sistema operacional ou nas versões do sistema operacional.
 
-Os dados estão disponíveis para as medidas a seguir:
-
-**Tempo de roundtrip** - define o período de tempo, medido em milissegundos, que leva para que seu app faça solicitações de rede.
-**Contagem de solicitações** - exibe com que frequência um app faz solicitações de rede. Os dados também são exibidos como uma média.
-Os gráficos podem ser filtrados pelo nome do app, pelo sistema operacional ou pelas versões do sistema operacional.
-
-## Relatórios que podem ser visualizados: travamentos
+## Travamentos
 {: #reports_visualized_crashes}
+Esta visualização o ajuda com insights sobre quão estável o seu aplicativo esteve durante um período de tempo selecionado e o ajuda a decidir se o design/a implementação de seu aplicativo devem ser corrigidos. Ela fornece gráficos que contrastam o número de travamentos com relação ao número total de usos e a taxa de travamento geral. Os gráficos nesta visualização podem ser filtrados no *nome do app*, no *sistema operacional* ou na *versão do sistema operacional*.
 
-É possível visualizar informações sobre seus travamentos de aplicativo no console do Mobile Analytics para monitorar melhor e solucionar problemas de seus aplicativos.
 
-Na página Travamentos, a tabela **Visão geral de travamento** mostra as colunas de dados a seguir:
-
-**Aplicativo**: nome do aplicativo<br/>
-**Travamentos**: o número total de travamentos para esse app<br/>
-**Total de usos**: o número total de vezes que um usuário abre e fecha esse app<br/>
-**Taxa de travamento**: porcentagem de travamentos por uso<br/>
-É possível ver rapidamente as informações sobre seus travamentos de aplicativo na tabela Travamentos. O gráfico de barras Travamentos mostra um histograma de travamentos ao longo do tempo.<br/>
-
-É possível exibir dados de travamento de duas maneiras:
-
-1.  Exibir taxa de travamento: taxa de travamento ao longo do tempo
-2.  Exibir total de travamentos: total de travamentos ao longo do tempo
-
-## Relatórios que podem ser visualizados: resolução de problemas
+## Resolução de problemas
 {: #reports_visualized_troubleshooting}
+Esta visualização fornece todas as informações necessárias que um desenvolvedor de aplicativos pode precisar para solucionar problemas de um aplicativo. Esta visualização fornece uma análise mais detalhada dos travamentos do seu aplicativo em termos dos dispositivos afetados, o S.O. do host, o tempo específico do travamento, o rastreio de pilha no momento do travamento e também os logs de travamento que podem ser transferidos por download para obter uma análise mais detalhada.  
 
-A página **Resolução de problemas** no console do Mobile Analytics oferece uma visualização granular de seus travamentos de app, usando a tabela **Resumo de travamentos**.
-
-A tabela **Resumo de travamento** é classificável e inclui as colunas de dados a seguir:
-
-* Travamentos
-* Dispositivos
-* Último travamento
-* Aplicativo
-* OS
-* Mensagem
-
-Clique no ícone + próximo a qualquer entrada para exibir a
-tabela
-**Detalhes do travamento**, que inclui as
-colunas a seguir:
-
-* Horário do travamento
-* Versão de Aplicativo
-* Versão do Sistema Operacional
-* Modelo de dispositivo
-* ID do dispositivo
-* Download: link para fazer download dos logs que levaram ao travamento
-
-Expanda qualquer entrada na tabela **Detalhes do travamento** para obter mais detalhes, incluindo um rastreio de pilha.
-
-Os dados para a tabela **Resumo de travamento** são preenchidos consultando os logs do app de nível fatal. Se seu aplicativo não coletar logs de aplicativo fatais, nenhum dado estará disponível.
+Os logs de travamento são reunidos procurando os logs do app que foram registrados no nível FATAL. O SDK do Analytics Client para Android e iOS nativo manipula exceções não capturadas e registra detalhes sobre eles como mensagens de log de nível FATAL. No entanto, no caso do Cordova, quaisquer travamentos na camada do JavaScript precisam ser manipulados pelo desenvolvedor e os logs de travamento enviados para o serviço do Mobile Analytics a serem visualizados e analisados no console do Mobile Analytics.
 {: note}
 
 
-## Relatórios que podem ser visualizados: feedback do usuário
+## Feedback do usuário
 {: #reports_visualized_userfeedback}
+Esta visualização fornece insights sobre a experiência interativa real dos seus usuários enquanto eles usam o app e sobre como eles se sentem em relação a isso.
 
-O Feedback do usuário fornece análise de feedback no app usando o Mobile Analytics.
-Com esse recurso do Mobile Analytics -
-* Os **Usuários e testadores** podem registrar e enviar feedback e relatórios de erros por meio do aplicativo, à medida que eles executam e usam o aplicativo.
-* Os **Proprietários do app** obtêm um sentido mais profundo da experiência do usuário do aplicativo com esse feedback do usuário rico em contexto.
-* Os **Desenvolvedores** recebem contextos de aplicativos precisos para diagnosticar e corrigir erros ou diferenças de recursos.
+* **Proprietários de app** podem obter uma visualização detalhada e detalhada de contexto de erros e outros feedbacks enviados por **Usuários e testadores** conforme registrado ao executar o aplicativo
+* **Desenvolvedores** podem receber contextos de aplicativos precisos para diagnosticar e corrigir erros ou diferenças de recurso.
+* **Proprietários de app** e **Desenvolvedores** podem usar esta visualização para também gerenciar ações no feedback recebido, como gravação de comentários ou links para problemas criados em sistemas de rastreamento de erro. Um status de revisão geral também pode ser configurado para cada feedback para ajudar a resumir as ações tomadas no feedback do usuário.
 
-### Ativando o feedback do usuário
-{: #enable_user_feedback}
-
-Conclua as etapas a seguir para ativar seu aplicativo móvel para capturar o feedback do usuário.
-
-#### Instrumente seu app
-{: #instrument_app}
-
-* Instrumente seu app móvel para entrar no modo de feedback. Chame a API `Analytics.triggerFeedbackMode();` para chamar o modo de feedback. <!--For more information, refer to the documentation [here](instrument_an_app.html)-->.
-* A API pode ser chamada em qualquer evento de aplicativo, tais como botões, ações de menu ou gestos.
-
-#### Receber feedback do usuário
-{: #receive_feedback}
-
-* Os usuários e testadores de seu app podem alternar sobre o modo de feedback acionando a ação do aplicativo que é instrumentada para feedback.
-* De dentro do modo de feedback, o feedback contextual rico juntamente com uma captura de tela pode ser reunido e enviado para o Mobile Analytics.
-
-#### Analisar o feedback do usuário
-{: #analyze_feedback}
-
-* O Mobile Analytics recebe e consolida o feedback contextual rico enviado de aplicativos remotos.
-* Efetue logon no console do Mobile Analytics e selecione a opção **Feedback do usuário** para visualizar o feedback.
-* Um proprietário do app pode revisar o feedback, incluir comentários e identificar o feedback com um status de revisão. Os comentários podem geralmente ser ações planejadas, como links para problemas de Git que são criados para trabalhar no feedback, ou os comentários podem ser uma instrução que justifique o motivo pelo qual nenhuma ação é necessária no feedback.
-* O status de revisão pode ser usado para gerenciar eficientemente o feedback, categorizando-o sob uma das diferentes opções de status de revisão.
+## Gráficos customizados
+Esta visualização estende o Mobile Analytics para casos customizados em que os **Proprietários de app** e **Desenvolvedores** gostariam de construir a sua própria analítica específica do aplicativo. Usando esse recurso, é possível construir as suas próprias visualizações de analítica (gráficos, tabelas etc.) ao redor de dados de analítica padrão que são capturados pelo Client SDK e também dados customizados ou dados específicos do aplicativo que são registrados. Consulte [aqui](/docs/services/mobilefoundation?topic=mobilefoundation-build_custom_charts#build_custom_charts) para obter mais informações sobre esse recurso de analítica estendido.
 

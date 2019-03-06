@@ -13,8 +13,8 @@ lastupdated: "2018-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Resolução de problemas
-{: #troubleshooting}
+# Resolução de problemas gerais
+{: #general-troubleshooting}
 
 Para isolar e resolver problemas com os seus produtos do {{site.data.keyword.IBM_notm}}, é possível usar as informações de resolução de problemas. Essas informações contêm instruções para usar os recursos de determinação de problemas que são fornecidos com os seus produtos do {{site.data.keyword.IBM_notm}}, incluindo o {{site.data.keyword.mobilefoundation_short}}.
 {: shortdesc}
@@ -110,4 +110,7 @@ Se você tiver questões técnicas sobre o desenvolvimento ou implementação de
 
 Para questões sobre o serviço e instruções de introdução, use o fórum [IBM developerWorks dW Answers ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window}. Inclua as marcações `bluemix` e `mobilefirst`.
 
-Para obter informações sobre abrir um chamado de suporte IBM ou sobre níveis de suporte e severidades de chamado, consulte [Entrando em contato com o suporte![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://console.bluemix.net/docs/get-support/getstarttssup.html#typesofsupport  ){: new_window}.
+Para obter informações sobre como abrir um chamado de suporte
+IBM ou sobre os níveis de suporte e severidades de chamado, consulte
+[Entrando
+em contato com o suporte](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.
