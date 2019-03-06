@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2019-01-14"
 이 튜토리얼에서는 Secure Gateway 서비스를 사용하여 IBM Cloud에서 실행 중인 Mobile Foundation 어댑터에서 온프레미스 데이터 센터의 HTTP 엔드포인트에 액세스하는 방법을 설명합니다.
 
 ## 전제조건
-{: #prereq}
+{: #prereq_int_sec_gw}
 
 이 튜토리얼을 완료하려면 SOR(System of Record) 데이터를 노출하는 엔터프라이즈 방화벽 내에 HTTP 엔드포인트가 있어야 합니다. 또는 [이 샘플 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/MobileFirst-Platform-Developer-Center/MFPSecureGatewayIonic/tree/master/NodeJSHTTPProject) `Node.js` 프로젝트를 사용하여 로컬 환경에 테스트 엔드포인트를 작성하십시오.
 
@@ -41,8 +41,8 @@ node app.js
 
 ![아키텍처 다이어그램](images/SecureGatewayArchi.png)
 
-## 통합 구현
-{: #implementing_integration}
+## Secure Gateway 통합 구현
+{: #implementing_sg_integration}
 
 ### Secure Gateway 서비스 인스턴스 작성
 IBM Cloud에 로그인하여 [ Secure Gateway 서비스](https://cloud.ibm.com/catalog/services/secure-gateway/)의 인스턴스를 작성하십시오. 
@@ -68,7 +68,7 @@ Secure Gateway 서비스 대시보드에서 **게이트웨이 추가**를 클릭
 
 선택한 클라이언트를 사용하고 온프레미스 환경에서 Secure Gateway 클라이언트를 실행할 수 있습니다. Secure Gateway 클라이언트를 설정하는 단계는 Secure Gateway 콘솔에서 사용할 수 있습니다.
 
-이 튜토리얼에서는 Docker 컨테이너 옵션을 사용하여 Secure Gateway 클라이언트를 실행합니다.
+이 튜토리얼에서는 Docker 컨테이너 옵션을 사용하여 Secure Gateway 클라이언트를 실행합니다. 
 아래의 단계를 따르십시오.
 *   이미 설치되어 있지 않은 경우 온프레미스 시스템에 Docker를 설치하십시오.
 *   터미널을 시작하고 서비스 콘솔에 표시된 명령을 사용하여 컨테이너에서 Secure Gateway 클라이언트를 실행하십시오.
@@ -118,7 +118,7 @@ Mobile Foundation 서비스 콘솔에서 [Mobile Foundation 서버 ![외부 링�
 
 이 튜토리얼에서는 Mobile Foundation 어댑터를 사용하여 Secure Gateway 엔드포인트에 연결합니다. Mobile Foundation JavaHTTP 어댑터를 [다운로드 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://github.com/MobileFirst-Platform-Developer-Center/Adapters/tree/release80/JavaHTTP)하십시오.
 
-[mfpdev-cli](using_cli.html) 명령을 사용하여 Mobile Foundation Operations 콘솔에서 어댑터를 빌드하고 배치하십시오.
+[mfpdev-cli](/docs/services/mobilefoundation?topic=mobilefoundation-mobile_foundation_cli#mobile_foundation_cli) 명령을 사용하여 Mobile Foundation Operations 콘솔에서 어댑터를 빌드하고 배치하십시오.
 ```bash
 mfpdev adapter build 
 mfpdev adapter deploy
@@ -145,11 +145,11 @@ mfpdev adapter deploy
 
 ![앱에서 온프레미스 데이터 수신](images/AcmePublishersApp.gif)
 
-Secure Gateway 서비스에 여러 대상을 구성하고 엔드포인트의 각 클라우드 호스트에 연결하도록 Mobile Foundation 어댑터를 배치하여 여러 온프레미스 엔드포인트에 연결할 수 있습니다. HTTPS와 애플리케이션 측 보안을 통해 엔드포인트와 통신하도록 추가 보안을 사용하여 Secure Gateway 서비스도 구성할 수 있습니다. [여기에서 세부사항](https://cloud.ibm.com/docs/services/SecureGateway/index.html)을 찾을 수 있습니다.
+Secure Gateway 서비스에 여러 대상을 구성하고 엔드포인트의 각 클라우드 호스트에 연결하도록 Mobile Foundation 어댑터를 배치하여 여러 온프레미스 엔드포인트에 연결할 수 있습니다. HTTPS와 애플리케이션 측 보안을 통해 엔드포인트와 통신하도록 추가 보안을 사용하여 Secure Gateway 서비스도 구성할 수 있습니다. [여기에서 세부사항](/docs/services/SecureGateway?topic=securegateway-getting-started-with-sg#getting-started-with-sg)을 찾을 수 있습니다.
 
 
 ## 요약
-{: #summary}
+{: #summary_int_sec_gw}
 
 이 튜토리얼을 사용하면 Secure Gateway 서비스를 사용하여 IBM Cloud에서 실행 중인 Mobile Foundation 어댑터와 온프레미스 HTTP 엔드포인트 간에 보안 연결을 설정할 수 있어야 합니다.
 

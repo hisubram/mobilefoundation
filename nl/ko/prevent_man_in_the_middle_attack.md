@@ -72,7 +72,7 @@ IBM Mobile Foundation에서는 **인증서 고정**을 사용하도록 설정하
 ## 인증서 고정 API
 {: #certpinapi}
 
-인증서 고정은 과부화된 API 메소드 즉, 매개변수 ``certificateFilename``이 있는 하나의 메소드(``certificateFilename``은 인증서 파일 이름임)와 매개변수 ``certificateFilenames``가 있는 두 번째 메소드(``certificateFilenames``은 인증서 파일 이름의 배열임)로 구성됩니다. 
+인증서 고정은 과부화된 API 메소드 즉, 매개변수 ``certificateFilename``이 있는 하나의 메소드(``certificateFilename``은 인증서 파일 이름임)와 매개변수 ``certificateFilenames``가 있는 두 번째 메소드(``certificateFilenames``은 인증서 파일 이름의 배열임)로 구성됩니다.
 
 ### Android
 {: #certpinapiandroid}
@@ -183,4 +183,4 @@ WLClient.sharedInstance().pinTrustedCertificatePublicKey( fromFiles: arrayOfCert
 
 나중에 인증서가 고정되지 않은 서버로 보안된 요청이 작성되면 특정 요청(예: ``obtainAccessToken`` 또는 ``WLResourceRequest``)의 ``onFailure`` 콜백이 호출됩니다.
 
->[API 참조](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/)에서 인증서 고정 API 메소드에 관해 자세히 알아보십시오.
+>[API 참조](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks)에서 인증서 고정 API 메소드에 관해 자세히 알아보십시오.

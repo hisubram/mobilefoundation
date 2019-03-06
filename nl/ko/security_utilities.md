@@ -15,7 +15,6 @@ lastupdated:  "2018-11-19"
 #	보안 유틸리티
 {: #security_utilities}
 
-## 개요
 Mobile Foundation 클라이언트 측 API는 사용자의 데이터를 보호하는 데 도움이 되는 일부 보안 유틸리티를 제공합니다. JSON 오브젝트를 보호하려는 경우 JSONStore와 같은 기능이 매우 유용합니다. 그러나 JSONStore 콜렉션에 2진 BLOB을 저장하는 것은 권장되지 않습니다.
 
 대신 파일 시스템에 2진 데이터를 저장하고 파일 경로 및 기타 메타데이터를 JSONStore 콜렉션 내부에 저장하십시오. 이미지와 같은 파일을 보호하려면 base64 문자열로 인코딩하고 암호화한 후 디스크에 출력을 쓸 수 있습니다. 데이터를 복호화하기 위해 JSONStore 콜렉션에서 메타데이터를 찾을 수 있습니다. 디스크에서 암호화된 데이터를 읽은 후 저장된 메타데이터를 사용하여 이를 복호화하십시오. 이 메타데이터에는 키, salt, IV(Initialization Vector), 파일 유형, 파일 경로 등이 포함될 수 있습니다.
@@ -36,24 +35,23 @@ Mobile Foundation 클라이언트 측 API는 사용자의 데이터를 보호하
 ## 설정
 JSONStore 보안 유틸리티 API를 사용하려면 다음 파일을 가져와야 합니다.
 
-### iOS
+### iOS 설정
 
 ```objc
 #import "WLSecurityUtils.h"
 ```
 
-### Android
+### Android 설정
 
 ```java
 import com.worklight.wlclient.api.SecurityUtils
 ```
 
-### JavaScript
+### JavaScript 설정
 설정이 필요하지 않습니다.
 
-## 예제
-### iOS
-#### 암호화 및 복호화
+## iOS의 예
+### iOP의 암호화 및 복호화
 
 ```objc
 // User provided password, hardcoded only for simplicity.
@@ -87,7 +85,7 @@ NSString* decryptedString = [WLSecurityUtils decryptWithKey:key
 ```
 {: codeblock}
 
-#### base64로 인코딩 및 디코딩
+### iOS의 base64 인코딩 및 디코딩
 
 ```objc
 // Input string.
@@ -102,7 +100,7 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-#### 원격 랜덤 가져오기
+### iOS에서 원격 랜덤 가져오기
 
 ```objc
 [WLSecurityUtils getRandomStringFromServerWithBytes:32
@@ -117,8 +115,8 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-### Android
-#### 암호화 및 복호화
+## Android의 예
+### Android의 암호화 및 복호화
 
 ```java
 String password = "HelloPassword";
@@ -136,7 +134,7 @@ String decipheredText = SecurityUtils.decrypt(key, encryptedObject);
 ```
 {: codeblock}
 
-#### base64로 인코딩 및 디코딩
+### Android의 base64 인코딩 및 디코딩
 
 ```java
 import android.util.Base64;
@@ -153,7 +151,7 @@ String decodedText = new String(base64Decoded, "UTF-8");
 ```
 {: codeblock}
 
-#### 원격 랜덤 가져오기
+### Android에서 원격 랜덤 가져오기
 
 ```java
 Context context; // This is the current Activity's context.
@@ -176,7 +174,7 @@ SecurityUtils.getRandomStringFromServer(byteLength, context, listener);
 ```
 {: codeblock}
 
-#### 로컬 랜덤 가져오기
+### Android에서 로컬 랜덤 가져오기
 
 ```java
 int byteLength = 32;
@@ -184,8 +182,8 @@ String randomString = SecurityUtils.getRandomString(byteLength);
 ```
 {: codeblock}
 
-### JavaScript
-#### 암호화 및 복호화
+## JavaScript의 예
+### JavaScript의 암호화 및 복호화
 
 ```javascript
 // Keep the key in a variable so that it can be passed to the encrypt and decrypt API.
@@ -233,7 +231,7 @@ WL.SecurityUtils.keygen({
 ```
 {: codeblock}
 
-#### base64로 인코딩 및 디코딩
+### JavaScript의 base64 인코딩 및 디코딩
 
 ```javascript
 WL.SecurityUtils.base64Encode('Hello World!')
@@ -249,7 +247,7 @@ WL.SecurityUtils.base64Encode('Hello World!')
 ```
 {: codeblock}
 
-#### 원격 랜덤 가져오기
+### JavaScript에서 원격 랜덤 가져오기
 
 ```javascript
 WL.SecurityUtils.remoteRandomString(32)
@@ -262,7 +260,7 @@ WL.SecurityUtils.remoteRandomString(32)
 ```
 {: codeblock}
 
-#### 로컬 랜덤 가져오기
+### JavaScript에서 로컬 랜덤 가져오기
 
 ```javascript
 WL.SecurityUtils.localRandomString(32)

@@ -36,7 +36,7 @@ lastupdated:  "2018-11-16"
 
 > **참고:**
 >  * 사용자는 고유 수정사항 및 업데이트를 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에 적용할 수 없습니다.
->  * **재작성**을 클릭하는 경우 플랜에서 발생하는 동작의 차이점을 파악하려면 [Professional Per Device 플랜에서 서버 재작성](c_using_mfs_p5.html#recreate_mobilefoundation_p5) 및 [Professional 1 Application 플랜에서 서버 재작성](c_using_mfs_p2.html#recreate_mobilefoundation_p2)을 참조하십시오.
+>  * **재작성**을 클릭하는 경우 플랜에서 발생하는 동작의 차이점을 파악하려면 [Professional Per Device 플랜에서 서버 재작성](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#recreate_mobilefoundation_p5) 및 [Professional 1 Application 플랜에서 서버 재작성](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#recreate_mobilefoundation_p2)을 참조하십시오.
 >
 
 ## 내 {{site.data.keyword.mobilefoundation_short}} 서버 인스턴스에 대해 어떻게 사용자 정의 도메인을 구성합니까?

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2019-01-04"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,14 +14,14 @@ lastupdated:  "2019-01-04"
 {:pre: .pre}
 
 
-# JSONStore를 사용하는 오프라인 저장소
-{: #overview }
+# JSONStore
+{: #jsonstore }
 {{site.data.keyword.mobilefoundation_short}} **JSONStore**는 경량의 문서 중심 스토리지 시스템을 제공하는 선택적 클라이언트 측 API입니다. JSONStore는 **JSON 문서**의 지속적 스토리지를 사용으로 설정합니다. 애플리케이션에서 실행 중인 디바이스가 오프라인 상태인 경우에도 애플리케이션에 포함된 문서를 JSONStore에서 사용할 수 있습니다. 항상 사용 가능한 이 지속적 스토리지는 예를 들어 디바이스에 사용 가능한 네트워크 연결이 없는 경우 사용자에게 문서에 대한 액세스를 부여하는 데 유용할 수 있습니다.
 
 이 문서에서는 때때로 JSONStore를 설명하는 데 도움을 주기 위해 개발자에게 익숙한 관계형 데이터베이스 용어가 사용됩니다. 그러나 관계형 데이터베이스와 JSONStore 간에는 여러 차이점이 있습니다. 예를 들어, 관계형 데이터베이스에서 데이터를 저장하는 데 사용되는 엄격한 스키마는 JSONStore의 접근 방식과 다릅니다. JSONStore에서는 JSON 컨텐츠를 저장하고 검색해야 하는 컨텐츠의 색인을 작성할 수 있습니다.
 
 ## 주요 기능
-{: #key-features }
+{: #key-features-jsonstore }
 * 효율적인 검색을 위해 데이터 색인 작성
 * 저장된 데이터의 로컬로만 수행된 변경사항 추적에 사용되는 메커니즘
 * 다중 사용자에 대한 지원
@@ -30,7 +30,7 @@ lastupdated:  "2019-01-04"
 하나의 저장소에 여러 콜렉션이 있을 수 있으며, 각 콜렉션에는 여러 문서가 포함될 수 있습니다. 또한 다중 저장소로 구성된 MobileFirst 애플리케이션이 있을 수도 있습니다. 자세한 정보는 JSONStore 다중 사용자 지원을 참조하십시오.
 
 ## 지원 레벨
-{: #support-level }
+{: #support-level-jsonstore }
 * JSONStore는 네이티브 iOS 및 Android 애플리케이션에서 지원됩니다(네이티브 Windows(Universal 및 UWP)의 경우 지원되지 않음).
 * JSONStore는 Cordova iOS, Android 및 Windows(Universal 및 UWP) 애플리케이션에서 지원됩니다.
 
@@ -175,7 +175,7 @@ init(JavaScript) 또는 open(네이티브 iOS 및 네이티브 Android) API는 �
 예제 유스 케이스는 여러 직원이 실제 디바이스(예: iPad 또는 Android 태블릿) 및 MobileFirst 애플리케이션을 공유하는 경우입니다. 다중 사용자 지원은 직원이 서로 다른 교대조에서 근무하고 MobileFirst 애플리케이션을 사용하는 동안 여러 고객의 개인용 데이터를 처리하는 경우에 유용합니다.
 
 ## 보안
-{: #security }
+{: #security-jsonstore }
 암호화를 통해 저장소에 있는 모든 콜렉션을 보호할 수 있습니다.
 
 저장소의 모든 콜렉션을 암호화하려면 `init`(JavaScript) 또는 `open`(네이티브 iOS 및 네이티브 Android) API에 비밀번호를 전달하십시오. 비밀번호가 전달되지 않으면 저장소 콜렉션의 문서가 암호화되지 않습니다.
@@ -204,7 +204,7 @@ MobileFirst 클라이언트 측 API는 사용자의 데이터를 보호하는 �
 
 이 메타데이터에는 키, salt, IV(Initialization Vector), 파일 유형, 파일 경로 등이 포함될 수 있습니다.
 
-[JSONStore 보안 유틸리티](security_utilities.html#security_utilities)에 대해 자세히 알아보십시오.
+[JSONStore 보안 유틸리티](/docs/services/mobilefoundation?topic=mobilefoundation-security_utilities#security_utilities)에 대해 자세히 알아보십시오.
 {: tip}
 
 ### Windows 8.1 Universal 및 Windows 10 UWP 암호화
@@ -237,17 +237,17 @@ JSONStore는 모든 플랫폼에서 SQLCipher를 사용합니다. Android 및 iO
    {: codeblock}
 
 ## 성능
-{: #performance }
+{: #performance-jsonstore }
 다음은 JSONStore 성능에 영향을 줄 수 있는 요인입니다.
 
 ### 네트워크
-{: #network }
+{: #network-jsonstore }
 * 모든 더티 문서를 어댑터에 전송하는 것과 같은 오퍼레이션을 수행하기 전에 네트워크 연결을 확인하십시오.
 * 네트워크를 통해 클라이언트에 전송되는 데이터의 양은 성능에 중대한 영향을 미칩니다. 백엔드 데이터베이스 내부의 모든 항목을 복사하는 대신 애플리케이션에 필요한 데이터만 전송하십시오.
 * 어댑터를 사용 중인 경우 compressResponse 플래그를 true로 설정하는 것을 고려하십시오. 이렇게 하면 응답이 압축되어 일반적으로 더 적은 대역폭을 사용하고 압축을 사용하지 않을 때보다 전송 시간이 단축됩니다.
 
 ### 메모리
-{: #memory }
+{: #memory-jsonstore }
 * JavaScript API를 사용하면 JSONStore 문서가 네이티브(Objective-C, Java 또는 C#) 계층과 JavaScript 계층 간에 문자열로 직렬화 및 역직렬화됩니다. 가능한 메모리 문제를 완화하는 한 가지 방법은 find API를 사용할 때 한계와 오프셋을 사용하는 것입니다. 이렇게 하면 결과에 대해 할당되는 메모리의 양을 제한하고 페이지 번호 매기기(페이지당 X개의 결과 표시)와 같은 사항을 구현할 수 있습니다.
 * 궁극적으로 문자열로 직렬화 및 역직렬화되는 긴 키 이름을 사용하는 대신 해당 긴 키 이름을 짧은 키 이름으로 맵핑할 것을 고려하십시오(예: `myVeryVeryVerLongKeyName`을 `k` 또는 `key`에 맵핑). 어댑터에서 클라이언트로 전송할 때 짧은 키 이름으로 맵핑하고 데이터를 백엔드로 다시 전송할 때 원래의 긴 키 이름으로 맵핑하는 것이 가장 좋습니다.
 * 저장소 내부의 데이터를 다양한 콜렉션으로 분할하는 것을 고려하십시오. 모놀리식 문서를 단일 콜렉션에 포함시키는 대신 작은 문서를 여러 콜렉션에 포함시키십시오. 이 고려사항은 데이터가 관련된 정도 및 해당 데이터의 유스 케이스에 따라 다릅니다.
@@ -255,7 +255,7 @@ JSONStore는 모든 플랫폼에서 SQLCipher를 사용합니다. Android 및 iO
 * JavaScript 및 Java™에는 가비지 콜렉터가 있는 반면 Objective-C에는 ARC(Automatic Reference Counting)가 있습니다. ARC가 작동하도록 허용하지만 완전히 의존하지는 마십시오. 더 이상 사용되지 않는 참조를 무효화하고 프로파일링 도구를 사용하여 예상 시점에 메모리 사용량이 감소하는지 확인하십시오.
 
 ### CPU
-{: #cpu }
+{: #cpu-jsonstore }
 * 색인 작성을 수행하는 add 메소드 호출 시 사용되는 검색 필드 및 추가 검색 필드의 양은 성능에 영향을 줍니다. find 메소드에 대한 조회에 사용되는 값의 색인만 작성하십시오.
 * 기본적으로 JSONStore는 해당 문서에 대한 로컬 변경사항을 추적합니다. add, remove 및 replace API를 사용할 때 `markDirty` 플래그를 **false**로 설정하여 이 동작을 사용 안함으로 설정함으로써 주기 수를 줄일 수 있습니다.
 * 보안을 사용으로 설정하면 콜렉션 내부의 문서에 대해 작업하는 `init` 또는 `open` API 및 기타 오퍼레이션에서 약간의 오버헤드가 추가됩니다. 보안이 실제로 필요한지 여부를 고려하십시오. 예를 들어, open API는 암호화 및 복호화에 사용되는 암호화 키를 생성해야 하므로 암호화 시 속도가 훨씬 느립니다.
@@ -264,9 +264,9 @@ JSONStore는 모든 플랫폼에서 SQLCipher를 사용합니다. Android 및 iO
 * `find` API(`find`, `findAll` 및 `findById`)는 일치 여부를 확인하기 위해 모든 문서를 복호화해야 하므로 암호화에 영향을 받습니다. 조회로 찾는 경우 한계가 초과되면 결과 수 한계에 도달할 때 중지되므로 잠재적으로 더 빨라집니다. 다른 검색 결과가 남아 있는지 알아보기 위해 JSONStore가 나머지 문서를 복호화할 필요가 없습니다.
 
 ## 동시성
-{: #concurrency }
-### JavaScript
-{: #javascript }
+{: #concurrency-jsonstore }
+### JavaScript의 동시성
+{: #javascript-jsonstore }
 콜렉션에 대해 수행할 수 있는 대부분의 오퍼레이션(예: add 및 find)은 비동기적입니다. 이러한 오퍼레이션은 오퍼레이션이 올바르게 완료되면 해결되고 실패가 발생하면 거부되는 jQuery 프라미스를 리턴합니다. 이러한 프라미스는 성공 및 실패 콜백과 유사합니다.
 
 jQuery Deferred는 해결되거나 거부될 수 있는 프라미스입니다. 다음 예제는 JSONStore에 특정하지 않지만 일반적인 사용법을 이해하는 데 도움이 됩니다.
@@ -328,16 +328,16 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 });
 ```
 
-### Objective-C
-{: #objective-c }
+### Objective-C의 동시성
+{: #objective-c-jsonstore }
 JSONStore에 네이티브 iOS API를 사용하는 경우 모든 오퍼레이션이 동기 디스패치 큐에 추가됩니다. 이 동작은 저장소에 접촉하는 오퍼레이션이 기본 스레드가 아닌 스레드에서 적절하게 실행되도록 합니다. 자세한 정보는 [GCD(Grand Central Dispatch) ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window}의 Apple 문서를 참조하십시오.
 
-### Java™
-{: #java }
+### Java의 동시성 
+{: #java-jsonstore }
 JSONStore에 네이티브 Android API를 사용하는 경우 모든 오퍼레이션이 기본 스레드에서 실행됩니다. 비동기 동작을 수행하려면 스레드를 작성하거나 스레드 풀을 사용해야 합니다. 모든 저장소 오퍼레이션은 스레드로부터 안전합니다.
 
 ## 분석
-{: #analytics }
+{: #analytics-jsonstore }
 JSONStore와 관련된 분석 정보의 주요 부분을 수집할 수 있습니다.
 
 ### 파일 정보
@@ -348,9 +348,7 @@ JSONStore와 관련된 분석 정보의 주요 부분을 수집할 수 있습니
 {: #performance-metrics }
 JSONStore API가 호출될 때마다 오퍼레이션 시작 및 종료 시간에 대한 정보가 포함된 성능 메트릭이 수집됩니다. 이 정보를 사용하여 다양한 오퍼레이션에 소요되는 시간(밀리초)을 판별할 수 있습니다.
 
-### 예제
-{: #examples }
-#### iOS
+### iOS의 JSONStore 예
 {: #ios-example}
 ```objc
 JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
@@ -359,7 +357,7 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
 
-#### Android
+### Android의 JSONStore 예
 {: #android-example }
 ```java
 JSONStoreInitOptions initOptions = new JSONStoreInitOptions();
@@ -368,7 +366,7 @@ initOptions.setAnalytics(true);
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
 
-#### JavaScript
+### JavaScript의 JSONStore 예
 {: #java-script-example }
 ```javascript
 var options = {
@@ -387,16 +385,16 @@ WL.JSONStore.init(..., options);
 많은 시스템에서 가져오기라는 용어를 사용하여 외부 소스에서 데이터를 가져오는 것을 나타냅니다.  
 세 가지 중요한 부분이 있습니다.
 
-#### 외부 데이터 소스
-{: #external-data-source }
+#### 외부 데이터 소스에서 가져오기
+{: #external-data-source-pull }
 이 소스는 데이터베이스, REST 또는 SOAP API 등일 수 있습니다. 유일한 요구사항은 MobileFirst Server에서 액세스하거나 클라이언트 애플리케이션에서 직접 액세스할 수 있어야 한다는 점입니다. 이 소스가 JSON 형식으로 데이터를 리턴하도록 하는 것이 가장 좋습니다.
 
-#### 전송 계층
-{: #transport-layer }
+#### 가져오기용 전송 계층
+{: #transport-layer-pull }
 이 소스는 외부 소소의 데이터를 내부 소스(저장소 내부의 JSONStore 콜렉션)로 가져오는 방법입니다. 한 가지 대안은 어댑터입니다.
 
-#### 내부 데이터 소스 API
-{: #internal-data-source-api }
+#### 가져오기용 내부 데이터 소스 API
+{: #internal-data-source-api-pull }
 이 소스는 JSON 데이터를 콜렉션에 추가하는 데 사용할 수 있는 JSONStore API입니다.
 
 파일, 입력 필드 또는 변수의 하드코드로 된 데이터에서 읽은 데이터로 내부 저장소를 채울 수 있습니다. 네트워크 통신이 필요한 외부 소스에서 독점적으로 가져올 필요는 없습니다.
@@ -582,15 +580,15 @@ accessor.remove(doc, {markDirty: true})
 
 세 가지 중요한 부분이 있습니다.
 
-#### 내부 데이터 소스 API
+#### 푸시용 내부 데이터 소스 API
 {: #internal-data-source-api-push }
 이 소스는 로컬 전용 변경사항(더티)을 포함한 문서를 리턴하는 JSONStore API입니다.
 
-#### 전송 계층
+#### 푸시용 전송 계층
 {: #transport-layer-push }
 이 소스는 변경사항을 전송하기 위해 외부 데이터 소스에 접속하는 방법입니다.
 
-#### 외부 데이터 소스
+#### 외부 데이터 소스로 푸시
 {: #external-data-source-push }
 이 소스는 일반적으로 클라이언트가 데이터에 대해 작성한 업데이트를 수신하는 데이터베이스, 그 중에서도 REST 또는 SOAP 엔드포인트입니다.
 
@@ -766,8 +764,8 @@ $.when.apply(this, arrayOfPromises)
 
 문서가 클린으로 표시되면 `getAllDirty` API의 출력에 표시되지 않습니다.
 
-## 문제점 해결
-{: #troubleshooting }
+## JSONStore 문제점 해결
+{: #troubleshooting-jsonstore }
 
 ## 도움을 요청할 때 정보 제공
 {: #provide-information-when-you-ask-for-help }
@@ -829,7 +827,7 @@ $.when.apply(this, arrayOfPromises)
 6. 디버거를 사용하십시오.
 
 ## 일반적인 문제
-{: #common-issues }
+{: #common-issues-jsonstore }
 다음 JSONStore 특성을 이해하면 발생할 수 있는 일반적인 문제 중 일부를 해결하는 데 도움이 됩니다.  
 
 * 2진 데이터를 JSONStore에 저장하기 위한 유일한 방법은 먼저 base64로 인코딩하는 것입니다. 실제 파일 대신 파일 이름이나 경로를 JSONStore에 저장하십시오.
@@ -894,8 +892,8 @@ JSONStore 데이터가 저장되는 방법의 예를 볼 수 있습니다.
 
 ## JSONStore 오류
 {: #jsonstore-errors }
-### JavaScript
-{: #javascript }
+### JavaScript 오류
+{: #javascript-errors }
 JSONStore는 오류 오브젝트를 사용하여 실패 원인에 대한 메시지를 리턴합니다.
 
 JSONStore 조작(예: `JSONStoreInstance` 클래스의 `add` 메소드 및 `find`) 동안 오류가 발생하는 경우 오류 오브젝트가 리턴됩니다. 이 오브젝트는 실패 원인에 대한 정보를 제공합니다.
@@ -914,8 +912,8 @@ var errorObject = {
 {: codeblock}
 모든 키/값 쌍이 모든 오류 오브젝트의 일부인 것은 아닙니다. 예를 들어, doc 값은 문서(예: `JSONStoreInstance` 클래스의 `remove` 메소드)가 문서를 제거하는 데 실패하여 조작이 실패한 경우에만 사용 가능합니다.
 
-### Objective-C
-{: #objective-c }
+### Objective-C 오류
+{: #objective-c-errors }
 실패할 수 있는 모든 API에는 NSError 오브젝트에 대해 주소를 취하는 오류 매개변수가 사용됩니다. 오류를 알리지 않으려면 `nil`을 전달할 수 있습니다. 조작이 실패하는 경우 주소는 NSError로 채워집니다. 여기에는 오류가 있고 가능한 일부 `userInfo`가 있습니다. `userInfo`에는 추가 세부사항(예: 실패를 야기한 문서)가 포함될 수 있습니다.
 
 ```objc
@@ -926,8 +924,8 @@ NSError* error = nil;
 [JSONStore destroyDataAndReturnError:&error];
 ```
 
-### Java
-{: #java }
+### Java 오류
+{: #java-errors }
 모든 Java API 호출에서는 발생한 오류에 따라 특정 예외를 처리합니다. 각 예외를 별도로 처리하거나, 모든 JSONStore 예외에 대한 보호로 `JSONStoreException`을 발견할 수 있습니다.
 
 ```java
@@ -944,7 +942,7 @@ catch(JSONStoreException e) {
 {: #list-of-error-codes }
 공통 오류 코드 및 해당 설명 목록:
 
-|오류 코드  | 설명 |
+|오류 코드      | 설명 |
 |----------------|-------------|
 | -100 UNKNOWN_FAILURE | Unrecognized error. |
 | -75 OS\_SECURITY\_FAILURE | This error code is related to the requireOperatingSystemSecurity flag. It can occur if the destroy API fails to remove security metadata that is protected by operating system security (Touch ID with passcode fallback), or the init or open APIs are unable to locate the security metadata. It can also fail if the device does not support operating system security, but operating system security usage was requested. |
@@ -976,20 +974,20 @@ catch(JSONStoreException e) {
 | -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | Search fields are not dynamic. It is not possible to change search fields without calling the destroy method or the removeCollection method before you call the init or openmethod with the new search fields. This error can occur if you change the name or type of the search field. For example: {key: 'string'} to {key: 'number'} or {myKey: 'string'} to {theKey: 'string'}. |
 | -1 PERSISTENT\_STORE\_FAILURE | Generic Error. A malfunction in native code, most likely calling the init method. |
 | 0 SUCCESS |어떤 경우에, JSONStore 네이티브 코드는 성공을 표시하기 위해 0을 리턴합니다. |
-| 1 BAD\_PARAMETER\_EXPECTED\_INT |유효성 검증 오류입니다. |
-| 2 BAD\_PARAMETER\_EXPECTED\_STRING |유효성 검증 오류입니다. |
-| 3 BAD\_PARAMETER\_EXPECTED\_FUNCTION |유효성 검증 오류입니다. |
-| 4 BAD\_PARAMETER\_EXPECTED\_ALPHANUMERIC\_STRING |유효성 검증 오류입니다. |
-| 5 BAD\_PARAMETER\_EXPECTED\_OBJECT |유효성 검증 오류입니다. |
-| 6 BAD\_PARAMETER\_EXPECTED\_SIMPLE\_OBJECT |유효성 검증 오류입니다. |
-| 7 BAD\_PARAMETER\_EXPECTED\_DOCUMENT |유효성 검증 오류입니다. |
+| 1 BAD\_PARAMETER\_EXPECTED\_INT | 유효성 검증 오류입니다. |
+| 2 BAD\_PARAMETER\_EXPECTED\_STRING | 유효성 검증 오류입니다. |
+| 3 BAD\_PARAMETER\_EXPECTED\_FUNCTION | 유효성 검증 오류입니다. |
+| 4 BAD\_PARAMETER\_EXPECTED\_ALPHANUMERIC\_STRING | 유효성 검증 오류입니다. |
+| 5 BAD\_PARAMETER\_EXPECTED\_OBJECT | 유효성 검증 오류입니다. |
+| 6 BAD\_PARAMETER\_EXPECTED\_SIMPLE\_OBJECT | 유효성 검증 오류입니다. |
+| 7 BAD\_PARAMETER\_EXPECTED\_DOCUMENT | 유효성 검증 오류입니다. |
 | 8 FAILED\_TO\_GET\_UNPUSHED\_DOCUMENTS\_FROM\_DB |더티 상태로 표시된 모든 문서를 선택하는 조회가 실패했습니다. 조회의 SQL 예제는 다음과 같습니다. SELECT * FROM [collection] WHERE _dirty > 0. |
 | 9 NO\_ADAPTER\_LINKED\_TO\_COLLECTION | JSONStoreCollection 클래스에서 push 및 load 메소드와 같은 함수를 사용하려면 어댑터를 init 메소드에 전달해야 합니다. |
 | 10 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ARRAY\_OF\_DOCUMENTS |유효성 검증 오류 |
 | 11 INVALID\_PASSWORD\_EXPECTED\_ALPHANUMERIC\_STRING\_WITH\_LENGTH\_GREATER\_THAN\_ZERO |유효성 검증 오류 |
 | 12 ADAPTER_FAILURE | WL.Client.invokeProcedure 호출 문제점, 특히 어댑터와 연결하는 문제점입니다. 이 오류는 백엔드를 호출하려고 하는 어댑터에서의 실패와 다릅니다. |
 | 13 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ID |유효성 검증 오류 |
-| 14 CAN\_NOT\_REPLACE\_DEFAULT\_FUNCTIONS | 기존 함수(find 및 add)를 바꾸기 위해 JSONStoreCollection 클래스에서 enhance 함수를 호출하는 것은 허용되지 않습니다.|
+| 14 CAN\_NOT\_REPLACE\_DEFAULT\_FUNCTIONS | 기존 함수(find 및 add)를 바꾸기 위해 JSONStoreCollection 클래스에서 enhance 함수를 호출하는 것은 허용되지 않습니다. |
 | 15 COULD\_NOT\_MARK\_DOCUMENT\_PUSHED |푸시가 문서를 어댑터에 보내지만 JSONStore가 문서를 더티 상태가 아닌 것으로 표시하는데 실패합니다. |
 | 16 COULD\_NOT\_GET\_SECURE\_KEY |비밀번호로 콜렉션을 초기화하려면, {{ site.data.keys.mf_server }}와의 연결이 있어야 합니다. '보안 랜덤 토큰'을 리턴하기 때문입니다. IBM  Worklight  V5.0.6 이상에서는 개발자가 options 오브젝트를 통해 init 메소드에 로컬로 {localKeyGen: true}를 전달하는 보안 랜덤 토큰을 생성할 수 있습니다. |
 | 17 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER |WL.Client.invokeProcedure가 실패 콜백을 호출하여 데이터를 로드할 수 없습니다. |
@@ -999,12 +997,12 @@ catch(JSONStoreException e) {
 | 21 INVALID\_ADD\_INDEX\_KEY | 추가 검색 필드에 문제점이 있습니다. |
 | 22 INVALID\_SEARCH\_FIELD | 검색 필드 중 하나가 올바르지 않습니다. 전달된 검색 필드가 _id,json,_deleted 또는 _operation이 아닌지 확인하십시오. |
 | 23 ERROR\_CLOSING\_ALL | 일반 오류입니다. 네이티브 코드가 closeAll 메소드를 호출할 때 오류가 발생했습니다. |
-| 24 ERROR\_CHANGING\_PASSWORD | 비밀번호를 변경할 수 없습니다. 예를 들어, 전달된 이전 비밀번호가 잘못되었습니다. |
+| 24 ERROR\_CHANGING\_PASSWORD | 비밀번호를 변경할 수 없습니다. 예를 들어 전달된 이전 비밀번호가 잘못되었습니다. |
 | 25 ERROR\_DURING\_DESTROY | 일반 오류입니다. 네이티브 코드에서 destroy 메소드를 호출할 때 오류가 발생했습니다. |
 | 26 ERROR\_CLEARING\_COLLECTION | 일반 오류입니다. 네이티브 코드에서 removeCollection 메소드를 호출할 때 오류가 발생했습니다. |
 | 27 INVALID\_PARAMETER\_FOR\_FIND\_BY\_ID | 유효성 검증 오류입니다. |
-| 28 INVALID\_SORT\_OBJECT | JSON 오브젝트 중 하나가 올바르지 않으므로 정렬을 위해 제공된 배열이 올바르지 않습니다. 올바른 구문은 JSON 오브젝트의 배열이며, 각 오브젝트에는 단일 특성만 포함됩니다. 이 특성은 정렬할 필드와 오름차순 또는 내림차순 여부를 검색합니다. 예: {searchField1 : "ASC"}. |
+| 28 INVALID\_SORT\_OBJECT | JSON 오브젝트 중 하나가 올바르지 않으므로 정렬용으로 제공된 배열이 올바르지 않습니다. 올바른 구문은 JSON 오브젝트의 배열이며, 각 오브젝트에는 단일 특성만 포함됩니다. 이 특성은 정렬할 필드와 오름차순 또는 내림차순 여부를 검색합니다. 예: {searchField1 : "ASC"}. |
 | 29 INVALID\_FILTER\_ARRAY | 결과 필터링을 위해 제공된 배열이 올바르지 않습니다. 이 배열의 올바른 구문은 문자열 배열이며, 각 문자열은 검색 필드 또는 내부 JSONStore 필드입니다. 자세한 정보는 '저장소 내부'를 참조하십시오. |
 | 30 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_OBJECTS | 배열이 유일한 JSON 오브젝트의 배열이 아닌 경우 유효성 검증 오류가 발생합니다. |
-| 31 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_CLEAN\_DOCUMENTS |유효성 검증 오류입니다. |
+| 31 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_CLEAN\_DOCUMENTS | 유효성 검증 오류입니다. |
 | 32 BAD\_PARAMETER\_WRONG\_SEARCH\_CRITERIA | 유효성 검증 오류입니다. |

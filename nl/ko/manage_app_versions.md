@@ -38,6 +38,6 @@ Mobile Foundation Operations 콘솔을 사용하여 리소스에 대한 액세�
    *  버전 내보내기
 
 
-디바이스 관리에 대해 알아보려면 [디바이스 관리](manage_devices.html)를 참조하십시오. 원격으로 특정 버전의 앱을 사용 안함으로 설정하는 방법에 대해 알아보려면 [ 원격으로 앱 버전을 사용 안함으로 설정](remote_disable_app_version.html)을 참조하십시오.
+디바이스 관리에 대해 알아보려면 [디바이스 관리](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices)를 참조하십시오. 원격으로 특정 버전의 앱을 사용 안함으로 설정하는 방법에 대해 알아보려면 [ 원격으로 앱 버전을 사용 안함으로 설정](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version)을 참조하십시오.
 {: note}
 

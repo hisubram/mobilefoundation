@@ -6,8 +6,8 @@ lastupdated:  "2018-11-26"
 
 ---
 
-##	Android SDK
-{: #android_sdk}
+#	Android SDK
+{: #android_sdk_api}
 
 maven 저장소에서 Android SDK를 다운로드하십시오.
 

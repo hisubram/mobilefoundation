@@ -2,12 +2,12 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-26"
+lastupdated:  "2019-02-11"
 
 ---
 
-##	Web SDK
-{: #rweb_sdk}
+#	Web SDK
+{: #web_sdk_api}
 
 npm에서 Web SDK를 다운로드하십시오.
 

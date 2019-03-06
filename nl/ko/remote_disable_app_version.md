@@ -14,7 +14,7 @@ lastupdated: "2018-11-29"
 {:screen: .screen}
 
 # 원격으로 앱 버전을 사용 안함으로 설정
-{: #remote_disable_app_version}
+{: #remotely_disable_an_app_version}
 
 이 절에서는 특정 모바일 운영 체제의 특정 애플리케이션 버전에 대한 사용자 액세스를 사용 안함으로 설정하는 방법과 사용자에게 사용자 정의 메시지를 제공하는 방법을 설명합니다.
 

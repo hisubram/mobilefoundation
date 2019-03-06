@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 {:generic: .ph data-hd-programlang='generic'}
@@ -27,14 +27,14 @@ lastupdated: "2019-01-04"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# 고급 오프라인 스토리지 구성 
-{: #adv_configure_offline_storage}
+# 고급 JSONStore 
+{: #advanced_jsonstore}
 
 ## JSONStore의 보안
-{: #security_jsonstore} 
+{: #security_jsonstore}
 
 <!--### Cordova
-{: security_jsonstore_cordova}-->
+{: #security_jsonstore_cordova}-->
 
 `init` 함수에 비밀번호를 전달하여 저장소에 있는 모든 콜렉션을 보호할 수 있습니다. 비밀번호가 전달되지 않으면 저장소에 있는 모든 콜렉션의 문서가 암호화되지 않습니다.
 {: cordova}
@@ -325,7 +325,7 @@ try {
         // result contains an array of documents with the results from the find
     }).fail(function () {
         // handle failure
-    });
+    }); 
    ```
    {: codeblock}
    {: cordova}

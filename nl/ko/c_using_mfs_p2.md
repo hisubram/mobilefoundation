@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated:  "2018-11-20"
 Professional 1 Application 플랜을 사용하면 다양한 모바일 운영 체제에서 1개의 모바일 애플리케이션을 작성할 수 있습니다.
 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 서비스 인스턴스를 작성한 후에 다음 프로시저를 읽고 서비스를 시작하십시오.
 
-## 전제 조건
+## Professional 1 Application 플랜의 필수 소프트웨어
 {: #prerequisites_p2}
 
 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 서비스 인스턴스를 구성하기 전에 다음을 고려하십시오.
@@ -30,10 +30,10 @@ Professional 1 Application 플랜을 사용하면 다양한 모바일 운영 체
 > **참고**: {{site.data.keyword.Db2_on_Cloud_short}}(**Lite** 플랜 이외의 모든 플랜) 또는 {{site.data.keyword.composeForPostgreSQL}} 서비스 인스턴스는 {{site.data.keyword.Bluemix_notm}} `Organization` 또는 액세스 권한이 있는 기타 `Organization`의 모든 `Space`에 존재할 수 있습니다. {{site.data.keyword.Db2_on_Cloud_short}} 또는 {{site.data.keyword.composeForPostgreSQL}} 서비스 인스턴스가 있는 `Space`에 액세스할 수 있는 권한이 있는지 확인하십시오.
 
 
-## 데이터베이스 연결 추가
+## 데이터베이스 연결 구성
 {: #configure_dashdb_p2}
 
-###  첫 번째 단계
+###  구성의 첫 번째 단계
 {: #firststeps_p2}
 
 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 서비스 인스턴스를 작성한 후 프로시저에 따라 시작하십시오.
@@ -73,7 +73,7 @@ Professional 1 Application 플랜을 사용하면 다양한 모바일 운영 체
 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에서 사용되도록 구성된 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스를 변경할 수 없습니다. 그러나 각 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스가 선택된 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스 내에 자체 스키마를 작성하므로, 다중 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에 걸쳐 동일한 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스를 사용할 수 있습니다.
 {: note}
 
-## MobileFirst 서버 시작
+## Professional 1 Application 플랜을 사용하여 작성된 MobileFirst 서버 시작
 {: #start_mobilefoundation_p2}
 
 * 기본 설정으로 {{site.data.keyword.mfserver_short_notm}}를 시작하려면 **기본 서버 시작**을 클릭하십시오.
@@ -95,7 +95,7 @@ Professional 1 Application 플랜을 사용하면 다양한 모바일 운영 체
 
 콘솔을 사용하여 모바일 앱, 어댑터 및 모바일 디바이스를 관리하고 서버를 모바일 백엔드로 사용할 수 있으며 푸시 알림을 전송하는 등의 작업을 수행할 수 있습니다.
 
-## MobileFirst 서버 재작성
+## Professional 1 Application 플랜을 사용할 때 MobileFirst 서버 다시 작성
 {: #recreate_mobilefoundation_p2}
 
 *	**재작성**을 클릭하여 서버를 재작성하십시오.
@@ -105,7 +105,7 @@ Professional 1 Application 플랜을 사용하면 다양한 모바일 운영 체
 앱과 어댑터에 대한 정보를 포함하는 이전 서버 인스턴스의 데이터가 구성된 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에서 지속됩니다. 이 데이터는 서버를 다시 작성하는 데 사용됩니다.
 {: note}
 
-##	고급 구성 설정
+##	Professional 1 Application 플랜의 고급 구성 설정
 {: #using_mfs_advanced_p2}
 
 `Overview` 페이지에서 **고급 구성으로 서버 시작**을 사용하면 고급 또는 사용자 정의 설정으로 서버를 작성할 수 있습니다. 또한 **구성** 탭을 클릭하여 서버 구성을 사용자 정의할 수 있도록 서버 설정을 업데이트할 수도 있습니다. {{site.data.keyword.mobilefoundation_short}}은 일부 고급 설정에 대한 액세스를 제공합니다.
@@ -115,13 +115,11 @@ Professional 1 Application 플랜을 사용하면 다양한 모바일 운영 체
 
   - **인스턴스**는 작성된 노드의 수를 표시합니다.
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Professional 1 Application 플랜의 Mobile Analytics
+{: #mobile_analytics_p2}
 
 Mobile Analytics 서버는 Mobile Foundation: Developer 플랜 서비스 인스턴스에 포함되고 사전 구성됩니다.
 
 * {{site.data.keyword.mfp_oc_short_notm}}에서 Mobile Analytics 콘솔을 실행하십시오.
 
-Mobile Analytics에 대한 자세한 정보는 [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}를 참조하십시오.
-
-세부사항은 [{{site.data.keyword.mobilefoundation_long}} 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}를 참조하십시오.
+Mobile Analytics에 관한 자세한 정보는 [여기](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}를 참조하십시오.

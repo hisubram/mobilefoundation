@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -30,9 +30,9 @@ lastupdated: "2019-01-04"
 # 오프라인 스토리지 구성
 {: #configure_offline_storage}
 
-IBM Mobile Foundation JSONStore는 경량의 문서 중심 스토리지 시스템을 제공하는 선택적 클라이언트 측 API입니다. JSONStore는 JSON 문서의 지속적 스토리지를 사용으로 설정합니다. 애플리케이션에서 실행 중인 디바이스가 오프라인 상태인 경우에도 애플리케이션에 포함된 문서를 JSONStore에서 사용할 수 있습니다. 항상 사용 가능한 이 지속적 스토리지는 예를 들어 디바이스에 사용 가능한 네트워크 연결이 없는 경우 사용자에게 문서에 대한 액세스를 부여하는 데 유용할 수 있습니다. JSONStore 개념 및 용어의 개요는 [여기](jsonstore.html)를 참조하십시오.
+IBM Mobile Foundation JSONStore는 경량의 문서 중심 스토리지 시스템을 제공하는 선택적 클라이언트 측 API입니다. JSONStore는 JSON 문서의 지속적 스토리지를 사용으로 설정합니다. 애플리케이션에서 실행 중인 디바이스가 오프라인 상태인 경우에도 애플리케이션에 포함된 문서를 JSONStore에서 사용할 수 있습니다. 항상 사용 가능한 이 지속적 스토리지는 예를 들어 디바이스에 사용 가능한 네트워크 연결이 없는 경우 사용자에게 문서에 대한 액세스를 부여하는 데 유용할 수 있습니다. JSONStore 개념 및 용어의 개요는 [여기](/docs/services/mobilefoundation?topic=mobilefoundation-jsonstore#jsonstore)를 참조하십시오.
 
-고급 오프라인 스토리지 구성은 [여기](advanced_jsonstore.html)를 참조하십시오.
+고급 오프라인 스토리지 구성은 [여기](/docs/services/mobilefoundation?topic=mobilefoundation-advanced_jsonstore#advanced_jsonstore)를 참조하십시오.
 {: note}
 
 ### Cordova 또는 Ionic 앱에 대한 오프라인 스토리지 구성
@@ -81,7 +81,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 {: codeblock}
 {: cordova}
 
-#### JSONStore 콜렉션에 대한 액세서 가져오기
+#### Cordova JSONStore 콜렉션에 대한 액세서 가져오기
 {: #get_jsonstore_cordova} 
 {: cordova}
 
@@ -97,7 +97,7 @@ var people = WL.JSONStore.get(collectionName);
 이제 *people* 변수를 사용하여 *people* 콜렉션에 대한 오퍼레이션(예: `add`, `find` 및 `replace`)을 수행할 수 있습니다.
 {: cordova}
 
-#### 콜렉션에 문서 추가
+#### Cordova 콜렉션에 문서 추가
 {: #add_jsonstore_cordova} 
 {: cordova}
 
@@ -118,7 +118,7 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 {: codeblock}
 {: cordova}
 
-#### 콜렉션 내부에서 문서 찾기
+#### Cordova 콜렉션 내부에서 문서 찾기
 {: #find_jsonstore_cordova} 
 {: cordova}
 
@@ -169,7 +169,7 @@ else {
 {: codeblock}
 {: cordova}
 
-#### 콜렉션 내부의 문서 대체
+#### Cordova 콜렉션 내부에서 문서 대체
 {: #replace_jsonstore_cordova} 
 {: cordova}
 
@@ -195,7 +195,7 @@ WL.JSONStore.get(collectionName).replace(document, options).then(function (numbe
 이 예제에서는 `{_id: 1, json: {name: 'yoel', age: 23} }` 문서가 콜렉션에 있다고 가정합니다.
 {: cordova}
 
-#### 콜렉션에서 문서 제거
+#### Cordova 콜렉션에서 문서 제거
 {: #remove_jsonstore_cordova} 
 {: cordova}
 
@@ -216,14 +216,14 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: codeblock}
 {: cordova}
 
-#### 전체 콜렉션 제거
+#### 전체 Cordova 콜렉션 제거
 {: #remove_collection_jsonstore_cordova} 
 {: cordova}
 
 콜렉션 내부에 저장된 모든 문서를 삭제하려면 `removeCollection`을 사용하십시오. 이 오퍼레이션은 데이터베이스 용어의 테이블 삭제와 유사합니다.
 {: cordova}
 
-#### JSONStore 영구 삭제
+#### Cordova JSONStore 영구 삭제
 {: #destroy_jsonstore_cordova} 
 {: cordova}
 
@@ -274,7 +274,7 @@ Mobile Foundation 네이티브 SDK가 Xcode 프로젝트에 추가되었는지 �
    {: codeblock}
    {: ios}
 
-#### JSONStore 콜렉션 열기: iOS
+#### iOS JSONStore 콜렉션 열기 
 {: #open_ios} 
 {: ios}
 
@@ -296,7 +296,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### JSONStore 콜렉션에 대한 액세서 가져오기
+#### iOS JSONStore 콜렉션에 대한 액세서 가져오기
 {: #get_jsonstore_ios} 
 {: ios}
 
@@ -313,7 +313,7 @@ let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWit
 이제 collection 변수를 사용하여 `people` 콜렉션에 대한 오퍼레이션(예: `add`, `find` 및 `replace`)을 수행할 수 있습니다.
 {: ios}
 
-#### 콜렉션에 문서 추가
+#### iOS 콜렉션에 문서 추가
 {: #add_jsonstore_ios} 
 {: ios}
 
@@ -335,7 +335,7 @@ do  {
 {: codeblock}
 {: ios}
 
-#### 콜렉션 내부에서 문서 찾기
+#### iOS 콜렉션 내부에서 문서 찾기
 {: #find_jsonstore_ios} 
 {: ios}
 
@@ -362,7 +362,7 @@ do  {
 {: codeblock}
 {: ios}
 
-#### 콜렉션 내부의 문서 대체
+#### iOS 콜렉션 내부에서 문서 대체
 {: #replace_jsonstore_ios} 
 {: ios}
 
@@ -393,7 +393,7 @@ do {
 이 예제에서는 `{_id: 1, json: {name: 'yoel', age: 23} }` 문서가 콜렉션에 있다고 가정합니다.
 {: ios}
 
-#### 콜렉션에서 문서 제거
+#### iOS 콜렉션에서 문서 제거
 {: #remove_jsonstore_ios} 
 {: ios}
 
@@ -413,7 +413,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### 전체 콜렉션 제거
+#### 전체 iOS 콜렉션 제거
 {: #remove_collection_jsonstore_ios} 
 {: ios}
 
@@ -433,7 +433,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### JSONStore 영구 삭제
+#### iOS JSONStore 영구 삭제
 {: #destroy_jsonstore_ios} 
 {: ios}
 
@@ -488,7 +488,7 @@ Mobile Foundation 네이티브 SDK가 Android Studio 프로젝트에 추가되�
    {: note}
    {: android}
 
-#### JSONStore 콜렉션 열기: Android
+#### Android JSONStore 콜렉션 열기
 {: #open_android} 
 {: android}
 
@@ -512,7 +512,7 @@ try {
 {: codeblock}
 {: android}
 
-#### JSONStore 콜렉션에 대한 액세서 가져오기
+#### Android JSONStore 콜렉션에 대한 액세서 가져오기
 {: #get_jsonstore_android} 
 {: android}
 
@@ -535,7 +535,7 @@ try {
 이제 collection 변수를 사용하여 `people` 콜렉션에 대한 오퍼레이션(예: `add`, `find` 및 `replace`)을 수행할 수 있습니다.
 {: android}
 
-#### 콜렉션에 문서 추가
+#### Android 콜렉션에 문서 추가
 {: #add_jsonstore_android} 
 {: android}
 
@@ -560,7 +560,7 @@ try {
 {: codeblock}
 {: android}
 
-#### 콜렉션 내부에서 문서 찾기
+#### Android 콜렉션 내부에서 문서 찾기
 {: #find_jsonstore_android} 
 {: android}
 
@@ -589,7 +589,7 @@ try {
 {: codeblock}
 {: android}
 
-#### 콜렉션 내부의 문서 대체
+#### Android 콜렉션 내부에서 문서 대체
 {: #replace_jsonstore_android} 
 {: android}
 
@@ -617,7 +617,7 @@ try {
 이 예제에서는 `{_id: 1, json: {name: 'yoel', age: 23} }` 문서가 콜렉션에 있다고 가정합니다.
 {: android}
 
-#### 콜렉션에서 문서 제거
+#### Android 콜렉션에서 문서 제거
 {: #remove_jsonstore_android} 
 {: android}
 
@@ -641,7 +641,7 @@ try {
 {: codeblock}
 {: android}
 
-#### 전체 콜렉션 제거
+#### 전체 Android Android 콜렉션 제거
 {: #remove_collection_jsonstore_android} 
 {: android}
 
@@ -662,7 +662,7 @@ try {
 {: codeblock}
 {: android}
 
-#### JSONStore 영구 삭제
+#### Android JSONStore 영구 삭제
 {: #destroy_jsonstore_android} 
 {: android}
 

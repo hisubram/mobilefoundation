@@ -57,7 +57,7 @@ private transient StepUpUserLogin userLogin;
 ## 상태 머신
 {: #state-machine}
 
-`CredentialsValidationSecurityCheck`(`StepUpPinCode` 및 `StepUpUserLogin` 둘 다 포함)를 확장하는 모든 클래스는 단순 상태 머신을 상속합니다. 지정된 시점에 보안 검사는 다음 상태 중 하나일 수 있습니다. 
+`CredentialsValidationSecurityCheck`(`StepUpPinCode` 및 `StepUpUserLogin` 둘 다 포함)를 확장하는 모든 클래스는 단순 상태 머신을 상속합니다. 지정된 시점에 보안 검사는 다음 상태 중 하나일 수 있습니다.
 
 * `STATE_ATTEMPTING`: 인증 확인이 전송되었고 보안 검사가 클라이언트 응답을 대기 중입니다. 시도 개수는 이 상태 동안 유지보수됩니다.
 * `STATE_SUCCESS`: 인증 정보의 유효성이 검증되었습니다.
@@ -98,9 +98,9 @@ public void authorize(Set<String> scope, Map<String, Object> credentials, HttpSe
 * 상태가 `STATE_SUCCESS`(사용자가 로그인됨)인 경우 보안 검사의 정상 플로우가 계속됩니다.
 * `StepUpUserLogin`이 다른 상태에 있으면 아무 작업도 수행하지 않습니다. 인증 확인이 전송되지 않으며 성공도 실패도 아닙니다.
 
-리소스가 `StepUpPinCode` 및 `StepUpUserLogin` **둘 다**로 보호된다고 가정하여, 이 플로우는 2차 인증 정보(PIN 코드)를 프롬프트하기 전에 사용자가 로그인했는지 확인합니다. 클라이언트는 두 보안 검사가 활성화된 경우에도 동시에 두 인증 확인을 수신하지 않습니다. 
+리소스가 `StepUpPinCode` 및 `StepUpUserLogin` **둘 다**로 보호된다고 가정하여, 이 플로우는 2차 인증 정보(PIN 코드)를 프롬프트하기 전에 사용자가 로그인했는지 확인합니다. 클라이언트는 두 보안 검사가 활성화된 경우에도 동시에 두 인증 확인을 수신하지 않습니다.
 
-또는 자원이 `StepUpPinCode`**로만** 보호되는 경우(프레임워크가 이 보안 검사만 활성화) `StepUpUserLogin`을 수동으로 트리거하기 위해 `authorize` 구현을 변경할 수 있습니다. 
+또는 자원이 `StepUpPinCode`**로만** 보호되는 경우(프레임워크가 이 보안 검사만 활성화) `StepUpUserLogin`을 수동으로 트리거하기 위해 `authorize` 구현을 변경할 수 있습니다.
 
 ```java
 @Override
@@ -121,7 +121,7 @@ public void authorize(Set<String> scope, Map<String, Object> credentials, HttpSe
 
 일부 데이터베이스에서 현재 사용자의 PIM 코드를 검색할 수 있도록 `StepUpPinCode` 보안 검사에서 이 사용자의 ID를 파악하려고 합니다.
 
-`StepUpUserLogin` 보안 검사에서 **권한 부여 컨텍스트**에서 현재 사용자를 얻기 위해 다음 메소드를 추가하십시오. 
+`StepUpUserLogin` 보안 검사에서 **권한 부여 컨텍스트**에서 현재 사용자를 얻기 위해 다음 메소드를 추가하십시오.
 
 ```java
 public AuthenticatedUser getUser(){
@@ -130,7 +130,7 @@ public AuthenticatedUser getUser(){
 ```
 {: codeblock}
 
-`StepUpPinCode`에서 `userLogin.getUser()` 메소드를 사용하여 `StepUpUserLogin` 보안 검사에서 현재 사용자를 가져오고 이 특정 사용자에 대한 올바른 PIN 코드를 확인할 수 있습니다. 
+`StepUpPinCode`에서 `userLogin.getUser()` 메소드를 사용하여 `StepUpUserLogin` 보안 검사에서 현재 사용자를 가져오고 이 특정 사용자에 대한 올바른 PIN 코드를 확인할 수 있습니다.
 
 ```java
 @Override

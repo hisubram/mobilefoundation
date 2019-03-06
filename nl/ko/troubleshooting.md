@@ -13,8 +13,8 @@ lastupdated: "2018-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# 문제점 해결
-{: #troubleshooting}
+# 일반 문제점 해결
+{: #general-troubleshooting}
 
 {{site.data.keyword.IBM_notm}} 제품에 대한 문제점을 격리하고 해결하려면 문제점 해결 정보를 사용하십시오. 이 정보에는 {{site.data.keyword.mobilefoundation_short}}을 비롯하여 {{site.data.keyword.IBM_notm}} 제품과 함께 제공되는 문제점 판별 자원의 사용에 대한 지시사항이 포함됩니다.
 {: shortdesc}
@@ -105,4 +105,4 @@ lastupdated: "2018-02-12"
 
 서비스 및 시작하기 지시사항에 대한 질문은 [IBM developerWorks dW Answers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} 포럼을 사용하십시오. `bluemix` 및 `mobilefirst` 태그를 포함시키십시오.
 
-IBM 지원 티켓 개설 또는 지원 레벨과 티켓 심각도에 대한 정보는 [지원 문의 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://console.bluemix.net/docs/get-support/getstarttssup.html#typesofsupport  ){: new_window}를 참조하십시오.
+IBM 지원 티켓 개설 방법이나 지원 레벨 및 티켓 심각도 정보는 [지원 문의](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}를 참조하십시오.

@@ -12,8 +12,8 @@ lastupdated:  "2018-11-19"
 {:tip: .tip}
 {:pre: .pre}
 
-#	{{ site.data.keyword.mobilefoundation_short }} CLI
-{: #using_mobilefoundation_cli}
+#	Mobile Foundation CLI
+{: #mobile_foundation_cli}
 
 {{ site.data.keyword.mobilefoundation_short }}은 {{site.data.keyword.mobilefoundation_short}} 클라이언트 및 서버 아티팩트를 쉽게 관리할 수 있도록 개발자용 명령행 인터페이스(CLI) 도구 **mfpdev**를 제공합니다.
 

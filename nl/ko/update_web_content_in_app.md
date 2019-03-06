@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-02-14"
 
 ---
 
@@ -53,9 +53,9 @@ lastupdated: "2018-12-21"
   ```
 `mfpdev app webupdate` 명령은 업데이트된 웹 리소스를 `.zip` 파일로 패키지하여 개발자 워크스테이션에서 실행 중인 기본 Mobile Foundation 서버에 업로드합니다. 패키지된 웹 리소스는 `[cordova-project-root-folder]/mobilefirst/` 폴더에 있습니다.
 
-앱의 웹 컨텐츠를 업데이트하는 대체 단계는 [여기](update_web_content_in_app_alternate_steps.html)를 참조하십시오.
+앱의 웹 컨텐츠를 업데이트하는 대체 단계는 [여기](/docs/services/mobilefoundation?topic=mobilefoundation-alternate_steps_to_update_app_web_content_in_app#alternate_steps_to_update_app_web_content_in_app)를 참조하십시오.
 
-## 고급 직접 업데이트 구성
-{: #advanced_direct_update_config}
+## 직접 언데이트 고급 구성
+{: #direct_update_advanced_config}
 
-직접 업데이트 구성에 대한 고급 주제는 [여기](update_web_content_in_app_advanced.html)를 참조하십시오.
+직접 업데이트 구성에 대한 고급 주제는 [여기](/docs/services/mobilefoundation?topic=mobilefoundation-advanced_direct_update_configuration#advanced_direct_update_configuration)를 참조하십시오.

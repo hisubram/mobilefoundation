@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-16"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,24 +14,24 @@ lastupdated:  "2018-11-16"
 {:note: .note}
 
 # 시작하기 튜토리얼
-{: #gettingstartedtemplate}
+{: #getting-started-tutorial}
 
 {{site.data.keyword.mobilefoundation_long}}는 엔터프라이즈 모바일 앱을 개발, 테스트 및 실행할 수 있는 {{site.data.keyword.mfp_full}} 환경의 설정을 신속히 처리합니다. {{site.data.keyword.mobilefoundation_short}}은 Developer, Professional Per Device 및 Professional 1 Application과 같은 여러 서비스 플랜을 제공합니다.
 {: shortdesc}
 
-Professional 1 Application 플랜을 사용하면 지원되는 운영 플랫폼 중 하나에서 빌드된 단일 애플리케이션을 관리할 수 있습니다. 지원되는 운영 체제는 Android, iOS, Windows 또는 모바일 웹입니다. Developer 플랜은 개발과 테스트에 가장 적합합니다. [여기](https://console.bluemix.net/catalog/services/mobile-foundation)에서 사용 가능한 모든 플랜을 검토할 수 있습니다.
+Professional 1 Application 플랜을 사용하면 지원되는 운영 플랫폼 중 하나에서 빌드된 단일 애플리케이션을 관리할 수 있습니다. 지원되는 운영 체제는 Android, iOS, Windows 또는 모바일 웹입니다. Developer 플랜은 개발과 테스트에 가장 적합합니다. [여기](https://cloud.ibm.com/catalog/services/mobile-foundation)에서 사용 가능한 모든 플랜을 검토할 수 있습니다.
 
 이 시작하기 튜토리얼을 통해 지원되는 플랜 중 하나를 사용하여 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스를 작성할 수 있습니다. 그런 다음 애플리케이션을 등록할 수 있습니다. 등록된 애플리케이션을 다운로드 및 편집하고 어댑터를 배치한 후 마지막으로 애플리케이션을 테스트하십시오.
 
 ## 시작하기 전에
-{: #prereqs}
+{: #prereqs-gs}
 
 {{site.data.keyword.Bluemix}} 계정 및 {{site.data.keyword.mobilefoundation_short}} 서비스의 인스턴스가 필요합니다.
 
 ## 1단계: {{site.data.keyword.mobilefoundation_short}} 서비스의 인스턴스 작성
 {: #step1create}
 
-1. {{site.data.keyword.Bluemix_notm}} **카탈로그**에서 [**{{site.data.keyword.mobilefoundation_short}}**](https://{domainName}/catalog/services/mobile-foundation)을 선택하십시오. 서비스 구성 화면이 열립니다.
+1. {{site.data.keyword.Bluemix_notm}} **카탈로그**에서 [**{{site.data.keyword.mobilefoundation_short}}**](https://cloud.ibm.com/catalog/services/mobile-foundation)을 선택하십시오. 서비스 구성 화면이 열립니다.
 2. 서비스 인스턴스에 이름을 지정하거나 미리 설정된 이름을 사용하십시오.
 3. 서비스 인스턴스를 작성할 지역, 조직 및 영역을 선택하십시오.
 4. **가격 플랜**을 선택하고 **작성**을 클릭하십시오.
@@ -86,7 +86,7 @@ Professional 1 Application 플랜을 사용하면 지원되는 운영 플랫폼 
 
       +	**콘솔 실행**을 클릭하여 {{site.data.keyword.mfp_oc_short_notm}}을 여십시오.      
 
-      토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](c_using_mfs_p5.html#using_mfs_advanced_p5)을 참조하십시오.
+      토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5)을 참조하십시오.
       {: tip}
 
 ### {{site.data.keyword.mobilefoundation_short}}의 경우: Professional 1 Application 플랜
@@ -124,7 +124,7 @@ Professional 1 Application 플랜을 사용하면 지원되는 운영 플랫폼 
 
       +  **콘솔 실행**을 클릭하여 {{site.data.keyword.mfp_oc_short_notm}}을 여십시오.  
 
-      토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](c_using_mfs_p2.html#using_mfs_advanced_p2)을 참조하십시오.
+      토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2)을 참조하십시오.
       {: tip}
 
 [Using the Mobile Foundation service to set up MobileFirst Server![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window}로 이동하여 {{site.data.keyword.mobilefoundation_short}}을 시작하는 방법에 대해 자세히 알아보십시오.
@@ -246,17 +246,8 @@ Mobile Foundation 서버 인스턴스를 작성하고 시작한 후에 다음 �
 
 
 ## 다음 단계
-{: #nextsteps}
+{: #nextsteps-gs}
 
 [Quick Start tutorials ![외부 링크 아이콘](../../icons/launch-glyph.svg "Quick Start tutorials")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window}에 따라 더 많은 샘플 애플리케이션에 대해 작업하고 {{site.data.keyword.mobilefoundation_short}}의 작업을 탐색할 수 있습니다.
 
 Quick Start에는 iOS, Android, 웹, Cordova, Windows, React Native, Ionic 및 Xamarin 앱에 대한 {{site.data.keyword.mobilefoundation_short}}의 작업을 설명하는 튜토리얼이 있습니다.
-
-# 관련 링크
-{: #rellinks  notoc}
-
-## 관련 링크
-{: #general notoc}
-
-*	[IBM MobileFirst Platform Foundation V8.0.0 제품 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}
-*	[IBM MobileFirst Platform Developer Center ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com){: new_window}

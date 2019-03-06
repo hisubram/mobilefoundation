@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -29,13 +29,12 @@ Developer 플랜을 사용하여 {{site.data.keyword.mobilefoundation_short}} �
 
 이제 모바일 앱 및 모바일 디바이스를 관리하고 서버를 모바일 백엔드로 사용하며 푸시 알림을 전송하는 등의 작업을 수행할 수 있습니다.
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Developer 플랜의 Mobile Analytics
+{: #mobile_analytics_p1}
 
 Mobile Analytics 서버는 Mobile Foundation: Developer 플랜 서비스 인스턴스에 포함되고 사전 구성됩니다.
 
 * {{site.data.keyword.mfp_oc_short_notm}}에서 Mobile Analytics 콘솔을 실행하십시오.
 
-Mobile Analytics에 대한 자세한 정보는 [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}를 참조하십시오.
+Mobile Analytics를 사용하여 앱을 인스트루먼테이션하는 데 관한 자세한 정보는 [여기](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}를 참조하십시오.
 
-세부사항은 [{{site.data.keyword.mobilefoundation_long}} 문서 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}를 참조하십시오.

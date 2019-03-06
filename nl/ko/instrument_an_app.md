@@ -45,7 +45,7 @@ Mobile Analytics 기능을 사용하여 애플리케이션 사용 및 성능을 
 ### Android 애플리케이션을 인스트루먼트합니다.
 {: #instrument_android_app}
 {: android}
-#### 1단계: Mobile Analytics Client SDK 가져오기 및 설치
+#### 1단계: Mobile Analytics Client SDK for Android 가져오기 및 설치
 {: #install_analytics_sdk_android }
 {: android}
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation)
@@ -62,7 +62,7 @@ Mobile Analytics Client SDK는 Android 프로젝트의 종속 관리자인 Gradl
 {: android}
 
   Android 프로젝트에는 각각 프로젝트와 앱 모듈용으로 한 개씩 두 개의 `build.gradle` 파일이 있을 수 있습니다. **앱 모듈** 파일을 사용해야 합니다.
- {: tip}
+  {: tip}
   {: android}
 
 3. `build.gradle` 파일의 `Dependencies` 섹션을 찾아 {{site.data.keyword.mobileanalytics_short}} 클라이언트 SDK의 컴파일 종속성을 추가하십시오. 저장소 명령문은 다음 코드 예와 유사해야 합니다.
@@ -79,8 +79,8 @@ Mobile Analytics Client SDK는 Android 프로젝트의 종속 관리자인 Gradl
   {: android}
 
   첫 번째 종속성은 애플리케이션 런타임 이벤트를 캡처하고 로깅하는 데 사용하는 Mobile Analytics Client SDK용이고
-  두 번째 종속성은 인앱(in-app) 사용자 피드백을 사용으로 설정하여 애플리케이션 사용자와 상호작용하는 데 사용합니다. 인앱 사용자 피드백을 사용하는 경우에만 두 번째 종속성이 필요합니다.
- {: android}
+  두 번째 종속성은 인앱(in-app) 사용자 피드백을 사용으로 설정하여 애플리케이션 사용자와 상호작용하는 데 사용합니다. 인앱 사용자 피드백을 사용하는 경우에만 두 번째 종속성이 필요합니다. 
+  {: android}
 
 4. **도구 &gt; Android &gt; 프로젝트와 Gradle 파일 동기화**를 클릭하여 프로젝트와 Gradle을 동기화하십시오.
 {: android}
@@ -114,7 +114,7 @@ Mobile Analytics Client SDK는 Android 프로젝트의 종속 관리자인 Gradl
 {: #instrument_app_based_on_data_android }
 {: android}
 
-1. 분석 데이터를 캡처하여 Mobile Analytics 서비스에 보내기 위해 애플리케이션을 초기화합니다. 먼저, 다음 `import`문을 애플리케이션 또는 활동 클래스의 시작 부분에 추가하십시오.
+1. 분석 데이터를 캡처하여 Mobile Analytics 서비스에 보내기 위해 애플리케이션을 초기화합니다.  먼저, 다음 `import`문을 애플리케이션 또는 활동 클래스의 시작 부분에 추가하십시오.
 {: android}
 
    ```Java
@@ -134,10 +134,10 @@ Mobile Analytics Client SDK는 Android 프로젝트의 종속 관리자인 Gradl
    {: codeblock}
    {: android}
 
-   init 메소드를 호출하기 전에 애플리케이션에서 MobileFoundation 서비스를 사용하여 디바이스를 인증하고 권한을 부여하는 데 필요한 코드를 임베드하는지 확인해야 합니다. 이 단계는 모든 Mobile Foundation 서비스 애플리케이션에 필수이며 분석 데이터 캡처에 고유하지 않은 공통 단계입니다. <!--  Refer <need to link doc that talks about auth> -->
+   init 메소드를 호출하기 전에 애플리케이션에서 MobileFoundation 서비스를 사용하여 디바이스를 인증하고 권한을 부여하는 데 필요한 코드를 임베드하는지 확인해야 합니다.  이 단계는 모든 Mobile Foundation 서비스 애플리케이션에 필수이며 분석 데이터 캡처에 고유하지 않은 공통 단계입니다. <!--  Refer <need to link doc that talks about auth> -->
    {: android}
 
-   초기화가 완료되면 이제 추가 코드를 추가하지 않아도 애플리케이션에서 디바이스 정보 및 Mobile Analytics SDK 로그를 캡처할 수 있습니다. 다음 섹션에서 설명한 추가 API 및 코드는 선택적이며 캡처하려는 분석 데이터 종류에 따라 추가할 수 있습니다.
+   초기화가 완료되면 이제 추가 코드를 추가하지 않아도 애플리케이션에서 디바이스 정보 및 Mobile Analytics SDK 로그를 캡처할 수 있습니다.  다음 섹션에서 설명한 추가 API 및 코드는 선택적이며 캡처하려는 분석 데이터 종류에 따라 추가할 수 있습니다.
    {: android}
 
 2. 애플리케이션 세션 및 충돌 정보와 같은 애플리케이션 라이프사이클 이벤트를 캡처하려면 다음을 추가하여 애플리케이션을 구성하십시오.
@@ -154,15 +154,15 @@ Mobile Analytics Client SDK는 Android 프로젝트의 종속 관리자인 Gradl
   {: codeblock}
   {: android}
 
-4. 이제 분석 데이터를 캡처하도록 애플리케이션이 초기화되었습니다. 다음으로, 캡처된 데이터를 Mobile Analytics 서비스로 전송해야 합니다.
-    다음 API를 사용하여 Mobile Analytics 서비스에 분석 데이터를 전송하십시오.
+4. 이제 분석 데이터를 캡처하도록 애플리케이션이 초기화되었습니다.  다음으로, 캡처된 데이터를 Mobile Analytics 서비스로 전송해야 합니다.
+   다음 API를 사용하여 Mobile Analytics 서비스에 분석 데이터를 전송하십시오.
    ```java
     WLAnalytics.send();
    ```
    {: codeblock}
    {: android}
 
-  캡처된 분석 데이터를 Mobile Analytics 서비스로 전송하기 위해 애플리케이션 플로우에서 이 API를 호출할 시기를 자유롭게 결정할 수 있습니다. 캡처된 모든 분석 데이터는 전송될 때까지 디바이스에 로컬로 저장됩니다.
+  캡처된 분석 데이터를 Mobile Analytics 서비스로 전송하기 위해 애플리케이션 플로우에서 이 API를 호출할 시기를 자유롭게 결정할 수 있습니다.  캡처된 모든 분석 데이터는 전송될 때까지 디바이스에 로컬로 저장됩니다.
   {: android}
 
 5. 애플리케이션 로그를 캡처하여 Mobile Analytics 서비스에 전송하려면 Mobile Analytics Client SDK 로거 API를 사용하십시오.     
@@ -172,8 +172,8 @@ Mobile Analytics Client SDK는 Android 프로젝트의 종속 관리자인 Gradl
     * WARN - 더 이상 사용되지 않는 API나 느린 네트워크 응답과 같이 중요한 오류로 간주되지 않는 사용 경고를 로깅하는 데 사용합니다.
     * INFO - 중요하지만 긴급하지는 않은 초기화 이벤트 및 기타 데이터를 보고하는 데 사용합니다.
     * DEBUG - 개발자가 애플리케이션 결함을 해결하는 데 도움이 되도록 디버그 명령문을 보고하는 데 사용합니다.
-       로거 레벨이 DEBUG로 설정된 경우에는 Mobile Analytics 클라이언트 SDK 로그도 제공됩니다. 이 로그는 로그를 전송할 때 포함됩니다.
-     {: note}
+    로거 레벨이 DEBUG로 설정된 경우에는 Mobile Analytics 클라이언트 SDK 로그도 제공됩니다. 이 로그는 로그를 전송할 때 포함됩니다.
+   {: note}
    {: android}
 
    다음 코드 스니펫에서는 Android의 샘플 로거 사용법을 보여줍니다.
@@ -198,7 +198,7 @@ Mobile Analytics Client SDK는 Android 프로젝트의 종속 관리자인 Gradl
    {: codeblock}
    {: android}
 
-6.  사용자 참여 패턴(새로운 사용자 대 돌아온 사용자)을 이해하려면 사용자 ID를 애플리케이션 세션과 연관시켜야 합니다. 이 작업은 다음 API를 호출하여 수행할 수 있습니다.
+6.  사용자 참여 패턴(새로운 사용자 대 돌아온 사용자)을 이해하려면 사용자 ID를 애플리케이션 세션과 연관시켜야 합니다.  이 작업은 다음 API를 호출하여 수행할 수 있습니다.
     ```java
       WLAnalytics.setUserContext("userName or userIdentity");
     ```
@@ -208,7 +208,7 @@ Mobile Analytics Client SDK는 Android 프로젝트의 종속 관리자인 Gradl
     로컬에서 캡처되고 저장된 모든 분석 데이터는 WLAnalytics.send() API가 호출될 때만 Mobile Analytics 서비스로 전송됩니다.
     {: android}
 
-7.  호출된 HTTP API, 요청 수 및 평균 응답 시간과 같은 애플리케이션 HTTP 네트워크 상호작용 패턴을 이해하려면 Mobile Foundation Service Client SDK의 WLResourceRequest 클래스를 사용하여 HTTP 호출을 수행해야 합니다. 네트워크 이벤트를 캡처하기 위해 Analytics를 초기화한 경우에도 WLResourceRequest를 사용하면 Mobile Anayltics가 네트워크 호출에 후크하여 관련 데이터를 캡처할 수 있습니다. 다음과 같은 방법으로 HTTP 호출을 수행해야 합니다.
+7.  호출된 HTTP API, 요청 수 및 평균 응답 시간과 같은 애플리케이션 HTTP 네트워크 상호작용 패턴을 이해하려면 Mobile Foundation Service Client SDK의 WLResourceRequest 클래스를 사용하여 HTTP 호출을 수행해야 합니다.  네트워크 이벤트를 캡처하기 위해 Analytics를 초기화한 경우에도 WLResourceRequest를 사용하면 Mobile Anayltics가 네트워크 호출에 후크하여 관련 데이터를 캡처할 수 있습니다.  다음과 같은 방법으로 HTTP 호출을 수행해야 합니다.
     ```java
       WLResourceRequest request = new WLResourceRequest(new URI(url), WLResourceRequest.GET);
             request.send(new WLResponseListener() {
@@ -256,7 +256,7 @@ Mobile Analytics Client SDK는 Android 프로젝트의 종속 관리자인 Gradl
     로깅된 사용자 정의 데이터를 Mobile Analytics 콘솔에서 정의할 수 있는 사용자 정의 차트에 표시하여 사용자 정의 인사이트를 도출할 수 있습니다.
     {: android}
 
-10. 인앱 사용자 피드백을 사용하여 애플리케이션 성능 분석을 강화하십시오. 애플리케이션 **사용자 및 테스터**를 사용하여 앱 소유자에게 풍부한 컨텍스트별 피드백을 제공할 수 있습니다. **앱 소유자**가 사용자로부터 애플리케이션 사용 경험에 관한 실시간 피드백을 받으므로 **앱 소유자**와 **개발자**가 해당 경험에 관해 추가로 조치를 취할 수 있습니다. 그러면 상당히 민첩하게 애플리케이션을 유지할 수 있습니다. 예를 들어, 단추 클릭 또는 메뉴 항목 선택을 처리할 때 애플리케이션의 조치 핸들러에서 대화식 피드백 모드로 애플리케이션을 전환하려면 다음 API를 사용하십시오.
+10. 인앱 사용자 피드백을 사용하여 애플리케이션 성능 분석을 강화하십시오.   애플리케이션 **사용자 및 테스터**를 사용하여 앱 소유자에게 풍부한 컨텍스트별 피드백을 제공할 수 있습니다. **앱 소유자**가 사용자로부터 애플리케이션 사용 경험에 관한 실시간 피드백을 받으므로 **앱 소유자**와 **개발자**가 해당 경험에 관해 추가로 조치를 취할 수 있습니다.  그러면 상당히 민첩하게 애플리케이션을 유지할 수 있습니다.  예를 들어, 단추 클릭 또는 메뉴 항목 선택을 처리할 때 애플리케이션의 조치 핸들러에서 대화식 피드백 모드로 애플리케이션을 전환하려면 다음 API를 사용하십시오.
     ```java
         WLAnalytics.triggerFeedbackMode();
     ```
@@ -322,10 +322,10 @@ Swift SDK는 iOS 및 watchOS에 사용할 수 있습니다.
    {: codeblock}
    {: ios}
 
-   init 메소드를 호출하기 전에 애플리케이션에서 MobileFoundation 서비스를 사용하여 디바이스를 인증하고 권한을 부여하는 데 필요한 코드를 임베드하는지 확인해야 합니다. 이 단계는 모든 Mobile Foundation 서비스 애플리케이션에 필수이며 분석 데이터 캡처에 고유하지 않은 공통 단계입니다. <!--  Refer <need to link doc that talks about auth> -->
+   init 메소드를 호출하기 전에 애플리케이션에서 MobileFoundation 서비스를 사용하여 디바이스를 인증하고 권한을 부여하는 데 필요한 코드를 임베드하는지 확인해야 합니다.  이 단계는 모든 Mobile Foundation 서비스 애플리케이션에 필수이며 분석 데이터 캡처에 고유하지 않은 공통 단계입니다. <!--  Refer <need to link doc that talks about auth> -->
    {: ios}
 
-   초기화가 완료되면 이제 추가 코드를 추가하지 않아도 애플리케이션에서 디바이스 정보 및 Mobile Analytics SDK 로그를 캡처할 수 있습니다. 다음 섹션에서 설명한 추가 API 및 코드는 선택적이며 캡처하려는 분석 데이터 종류에 따라 추가할 수 있습니다.
+   초기화가 완료되면 이제 추가 코드를 추가하지 않아도 애플리케이션에서 디바이스 정보 및 Mobile Analytics SDK 로그를 캡처할 수 있습니다.  다음 섹션에서 설명한 추가 API 및 코드는 선택적이며 캡처하려는 분석 데이터 종류에 따라 추가할 수 있습니다.
    {: ios}
 
 2. 애플리케이션 세션 및 충돌 정보와 같은 애플리케이션 라이프사이클 이벤트를 캡처하려면 다음을 추가하여 애플리케이션을 구성하십시오.
@@ -342,30 +342,31 @@ Swift SDK는 iOS 및 watchOS에 사용할 수 있습니다.
     {: codeblock}
     {: ios}
 
-4. 이제 분석 데이터를 캡처하도록 애플리케이션이 초기화되었습니다. 다음으로, 캡처된 데이터를 Mobile Analytics 서비스로 전송해야 합니다.
-    다음 API를 사용하여 Mobile Analytics 서비스에 분석 데이터를 전송하십시오.
+4. 이제 분석 데이터를 캡처하도록 애플리케이션이 초기화되었습니다.  다음으로, 캡처된 데이터를 Mobile Analytics 서비스로 전송해야 합니다.
+   다음 API를 사용하여 Mobile Analytics 서비스에 분석 데이터를 전송하십시오.
    ```Swift
     WLAnalytics.sharedInstance().send();
    ```
    {: codeblock}
    {: ios}
 
-    캡처된 분석 데이터를 Mobile Analytics 서비스로 전송하기 위해 애플리케이션 플로우에서 이 API를 호출할 시기를 자유롭게 결정할 수 있습니다. 캡처된 모든 분석 데이터는 전송될 때까지 디바이스에 로컬로 저장됩니다.
-  {: ios}
+    캡처된 분석 데이터를 Mobile Analytics 서비스로 전송하기 위해 애플리케이션 플로우에서 이 API를 호출할 시기를 자유롭게 결정할 수 있습니다.  캡처된 모든 분석 데이터는 전송될 때까지 디바이스에 로컬로 저장됩니다.
+    {: ios}
 
-5. 애플리케이션 로그를 캡처하여 Mobile Analytics 서비스에 전송하려면 Mobile Analytics Client SDK 로거 API를 사용하십시오.   Mobile Analytics Client SDK 로깅 프레임워크에서는 다음과 같은 로그 레벨을 지원합니다. 이 레벨은 가장 간단한 로깅에서 가장 상세한 로깅 순으로 나열되어 있으며 권장 사용 가이드라인이 함께 제공됩니다.
+5. 애플리케이션 로그를 캡처하여 Mobile Analytics 서비스에 전송하려면 Mobile Analytics Client SDK 로거 API를 사용하십시오.
+      Mobile Analytics Client SDK 로깅 프레임워크에서는 다음과 같은 로그 레벨을 지원합니다. 이 레벨은 가장 간단한 로깅에서 가장 상세한 로깅 순으로 나열되어 있으며 권장 사용 가이드라인이 함께 제공됩니다.
     * FATAL - 복구할 수 없는 충돌 또는 정지가 발생한 경우 사용합니다. FATAL 레벨은 애플리케이션이 충돌할 때 사용자에게 표시되는 복구할 수 없는 오류를 로깅하는 데 사용하도록 예약되어 있습니다.
     * ERROR - 예상치 못한 예외 또는 예상치 못한 네트워크 프로토콜 오류에 사용합니다.
     * WARN - 더 이상 사용되지 않는 API나 느린 네트워크 응답과 같이 중요한 오류로 간주되지 않는 사용 경고를 로깅하는 데 사용합니다.
     * INFO - 중요하지만 긴급하지는 않은 초기화 이벤트 및 기타 데이터를 보고하는 데 사용합니다.
     * DEBUG - 개발자가 애플리케이션 결함을 해결하는 데 도움이 되도록 디버그 명령문을 보고하는 데 사용합니다.
-       로거 레벨이 DEBUG로 설정된 경우에는 Mobile Analytics 클라이언트 SDK 로그도 제공됩니다. 이 로그는 로그를 전송할 때 포함됩니다.
-     {: note}
+    로거 레벨이 DEBUG로 설정된 경우에는 Mobile Analytics 클라이언트 SDK 로그도 제공됩니다. 이 로그는 로그를 전송할 때 포함됩니다.
+   {: note}
     {: ios}
 
     iOS 애플리케이션에 로깅 기능을 추가하기 위해 로거의 코드 스니펫을 보려면 [튜토리얼 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/it/foundation/8.0/application-development/client-side-log-collection/ios/)을 따르십시오.
 
-6.  사용자 참여 패턴(새로운 사용자 대 돌아온 사용자)을 이해하려면 사용자 ID를 애플리케이션 세션과 연관시켜야 합니다. 이 작업은 다음 API를 호출하여 수행할 수 있습니다.
+6.  사용자 참여 패턴(새로운 사용자 대 돌아온 사용자)을 이해하려면 사용자 ID를 애플리케이션 세션과 연관시켜야 합니다.  이 작업은 다음 API를 호출하여 수행할 수 있습니다.
     ```Swift
       WLAnalytics.sharedInstance().setUserContext("userName or userIdentity")
     ```
@@ -375,7 +376,7 @@ Swift SDK는 iOS 및 watchOS에 사용할 수 있습니다.
     로컬에서 캡처되고 저장된 모든 분석 데이터는 WLAnalytics.sharedInstance().send() API가 호출될 때만 Mobile Analytics 서비스로 전송됩니다.
     {: ios}
 
-7.  호출된 HTTP API, 요청 수 및 평균 응답 시간과 같은 애플리케이션 HTTP 네트워크 상호작용 패턴을 이해하려면 Mobile Foundation Service Client SDK의 WLResourceRequest 클래스를 사용하여 HTTP 호출을 수행해야 합니다. 네트워크 이벤트를 캡처하기 위해 Analytics를 초기화한 경우에도 WLResourceRequest를 사용하면 Mobile Anayltics가 네트워크 호출에 후크하여 관련 데이터를 캡처할 수 있습니다. 다음과 같은 방법으로 HTTP 호출을 수행해야 합니다.
+7.  호출된 HTTP API, 요청 수 및 평균 응답 시간과 같은 애플리케이션 HTTP 네트워크 상호작용 패턴을 이해하려면 Mobile Foundation Service Client SDK의 WLResourceRequest 클래스를 사용하여 HTTP 호출을 수행해야 합니다.  네트워크 이벤트를 캡처하기 위해 Analytics를 초기화한 경우에도 WLResourceRequest를 사용하면 Mobile Anayltics가 네트워크 호출에 후크하여 관련 데이터를 캡처할 수 있습니다.  다음과 같은 방법으로 HTTP 호출을 수행해야 합니다.
     ```Swift
       let request = WLResourceRequest( url: URL(string: "/adapters/JavaAdapter/users"), method: WLHttpMethodGet )
 
@@ -419,7 +420,7 @@ Swift SDK는 iOS 및 watchOS에 사용할 수 있습니다.
     로깅된 사용자 정의 데이터를 Mobile Analytics 콘솔에서 정의할 수 있는 사용자 정의 차트에 표시하여 사용자 정의 인사이트를 도출할 수 있습니다.
     {: ios}
 
-10. 인앱 사용자 피드백을 사용하여 애플리케이션 성능 분석을 강화하십시오. 애플리케이션 **사용자 및 테스터**를 사용하여 앱 소유자에게 풍부한 컨텍스트별 피드백을 제공할 수 있습니다. **앱 소유자**가 사용자로부터 애플리케이션 사용 경험에 관한 실시간 피드백을 받으므로 **앱 소유자**와 **개발자**가 해당 경험에 관해 추가로 조치를 취할 수 있습니다. 그러면 상당히 민첩하게 애플리케이션을 유지할 수 있습니다. 예를 들어, 단추 클릭 또는 메뉴 항목 선택을 처리할 때 애플리케이션의 조치 핸들러에서 대화식 피드백 모드로 애플리케이션을 전환하려면 다음 API를 사용하십시오.
+10. 인앱 사용자 피드백을 사용하여 애플리케이션 성능 분석을 강화하십시오.   애플리케이션 **사용자 및 테스터**를 사용하여 앱 소유자에게 풍부한 컨텍스트별 피드백을 제공할 수 있습니다. **앱 소유자**가 사용자로부터 애플리케이션 사용 경험에 관한 실시간 피드백을 받으므로 **앱 소유자**와 **개발자**가 해당 경험에 관해 추가로 조치를 취할 수 있습니다.  그러면 상당히 민첩하게 애플리케이션을 유지할 수 있습니다.  예를 들어, 단추 클릭 또는 메뉴 항목 선택을 처리할 때 애플리케이션의 조치 핸들러에서 대화식 피드백 모드로 애플리케이션을 전환하려면 다음 API를 사용하십시오.
     ```Swift
         WLAnalytics.sharedInstance().triggerFeedbackMode();
     ```
@@ -442,7 +443,7 @@ Mobile Analytics Cordova 플러그인을 사용하면 모바일 애플리케이�
 {: cordova}
 
 1. [Cordova ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://cordova.apache.org/#getstarted){: new_window} 프로젝트를 작성하거나 기존 프로젝트를 여십시오.
-   {: cordova}
+    {: cordova}
 
 2. 선택한 Android 또는 iOS 플랫폼을 Cordova 애플리케이션에 추가하십시오. 명령행에서 다음 명령 중 하나 또는 둘 다를 실행하십시오.<br/>
     **Android**:
@@ -473,7 +474,7 @@ Mobile Analytics Cordova 플러그인을 사용하면 모바일 애플리케이�
     {: codeblock}
     {: cordova}
 5. 다음 명령을 실행하여 플러그인이 설치되었는지 확인하십시오.
-   {: cordova}
+    {: cordova}
     ```bash
     cordova plugin list
     ```
@@ -486,10 +487,10 @@ Mobile Analytics Cordova 플러그인을 사용하면 모바일 애플리케이�
 
 1. Cordova 애플리케이션에서는 설정이 필요하지 않고 초기화가 기본 제공됩니다. 
 
-   아래 분석 메소드를 호출하기 전에 애플리케이션에서 MobileFoundation 서비스를 사용하여 디바이스를 인증하고 권한을 부여하는 데 필요한 코드를 임베드하는지 확인해야 합니다. 이 단계는 모든 Mobile Foundation 서비스 애플리케이션에 필수이며 분석 데이터 캡처에 고유하지 않은 공통 단계입니다. <!--  Refer <need to link doc that talks about auth> -->
+   아래 분석 메소드를 호출하기 전에 애플리케이션에서 MobileFoundation 서비스를 사용하여 디바이스를 인증하고 권한을 부여하는 데 필요한 코드를 임베드하는지 확인해야 합니다.  이 단계는 모든 Mobile Foundation 서비스 애플리케이션에 필수이며 분석 데이터 캡처에 고유하지 않은 공통 단계입니다. <!--  Refer <need to link doc that talks about auth> -->
    {: cordova}
 
-   초기화가 완료되면 이제 추가 코드를 추가하지 않아도 애플리케이션에서 디바이스 정보 및 Mobile Analytics SDK 로그를 캡처할 수 있습니다. 다음 섹션에서 설명한 추가 API 및 코드는 선택적이며 캡처하려는 분석 데이터 종류에 따라 추가할 수 있습니다.
+   초기화가 완료되면 이제 추가 코드를 추가하지 않아도 애플리케이션에서 디바이스 정보 및 Mobile Analytics SDK 로그를 캡처할 수 있습니다.  다음 섹션에서 설명한 추가 API 및 코드는 선택적이며 캡처하려는 분석 데이터 종류에 따라 추가할 수 있습니다.
    {: cordova}
 
 2. 라이프사이클 이벤트의 캡처를 사용하려면 Cordova 앱의 기본 플랫폼에서 초기화해야 합니다.
@@ -537,15 +538,15 @@ Mobile Analytics Cordova 플러그인을 사용하면 모바일 애플리케이�
    {: cordova}
 
 4. 애플리케이션 로그를 캡처하여 Mobile Analytics 서비스에 전송하려면 Mobile Analytics Client SDK 로거 API를 사용하십시오.
-    Mobile Analytics Client SDK 로깅 프레임워크에서는 다음과 같은 로그 레벨을 지원합니다. 이 레벨은 가장 간단한 로깅에서 가장 상세한 로깅 순으로 나열되어 있으며 권장 사용 가이드라인이 함께 제공됩니다.
+   Mobile Analytics Client SDK 로깅 프레임워크에서는 다음과 같은 로그 레벨을 지원합니다. 이 레벨은 가장 간단한 로깅에서 가장 상세한 로깅 순으로 나열되어 있으며 권장 사용 가이드라인이 함께 제공됩니다.
     * FATAL - 복구할 수 없는 충돌 또는 정지가 발생한 경우 사용합니다. FATAL 레벨은 애플리케이션이 충돌할 때 사용자에게 표시되는 복구할 수 없는 오류를 로깅하는 데 사용하도록 예약되어 있습니다.
     * ERROR - 예상치 못한 예외 또는 예상치 못한 네트워크 프로토콜 오류에 사용합니다.
     * WARN - 더 이상 사용되지 않는 API나 느린 네트워크 응답과 같이 중요한 오류로 간주되지 않는 사용 경고를 로깅하는 데 사용합니다.
     * INFO - 중요하지만 긴급하지는 않은 초기화 이벤트 및 기타 데이터를 보고하는 데 사용합니다.
     * DEBUG - 개발자가 애플리케이션 결함을 해결하는 데 도움이 되도록 디버그 명령문을 보고하는 데 사용합니다.
-       로거 레벨이 DEBUG로 설정된 경우에는 Mobile Analytics 클라이언트 SDK 로그도 제공됩니다. 이 로그는 로그를 전송할 때 포함됩니다.
+    로거 레벨이 DEBUG로 설정된 경우에는 Mobile Analytics 클라이언트 SDK 로그도 제공됩니다. 이 로그는 로그를 전송할 때 포함됩니다.
     * TRACE - 메소드 시작점 및 종료점에 사용됩니다.
-      {: note}
+   {: note}
    {: cordova}
 
    다음 코드 스니펫에서는 Cordova의 샘플 로거 사용법을 보여줍니다.
@@ -570,7 +571,7 @@ Mobile Analytics Cordova 플러그인을 사용하면 모바일 애플리케이�
     {: codeblock}
     {: cordova}
 
-5.  사용자 참여 패턴(새로운 사용자 대 돌아온 사용자)을 이해하려면 사용자 ID를 애플리케이션 세션과 연관시켜야 합니다. Javascript 레벨에서 사용할 수 있는 특정 API가 없습니다. 그러나 이 작업은 다음 API를 호출하여 네이티브 코드에서 수행할 수 있습니다.
+5.  사용자 참여 패턴(새로운 사용자 대 돌아온 사용자)을 이해하려면 사용자 ID를 애플리케이션 세션과 연관시켜야 합니다.  Javascript 레벨에서 사용할 수 있는 특정 API가 없습니다. 그러나 이 작업은 다음 API를 호출하여 네이티브 코드에서 수행할 수 있습니다.
 
     **Android:**
       ```java
@@ -589,7 +590,7 @@ Mobile Analytics Cordova 플러그인을 사용하면 모바일 애플리케이�
     로컬에서 캡처되고 저장된 모든 분석 데이터는 javascript 레벨의 WL.Analytics.send() API [또는] android 네이티브 WLAnalytics.send() API [또는] ios 네이티브 WLAnalytics.sharedInstance().send() API를 호출할 때만 Mobile Analytics 서비스에 전송됩니다.
     {: cordova}
 
-6. 호출된 HTTP API, 요청 수 및 평균 응답 시간과 같은 애플리케이션 HTTP 네트워크 상호작용 패턴을 이해하려면 Mobile Foundation Service Client SDK의 WLResourceRequest 클래스를 사용하여 HTTP 호출을 수행해야 합니다. 네트워크 이벤트를 캡처하기 위해 Analytics를 초기화한 경우에도 WLResourceRequest를 사용하면 Mobile Anayltics가 네트워크 호출에 후크하여 관련 데이터를 캡처할 수 있습니다. 다음과 같은 방법으로 HTTP 호출을 수행해야 합니다.
+6. 호출된 HTTP API, 요청 수 및 평균 응답 시간과 같은 애플리케이션 HTTP 네트워크 상호작용 패턴을 이해하려면 Mobile Foundation Service Client SDK의 WLResourceRequest 클래스를 사용하여 HTTP 호출을 수행해야 합니다.  네트워크 이벤트를 캡처하기 위해 Analytics를 초기화한 경우에도 WLResourceRequest를 사용하면 Mobile Anayltics가 네트워크 호출에 후크하여 관련 데이터를 캡처할 수 있습니다.  다음과 같은 방법으로 HTTP 호출을 수행해야 합니다.
     ```Javascript
       var resourceRequest = new WLResourceRequest("url-path", WLResourceRequest.GET);
       resourceRequest.send().then(
@@ -619,7 +620,7 @@ Mobile Analytics Cordova 플러그인을 사용하면 모바일 애플리케이�
     로깅된 사용자 정의 데이터를 Mobile Analytics 콘솔에서 정의할 수 있는 사용자 정의 차트에 표시하여 사용자 정의 인사이트를 도출할 수 있습니다.
     {: cordova}
 
-8. 인앱 사용자 피드백을 사용하여 애플리케이션 성능 분석을 강화하십시오. 애플리케이션 **사용자 및 테스터**를 사용하여 앱 소유자에게 풍부한 컨텍스트별 피드백을 제공할 수 있습니다. **앱 소유자**가 사용자로부터 애플리케이션 사용 경험에 관한 실시간 피드백을 받으므로 **앱 소유자**와 **개발자**가 해당 경험에 관해 추가로 조치를 취할 수 있습니다. 그러면 상당히 민첩하게 애플리케이션을 유지할 수 있습니다. 예를 들어, 단추 클릭 또는 메뉴 항목 선택을 처리할 때 애플리케이션의 조치 핸들러에서 대화식 피드백 모드로 애플리케이션을 전환하려면 다음 API를 사용하십시오.
+8. 인앱 사용자 피드백을 사용하여 애플리케이션 성능 분석을 강화하십시오.   애플리케이션 **사용자 및 테스터**를 사용하여 앱 소유자에게 풍부한 컨텍스트별 피드백을 제공할 수 있습니다. **앱 소유자**가 사용자로부터 애플리케이션 사용 경험에 관한 실시간 피드백을 받으므로 **앱 소유자**와 **개발자**가 해당 경험에 관해 추가로 조치를 취할 수 있습니다.  그러면 상당히 민첩하게 애플리케이션을 유지할 수 있습니다.  예를 들어, 단추 클릭 또는 메뉴 항목 선택을 처리할 때 애플리케이션의 조치 핸들러에서 대화식 피드백 모드로 애플리케이션을 전환하려면 다음 API를 사용하십시오.
     ```Javascript
         WL.Analytics.triggerFeedbackMode();
     ```
@@ -683,10 +684,10 @@ Mobile Analytics SDK를 사용하면 웹 애플리케이션을 인스트루먼�
     {: codeblock}
     {: web}
 
-   아래 분석 메소드를 호출하기 전에 애플리케이션에서 MobileFoundation 서비스를 사용하여 디바이스를 인증하고 권한을 부여하는 데 필요한 코드를 임베드하는지 확인해야 합니다. 이 단계는 모든 Mobile Foundation 서비스 애플리케이션에 필수이며 분석 데이터 캡처에 고유하지 않은 공통 단계입니다. <!--  Refer <need to link doc that talks about auth> -->
+   아래 분석 메소드를 호출하기 전에 애플리케이션에서 MobileFoundation 서비스를 사용하여 디바이스를 인증하고 권한을 부여하는 데 필요한 코드를 임베드하는지 확인해야 합니다.  이 단계는 모든 Mobile Foundation 서비스 애플리케이션에 필수이며 분석 데이터 캡처에 고유하지 않은 공통 단계입니다. <!--  Refer <need to link doc that talks about auth> -->
    {: web}
 
-   초기화가 완료되면 이제 추가 코드를 추가하지 않아도 애플리케이션에서 디바이스 정보 및 Mobile Analytics SDK 로그를 캡처할 수 있습니다. 다음 섹션에서 설명한 추가 API 및 코드는 선택적이며 캡처하려는 분석 데이터 종류에 따라 추가할 수 있습니다.
+   초기화가 완료되면 이제 추가 코드를 추가하지 않아도 애플리케이션에서 디바이스 정보 및 Mobile Analytics SDK 로그를 캡처할 수 있습니다.  다음 섹션에서 설명한 추가 API 및 코드는 선택적이며 캡처하려는 분석 데이터 종류에 따라 추가할 수 있습니다.
    {: web}
 
 3. 애플리케이션 라이프사이클 이벤트 및 네트워크 이벤트를 캡처하려면 애플리케이션 로직에 다음 행을 추가하십시오.
@@ -697,7 +698,7 @@ Mobile Analytics SDK를 사용하면 웹 애플리케이션을 인스트루먼�
     {: codeblock}
     {: web}
 
-4. 이제 분석 데이터를 캡처하도록 애플리케이션이 초기화되었습니다. 다음으로 캡처된 데이터를 Mobile Analytics 서비스에 전송해야 합니다. 다음 API를 사용하여 Mobile Analytics 서비스에 분석 데이터를 전송하십시오.
+4. 이제 분석 데이터를 캡처하도록 애플리케이션이 초기화되었습니다.  다음으로 캡처된 데이터를 Mobile Analytics 서비스에 전송해야 합니다. 다음 API를 사용하여 Mobile Analytics 서비스에 분석 데이터를 전송하십시오.
 
    ```Javascript
    ibmmfpfanalytics.send();
@@ -705,19 +706,19 @@ Mobile Analytics SDK를 사용하면 웹 애플리케이션을 인스트루먼�
    {: codeblock}
    {: web}
 
-    캡처된 분석 데이터를 Mobile Analytics 서비스로 전송하기 위해 애플리케이션 플로우에서 이 API를 호출할 시기를 자유롭게 결정할 수 있습니다. 캡처된 모든 분석 데이터는 전송될 때까지 디바이스에 로컬로 저장됩니다.
-  {: web}
+    캡처된 분석 데이터를 Mobile Analytics 서비스로 전송하기 위해 애플리케이션 플로우에서 이 API를 호출할 시기를 자유롭게 결정할 수 있습니다.  캡처된 모든 분석 데이터는 전송될 때까지 디바이스에 로컬로 저장됩니다.
+    {: web}
 
 5. 애플리케이션 로그를 캡처하여 Mobile Analytics 서비스에 전송하려면 Mobile Analytics Client SDK 로거 API를 사용하십시오.
-    Mobile Analytics Client SDK 로깅 프레임워크에서는 다음과 같은 로그 레벨을 지원합니다. 이 레벨은 가장 간단한 로깅에서 가장 상세한 로깅 순으로 나열되어 있으며 권장 사용 가이드라인이 함께 제공됩니다.
+   Mobile Analytics Client SDK 로깅 프레임워크에서는 다음과 같은 로그 레벨을 지원합니다. 이 레벨은 가장 간단한 로깅에서 가장 상세한 로깅 순으로 나열되어 있으며 권장 사용 가이드라인이 함께 제공됩니다.
     * FATAL - 복구할 수 없는 충돌 또는 정지가 발생한 경우 사용합니다. FATAL 레벨은 애플리케이션이 충돌할 때 사용자에게 표시되는 복구할 수 없는 오류를 로깅하는 데 사용하도록 예약되어 있습니다.
     * ERROR - 예상치 못한 예외 또는 예상치 못한 네트워크 프로토콜 오류에 사용합니다.
     * WARN - 더 이상 사용되지 않는 API나 느린 네트워크 응답과 같이 중요한 오류로 간주되지 않는 사용 경고를 로깅하는 데 사용합니다.
     * INFO - 중요하지만 긴급하지는 않은 초기화 이벤트 및 기타 데이터를 보고하는 데 사용합니다.
     * DEBUG - 개발자가 애플리케이션 결함을 해결하는 데 도움이 되도록 디버그 명령문을 보고하는 데 사용합니다.
-       로거 레벨이 DEBUG로 설정된 경우에는 Mobile Analytics 클라이언트 SDK 로그도 제공됩니다. 이 로그는 로그를 전송할 때 포함됩니다.
+    로거 레벨이 DEBUG로 설정된 경우에는 Mobile Analytics 클라이언트 SDK 로그도 제공됩니다. 이 로그는 로그를 전송할 때 포함됩니다.
     * TRACE - 메소드 시작점 및 종료점에 사용됩니다.
-      {: note}
+   {: note}
    {: web}
 
    다음 코드 스니펫에서는 웹 앱의 샘플 로거 사용법을 보여줍니다.
@@ -741,7 +742,7 @@ Mobile Analytics SDK를 사용하면 웹 애플리케이션을 인스트루먼�
    {: note}
    {: web}
 
-6. 사용자 참여 패턴(새로운 사용자 대 돌아온 사용자)을 이해하려면 사용자 ID를 애플리케이션 세션과 연관시켜야 합니다. 이 작업은 다음 API를 호출하여 수행할 수 있습니다.
+6. 사용자 참여 패턴(새로운 사용자 대 돌아온 사용자)을 이해하려면 사용자 ID를 애플리케이션 세션과 연관시켜야 합니다.  이 작업은 다음 API를 호출하여 수행할 수 있습니다.
     ```Javascript
     ibmmfpfanalytics.setUserContext("userName or userIdentity");
     ```
@@ -751,7 +752,7 @@ Mobile Analytics SDK를 사용하면 웹 애플리케이션을 인스트루먼�
     로컬에서 캡처되고 저장된 모든 분석 데이터는 ibmmfpfanalytics.send() API가 호출될 때만 Mobile Analytics 서비스로 전송됩니다.
     {: web}
 
-7.  호출된 HTTP API, 요청 수 및 평균 응답 시간과 같은 애플리케이션 HTTP 네트워크 상호작용 패턴을 이해하려면 Mobile Foundation Service Client SDK의 WLResourceRequest 클래스를 사용하여 HTTP 호출을 수행해야 합니다. 네트워크 이벤트를 캡처하기 위해 Analytics를 초기화한 경우에도 WLResourceRequest를 사용하면 Mobile Anayltics가 네트워크 호출에 후크하여 관련 데이터를 캡처할 수 있습니다. 다음과 같은 방법으로 HTTP 호출을 수행해야 합니다.
+7.  호출된 HTTP API, 요청 수 및 평균 응답 시간과 같은 애플리케이션 HTTP 네트워크 상호작용 패턴을 이해하려면 Mobile Foundation Service Client SDK의 WLResourceRequest 클래스를 사용하여 HTTP 호출을 수행해야 합니다.  네트워크 이벤트를 캡처하기 위해 Analytics를 초기화한 경우에도 WLResourceRequest를 사용하면 Mobile Anayltics가 네트워크 호출에 후크하여 관련 데이터를 캡처할 수 있습니다.  다음과 같은 방법으로 HTTP 호출을 수행해야 합니다.
     ```Javascript
       var resourceRequest = new WL.ResourceRequest("url_path", WLResourceRequest.GET);
       resourceRequest.send().then(function(response) {
@@ -778,13 +779,15 @@ Mobile Analytics SDK를 사용하면 웹 애플리케이션을 인스트루먼�
     로깅된 사용자 정의 데이터를 Mobile Analytics 콘솔에서 정의할 수 있는 사용자 정의 차트에 표시하여 사용자 정의 인사이트를 도출할 수 있습니다.
     {: web}
 
-## 다음 단계
-{: #next_steps}
+## 다음 작업
+{: #next_steps_analytics}
 
-Mobile Foundation에서는 개발자가 분석 데이터 가져오기(POST) 및 내보내기(GET)를 수행하는 데 도움이 되도록 REST API를 제공합니다.
+[여기](https://github.com/MobileFirst-Platform-Developer-Center/mfp-analytics-samples)에서 단순 샘플을 사용해 보십시오. 5분 미만에 샘플 애플리케이션을 실행하고 이 페이지에서 설명된 API가 수행하는 작업을 대략적으로 이해할 수 있습니다. Analytics 콘솔에서 분석이 여러 다른 인사이트로 표시되는 방법도 알 수 있습니다.  
+
+Mobile Foundation Analytics Service에서는 개발자가 분석 데이터 가져오기(POST) 및 내보내기(GET)를 수행하는 데 도움이 되도록 REST API를 제공합니다.
 
 [여기](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)에서 Swagger 문서의 분석 REST API를 사용해 보십시오.
 
-{: note}
 
-이제 Mobile Analytics 콘솔로 이동하여 애플리케이션을 사용하는 전체 디바이스 및 새 디바이스와 같은 사용 분석을 볼 수 있습니다. 또한 사용자 정의 차트를 작성하고 경보를 설정하며 앱 충돌을 모니터링하여 애플리케이션을 모니터할 수 있습니다.
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-23"
+lastupdated:  "2019-02-13"
 
 ---
 
@@ -11,14 +11,21 @@ lastupdated:  "2018-11-23"
 {:screen: .screen}
 {:tip: .tip}
 {:pre: .pre}
+{:ios: .ph data-hd-programlang='iOS'}
+{:android: .ph data-hd-programlang='Android'}
+{:cordova: .ph data-hd-programlang='Cordova'}
 
 #	JSONStore 코드 샘플
 {: #code_samples}
 
-## Cordova
-{: #cordova }
-### 연결 초기화 및 열기, 액세서 가져오기, 데이터 추가
-{: #initialize-and-open-connections-get-an-accessor-and-add-data }
+### Cordova의 샘플
+{: #samples_cordova }
+{: cordova}
+
+#### Cordova에서 연결 초기화 및 열기, 액세서 가져오기 및 데이터 추가
+{: #initialize-and-open-connections-get-an-accessor-and-add-data-cordova }
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -74,9 +81,12 @@ WL.JSONStore.init(collections, options)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 찾기 - 저장소 내부에서 문서 찾기
+#### 찾기 - 저장소 내부에서 문서 찾기
 {: #find-locate-documents-inside-the-store }
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -117,8 +127,10 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 바꾸기 - 이미 콜렉션 내부에 저장된 문서 변경
+#### 대체 - Cordova에서 이미 콜렉션 내부에 저장된 문서 변경
+{: cordova}
 
 ```javascript
 var collectionName = 'people';
@@ -146,9 +158,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 제거 - 조회와 일치하는 모든 문서 삭제
-{: #remove-delete-all-documents-that-match-the-query }
+#### 제거 - Cordova에서 조회와 일치하는 모든 문서 삭제
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -177,9 +191,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 계수 - 조회와 일치하는 총 문서 수 가져오기
-{: #count-gets-the-total-number-of-documents-that-match-a-query }
+#### 계수 - Cordova에서 조회와 일치하는 총 문서 수 가져오기
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -206,9 +222,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 영구 삭제 - 모든 사용자의 데이터 삭제, 내부 스토리지 영구 삭제 및 보안 아티팩트 지우기
-{: #destroy-wipes-data-for-all-users-destroys-the-internal-storage-and-clears-security-artifacts }
+#### 영구 삭제 - Cordova에서 모든 사용자의 데이터 삭제, 내부 스토리지 영구 삭제 및 보안 아티팩트 지우기
+{: cordova}
+
 ```javascript
 WL.JSONStore.destroy()
 
@@ -220,9 +238,12 @@ WL.JSONStore.destroy()
   // Handle failure.
 });
 ```
+{: codeblock}
+{: cordova}
 
-### 보안 - 현재 사용자의 열려 있는 모든 콜렉션에 대한 액세스 닫기
-{: #security-close-access-to-all-opened-collections-for-the-current-user }
+#### 보안 - Cordova에서 현재 사용자의 열려 있는 모든 콜렉션에 대한 액세스 닫기
+{: cordova}
+
 ```javascript
 WL.JSONStore.closeAll()
 
@@ -235,9 +256,11 @@ WL.JSONStore.closeAll()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 보안 - 저장소에 액세스하는 데 사용되는 비밀번호 변경
-{: #security-change-the-password-that-is-used-to-access-a-store }
+#### 보안 - Cordova에서 저장소에 액세스하는 데 사용되는 비밀번호 변경
+{: cordova}
+
 ```javascript
 // The password should be user input.
 // It is hard-coded in the example for brevity.
@@ -271,9 +294,11 @@ WL.JSONStore.changePassword(oldPassword, newPassword, username)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 푸시 - 더티로 표시되는 모든 문서를 가져와서 어댑터에 전송하고 정리된 것으로 표시
-{: #push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
+#### 푸시 - Cordova에서 더티로 표시되는 모든 문서를 가져와서 어댑터에 전송하고 정리된 것으로 표시
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 var dirtyDocs;
@@ -312,9 +337,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 가져오기 - 어댑터에서 새 데이터 가져오기
-{: #pull-get-new-data-from-an-adapter }
+#### 가져오기 - Cordova의 어댑터에서 새 데이터 가져오기
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -363,9 +390,11 @@ resource.send()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 문서의 더티 여부 확인
-{: #check-whether-a-document-is-dirty }
+#### Cordova에서 문서의 더티 여부 확인
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 var doc = {_id: 1, json: {name: 'carlitos', age: 99}};
@@ -385,9 +414,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 더티 문서 수 확인
-{: #check-the-number-of-dirty-documents }
+#### Cordova에서 더티 문서 수 확인
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -403,9 +434,12 @@ WL.JSONStore.get(collectionName)
   // Handle failure.
 });
 ```
+{: codeblock}
+{: cordova}
 
-### 콜렉션 제거
-{: #remove-a-collection }
+#### Cordova에서 콜렉션 제거
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -425,9 +459,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 콜렉션 내부에 있는 모든 데이터 지우기
-{: #clear-all-data-that-is-inside-a-collection }
+#### Cordova에서 콜렉션 내부에 있는 모든 데이터 지우기
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -447,9 +483,12 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 트랜잭션 시작, 일부 데이터 추가, 문서 제거, 트랜잭션 커미트 및 실패한 경우 트랜잭션 롤백
-{: transaction }
+#### Cordova에서 트랜잭션 시작, 일부 데이터 추가, 문서 제거, 트랜잭션 커미트 및 실패한 경우 트랜잭션 롤백
+{: #cordova-transaction }
+{: cordova}
+
 ```javascript
 WL.JSONStore.startTransaction()
 
@@ -492,9 +531,10 @@ WL.JSONStore.startTransaction()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 파일 정보 가져오기
-{: #get-file-information }
+#### Cordova에서 파일 정보 가져오기
+
 ```javascript
 WL.JSONStore.fileInfo()
 .then(function (res) {
@@ -506,9 +546,11 @@ WL.JSONStore.fileInfo()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### like, rightLike, leftLike를 사용한 검색
-{: #search-with-like-rightlike-and-leftlike }
+#### Cordova에서 like, rightLike, leftLike를 사용한 검색
+{: cordova}
+
 ```javascript
 // Match all records that contain the search string on both sides.
 // %searchString%
@@ -526,11 +568,15 @@ var arr = WL.JSONStore.QueryPart().leftLike('name', 'ca');  // returns nothing
 var arr2 = WL.JSONStore.QueryPart().leftLike('name', 'los');  // returns {name: 'carlos', age: 10}
 ```
 {: codeblock}
+{: cordova}
 
-## iOS
-{: #ios }
-### 연결 초기화 및 열기, 액세서 가져오기, 데이터 추가
-{: #ios-initialize-and-open-connections-get-an-accessor-and-add-data }
+### iOS의 샘플
+{: #samples-ios }
+{: ios}
+
+#### iOS에서 연결 초기화 및 열기, 액세서 가져오기 및 데이터 추가
+{: ios}
+
 ```objc
 // Create the collections object that will be initialized.
 JSONStoreCollection* people = [[JSONStoreCollection alloc] initWithName:@"people"];
@@ -584,9 +630,11 @@ Initialize with a secure random token from the server
 }];
 ```
 {: codeblock}
+{: ios}
 
-### 찾기 - 저장소 내부에서 문서 찾기
-{: #ios-find-locate-documents-inside-the-store }
+#### 찾기 - Cordova의 저장소 내부에서 문서 찾기
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -624,9 +672,11 @@ for (NSDictionary* result in results) {
 }
 ```
 {: codeblock}
+{: ios}
 
-### 바꾸기 - 이미 콜렉션 내부에 저장된 문서 변경
-{: #ios-replace-change-the-documents-that-are-already-stored-inside-a-collection }
+#### 대체 - iOS에서 이미 콜렉션 내부에 저장된 문서 변경
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -642,9 +692,11 @@ NSError* error = nil;
 int docsReplaced = [[people replaceDocuments:docs andMarkDirty:NO error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### 제거 - 조회와 일치하는 모든 문서 삭제
-{: #ios-remove-delete-all-documents-that-match-the-query }
+#### 제거 - iOS에서 조회와 일치하는 모든 문서 삭제
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -656,9 +708,11 @@ NSError* error = nil;
 int docsRemoved = [[people removeWithIds:@[@1] andMarkDirty:NO error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### 계수 - 조회와 일치하는 총 문서 수 가져오기
-{: #ios-count-gets-the-total-number-of-documents-that-match-a-query }
+#### 계수 - iOS에서 조회와 일치하는 총 문서 수 가져오기
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -676,9 +730,11 @@ NSError* error = nil;
 int countResult = [[people countWithQueryParts:@[queryPart] error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### 영구 삭제 - 모든 사용자의 데이터 삭제, 내부 스토리지 영구 삭제 및 보안 아티팩트 지우기
-{: #ios-destroy-wipes-data-for-all-users-destroys-the-internal-storage-and-clears-security-artifacts }
+#### 영구 삭제 - iOS에서 모든 사용자의 데이터 삭제, 내부 스토리지 영구 삭제 및 보안 아티팩트 지우기
+{: ios}
+
 ```objc
 // This object will point to an error if one occurs.
 NSError* error = nil;
@@ -687,9 +743,11 @@ NSError* error = nil;
 [[JSONStore sharedInstance] destroyDataAndReturnError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### 보안 - 현재 사용자의 열려 있는 모든 콜렉션에 대한 액세스 닫기
-{: #ios-security-close-access-to-all-opened-collections-for-the-current-user }
+#### 보안 - iOS에서 현재 사용자의 열려 있는 모든 콜렉션에 대한 액세스 닫기
+{: ios}
+
 ```objc
 // This object will point to an error if one occurs.
 NSError* error = nil;
@@ -698,9 +756,11 @@ NSError* error = nil;
 [[JSONStore sharedInstance] closeAllCollectionsAndReturnError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### 보안 - 저장소에 액세스하는 데 사용되는 비밀번호 변경
-{: #ios-security-change-the-password-that-is-used-to-access-a-store }
+#### 보안 - iOS에서 저장소에 액세스하는 데 사용되는 비밀번호 변경
+{: ios}
+
 ```objc
 // The password should be user input.
 // It is hardcoded in the example for brevity.
@@ -719,9 +779,11 @@ oldPassword = nil;
 newPassword = nil;
 ```
 {: codeblock}
+{: ios}
 
-### 푸시 - 더티로 표시되는 모든 문서를 가져와서 어댑터에 전송하고 정리된 것으로 표시
-{: #ios-push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
+#### 푸시 - iOS에서 더티로 표시되는 모든 문서를 가져와서 어댑터에 전송하고 정리된 것으로 표시
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -739,9 +801,11 @@ NSArray* dirtyDocs = [people allDirtyAndReturnError:&error];
 int numCleaned = [[people markDocumentsClean:dirtyDocs error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### 가져오기 - 어댑터에서 새 데이터 가져오기
-{: #ios-pull-get-new-data-from-an-adapter }
+#### 가져오기 - iOS의 어댑터에서 새 데이터 가져오기
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -758,9 +822,11 @@ NSArray* data = @[ @{@"id" : @1, @"ssn": @"111-22-3333", @"name": @"carlos"} ];
 int numChanged = [[people changeData:data withReplaceCriteria:@[@"id", @"ssn"] addNew:YES markDirty:NO error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### 문서의 더티 여부 확인
-{: #ios-check-whether-a-document-is-dirty }
+#### iOS에서 문서의 더티 여부 확인
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -772,9 +838,11 @@ NSError* error = nil;
 BOOL isDirtyResult = [people isDirtyWithDocumentId:1 error:&error];
 ```
 {: codeblock}
+{: ios}
 
-### 더티 문서 수 확인
-{: #ios-check-the-number-of-dirty-documents }
+#### iOS에서 더티 문서 수 확인
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -786,9 +854,11 @@ NSError* error = nil;
 int dirtyDocsCount = [[people countAllDirtyDocumentsWithError:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### 콜렉션 제거
-{: #ios-remove-a-collection }
+#### iOS에서 콜렉션 제거
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -800,9 +870,11 @@ NSError* error = nil;
 [people removeCollectionWithError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### 콜렉션 내부에 있는 모든 데이터 지우기
-{: #ios-clear-all-data-that-is-inside-a-collection }
+#### iOS에서 콜렉션 내부에 있는 모든 데이터 지우기
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -814,9 +886,12 @@ NSError* error = nil;
 [people clearCollectionWithError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### 트랜잭션 시작, 일부 데이터 추가, 문서 제거, 트랜잭션 커미트 및 실패한 경우 트랜잭션 롤백
+#### iOS에서 트랜잭션 시작, 일부 데이터 추가, 문서 제거, 트랜잭션 커미트 및 실패한 경우 트랜잭션 롤백
 {: #ios-transaction }
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -844,9 +919,11 @@ if (addError != nil || removeError != nil) {
 }
 ```
 {: codeblock}
+{: ios}
 
-### 파일 정보 가져오기
-{: #ios-get-file-information }
+#### iOS에서 파일 정보 가져오기
+{: ios}
+
 ```objc
 // This object will point to an error if one occurs
 NSError* error = nil;
@@ -856,11 +933,15 @@ NSArray* results = [[JSONStore sharedInstance] fileInfoAndReturnError:&error];
 // => [{@"isEncrypted" : @(true), @"name" : @"carlos", @"size" : @3072}]
 ```
 {: codeblock}
+{: ios}
 
-## Android
-{: #android }
-### 연결 초기화 및 열기, 액세서 가져오기, 데이터 추가
-{: #android-initialize-and-open-connections-get-an-accessor-and-add-data }
+### Android의 샘플
+{: #samples_android }
+{: android}
+
+#### Android에서 연결 초기화 및 열기, 액세서 가져오기 및 데이터 추가
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -899,9 +980,11 @@ throw ex;
 }
 ```
 {: codeblock}
+{: android}
 
-### 서버의 보안 랜덤 토큰으로 초기화
-{: #android-initialize-with-a-secure-random-token-from-the-server }
+#### Android에서 서버의 보안 랜덤 토큰으로 초기화
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -961,9 +1044,11 @@ AsyncTask<Context, Void, Void> aTask = new AsyncTask<Context, Void, Void>() {
 aTask.execute(ctx);
 ```
 {: codeblock}
+{: android}
 
-### 찾기 - 저장소 내부에서 문서 찾기
-{: #android-find-locate-documents-inside-the-store }
+#### 찾기 - Android의 저장소 내부에서 문서 찾기
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1003,9 +1088,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 바꾸기 - 이미 콜렉션 내부에 저장된 문서 변경
-{: #android-replace-change-the-documents-that-are-already-stored-inside-a-collection }
+#### 대체 - Android에서 이미 콜렉션 내부에 저장된 문서 변경
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1031,9 +1118,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 제거 - 조회와 일치하는 모든 문서 삭제
-{: #android-remove-delete-all-documents-that-match-the-query }
+#### 제거 - Android에서 조회와 일치하는 모든 문서 삭제
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1063,9 +1152,11 @@ catch (JSONException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 계수 - 조회와 일치하는 총 문서 수 가져오기
-{: android-count-gets-the-total-number-of-documents-that-match-a-query }
+#### 계수 - Android에서 조회와 일치하는 총 문서 수 가져오기
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1092,9 +1183,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 영구 삭제 - 모든 사용자의 데이터 삭제, 내부 스토리지 영구 삭제 및 보안 아티팩트 지우기
-{: #android-destory-wipes-data-for-all-users-destroys-the-internal-storage-and-clears-security-artifacts }
+#### 영구 삭제 - Android에서 모든 사용자의 데이터 삭제, 내부 스토리지 영구 삭제 및 보안 아티팩트 지우기
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1109,9 +1202,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 보안 - 현재 사용자의 열려 있는 모든 콜렉션에 대한 액세스 닫기
-{: #android-security-close-access-to-all-opened-collections-for-the-current-user }
+#### 보안 - Android에서 현재 사용자의 열려 있는 모든 콜렉션에 대한 액세스 닫기
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1126,9 +1221,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 보안 - 저장소에 액세스하는 데 사용되는 비밀번호 변경
-{: #android-security-change-the-password-that-is-used-to-access-a-store }
+#### 보안 - Android에서 저장소에 액세스하는 데 사용되는 비밀번호 변경
+{: android}
+
 ```java
 // The password should be user input.
 // It is hard-coded in the example for brevity.
@@ -1153,9 +1250,11 @@ finally {
 }
 ```
 {: codeblock}
+{: android}
 
-### 푸시 - 더티로 표시되는 모든 문서를 가져와서 어댑터에 전송하고 정리된 것으로 표시
-{: #android-push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
+#### 푸시 - Android에서 더티로 표시되는 모든 문서를 가져와서 어댑터에 전송하고 정리된 것으로 표시
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1176,9 +1275,11 @@ try {
 }
 ```
 {: codeblock}
+{: android}
 
-### 가져오기 - 어댑터에서 새 데이터 가져오기
-{: #android-pull-get-new-data-from-an-adapter }
+#### 가져오기 - Android의 어댑터에서 새 데이터 가져오기
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1218,9 +1319,11 @@ catch (JSONException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 문서의 더티 여부 확인
-{: #android-check-whetther-a-document-is-dirty }
+#### Android에서 문서의 더티 여부 확인
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1238,9 +1341,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-#### 더티 문서 수 확인
-{: #android-check-the-number-of-dirty-documents }
+#### Android에서 더티 문서 수 확인
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1258,9 +1363,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 콜렉션 제거
-{: #android-remove-a-collection }
+#### Android에서 콜렉션 제거
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1279,9 +1386,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 콜렉션 내부에 있는 모든 데이터 지우기
-{: #android-clear-all-data-that-is-inside-a-collection }
+#### Android에서 콜렉션 내부에 있는 모든 데이터 지우기
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1299,9 +1408,12 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 트랜잭션 시작, 일부 데이터 추가, 문서 제거, 트랜잭션 커미트 및 실패한 경우 트랜잭션 롤백
+#### Android에서 트랜잭션 시작, 일부 데이터 추가, 문서 제거, 트랜잭션 커미트 및 실패한 경우 트랜잭션 롤백
 {: #android-transaction }
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1341,9 +1453,11 @@ catch (JSONException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 파일 정보 가져오기
-{: #android-get-file-information }
+#### Android에서 파일 정보 가져오기
+{: android}
+
 ```java
 Context ctx = getContext();
 List<JSONStoreFileInfo> allFileInfo = WLJSONStore.getInstance(ctx).getFileInfo();
@@ -1355,3 +1469,4 @@ for(JSONStoreFileInfo fileInfo : allFileInfo) {
 }
 ```
 {: codeblock}
+{: android}
