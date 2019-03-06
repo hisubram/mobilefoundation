@@ -227,9 +227,4 @@ You can make use proxy settings to set the optional proxy through which notifica
 With the server-side now set-up, setup the client-side and handle received notifications.
 
 * [Handling push notifications in Client applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_client_applications#handling_push_notifications_in_client_applications)
-    * [Silent Notifications](/docs/services/mobilefoundation?topic=mobilefoundation-silent_notifications#silent_notifications)
-    * [Interactive Notifications](/docs/services/mobilefoundation?topic=mobilefoundation-interactive_notifications#interactive_notifications)
-    * [Handling push notifications in Cordova applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_cordova#handling_push_notifications_in_cordova)
-    * [Handling push notifications in iOS applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_ios#handling_push_notifications_in_ios)
-    * [Handling push notifications in Android applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_android#handling_push_notifications_in_android)
-    * [Handling push notifications in Windows applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_windows#handling_push_notifications_in_windows)
+
