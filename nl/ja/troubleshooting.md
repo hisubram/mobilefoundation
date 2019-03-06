@@ -13,8 +13,8 @@ lastupdated: "2018-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# トラブルシューティング
-{: #troubleshooting}
+# 一般的なトラブルシューティング
+{: #general-troubleshooting}
 
 {{site.data.keyword.IBM_notm}} 製品の問題を特定して解決するために、トラブルシューティング情報を使用できます。 この情報には、{{site.data.keyword.mobilefoundation_short}} などの、{{site.data.keyword.IBM_notm}} 製品に付属する問題判別リソースを使用するための手順が含まれます。
 {: shortdesc}
@@ -105,4 +105,4 @@ lastupdated: "2018-02-12"
 
 サービスや開始の手順に関する質問については、[IBM developerWorks dW Answers ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window}フォーラムを使用してください。 `bluemix` と `mobilefirst` のタグを含めてください。
 
-IBM サポート・チケットのオープン、またはサポート・レベルとチケットの重大度に関する情報は、[サポートへのお問い合わせ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/docs/get-support/getstarttssup.html#typesofsupport  ){: new_window}を参照してください。
+IBM サポート・チケットのオープン、またはサポート・レベルとチケットの重大度については、[サポートへのお問い合わせ](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}を参照してください。

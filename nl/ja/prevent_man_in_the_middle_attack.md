@@ -183,4 +183,4 @@ WLClient.sharedInstance().pinTrustedCertificatePublicKey( fromFiles: arrayOfCert
 
 その後、証明書がピン留めされていないサーバーに対して、保護された要求が行われると、その特定の要求 (例えば、``obtainAccessToken`` または ``WLResourceRequest``) の ``onFailure`` コールバックが呼び出されます。
 
->証明書ピン留め API メソッドについて詳しくは、[API リファレンス](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/)を参照してください。
+>証明書ピン留め API メソッドについて詳しくは、[API リファレンス](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks)を参照してください。

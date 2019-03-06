@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-02-14"
 
 ---
 
@@ -53,9 +53,9 @@ Web リソースを変更した後、Mobile Foundation CLI を使用して、そ
   ```
   `mfpdev app webupdate` コマンドにより、更新された Web リソースが `.zip` ファイルにパッケージされ、開発者ワークステーション上で稼働しているデフォルトの Mobile Foundation サーバーにアップロードされます。 パッケージ化された Web リソースは、`[cordova-project-root-folder]/mobilefirst/` フォルダー内にあります。
 
-アプリケーション内の Web コンテンツを更新するための代替手順については、[ここ](update_web_content_in_app_alternate_steps.html)を参照してください。
+アプリケーション内の Web コンテンツを更新するための代替手順については、[ここ](/docs/services/mobilefoundation?topic=mobilefoundation-alternate_steps_to_update_app_web_content_in_app#alternate_steps_to_update_app_web_content_in_app)を参照してください。
 
 ## ダイレクト・アップデートの拡張構成
-{: #advanced_direct_update_config}
+{: #direct_update_advanced_config}
 
-ダイレクト・アップデートの拡張構成に関するトピックについては、[ここ ](update_web_content_in_app_advanced.html)を参照してください。
+ダイレクト・アップデートの拡張構成に関するトピックについては、[ここ ](/docs/services/mobilefoundation?topic=mobilefoundation-advanced_direct_update_configuration#advanced_direct_update_configuration)を参照してください。

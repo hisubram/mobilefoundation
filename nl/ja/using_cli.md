@@ -12,8 +12,8 @@ lastupdated:  "2018-11-19"
 {:tip: .tip}
 {:pre: .pre}
 
-#	{{ site.data.keyword.mobilefoundation_short }} CLI
-{: #using_mobilefoundation_cli}
+#	Mobile Foundation CLI
+{: #mobile_foundation_cli}
 
 {{ site.data.keyword.mobilefoundation_short }} には、{{site.data.keyword.mobilefoundation_short}} クライアント成果物およびサーバー成果物を簡単に管理するための、開発者向けのコマンド・ライン・インターフェース (CLI) ツール **mfpdev** が用意されています。
 

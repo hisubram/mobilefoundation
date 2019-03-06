@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated:  "2018-11-20"
 「デバイス当たりのプロフェッショナル」プランでは、ユーザーはモバイル・ユーザーまたはデバイスの数に関係なく、モバイル・アプリケーションを実動でビルド、テスト、および実行できます。 課金は、日々のクライアント・デバイスの数に基づきます。 このプランは、大規模なデプロイメントと高可用性をサポートします。
 「{{site.data.keyword.mobilefoundation_short}}: デバイス当たりのプロフェッショナル」サービス・インスタンスを作成した後、以下の手順に従ってサービスを開始してください。
 
-## 前提条件
+## 「デバイス当たりのプロフェッショナル」プランの前提条件
 {: #prerequisites_p5}
 
 「{{site.data.keyword.mobilefoundation_short}}: デバイス当たりのプロフェッショナル」サービス・インスタンスを構成する前に、以下の項目を考慮してください。
@@ -73,7 +73,7 @@ lastupdated:  "2018-11-20"
 {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスで使用するように構成された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスを変更することはできません。 ただし、同じ {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスを複数の {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスで使用することは可能です。これは、各 {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスが選択された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス内に独自のスキーマを作成するためです。
 {: note}
 
-## MobileFirst サーバーの始動
+## 「デバイス当たりのプロフェッショナル」プランを使用して作成した MobileFirst サーバーの始動
 {: #start_mobilefoundation_p5}
 
 * {{site.data.keyword.mfserver_short_notm}} をデフォルト設定で始動するには、**「基本サーバーの始動」**をクリックしてください。
@@ -96,7 +96,7 @@ lastupdated:  "2018-11-20"
 
 このコンソールを使用して、モバイル・アプリ、アダプター、およびモバイル・デバイスの管理、モバイル・バックエンドとしてのサーバーの使用、プッシュ通知の送信などを行うことができます。
 
-## MobileFirst サーバーの再作成
+## 「デバイス当たりのプロフェッショナル」プランを使用した場合の MobileFirst サーバーの再作成
 {: #recreate_mobilefoundation_p5}
 
 *	**「再作成」**をクリックしてサーバーを再作成します。
@@ -106,7 +106,7 @@ lastupdated:  "2018-11-20"
 アプリおよびアダプターに関する情報など、前のサーバー・インスタンスのデータは、構成された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス内に保持されます。 このデータは、サーバーの再作成に使用されます。
 {: note}
 
-##	拡張構成のセットアップ
+##	「デバイス当たりのプロフェッショナル」プランでの拡張構成のセットアップ
 {: #using_mfs_advanced_p5}
 
 拡張設定またはカスタム設定を使用してサーバーを作成するには、`「概要」` ページの**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**を使用します。 また、**「設定」**タブをクリックして、サーバー構成をカスタマイズするためにサーバー設定を更新することもできます。 {{site.data.keyword.mobilefoundation_short}} では、拡張設定にアクセスできます。
@@ -116,13 +116,11 @@ lastupdated:  "2018-11-20"
 
   - **「インスタンス」**は作成されたインスタンスの数を表示します。
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Mobile Analytics: 「デバイス当たりのプロフェッショナル」プランの場合
+{: #mobile_analytics_p5}
 
 Mobile Analytics サーバーが含まれ、「Mobile Foundation: 開発者」プランのサービス・インスタンスで事前構成されています。
 
 * {{site.data.keyword.mfp_oc_short_notm}} から、Mobile Analytics コンソールを起動します。
 
-Mobile Analytics について詳しくは、[MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window} を参照してください。
-
-詳しくは、[{{site.data.keyword.mobilefoundation_long}} documentation ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}を参照してください。
+Mobile Analytics について詳しくは、[ここ](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}を参照してください。

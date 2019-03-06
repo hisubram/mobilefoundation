@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -29,13 +29,12 @@ lastupdated:  "2018-11-20"
 
 これで、モバイル・アプリとモバイル・デバイスの管理、モバイル・バックエンドとしてのサーバーの使用、プッシュ通知の送信などを行うことができます。
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Mobile Analytics: 「開発者」プランの場合
+{: #mobile_analytics_p1}
 
 Mobile Analytics サーバーが含まれ、「Mobile Foundation: 開発者」プランのサービス・インスタンスで事前構成されています。
 
 * {{site.data.keyword.mfp_oc_short_notm}} から、Mobile Analytics コンソールを起動します。
 
-Mobile Analytics について詳しくは、[MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window} を参照してください。
+Mobile Analytics を使用したアプリケーションの装備について詳しくは、[ここ](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}を参照してください。
 
-詳しくは、[{{site.data.keyword.mobilefoundation_long}} の資料 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window} を参照してください。

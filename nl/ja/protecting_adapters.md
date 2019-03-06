@@ -24,9 +24,6 @@ lastupdated: "2018-11-19"
 # アダプターの保護
 {: #protecting_adapters}
 
-## アダプター・リソースの保護
-{: #protecting_adapters_resources}
-
 以下の [Java](#protect-java-adapter-resources) セクションと [JavaScript](#protect-javascript-adapter-resources) セクションで概説されているように、アダプターでは、Java メソッドまたは JavaScript リソース・プロシージャーに対して、あるいは Java リソース・クラス全体に対して保護スコープを指定できます。 スコープは、スペースで区切った 1 つ以上のスコープ・エレメントからなるストリング (「scopeElement1 scopeElement2 …」) として定義することも、ヌルとして定義してデフォルトのスコープを適用することもできます。
 
 デフォルトの MobileFirst スコープは `RegisteredClient` です。これは、リソースにアクセスするためにアクセス・トークンを必要とし、そのリソース要求が MobileFirst Server に登録されたアプリケーションから出されたものであることを検証します。 この保護は、[リソース保護を無効](#disabling-resource-protection)にした場合を除き常に適用されます。 そのため、リソースのスコープを設定しない場合でも、リソースは引き続き保護されます。
@@ -95,8 +92,8 @@ public class WebSphereResources {
 ```
 {: codeblock}
 
-## リソース保護の無効化
-{: #disabling-resource-protection}
+## アダプター・リソース保護の無効化
+{: #disabling-adapter-resource-protection}
 
 特定の Java アダプター・リソースまたは JavaScript アダプター・リソースに対して、あるいは Java クラス全体に対して [デフォルトの MobileFirst リソース保護](#protecting_adapters_resources)を無効にすることができます。それは、以下の Java セクションと JavaScript セクションで概説されています。 リソース保護が無効になっている場合、MobileFirst セキュリティー・フレームワークでは、リソースにアクセスするためにトークンは必要ありません。
 

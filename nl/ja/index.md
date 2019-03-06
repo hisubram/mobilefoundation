@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-16"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,24 +14,24 @@ lastupdated:  "2018-11-16"
 {:note: .note}
 
 # 入門チュートリアル
-{: #gettingstartedtemplate}
+{: #getting-started-tutorial}
 
 {{site.data.keyword.mobilefoundation_long}} は、エンタープライズ・モバイル・アプリケーションの開発、テスト、および実行に使用できる {{site.data.keyword.mfp_full}} 環境のセットアップを迅速に行えるようにします。 {{site.data.keyword.mobilefoundation_short}} には、「開発者」、「デバイス当たりのプロフェッショナル」、「プロフェッショナル 1 アプリケーション」というサービス・プランが用意されています。
 {: shortdesc}
 
-「プロフェッショナル 1 アプリケーション」プランを使用すると、サポートされる任意のオペレーティング・システム上にビルドされた単一アプリケーションを管理できます。 サポートされるオペレーティング・システムは、Android、iOS、Windows、またはモバイル Web です。 「開発者」プランは、開発とテストに最適です。 すべての使用可能なプランは [ここ](https://console.bluemix.net/catalog/services/mobile-foundation) で確認できます。
+「プロフェッショナル 1 アプリケーション」プランを使用すると、サポートされる任意のオペレーティング・システム上にビルドされた単一アプリケーションを管理できます。 サポートされるオペレーティング・システムは、Android、iOS、Windows、またはモバイル Web です。 「開発者」プランは、開発とテストに最適です。 すべての使用可能なプランは [ここ](https://cloud.ibm.com/catalog/services/mobile-foundation) で確認できます。
 
 この入門チュートリアルでは、サポートされるプランのいずれかを使用して {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを作成できます。 その後、アプリケーションを登録できます。 登録されたアプリケーションをダウンロードして編集し、アダプターをデプロイし、最後にアプリケーションをテストします。
 
 ## 始めに
-{: #prereqs}
+{: #prereqs-gs}
 
 {{site.data.keyword.Bluemix}} アカウントと、{{site.data.keyword.mobilefoundation_short}} サービスのインスタンスが必要になります。
 
 ## ステップ 1: {{site.data.keyword.mobilefoundation_short}} サービスのインスタンスの作成
 {: #step1create}
 
-1. {{site.data.keyword.Bluemix_notm}} ** カタログ**で、[**{{site.data.keyword.mobilefoundation_short}}**](https://{domainName}/catalog/services/mobile-foundation) を選択します。 サービス構成画面が開きます。
+1. {{site.data.keyword.Bluemix_notm}} ** カタログ**で、[**{{site.data.keyword.mobilefoundation_short}}**](https://cloud.ibm.com/catalog/services/mobile-foundation) を選択します。 サービス構成画面が開きます。
 2. サービス・インスタンスに名前を付けます。または、事前設定された名前を使用します。
 3. サービス・インスタンスを作成する地域、組織、およびスペースを選択します。
 4. **「価格プラン」**を選択し、**「作成」**をクリックします。
@@ -86,7 +86,7 @@ lastupdated:  "2018-11-16"
 
       +	**「コンソールの起動」**をクリックして {{site.data.keyword.mfp_oc_short_notm}} を開きます。      
 
-      トポロジー、セキュリティー、およびその他のサーバー構成について拡張構成を使用して {{site.data.keyword.mobilefirst_notm}} サーバー・インスタンスを作成するには、**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**をクリックします。 詳しくは、[拡張構成のセットアップ](c_using_mfs_p5.html#using_mfs_advanced_p5)を参照してください。
+      トポロジー、セキュリティー、およびその他のサーバー構成について拡張構成を使用して {{site.data.keyword.mobilefirst_notm}} サーバー・インスタンスを作成するには、**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**をクリックします。 詳しくは、[拡張構成のセットアップ](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5)を参照してください。
       {: tip}
 
 ### {{site.data.keyword.mobilefoundation_short}}: 「1 つの商用アプリケーション」プランの場合
@@ -124,7 +124,7 @@ lastupdated:  "2018-11-16"
 
       +  **「コンソールの起動」**をクリックして {{site.data.keyword.mfp_oc_short_notm}} を開きます。  
 
-      トポロジー、セキュリティー、およびその他のサーバー構成について拡張構成を使用して {{site.data.keyword.mobilefirst_notm}} サーバー・インスタンスを作成するには、**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**をクリックします。 詳しくは、[拡張構成のセットアップ](c_using_mfs_p2.html#using_mfs_advanced_p2)を参照してください。
+      トポロジー、セキュリティー、およびその他のサーバー構成について拡張構成を使用して {{site.data.keyword.mobilefirst_notm}} サーバー・インスタンスを作成するには、**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**をクリックします。 詳しくは、[拡張構成のセットアップ](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2)を参照してください。
       {: tip}
 
 {{site.data.keyword.mobilefoundation_short}} の使用の開始について詳しくは、[Using the Mobile Foundation service to set up MobileFirst Server (Mobile Foundation サービスを使用した、MobileFirst Server のセットアップ)![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window}を参照してください。
@@ -246,17 +246,8 @@ Mobile Foundation サーバー・インスタンスを作成して始動した�
 
 
 ## 次のステップ
-{: #nextsteps}
+{: #nextsteps-gs}
 
 [Quick Start チュートリアル ![外部リンク・アイコン](../../icons/launch-glyph.svg "Quick Start チュートリアル")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} に従って、さらに多くのサンプル・アプリケーションを操作したり {{site.data.keyword.mobilefoundation_short}} の機能を検討したりすることができます。
 
 Quick Start には、iOS、Android、Web、Cordova、Windows、React Native、Ionic、Xamarin の各アプリの {{site.data.keyword.mobilefoundation_short}} の動作を説明するチュートリアルがあります。
-
-# 関連リンク
-{: #rellinks  notoc}
-
-## 関連リンク
-{: #general notoc}
-
-*	[IBM MobileFirst Platform Foundation V8.0.0 製品資料![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}
-*	[IBM MobileFirst Platform Developer Center ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com){: new_window}

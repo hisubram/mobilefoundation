@@ -36,7 +36,7 @@ lastupdated:  "2018-11-16"
 
 > **注:**
 >  * ユーザーが自分の {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに独自のフィックスや更新を適用することはできません。
->  * **「再作成」** をクリックした際のプランによる動作の違いについては、[「デバイス当たりのプロフェッショナル」プランでのサーバーの再作成](c_using_mfs_p5.html#recreate_mobilefoundation_p5)と[「プロフェッショナル 1 アプリケーション」プランでのサーバーの再作成](c_using_mfs_p2.html#recreate_mobilefoundation_p2)を参照してください。
+>  * **「再作成」** をクリックした際のプランによる動作の違いについては、[「デバイス当たりのプロフェッショナル」プランでのサーバーの再作成](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#recreate_mobilefoundation_p5)と[「プロフェッショナル 1 アプリケーション」プランでのサーバーの再作成](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#recreate_mobilefoundation_p2)を参照してください。
 >
 
 ## {{site.data.keyword.mobilefoundation_short}} サーバー・インスタンスのカスタム・ドメインを構成するにはどうすればいいですか。

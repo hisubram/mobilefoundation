@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -30,9 +30,9 @@ lastupdated: "2019-01-04"
 # オフライン・ストレージの構成
 {: #configure_offline_storage}
 
-Mobile Foundation JSONStore は、軽量なドキュメント指向のストレージ・システムを提供する、オプションのクライアント・サイド API です。 JSONStore を使用すると、JSON ドキュメントを永続的に保管できます。 JSONStore では、アプリケーションを実行しているデバイスがオフラインの時でも、アプリケーションのドキュメントを使用できます。 この永続的に常時使用できるストレージにより、例えば、使用可能なネットワーク接続がデバイスにないときでも、ドキュメントにアクセスできるため便利です。 JSONStore の概念と用語の概説については、[こちら](jsonstore.html)を参照してください。
+Mobile Foundation JSONStore は、軽量なドキュメント指向のストレージ・システムを提供する、オプションのクライアント・サイド API です。 JSONStore を使用すると、JSON ドキュメントを永続的に保管できます。 JSONStore では、アプリケーションを実行しているデバイスがオフラインの時でも、アプリケーションのドキュメントを使用できます。 この永続的に常時使用できるストレージにより、例えば、使用可能なネットワーク接続がデバイスにないときでも、ドキュメントにアクセスできるため便利です。 JSONStore の概念と用語の概説については、[こちら](/docs/services/mobilefoundation?topic=mobilefoundation-jsonstore#jsonstore)を参照してください。
 
-オフライン・ストレージの拡張構成については、[ここ](advanced_jsonstore.html)を参照してください。
+オフライン・ストレージの拡張構成については、[ここ](/docs/services/mobilefoundation?topic=mobilefoundation-advanced_jsonstore#advanced_jsonstore)を参照してください。
 {: note}
 
 ### Cordova または Ionic アプリケーション用のオフライン・ストレージの構成
@@ -81,7 +81,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 {: codeblock}
 {: cordova}
 
-#### JSONStore コレクションへのアクセス機能の取得
+#### Cordova JSONStore コレクションへのアクセス機能の取得
 {: #get_jsonstore_cordova} 
 {: cordova}
 
@@ -97,7 +97,7 @@ var people = WL.JSONStore.get(collectionName);
 これで、変数 *people* を使用して、*people* コレクションに対して `add`、`find`、`replace` などの操作を実行できます。
 {: cordova}
 
-#### コレクションへのドキュメントの追加
+#### Cordova コレクションへのドキュメントの追加
 {: #add_jsonstore_cordova} 
 {: cordova}
 
@@ -118,7 +118,7 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 {: codeblock}
 {: cordova}
 
-#### コレクション内のドキュメントの検索
+#### Cordova コレクション内のドキュメントの検索
 {: #find_jsonstore_cordova} 
 {: cordova}
 
@@ -169,7 +169,7 @@ else {
 {: codeblock}
 {: cordova}
 
-#### コレクション内のドキュメントの置換
+#### Cordova コレクション内のドキュメントの置換
 {: #replace_jsonstore_cordova} 
 {: cordova}
 
@@ -195,7 +195,7 @@ WL.JSONStore.get(collectionName).replace(document, options).then(function (numbe
 この例では、ドキュメント `{_id: 1, json: {name: 'yoel', age: 23} }` がコレクションにあることを前提としています。
 {: cordova}
 
-#### コレクションからのドキュメントの削除
+#### Cordova コレクションからのドキュメントの削除
 {: #remove_jsonstore_cordova} 
 {: cordova}
 
@@ -216,14 +216,14 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: codeblock}
 {: cordova}
 
-#### コレクション全体の削除
+#### Cordova コレクション全体の削除
 {: #remove_collection_jsonstore_cordova} 
 {: cordova}
 
 コレクション内に保管されているすべてのドキュメントを削除するには、 `removeCollection` を使用します。 この操作は、データベース用語における、表のドロップと似ています。
 {: cordova}
 
-#### JSONStore の破棄
+#### Cordova JSONStore の破棄
 {: #destroy_jsonstore_cordova} 
 {: cordova}
 
@@ -274,7 +274,7 @@ Mobile Foundation ネイティブ SDK が Xcode プロジェクトに追加さ�
    {: codeblock}
    {: ios}
 
-#### JSONStore コレクションを開く: iOS
+#### iOS JSONStore コレクションを開く 
 {: #open_ios} 
 {: ios}
 
@@ -296,7 +296,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### JSONStore コレクションへのアクセス機能の取得
+#### iOS JSONStore コレクションへのアクセス機能の取得
 {: #get_jsonstore_ios} 
 {: ios}
 
@@ -313,7 +313,7 @@ let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWit
 これで、変数 collection を使用して、`people` コレクションに対して `add`、`find`、`replace` などの操作を実行できます。
 {: ios}
 
-#### コレクションへのドキュメントの追加
+#### iOS コレクションへのドキュメントの追加
 {: #add_jsonstore_ios} 
 {: ios}
 
@@ -335,7 +335,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### コレクション内のドキュメントの検索
+#### iOS コレクション内のドキュメントの検索
 {: #find_jsonstore_ios} 
 {: ios}
 
@@ -362,7 +362,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### コレクション内のドキュメントの置換
+#### iOS コレクション内のドキュメントの置換
 {: #replace_jsonstore_ios} 
 {: ios}
 
@@ -393,7 +393,7 @@ do {
 この例では、ドキュメント `{_id: 1, json: {name: 'yoel', age: 23} }` がコレクションにあることを前提としています。
 {: ios}
 
-#### コレクションからのドキュメントの削除
+#### iOS コレクションからのドキュメントの削除
 {: #remove_jsonstore_ios} 
 {: ios}
 
@@ -413,7 +413,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### コレクション全体の削除
+#### iOS コレクション全体の削除
 {: #remove_collection_jsonstore_ios} 
 {: ios}
 
@@ -433,7 +433,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### JSONStore の破棄
+#### iOS JSONStore の破棄
 {: #destroy_jsonstore_ios} 
 {: ios}
 
@@ -488,7 +488,7 @@ Mobile Foundation ネイティブ SDK が Android Studio プロジェクトに�
    {: note}
    {: android}
 
-#### JSONStore コレクションを開く: Android
+#### Android JSONStore コレクションを開く
 {: #open_android} 
 {: android}
 
@@ -512,7 +512,7 @@ Context  context = getContext();
 {: codeblock}
 {: android}
 
-#### JSONStore コレクションへのアクセス機能の取得
+#### Android JSONStore コレクションへのアクセス機能の取得
 {: #get_jsonstore_android} 
 {: android}
 
@@ -535,7 +535,7 @@ Context  context = getContext();
 これで、変数 collection を使用して、`people` コレクションに対して `add`、`find`、`replace` などの操作を実行できます。
 {: android}
 
-#### コレクションへのドキュメントの追加
+#### Android コレクションへのドキュメントの追加
 {: #add_jsonstore_android} 
 {: android}
 
@@ -560,7 +560,7 @@ Context  context = getContext();
 {: codeblock}
 {: android}
 
-#### コレクション内のドキュメントの検索
+#### Android コレクション内のドキュメントの検索
 {: #find_jsonstore_android} 
 {: android}
 
@@ -589,7 +589,7 @@ Context  context = getContext();
 {: codeblock}
 {: android}
 
-#### コレクション内のドキュメントの置換
+#### Android コレクション内のドキュメントの置換
 {: #replace_jsonstore_android} 
 {: android}
 
@@ -617,7 +617,7 @@ Context  context = getContext();
 この例では、ドキュメント `{_id: 1, json: {name: 'yoel', age: 23} }` がコレクションにあることを前提としています。
 {: android}
 
-#### コレクションからのドキュメントの削除
+#### Android コレクションからのドキュメントの削除
 {: #remove_jsonstore_android} 
 {: android}
 
@@ -641,7 +641,7 @@ Context  context = getContext();
 {: codeblock}
 {: android}
 
-#### コレクション全体の削除
+#### Android コレクション全体の削除
 {: #remove_collection_jsonstore_android} 
 {: android}
 
@@ -662,7 +662,7 @@ Context  context = getContext();
 {: codeblock}
 {: android}
 
-#### JSONStore の破棄
+#### Android JSONStore の破棄
 {: #destroy_jsonstore_android} 
 {: android}
 

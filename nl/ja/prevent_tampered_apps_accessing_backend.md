@@ -97,8 +97,8 @@ Xcode で BTS ツールを使用するには、以下のようにします。
 
 実動バージョンのアプリケーションをビルドする際には、このツールを使用する必要があります。
 
-## トラブルシューティング
-{: #troubleshooting}
+## アプリケーション認証性のトラブルシューティング
+{: #troubleshooting-app-authenticity}
 
 ### リセット
 {: #trblreset}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 {:generic: .ph data-hd-programlang='generic'}
@@ -27,14 +27,14 @@ lastupdated: "2019-01-04"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# オフライン・ストレージの拡張構成 
-{: #adv_configure_offline_storage}
+# 高度な JSONStore 
+{: #advanced_jsonstore}
 
 ## JSONStore でのセキュリティー
-{: #security_jsonstore} 
+{: #security_jsonstore}
 
 <!--### Cordova
-{: security_jsonstore_cordova}-->
+{: #security_jsonstore_cordova}-->
 
 パスワードを `init` 関数に渡すことにより、ストア内のすべてのコレクションを保護することができます。 パスワードを渡さないと、ストア内のすべてのコレクションにあるドキュメントが暗号化されません。
 {: cordova}

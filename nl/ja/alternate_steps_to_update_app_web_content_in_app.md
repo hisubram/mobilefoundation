@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-02-14"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2018-12-21"
 {:screen: .screen}
 
 # アプリケーション内の Web コンテンツを更新するための代替手順
-{: #alternate_steps_to_update_app_web_content}
+{: #alternate_steps_to_update_app_web_content_in_app}
 
 以下に、アプリケーション内の Web コンテンツを更新する代替方法をいくつか示します。
 

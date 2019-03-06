@@ -22,7 +22,10 @@ lastupdated: "2018-12-21"
 {:php: .ph data-hd-programlang='PHP'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Cordova / Web アプリケーション用の API (Javascript)
+# Javascript クライアント SDK API
+{: #javascript_client_sdk_api}
+
+## Cordova / Web アプリケーション用の API (Javascript)
 
 以下の表に、Javascript アプリケーションで実行できる関数と、対応する API メソッドを示します。
 

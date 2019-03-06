@@ -2,12 +2,12 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-26"
+lastupdated:  "2019-02-11"
 
 ---
 
-##	Cordova および Ionic SDK
-{: #cordova_ionic_sdk}
+#	Cordova および Ionic SDK
+{: #cordova_ionic_sdk_api}
 
 npm から Cordova SDK をダウンロードします。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -25,13 +25,16 @@ lastupdated: "2019-01-04"
 {:reactnative: .ph data-hd-programlang='reactnative'}
 {:csharp: .ph data-hd-programlang='csharp'}
 
-# サポートされるクライアント・プラットフォーム用のアプリケーション・プログラミング・インターフェース (API)
+# クライアント SDK
+{: #client_sdks}
+
+## サポートされるクライアント・プラットフォーム用のアプリケーション・プログラミング・インターフェース (API)
 
 ### JavaScript
 {: javascript }
 Cordova / Web アプリケーション用の API。
 {: javascript }
-* **[クライアント・サイド API](javascript_client_sdk_api.html)**  
+* **[クライアント・サイド API](/docs/services/mobilefoundation?topic=mobilefoundation-javascript_client_sdk_api#javascript_client_sdk_api)**  
     JavaScript API を使用して、すべての環境用のアプリを開発できます。
     {: javascript }
 * **[クライアント・サイドのプッシュ API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-hybrid-cordova-js-apidoc/html/refjavascript-mfp-push-hybrid/html/index.html)**  

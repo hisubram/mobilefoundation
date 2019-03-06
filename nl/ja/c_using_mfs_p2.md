@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated:  "2018-11-20"
 「プロフェッショナル 1 アプリケーション」プランでは、ユーザーは、さまざまなモバイル・オペレーティング・システムで 1 つのモバイル・アプリケーションを作成できます。
 「{{site.data.keyword.mobilefoundation_short}}: プロフェッショナル 1 アプリケーション」サービス・インスタンスの作成後、以下の手順を読んでサービスを開始してください。
 
-## 前提条件
+## 「プロフェッショナル 1 アプリケーション」プランの前提条件
 {: #prerequisites_p2}
 
 「{{site.data.keyword.mobilefoundation_short}}: プロフェッショナル 1 アプリケーション」サービス・インスタンスを構成する前に、以下の項目を考慮してください。
@@ -30,10 +30,10 @@ lastupdated:  "2018-11-20"
 > **注**: {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスは、{{site.data.keyword.Bluemix_notm}} `組織`内のどの`スペース`にも、また、アクセスできるどの`組織`にも存在できます。 {{site.data.keyword.Db2_on_Cloud_short}} または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスが存在する`スペース`へのアクセス権限があることを確認します。
 
 
-## データベース接続の追加
+## データベース接続の構成
 {: #configure_dashdb_p2}
 
-###  最初の手順
+###  構成のファースト・ステップ
 {: #firststeps_p2}
 
 「{{site.data.keyword.mobilefoundation_short}}: プロフェッショナル 1 アプリケーション」サービス・インスタンスを作成した後、手順に従って、始めてください。
@@ -73,7 +73,7 @@ lastupdated:  "2018-11-20"
 {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスで使用するように構成された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスを変更することはできません。 ただし、同じ {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスを複数の {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスで使用することは可能です。これは、各 {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスが選択された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス内に独自のスキーマを作成するためです。
 {: note}
 
-## MobileFirst サーバーの始動
+## 「プロフェッショナル 1 アプリケーション」プランを使用して作成した MobileFirst サーバーの始動
 {: #start_mobilefoundation_p2}
 
 * {{site.data.keyword.mfserver_short_notm}} をデフォルト設定で始動するには、**「基本サーバーの始動」**をクリックしてください。
@@ -95,7 +95,7 @@ lastupdated:  "2018-11-20"
 
 このコンソールを使用して、モバイル・アプリ、アダプター、およびモバイル・デバイスの管理、モバイル・バックエンドとしてのサーバーの使用、プッシュ通知の送信などを行うことができます。
 
-## MobileFirst サーバーの再作成
+## 「プロフェッショナル 1 アプリケーション」プランを使用した場合の MobileFirst サーバーの再作成
 {: #recreate_mobilefoundation_p2}
 
 *	**「再作成」**をクリックしてサーバーを再作成します。
@@ -105,7 +105,7 @@ lastupdated:  "2018-11-20"
 アプリおよびアダプターに関する情報など、前のサーバー・インスタンスのデータは、構成された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス内に保持されます。 このデータは、サーバーの再作成に使用されます。
 {: note}
 
-##	拡張構成のセットアップ
+##	「プロフェッショナル 1 アプリケーション」プランでの拡張構成のセットアップ
 {: #using_mfs_advanced_p2}
 
 拡張設定またはカスタム設定を使用してサーバーを作成するには、`「概要」` ページの**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**を使用します。 また、**「構成 (Configuration)」**タブをクリックして、サーバー構成をカスタマイズするためにサーバー設定を更新することもできます。 {{site.data.keyword.mobilefoundation_short}} では、拡張設定にアクセスできます。
@@ -115,13 +115,11 @@ lastupdated:  "2018-11-20"
 
   - **「インスタンス」**は作成されたノード数を表示します。
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Mobile Analytics: 「プロフェッショナル 1 アプリケーション」プランの場合
+{: #mobile_analytics_p2}
 
 Mobile Analytics サーバーが含まれ、「Mobile Foundation: 開発者」プランのサービス・インスタンスで事前構成されています。
 
 * {{site.data.keyword.mfp_oc_short_notm}} から、Mobile Analytics コンソールを起動します。
 
-Mobile Analytics について詳しくは、[MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window} を参照してください。
-
-詳しくは、[{{site.data.keyword.mobilefoundation_long}} documentation ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}を参照してください。
+Mobile Analytics について詳しくは、[ここ](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}を参照してください。

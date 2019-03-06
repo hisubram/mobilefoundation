@@ -2,12 +2,12 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-26"
+lastupdated:  "2019-02-11"
 
 ---
 
-##	React Native SDK
-{: #reactnative_sdk}
+#	React Native SDK
+{: #reactnative_sdk_api}
 
 npm から React Native SDK をダウンロードします。
 

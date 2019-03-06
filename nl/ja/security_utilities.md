@@ -15,7 +15,6 @@ lastupdated:  "2018-11-19"
 #	セキュリティー・ユーティリティー
 {: #security_utilities}
 
-## 概説
 Mobile Foundation クライアント・サイド API は、ユーザーのデータを保護するのに役に立つセキュリティー・ユーティリティーをいくつか提供しています。 JSONStore などのフィーチャーは、JSON オブジェクトを保護する場合に優れた能力を発揮します。 ただし、JSONStore コレクションにバイナリー blob を保管することはお勧めできません。
 
 代わりに、バイナリー・データをファイル・システムに保管して、ファイル・パスやその他のメタデータを JSONStore コレクション内に保管します。 イメージなどのファイルを保護したい場合、それを base64 ストリングとしてエンコードし、暗号化して、ディスクに出力を書き込むことができます。 データの暗号化を解除するには、JSONStore コレクション内のメタデータを検索します。 暗号化されたデータをディスクから読み取り、保管されたメタデータを使用して暗号化を解除します。 このメタデータには鍵、ソルト、初期設定ベクトル (IV)、ファイルのタイプ、ファイルへのパスなどを含めることができます。
@@ -36,24 +35,23 @@ Mobile Foundation クライアント・サイド API は、ユーザーのデー
 ## セットアップ
 以下のファイルをインポートし、JSONStore セキュリティー・ユーティリティーの API を使用できるようにします。
 
-### iOS
+### iOS のセットアップ
 
 ```objc
 #import "WLSecurityUtils.h"
 ```
 
-### Android
+### Android のセットアップ
 
 ```java
 import com.worklight.wlclient.api.SecurityUtils
 ```
 
-### JavaScript
+### JavaScript のセットアップ
 セットアップは不要です。
 
-## 例
-### iOS
-#### 暗号化と暗号化解除
+## iOS 用の例
+### iOS での暗号化と暗号化解除
 
 ```objc
 // User provided password, hardcoded only for simplicity.
@@ -87,7 +85,7 @@ NSString* decryptedString = [WLSecurityUtils decryptWithKey:key
 ```
 {: codeblock}
 
-#### base64 のエンコード/デコード
+### iOS での base64 のエンコード/デコード
 
 ```objc
 // Input string.
@@ -102,7 +100,7 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-#### リモートでのランダム取得
+### iOS でのリモート・ランダムの取得
 
 ```objc
 [WLSecurityUtils getRandomStringFromServerWithBytes:32 
@@ -117,8 +115,8 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-### Android
-#### 暗号化と暗号化解除
+## Android 用の例
+### Android での暗号化と暗号化解除
 
 ```java
 String password = "HelloPassword";
@@ -136,7 +134,7 @@ String decipheredText = SecurityUtils.decrypt(key, encryptedObject);
 ```
 {: codeblock}
 
-#### base64 のエンコード/デコード
+### Android での base64 のエンコード/デコード
 
 ```java
 import android.util.Base64;
@@ -153,7 +151,7 @@ String decodedText = new String(base64Decoded, "UTF-8");
 ```
 {: codeblock}
 
-#### リモートでのランダム取得
+### Android でのリモート・ランダムの取得
 
 ```java
 Context context; // This is the current Activity's context.
@@ -176,7 +174,7 @@ SecurityUtils.getRandomStringFromServer(byteLength, context, listener);
 ```
 {: codeblock}
 
-#### ローカルでのランダム取得
+### Android でのローカル・ランダムの取得
 
 ```java
 int byteLength = 32;
@@ -184,8 +182,8 @@ String randomString = SecurityUtils.getRandomString(byteLength);
 ```
 {: codeblock}
 
-### JavaScript
-#### 暗号化と暗号化解除
+## JavaScript 用の例
+### JavaScript での暗号化と暗号化解除
 
 ```javascript
 // Keep the key in a variable so that it can be passed to the encrypt and decrypt API.
@@ -233,7 +231,7 @@ WL.SecurityUtils.keygen({
 ```
 {: codeblock}
 
-#### base64 のエンコード/デコード
+### JavaScript での base64 のエンコード/デコード
 
 ```javascript
 WL.SecurityUtils.base64Encode('Hello World!')
@@ -249,7 +247,7 @@ WL.SecurityUtils.base64Encode('Hello World!')
 ```
 {: codeblock}
 
-#### リモートでのランダム取得
+### JavaScript でのリモート・ランダムの取得
 
 ```javascript
 WL.SecurityUtils.remoteRandomString(32)
@@ -262,7 +260,7 @@ WL.SecurityUtils.remoteRandomString(32)
 ```
 {: codeblock}
 
-#### ローカルでのランダム取得
+### JavaScript でのローカル・ランダムの取得
 
 ```javascript
 WL.SecurityUtils.localRandomString(32)

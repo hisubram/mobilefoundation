@@ -37,6 +37,6 @@ Mobile Foundation Operations Console を使用して、リソースへのアク�
    *  バージョンのエクスポート
 
 
-デバイスの管理については、[デバイスの管理](manage_devices.html)を参照してください。 特定のバージョンのアプリケーションをリモート側で無効にする方法については、[アプリケーション・バージョンのリモートでの無効化](remote_disable_app_version.html)を参照してください。
+デバイスの管理については、[デバイスの管理](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices)を参照してください。 特定のバージョンのアプリケーションをリモート側で無効にする方法については、[アプリケーション・バージョンのリモートでの無効化](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version)を参照してください。
 {: note}
 

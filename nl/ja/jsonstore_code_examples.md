@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-23"
+lastupdated:  "2019-02-13"
 
 ---
 
@@ -11,14 +11,21 @@ lastupdated:  "2018-11-23"
 {:screen: .screen}
 {:tip: .tip}
 {:pre: .pre}
+{:ios: .ph data-hd-programlang='iOS'}
+{:android: .ph data-hd-programlang='Android'}
+{:cordova: .ph data-hd-programlang='Cordova'}
 
 #	JSONStore コード・サンプル
 {: #code_samples}
 
-## Cordova
-{: #cordova }
-### 接続の初期化とオープン、アクセサーの取得、およびデータの追加
-{: #initialize-and-open-connections-get-an-accessor-and-add-data }
+### Cordova 用のサンプル
+{: #samples_cordova }
+{: cordova}
+
+#### Cordova での接続の初期化とオープン、アクセサーの取得、およびデータの追加
+{: #initialize-and-open-connections-get-an-accessor-and-add-data-cordova }
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -74,9 +81,12 @@ WL.JSONStore.init(collections, options)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Find - ストア内部でのドキュメントの検出
+#### Find - ストア内部でのドキュメントの検出
 {: #find-locate-documents-inside-the-store }
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -117,8 +127,10 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Replace - 既にコレクション内に保管されているドキュメントの変更
+#### Replace - Cordova での既にコレクション内に保管されているドキュメントの変更
+{: cordova}
 
 ```javascript
 var collectionName = 'people';
@@ -146,9 +158,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Remove - 照会と一致するすべてのドキュメントの削除
-{: #remove-delete-all-documents-that-match-the-query }
+#### Remove - Cordova での照会と一致するすべてのドキュメントの削除
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -177,9 +191,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Count - 照会と一致するドキュメントの合計数の取得
-{: #count-gets-the-total-number-of-documents-that-match-a-query }
+#### Count - Cordova での照会と一致するドキュメントの合計数の取得
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -206,9 +222,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Destroy - すべてのユーザーのデータのワイプ、内部ストレージの廃棄、およびセキュリティー成果物のクリア
-{: #destroy-wipes-data-for-all-users-destroys-the-internal-storage-and-clears-security-artifacts }
+#### Destroy - Cordova でのすべてのユーザーのデータのワイプ、内部ストレージの廃棄、およびセキュリティー成果物のクリア
+{: cordova}
+
 ```javascript
 WL.JSONStore.destroy()
 
@@ -220,9 +238,12 @@ WL.JSONStore.destroy()
   // Handle failure.
 });
 ```
+{: codeblock}
+{: cordova}
 
-### Security - 現行ユーザーに開かれているすべてのコレクションへのアクセスの終了
-{: #security-close-access-to-all-opened-collections-for-the-current-user }
+#### Security - Cordova での現行ユーザーに開かれているすべてのコレクションへのアクセスの終了
+{: cordova}
+
 ```javascript
 WL.JSONStore.closeAll()
 
@@ -235,9 +256,11 @@ WL.JSONStore.closeAll()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Security - ストアへのアクセスに使用されるパスワードの変更
-{: #security-change-the-password-that-is-used-to-access-a-store }
+#### Security - Cordova でのストアへのアクセスに使用されるパスワードの変更
+{: cordova}
+
 ```javascript
 // The password should be user input.
 // It is hard-coded in the example for brevity.
@@ -271,9 +294,11 @@ WL.JSONStore.changePassword(oldPassword, newPassword, username)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Push - ダーティーとしてマークされているすべてのドキュメントの取得、アダプターへのその送信、およびその消去
-{: #push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
+#### Push - Cordova でのダーティーとしてマークされているすべてのドキュメントの取得、アダプターへのその送信、およびその消去
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 var dirtyDocs;
@@ -312,9 +337,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Pull - アダプターからの新規データの取得
-{: #pull-get-new-data-from-an-adapter }
+#### Pull - Cordova でのアダプターからの新規データの取得
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -363,9 +390,11 @@ resource.send()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### ドキュメントがダーティーであるかどうかの確認
-{: #check-whether-a-document-is-dirty }
+#### Cordova でのドキュメントがダーティーであるかどうかの確認
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 var doc = {_id: 1, json: {name: 'carlitos', age: 99}};
@@ -385,9 +414,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### ダーティー・ドキュメントの数の確認
-{: #check-the-number-of-dirty-documents }
+#### Cordova でのダーティー・ドキュメントの数の確認
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -403,9 +434,12 @@ WL.JSONStore.get(collectionName)
   // Handle failure.
 });
 ```
+{: codeblock}
+{: cordova}
 
-### コレクションの除去
-{: #remove-a-collection }
+#### Cordova でのコレクションの除去
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -425,9 +459,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### コレクション内のすべてのデータのクリア
-{: #clear-all-data-that-is-inside-a-collection }
+#### Cordova でのコレクション内のすべてのデータのクリア
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -447,9 +483,12 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### トランザクションの開始、一部のデータの追加、ドキュメントの除去、障害があった場合のトランザクションのコミットおよびロールバック
-{: transaction }
+#### Cordova でのトランザクションの開始、一部のデータの追加、ドキュメントの除去、障害があった場合のトランザクションのコミットおよびロールバック
+{: #cordova-transaction }
+{: cordova}
+
 ```javascript
 WL.JSONStore.startTransaction()
 
@@ -492,9 +531,10 @@ WL.JSONStore.startTransaction()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### ファイル情報の取得
-{: #get-file-information }
+#### Cordova でのファイル情報の取得
+
 ```javascript
 WL.JSONStore.fileInfo()
 .then(function (res) {
@@ -506,9 +546,11 @@ WL.JSONStore.fileInfo()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### like、rightLike、および leftLike を使用した検索
-{: #search-with-like-rightlike-and-leftlike }
+#### Cordova でのlike、rightLike、および leftLike を使用した検索
+{: cordova}
+
 ```javascript
 // Match all records that contain the search string on both sides.
 // %searchString%
@@ -526,11 +568,15 @@ var arr = WL.JSONStore.QueryPart().leftLike('name', 'ca');  // returns nothing
 var arr2 = WL.JSONStore.QueryPart().leftLike('name', 'los');  // returns {name: 'carlos', age: 10}
 ```
 {: codeblock}
+{: cordova}
 
-## iOS
-{: #ios }
-### 接続の初期化とオープン、アクセサーの取得、およびデータの追加
-{: #ios-initialize-and-open-connections-get-an-accessor-and-add-data }
+### iOS 用のサンプル
+{: #samples-ios }
+{: ios}
+
+#### iOS での接続の初期化とオープン、アクセサーの取得、およびデータの追加
+{: ios}
+
 ```objc
 // Create the collections object that will be initialized.
 JSONStoreCollection* people = [[JSONStoreCollection alloc] initWithName:@"people"];
@@ -584,9 +630,11 @@ Initialize with a secure random token from the server
 }];
 ```
 {: codeblock}
+{: ios}
 
-### Find - ストア内部でのドキュメントの検出
-{: #ios-find-locate-documents-inside-the-store }
+#### Find - iOS でのストア内部でのドキュメントの検出
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -624,9 +672,11 @@ for (NSDictionary* result in results) {
 }
 ```
 {: codeblock}
+{: ios}
 
-### Replace - 既にコレクション内に保管されているドキュメントの変更
-{: #ios-replace-change-the-documents-that-are-already-stored-inside-a-collection }
+#### Replace - iOS での既にコレクション内に保管されているドキュメントの変更
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -642,9 +692,11 @@ NSError* error = nil;
 int docsReplaced = [[people replaceDocuments:docs andMarkDirty:NO error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### Remove - 照会と一致するすべてのドキュメントの削除
-{: #ios-remove-delete-all-documents-that-match-the-query }
+#### Remove - iOS での照会と一致するすべてのドキュメントの削除
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -656,9 +708,11 @@ NSError* error = nil;
 int docsRemoved = [[people removeWithIds:@[@1] andMarkDirty:NO error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### Count - 照会と一致するドキュメントの合計数の取得
-{: #ios-count-gets-the-total-number-of-documents-that-match-a-query }
+#### Count - iOS での照会と一致するドキュメントの合計数の取得
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -676,9 +730,11 @@ NSError* error = nil;
 int countResult = [[people countWithQueryParts:@[queryPart] error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### Destroy - すべてのユーザーのデータのワイプ、内部ストレージの廃棄、およびセキュリティー成果物のクリア
-{: #ios-destroy-wipes-data-for-all-users-destroys-the-internal-storage-and-clears-security-artifacts }
+#### Destroy - iOS でのすべてのユーザーのデータのワイプ、内部ストレージの廃棄、およびセキュリティー成果物のクリア
+{: ios}
+
 ```objc
 // This object will point to an error if one occurs.
 NSError* error = nil;
@@ -687,9 +743,11 @@ NSError* error = nil;
 [[JSONStore sharedInstance] destroyDataAndReturnError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### Security - 現行ユーザーに開かれているすべてのコレクションへのアクセスの終了
-{: #ios-security-close-access-to-all-opened-collections-for-the-current-user }
+#### Security - iOS での現行ユーザーに開かれているすべてのコレクションへのアクセスの終了
+{: ios}
+
 ```objc
 // This object will point to an error if one occurs.
 NSError* error = nil;
@@ -698,9 +756,11 @@ NSError* error = nil;
 [[JSONStore sharedInstance] closeAllCollectionsAndReturnError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### Security - ストアへのアクセスに使用されるパスワードの変更
-{: #ios-security-change-the-password-that-is-used-to-access-a-store }
+#### Security - iOS でのストアへのアクセスに使用されるパスワードの変更
+{: ios}
+
 ```objc
 // The password should be user input.
 // It is hardcoded in the example for brevity.
@@ -719,9 +779,11 @@ oldPassword = nil;
 newPassword = nil;
 ```
 {: codeblock}
+{: ios}
 
-### Push - ダーティーとしてマークされているすべてのドキュメントの取得、アダプターへのその送信、およびその消去
-{: #ios-push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
+#### Push - iOS でのダーティーとしてマークされているすべてのドキュメントの取得、アダプターへのその送信、およびその消去
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -739,9 +801,11 @@ NSArray* dirtyDocs = [people allDirtyAndReturnError:&error];
 int numCleaned = [[people markDocumentsClean:dirtyDocs error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### Pull - アダプターからの新規データの取得
-{: #ios-pull-get-new-data-from-an-adapter }
+#### Pull - iOS でのアダプターからの新規データの取得
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -758,9 +822,11 @@ NSArray* data = @[ @{@"id" : @1, @"ssn": @"111-22-3333", @"name": @"carlos"} ];
 int numChanged = [[people changeData:data withReplaceCriteria:@[@"id", @"ssn"] addNew:YES markDirty:NO error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### ドキュメントがダーティーであるかどうかの確認
-{: #ios-check-whether-a-document-is-dirty }
+#### iOS でのドキュメントがダーティーであるかどうかの確認
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -772,9 +838,11 @@ NSError* error = nil;
 BOOL isDirtyResult = [people isDirtyWithDocumentId:1 error:&error];
 ```
 {: codeblock}
+{: ios}
 
-### ダーティー・ドキュメントの数の確認
-{: #ios-check-the-number-of-dirty-documents }
+#### iOS でのダーティー・ドキュメントの数の確認
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -786,9 +854,11 @@ NSError* error = nil;
 int dirtyDocsCount = [[people countAllDirtyDocumentsWithError:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### コレクションの除去
-{: #ios-remove-a-collection }
+#### iOS でのコレクションの除去
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -800,9 +870,11 @@ NSError* error = nil;
 [people removeCollectionWithError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### コレクション内のすべてのデータのクリア
-{: #ios-clear-all-data-that-is-inside-a-collection }
+#### iOS でのコレクション内のすべてのデータのクリア
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -814,9 +886,12 @@ NSError* error = nil;
 [people clearCollectionWithError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### トランザクションの開始、一部のデータの追加、ドキュメントの除去、障害があった場合のトランザクションのコミットおよびロールバック
+#### iOS でのトランザクションの開始、一部のデータの追加、ドキュメントの除去、障害があった場合のトランザクションのコミットおよびロールバック
 {: #ios-transaction }
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -844,9 +919,11 @@ if (addError != nil || removeError != nil) {
 }
 ```
 {: codeblock}
+{: ios}
 
-### ファイル情報の取得
-{: #ios-get-file-information }
+#### iOS でのファイル情報の取得
+{: ios}
+
 ```objc
 // This object will point to an error if one occurs
 NSError* error = nil;
@@ -856,11 +933,15 @@ NSArray* results = [[JSONStore sharedInstance] fileInfoAndReturnError:&error];
 // => [{@"isEncrypted" : @(true), @"name" : @"carlos", @"size" : @3072}]
 ```
 {: codeblock}
+{: ios}
 
-## Android
-{: #android }
-### 接続の初期化とオープン、アクセサーの取得、およびデータの追加
-{: #android-initialize-and-open-connections-get-an-accessor-and-add-data }
+### Android 用のサンプル
+{: #samples_android }
+{: android}
+
+#### Android での接続の初期化とオープン、アクセサーの取得、およびデータの追加
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -899,9 +980,11 @@ throw ex;
 }
 ```
 {: codeblock}
+{: android}
 
-### サーバーからのセキュア・ランダム・トークンを使用した初期化
-{: #android-initialize-with-a-secure-random-token-from-the-server }
+#### Android でのサーバーからのセキュア・ランダム・トークンを使用した初期化
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -961,9 +1044,11 @@ AsyncTask<Context, Void, Void> aTask = new AsyncTask<Context, Void, Void>() {
 aTask.execute(ctx);
 ```
 {: codeblock}
+{: android}
 
-### Find - ストア内部でのドキュメントの検出
-{: #android-find-locate-documents-inside-the-store }
+#### Find - Android でのストア内部でのドキュメントの検出
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1003,9 +1088,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Replace - 既にコレクション内に保管されているドキュメントの変更
-{: #android-replace-change-the-documents-that-are-already-stored-inside-a-collection }
+#### Replace - Android での既にコレクション内に保管されているドキュメントの変更
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1031,9 +1118,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Remove - 照会と一致するすべてのドキュメントの削除
-{: #android-remove-delete-all-documents-that-match-the-query }
+#### Remove - Android での照会と一致するすべてのドキュメントの削除
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1063,9 +1152,11 @@ catch (JSONException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Count - 照会と一致するドキュメントの合計数の取得
-{: android-count-gets-the-total-number-of-documents-that-match-a-query }
+#### Count - Android での照会と一致するドキュメントの合計数の取得
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1092,9 +1183,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Destroy - すべてのユーザーのデータのワイプ、内部ストレージの廃棄、およびセキュリティー成果物のクリア
-{: #android-destory-wipes-data-for-all-users-destroys-the-internal-storage-and-clears-security-artifacts }
+#### Destroy - Android でのすべてのユーザーのデータのワイプ、内部ストレージの廃棄、およびセキュリティー成果物のクリア
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1109,9 +1202,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Security - 現行ユーザーに開かれているすべてのコレクションへのアクセスの終了
-{: #android-security-close-access-to-all-opened-collections-for-the-current-user }
+#### Security - Android での現行ユーザーに開かれているすべてのコレクションへのアクセスの終了
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1126,9 +1221,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Security - ストアへのアクセスに使用されるパスワードの変更
-{: #android-security-change-the-password-that-is-used-to-access-a-store }
+#### Security - Android でのストアへのアクセスに使用されるパスワードの変更
+{: android}
+
 ```java
 // The password should be user input.
 // It is hard-coded in the example for brevity.
@@ -1153,9 +1250,11 @@ finally {
 }
 ```
 {: codeblock}
+{: android}
 
-### Push - ダーティーとしてマークされているすべてのドキュメントの取得、アダプターへのその送信、およびその消去
-{: #android-push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
+#### Push - Android でのダーティーとしてマークされているすべてのドキュメントの取得、アダプターへのその送信、およびその消去
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1176,9 +1275,11 @@ try {
 }
 ```
 {: codeblock}
+{: android}
 
-### Pull - アダプターからの新規データの取得
-{: #android-pull-get-new-data-from-an-adapter }
+#### Pull - Android でのアダプターからの新規データの取得
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1218,9 +1319,11 @@ catch (JSONException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### ドキュメントがダーティーであるかどうかの確認
-{: #android-check-whetther-a-document-is-dirty }
+#### Android でのドキュメントがダーティーであるかどうかの確認
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1238,9 +1341,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-#### ダーティー・ドキュメントの数の確認
-{: #android-check-the-number-of-dirty-documents }
+#### Android でのダーティー・ドキュメントの数の確認
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1258,9 +1363,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### コレクションの除去
-{: #android-remove-a-collection }
+#### Android でのコレクションの除去
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1279,9 +1386,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### コレクション内のすべてのデータのクリア
-{: #android-clear-all-data-that-is-inside-a-collection }
+#### Android でのコレクション内のすべてのデータのクリア
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1299,9 +1408,12 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### トランザクションの開始、一部のデータの追加、ドキュメントの除去、障害があった場合のトランザクションのコミットおよびロールバック
+#### Android でのトランザクションの開始、一部のデータの追加、ドキュメントの除去、障害があった場合のトランザクションのコミットおよびロールバック
 {: #android-transaction }
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1341,9 +1453,11 @@ catch (JSONException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### ファイル情報の取得
-{: #android-get-file-information }
+#### Android でのファイル情報の取得
+{: android}
+
 ```java
 Context ctx = getContext();
 List<JSONStoreFileInfo> allFileInfo = WLJSONStore.getInstance(ctx).getFileInfo();
@@ -1355,3 +1469,4 @@ for(JSONStoreFileInfo fileInfo : allFileInfo) {
 }
 ```
 {: codeblock}
+{: android}
