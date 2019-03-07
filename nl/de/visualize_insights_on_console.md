@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-22"
+lastupdated: "2019-02-01"
 
 ---
 
@@ -17,138 +17,58 @@ lastupdated: "2018-11-22"
 # Informationen in der Konsole visualisieren
 {: #visualize_insights_on_console}
 
-In der MobileFirst Analytics Console können Sie Analyseberichte anzeigen und konfigurieren, Alerts verwalten und Clientprotokolle anzeigen. Starten Sie die Analytics Console über die Mobile Foundation Operations Console durch Klicken auf **Analytics Console** im linken Navigationsbereich.
+Zur Visualisierung von Insights aus den Analysedaten, die erfasst und von Ihrer Anwendung gesendet wurden, müssen Sie die Mobile Analytics Console über die Mobile Foundation Operations Console durch Klicken auf **Analytics Console** im linken Navigationsbereich starten.
 
-Die Analytics Console wird gestartet und das Standarddashboard wird angezeigt. Wenn eine Clientanwendung bereits Protokolle und Analysedaten an den Server gesendet hat, werden die relevanten Berichte erstellt und angezeigt. Über das Dashboard können Sie die erfassten Analysedaten überprüfen. Diese Analysedaten können sich auf Anwendungsabstürze, Anwendungssitzungen und die Serververarbeitungszeit beziehen. Darüber hinaus können Sie angepasste Diagramme erstellen und Alerts verwalten.
+Die Mobile Analytics Console kann in zwei Modi ausgeführt werden:
+  - **Demo-Modus EIN** Dieser Modus ist ausschließlich für Demonstrationszwecke; dabei werden mithilfe von Simulationsdatenfeeds unterschiedliche Analyseansichten (Diagramme und Tabellen) dargestellt.
+  - **Demo-Modus AUS** In diesem Modus werden die verschiedenen Analyseansichten dargestellt, die auf Echtzeitdatenfeeds aus Ihren Anwendungen basieren, die [für Mobile Analytics instrumentiert wurden](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app).
+  
+Sämtliche Analyseansichten können durch die Anwendung von Filtern in Bezug auf *Anwendungsname*, *Version*, *Betriebssystem des Geräts* und *Zeitraum* in ihrer Anzahl reduziert werden; dadurch erzielen Sie Insights aus unterschiedlichen Perspektiven.
 
-Neben einer Übersicht über Ihre mobile Analyse bietet die Analysefunktion die Möglichkeit, eine unformatierte Suche in Clientprotokollen, erfassten Clientabsturzdaten und allen zusätzlichen Daten durchzuführen, die Sie explizit über Client-API-Funktionsaufrufe bereitstellen, die Daten an Mobile Analytics übergeben.
+Zur Visualisierung von Insights für Ihre Anwendung müssen Sie Folgendes sicherstellen:
+  - Ihre Anwendung ist entsprechend instrumentiert, um die relevanten Analysedaten zu erfassen und an den Mobile Analytics-Service zu senden.
+  - Sie haben den Demo-Modus in der Analytics Console inaktiviert.
+  - Sie wenden die richtigen Filter an.  Wählen Sie z. B. einen Zeitraum für die Praxisbereitstellung Ihrer Anwendung sowie einen Zeitraum für die Nutzung durch Benutzer aus.
 
-## App-Daten überwachen
-{: #monitoring_app_data}
+Die Mobile Analytics Console stellt unterschiedliche Typen von Analyse für die Nutzung der mobilen Anwendung sowie zur Leistung bereit, und zwar auf Basis der Kategorisierung im linken Navigationsbereich der Analytics Console.  In den folgenden Abschnitten werden die verschiedenen Analyseansichten detailliert beschrieben: 
 
-Mobile Analytics stellt Überwachung und Analyse für Ihre mobilen Anwendungen bereit. Mit dem Mobile Analytics-Client-SDK können Sie Anwendungsprotokolle aufzeichnen und Daten überwachen. Entwickler können steuern, wann diese Daten an den Mobile Analytics-Service gesendet werden sollen. Wenn die Daten an Mobile Analytics übermittelt werden, können Sie über die Mobile Analytics Console Analyseinformationen zu Ihren mobilen Anwendungen, Geräten und Anwendungsprotokollen erhalten.
 
-Nachstehend einige Beispiele für verfügbare Informationen:
-
-**Vordefinierte Messgrößen**
-
-Mit vordefinierten Metriken können Sie beispielsweise folgende Fragen beantworten:
-* Wie viele neue Benutzer habe ich?
-* Wie viele Personen verwenden meine Anwendung aktiv?
-* Wie häufig verwenden Personen meine Anwendung?
-* Zu welcher Tageszeit verwenden Personen meine Anwendung?
-* Welche Gerätemodelle bevorzugen meine Benutzer?
-* Wann sollte ich die Unterstützung für traditionelle Betriebssysteme einstellen?
-* Welche Anwendungen haben Leistungsprobleme?
-
-**Angepasste Ereignisse**
-
-Wenn Sie eigene angepasste Ereignisse hinzufügen, können Sie beispielsweise folgende Fragen beantworten:
-* Welche Funktionen werden am meisten bzw. am wenigsten genutzt?
-* Wo betreten bzw. verlassen Benutzer meine App?
-* Welche Aktivitäten sehen sich Benutzer am meisten an?
-* Führen die Benutzer Workflows in der App aus (z. B. Konvertierungstrichter)?
-
-## Berichte, die visualisiert werden können: Benutzer
+## Benutzer
 {: #reports_visualized_users}
+Mit dieser Ansicht erhalten Sie Insights in Muster der Benutzereinbindung wie z. B. in Bezug auf die Anzahl der aktiven Benutzer an, die die App in einem angegebenen Datumsbereich verwendet haben sowie in Bezug auf einen Vergleich zwischen der Anzahl neuer Benutzer und der Anzahl bereits vorhandener Benutzer, die Ihre App wieder verwenden.
+Die Diagramme in dieser Ansicht können nach *App-Name*, *Betriebssystem* oder *Betriebssystemversion* gefiltert werden.
 
-Dieser Bericht zeigt ein Diagramm mit der Anzahl der aktiven Benutzer an, die die App in einem angegebenen Datumsbereich verwendet haben. In dem Bericht wird auch die Anzahl neuer, eindeutiger Benutzer angezeigt, die die App in dem angegebenen Datumsbereich zum ersten Mal verwenden.
-Die Diagramme können nach Anwendungsname, Betriebssystem oder Betriebssystemversion gefiltert werden.
-
-## Berichte, die visualisiert werden können: Sitzungen
+## Sitzungen
 {: #reports_visualized_sessions}
+Mithilfe dieser Ansicht können Sie Insights zu den 'Verwendungsmustern' Ihrer Anwendung hinsichtlich der *App-Sitzungen* für den angegebenen Datumsbereich erhalten. Eine Sitzung wird aufgezeichnet, wenn eine App in den Vordergrund eines Geräts gebracht wird.  Sie erhalten Insights dazu, zu welchen Uhrzeiten Ihre Anwendung am meisten und am wenigsten genutzt wird; diese Informationen können für nützliche Business Insights genutzt werden. Die Diagramme in dieser Ansicht können nach *App-Name*, *Betriebssystem* oder *Betriebssystemversion* gefiltert werden.
 
-Dieser Bericht zeigt ein Diagramm mit den App-Sitzungen in einem angegebenen Datumsbereich an. Eine Sitzung wird aufgezeichnet, wenn eine App in den Vordergrund eines Geräts gebracht wird. Die Diagramme können nach Anwendungsname, Betriebssystem oder Betriebssystemversion gefiltert werden.
-
-## Berichte, die visualisiert werden können: Netzanforderungen
+## Netzanforderungen
 {: #reports_visualized_network_requests}
+Mithilfe dieser Ansicht können Sie Insights zur Oberfläche und Bedienbarkeit Ihrer Anwendung erhalten, da API-Aufrufe für die Back-End-Systeme getätigt werden.  In dieser Ansicht sind Tabellen und Diagramme enthalten, die Ihnen einen Einblick in die am häufigsten verwendeten Funktionen Ihrer Back-End-Systeme verschafft und Ihnen zeigt, wie es mit der bisherigen Antwortzeit und Stabilität aussieht und ob Sie eine Neuverteilung Ihrer Back-End-Systeme in Betracht ziehen sollten.
 
-Sie können die Netzanforderungsdaten Ihrer Anwendungen in der Mobile Analytics Console visualisieren.
+Diese Ansicht enthält Diagramme, die in Abhängigkeit eines angegebenen Datenbereichs die durchschnittliche Umlaufzeit der ausgehenden API-Aufrufe Ihrer Anwendung, die Anzahl der Anforderungen pro API-Aufruf sowie die Anzahl erfolgreicher und fehlgeschlagener Anforderungen nach Antwortcodes aufzeichnen.  Die Diagramme in dieser Ansicht können nach App-Name, Betriebssystem oder Betriebssystemversion gefiltert werden.
 
-Für die folgenden Messungen sind Daten verfügbar:
-
-**Umlaufzeit** - Definiert die Zeitdauer (gemessen in Millisekunden), die Ihre App benötigt, um Netzanforderungen abzusetzen.
-**Anzahl der Anforderungen** - Zeigt an, wie oft eine App Netzanforderungen absetzt. Die Daten werden auch als Durchschnittswert angezeigt.
-Die Diagramme können nach Anwendungsname, Betriebssystem oder Betriebssystemversion gefiltert werden.
-
-## Berichte, die visualisiert werden können: Abstürze
+## Abstürze
 {: #reports_visualized_crashes}
+In dieser Ansicht werden Insights in Bezug auf die Stabilität Ihrer Anwendung über einen bestimmten Zeitraum hinweg dargestellt und Sie erhalten Unterstützung bei der Entscheidung darüber, ob Ihr Anwendungsdesign/Ihre Anwendungsimplementierung in irgendeiner Form korrigiert werden muss.  Es werden Diagramme bereitgestellt, bei denen die Anzahl der Abstürze in Kontrast zu der Gesamtanzahl der Verwendungen und der Gesamtabsturzrate gesetzt wird.  Die Diagramme in dieser Ansicht können nach *App-Name*, *Betriebssystem* oder *Betriebssystemversion* gefiltert werden.
 
-Sie können in der Mobile Analytics Console Informationen zu Ihrer Anwendung anzeigen, um die Überwachung und Fehlerbehebung Ihrer Anwendungen zu verbessern.
 
-Auf der Seite "Abstürze" werden in der Tabelle **Übersicht über Abstürze** die folgenden Datenspalten angezeigt:
-
-**Anwendung**: Anwendungsname<br/>
-**Abstürze**: Gesamtzahl der Abstürze dieser App<br/>
-**Gesamtnutzung**: Gesamtzahl der Vorgänge, bei denen ein Benutzer diese App öffnet und schließt<br/>
-**Absturzrate**: Prozentsatz der Abstürze pro Nutzung<br/>
-In der Tabelle "Abstürze" können Sie schnell Informationen zu den Abstürzen Ihrer Anwendung anzeigen. Das Balkendiagramm "Abstürze" zeigt ein Histogramm der Abstürze in einem bestimmten Zeitraum an.<br/>
-
-Sie können Absturzdaten auf zwei Arten anzeigen:
-
-1.  Absturzrate anzeigen: Absturzrate in einem bestimmten Zeitraum
-2.  Gesamtzahl der Abstürze anzeigen: Gesamtzahl der Abstürze in einem bestimmten Zeitraum
-
-## Berichte, die visualisiert werden können: Fehlerbehebung
+## Fehlerbehebung
 {: #reports_visualized_troubleshooting}
+In dieser Ansicht werden alle notwendigen Informationen bereitgestellt, die ein Anwendungsentwickler möglicherweise für die Fehlerbehebung in Bezug auf eine Anwendung benötigt.  Diese Ansicht enthält eine detailliertere Analyse der Abstürze der Anwendung in Bezug auf die betroffenen Geräte, das Hostbetriebssystem, die jeweilige Zeit des Absturzes, den Stack-Trace zum Zeitpunkt des Absturzes sowie Absturzprotokolle, die für eine detailliertere Analyse heruntergeladen werden können.  
 
-Die Seite **Fehlerbehebung** in der Mobile Analytics Console bietet in der Tabelle **Absturzzusammenfassung** eine differenzierte Anzeige Ihrer App-Abstürze.
-
-Die Tabelle **Absturzzusammenfassung** lässt sich sortieren. Sie enthält die folgenden Datenspalten:
-
-* Abstürze
-* Geräte
-* Letzter Absturz
-* Anwendung
-* Betriebssystem
-* Nachricht
-
-Klicken Sie neben einem der Einträge auf das Symbol "+", um die Tabelle **Absturzdetails** anzuzeigen, die die folgenden Spalten enthält:
-
-* Absturzzeit
-* Anwendungsversion
-* Betriebssystemversion
-* Gerätemodell
-* Geräte-ID
-* Download: Link zum Herunterladen der Protokolle, die zum Absturz geführt haben
-
-Erweitern Sie einen beliebigen Eintrag in der Tabelle **Absturzdetails**, um weitere Details wie einen Stack-Trace zu erhalten.
-
-Die Tabelle **Absturzzusammenfassung** wird mit Daten aus Abfragen der Anwendungsprotokolle mit schwerwiegenden Fehlern gefüllt. Wenn Ihre Anwendung keine schwerwiegenden Anwendungsprotokolle erfasst, sind keine Daten verfügbar.
+Absturzprotokolle werden gesammelt, indem nach App-Protokollen gesucht wird, die auf der Protokollebene 'Schwerwiegend' (FATAL) erfasst wurden.  Das native Analytics-Client-SDK für Android und iOS verarbeitet nicht abgefangene Ausnahmebedingungen und protokolliert Details dazu im Rahmen von Protokollnachrichten der Ebene 'Schwerwiegend' (FATAL).  Im Falle von Cordova müssen jedoch alle Abstürze auf der JavaScript-Ebene vom Entwickler bearbeitet werden und Absturzprotokolle, die an den Mobile Analytics-Service gesendet werden, müssen in der Mobile Analytics-Konsole angezeigt und analysiert werden.
 {: note}
 
 
-## Berichte, die visualisiert werden können: Benutzerfeedback
+## Benutzerfeedback
 {: #reports_visualized_userfeedback}
+In dieser Ansicht werden Insights in Bezug auf die tatsächliche interaktive Oberfläche und Bedienbarkeit Ihrer Benutzer bei der Verwendung der App beschrieben und wie sich die Benutzer dabei fühlen.
 
-Das Benutzerfeedback ermöglicht eine Feedbackanalyse in einer App mithilfe von Mobile Analytics.
-Diese Funktion von Mobile Analytics bietet folgende Vorteile:
-* **Benutzer und Tester** können Feedback und Programmfehlerberichte zu einer Anwendung aufzeichnen und senden, während sie diese ausführen und verwenden.
-* **Anwendungseigner** erhalten mit diesem kontextreichen Benutzerfeedback einen tieferen Einblick in das Benutzererlebnis bezüglich der Anwendung.
-* **Entwickler** dagegen erhalten präzise Anwendungskontexte, um Programmfehler oder Funktionslücken zu diagnostizieren und zu beheben.
+* **App-Eigner** können eine ausführliche, kontextumfassende Ansicht zu Programmfehlern sowie andere Feedback-Daten abrufen, die von Benutzern und Testern gesendet werden und während der Anwendungsausführung erfasst wurden.
+* **Entwickler** erhalten präzise Anwendungskontexte, um Programmfehler oder Funktionslücken zu diagnostizieren und zu beheben.
+* **App-Eigner** und **Entwickler** können mithilfe dieser Ansicht auch Aktionen zum empfangenen Feedback verwalten, z. B. das Erfassen von Kommentaren oder Links zu Problemen, die auf Fehlersuchsystemen erstellt wurden.  Für jedes Feedback kann auch ein allgemeiner Prüfstatus festgelegt werden, den Sie zur Auswertung der Aktionen zum Benutzerfeedback nutzen können.
 
-### Benutzerfeedback ermöglichen
-{: #enable_user_feedback}
-
-Führen Sie die folgenden Schritte aus, um die Erfassung von Benutzerfeedback durch Ihre mobile Anwendung zu ermöglichen.
-
-#### App instrumentieren
-{: #instrument_app}
-
-* Instrumentieren Sie Ihre mobile App so, dass sie in den Feedbackmodus wechselt. Rufen Sie die API `Analytics.triggerFeedbackMode();` auf, um den Feedbackmodus aufzurufen. <!--For more information, refer to the documentation [here](instrument_an_app.html)-->.
-* Die API kann bei jedem Anwendungsereignis aufgerufen werden, beispielsweise bei Schaltflächen, Menüaktionen oder Gesten.
-
-#### Benutzerfeedback erhalten
-{: #receive_feedback}
-
-* Benutzer und Tester Ihrer App können in den Feedbackmodus umschalten, indem Sie die Anwendungsaktion auslösen, die für Feedback instrumentiert ist.
-* Im Feedbackmodus können kontextreiches Feedback und ein Screenshot erfasst und an Mobile Analytics gesendet werden.
-
-#### Benutzerfeedback analysieren
-{: #analyze_feedback}
-
-* Mobile Analytics empfängt und konsolidiert das von den mobilen Anwendungen gesendete kontextreiche Feedback.
-* Melden Sie sich an der Mobile Analytics Console an und wählen Sie die Option **Benutzerfeedback** aus, um das Feedback anzuzeigen.
-* Ein Anwendungseigner kann das Feedback prüfen, Kommentare hinzufügen und das Feedback mit einem Prüfstatus markieren. Typische Kommentare können geplante Aktionen wie Links zu Git-Problemen sein, die für die Arbeit mit dem Feedback erstellt werden, oder aber Aussagen, die begründen, warum für das Feedback keine Aktion erforderlich ist.
-* Der Prüfstatus kann verwendet werden, um Feedback effizient zu verwalten, indem Sie es in einer der verschiedenen Prüfstatusoptionen kategorisieren.
+## Angepasste Diagramme
+Mit dieser Ansicht wird Mobile Analytics um angepasste Fälle erweitert, bei denen **App-Eigner** und **Entwickler** ihre eigenen anwendungsspezifischen Analysen erstellen können. Mit dieser Funktion können Sie eigene Analyseansichten (Diagramme, Tabellen etc.) mit Standardanalysedaten, die vom Client-SDK erfasst werden, sowie mit angepassten Daten oder anwendungsspezifischen Daten, die protokolliert werden, erstellen.  Weitere Informationen zu dieser erweiterten Analysefunktion finden Sie [hier](/docs/services/mobilefoundation?topic=mobilefoundation-build_custom_charts#build_custom_charts).
 

@@ -12,8 +12,8 @@ lastupdated:  "2018-11-19"
 {:tip: .tip}
 {:pre: .pre}
 
-#	{{ site.data.keyword.mobilefoundation_short }}-CLI
-{: #using_mobilefoundation_cli}
+#	Mobile Foundation-CLI
+{: #mobile_foundation_cli}
 
 {{ site.data.keyword.mobilefoundation_short }} bietet eine Befehlszeilenschnittstelle (Command Line Interface, CLI) als Werkzeug für Entwickler-**mfpdev** zur einfachen Verwaltung der {{site.data.keyword.mobilefoundation_short}}-Client- und Serverartefakte.
 
@@ -132,7 +132,7 @@ Die CLI-Hilfe wird ausgegeben.
 ### mfpdev
 {: #mfpdev}
 
-Legt Ihre Konfigurationseinstellungen für die Vorschau des Browsertyps, die Vorschaut des Zeitlimitwerts und den Server-Zeitlimitwert für die mfpdev-CLI fest.
+Legt Ihre Konfigurationseinstellungen für die Vorschau des Browsertyps, die Vorschau des Zeitlimitwerts und den Server-Zeitlimitwert für die mfpdev-CLI fest.
 
 ```
 mfpdev config

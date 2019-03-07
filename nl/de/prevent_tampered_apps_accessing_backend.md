@@ -97,8 +97,8 @@ Verwenden Sie das Tool wie folgt in Xcode:
 
 Das Tool sollte bei der Erstellung einer Produktionsversion der Anwendung verwendet werden.
 
-## Fehlerbehebung
-{: #troubleshooting}
+## Anwendungsauthentizität - Fehlerbehebung
+{: #troubleshooting-app-authenticity}
 
 ### Befehl 'reset'
 {: #trblreset}

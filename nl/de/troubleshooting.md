@@ -13,8 +13,8 @@ lastupdated: "2018-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Fehlerbehebung
-{: #troubleshooting}
+# Allgemeine Fehlerbehebung
+{: #general-troubleshooting}
 
 Anhand der Fehlerbehebungsinformationen können Sie Probleme, die bei {{site.data.keyword.IBM_notm}} Produkten auftreten, eingrenzen und beheben. Diese Informationen enthalten Anweisungen zur Verwendung der Problembestimmungsressourcen, die mit den {{site.data.keyword.IBM_notm}} Produkten, z. B. {{site.data.keyword.mobilefoundation_short}}, bereitgestellt werden.
 {: shortdesc}
@@ -105,4 +105,4 @@ Bei technischen Fragen zur Entwicklung und zur Bereitstellung einer App mit {{si
 
 Bei Fragen zum Service sowie zu einführenden Anweisungen können Sie das Forum [IBM developerWorks dW Answers ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} verwenden. Verwenden Sie dabei die Tags `bluemix` und `mobilefirst`.
 
-Informationen zum Öffnen eines IBM Support-Tickets oder zu Supportebenen und zur Priorität von Tickets finden Sie im Abschnitt zum [Kontaktieren des Supports ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://console.bluemix.net/docs/get-support/getstarttssup.html#typesofsupport  ){: new_window}.
+Informationen zum Öffnen eines IBM Support-Tickets oder zu Supportebenen und zur Priorität von Tickets finden Sie im Abschnitt zum [Kontaktieren des Supports](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.

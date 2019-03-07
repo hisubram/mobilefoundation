@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-02-14"
 
 ---
 
@@ -14,8 +14,8 @@ lastupdated: "2018-12-21"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Alternative Schritte zur Aktualisierung von Webinhalten in Ihrer App
-{: #alternate_steps_to_update_app_web_content}
+# Alternative Schritte zur Aktualisierung von Webinhalten in Apps
+{: #alternate_steps_to_update_app_web_content_in_app}
 
 Im Folgenden sind einige alternative Methoden zum Aktualisieren von Webinhalten in Ihrer App aufgeführt.
 

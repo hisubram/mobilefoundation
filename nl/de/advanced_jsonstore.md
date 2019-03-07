@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 {:generic: .ph data-hd-programlang='generic'}
@@ -27,14 +27,14 @@ lastupdated: "2019-01-04"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Erweiterte Konfiguration von Offlinespeicher 
-{: #adv_configure_offline_storage}
+# JSONStore - erweitert 
+{: #advanced_jsonstore}
 
 ## Sicherheit in JSONStore
-{: #security_jsonstore} 
+{: #security_jsonstore}
 
 <!--### Cordova
-{: security_jsonstore_cordova}-->
+{: #security_jsonstore_cordova}-->
 
 Sie können alle Sammlungen in einem Speicher sichern, indem Sie ein Kennwort an die Funktion `init` übergeben. Wenn kein Kennwort übergeben wird, werden die Dokumente aller Sammlungen im Speicher nicht verschlüsselt.
 {: cordova}

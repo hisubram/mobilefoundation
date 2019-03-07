@@ -41,7 +41,7 @@ Anwendungsentwickler schützen den Zugriff auf Ressourcen, indem sie für jede R
 
 Ein MobileFirst-Zugriffstoken ist eine digital signierte Entität, die die Autorisierungsberechtigungen für einen Client beschreibt. Wenn der Autorisierungsanforderung des Clients für einen bestimmten Bereich entsprochen und der Client authentifiziert wurde, sendet der Tokenendpunkt des Autorisierungsservers eine HTTP-Antwort mit dem angeforderten Zugriffstoken an den Client.
 
-#### Struktur
+#### Struktur des Zugriffstokens
 
 Das MobileFirst-Zugriffstoken enthält die folgenden Informationen:
 
@@ -116,7 +116,7 @@ MobileFirst-Aktualisierungstoken
 
 Ein MobileFirst-Aktualisierungstoken ist eine digital signierte Entität wie ein Zugriffstoken, die die Autorisierungsberechtigungen eines Clients beschreibt. Aktualisierungstokens können verwendet werden, um neue Zugriffstoken desselben Bereichs zu erhalten. Wenn der Autorisierungsanforderung des Clients für einen bestimmten Bereich entsprochen und der Client authentifiziert wurde, sendet der Tokenendpunkt des Autorisierungsservers eine HTTP-Antwort mit dem angeforderten Zugriffstoken- und Aktualisierungstoken an den Client. Wenn das Zugriffstoken abläuft, sendet der Client ein Aktualisierungstoken an den Tokenendpunkt des Autorisierungsservers, um ein neues Zugriffstoken und ein neues Aktualisierungstoken zu erhalten.
 
-#### Struktur
+#### Struktur des Aktualisierungstokens
 
 Das MobileFirst-Aktualisierungstoken enthält ähnlich wie ein MobileFirst-Zugriffstoken die folgenden Informationen:
 
@@ -200,8 +200,8 @@ Die folgenden vordefinierten Sicherheitsprüfungen sind verfügbar:
 * LTPA-basiertes Single Sign-on (SSO)
 * Direct Update
 
-#### Abfrage-Handler
-{: #challengehandlers}
+#### Challenge-Handler-Entität
+{: #challengehandler_entity}
 
 Wenn der Client versucht, auf eine geschützte Ressource zuzugreifen, kann er eine Abfrage erhalten. Bei dieser Abfrage kann es sich um eine Frage, einen Sicherheitstest oder eine Eingabeaufforderung des Servers handeln. Mit der Abfrage soll sichergestellt werden, dass der Client berechtigt ist, auf diese Ressource zuzugreifen. In den meisten Fällen werden im Rahmen der Abfrage Berechtigungsnachweise angefordert, z. B. ein Benutzername und ein Kennwort.
 
@@ -293,20 +293,20 @@ Sie können die JSON-Datei der Anwendung auch manuell mit der erforderlichen Kon
     ```
 4. Implementieren Sie die aktualisierte JSON-Konfigurationsdatei. Führen Sie dazu den Befehl 'mfpdev app push' aus.
 
->Sie können aktualisierte Konfigurationen auch mit Push-Operation an ferne Server übertragen. 
+>Sie können aktualisierte Konfigurationen auch mit Push-Operation an ferne Server übertragen.
 
 #### Adapterressourcen schützen
 {: #protectadapterres}
 
-In Ihrem Adapter können Sie einen Schutzbereich für die Prozedur einer Java-Methode oder einer JavaScript-Ressource oder für eine ganze Java-Ressourcenklasse angeben. Ein Bereich ist als eine Zeichenfolge aus einem oder mehreren durch Leerzeichen getrennten Bereichselementen (“scopeElement1 scopeElement2 …”) definiert, oder null, um den Standardbereich anzuwenden. Weitere Informationen zum Schützen von Adapterressourcen finden Sie in [Adapter schützen](https://console.bluemix.net/docs/services/mobilefoundation/protecting_adapters.html).
+In Ihrem Adapter können Sie einen Schutzbereich für die Prozedur einer Java-Methode oder einer JavaScript-Ressource oder für eine ganze Java-Ressourcenklasse angeben. Ein Bereich ist als eine Zeichenfolge aus einem oder mehreren durch Leerzeichen getrennten Bereichselementen (“scopeElement1 scopeElement2 …”) definiert, oder null, um den Standardbereich anzuwenden. Weitere Informationen zum Schützen von Adapterressourcen finden Sie in [Adapter schützen](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
 
 ### Ressourcenschutz inaktivieren
 {: #disablingresprotection}
 
 Sie können den MobileFirst-Standardressourcenschutz für eine bestimmte Java- oder JavaScript-Adapterressource oder für eine ganze Java-Klasse inaktivieren, wie in den folgenden Abschnitten zu Java und JavaScript beschrieben. Wenn der Ressourcenschutz inaktiviert ist, ist für das Sicherheitsframework von MobileFirst kein Token für den Zugriff auf die Ressource erforderlich.
 
-#### Java-Ressourcenschutz inaktivieren
-{: #disablejavaresprotection}
+#### OAuth-Schutz für Java-Ressourcen inaktivieren
+{: #disablejavaresoauthprotection}
 
 Um den OAuth-Schutz für eine Java-Ressourcenmethode oder -klasse vollständig zu inaktivieren, fügen Sie die Annotation `@OAuthSecurity` der Ressourcen- oder Klassendeklaration hinzu und setzen Sie den Wert des Elements `enabled` auf `false`:
 
@@ -341,8 +341,8 @@ Mit dem folgenden Code wird der Ressourcenschutz für eine Klasse `MyUnprotected
     }
 ```
 
-#### JavaScript-Ressourcenschutz inaktivieren
-{: #diablejavascriptresprotection}
+#### OAuth-Schutz für JavaScript-Ressourcen inaktivieren
+{: #disablejavascriptresoauthprotection}
 
 Um den OAuth-Schutz für eine JavaScript-Adapterressource (Prozedur) vollständig zu inaktivieren, setzen Sie in der Datei **adapter.xml** das Attribut `secured` des Elements <procedure> auf `false`:
 
@@ -360,8 +360,8 @@ Mit dem folgenden Code wird der Ressourcenschutz für eine Prozedur `userName` i
 <procedure name="userName" secured="false">
 ```
 
-### Nicht geschützte Ressourcen
-{: #unprotectedresources}
+### Ungeschützte Ressourcen definieren
+{: #defunprotectedresources}
 
 Eine ungeschützte Ressource ist eine Ressource, für die kein Zugriffstoken erforderlich ist. Das Sicherheitsframework von MobileFirst verwaltet den Zugriff auf ungeschützte Ressourcen nicht und prüft auch nicht die Identität von Clients, die auf diese Ressourcen zugreifen. Daher werden Funktionen wie Direct Update, das Blockieren des Gerätezugriffs oder das Inaktivieren einer Anwendung über Fernzugriff für ungeschützte Ressourcen nicht unterstützt.
 

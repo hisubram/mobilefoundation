@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated:  "2018-11-20"
 Mit dem Professional 1 Application-Plan können Benutzer 1 mobile Anwendung mit verschiedenen Betriebssystemen für mobile Geräte erstellen.
 Lesen Sie nach der Erstellung der Serviceinstanz von {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application die folgende Prozedur, um die Arbeit mit dem Service zu beginnen.
 
-## Voraussetzungen
+## Voraussetzungen für Professional 1 Application-Plan
 {: #prerequisites_p2}
 
 Beachten Sie Folgendes, bevor Sie die Serviceinstanz von {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application konfigurieren.
@@ -30,10 +30,10 @@ Beachten Sie Folgendes, bevor Sie die Serviceinstanz von {{site.data.keyword.mob
 > **Hinweis**: Die {{site.data.keyword.Db2_on_Cloud_short}}- (jeder andere als der **Lite**-Plan) oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz kann sich in jedem `Bereich` in Ihrer {{site.data.keyword.Bluemix_notm}}-`Organisation` bzw. in jeder anderen `Organisation` befinden, auf die Sie zugreifen können. Stellen Sie sicher, dass Sie über die Berechtigungen für den Zugriff auf den `Bereich` verfügen, in dem sich die {{site.data.keyword.Db2_on_Cloud_short}}- oder {{site.data.keyword.composeForPostgreSQL}}-Serviceinstanz befindet.
 
 
-## Datenbankverbindung hinzufügen
+## Datenbankverbindung konfigurieren
 {: #configure_dashdb_p2}
 
-###  Erste Schritte
+###  Erste Schritte bei der Konfiguration
 {: #firststeps_p2}
 
 Führen Sie nach der Erstellung der Serviceinstanz von {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application die beschriebene Prozedur aus, um mit der Verwendung des Service zu beginnen.
@@ -73,7 +73,7 @@ Nach einigen Sekunden können Sie auf die Seite `Übersicht` zugreifen, auf der 
 Sie können die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz, die zur Verwendung durch die {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz konfiguriert ist, nicht ändern. Sie können jedoch dieselbe {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz für mehrere {{site.data.keyword.mobilefoundation_short}}-Serviceinstanzen verwenden, da jede {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz ein eigenes Schema in der ausgewählten {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz erstellt.
 {: note}
 
-## MobileFirst-Server starten
+## Erstellten MobileFirst-Server mit Professional 1 Application-Plan starten
 {: #start_mobilefoundation_p2}
 
 * Um den {{site.data.keyword.mfserver_short_notm}} mit den Standardeinstellungen zu starten, klicken Sie auf **Basisserver starten**.
@@ -95,7 +95,7 @@ Sie können die {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz, die zur
 
 Mit der Konsole können Sie Ihre mobilen Apps, Adapter und Geräte verwalten, Ihren Server als mobiles Back-End verwenden, Push-Benachrichtigungen senden usw.
 
-## MobileFirst-Server erneut erstellen
+## MobileFirst-Server unter Verwendung des Professional 1 Application-Plans neu erstellen
 {: #recreate_mobilefoundation_p2}
 
 *	Klicken Sie auf die Schaltfläche **Neu erstellen**, um den Server erneut zu erstellen.
@@ -105,7 +105,7 @@ Mit der Konsole können Sie Ihre mobilen Apps, Adapter und Geräte verwalten, Ih
 Daten der vorherigen Serverinstanz, einschließlich Informationen zu den Apps und Adaptern, werden in der konfigurierten {{site.data.keyword.Db2_on_Cloud_short}}-Serviceinstanz beibehalten. Diese Daten werden zur erneuten Erstellung des Servers verwendet.
 {: note}
 
-##	Erweiterte Konfiguration einrichten
+##	Erweiterte Konfiguration im Professional 1 Application-Plan einrichten
 {: #using_mfs_advanced_p2}
 
 Mit der Option **Server mit erweiterter Konfiguration starten** auf der Seite `Übersicht` können Sie einen Server mit erweiterten oder benutzerdefinierten Einstellungen erstellen. Sie können die Servereinstellungen auch aktualisieren, um Ihre Serverkonfiguration anzupassen; klicken Sie hierfür auf die Registerkarte **Konfiguration**. {{site.data.keyword.mobilefoundation_short}} bietet Ihnen Zugriff auf einige erweiterte Einstellungen.
@@ -115,13 +115,11 @@ Mit der Option **Server mit erweiterter Konfiguration starten** auf der Seite `�
 
   - **Instanzen** zeigt die Anzahl der erstellten Knoten an.
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Mobile Analytics im Professional 1 Application-Plan
+{: #mobile_analytics_p2}
 
 Mobile Analytics-Server ist in der Serviceinstanz des Mobile Foundation: Developer-Plans enthalten und vorkonfiguriert.
 
 * Starten Sie die Mobile Analytics Console über {{site.data.keyword.mfp_oc_short_notm}}.
 
-Weitere Informationen zu Mobile Analytics finden Sie unter [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}.
-
-Weitere Details finden Sie in der [{{site.data.keyword.mobilefoundation_long}}-Dokumentation ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}.
+Weitere Informationen zu Mobile Analytics finden Sie [hier](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.

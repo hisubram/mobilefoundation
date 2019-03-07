@@ -15,7 +15,6 @@ lastupdated:  "2018-11-19"
 #	Sicherheitsdienstprogramme
 {: #security_utilities}
 
-## Übersicht
 Die clientseitige Mobile Foundation-API stellt einige Sicherheitsdienstprogramme bereit, mit denen Sie die Daten Ihrer Benutzer schützen können. Funktionen wie JSONStore sind ausgezeichnet für den Schutz Ihrer JSON-Objekte geeignet. Es wird jedoch nicht empfohlen, binäre Blobs in einer JSONStore-Sammlung zu speichern.
 
 Speichern Sie Binärdaten stattdessen im Dateisystem und speichern Sie die Dateipfade und andere Metadaten in einer JSONStore-Sammlung. Wenn Sie Dateien wie Bilder schützen möchten, können Sie sie als Base64-Zeichenfolgen codieren, sie verschlüsseln und die Ausgabe auf Platte schreiben. Um die Daten zu entschlüsseln, können Sie die Metadaten in einer JSONStore-Sammlung suchen. Lesen Sie die verschlüsselten Daten von der Platte und entschlüsseln Sie sie mithilfe der gespeicherten Metadaten. Diese Metadaten können den Schlüssel, Initialisierungsvektor (IV), Dateityp, Dateipfad, das Salt und andere Attribute enthalten.
@@ -36,24 +35,23 @@ Als übergeordnete API stellt SecurityUtils die folgenden APIs bereit:
 ## Einrichtung
 Sie müssen die folgenden Dateien importieren, um die APIs der JSONStore-Sicherheitsdienstprogramme verwenden zu können.
 
-### iOS
+### iOS einrichten
 
 ```objc
 #import "WLSecurityUtils.h"
 ```
 
-### Android
+### Android einrichten
 
 ```java
 import com.worklight.wlclient.api.SecurityUtils
 ```
 
-### JavaScript
+### JavaScript einrichten
 Es ist keine Einrichtung erforderlich.
 
-## Beispiele
-### iOS
-#### Verschlüsselung und Entschlüsselung
+## Beispiele für iOS
+### Verschlüsselung und Entschlüsselung in iOS
 
 ```objc
 // Vom Benutzer angegebenes Kennwort, aus Gründen der Einfachheit im Klartext.
@@ -87,7 +85,7 @@ NSString* decryptedString = [WLSecurityUtils decryptWithKey:key
 ```
 {: codeblock}
 
-#### Base64 codieren und decodieren
+### Base64 codieren und decodieren (in iOS)
 
 ```objc
 // Eingabezeichenfolge.
@@ -102,7 +100,7 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-#### Ferne zufällige Zeichenfolge abrufen
+### Ferne zufällige Zeichenfolge abrufen (in iOS)
 
 ```objc
 [WLSecurityUtils getRandomStringFromServerWithBytes:32
@@ -117,8 +115,8 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-### Android
-#### Verschlüsselung und Entschlüsselung
+## Beispiele für Android
+### Verschlüsselung und Entschlüsselung in Android
 
 ```java
 String password = "HelloPassword";
@@ -136,7 +134,7 @@ String decipheredText = SecurityUtils.decrypt(key, encryptedObject);
 ```
 {: codeblock}
 
-#### Base64 codieren und decodieren
+### Base64 codieren und decodieren (in Android)
 
 ```java
 import android.util.Base64;
@@ -153,7 +151,7 @@ String decodedText = new String(base64Decoded, "UTF-8");
 ```
 {: codeblock}
 
-#### Ferne zufällige Zeichenfolge abrufen
+### Ferne zufällige Zeichenfolge abrufen (in Android)
 
 ```java
 Context context; // Dies ist der Kontext der aktuellen Aktivität.
@@ -176,7 +174,7 @@ SecurityUtils.getRandomStringFromServer(byteLength, context, listener);
 ```
 {: codeblock}
 
-#### Lokale zufällige Zeichenfolge abrufen
+### Lokale zufällige Zeichenfolge abrufen (in Android)
 
 ```java
 int byteLength = 32;
@@ -184,8 +182,8 @@ String randomString = SecurityUtils.getRandomString(byteLength);
 ```
 {: codeblock}
 
-### JavaScript
-#### Verschlüsselung und Entschlüsselung
+## Beispiele für JavaScript
+### Verschlüsselung und Entschlüsselung in JavaScript
 
 ```javascript
 // Den Schlüssel in einer Variablen belassen, damit er an die Ver- und Entschlüsselungs-API übergeben werden kann.
@@ -233,7 +231,7 @@ WL.SecurityUtils.keygen({
 ```
 {: codeblock}
 
-#### Base64 codieren und decodieren
+### Base64 codieren und decodieren (in JavaScript)
 
 ```javascript
 WL.SecurityUtils.base64Encode('Hello World!')
@@ -249,7 +247,7 @@ WL.SecurityUtils.base64Encode('Hello World!')
 ```
 {: codeblock}
 
-#### Ferne zufällige Zeichenfolge abrufen
+### Ferne zufällige Zeichenfolge abrufen (in JavaScript)
 
 ```javascript
 WL.SecurityUtils.remoteRandomString(32)
@@ -262,7 +260,7 @@ WL.SecurityUtils.remoteRandomString(32)
 ```
 {: codeblock}
 
-#### Lokale zufällige Zeichenfolge abrufen
+### Lokale zufällige Zeichenfolge abrufen (in JavaScript)
 
 ```javascript
 WL.SecurityUtils.localRandomString(32)

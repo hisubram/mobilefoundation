@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2019-01-04"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,14 +14,14 @@ lastupdated:  "2019-01-04"
 {:pre: .pre}
 
 
-# Offlinespeicherung mit JSONStore
-{: #overview }
+# JSONStore
+{: #jsonstore }
 {{site.data.keyword.mobilefoundation_short}} **JSONStore** ist eine optionale clientseitige API, die ein schlankes, dokumentorientiertes Speichersystem bereitstellt. JSONStore ermöglicht das persistente Speichern von **JSON-Dokumenten**. Dokumente in einer Anwendung sind auch dann in JSONStore verfügbar, wenn das Gerät, auf dem die Anwendung ausgeführt wird, offline ist. Dieser persistente und immer verfügbare Speicher kann nützlich sein, da Benutzer auch dann Zugriff auf Dokumente haben, wenn das Gerät keine Netzverbindung herstellen kann.
 
 Da Entwickler mit der Terminologie für relationale Datenbanken vertraut sind, wird diese mitunter in der vorliegenden Dokumentation verwendet, um JSONStore zu erklären. Es gibt jedoch viele Unterschiede zwischen einer relationalen Datenbank und JSONStore. Das strikte Schema, das zum Speichern von Daten in relationalen Datenbanken verwendet wird, unterscheidet sich z. B. von dem Ansatz bei JSONStore. Bei JSONStore können Sie jeden beliebigen JSON-Inhalt speichern und den Inhalt indexieren, den Sie durchsuchen müssen.
 
 ## Hauptmerkmale
-{: #key-features }
+{: #key-features-jsonstore }
 * Datenindexierung für eine effiziente Suche
 * Verfahren zur Verfolgung lokaler Änderungen an den gespeicherten Daten
 * Unterstützung vieler Benutzer
@@ -30,7 +30,7 @@ Da Entwickler mit der Terminologie für relationale Datenbanken vertraut sind, w
 Ein einzelner Speicher kann viele Sammlungen enthalten und jede Sammlung kann viele Dokumente enthalten. Eine MobileFirst-Anwendung kann auch aus mehreren Speichern bestehen. Weitere Informationen finden Sie im Abschnitt zur Unterstützung mehrerer Benutzer in JSONStore.
 
 ## Supportebene
-{: #support-level }
+{: #support-level-jsonstore }
 * JSONStore wird in nativen iOS-und Android-Anwendungen unterstützt (keine Unterstützung für native Windows-Anwendungen (Universal und UWP)).
 * JSONStore wird in Cordova iOS-, Android- und Windows-Anwendungen (Universal und UWP) unterstützt.
 
@@ -175,7 +175,7 @@ Die init-API (JavaScript-API) oder die open-API (native iOS- und native Android-
 Ein Beispiel für einen Anwendungsfall wären verschiedene Mitarbeiter, die ein physisches Gerät (z. B. ein iPad oder Android-Tablet) und eine MobileFirst-Anwendung gemeinsam nutzen. Die Unterstützung mehrerer Benutzer ist nützlich, wenn die Mitarbeiter in unterschiedlichen Schichten arbeiten und bei der Nutzung der MobileFirst-Anwendung private Daten von verschiedenen Kunden verarbeiten.
 
 ## Sicherheit
-{: #security }
+{: #security-jsonstore }
 Sie können alle Sammlungen in einem Speicher sichern, indem Sie sie verschlüsseln.
 
 Übergeben Sie zum Verschlüsseln aller Sammlungen in einem Speicher ein Kennwort an die `init`-API (JavaScript-API) oder die `open`-API (native iOS- und native Android-API). Wenn kein Kennwort übergeben wird, wird kein Dokument in den Speichersammlungen verschlüsselt.
@@ -204,7 +204,7 @@ Um die Daten zu entschlüsseln, können Sie die Metadaten in einer JSONStore-Sam
 
 Diese Metadaten können den Schlüssel, Initialisierungsvektor (IV), Dateityp, Dateipfad, das Salt und andere Attribute enthalten.
 
-Hier finden Sie weitere Informationen zu [JSONStore-Sicherheitsdienstprogrammen](security_utilities.html#security_utilities).
+Hier finden Sie weitere Informationen zu [JSONStore-Sicherheitsdienstprogrammen](/docs/services/mobilefoundation?topic=mobilefoundation-security_utilities#security_utilities).
 {: tip}
 
 ### Verschlüsselung von Windows 8.1 Universal und Windows 10 UWP
@@ -237,17 +237,17 @@ Wenn Sie keine Verschlüsselung benötigen, ist JSONStore mit der SQLite-Version
    {: codeblock}
 
 ## Leistung
-{: #performance }
+{: #performance-jsonstore }
 Die folgenden Faktoren können sich auf die Leistung von JSONStore auswirken.
 
 ### Netz
-{: #network }
+{: #network-jsonstore }
 * Prüfen Sie die Netzkonnektivität, bevor Sie Operationen wie das Senden aller vorläufigen Dokumenten an einen Adapter ausführen.
 * Die Menge der Daten, die über das Netz an einen Client gesendet werden, wirkt sich stark auf die Leistung aus. Senden Sie nur die Daten, die von der Anwendung benötigt werden, statt alle Daten in Ihrer Back-End-Datenbank zu kopieren.
 * Wenn Sie einen Adapter verwenden, sollten Sie das Flag "compressResponse" auf "true" setzen. Dadurch werden Antworten komprimiert, was in der Regel weniger Bandbreite beansprucht und eine schnellere Übertragungszeit als ohne Komprimierung bewirkt.
 
 ### Hauptspeicher
-{: #memory }
+{: #memory-jsonstore }
 * Wenn Sie die JavaScript-API verwenden, werden JSONStore-Dokumente als Zeichenfolgen zwischen der nativen Ebene (Objective-C, Java oder C#) und der JavaScript-Ebene serialisiert und deserialisiert. Eine Möglichkeit zum Abmildern möglicher Speicherprobleme besteht in der Verwendung von Begrenzungen und Offsets bei Verwendung der find-API. Auf diese Weise begrenzen Sie die Menge des Speichers, der für die Ergebnisse zugeordnet ist, und können Funktionen wie die Paginierung (Anzahl x der Ergebnisse pro Seite anzeigen) implementieren.
 * Anstatt lange Schlüsselnamen zu verwenden, die schließlich als Zeichenfolgen serialisiert und deserialisiert werden, sollten Sie diese langen Schlüsselnamen kleineren Namen zuordnen (z. B. `myVeryVeryVerLongKeyName` zu `k` oder `key`). Idealerweise ordnen Sie sie kurzen Schlüsselnamen zu, wenn Sie sie vom Adapter an den Client senden, und den ursprünglichen langen Schlüsselnamen, wenn Sie Daten an das Back-End senden.
 * Sie sollten die Daten in einem Speicher in verschiedene Sammlungen aufteilen. Verwenden Sie kleine Dokumente in verschiedenen Sammlungen statt monolithischer Dokumente in einer einzigen Sammlung. Diese Empfehlung hängt davon ab, wie eng die Daten verwandt sind, sowie von den Anwendungsfällen für die betreffenden Daten.
@@ -255,7 +255,7 @@ Die folgenden Faktoren können sich auf die Leistung von JSONStore auswirken.
 * JavaScript und Java™ verfügen über Garbage-Collectors, während Objective-C einen automatischen Referenzzähler aufweist. Binden Sie ihn ein, aber machen Sie sich nicht komplett abhängig von ihm. Versuchen Sie, Referenzen zu ignorieren, die nicht mehr verwendet werden, und verwenden Sie Profilermittlungstools, um zu überprüfen, ob die Speicherbelegung verringert wird, wenn Sie dies erwarten.
 
 ### CPU
-{: #cpu }
+{: #cpu-jsonstore }
 * Die Anzahl der verwendeten Suchfelder und zusätzlichen Suchfelder wirkt sich auf die Leistung aus, wenn Sie die Add-Methode aufrufen, welche die Indexierung durchführt. Indexieren Sie nur die Werte, die in Abfragen für die Find-Methode verwendet werden.
 * Standardmäßig verfolgt JSONStore lokale Änderungen an seinen Dokumenten. Sie können dieses Verhalten inaktivieren, sodass ein paar Zyklen eingespart werden können, indem Sie das Flag `markDirty` auf **false** setzen, wenn Sie die add-, remove- und replace-APIs verwenden.
 * Die Aktivierung der Sicherheit bewirkt einen gewissen Zusatzaufwand bei den `init`- oder `open`-APIs und bei anderen Operationen, die mit Dokumenten in der Sammlung arbeiten. Überlegen Sie, ob die Sicherheit wirklich erforderlich ist. Die open-API ist beispielsweise mit Verschlüsselung viel langsamer, weil sie die Verschlüsselungsschlüssel generieren muss, die für Verschlüsselung und Entschlüsselung verwendet werden.
@@ -264,9 +264,9 @@ Die folgenden Faktoren können sich auf die Leistung von JSONStore auswirken.
 * Die `find`-APIs (`find`, `findAll` und `findById`) sind von der Verschlüsselung betroffen, weil sie jedes Dokument entschlüsseln müssen, um feststellen zu können, ob es eine Übereinstimmung enthält oder nicht. Wenn beim Suchen mit einer Abfrage ein Limit übergeben wird, ist die Suche potenziell schneller, weil sie stoppt, sobald eine bestimmte Anzahl von Ergebnissen erreicht ist. JSONStore muss die restlichen Dokumente nicht entschlüsseln, um herauszufinden, ob noch weitere Suchergebnisse vorhanden sind.
 
 ## Gemeinsamer Zugriff
-{: #concurrency }
-### JavaScript
-{: #javascript }
+{: #concurrency-jsonstore }
+### Gemeinsamer Zugriff in JavaScript
+{: #javascript-jsonstore }
 Die meisten für eine Sammlung ausführbaren Operationen wie "add" und "find" sind asynchron. Diese Operationen geben eine jQuery-Zusicherung (Promise) zurück, die eingelöst wird, wenn die Operation erfolgreich abgeschlossen wird, und die zurückgewiesen wird, wenn ein Fehler auftritt. Diese Zusicherungen sind mit Callback-Funktionen bei Erfolg und Fehler vergleichbar.
 
 Ein jQuery-Aufschub (Deferred) ist eine Zusicherung, die eingelöst oder zurückgewiesen werden kann. Die folgenden Beispiele sind keine spezifischen JSONStore-Beispiele, sondern sollen Ihnen helfen, ganz allgemein die Verwendung von Zusicherung (Promise) und Aufschub (Deferred) zu verstehen.
@@ -328,16 +328,16 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 });
 ```
 
-### Objective-C
-{: #objective-c }
+### Gemeinsamer Zugriff in Objective-C
+{: #objective-c-jsonstore }
 Wenn Sie die native iOS-API für JSONStore verwenden, werden alle Operationen zu einer synchronen Dispatchwarteschlange hinzugefügt. Dadurch wird sichergestellt, dass Operationen mit Auswirkungen auf den Speicher der Reihe nach in einem Thread ausgeführt werden, der nicht der Hauptthread ist. Weitere Informationen finden Sie in der Apple-Dokumentation unter [Grand Central Dispatch (GCD) ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window}.
 
-### Java™
-{: #java }
+### Gemeinsamer Zugriff in Java 
+{: #java-jsonstore }
 Wenn Sie die native Android-API für JSONStore verwenden, werden alle Operationen im Hauptthread ausgeführt. Für ein asynchrones Verhalten müssen Sie Threads erstellen oder Threadpools verwenden. Alle Store-Operationen sind threadsicher.
 
 ## Analyse
-{: #analytics }
+{: #analytics-jsonstore }
 Sie können wichtige Analysedaten mit Bezug zu JSONStore erfassen.
 
 ### Dateiinformationen
@@ -348,9 +348,7 @@ Dateiinformationen werden einmal pro Anwendungssitzung erfasst, wenn die JSONSto
 {: #performance-metrics }
 Leistungsmessdaten werden jedes Mal erfasst, wenn eine JSONStore-API mit Informationen zur Start- und Endzeit einer Operation aufgerufen wird. Anhand dieser Informationen können Sie feststellen, wie lange bestimmte Operationen (in Millisekunden) dauern.
 
-### Beispiele
-{: #examples }
-#### iOS
+### JSONStore-Beispiel für iOS
 {: #ios-example}
 ```objc
 JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
@@ -359,7 +357,7 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
 
-#### Android
+### JSONStore-Beispiel für Android
 {: #android-example }
 ```java
 JSONStoreInitOptions initOptions = new JSONStoreInitOptions();
@@ -368,7 +366,7 @@ initOptions.setAnalytics(true);
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
 
-#### JavaScript
+### JSONStore-Beispiel für JavaScript
 {: #java-script-example }
 ```javascript
 var options = {
@@ -387,16 +385,16 @@ Für die Arbeit mit externen Daten können Sie die Konzepte **Pull** und **Push*
 Viele Systeme verwenden den Begriff "Pull" für das Abrufen von Daten von einer externen Quelle.  
 Es gibt drei wichtige Komponenten:
 
-#### Externe Datenquelle
-{: #external-data-source }
+#### Pull-Operation aus externer Datenquelle
+{: #external-data-source-pull }
 Diese Quelle kann eine Datenbank, eine REST- oder SOAP-API oder Ähnliches sein. Die einzige Anforderung ist, dass die Quelle vom MobileFirst-Server aus oder direkt von der Clientanwendung aus zugänglich sein muss. Im Idealfall soll diese Quelle Daten im JSON-Format zurückgeben.
 
-#### Transportschicht
-{: #transport-layer }
+#### Transportschicht für Pull-Operation
+{: #transport-layer-pull }
 Diese Quelle bestimmt, wie Daten von der externen Quelle in Ihre interne Quelle, d. h. eine JSONStore-Sammlung innerhalb des Speichers, gelangen. Eine Alternative ist ein Adapter.
 
-#### Interne Datenquellen-API
-{: #internal-data-source-api }
+#### Interne Datenquellen-API für Pull-Operation
+{: #internal-data-source-api-pull }
 Diese Quelle umfasst die JSONStore-APIs, mit denen Sie JSON-Daten zu einer Sammlung hinzufügen können.
 
 Sie können den internen Speicher mit Daten füllen, die aus einer Datei oder einem Eingabefeld gelesen werden, oder mit fest codierten Daten in einer Variablen. Die Daten müssen nicht ausschließlich von einer externen Quelle mit erforderlicher Netzkommunikation stammen.
@@ -582,15 +580,15 @@ Viele Systeme verwenden den Begriff "Push" für das Senden von Daten an eine ext
 
 Es gibt drei wichtige Komponenten:
 
-#### Interne Datenquellen-API
+#### Interne Datenquellen-API für Push-Operation
 {: #internal-data-source-api-push }
 Diese Komponente ist die JSONStore-API, die Dokumente mit nur lokalen (vorläufigen) Änderungen zurückgibt.
 
-#### Transportschicht
+#### Transportschicht für Push-Operation
 {: #transport-layer-push }
 Diese Komponente definiert, wie Sie Kontakt mit der externen Datenquelle aufnehmen möchten, um die Änderungen zu senden.
 
-#### Externe Datenquelle
+#### Push-Operation in externe Datenquelle
 {: #external-data-source-push }
 Diese Quelle ist in der Regel eine Datenbank, ein REST- oder SOAP-Endpunkt oder Ähnliches, die bzw. der die vom Client an den Daten vorgenommenen Aktualisierungen empfängt.
 
@@ -766,8 +764,8 @@ Das Back-End akzeptiert Änderungen oder lehnt sie ab und übermittelt dann eine
 
 Dokumente, die als bereinigt markiert sind, werden in der Ausgabe der `getAllDirty`-API nicht angezeigt.
 
-## Fehlerbehebung
-{: #troubleshooting }
+## Fehlerbehebung für JSONStore
+{: #troubleshooting-jsonstore }
 
 ## Beim Anfordern von Unterstützung Informationen bereitstellen
 {: #provide-information-when-you-ask-for-help }
@@ -829,7 +827,7 @@ Führen Sie die folgenden Schritte aus, um das Problem zu isolieren, um es präz
 6. Verwenden Sie den Debugger.
 
 ## Allgemeine Probleme
-{: #common-issues }
+{: #common-issues-jsonstore }
 Wenn Sie die folgenden JSONStore-Merkmale verstehen, können Sie einige allgemeine Probleme lösen, die möglicherweise auftreten.  
 
 * Die einzige Möglichkeit, Binärdaten in JSONStore zu speichern, besteht darin, sie zuerst in Base64 zu codieren. Speichern Sie Dateinamen oder Pfade anstelle der tatsächlichen Dateien in JSONStore.
@@ -896,8 +894,8 @@ Die übrigen internen JSONStore-Felder sind:
 
 ## JSONStore-Fehler
 {: #jsonstore-errors }
-### JavaScript
-{: #javascript }
+### JavaScript-Fehler
+{: #javascript-errors }
 JSONStore verwendet ein Objekt `error`, um Nachrichten zur Ursache von Fehlern zurückzugeben.
 
 Wenn während einer JSONStore-Operation (z. B. in den Methoden `find` und `add` der Klasse `JSONStoreInstance`) ein Fehler auftritt, wird ein Objekt `error` zurückgegeben. Es stellt Informationen zur Ursache des Fehlers bereit.
@@ -916,8 +914,8 @@ var errorObject = {
 {: codeblock}
 Nicht alle Schlüssel/Wert-Paare sind Teil jedes Fehlerobjekts. Der 'doc'-Wert ist beispielsweise nur verfügbar, wenn die Operation wegen eines Dokuments fehlgeschlagen ist (z. B. wenn die Methode `remove` in der Klasse `JSONStoreInstance`) ein Dokument nicht entfernen konnte.
 
-### Objective-C
-{: #objective-c }
+### Objective-C-Fehler
+{: #objective-c-errors }
 Alle APIs, die fehlschlagen können, verwenden einen Fehlerparameter mit der Adresse eines NSError-Objekts. Wenn Sie nicht über Fehler benachrichtigt werden möchten, können Sie `nil` übergeben. Wenn eine Operation fehlschlägt, wird als Adresse ein NSError mit einer Fehlerangabe und potenziell mit Benutzerinformationen (`userInfo`) angegeben. Die Informationen für `userInfo` können zusätzliche Details enthalten (z. B. das Dokument, das den Fehler verursacht hat).
 
 ```objc
@@ -928,8 +926,8 @@ NSError* error = nil;
 [JSONStore destroyDataAndReturnError:&error];
 ```
 
-### Java
-{: #java }
+### Java-Fehler
+{: #java-errors }
 Alle Java-API-Aufrufe lösen je nach aufgetretenem Fehler eine bestimmte Ausnahme aus. Sie können jede Ausnahme einzeln behandeln oder `JSONStoreException` als Umbrella für alle JSONStore-Ausnahmen verwenden.
 
 ```java

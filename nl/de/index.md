@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-16"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,24 +14,24 @@ lastupdated:  "2018-11-16"
 {:note: .note}
 
 # Einführung - Lernprogramm
-{: #gettingstartedtemplate}
+{: #getting-started-tutorial}
 
 {{site.data.keyword.mobilefoundation_long}} beschleunigt die Einrichtung einer {{site.data.keyword.mfp_full}}-Umgebung, mit der Sie mobile Unternehmens-Apps entwickeln, testen und ausführen können. {{site.data.keyword.mobilefoundation_short}} bietet die folgenden unterschiedlichen Servicepläne an: Developer, Professional Per Device und Professional 1 Application.
 {: shortdesc}
 
-Mit dem Professional 1 Application-Plan kann eine einzelne Anwendung verwaltet werden, die auf einer oder mehreren der unterstützten Betriebssysteme erstellt wird. Die unterstützten Betriebssysteme sind Android, iOS, Windows oder Mobile Web. Der Developer-Plan ist am besten für Entwicklungs- und Testzwecke geeignet. Alle verfügbaren Pläne sind [hier](https://console.bluemix.net/catalog/services/mobile-foundation) aufgeführt.
+Mit dem Professional 1 Application-Plan kann eine einzelne Anwendung verwaltet werden, die auf einem oder mehreren der unterstützten Betriebssysteme erstellt wird. Die unterstützten Betriebssysteme sind Android, iOS, Windows oder Mobile Web. Der Developer-Plan ist am besten für Entwicklungs- und Testzwecke geeignet. Alle verfügbaren Pläne sind [hier](https://cloud.ibm.com/catalog/services/mobile-foundation) aufgeführt.
 
 Mit diesem Einführungslernprogramm können Sie eine {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz mithilfe eines der unterstützten Pläne erstellen. Danach können Sie eine Anwendung registrieren. Laden Sie die registrierte Anwendung herunter, bearbeiten Sie sie, implementieren Sie einen Adapter und testen Sie abschließend die Anwendung.
 
 ## Vorbereitungen
-{: #prereqs}
+{: #prereqs-gs}
 
 Sie benötigen ein {{site.data.keyword.Bluemix}}-Konto und eine {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz.
 
 ## Schritt 1: {{site.data.keyword.mobilefoundation_short}}-Serviceinstanz erstellen
 {: #step1create}
 
-1. Wählen Sie im {{site.data.keyword.Bluemix_notm}}-**Katalog** [**{{site.data.keyword.mobilefoundation_short}}**](https://{domainName}/catalog/services/mobile-foundation) aus. Die Servicekonfigurationsanzeige wird geöffnet.
+1. Wählen Sie im {{site.data.keyword.Bluemix_notm}}-**Katalog** [**{{site.data.keyword.mobilefoundation_short}}**](https://cloud.ibm.com/catalog/services/mobile-foundation) aus. Die Servicekonfigurationsanzeige wird geöffnet.
 2. Legen Sie einen Namen für die Serviceinstanz fest oder verwenden Sie den voreingestellten Namen.
 3. Wählen Sie die Region, die Organisation und den Bereich aus, in denen die Serviceinstanz erstellt werden soll.
 4. Wählen Sie Ihren **Preisstrukturplan** aus und klicken Sie auf **Erstellen**.
@@ -86,7 +86,7 @@ Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Profe
 
       +	Klicken Sie auf **Konsole starten**, um die {{site.data.keyword.mfp_oc_short_notm}} zu öffnen.      
 
-      Zur Erstellung einer {{site.data.keyword.mobilefirst_notm}}-Serverinstanz mit erweiterter Konfiguration für Topologie, Sicherheit und weitere Serverkonfigurationen klicken Sie auf **Server mit erweiterter Konfiguration starten**. Weitere Informationen finden Sie in [Erweiterte Konfiguration einrichten](c_using_mfs_p5.html#using_mfs_advanced_p5).
+      Zur Erstellung einer {{site.data.keyword.mobilefirst_notm}}-Serverinstanz mit erweiterter Konfiguration für Topologie, Sicherheit und weitere Serverkonfigurationen klicken Sie auf **Server mit erweiterter Konfiguration starten**. Weitere Informationen finden Sie in [Erweiterte Konfiguration einrichten](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5).
       {: tip}
 
 ### Für {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application-Plan
@@ -124,7 +124,7 @@ Nachdem Sie eine Instanz von {{site.data.keyword.mobilefoundation_short}}: Profe
 
       +  Klicken Sie auf **Konsole starten**, um die {{site.data.keyword.mfp_oc_short_notm}} zu öffnen.  
 
-      Zur Erstellung einer {{site.data.keyword.mobilefirst_notm}}-Serverinstanz mit erweiterter Konfiguration für Topologie, Sicherheit und weitere Serverkonfigurationen klicken Sie auf **Server mit erweiterter Konfiguration starten**. Weitere Informationen finden Sie in [Erweiterte Konfiguration einrichten](c_using_mfs_p2.html#using_mfs_advanced_p2).
+      Zur Erstellung einer {{site.data.keyword.mobilefirst_notm}}-Serverinstanz mit erweiterter Konfiguration für Topologie, Sicherheit und weitere Serverkonfigurationen klicken Sie auf **Server mit erweiterter Konfiguration starten**. Weitere Informationen finden Sie in [Erweiterte Konfiguration einrichten](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2).
       {: tip}
 
 Weitere Informationen zur Einführung in {{site.data.keyword.mobilefoundation_short}} finden Sie in [MobileFirst-Server mithilfe des Mobile Foundation-Service einrichten![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window}.
@@ -246,17 +246,8 @@ Nach dem Erstellen und Starten der Mobile Foundation-Serverinstanz können Sie d
 
 
 ## Weitere Schritte
-{: #nextsteps}
+{: #nextsteps-gs}
 
 Sie können die [Lernprogramme zum Schnelleinstieg ![Symbol für externen Link](../../icons/launch-glyph.svg "Lernprogramme zum Schnelleinstieg")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} ausführen, um mit weiteren Beispielanwendungen zu arbeiten und die Funktionsweise von {{site.data.keyword.mobilefoundation_short}} zu erkunden.
 
 In den Lernprogrammen für den Schnelleinstieg wird die Funktionsweise von {{site.data.keyword.mobilefoundation_short}} für iOS-, Android-, Web-, Cordova-, Windows-, React Native-, Ionic- und Xamarin-Apps erläutert.
-
-# Zugehörige Links
-{: #rellinks  notoc}
-
-## Zugehörige Links
-{: #general notoc}
-
-*	[Produktdokumentation für IBM MobileFirst Platform Foundation V8.0.0 ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}
-*	[IBM MobileFirst Platform Developer Center ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com){: new_window}

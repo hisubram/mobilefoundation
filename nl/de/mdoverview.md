@@ -21,7 +21,7 @@ Das Erstellen ansprechender mobiler Apps ist der Schlüssel zum Erfolg einer App
 ###  Informationen zu Apps
 {: #app_insights}
 
-Damit die Benutzereinbindung relevant und aktiv bleibt, müssen Sie Einblicke in die Leistung Ihrer Anwendung in Bezug auf ihre Benutzer erhalten. Das Mobile Analytics-Feature von Mobile Foundation bietet diese Funktionalität mit integrierten Visualisierungen (Diagramme und Tabellen). Mit einer minimalen Instrumentierung Ihrer Anwendung können Sie über die Mobile Analytics-Konsole leicht verlässliche Erkenntnisse darstellen:
+Damit die Benutzereinbindung relevant und aktiv bleibt, müssen Sie Einblicke in die Leistung Ihrer Anwendung in Bezug auf ihre Benutzer erhalten.   Das Mobile Analytics-Feature von Mobile Foundation bietet diese Funktionalität mit integrierten Visualisierungen (Diagramme und Tabellen).  Mit einer minimalen Instrumentierung Ihrer Anwendung können Sie über die Mobile Analytics-Konsole leicht verlässliche Erkenntnisse darstellen:
 - **Muster für die Benutzereinbindung**: Werden neue Benutzer eingebunden oder verwenden bestehende Benutzer Ihre Anwendung erneut?
 - **Muster für die Nutzung**: Zu welchen Zeiten wird Ihre Anwendung am wenigsten und häufigsten genutzt und entspricht sie in diesem Hinblick den Geschäftszielen?
 - **Back-End-Leistung**: Welches sind die am häufigsten verwendeten Funktionen Ihrer Back-End-Systeme und wie sieht es mit der bisherigen Antwortzeit und Stabilität aus? Besteht Bedarf für eine Neuverteilung Ihrer Back-End-Systeme?

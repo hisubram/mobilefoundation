@@ -38,6 +38,6 @@ Der Mobile Foundation-Server verfolgt alle Versuche, auf Ihre mobile Infrastrukt
    *  Version exportieren
 
 
-Weitere Informationen zum Verwalten von Geräten finden Sie im Abschnitt [Geräte verwalten](manage_devices.html). Weitere Informationen zum Inaktivieren einer bestimmten App-Version über Fernzugriff finden Sie im Abschnitt [App-Version über Fernzugriff inaktivieren](remote_disable_app_version.html).
+Weitere Informationen zum Verwalten von Geräten finden Sie im Abschnitt [Geräte verwalten](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices). Weitere Informationen zum Inaktivieren einer bestimmten App-Version über Fernzugriff finden Sie im Abschnitt [App-Version über Fernzugriff inaktivieren](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version).
 {: note}
 

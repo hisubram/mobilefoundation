@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-02-14"
 
 ---
 
@@ -53,9 +53,9 @@ Nachdem Sie Änderungen an Ihren Webressourcen vorgenommen haben, können Sie si
   ```
   Der Befehl `mfpdev app webupdate` packt die aktualisierten Webressourcen in eine `.zip`-Datei und lädt diese an den standardmäßigen Mobile Foundation-Server hoch, der in der Entwicklerworkstation ausgeführt wird. Die gepackten Webressourcen sind im Ordner `[cordova-project-root-folder]/mobilefirst/` zu finden.
 
-Informationen zu alternativen Schritten zur Aktualisierung von Webinhalten in Ihrer App finden Sie [hier](update_web_content_in_app_alternate_steps.html).
+Informationen zu alternativen Schritten zur Aktualisierung von Webinhalten in Ihrer App finden Sie [hier](/docs/services/mobilefoundation?topic=mobilefoundation-alternate_steps_to_update_app_web_content_in_app#alternate_steps_to_update_app_web_content_in_app).
 
 ## Erweiterte Konfiguration für Direct Update
-{: #advanced_direct_update_config}
+{: #direct_update_advanced_config}
 
-Informationen zur erweiterten Konfiguration von Direct Update finden Sie [hier](update_web_content_in_app_advanced.html).
+Informationen zur erweiterten Konfiguration von Direct Update finden Sie [hier](/docs/services/mobilefoundation?topic=mobilefoundation-advanced_direct_update_configuration#advanced_direct_update_configuration).

@@ -14,7 +14,7 @@ lastupdated: "2018-11-29"
 {:screen: .screen}
 
 # App-Version über Fernzugriff inaktivieren
-{: #remote_disable_app_version}
+{: #remotely_disable_an_app_version}
 
 In diesem Abschnitt wird beschrieben, wie der Benutzerzugriff auf eine bestimmte Version einer Anwendung auf einem bestimmten Betriebssystem für mobile Geräte inaktiviert und für den Benutzer eine entsprechende Nachricht bereitgestellt wird.
 

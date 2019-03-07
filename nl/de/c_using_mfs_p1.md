@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -29,13 +29,12 @@ Nach der Erstellung der {{site.data.keyword.mobilefoundation_short}}-Serviceinst
 
 Sie können nun Ihre mobilen Apps und Geräte verwalten, Ihren Server als mobiles Back-End verwenden, Push-Benachrichtigungen senden usw.
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Mobile Analytics im Developer-Plan
+{: #mobile_analytics_p1}
 
 Mobile Analytics-Server ist in der Serviceinstanz des Mobile Foundation: Developer-Plans enthalten und vorkonfiguriert.
 
 * Starten Sie die Mobile Analytics Console über {{site.data.keyword.mfp_oc_short_notm}}.
 
-Weitere Informationen zu Mobile Analytics finden Sie unter [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}.
+Weitere Informationen zum Instrumentieren Ihrer App mit Mobile Analytics finden Sie [hier](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.
 
-Weitere Details finden Sie in der [{{site.data.keyword.mobilefoundation_long}}-Dokumentation ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}.

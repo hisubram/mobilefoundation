@@ -24,10 +24,7 @@ lastupdated: "2018-11-19"
 # Adapter schützen
 {: #protecting_adapters}
 
-## Adapterressourcen schützen
-{: #protecting_adapters_resources}
-
-In Ihrem Adapter können Sie einen Schutzbereich für die Prozedur einer Java-Methode oder einer JavaScript-Ressource oder für eine ganze Java-Ressourcenklasse angeben, wie in den folgenden Abschnitten zu [Java](#protect-java-adapter-resources) und [JavaScript](#protect-javascript-adapter-resources) beschrieben. Ein Bereich ist als eine Zeichenfolge aus einem oder mehreren durch Leerzeichen getrennten Bereichselementen (“Bereichselement1 Bereichselement2 …”) definiert, oder null, um den Standardbereich anzuwenden. 
+In Ihrem Adapter können Sie einen Schutzbereich für die Prozedur einer Java-Methode oder einer JavaScript-Ressource oder für eine ganze Java-Ressourcenklasse angeben, wie in den folgenden Abschnitten zu [Java](#protect-java-adapter-resources) und [JavaScript](#protect-javascript-adapter-resources) beschrieben. Ein Bereich ist als eine Zeichenfolge aus einem oder mehreren durch Leerzeichen getrennten Bereichselementen (“Bereichselement1 Bereichselement2 …”) definiert, oder null, um den Standardbereich anzuwenden.
 
 Der MobileFirst-Standardbereich ist `RegisteredClient`, für den ein Zugriffstoken für den Zugriff auf die Ressource erforderlich ist, und der prüft, ob die Ressourcenanforderung von einer Anwendung ist, die bei MobileFirst Server registriert ist. Dieser Schutz wird immer angewendet, es sei denn, Sie [inaktivieren den Ressourcenschutz](#disabling-resource-protection). Daher ist die Ressource auch dann geschützt, wenn Sie keinen Bereich für die Ressource festlegen.
 
@@ -95,8 +92,8 @@ Der folgende Code schützt eine `userName`-Prozedur mit einem Bereich, der die B
 ```
 {: codeblock}
 
-## Ressourcenschutz inaktivieren
-{: #disabling-resource-protection}
+## Adapterressourcenschutz inaktivieren
+{: #disabling-adapter-resource-protection}
 
 Sie können den [MobileFirst-Standardressourcenschutz](#protecting_adapters_resources) für eine bestimmte Java- oder JavaScript-Adapterressource oder für eine ganze Java-Klasse inaktivieren, wie in den folgenden Abschnitten zu Java und JavaScript beschrieben. Wenn der Ressourcenschutz inaktiviert ist, ist für das Sicherheitsframework von MobileFirst kein Token für den Zugriff auf die Ressource erforderlich.
 

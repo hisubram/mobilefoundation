@@ -37,8 +37,7 @@ Während des SSL-Handshake (erste Anforderung an den Server) überprüft das Mob
 ## Certificate Pinning
 {: #cert_pinning}
 
-Protokolle, die auf auf einer Zertifikatskettenprüfung wie SSL/TLS basieren, sind anfällig für eine Reihe gefährlicher Angriffe, einschließlich von Man-in-the-Middle-Angriffen, die auftreten, wenn eine nicht berechtigte Partei den gesamten Datenverkehr zwischen dem mobilen Gerät und den Back-End-Systemen anzeigen und ändern kann.
-Um darauf zu vertrauen, dass ein Zertifikat echt und gültig ist, wird es digital von einem Stammzertifikat signiert, das zu einer anerkannten Zertifizierungsstelle (CA, Certificate Authority) gehört. Betriebssysteme und Browser verwalten Listen von anerkannten CA-Stammzertifikaten, so dass sie die Zertifikate, die die Zertifizierungsstellen ausgestellt und signiert haben, ohne großen Aufwand überprüfen können.
+Protokolle, die auf auf einer Zertifikatskettenprüfung wie SSL/TLS basieren, sind anfällig für eine Reihe gefährlicher Angriffe, einschließlich von Man-in-the-Middle-Angriffen, die auftreten, wenn eine nicht berechtigte Partei den gesamten Datenverkehr zwischen dem mobilen Gerät und den Back-End-Systemen anzeigen und ändern kann. Um darauf zu vertrauen, dass ein Zertifikat echt und gültig ist, wird es digital von einem Stammzertifikat signiert, das zu einer anerkannten Zertifizierungsstelle (CA, Certificate Authority) gehört. Betriebssysteme und Browser verwalten Listen von anerkannten CA-Stammzertifikaten, so dass sie die Zertifikate, die die Zertifizierungsstellen ausgestellt und signiert haben, ohne großen Aufwand überprüfen können.
 
 IBM Mobile Foundation stellt eine API für das **Certificate Pinning** bereit. Dies wird von nativen iOS-, nativen Android- und plattformunabhängigen Cordova MobileFirst-Anwendungen unterstützt.
 
@@ -184,4 +183,4 @@ Die Certificate Pinning-Methode gibt eine Zusicherung (Promise) zurück:
 
 Wenn zu einem späteren Zeitpunkt eine geschützte Anforderung an einen Server gestellt wird, für dessen Zertifikat kein Certificate Pinning durchgeführt wurde, wird die Callback-Operation ``onFailure`` dieser Anforderung (z. B. ``obtainAccessToken`` oder ``WLResourceRequest``) aufgerufen.
 
->Weitere Informationen zur API-Methode für das Certificate Pinning finden Sie in der [API-Referenz](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/).
+>Weitere Informationen zur API-Methode für das Certificate Pinning finden Sie in der [API-Referenz](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -30,9 +30,9 @@ lastupdated: "2019-01-04"
 # Offlinespeicher konfigurieren
 {: #configure_offline_storage}
 
-Mobile Foundation JSONStore ist eine optionale clientseitige API, die ein schlankes, dokumentorientiertes Speichersystem bereitstellt. JSONStore ermöglicht das persistente Speichern von JSON-Dokumenten. Dokumente in einer Anwendung sind auch dann in JSONStore verfügbar, wenn das Gerät, auf dem die Anwendung ausgeführt wird, offline ist. Dieser persistente und immer verfügbare Speicher kann nützlich sein, da Benutzer auch dann Zugriff auf Dokumente haben, wenn das Gerät keine Netzverbindung herstellen kann. [Hier](jsonstore.html) finden Sie eine Übersicht über die Konzepte und die Terminologie von JSONStore.
+Mobile Foundation JSONStore ist eine optionale clientseitige API, die ein schlankes, dokumentorientiertes Speichersystem bereitstellt. JSONStore ermöglicht das persistente Speichern von JSON-Dokumenten. Dokumente in einer Anwendung sind auch dann in JSONStore verfügbar, wenn das Gerät, auf dem die Anwendung ausgeführt wird, offline ist. Dieser persistente und immer verfügbare Speicher kann nützlich sein, da Benutzer auch dann Zugriff auf Dokumente haben, wenn das Gerät keine Netzverbindung herstellen kann. [Hier](/docs/services/mobilefoundation?topic=mobilefoundation-jsonstore#jsonstore) finden Sie eine Übersicht über die Konzepte und die Terminologie von JSONStore.
 
-Informationen zur erweiterten Konfiguration von Offlinespeicher finden Sie [hier](advanced_jsonstore.html).
+Informationen zur erweiterten Konfiguration von Offlinespeicher finden Sie [hier](/docs/services/mobilefoundation?topic=mobilefoundation-advanced_jsonstore#advanced_jsonstore).
 {: note}
 
 ### Offlinespeicher für Cordova- oder Ionic-Apps konfigurieren
@@ -81,7 +81,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 {: codeblock}
 {: cordova}
 
-#### Zugriffsmechanismus für Ihre JSONStore-Sammlung abrufen
+#### Zugriffsmechanismus für Ihre Cordova-JSONStore-Sammlung abrufen
 {: #get_jsonstore_cordova} 
 {: cordova}
 
@@ -97,7 +97,7 @@ var people = WL.JSONStore.get(collectionName);
 Mit der Variablen *people* lassen sich nun Operationen für die Sammlung *people* ausführen, beispielsweise `add`, `find` und `replace`.
 {: cordova}
 
-#### Dokumente zu einer Sammlung hinzufügen
+#### Dokumente zu einer Cordova-Sammlung hinzufügen
 {: #add_jsonstore_cordova} 
 {: cordova}
 
@@ -118,7 +118,7 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 {: codeblock}
 {: cordova}
 
-#### Dokumente in einer Sammlung suchen
+#### Dokumente in einer Cordova-Sammlung suchen
 {: #find_jsonstore_cordova} 
 {: cordova}
 
@@ -169,7 +169,7 @@ else {
 {: codeblock}
 {: cordova}
 
-#### Dokumente in einer Sammlung ersetzen
+#### Dokumente in einer Cordova-Sammlung ersetzen
 {: #replace_jsonstore_cordova} 
 {: cordova}
 
@@ -195,7 +195,7 @@ WL.JSONStore.get(collectionName).replace(document, options).then(function (numbe
 Bei diesem Beispiel wird davon ausgegangen, dass sich das Dokument `{_id: 1, json: {name: 'yoel', age: 23} }` in der Sammlung befindet.
 {: cordova}
 
-#### Dokumente aus einer Sammlung entfernen
+#### Dokumente aus einer Cordova-Sammlung entfernen
 {: #remove_jsonstore_cordova} 
 {: cordova}
 
@@ -216,14 +216,14 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: codeblock}
 {: cordova}
 
-#### Gesamte Datensammlung entfernen
+#### Gesamte Cordova-Sammlung entfernen
 {: #remove_collection_jsonstore_cordova} 
 {: cordova}
 
 Verwenden Sie `removeCollection`, um alle Dokumente zu löschen, die in einer Sammlung gespeichert sind. Diese Operation ähnelt dem Löschen einer Tabelle in einer Datenbank.
 {: cordova}
 
-#### JSONStore löschen
+#### Cordova-JSONStore löschen
 {: #destroy_jsonstore_cordova} 
 {: cordova}
 
@@ -274,7 +274,7 @@ Folgen Sie dem Lernprogramm [Mobile Foundation-SDK zu iOS-Anwendungen hinzufüge
    {: codeblock}
    {: ios}
 
-#### JSONStore-Sammlung öffnen: iOS
+#### iOS-JSONStore-Sammlung öffnen 
 {: #open_ios} 
 {: ios}
 
@@ -296,7 +296,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Zugriffsmechanismus für Ihre JSONStore-Sammlung abrufen
+#### Zugriffsmechanismus für Ihre iOS-JSONStore-Sammlung abrufen
 {: #get_jsonstore_ios} 
 {: ios}
 
@@ -313,7 +313,7 @@ let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWit
 Mit der Variablen "collection" lassen sich nun Operationen für die Sammlung `people` ausführen, beispielsweise `add`, `find` und `replace`.
 {: ios}
 
-#### Dokumente zu einer Sammlung hinzufügen
+#### Dokumente zu einer iOS-Sammlung hinzufügen
 {: #add_jsonstore_ios} 
 {: ios}
 
@@ -335,7 +335,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Dokumente in einer Sammlung suchen
+#### Dokumente in einer iOS-Sammlung suchen
 {: #find_jsonstore_ios} 
 {: ios}
 
@@ -362,7 +362,7 @@ do  {
 {: codeblock}
 {: ios}
 
-#### Dokumente in einer Sammlung ersetzen
+#### Dokumente in einer iOS-Sammlung ersetzen
 {: #replace_jsonstore_ios} 
 {: ios}
 
@@ -393,7 +393,7 @@ do {
 Bei diesem Beispiel wird davon ausgegangen, dass sich das Dokument `{_id: 1, json: {name: 'yoel', age: 23} }` in der Sammlung befindet.
 {: ios}
 
-#### Dokumente aus einer Sammlung entfernen
+#### Dokumente aus einer iOS-Sammlung entfernen
 {: #remove_jsonstore_ios} 
 {: ios}
 
@@ -413,7 +413,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Gesamte Datensammlung entfernen
+#### Gesamte iOS-Sammlung entfernen
 {: #remove_collection_jsonstore_ios} 
 {: ios}
 
@@ -433,7 +433,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### JSONStore löschen
+#### iOS-JSONStore löschen
 {: #destroy_jsonstore_ios} 
 {: ios}
 
@@ -488,7 +488,7 @@ Folgen Sie dem Lernprogramm [Mobile Foundation-SDK zu Android-Anwendungen hinzuf
    {: note}
    {: android}
 
-#### JSONStore-Sammlung öffnen: Android
+#### Android-JSONStore-Sammlung öffnen
 {: #open_android} 
 {: android}
 
@@ -512,7 +512,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Zugriffsmechanismus für Ihre JSONStore-Sammlung abrufen
+#### Zugriffsmechanismus für Ihre Android-JSONStore-Sammlung abrufen
 {: #get_jsonstore_android} 
 {: android}
 
@@ -535,7 +535,7 @@ try {
 Mit der Variablen "collection" lassen sich nun Operationen für die Sammlung `people` ausführen, beispielsweise `add`, `find` und `replace`.
 {: android}
 
-#### Dokumente zu einer Sammlung hinzufügen
+#### Dokumente zu einer Android-Sammlung hinzufügen
 {: #add_jsonstore_android} 
 {: android}
 
@@ -560,7 +560,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Dokumente in einer Sammlung suchen
+#### Dokumente in einer Android-Sammlung suchen
 {: #find_jsonstore_android} 
 {: android}
 
@@ -589,7 +589,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Dokumente in einer Sammlung ersetzen
+#### Dokumente in einer Android-Sammlung ersetzen
 {: #replace_jsonstore_android} 
 {: android}
 
@@ -617,7 +617,7 @@ try {
 Bei diesem Beispiel wird davon ausgegangen, dass sich das Dokument `{_id: 1, json: {name: 'yoel', age: 23} }` in der Sammlung befindet.
 {: android}
 
-#### Dokumente aus einer Sammlung entfernen
+#### Dokumente aus einer Android-Sammlung entfernen
 {: #remove_jsonstore_android} 
 {: android}
 
@@ -641,7 +641,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Gesamte Datensammlung entfernen
+#### Gesamte Android-Sammlung entfernen
 {: #remove_collection_jsonstore_android} 
 {: android}
 
@@ -662,7 +662,7 @@ try {
 {: codeblock}
 {: android}
 
-#### JSONStore löschen
+#### Android-JSONStore löschen
 {: #destroy_jsonstore_android} 
 {: android}
 

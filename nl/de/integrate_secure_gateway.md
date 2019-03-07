@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -22,7 +22,7 @@ Beim Erstellen mobiler Apps für Unternehmen sollen diese Apps bevorzugt in best
 In diesem Lernprogramm wird erläutert, wie Sie mithilfe des Secure Gateway-Service auf HTTP-Endpunkte in Ihrem Rechenzentrum übe Mobile Foundation-Adapter zugreifen können, die in IBM Cloud ausgeführt werden.
 
 ## Voraussetzung
-{: #prereq}
+{: #prereq_int_sec_gw}
 
 Zum Durchführen dieses Lernprogramms benötigen Sie einen HTTP-Endpunkt in Ihrer Unternehmensfirewall, der die Systems of Record-Daten bereitstellt. Alternativ können Sie einen Testendpunkt in Ihrer lokalen Umgebung erstellen, indem Sie [dieses `Node.js`-Beispielprojekt ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/MobileFirst-Platform-Developer-Center/MFPSecureGatewayIonic/tree/master/NodeJSHTTPProject) verwenden.
 
@@ -41,8 +41,8 @@ Die folgende Abbildung veranschaulicht die Architektur, die im in diesem Lernpro
 
 ![Architekturdiagramm](images/SecureGatewayArchi.png)
 
-## Integration implementieren
-{: #implementing_integration}
+## Secure Gateway-Integration implementieren
+{: #implementing_sg_integration}
 
 ### Secure Gateway-Serviceinstanz erstellen
 Melden Sie sich bei IBM Cloud an und erstellen Sie eine Instanz des [Secure Gateway-Service](https://cloud.ibm.com/catalog/services/secure-gateway/). 
@@ -68,7 +68,7 @@ Klicken Sie in Ihrem neuen Gateway auf der Registerkarte **Clients** auf **Clien
 
 Sie können jeden beliebigen Client Ihrer Wahl verwenden und den Secure Gateway-Client in Ihrer On-Premises-Umgebung ausführen. Die Schritte zum Einrichten des Secure Gateway-Clients sind in der Secure Gateway-Konsole verfügbar.
 
-In diesem Lernprogramm verwenden Sie die Option für Docker-Container, um den Secure Gateway-Client auszuführen.
+In diesem Lernprogramm verwenden Sie die Option für Docker-Container, um den Secure Gateway-Client auszuführen. 
 Führen Sie die folgenden Schritte aus:
 *   Falls noch nicht installiert, installieren Sie Docker auf Ihrer On-Premises-Maschine.
 *   Starten Sie einen Terminal und führen Sie den Secure Gateway-Client mit dem in der Servicekonsole angezeigten Befehl in einem Container aus.
@@ -118,7 +118,7 @@ Erstellen Sie den [Mobile Foundation-Server ![Symbol für externen Link](../../i
 
 In diesem Lernprogramm stellen Sie mit einem Mobile Foundation-Adapter eine Verbindung zum Secure Gateway-Endpunkt her. [Laden Sie ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link") den Mobile Foundation-JavaHTTP-Adapter herunter](https://github.com/MobileFirst-Platform-Developer-Center/Adapters/tree/release80/JavaHTTP).
 
-Erstellen und implementieren Sie den Adapter in der Mobile Foundation Operations Console mit Befehlen der [mfpdev-CLI](using_cli.html).
+Erstellen und implementieren Sie den Adapter in der Mobile Foundation Operations Console mit Befehlen der [mfpdev-CLI](/docs/services/mobilefoundation?topic=mobilefoundation-mobile_foundation_cli#mobile_foundation_cli).
 ```bash
 mfpdev adapter build 
 mfpdev adapter deploy
@@ -145,11 +145,11 @@ Führen Sie die App aus, stellen Sie Berechtigungsnachweise bereit, um sich anzu
 
 ![App empfängt On-Premises-Daten](images/AcmePublishersApp.gif)
 
-Sie können eine Verbindung zu mehreren On-Premises-Endpunkten herstellen, indem Sie mehrere Ziele für den Secure Gateway-Service konfigurieren und Mobile Foundation-Adapter bereitstellen, um eine Verbindung zum jeweiligen Cloud-Host des Endpunkts herzustellen. Sie können den Secure Gateway-Service auch mit zusätzlicher Sicherheit konfigurieren, um sicherzustellen, dass die Kommunikation mit dem Endpunkt über die HTTPS- und die anwendungsseitige Sicherheit erfolgt. Die entsprechenden [Details finden Sie hier](https://cloud.ibm.com/docs/services/SecureGateway/index.html).
+Sie können eine Verbindung zu mehreren On-Premises-Endpunkten herstellen, indem Sie mehrere Ziele für den Secure Gateway-Service konfigurieren und Mobile Foundation-Adapter bereitstellen, um eine Verbindung zum jeweiligen Cloud-Host des Endpunkts herzustellen. Sie können den Secure Gateway-Service auch mit zusätzlicher Sicherheit konfigurieren, um sicherzustellen, dass die Kommunikation mit dem Endpunkt über die HTTPS- und die anwendungsseitige Sicherheit erfolgt. Die entsprechenden [Details finden Sie hier](/docs/services/SecureGateway?topic=securegateway-getting-started-with-sg#getting-started-with-sg).
 
 
 ## Zusammenfassung
-{: #summary}
+{: #summary_int_sec_gw}
 
 Anhand dieses Lernprogramms sollten Sie mithilfe des Mobile Foundation-Service eine sichere Verbindung zwischen den in IBM Cloud ausführten Mobile Foundation-Adaptern und einem On-Premises-Endpunkt herstellen können.
 
