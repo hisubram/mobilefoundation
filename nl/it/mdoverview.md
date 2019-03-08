@@ -21,7 +21,7 @@ la creazione di applicazioni mobili coinvolgenti è la chiave per il successo di
 ###  Informazioni approfondite sulle applicazioni
 {: #app_insights}
 
-Per mantenere in primo piano e attivo il coinvolgimento dei tuoi utenti, devi ottenere informazioni approfondite sulla qualità delle prestazioni della tua applicazione presso gli utenti. La funzione Mobile Analytics di Mobile Foundation fornisce questa funzionalità con visualizzazioni integrate (grafici e tabelle). Con una strumentazione veramente minima della tua applicazione, puoi prontamente visualizzare, sulla console Mobile Analytics, informazioni approfondite su cui eseguire operazioni quali:
+Per mantenere in primo piano e attivo il coinvolgimento dei tuoi utenti, devi ottenere informazioni approfondite sulla qualità delle prestazioni della tua applicazione presso gli utenti.   La funzione Mobile Analytics di Mobile Foundation fornisce questa funzionalità con visualizzazioni integrate (grafici e tabelle).  Con una strumentazione veramente minima della tua applicazione, puoi prontamente visualizzare, sulla console Mobile Analytics, informazioni approfondite su cui eseguire operazioni quali:
 - **I modelli di onboarding degli utenti**: hai dei nuovi utenti che stanno eseguendo l'onboarding, hai degli utenti esistenti che stanno ritornando alla tua applicazione?
 - **I modelli di utilizzo**: quando la tua applicazione è più utilizzata e meno utilizzata e, a tale proposito, sta soddisfacendo i suoi obiettivi aziendali?
 - **Le prestazioni di backend**: quali sono le funzioni più usate dei tuoi sistemi di backend, quale ne è stato il tempo di risposta e com'è la loro stabilità, è necessario ribilanciare il tuo backend?

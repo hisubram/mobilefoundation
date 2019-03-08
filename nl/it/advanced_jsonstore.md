@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 {:generic: .ph data-hd-programlang='generic'}
@@ -27,14 +27,14 @@ lastupdated: "2019-01-04"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Configurazione avanzata dell'archiviazione offline 
-{: #adv_configure_offline_storage}
+# JSONStore avanzato 
+{: #advanced_jsonstore}
 
 ## Sicurezza in JSONStore
-{: #security_jsonstore} 
+{: #security_jsonstore}
 
 <!--### Cordova
-{: security_jsonstore_cordova}-->
+{: #security_jsonstore_cordova}-->
 
 Puoi proteggere tutte le tue raccolte in un archivio passando una password alla funzione `init`. Se non viene passata alcuna password, i documenti di tutte le raccolte nell'archivio non saranno crittografati.
 {: cordova}

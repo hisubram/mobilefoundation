@@ -37,8 +37,7 @@ Durante l'handshake SSL (prima richiesta al server), l'SDK client Mobile Foundat
 ## Associazione di certificato
 {: #cert_pinning}
 
-I protocolli che si basano sulla verifica della catena di certificati, come ad esempio SSL/TLS, sono vulnerabili a un certo numero di attacchi pericolosi, compresi gli attacchi man-in-the-middle, che si verificano quando una parte non autorizzata è in grado di visualizzare e modificare tutto il traffico che passa tra il dispositivo mobile e i sistemi di backend.
-Perché venga ritenuto genuino e valido, un certificato viene firmato digitalmente da un certificato root che appartiene a un'autorità di certificazione (CA, Certificate Authority) ritenuta attendibile. I sistemi operativi e i browser mantengono degli elenchi di certificati root di CA ritenute attendibili in modo da poter verificare facilmente i certificati che le CA hanno emesso e firmato.
+I protocolli che si basano sulla verifica della catena di certificati, come ad esempio SSL/TLS, sono vulnerabili a un certo numero di attacchi pericolosi, compresi gli attacchi man-in-the-middle, che si verificano quando una parte non autorizzata è in grado di visualizzare e modificare tutto il traffico che passa tra il dispositivo mobile e i sistemi di backend. Perché venga ritenuto genuino e valido, un certificato viene firmato digitalmente da un certificato root che appartiene a un'autorità di certificazione (CA, Certificate Authority) ritenuta attendibile. I sistemi operativi e i browser mantengono degli elenchi di certificati root di CA ritenute attendibili in modo da poter verificare facilmente i certificati che le CA hanno emesso e firmato.
 
 IBM Mobile Foundation fornisce una API per abilitare l'**associazione di certificato**. È supportata in applicazioni MobileFirst Cordova multipiattaforma, Android native e iOS native.
 
@@ -184,4 +183,4 @@ Il metodo di associazione di certificato restituisce una promessa:
 
 Successivamente, se viene effettuata una richiesta protetta a un server il cui certificato non è associato, viene richiamato il callback ``onFailure`` della richiesta specifica (ad esempio ``obtainAccessToken`` o ``WLResourceRequest``).
 
->Ulteriori informazioni sul metodo API di associazione di certificato sono disponibili nella [Guida di riferimento per l'API](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/).
+>Ulteriori informazioni sul metodo API di associazione di certificato sono disponibili nella [Guida di riferimento per l'API](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks).

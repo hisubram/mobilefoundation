@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -30,9 +30,9 @@ lastupdated: "2019-01-04"
 # Configura l'archiviazione offline
 {: #configure_offline_storage}
 
-JSONStore Mobile Foundation è un'API lato client facoltativa che fornisce un semplice sistema di archiviazione orientato ai documenti. JSONStore abilita l'archiviazione persistente di documenti JSON. I documenti presenti in un'applicazione sono disponibili in JSONStore anche quando il dispositivo su cui è in esecuzione l'applicazione è offline. Questa archiviazione persistente e sempre disponibile può essere utile per consentire agli utenti di accedere ai documenti quando, ad esempio, non è disponibile alcuna connessione di rete nel dispositivo. Per una panoramica dei concetti e per la terminologia di JSONStore, vedi [qui](jsonstore.html).
+JSONStore Mobile Foundation è un'API lato client facoltativa che fornisce un semplice sistema di archiviazione orientato ai documenti. JSONStore abilita l'archiviazione persistente di documenti JSON. I documenti presenti in un'applicazione sono disponibili in JSONStore anche quando il dispositivo su cui è in esecuzione l'applicazione è offline. Questa archiviazione persistente e sempre disponibile può essere utile per consentire agli utenti di accedere ai documenti quando, ad esempio, non è disponibile alcuna connessione di rete nel dispositivo. Per una panoramica dei concetti e per la terminologia di JSONStore, vedi [qui](/docs/services/mobilefoundation?topic=mobilefoundation-jsonstore#jsonstore).
 
-Per la configurazione avanzata dell'archiviazione offline, vedi [qui](advanced_jsonstore.html).
+Per la configurazione avanzata dell'archiviazione offline, vedi [qui](/docs/services/mobilefoundation?topic=mobilefoundation-advanced_jsonstore#advanced_jsonstore).
 {: note}
 
 ### Configura l'archiviazione offline per le applicazioni Cordova o Iconic
@@ -81,7 +81,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 {: codeblock}
 {: cordova}
 
-#### Ottieni un accessor alla tua raccolta JSONStore
+#### Ottieni un accessor alla tua raccolta Cordova JSONStore
 {: #get_jsonstore_cordova} 
 {: cordova}
 
@@ -97,7 +97,7 @@ var people = WL.JSONStore.get(collectionName);
 La variabile *people* può ora essere utilizzata per eseguire operazioni sulla raccolta *people* quali `add`, `find` e `replace`.
 {: cordova}
 
-#### Aggiungi documenti a una raccolta
+#### Aggiungi documenti a una raccolta Cordova 
 {: #add_jsonstore_cordova} 
 {: cordova}
 
@@ -118,7 +118,7 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 {: codeblock}
 {: cordova}
 
-#### Trova documenti all'interno di una raccolta
+#### Trova documenti all'interno di una raccolta Cordova 
 {: #find_jsonstore_cordova} 
 {: cordova}
 
@@ -169,7 +169,7 @@ else {
 {: codeblock}
 {: cordova}
 
-#### Sostituisci documenti all'interno di una raccolta
+#### Sostituisci documenti all'interno di una raccolta Cordova 
 {: #replace_jsonstore_cordova} 
 {: cordova}
 
@@ -195,7 +195,7 @@ WL.JSONStore.get(collectionName).replace(document, options).then(function (numbe
 Questo esempio presume che il documento `{_id: 1, json: {name: 'yoel', age: 23} }` sia nella raccolta.
 {: cordova}
 
-#### Rimuovi documenti da una raccolta
+#### Rimuovi documenti da una raccolta Cordova 
 {: #remove_jsonstore_cordova} 
 {: cordova}
 
@@ -216,14 +216,14 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: codeblock}
 {: cordova}
 
-#### Rimuovi un'intera raccolta
+#### Rimuovi un'intera raccolta Cordova 
 {: #remove_collection_jsonstore_cordova} 
 {: cordova}
 
 Utilizza `removeCollection` per eliminare tutti i documenti archiviati all'interno di una raccolta. Questa operazione è simile all'eliminazione di una tabella in termini del database.
 {: cordova}
 
-#### Elimina permanentemente JSONStore
+#### Elimina permanentemente Cordova JSONStore
 {: #destroy_jsonstore_cordova} 
 {: cordova}
 
@@ -274,7 +274,7 @@ Attieniti all'esercitazione [Adding the Mobile Foundation SDK to iOS application
    {: codeblock}
    {: ios}
 
-#### Apri la raccolta JSONStore: iOS
+#### Apri la raccolta iOS JSONStore 
 {: #open_ios} 
 {: ios}
 
@@ -296,7 +296,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Ottieni un accessor alla tua raccolta JSONStore
+#### Ottieni un accessor alla tua raccolta iOS JSONStore
 {: #get_jsonstore_ios} 
 {: ios}
 
@@ -313,7 +313,7 @@ let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWit
 La variabile collection può ora essere utilizzata per eseguire operazioni sulla raccolta `people` quali `add`, `find` e `replace`.
 {: ios}
 
-#### Aggiungi documenti a una raccolta
+#### Aggiungi documenti a una raccolta iOS 
 {: #add_jsonstore_ios} 
 {: ios}
 
@@ -335,7 +335,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Trova documenti all'interno di una raccolta
+#### Trova documenti all'interno di una raccolta iOS 
 {: #find_jsonstore_ios} 
 {: ios}
 
@@ -362,7 +362,7 @@ do  {
 {: codeblock}
 {: ios}
 
-#### Sostituisci documenti all'interno di una raccolta
+#### Sostituisci documenti all'interno di una raccolta iOS 
 {: #replace_jsonstore_ios} 
 {: ios}
 
@@ -393,7 +393,7 @@ do {
 Questo esempio presume che il documento `{_id: 1, json: {name: 'yoel', age: 23} }` sia nella raccolta.
 {: ios}
 
-#### Rimuovi documenti da una raccolta
+#### Rimuovi documenti da una raccolta iOS 
 {: #remove_jsonstore_ios} 
 {: ios}
 
@@ -413,7 +413,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Rimuovi un'intera raccolta
+#### Rimuovi un'intera raccolta iOS 
 {: #remove_collection_jsonstore_ios} 
 {: ios}
 
@@ -433,7 +433,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Elimina permanentemente JSONStore
+#### Elimina permanentemente un iOS JSONStore
 {: #destroy_jsonstore_ios} 
 {: ios}
 
@@ -488,7 +488,7 @@ Attieniti all'esercitazione [Adding the Mobile Foundation SDK to Android applica
    {: note}
    {: android}
 
-#### Apri la raccolta JSONStore: Android
+#### Apri una raccolta Android JSONStore
 {: #open_android} 
 {: android}
 
@@ -512,7 +512,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Ottieni un accessor alla tua raccolta JSONStore
+#### Ottieni un accessor alla tua raccolta Android JSONStore
 {: #get_jsonstore_android} 
 {: android}
 
@@ -535,7 +535,7 @@ try {
 La variabile collection può ora essere utilizzata per eseguire operazioni sulla raccolta `people` quali `add`, `find` e `replace`.
 {: android}
 
-#### Aggiungi documenti a una raccolta
+#### Aggiungi documenti a una raccolta Android 
 {: #add_jsonstore_android} 
 {: android}
 
@@ -560,7 +560,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Trova documenti all'interno di una raccolta
+#### Trova documenti all'interno di una raccolta Android 
 {: #find_jsonstore_android} 
 {: android}
 
@@ -589,7 +589,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Sostituisci documenti all'interno di una raccolta
+#### Sostituisci documenti all'interno di una raccolta Android 
 {: #replace_jsonstore_android} 
 {: android}
 
@@ -617,7 +617,7 @@ try {
 Questo esempio presume che il documento `{_id: 1, json: {name: 'yoel', age: 23} }` sia nella raccolta.
 {: android}
 
-#### Rimuovi documenti da una raccolta
+#### Rimuovi documenti da una raccolta Android 
 {: #remove_jsonstore_android} 
 {: android}
 
@@ -641,7 +641,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Rimuovi un'intera raccolta
+#### Rimuovi un'intera raccolta Android 
 {: #remove_collection_jsonstore_android} 
 {: android}
 
@@ -662,7 +662,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Elimina permanentemente JSONStore
+#### Elimina permanentemente un Android JSONStore
 {: #destroy_jsonstore_android} 
 {: android}
 

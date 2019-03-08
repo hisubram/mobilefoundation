@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -29,13 +29,12 @@ Dopo aver creato l'istanza del servizio {{site.data.keyword.mobilefoundation_sho
 
 Puoi ora gestire le tue applicazioni mobili e i tuoi dispositivi mobili, utilizzare il tuo server come un backend mobile, inviare notifiche di push e altro ancora.
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Mobile Analytics nel piano Developer
+{: #mobile_analytics_p1}
 
 Il server Mobile Analytics è incluso e preconfigurato con l'istanza del servizio del piano Mobile Foundation: Developer.
 
 * Avvia la console Mobile Analytics da {{site.data.keyword.mfp_oc_short_notm}}.
 
-Per ulteriori informazioni su Mobile Analytics, puoi fare riferimento a [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}.
+Per ulteriori informazioni sulla strumentazione della tua applicazione utilizzando Mobile Analytics, puoi fare riferimento [qui](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.
 
-Per ulteriori dettagli, fai riferimento alla [documentazione di {{site.data.keyword.mobilefoundation_long}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}.

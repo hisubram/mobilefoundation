@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-02-13"
 
 ---
 
@@ -22,7 +22,7 @@ Quando crei delle applicazioni mobili aziendali, spesso desideri integrare le tu
 Questa esercitazione spiega come accedere agli endpoint HTTP nel tuo data center in loco dagli adattatori Mobile Foundation in esecuzione su IBM Cloud utilizzando il servizio Secure Gateway.
 
 ## Prerequisito
-{: #prereq}
+{: #prereq_int_sec_gw}
 
 Per completare questa esercitazione, ti servirà un endpoint HTTP all'interno del tuo firewall aziendale che espone i dati dei SOR (system of record). In alternativa, crea un endpoint di test nel tuo ambiente locale utilizzando [questo progetto `Node.js` di esempio ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/MobileFirst-Platform-Developer-Center/MFPSecureGatewayIonic/tree/master/NodeJSHTTPProject).
 
@@ -41,8 +41,8 @@ La seguente immagine illustra l'architettura utilizzata nello scenario di integr
 
 ![Diagramma dell'architettura](images/SecureGatewayArchi.png)
 
-## Implementazione dell'integrazione
-{: #implementing_integration}
+## Implementazione dell'integrazione di Secure Gateway
+{: #implementing_sg_integration}
 
 ### Crea un'istanza del servizio Secure Gateway
 Accedi a IBM Cloud e crea un'istanza del [servizio Secure Gateway](https://cloud.ibm.com/catalog/services/secure-gateway/). 
@@ -68,7 +68,7 @@ Dall'interno del tuo nuovo gateway dalla scheda **Clients**, fai clic su **Conne
 
 Puoi utilizzare uno qualsiasi dei client di tua scelta ed eseguire il client Secure Gateway nel tuo ambiente in loco. Questa procedura per configurare il client Secure Gateway è disponibile nella console Secure Gateway.
 
-In questa esercitazione, utilizzeremo l'opzione del contenitore Docker per eseguire il client Secure Gateway.
+In questa esercitazione, utilizzeremo l'opzione del contenitore Docker per eseguire il client Secure Gateway. 
 Attieniti alla procedura indicata di seguito:
 *   Installa Docker sulla tua macchina in loco, se non è già installato.
 *   Avvia un terminale ed esegui il client Secure Gateway su un contenitore utilizzando il comando mostrato nella console del servizio.
@@ -118,7 +118,7 @@ Dalla console del servizio Mobile Foundation, crea il [server Mobile Foundation 
 
 In questa esercitazione, stabiliremo una connessione all'endpoint Secure Gateway utilizzando un adattatore Mobile Foundation. [Scarica ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://github.com/MobileFirst-Platform-Developer-Center/Adapters/tree/release80/JavaHTTP) l'adattatore JavaHTTP di Mobile Foundation.
 
-Crea e distribuisci l'adattatore nella console Mobile Foundation Operations utilizzando i comandi [mfpdev-cli](using_cli.html).
+Crea e distribuisci l'adattatore nella console Mobile Foundation Operations utilizzando i comandi [mfpdev-cli](/docs/services/mobilefoundation?topic=mobilefoundation-mobile_foundation_cli#mobile_foundation_cli).
 ```bash
 mfpdev adapter build
 mfpdev adapter deploy
@@ -145,11 +145,11 @@ Esegui l'applicazione, fornisci le credenziali per accedere e fai clic sul pulsa
 
 ![L'applicazione riceve i dati in loco](images/AcmePublishersApp.gif)
 
-Puoi stabilire una connessione a più endpoint in loco configurando più destinazioni nel servizio Secure Gateway e distribuendo gli adattatori Mobile Foundation per stabilire una connessione all'host cloud rispettivo dell'endpoint. Puoi anche configurare il servizio Secure Gateway con della sicurezza aggiuntiva per assicurarti che le comunicazioni all'endpoint abbiano luogo nell'ambito della sicurezza HTTPS e lato applicazione. Puoi trovare i [dettagli qui](https://cloud.ibm.com/docs/services/SecureGateway/index.html).
+Puoi stabilire una connessione a più endpoint in loco configurando più destinazioni nel servizio Secure Gateway e distribuendo gli adattatori Mobile Foundation per stabilire una connessione all'host cloud rispettivo dell'endpoint. Puoi anche configurare il servizio Secure Gateway con della sicurezza aggiuntiva per assicurarti che le comunicazioni all'endpoint abbiano luogo nell'ambito della sicurezza HTTPS e lato applicazione. Puoi trovare i [dettagli qui](/docs/services/SecureGateway?topic=securegateway-getting-started-with-sg#getting-started-with-sg).
 
 
 ## Riepilogo
-{: #summary}
+{: #summary_int_sec_gw}
 
 Utilizzando questa esercitazione, dovresti essere in grado di stabilire una connessione protetta tra gli adattatori Mobile Foundation in esecuzione su IBM Cloud e un endpoint HTTP in loco utilizzando il servizio Secure Gateway.
 

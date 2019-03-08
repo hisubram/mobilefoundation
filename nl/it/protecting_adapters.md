@@ -24,9 +24,6 @@ lastupdated: "2018-11-19"
 # Protezione degli adattatori
 {: #protecting_adapters}
 
-## Protezione delle risorse dell'adattatore
-{: #protecting_adapters_resources}
-
 Nel tuo adattatore, puoi specificare l'ambito di protezione per un metodo Java o una procedura di risorsa JavaScript oppure per un'intera classe di risorse Java, come descritto nelle seguenti sezioni [Java](#protect-java-adapter-resources) e [JavaScript](#protect-javascript-adapter-resources). Un ambito è definito come una stringa di uno o più elementi di ambito separati da spazi (“scopeElement1 scopeElement2 …”) oppure null per applicare l'ambito predefinito.
 
 L'ambito MobileFirst predefinito è `RegisteredClient`, che richiede un token di accesso per accedere alla risorsa e verifica che la richiesta di risorsa venga da un'applicazione registrata presso MobileFirst Server. La protezione viene sempre applicata, a meno che tu non [disabiliti la protezione delle risorse](#disabling-resource-protection). Pertanto, anche se non imposti un ambito per la tua risorsa, essa è comunque protetta.
@@ -95,8 +92,8 @@ Il seguente codice protegge una procedura `userName` con un ambito che contiene 
 ```
 {: codeblock}
 
-## Disabilitazione della protezione delle risorse
-{: #disabling-resource-protection}
+## Disabilitazione della protezione delle risorse dell'adattatore
+{: #disabling-adapter-resource-protection}
 
 Puoi disabilitare la [protezione delle risorse MobileFirst predefinita](#protecting_adapters_resources) per una specifica risorsa dell'adattatore Java o JavaScript o per un'intera classe Java, come descritto nelle seguenti sezioni Java e JavaScript. Quando la protezione delle risorse è disabilitata, il framework di sicurezza MobileFirst non richiede un token per accedere alla risorsa.
 

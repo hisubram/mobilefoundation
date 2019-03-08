@@ -38,6 +38,6 @@ Utilizzando la Mobile Foundation Operations Console, puoi monitorare e gestire l
    *  Esporta versione
 
 
-Vedi [Gestione dei dispositivi](manage_devices.html) per ulteriori informazioni sulla gestione dei dispositivi. Vedi [Disabilita in remoto una versione dell'applicazione](remote_disable_app_version.html) per ulteriori informazioni sulla disabilitazione in remoto di una specifica versione di un'applicazione.
+Vedi [Gestione dei dispositivi](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices) per ulteriori informazioni sulla gestione dei dispositivi. Vedi [Disabilita in remoto una versione dell'applicazione](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version) per ulteriori informazioni sulla disabilitazione in remoto di una specifica versione di un'applicazione.
 {: note}
 

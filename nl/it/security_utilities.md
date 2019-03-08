@@ -15,7 +15,6 @@ lastupdated:  "2018-11-19"
 #	Programmi di utilità di sicurezza
 {: #security_utilities}
 
-## Panoramica
 L'API lato client di Mobile Foundation fornisce alcuni programmi di utilità di sicurezza per proteggere i dati dell'utente. Funzioni come JSONStore sono ottime se vuoi proteggere gli oggetti JSON. Tuttavia, non si consiglia di archiviare blob binari in una raccolta JSONStore.
 
 Invece, archivia i dati binari sul file system e archivia i percorsi di file e altri metadati all'interno di una raccolta JSONStore. Se vuoi proteggere file come, ad esempio, le immagini, puoi codificarli come stringhe in base64, crittografarli e scrivere l'output sul disco. Per decrittografare i dati, puoi cercare i metadati in una raccolta JSONStore. Leggi quindi i dati crittografati dal disco e decrittografali utilizzando i metadati archiviati. Questi metadati possono includere la chiave, salt, il vettore di inizializzazione (IV), il tipo di file, il percorso del file e altro.
@@ -36,24 +35,23 @@ A un alto livello, l'API SecurityUtils fornisce le seguenti API:
 ## Configurazione
 Per utilizzare le API dei programma di utilità di sicurezza JSONStore, assicurati di importare i seguenti file.
 
-### iOS
+### Configura iOS
 
 ```objc
 #import "WLSecurityUtils.h"
 ```
 
-### Android
+### Configura Android
 
 ```java
 import com.worklight.wlclient.api.SecurityUtils
 ```
 
-### JavaScript
+### Configura JavaScript
 Non è richiesta alcuna configurazione.
 
-## Esempi
-### iOS
-#### Crittografia e decrittografia
+## Esempi per iOS
+### Crittografia e decrittografia in iOS 
 
 ```objc
 // User provided password, hardcoded only for simplicity.
@@ -87,7 +85,7 @@ NSString* decryptedString = [WLSecurityUtils decryptWithKey:key
 ```
 {: codeblock}
 
-#### Codifica e decodifica in base64
+### Codifica e decodifica in base64 in iOS 
 
 ```objc
 // Input string.
@@ -102,7 +100,7 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-#### Ottieni stringa casuale remota
+### Ottieni stringa casuale remota in iOS 
 
 ```objc
 [WLSecurityUtils getRandomStringFromServerWithBytes:32
@@ -117,8 +115,8 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-### Android
-#### Crittografia e decrittografia
+## Esempi per Android
+### Crittografia e decrittografia in Android 
 
 ```java
 String password = "HelloPassword";
@@ -136,7 +134,7 @@ String decipheredText = SecurityUtils.decrypt(key, encryptedObject);
 ```
 {: codeblock}
 
-#### Codifica e decodifica in base64
+### Codifica e decodifica in base64 in Android 
 
 ```java
 import android.util.Base64;
@@ -153,7 +151,7 @@ String decodedText = new String(base64Decoded, "UTF-8");
 ```
 {: codeblock}
 
-#### Ottieni stringa casuale remota
+### Ottieni stringa casuale remota in Android 
 
 ```java
 Context context; // This is the current Activity's context.
@@ -176,7 +174,7 @@ SecurityUtils.getRandomStringFromServer(byteLength, context, listener);
 ```
 {: codeblock}
 
-#### Ottieni stringa casuale locale
+### Ottieni stringa casuale locale in Android 
 
 ```java
 int byteLength = 32;
@@ -184,8 +182,8 @@ String randomString = SecurityUtils.getRandomString(byteLength);
 ```
 {: codeblock}
 
-### JavaScript
-#### Crittografia e decrittografia
+## Esempi per JavaScript
+### Crittografia e decrittografia in JavaScript 
 
 ```javascript
 // Keep the key in a variable so that it can be passed to the encrypt and decrypt API.
@@ -233,7 +231,7 @@ WL.SecurityUtils.keygen({
 ```
 {: codeblock}
 
-#### Codifica e decodifica in base64
+### Codifica e decodifica in base64 in JavaScript 
 
 ```javascript
 WL.SecurityUtils.base64Encode('Hello World!')
@@ -249,7 +247,7 @@ WL.SecurityUtils.base64Encode('Hello World!')
 ```
 {: codeblock}
 
-#### Ottieni stringa casuale remota
+### Ottieni stringa casuale remota in JavaScript 
 
 ```javascript
 WL.SecurityUtils.remoteRandomString(32)
@@ -262,7 +260,7 @@ WL.SecurityUtils.remoteRandomString(32)
 ```
 {: codeblock}
 
-#### Ottieni stringa casuale locale
+### Ottieni stringa casuale locale in JavaScript 
 
 ```javascript
 WL.SecurityUtils.localRandomString(32)

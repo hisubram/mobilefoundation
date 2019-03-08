@@ -97,8 +97,8 @@ Per utilizzare lo strumento BTS in Xcode:
 
 Lo strumento deve essere utilizzato quando si crea una versione di produzione dell'applicazione.
 
-## Risoluzione dei problemi
-{: #troubleshooting}
+## Risoluzione dei problemi con l'autenticità dell'applicazione
+{: #troubleshooting-app-authenticity}
 
 ### Reimpostazione
 {: #trblreset}

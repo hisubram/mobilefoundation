@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-16"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,24 +14,24 @@ lastupdated:  "2018-11-16"
 {:note: .note}
 
 # Esercitazione introduttiva
-{: #gettingstartedtemplate}
+{: #getting-started-tutorial}
 
 {{site.data.keyword.mobilefoundation_long}} accelera la configurazione di un ambiente {{site.data.keyword.mfp_full}} che ti consente di sviluppare, testare ed eseguire applicazioni mobili aziendali. {{site.data.keyword.mobilefoundation_short}} offre i seguenti diversi piani di servizio: Developer, Professional Per Device e Professional 1 Application.
 {: shortdesc}
 
-Utilizzando il piano Professional 1 Application è possibile gestire una singola applicazione basata su uno qualsiasi dei sistemi operativi supportati. I sistemi operativi supportati sono Android, iOS, Windows o web mobile. Il piano Developer è consigliato per lo sviluppo e le operazioni di test. Puoi rivedere tutti i piani disponibili [qui](https://console.bluemix.net/catalog/services/mobile-foundation).
+Utilizzando il piano Professional 1 Application è possibile gestire una singola applicazione basata su uno qualsiasi dei sistemi operativi supportati. I sistemi operativi supportati sono Android, iOS, Windows o web mobile. Il piano Developer è consigliato per lo sviluppo e le operazioni di test. Puoi rivedere tutti i piani disponibili [qui](https://cloud.ibm.com/catalog/services/mobile-foundation).
 
 Questa esercitazione introduttiva ti consente di creare un'istanza del servizio {{site.data.keyword.mobilefoundation_short}} con uno dei piani supportati. Quindi, puoi registrare un'applicazione. Scarica e modifica l'applicazione registrata, distribuisci un adattatore e infine verifica l'applicazione.
 
 ## Prima di iniziare
-{: #prereqs}
+{: #prereqs-gs}
 
 Avrai bisogno di un account {{site.data.keyword.Bluemix}} e di un'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
 
 ## Passo 1: crea un'istanza del servizio {{site.data.keyword.mobilefoundation_short}}
 {: #step1create}
 
-1. Nel **catalogo** {{site.data.keyword.Bluemix_notm}}, seleziona [**{{site.data.keyword.mobilefoundation_short}}**](https://{domainName}/catalog/services/mobile-foundation). Viene aperta la schermata di configurazione del servizio.
+1. Nel **catalogo** {{site.data.keyword.Bluemix_notm}}, seleziona [**{{site.data.keyword.mobilefoundation_short}}**](https://cloud.ibm.com/catalog/services/mobile-foundation). Viene aperta la schermata di configurazione del servizio.
 2. Fornisci un nome alla tua istanza del servizio o utilizza un nome preimpostato.
 3. Scegli la regione, l'organizzazione e lo spazio in cui desideri creare l'istanza del servizio.
 4. Seleziona il tuo **Piano dei prezzi** e fai clic su **Crea**.
@@ -88,7 +88,7 @@ dove puoi vedere:
 
       +	Fai clic su **Avvia console** per aprire {{site.data.keyword.mfp_oc_short_notm}}.      
 
-      Per creare un'istanza del server {{site.data.keyword.mobilefirst_notm}} con la configurazione avanzata per topologia, sicurezza e altra configurazione del server, fai clic su **Avvia server con la configurazione avanzata**. Vedi [Impostazione della configurazione avanzata](c_using_mfs_p5.html#using_mfs_advanced_p5) per ulteriori informazioni.
+      Per creare un'istanza del server {{site.data.keyword.mobilefirst_notm}} con la configurazione avanzata per topologia, sicurezza e altra configurazione del server, fai clic su **Avvia server con la configurazione avanzata**. Vedi [Impostazione della configurazione avanzata](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5) per ulteriori informazioni.
       {: tip}
 
 ### Per il piano {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application
@@ -129,7 +129,7 @@ dove puoi vedere:
 
       +  Fai clic su **Avvia console** per aprire {{site.data.keyword.mfp_oc_short_notm}}.  
 
-      Per creare un'istanza del server {{site.data.keyword.mobilefirst_notm}} con la configurazione avanzata per topologia, sicurezza e altra configurazione del server, fai clic su **Avvia server con la configurazione avanzata**. Vedi [Impostazione della configurazione avanzata](c_using_mfs_p2.html#using_mfs_advanced_p2) per ulteriori informazioni.
+      Per creare un'istanza del server {{site.data.keyword.mobilefirst_notm}} con la configurazione avanzata per topologia, sicurezza e altra configurazione del server, fai clic su **Avvia server con la configurazione avanzata**. Vedi [Impostazione della configurazione avanzata](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2) per ulteriori informazioni.
       {: tip}
 
 Vai a [Using the Mobile Foundation service to set up MobileFirst Server ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window} per ulteriori informazioni introduttive a {{site.data.keyword.mobilefoundation_short}}.
@@ -251,17 +251,8 @@ Dopo aver creato e avviato la tua istanza del server Mobile Foundation, puoi com
 
 
 ## Passi successivi
-{: #nextsteps}
+{: #nextsteps-gs}
 
 Puoi seguire le [Quick Start tutorials ![Icona link esterno](../../icons/launch-glyph.svg "Quick Start tutorials")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} per utilizzare più applicazioni di esempio e per esplorare l'utilizzo di {{site.data.keyword.mobilefoundation_short}}.
 
 Quick Start dispone di esercitazioni che illustrano l'utilizzo di {{site.data.keyword.mobilefoundation_short}} per le applicazioni iOS, Android, Web, Cordova, Windows, React Native, Ionic e Xamarin.
-
-# Link correlati
-{: #rellinks  notoc}
-
-## Link correlati
-{: #general notoc}
-
-*	[Documentazione del prodotto IBM MobileFirst Platform Foundation V8.0.0 ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}
-*	[IBM MobileFirst Platform Developer Center ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://mobilefirstplatform.ibmcloud.com){: new_window}

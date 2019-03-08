@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated:  "2018-11-20"
 Con il piano Professional Per Device, gli utenti possono creare, testare ed eseguire applicazioni mobili in produzione, indipendentemente dal numero di utenti o dispositivi mobili. Gli addebiti si basano sul numero di dispositivi client giornalieri. Questo piano supporta ampie distribuzioni e alta disponibilità.
 Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device, leggi la seguente procedura introduttiva al servizio.
 
-## Prerequisiti
+## Prerequisiti nel piano Professional Per Device
 {: #prerequisites_p5}
 
 Tieni conto di quanto segue, prima di configurare l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device
@@ -75,7 +75,7 @@ Dopo pochi secondi, puoi accedere alla pagina `Panoramica` che ti fornisce le es
 Non puoi modificare l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} configurata per essere utilizzata dalla tua istanza del servizio {{site.data.keyword.mobilefoundation_short}}. Tuttavia, puoi utilizzare la stessa istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} tra più istanze del servizio {{site.data.keyword.mobilefoundation_short}}, poiché ogni istanza di {{site.data.keyword.mobilefoundation_short}} crea il proprio schema nell'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} selezionata.
 {: note}
 
-## Avvio del server MobileFirst
+## Avvio del server MobileFirst creato utilizzando il piano Professional Per Device
 {: #start_mobilefoundation_p5}
 
 * Per avviare {{site.data.keyword.mfserver_short_notm}}, con le impostazioni predefinite, fai clic su **Avvia server di base**.
@@ -100,7 +100,7 @@ dove puoi vedere:
 
 Con la console, puoi gestire le tue applicazioni mobili, gli adattatori e i tuoi dispositivi mobili, utilizzare il tuo server come un backend mobile, inviare notifiche di push e altro ancora.
 
-## Ricreazione del server MobileFirst
+## Ricreazione del server MobileFirst quando utilizzi il piano Professional Per Device
 {: #recreate_mobilefoundation_p5}
 
 *	Fai clic su **Ricrea** per ricreare il server.
@@ -111,7 +111,7 @@ alcuni minuti.
 I dati della tua istanza del server precedente, incluse le informazioni su applicazioni e adattatori, vengono mantenuti nell'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} configurata. Questi dati saranno utilizzati per ricreare il tuo server.
 {: note}
 
-##	Impostazione della configurazione avanzata
+##	Impostazione della configurazione avanzata nel piano Professional Per Device
 {: #using_mfs_advanced_p5}
 
 Utilizza **Avvia server con la configurazione avanzata** dalla pagina `Panoramica` per creare il server con le impostazioni avanzate o personalizzate. Puoi inoltre
@@ -122,13 +122,11 @@ aggiornare le impostazioni del server per personalizzare la tua configurazione s
 
   - **Istanze** visualizza il numero di istanze create.
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Mobile Analytics nel piano Professional Per Device
+{: #mobile_analytics_p5}
 
 Il server Mobile Analytics è incluso e preconfigurato con l'istanza del servizio del piano Mobile Foundation: Developer.
 
 * Avvia la console Mobile Analytics da {{site.data.keyword.mfp_oc_short_notm}}.
 
-Per ulteriori informazioni su Mobile Analytics, puoi fare riferimento a [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}.
-
-Per ulteriori dettagli, consulta la [documentazione di {{site.data.keyword.mobilefoundation_long}} ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}.
+Per ulteriori informazioni su Mobile Analytics, puoi fare riferimento [qui](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.

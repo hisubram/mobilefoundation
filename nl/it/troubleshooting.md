@@ -13,8 +13,8 @@ lastupdated: "2018-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Risoluzione dei problemi
-{: #troubleshooting}
+# Risoluzione dei problemi generali
+{: #general-troubleshooting}
 
 Per isolare e risolvere i problemi con i tuoi prodotti {{site.data.keyword.IBM_notm}}, puoi utilizzare le informazioni sulla risoluzione dei problemi. Queste informazioni contengono le istruzioni per utilizzare le risorse di determinazione del problema che vengono fornite con i tuoi prodotti {{site.data.keyword.IBM_notm}}, incluso {{site.data.keyword.mobilefoundation_short}}.
 {: shortdesc}
@@ -105,4 +105,4 @@ Se hai domande tecniche sullo sviluppo o sulla distribuzione di un'applicazione 
 
 Per domande sul servizio e sulle istruzioni per l'utilizzo iniziale, utilizza il forum [IBM developerWorks dW Answers ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window}. Includi le tag `bluemix` e  `mobilefirst`.
 
-Per informazioni su come aprire un ticket di supporto IBM o sui livelli di supporto e sulla gravità dei ticket, consulta [Come contattare il supporto ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://console.bluemix.net/docs/get-support/getstarttssup.html#typesofsupport  ){: new_window}.
+Per informazioni su come aprire un ticket di supporto IBM o sui livelli di supporto e sulla gravità dei ticket, consulta [Come contattare il supporto](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.

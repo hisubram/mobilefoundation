@@ -41,7 +41,7 @@ Gli sviluppatori di applicazioni proteggono l'accesso alle loro risorse definend
 
 Un token di accesso MobileFirst è un'entità firmata digitalmente che descrive i permessi di autorizzazione di un client. Dopo che la richiesta di autorizzazione del client per un ambito specifico è stata concessa e il client è stato autenticato, l'endpoint del token del server di autorizzazione invia al client una risposta HTTP che contiene il token di accesso richiesto.
 
-#### Struttura
+#### Struttura del token di accesso
 
 Il token di accesso MobileFirst contiene le seguenti informazioni:
 
@@ -116,7 +116,7 @@ Token di aggiornamento MobileFirst
 
 Un token di aggiornamento MobileFirst è un'entità firmata digitalmente come un token di accesso che descrive i permessi di autorizzazione di un client. Il token di aggiornamento può essere utilizzato per ottenere un nuovo token di accesso dello stesso ambito. Dopo che la richiesta di autorizzazione del client per un ambito specifico è stata concessa e il client è stato autenticato, l'endpoint del token del server di autorizzazione invia al client una risposta HTTP che contiene il token di accesso e quello di aggiornamento richiesti. Quando il token di accesso scade, il client invia il token di aggiornamento all'endpoint del token del server di autorizzazione per ottenere una nuova serie di token di accesso e token di aggiornamento.
 
-#### Struttura
+#### Struttura del token di aggiornamento
 
 Simile al token di accesso MobileFirst, il token di aggiornamento MobileFirst contiene le seguenti informazioni:
 
@@ -200,8 +200,8 @@ Sono disponibili i seguenti controlli di sicurezza predefiniti:
 * SSO (single sign-on) basato su LTPA
 * Aggiornamento diretto
 
-#### Gestori delle verifiche
-{: #challengehandlers}
+#### Entità gestore delle verifiche 
+{: #challengehandler_entity}
 
 Quando prova ad accedere a una risorsa protetta, al client potrebbe essere presentata una verifica. Una verifica è una domanda, un test di sicurezza, una richiesta da parte del server per garantire che al client sia consentito l'accesso a questa risorsa. Più comunemente, questa verifica è una richiesta di credenziali, come ad esempio un nome utente e una password.
 
@@ -286,27 +286,27 @@ Puoi anche modificare manualmente il file JSON di configurazione dell'applicazio
 
 1. Da una **finestra di riga di comando**, vai alla cartella root del progetto ed esegui il comando `mfpdev app pull`.
 2. Apri il file di configurazione, che si trova nella cartella **cartella-progetto\mobilefirst**.
-3. Modifica il file definendo una proprietà `mandatoryScope` e impostando il valore della proprietà su una stringa di ambito che contiene un elenco separato da spazi dei tuoi elementi di ambito selezionati.Ad esempio:
+3. Modifica il file definendo una proprietà `mandatoryScope` e impostando il valore della proprietà su una stringa di ambito che contiene un elenco separato da spazi dei tuoi elementi di ambito selezionati. Ad esempio:
 
     ```java
         "mandatoryScope": "appAuthenticity PincodeValidation"
     ```
 4. Distribuisci il file JSON di configurazione aggiornato eseguendo il comando: mfpdev app push.
 
->Puoi anche eseguire il push delle configurazioni aggiornate ai server remoti. 
+>Puoi anche eseguire il push delle configurazioni aggiornate ai server remoti.
 
 #### Protezione delle risorse dell'adattatore
 {: #protectadapterres}
 
-Nel tuo adattatore, puoi specificare l'ambito di protezione per un metodo Java o una procedura di risorsa JavaScript oppure per un'intera classe di risorse Java. Un ambito è definito come una stringa di uno o più elementi di ambito separati da spazi (“scopeElement1 scopeElement2 …”) oppure null per applicare l'ambito predefinito. Per ulteriori dettagli sulla protezione di risorse dell'adattatore, fai riferimento a [Protezione degli adattatori](https://console.bluemix.net/docs/services/mobilefoundation/protecting_adapters.html).
+Nel tuo adattatore, puoi specificare l'ambito di protezione per un metodo Java o una procedura di risorsa JavaScript oppure per un'intera classe di risorse Java. Un ambito è definito come una stringa di uno o più elementi di ambito separati da spazi (“scopeElement1 scopeElement2 …”) oppure null per applicare l'ambito predefinito. Per ulteriori dettagli sulla protezione di risorse dell'adattatore, fai riferimento a [Protezione degli adattatori](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
 
 ### Disabilitazione della protezione delle risorse
 {: #disablingresprotection}
 
 Puoi disabilitare la protezione delle risorse MobileFirst predefinita per una specifica risorsa dell'adattatore Java o JavaScript o per un'intera classe Java, come descritto nelle seguenti sezioni Java e JavaScript. Quando la protezione delle risorse è disabilitata, il framework di sicurezza MobileFirst non richiede un token per accedere alla risorsa.
 
-#### Disabilitazione della protezione delle risorse Java
-{: #disablejavaresprotection}
+#### Disabilitazione della protezione OAuth delle risorse Java
+{: #disablejavaresoauthprotection}
 
 Per disabilitare completamente la protezione OAuth per un metodo di risorsa o una classe di risorse Java, aggiungi l'annotazione `@OAuthSecurity` alla dichiarazione di risorsa o classe e imposta il valore dell'elemento `enabled` su `false`:
 
@@ -341,8 +341,8 @@ Il seguente codice disabilita la protezione delle risorse per una classe `MyUnpr
     }
 ```
 
-#### Disabilitazione della protezione delle risorse JavaScript
-{: #diablejavascriptresprotection}
+#### Disabilitazione della protezione OAuth delle risorse JavaScript
+{: #disablejavascriptresoauthprotection}
 
 Per disabilitare completamente la protezione OAuth per una risorsa dell'adattatore JavaScript (procedura), nel file **adapter.xml** imposta l'attributo `secured` dell'elemento <procedure> su `false`:
 
@@ -360,8 +360,8 @@ Il seguente codice disabilita la protezione delle risorse per una procedura `use
 <procedure name="userName" secured="false">
 ```
 
-### Risorse non protette
-{: #unprotectedresources}
+### Definizione di risorse non protette
+{: #defunprotectedresources}
 
 Una risorsa non protetta è una risorsa che non richiede un token di accesso. Il framework di sicurezza MobileFirst non gestisce l'accesso alle risorse non protette e non convalida o controlla l'identità dei client che accedono a tali risorse. Pertanto, funzioni quali Direct Update, il blocco dell'accesso ai dispositivi o la disabilitazione in remoto di un'applicazione non sono supportate per le risorse non protette.
 

@@ -2,7 +2,7 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="mobile-foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation/index.html" path="services/mobilefoundation"}
+{: .toc subcollection="mobilefoundation" service-name="Mobile Foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation/index.html" path="services/mobilefoundation"}
 Mobile
 Foundation
 
@@ -14,6 +14,16 @@ Foundation
         mdoverview.md
         pricing.md
         release_notes.md
+
+    {: .topicgroup}
+    Archiviazione offline
+        jsonstore.md
+        advanced_jsonstore.md
+
+    {: .topicgroup}
+    Aggiornamento diretto
+        advanced_direct_update_configuration.md
+        alternate_steps_to_update_app_web_content_in_app.md   
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -33,21 +43,22 @@ Foundation
         step_up_authentication.md
         protecting_adapters.md
         prevent_tampered_apps_accessing_backend.md
-        
+
     {: .topicgroup}
     Ottieni informazioni approfondite sulle applicazioni
         instrument_an_app.md
         visualize_insights_on_console.md
+        alerts.md
     add_sdk_to_app.md
-    
+
     {: .topicgroup}
     Archivia i dati offline e sincronizza
         configure_offline_storage.md
         sync_data_with_datasource.md
 
     {: .topicgroup}
-      Aggiornamento del contenuto della tua applicazione
-          update_web_content_in_app.md
+    Aggiornamento del contenuto della tua applicazione
+        update_web_content_in_app.md
 
     {: .topicgroup}
       Gestisci applicazione
@@ -63,18 +74,18 @@ Foundation
     {: .navgroup id="reference"}
     {: .topicgroup}
     API
-        [Amministrazione](https://console.stage1.bluemix.net/apidocs/mobile-foundation/mobile-foundation-administration)
+        [Amministrazione](https://cloud.ibm.com/apidocs/mobile-foundation/mobile-foundation-administration)
         [Analisi](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)
-        [SDK](services/mobilefoundation/client_sdk_api.html)
+        client_sdk_api.md
 
     {: .topicgroup}
     SDK
-        [Android](services/mobilefoundation/android_sdk.html)
-        [iOS](services/mobilefoundation/ios_sdk.html)
-        [Cordova e Ionic](services/mobilefoundation/cordova_sdk.html)
-        [React Native](services/mobilefoundation/reactnative_sdk.html)
-        [Windows](services/mobilefoundation/windows_sdk.html)
-        [Web](services/mobilefoundation/web_sdk.html)
+        android_sdk.md
+        ios_sdk.md
+        cordova_sdk.md
+        reactnative_sdk.md
+        windows_sdk.md
+        web_sdk.md
     using_cli.md
 
     {: .topicgroup}
@@ -82,15 +93,15 @@ Foundation
         [Applicazione Cordova che utilizza le API JSONStore](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCordova/tree/release80)
         [Applicazione iOS nativa che utilizza le API JSONStore](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreSwift/tree/release80)
         [Applicazione Android nativa che utilizza le API JSONStore](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAndroid)
-        [Esempi di codice JSONStore](services/mobilefoundation/jsonstore_code_examples.html)
-        [Sicurezza negli esempi di codice JSONStore](services/mobilefoundation/security_utilities.html)
+        jsonstore_code_examples.md
+        security_utilities.md
         [Crea finestra di dialogo di aggiornamento diretto personalizzata](https://github.com/MobileFirst-Platform-Developer-Center/CustomDirectUpdate/tree/release80)
 
     {: .topicgroup}
     Modelli di codice
         [Sviluppa un'applicazione mobile ibrida con il backend nativo del cloud](https://developer.ibm.com/patterns/develop-hybrid-mobile-app-with-cloud-native-backend/)
         [Proteggi la sincronizzazione offline](https://developer.ibm.com/patterns/secure-offline-synchronization-ibm-mobile-foundation/)
-        [Dimostra l'autenticazione dell'utente tramite server LDAP o accesso social](https://github.com/IBM/MFP-Auth-LDAP/)
+        [Dimostra l'autenticazione dell'utente tramite server LDAP o accesso social](https://developer.ibm.com/patterns/implementing-mobile-user-authentication/)
         [Configura notifiche di push basate su tag](https://github.com/IBM/tag-based-push-notifications)
 
     {: .topicgroup}
@@ -103,7 +114,7 @@ Foundation
     {: .navgroup id="help"}
     faq.md
     troubleshooting.md
-    [Come contattare il supporto](https://console.bluemix.net/docs/get-support/howtogetsupport.html)
+    [Come contattare il supporto](/docs/get-support?topic=get-support-howtogetsupport#getting-customer-support)
 
     {: .topicgroup}
     Community degli sviluppatori
