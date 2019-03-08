@@ -15,7 +15,6 @@ lastupdated:  "2018-11-19"
 #	Programa de utilidad de seguridad
 {: #security_utilities}
 
-## Visión general
 La API del lado del cliente de Mobile Foundation proporciona algunos programas de utilidad de seguridad para proteger los datos del usuario. Las características como JSONStore son de gran utilidad si desea proteger objetos JSON. Sin embargo, no se recomienda almacenar blobs binarios en una recopilación de JSONStore.
 
 En su lugar, almacene los datos binarios en el sistema de archivos, y almacene las vías de acceso de archivos y otros metadatos dentro de una recopilación JSONStore. Si desea proteger los archivos como, por ejemplo, imágenes, puede codificarlas como series base64, cifrarlas, y grabar la salida en el disco. Para descifrar los datos, podrá buscar en los metadatos en una recopilación JSONStore. Lea los datos cifrados del disco y descífrelos mediante los metadatos almacenados. Estos metadatos pueden incluir la clave, la sal, el vector de inicialización (IV), el tipo de archivo o la vía de acceso al archivo, entre otros.
@@ -36,24 +35,23 @@ A un alto nivel, las SecurityUtils API proporciona las siguientes API:
 ## Configuración
 Asegúrese de importar los siguientes archivos para utilizar las API de los programas de utilidad de seguridad JSONStore.
 
-### iOS
+### Configurar iOS
 
 ```objc
 #import "WLSecurityUtils.h"
 ```
 
-### Android
+### Configurar Android
 
 ```java
 import com.worklight.wlclient.api.SecurityUtils
 ```
 
-### JavaScript
+### Configurar JavaScript
 No es necesaria configuración alguna.
 
-## Ejemplos
-### iOS
-#### Cifrado y descifrado
+## Ejemplos para iOS
+### Cifrado y descifrado en iOS
 
 ```objc
 // User provided password, hardcoded only for simplicity.
@@ -87,7 +85,7 @@ NSString* decryptedString = [WLSecurityUtils decryptWithKey:key
 ```
 {: codeblock}
 
-#### Codificación y descodificación base64
+### Codificar y decodificar base64 en iOS
 
 ```objc
 // Input string.
@@ -102,7 +100,7 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-#### Obtener serie aleatoria remota
+### Obtener serie aleatoria remota en iOS
 
 ```objc
 [WLSecurityUtils getRandomStringFromServerWithBytes:32
@@ -117,8 +115,8 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-### Android
-#### Cifrado y descifrado
+## Ejemplos para Android
+### Cifrado y descifrado en Android
 
 ```java
 String password = "HelloPassword";
@@ -136,7 +134,7 @@ String decipheredText = SecurityUtils.decrypt(key, encryptedObject);
 ```
 {: codeblock}
 
-#### Codificación y descodificación base64
+### Codificar y decodificar base64 en Android
 
 ```java
 import android.util.Base64;
@@ -153,7 +151,7 @@ String decodedText = new String(base64Decoded, "UTF-8");
 ```
 {: codeblock}
 
-#### Obtener serie aleatoria remota
+### Obtener serie aleatoria remota en Android
 
 ```java
 Context context; // This is the current Activity's context.
@@ -176,7 +174,7 @@ SecurityUtils.getRandomStringFromServer(byteLength, context, listener);
 ```
 {: codeblock}
 
-#### Obtener serie aleatoria remota
+### Obtener serie aleatoria local en Android
 
 ```java
 int byteLength = 32;
@@ -184,8 +182,8 @@ String randomString = SecurityUtils.getRandomString(byteLength);
 ```
 {: codeblock}
 
-### JavaScript
-#### Cifrado y descifrado
+## Ejemplos para JavaScript
+### Cifrado y descifrado en JavaScript
 
 ```javascript
 // Keep the key in a variable so that it can be passed to the encrypt and decrypt API.
@@ -233,7 +231,7 @@ WL.SecurityUtils.keygen({
 ```
 {: codeblock}
 
-#### Codificación y descodificación base64
+### Codificar y decodificar base64 en JavaScript
 
 ```javascript
 WL.SecurityUtils.base64Encode('Hello World!')
@@ -249,7 +247,7 @@ WL.SecurityUtils.base64Encode('Hello World!')
 ```
 {: codeblock}
 
-#### Obtener serie aleatoria remota
+### Obtener serie aleatoria remota en JavaScript
 
 ```javascript
 WL.SecurityUtils.remoteRandomString(32)
@@ -262,7 +260,7 @@ WL.SecurityUtils.remoteRandomString(32)
 ```
 {: codeblock}
 
-#### Obtener serie aleatoria remota
+### Obtener serie aleatoria local en JavaScript
 
 ```javascript
 WL.SecurityUtils.localRandomString(32)

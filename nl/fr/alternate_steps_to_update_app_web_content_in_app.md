@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-02-14"
 
 ---
 
@@ -14,8 +14,8 @@ lastupdated: "2018-12-21"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Autres étapes pour mettre à jour le contenu Web dans votre application
-{: #alternate_steps_to_update_app_web_content}
+# Autres étapes pour mettre à jour le contenu Web dans une application
+{: #alternate_steps_to_update_app_web_content_in_app}
 
 La liste ci-dessous répertorie certaines des méthodes alternatives pour mettre à jour le contenu Web de votre application.
 

@@ -14,7 +14,7 @@ lastupdated: "2018-11-29"
 {:screen: .screen}
 
 # Inhabilitar de forma remota una versión de app
-{: #remote_disable_app_version}
+{: #remotely_disable_an_app_version}
 
 En esta sección trataremos cómo inhabilitar el acceso de usuarios a una versión concreta de una aplicación en un sistema operativo móvil específico y cómo proporcionar un mensaje personalizado al usuario.
 

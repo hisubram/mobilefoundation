@@ -105,8 +105,8 @@ Este es el SDK principal para IBM Mobile Foundation, que consta de API para impl
 6. Añada el archivo `mfpclient.plist` al espacio de trabajo Xcode.
 7. Desde un indicador de mandatos, navegue hasta la carpeta del proyecto y registre la app con la instancia de Mobile Foundation.
    ```bash
-mfpdev app register
-```
+   mfpdev app register
+   ```
    {: codeblock}
    {: ios}
 
@@ -148,8 +148,8 @@ Este es el SDK principal para IBM Mobile Foundation, que consta de API para impl
    {: cordova}
 6. Registre la aplicación en el servidor de Mobile Foundation.
    ```bash
-mfpdev app register
-```
+   mfpdev app register
+   ```
    {: codeblock}
    {: cordova}
 

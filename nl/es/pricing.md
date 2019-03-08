@@ -29,7 +29,7 @@ El plan Developer es un plan gratuito. Este plan crea un servidor de Mobile Foun
 ## Professional 1 Application
 {: #prof_1_app}
 
-El plan Professional 1 Application permite a los usuarios crear, probar y ejecutar aplicaciones móviles en Mobile Foundation en producción a un precio predecible, independientemente del número de usuarios o dispositivos. Mobile Analytics se ofrece sin coste adicional alguno con los sucesos retenidos durante 6 meses. Este plan crea un servidor de Mobile Foundation en un entorno escalable como aplicación de Cloud Foundry de IBM Cloud en *Liberty for Java*, empezando por un mínimo de 2 nodos de 1 GB. Los cargos de *Liberty for Java* se facturan por separado y no se incluyen en este plan. Este plan también requiere que tenga una instancia de servicio de IBM Db2 (cualquier plan que no sea el plan **Lite**) o Compose for PostgreSQL, que se crea y se factura por separado.
+El plan Professional 1 Application permite a los usuarios crear, probar y ejecutar apps móviles en Mobile Foundation en producción a un precio predecible, independientemente del número de usuarios o dispositivos. Mobile Analytics se ofrece sin coste adicional alguno con los sucesos retenidos durante 6 meses. Este plan crea un servidor de Mobile Foundation en un entorno escalable como aplicación de Cloud Foundry de IBM Cloud en *Liberty for Java*, empezando por un mínimo de 2 nodos de 1 GB. Los cargos de *Liberty for Java* se facturan por separado y no se incluyen en este plan. Este plan también requiere que tenga una instancia de servicio de IBM Db2 (cualquier plan que no sea el plan **Lite**) o Compose for PostgreSQL, que se crea y se factura por separado.
 
 ## Professional Per Device
 {: #prof_per_device}

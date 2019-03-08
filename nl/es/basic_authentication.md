@@ -41,7 +41,7 @@ Los desarrolladores de aplicación protegen acceso a los recursos definiendo el 
 
 Una señal de acceso de MobileFirst es una entidad firmada digitalmente que describe los permisos de autorización de un cliente. Una vez que se otorga la solicitud de autorización del cliente para un ámbito específico y que el cliente está autenticado, el punto final de la señal del servidor de autorización envía al cliente una respuesta HTTP que contiene la señal de acceso solicitada.
 
-#### Estructura
+#### Estructura de la señal de acceso
 
 La señal de renovación de MobileFirst contiene la siguiente información:
 
@@ -116,7 +116,7 @@ Señal de renovación de MobileFirst
 
 Una señal de renovación de MobileFirst es una entidad firmada digitalmente como señal de acceso que describe los permisos de autorización de un cliente. La señal de renovación se puede utilizar para obtener una nueva señal de acceso del mismo ámbito. Una vez que se otorga la solicitud de autorización del cliente para un ámbito específico y que el cliente está autenticado, el punto final de la señal del servidor de autorización envía al cliente una respuesta HTTP que contiene la señal de acceso y la señal de renovación solicitadas. Cuando caduca la señal de acceso, el cliente envía una señal de renovación al punto final de señal del servidor de autorización para obtener un nuevo conjunto de señales de acceso y de señales de renovación.
 
-#### Estructura
+#### Estructura de la señal de renovación
 
 De forma similar a la señal de acceso de MobileFirst, la señal de renovación de MobileFirst contiene la información siguiente:
 
@@ -200,8 +200,8 @@ Están disponibles las siguientes comprobaciones de seguridad predefinidas:
 * Inicio de sesión único (SSO) basado en LTPA
 * Direct Update
 
-#### Manejadores de desafíos
-{: #challengehandlers}
+#### Entidad del manejador de desafío
+{: #challengehandler_entity}
 
 Al intentar acceder a los recursos protegidos, el cliente puede encontrarse con un desafío. Un desafío es una pregunta, una prueba de seguridad o una solicitud del servidor para asegurar que el cliente tiene permiso para acceder al recurso. Más frecuentemente, el desafío es una solicitud de credenciales como, por ejemplo, un nombre de usuario y una contraseña.
 
@@ -298,15 +298,15 @@ También puede editar manualmente el archivo JSON de configuración de la aplica
 #### Protección de recursos de adaptador
 {: #protectadapterres}
 
-En el adaptador puede especificar el ámbito de protección para el método Java o un procedimiento de recurso de JavaScript, o para toda una clase de recursos Java. Un ámbito se define como una serie de uno o más elementos de ámbito separados por espacios ("scopeElement1 scopeElement2..."), o nulo para aplicar el ámbito predeterminado. Para obtener más detalles sobre la protección de los recursos de adaptador, consulte [Protección de adaptadores](https://console.bluemix.net/docs/services/mobilefoundation/protecting_adapters.html).
+En el adaptador puede especificar el ámbito de protección para el método Java o un procedimiento de recurso de JavaScript, o para toda una clase de recursos Java. Un ámbito se define como una serie de uno o más elementos de ámbito separados por espacios ("scopeElement1 scopeElement2..."), o nulo para aplicar el ámbito predeterminado. Para obtener más detalles sobre la protección de los recursos de adaptador, consulte [Protección de adaptadores](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
 
 ### Inhabilitación de la protección de recurso
 {: #disablingresprotection}
 
 Puede inhabilitar la protección de recursos de MobileFirst predeterminada para un recurso de adaptador Java o JavaScript específico o para toda una clase Java, tal y como se indica en las siguientes secciones Java y JavaScript. Cuando la protección de recursos está inhabilitada, la infraestructura de seguridad de MobileFirst no requiere una señal para acceder al recurso.
 
-#### Inhabilitación de la protección de recurso Java
-{: #disablejavaresprotection}
+#### Inhabilitación de la protección OAuth de recurso Java
+{: #disablejavaresoauthprotection}
 
 Para inhabilitar una protección OAuth para el método o clase de recurso Java, añada la anotación `@OAuthSecurity` a la declaración de clase o recurso y establezca el valor del elemento `enabled` en `false`:
 
@@ -341,8 +341,8 @@ El código siguiente inhabilita la protección de un recurso para la clase `MyUn
     }
 ```
 
-#### Inhabilitación de la protección de recurso JavaScript
-{: #diablejavascriptresprotection}
+#### Inhabilitación de la protección OAuth de recurso JavaScript
+{: #disablejavascriptresoauthprotection}
 
 Para inhabilitar por completo la protección OAuth para un recurso de adaptador de JavaScript (procedimiento), en el archivo **adapter.xml**, establezca el atributo `secured` del elemento <procedure> en `false`:
 
@@ -360,8 +360,8 @@ El código siguiente inhabilita la protección de recurso para un procedimiento 
 <procedure name="userName" secured="false">
 ```
 
-### Recursos desprotegidos
-{: #unprotectedresources}
+### Definición de recursos no protegidos
+{: #defunprotectedresources}
 
 Un recurso desprotegido es un recurso que no requiere una señal de acceso. La infraestructura de seguridad de MobileFirst no gestiona el acceso a recursos no protegidos, y no valida ni comprueba la identidad de los clientes que acceden a estos recursos. Por lo tanto, no se da soporte a las funciones como Direct Update, bloqueo del acceso a un dispositivo o la inhabilitación remota de una aplicación en los recursos desprotegidos.
 

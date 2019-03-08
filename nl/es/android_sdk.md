@@ -6,8 +6,8 @@ lastupdated:  "2018-11-26"
 
 ---
 
-##	SDK de Android
-{: #android_sdk}
+#	SDK de Android
+{: #android_sdk_api}
 
 Descargue los SDK de Android desde el repositorio de maven.
 

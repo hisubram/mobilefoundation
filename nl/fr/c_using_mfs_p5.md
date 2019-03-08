@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated:  "2018-11-20"
 Avec le plan Professionnel par appareil, les utilisateurs peuvent générer, tester et exécuter des applications mobiles en production, quel que soit le nombre d'utilisateurs ou d'appareils mobiles. Les frais sont basés sur le nombre d'appareils client quotidiens. Ce plan prend en charge les déploiements étendus et la haute disponibilité.
 Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par appareil, lisez la procédure ci-après pour commencer à l'utiliser.
 
-## Conditions prérequises
+## Prérequis dans le plan Professionnel par appareil
 {: #prerequisites_p5}
 
 Prenez connaissance des éléments suivants avant de configurer l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel par appareil.
@@ -73,7 +73,7 @@ Après quelques secondes, vous pouvez accéder à la page `Présentation`, qui f
 Vous ne pouvez pas changer l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée pour être utilisée par votre instance de service {{site.data.keyword.mobilefoundation_short}}. Vous pouvez toutefois utiliser la même instance de service {{site.data.keyword.Db2_on_Cloud_short}} sur plusieurs instances de service {{site.data.keyword.mobilefoundation_short}}, car chaque instance de service {{site.data.keyword.mobilefoundation_short}} crée son propre schéma dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} sélectionnée.
 {: note}
 
-## Démarrage du serveur MobileFirst
+## Démarrage du serveur MobileFirst créé à l'aide du plan Professionnel par appareil
 {: #start_mobilefoundation_p5}
 
 * Pour démarrer le serveur {{site.data.keyword.mfserver_short_notm}} avec les réglages par défaut, cliquez sur **Démarrer le serveur de base**.
@@ -100,7 +100,7 @@ Elle vous permet de gérer vos applications, adaptateurs et
 appareils mobiles, ainsi que l'utilisation de votre serveur en
 tant que serveur dorsal mobile, l'envoi de notifications push, etc.
 
-## Recréation du serveur MobileFirst
+## Re-création du serveur MobileFirst lors de l'utilisation du plan Professionnel par appareil
 {: #recreate_mobilefoundation_p5}
 
 *	Cliquez sur **Recréer** pour recréer le serveur.
@@ -110,7 +110,7 @@ tant que serveur dorsal mobile, l'envoi de notifications push, etc.
 Les données de votre instance de serveur précédente, y compris les informations sur les applications et les adaptateurs, sont conservées dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée. Elles sont utilisées pour recréer le serveur.
 {: note}
 
-##	Mise en place d'une configuration avancée
+##	Configuration avancée dans le plan Professionnel par appareil
 {: #using_mfs_advanced_p5}
 
 L'option **Démarrer le serveur avec la configuration avancée** de la page `Présentation` permet de créer le serveur avec des réglages avancés ou personnalisés. Vous pouvez également modifier les réglages du serveur pour personnaliser sa
@@ -121,13 +121,11 @@ configuration en cliquant sur l'onglet **Paramètres**. {{site.data.keyword.mobi
 
   - La zone **Instances** affiche le nombre d'instances créées.
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Mobile Analytics dans le plan Professionnel par appareil
+{: #mobile_analytics_p5}
 
 Le service Mobile Analytics est inclut et préconfiguré avec l'instance du plan de service Développeur Mobile Foundation.
 
 * Lancez la console Mobile Analytics à partir de {{site.data.keyword.mfp_oc_short_notm}}.
 
-Pour plus d'informations sur Mobile Analytics, vous pouvez vous référer à [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}.
-
-Pour plus de détails, consultez la documentation [{{site.data.keyword.mobilefoundation_long}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}.
+Pour plus d'informations sur Mobile Analytics, vous pouvez vous reporter [ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}. 

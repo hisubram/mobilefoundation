@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-20"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated:  "2018-11-20"
 Les utilisateurs du plan Professionnel, 1 application peuvent créer une application mobile avec différents systèmes d'exploitation mobiles.
 Une fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel, 1 application, lisez la procédure ci-après pour commencer à l'utiliser.
 
-## Conditions prérequises
+## Prérequis pour le plan Professionnel, 1 application
 {: #prerequisites_p2}
 
 Prenez connaissance des éléments suivants avant de configurer l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel, 1 application.
@@ -30,10 +30,10 @@ Prenez connaissance des éléments suivants avant de configurer l'instance de se
 > **Remarque** : L'instance de service {{site.data.keyword.Db2_on_Cloud_short}} (tout plan autre que le plan **Lite**) ou {{site.data.keyword.composeForPostgreSQL}} peut exister dans n'importe quel `espace` de votre {{site.data.keyword.Bluemix_notm}} `organisation` ou de n'importe quelle autre `organisation` à laquelle vous avez accès. Assurez-vous que vous disposez des droits nécessaires pour accéder à l'`espace` dans lequel l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} ou {{site.data.keyword.composeForPostgreSQL}} existe.
 
 
-## Ajout de la connexion à la base de données
+## Configuration de la connexion à la base de données
 {: #configure_dashdb_p2}
 
-###  Premières étapes
+###  Premières étapes de configuration
 {: #firststeps_p2}
 
 ne fois que vous avez créé l'instance de service {{site.data.keyword.mobilefoundation_short}} : Professionnel, 1 application, lisez la procédure ci-après pour commencer à l'utiliser.
@@ -84,7 +84,7 @@ permettre de faire vos premiers pas avec le service {{site.data.keyword.mobilefo
 Vous ne pouvez pas changer l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée pour être utilisée par votre instance de service {{site.data.keyword.mobilefoundation_short}}. Vous pouvez toutefois utiliser la même instance de service {{site.data.keyword.Db2_on_Cloud_short}} sur plusieurs instances de service {{site.data.keyword.mobilefoundation_short}}, car chaque instance de service {{site.data.keyword.mobilefoundation_short}} crée son propre schéma dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} sélectionnée.
 {: note}
 
-## Démarrage du serveur MobileFirst
+## Démarrage du serveur MobileFirst créé à l'aide du plan Professionnel, 1 application
 {: #start_mobilefoundation_p2}
 
 * Pour démarrer le serveur
@@ -113,7 +113,7 @@ pour accéder à la console {{site.data.keyword.mfp_oc_short_notm}}. Le `mot de 
 
 Elle vous permet de gérer vos applications, adaptateurs et appareils mobiles, ainsi que l'utilisation de votre serveur en tant que serveur dorsal mobile, l'envoi de notifications push, etc.
 
-## Recréation du serveur MobileFirst
+## Re-création du serveur MobileFirst lors de l'utilisation du plan Professionnel, 1 application
 {: #recreate_mobilefoundation_p2}
 
 *	Cliquez sur **Recréer** pour recréer le serveur.
@@ -126,7 +126,7 @@ données de votre instance de serveur précédente, y compris les informations s
 sont conservées dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée. Elles sont utilisées pour recréer le serveur.
 {: note}
 
-##	Mise en place d'une configuration avancée
+##	Configuration avancée dans le plan Professionnel, 1 application
 {: #using_mfs_advanced_p2}
 
 L'option **Démarrer le serveur avec la configuration avancée**
@@ -143,14 +143,11 @@ vos besoins.
 
   - La zone **Instances** affiche le nombre de noeuds créés.
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Mobile Analytics dans le plan Professionnel, 1 application
+{: #mobile_analytics_p2}
 
 Le service Mobile Analytics est inclut et préconfiguré avec l'instance du plan de service Développeur Mobile Foundation.
 
 * Lancez la console Mobile Analytics à partir de {{site.data.keyword.mfp_oc_short_notm}}.
 
-Pour plus d'informations sur Mobile Analytics, vous pouvez vous référer
-à [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}.
-
-Pour plus de détails, consultez la documentation [{{site.data.keyword.mobilefoundation_long}} ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}.
+Pour plus d'informations sur Mobile Analytics, vous pouvez vous reporter [ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}. 

@@ -36,7 +36,7 @@ Lors de l'application de la mise à jour, la version du serveur, comme affichée
 
 > **Remarque :**
 >  * Les utilisateurs ne seront pas en mesure d'appliquer leurs propres correctifs et mises à jour à leur instance de service {{site.data.keyword.mobilefoundation_short}}.
->  * Voir [Utilisation du plan Professionnel par capacité](c_using_mfs_p5.html#recreate_mobilefoundation_p5) et [Utilisation du plan Professionnel, 1 application](c_using_mfs_p2.html#recreate_mobilefoundation_p2) pour comprendre la différence de comportement d'un plan à un autre quand vous cliquez sur **Recréer*.
+>  * Voir [Utilisation du plan Professionnel par capacité](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#recreate_mobilefoundation_p5) et [Utilisation du plan Professionnel, 1 application](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#recreate_mobilefoundation_p2) pour comprendre la différence de comportement d'un plan à un autre quand vous cliquez sur **Recréer*.
 >
 
 ## Comment configurer un domaine personnalisé pour mon instance de serveur {{site.data.keyword.mobilefoundation_short}} ?

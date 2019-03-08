@@ -38,6 +38,6 @@ Mediante la consola de operaciones de Mobile Foundation puede supervisar y gesti
    *  Exportar versión
 
 
-Consulte [Gestión de dispositivos](manage_devices.html) para obtener más información sobre la gestión de dispositivos. Consulte [Inhabilitar de forma remota una versión de app](remote_disable_app_version.html) para obtener más información sobre la inhabilitación remota de la versión de una app específica.
+Consulte [Gestión de dispositivos](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices) para obtener más información sobre la gestión de dispositivos. Consulte [Inhabilitar de forma remota una versión de app](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version) para obtener más información sobre la inhabilitación remota de la versión de una app específica.
 {: note}
 

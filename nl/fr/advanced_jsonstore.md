@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 {:generic: .ph data-hd-programlang='generic'}
@@ -27,14 +27,14 @@ lastupdated: "2019-01-04"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Configuration de stockage hors ligne avancée 
-{: #adv_configure_offline_storage}
+# JSONStore avancé 
+{: #advanced_jsonstore}
 
 ## Sécurité dans JSONStore
-{: #security_jsonstore} 
+{: #security_jsonstore}
 
 <!--### Cordova
-{: security_jsonstore_cordova}-->
+{: #security_jsonstore_cordova}-->
 
 Vous pouvez sécuriser toutes les collections d'un magasin en transmettant un mot de passe à la fonction `init`. Si aucun mot de passe n'est transmis, les documents de toutes les collections du magasin ne sont pas chiffrés.
 {: cordova}

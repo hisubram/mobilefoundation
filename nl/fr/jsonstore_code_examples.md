@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-23"
+lastupdated:  "2019-02-13"
 
 ---
 
@@ -11,14 +11,21 @@ lastupdated:  "2018-11-23"
 {:screen: .screen}
 {:tip: .tip}
 {:pre: .pre}
+{:ios: .ph data-hd-programlang='iOS'}
+{:android: .ph data-hd-programlang='Android'}
+{:cordova: .ph data-hd-programlang='Cordova'}
 
 #	Exemples de code JSONStore
 {: #code_samples}
 
-## Cordova
-{: #cordova }
-### Initialiser et ouvrir des connexions, obtenir un accesseur et ajouter des données
-{: #initialize-and-open-connections-get-an-accessor-and-add-data }
+### Exemples pour Cordova
+{: #samples_cordova }
+{: cordova}
+
+#### Initialiser et ouvrir des connexions, obtenir un accesseur et ajouter des données dans Cordova
+{: #initialize-and-open-connections-get-an-accessor-and-add-data-cordova }
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -74,9 +81,12 @@ WL.JSONStore.init(collections, options)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Recherche - localiser des documents dans le magasin
+#### Recherche - localiser des documents dans le magasin
 {: #find-locate-documents-inside-the-store }
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -117,8 +127,10 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Remplacement - changer les documents déjà stockés dans une collection
+#### Remplacement - changer les documents déjà stockés dans une collection dans Cordova
+{: cordova}
 
 ```javascript
 var collectionName = 'people';
@@ -146,9 +158,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Suppression - supprimer tous les documents correspondant à la requête
-{: #remove-delete-all-documents-that-match-the-query }
+#### Suppression - supprimer tous les documents correspondant à la requête dans Cordova
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -177,9 +191,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Comptage - obtenir le nombre total de documents correspondant à une requête
-{: #count-gets-the-total-number-of-documents-that-match-a-query }
+#### Comptage - obtenir le nombre total de documents correspondant à une requête dans Cordova
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -206,9 +222,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Destruction - effacer les données pour tous les utilisateurs, détruire la mémoire interne et effacer les artefacts de sécurité
-{: #destroy-wipes-data-for-all-users-destroys-the-internal-storage-and-clears-security-artifacts }
+#### Destruction - effacer les données pour tous les utilisateurs, détruire la mémoire interne et effacer les artefacts de sécurité dans Cordova
+{: cordova}
+
 ```javascript
 WL.JSONStore.destroy()
 
@@ -220,9 +238,12 @@ WL.JSONStore.destroy()
   // Handle failure.
 });
 ```
+{: codeblock}
+{: cordova}
 
-### Sécurité - fermer l'accès à toutes les collections ouvertes pour l'utilisateur en cours
-{: #security-close-access-to-all-opened-collections-for-the-current-user }
+#### Sécurité - fermer l'accès à toutes les collections ouvertes pour l'utilisateur en cours dans Cordova
+{: cordova}
+
 ```javascript
 WL.JSONStore.closeAll()
 
@@ -235,9 +256,11 @@ WL.JSONStore.closeAll()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Sécurité - changer le mot de passe utilisé pour accéder à un magasin
-{: #security-change-the-password-that-is-used-to-access-a-store }
+#### Sécurité - changer le mot de passe utilisé pour accéder à un magasin dans Cordova
+{: cordova}
+
 ```javascript
 // The password should be user input.
 // It is hard-coded in the example for brevity.
@@ -271,9 +294,11 @@ WL.JSONStore.changePassword(oldPassword, newPassword, username)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Push - obtenir tous les documents marqués comme étant modifiés, les envoyer à un adaptateur et les marquer comme propres
-{: #push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
+#### Push - obtenir tous les documents marqués comme étant modifiés, les envoyer à un adaptateur et les marquer comme propres dans Cordova
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 var dirtyDocs;
@@ -312,9 +337,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Pull - obtenir de nouvelles données d'un adaptateur
-{: #pull-get-new-data-from-an-adapter }
+#### Pull - obtenir de nouvelles données d'un adaptateur dans Cordova
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -363,9 +390,11 @@ resource.send()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Déterminer si un document a été modifié
-{: #check-whether-a-document-is-dirty }
+#### Déterminer si un document a été modifié dans Cordova
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 var doc = {_id: 1, json: {name: 'carlitos', age: 99}};
@@ -385,9 +414,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Déterminer le nombre de documents modifiés
-{: #check-the-number-of-dirty-documents }
+#### Déterminer le nombre de documents modifiés dans Cordova
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -403,9 +434,12 @@ WL.JSONStore.get(collectionName)
   // Handle failure.
 });
 ```
+{: codeblock}
+{: cordova}
 
-### Supprimer une collection
-{: #remove-a-collection }
+#### Supprimer une collection dans Cordova
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -425,9 +459,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Effacer toutes les données qui se trouvent dans une collection
-{: #clear-all-data-that-is-inside-a-collection }
+#### Effacer toutes les données qui se trouvent dans une collection dans Cordova
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -447,9 +483,12 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Démarrer une transaction, ajouter des données, supprimer un document, valider la transaction et l'annuler en cas d'échec
-{: transaction }
+#### Démarrer une transaction, ajouter des données, supprimer un document, valider la transaction et l'annuler en cas d'échec dans Cordova
+{: #cordova-transaction }
+{: cordova}
+
 ```javascript
 WL.JSONStore.startTransaction()
 
@@ -492,9 +531,10 @@ WL.JSONStore.startTransaction()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Obtenir des informations relatives au fichier
-{: #get-file-information }
+#### Obtenir des informations relatives au fichier dans Cordova
+
 ```javascript
 WL.JSONStore.fileInfo()
 .then(function (res) {
@@ -506,9 +546,11 @@ WL.JSONStore.fileInfo()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### Rechercher avec like, rightLike et leftLike
-{: #search-with-like-rightlike-and-leftlike }
+#### Rechercher avec like, rightLike et leftLike dans Cordova
+{: cordova}
+
 ```javascript
 // Match all records that contain the search string on both sides.
 // %searchString%
@@ -526,11 +568,15 @@ var arr = WL.JSONStore.QueryPart().leftLike('name', 'ca');  // returns nothing
 var arr2 = WL.JSONStore.QueryPart().leftLike('name', 'los');  // returns {name: 'carlos', age: 10}
 ```
 {: codeblock}
+{: cordova}
 
-## iOS
-{: #ios }
-### Initialiser et ouvrir des connexions, obtenir un accesseur et ajouter des données
-{: #ios-initialize-and-open-connections-get-an-accessor-and-add-data }
+### Exemples pour iOS
+{: #samples-ios }
+{: ios}
+
+#### Initialiser et ouvrir des connexions, obtenir un accesseur et ajouter des données dans iOS
+{: ios}
+
 ```objc
 // Create the collections object that will be initialized.
 JSONStoreCollection* people = [[JSONStoreCollection alloc] initWithName:@"people"];
@@ -584,9 +630,11 @@ Initialize with a secure random token from the server
 }];
 ```
 {: codeblock}
+{: ios}
 
-### Recherche - localiser des documents dans le magasin
-{: #ios-find-locate-documents-inside-the-store }
+#### Recherche - localiser des documents dans le magasin dans iOS
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -624,9 +672,11 @@ for (NSDictionary* result in results) {
 }
 ```
 {: codeblock}
+{: ios}
 
-### Remplacement - changer les documents déjà stockés dans une collection
-{: #ios-replace-change-the-documents-that-are-already-stored-inside-a-collection }
+#### Remplacement - changer les documents déjà stockés dans une collection dans iOS
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -642,9 +692,11 @@ NSError* error = nil;
 int docsReplaced = [[people replaceDocuments:docs andMarkDirty:NO error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### Suppression - supprimer tous les documents correspondant à la requête
-{: #ios-remove-delete-all-documents-that-match-the-query }
+#### Suppression - supprimer tous les documents correspondant à la requête dans iOS
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -656,9 +708,11 @@ NSError* error = nil;
 int docsRemoved = [[people removeWithIds:@[@1] andMarkDirty:NO error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### Comptage - obtenir le nombre total de documents correspondant à une requête
-{: #ios-count-gets-the-total-number-of-documents-that-match-a-query }
+#### Comptage - obtenir le nombre total de documents correspondant à une requête dans iOS
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -676,9 +730,11 @@ NSError* error = nil;
 int countResult = [[people countWithQueryParts:@[queryPart] error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### Destruction - effacer les données pour tous les utilisateurs, détruire la mémoire interne et effacer les artefacts de sécurité
-{: #ios-destroy-wipes-data-for-all-users-destroys-the-internal-storage-and-clears-security-artifacts }
+#### Destruction - effacer les données pour tous les utilisateurs, détruire la mémoire interne et effacer les artefacts de sécurité dans iOS
+{: ios}
+
 ```objc
 // This object will point to an error if one occurs.
 NSError* error = nil;
@@ -687,9 +743,11 @@ NSError* error = nil;
 [[JSONStore sharedInstance] destroyDataAndReturnError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### Sécurité - fermer l'accès à toutes les collections ouvertes pour l'utilisateur en cours
-{: #ios-security-close-access-to-all-opened-collections-for-the-current-user }
+#### Sécurité - fermer l'accès à toutes les collections ouvertes pour l'utilisateur en cours dans iOS
+{: ios}
+
 ```objc
 // This object will point to an error if one occurs.
 NSError* error = nil;
@@ -698,9 +756,11 @@ NSError* error = nil;
 [[JSONStore sharedInstance] closeAllCollectionsAndReturnError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### Sécurité - changer le mot de passe utilisé pour accéder à un magasin
-{: #ios-security-change-the-password-that-is-used-to-access-a-store }
+#### Sécurité - changer le mot de passe utilisé pour accéder à un magasin dans iOS
+{: ios}
+
 ```objc
 // The password should be user input.
 // It is hardcoded in the example for brevity.
@@ -719,9 +779,11 @@ oldPassword = nil;
 newPassword = nil;
 ```
 {: codeblock}
+{: ios}
 
-### Push - obtenir tous les documents marqués comme étant modifiés, les envoyer à un adaptateur et les marquer comme propres
-{: #ios-push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
+#### Push - obtenir tous les documents marqués comme étant modifiés, les envoyer à un adaptateur et les marquer comme propres dans iOS
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -739,9 +801,11 @@ NSArray* dirtyDocs = [people allDirtyAndReturnError:&error];
 int numCleaned = [[people markDocumentsClean:dirtyDocs error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### Pull - obtenir de nouvelles données d'un adaptateur
-{: #ios-pull-get-new-data-from-an-adapter }
+#### Pull - obtenir de nouvelles données d'un adaptateur dans iOS
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -758,9 +822,11 @@ NSArray* data = @[ @{@"id" : @1, @"ssn": @"111-22-3333", @"name": @"carlos"} ];
 int numChanged = [[people changeData:data withReplaceCriteria:@[@"id", @"ssn"] addNew:YES markDirty:NO error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### Déterminer si un document a été modifié
-{: #ios-check-whether-a-document-is-dirty }
+#### Déterminer si un document a été modifié dans iOS
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -772,9 +838,11 @@ NSError* error = nil;
 BOOL isDirtyResult = [people isDirtyWithDocumentId:1 error:&error];
 ```
 {: codeblock}
+{: ios}
 
-### Déterminer le nombre de documents modifiés
-{: #ios-check-the-number-of-dirty-documents }
+#### Déterminer le nombre de documents modifiés dans iOS
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -786,9 +854,11 @@ NSError* error = nil;
 int dirtyDocsCount = [[people countAllDirtyDocumentsWithError:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### Supprimer une collection
-{: #ios-remove-a-collection }
+#### Supprimer une collection dans iOS
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -800,9 +870,11 @@ NSError* error = nil;
 [people removeCollectionWithError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### Effacer toutes les données qui se trouvent dans une collection
-{: #ios-clear-all-data-that-is-inside-a-collection }
+#### Effacer toutes les données qui se trouvent dans une collection dans iOS
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -814,9 +886,12 @@ NSError* error = nil;
 [people clearCollectionWithError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### Démarrer une transaction, ajouter des données, supprimer un document, valider la transaction et l'annuler en cas d'échec
+#### Démarrer une transaction, ajouter des données, supprimer un document, valider la transaction et l'annuler en cas d'échec dans iOS
 {: #ios-transaction }
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -844,9 +919,11 @@ if (addError != nil || removeError != nil) {
 }
 ```
 {: codeblock}
+{: ios}
 
-### Obtenir des informations relatives au fichier
-{: #ios-get-file-information }
+#### Obtenir des informations relatives au fichier dans iOS
+{: ios}
+
 ```objc
 // This object will point to an error if one occurs
 NSError* error = nil;
@@ -856,11 +933,15 @@ NSArray* results = [[JSONStore sharedInstance] fileInfoAndReturnError:&error];
 // => [{@"isEncrypted" : @(true), @"name" : @"carlos", @"size" : @3072}]
 ```
 {: codeblock}
+{: ios}
 
-## Android
-{: #android }
-### Initialiser et ouvrir des connexions, obtenir un accesseur et ajouter des données
-{: #android-initialize-and-open-connections-get-an-accessor-and-add-data }
+### Exemples pour Android
+{: #samples_android }
+{: android}
+
+#### Initialiser et ouvrir des connexions, obtenir un accesseur et ajouter des données dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -899,9 +980,11 @@ throw ex;
 }
 ```
 {: codeblock}
+{: android}
 
-### Initialiser avec un jeton aléatoire sécurisé depuis le serveur
-{: #android-initialize-with-a-secure-random-token-from-the-server }
+#### Initialiser avec un jeton aléatoire sécurisé depuis le serveur dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -961,9 +1044,11 @@ AsyncTask<Context, Void, Void> aTask = new AsyncTask<Context, Void, Void>() {
 aTask.execute(ctx);
 ```
 {: codeblock}
+{: android}
 
-### Recherche - localiser des documents dans le magasin
-{: #android-find-locate-documents-inside-the-store }
+#### Recherche - localiser des documents dans le magasin dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1003,9 +1088,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Remplacement - changer les documents déjà stockés dans une collection
-{: #android-replace-change-the-documents-that-are-already-stored-inside-a-collection }
+#### Remplacement - changer les documents déjà stockés dans une collection dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1031,9 +1118,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Suppression - supprimer tous les documents correspondant à la requête
-{: #android-remove-delete-all-documents-that-match-the-query }
+#### Suppression - supprimer tous les documents correspondant à la requête dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1063,9 +1152,11 @@ catch (JSONException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Comptage - obtenir le nombre total de documents correspondant à une requête
-{: android-count-gets-the-total-number-of-documents-that-match-a-query }
+#### Comptage - obtenir le nombre total de documents correspondant à une requête dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1092,9 +1183,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Destruction - effacer les données pour tous les utilisateurs, détruire la mémoire interne et effacer les artefacts de sécurité
-{: #android-destory-wipes-data-for-all-users-destroys-the-internal-storage-and-clears-security-artifacts }
+#### Destruction - effacer les données pour tous les utilisateurs, détruire la mémoire interne et effacer les artefacts de sécurité dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1109,9 +1202,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Sécurité - fermer l'accès à toutes les collections ouvertes pour l'utilisateur en cours
-{: #android-security-close-access-to-all-opened-collections-for-the-current-user }
+#### Sécurité - fermer l'accès à toutes les collections ouvertes pour l'utilisateur en cours dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1126,9 +1221,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Sécurité - changer le mot de passe utilisé pour accéder à un magasin
-{: #android-security-change-the-password-that-is-used-to-access-a-store }
+#### Sécurité - changer le mot de passe utilisé pour accéder à un magasin dans Android
+{: android}
+
 ```java
 // The password should be user input.
 // It is hard-coded in the example for brevity.
@@ -1153,9 +1250,11 @@ finally {
 }
 ```
 {: codeblock}
+{: android}
 
-### Push - obtenir tous les documents marqués comme étant modifiés, les envoyer à un adaptateur et les marquer comme propres
-{: #android-push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
+#### Push - obtenir tous les documents marqués comme étant modifiés, les envoyer à un adaptateur et les marquer comme propres dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1176,9 +1275,11 @@ try {
 }
 ```
 {: codeblock}
+{: android}
 
-### Pull - obtenir de nouvelles données d'un adaptateur
-{: #android-pull-get-new-data-from-an-adapter }
+#### Pull - obtenir de nouvelles données d'un adaptateur dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1217,9 +1318,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Déterminer si un document a été modifié
-{: #android-check-whetther-a-document-is-dirty }
+#### Déterminer si un document a été modifié dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1237,9 +1340,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-#### Déterminer le nombre de documents modifiés
-{: #android-check-the-number-of-dirty-documents }
+#### Déterminer le nombre de documents modifiés dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1257,9 +1362,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Supprimer une collection
-{: #android-remove-a-collection }
+#### Supprimer une collection dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1278,9 +1385,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Effacer toutes les données qui se trouvent dans une collection
-{: #android-clear-all-data-that-is-inside-a-collection }
+#### Effacer toutes les données qui se trouvent dans une collection dans Android
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1298,9 +1407,12 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Démarrer une transaction, ajouter des données, supprimer un document, valider la transaction et l'annuler en cas d'échec
+#### Démarrer une transaction, ajouter des données, supprimer un document, valider la transaction et l'annuler en cas d'échec dans Android
 {: #android-transaction }
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1339,9 +1451,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### Obtenir des informations relatives au fichier
-{: #android-get-file-information }
+#### Obtenir des informations relatives au fichier dans Android
+{: android}
+
 ```java
 Context ctx = getContext();
 List<JSONStoreFileInfo> allFileInfo = WLJSONStore.getInstance(ctx).getFileInfo();
@@ -1353,3 +1467,4 @@ for(JSONStoreFileInfo fileInfo : allFileInfo) {
 }
 ```
 {: codeblock}
+{: android}

@@ -36,7 +36,7 @@ Al aplicar la actualización, la versión del servidor, que se muestra en {{site
 
 > **Nota:**
 >  * Los usuarios no pueden aplicar sus propios arreglos y actualizaciones a su instancia de servicio de {{site.data.keyword.mobilefoundation_short}}.
->  * Consulte [Recreación del servidor en el plan Professional Per Device](c_using_mfs_p5.html#recreate_mobilefoundation_p5) y [Recreación del servidor en el plan Professional 1 Application](c_using_mfs_p2.html#recreate_mobilefoundation_p2) para conocer la diferencia de comportamiento en los planes cuando se pulsa **Recrear**.
+>  * Consulte [Recreación del servidor en el plan Professional Per Device](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#recreate_mobilefoundation_p5) y [Recreación del servidor en el plan Professional 1 Application](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#recreate_mobilefoundation_p2) para conocer la diferencia de comportamiento en los planes cuando se pulsa **Recrear**.
 >
 
 ## ¿Cómo configuro el dominio personalizado para mi instancia de servidor de {{site.data.keyword.mobilefoundation_short}}?

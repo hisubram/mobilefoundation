@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-22"
+lastupdated: "2019-02-01"
 
 ---
 
@@ -17,138 +17,58 @@ lastupdated: "2018-11-22"
 # Visualización de conocimientos en la consola
 {: #visualize_insights_on_console}
 
-Desde la consola de análisis de MobileFirst puede ver y configurar los informes de Herramientas de análisis, gestionar alertas y visualizar registros de cliente. Inicie la consola de analíticas desde la consola de operaciones de Mobile Foundation pulsando en **Consola de analíticas** desde la navegación de la izquierda.
+Para visualizar información de valor extraída de los datos de análisis capturados y enviados desde la aplicación, debe iniciar la consola de Mobile Analytics pulsando la opción **Consola de analíticas** en el panel de navegación izquierdo de la consola de Mobile Foundation Operations.
 
-Se iniciará la consola de análisis y aparecerá el panel de control predeterminado. Si una aplicación cliente ya ha enviado registros y datos analíticos al servidor, se crearán y mostrarán los informes relevantes. Podrá revisar los datos de análisis recopilados desde el panel de control. Los datos de análisis pueden estar relacionados con bloqueos de aplicaciones, sesiones de aplicación y el tiempo de proceso del servidor. Además, podrá crear diagramas personalizados y gestionar alertas.
+La consola de Mobile Analytics se puede ejecutar en dos modalidades:
+  - **Demo Mode ON**, que es puramente a efectos de demostración para mostrar las diferentes vistas de analíticas (gráficos y tablas) utilizando canales de información de datos simulados.
+  - **Demo Mode OFF** que muestra las distintas vistas de analíticas basadas en canales de información de datos en tiempo real procedentes de las aplicaciones [instrumentadas para Mobile Analytics](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app).
+  
+Todas las vistas de analíticas se pueden recortar aplicando filtros sobre el *nombre de aplicación*, la *versión*, el *sistema operativo del dispositivo* y el *periodo de tiempo*, lo que le permite obtener información desde perspectivas diferentes.
 
-Además de una vista rápida de los análisis móviles, la función de análisis incluye la capacidad de realizar una búsqueda en bruto en los registros de cliente, los datos de bloqueo de los clientes capturados y cualquier dato adicional que proporcione de forma explícita a través de llamadas a funciones de API que proporcionan el servicio de Mobile Analytics.
+Para visualizar información de valor para la aplicación, asegúrese de que:
+  - La aplicación esté correctamente instrumentada para capturar y enviar los datos de análisis relevantes al servicio de Mobile Analytics.
+  - Ha desactivado la modalidad de demostración Demo en la consola de Analytics
+  - Aplica los filtros adecuados.  Por ejemplo, asegúrese de seleccionar un periodo de tiempo cuando la aplicación se haya desplegado en el campo y esté activa con usuarios.
 
-## Supervisión de datos de app
-{: #monitoring_app_data}
+La consola de Mobile Analytics proporciona distintos tipos de análisis del uso y el rendimiento de las aplicaciones móviles, tal y como se ha categorizado en el panel de navegación de la izquierda de la consola de Analytics.  En las secciones siguientes se detallan las diferentes vistas de analíticas: 
 
-El análisis móvil proporciona funciones de supervisión y análisis para las aplicaciones móviles. Puede registrar registros de aplicación y supervisar datos con el SDK de cliente de Mobile Analytics. Los desarrolladores pueden controlar cuándo enviar estos datos al servicio de análisis móvil. Cuando los datos se entregan a Mobile Analytics, puede utilizar la consola de Mobile Analytics para obtener información de análisis sobre las aplicaciones móviles, los dispositivos y los registros de aplicación.
 
-Información que se puede derivar:
-
-**Métricas predefinidas**
-
-Con las métricas predefinidas puede responder a preguntas como:
-* ¿Cuántos usuarios nuevos tengo?
-* ¿Cuántas personas utilizan mi aplicación de forma activa?
-* ¿Con qué frecuencia utilizan mi aplicación?
-* ¿A qué hora del día utilizan mi aplicación?
-* ¿Qué modelos de dispositivo prefieren mis usuarios?
-* ¿Cuándo debería anular el soporte para los sistemas operativos existentes?
-* ¿Qué aplicaciones tienen problemas de rendimiento?
-
-**Sucesos personalizados**
-
-Mediante la adición de sucesos personalizados, puede responder a preguntas como:
-* ¿Qué características se utilizan más y cuáles menos?
-* ¿Desde dónde entran y salen los usuarios de mi app?
-* ¿Qué actividades ven más los usuarios?
-* ¿Completan los usuarios los flujos de trabajo de la app (por ejemplo, canalizaciones de conversión)?
-
-## Informes que se pueden visualizar: Usuarios
+## Usuarios
 {: #reports_visualized_users}
+Esta vista le ayuda a obtener información sobre 'Patrones de incorporación de usuario', como el número de usuarios activos que han utilizado la app dentro de un rango de fechas especificado y una comparación del número de nuevos usuarios frente a los usuarios existentes que vuelven a utilizar la app.
+Los gráficos de esta vista se pueden filtrar en *nombre de app*, *sistema operativo* o *versión del sistema operativo*.
 
-En este informe se muestra un gráfico que proporciona el número de usuarios activos que han utilizado la aplicación en un intervalo de fechas especificado. El informe también muestra el número de usuarios nuevos, que son usuarios exclusivos que utilizan la app por primera vez, en el intervalo de fechas especificado.
-Los gráficos se pueden filtrar según el nombre de la app, el sistema operativo o las versiones del sistema operativo.
-
-## Informes que se pueden visualizar: Sesiones
+## Sesiones
 {: #reports_visualized_sessions}
+Esta vista le ayuda a obtener información sobre los 'Patrones de uso' de su aplicación en términos de *Sesiones de app* durante el intervalo de fechas especificado. Una sesión se graba cuando una app se lleva al primer plano de un dispositivo.  Obtendrá información sobre las horas del día en que su aplicación se utiliza más y menos, lo que puede generar información útil para el negocio. Los gráficos de esta vista se pueden filtrar en *nombre de app*, *sistema operativo* o *versión del sistema operativo*.
 
-En este informe aparece un gráfico que muestra las sesiones de app en el intervalo de fechas especificado. Una sesión se graba cuando una app se lleva al primer plano de un dispositivo. Los gráficos se pueden filtrar según el nombre de la app, el sistema operativo o las versiones del sistema operativo.
-
-## Informes que se pueden visualizar: Solicitudes de red
+## Solicitudes de red
 {: #reports_visualized_network_requests}
+Esta vista le ayuda a obtener información sobre la experiencia de la aplicación, ya que realiza llamadas de API a los sistemas de fondo.  Esta vista tiene tablas y gráficos que proporcionan una visión general sobre cuáles son las funciones más utilizadas de los sistemas de fondo y cuál ha sido su tiempo de respuesta y estabilidad, y si debería considerar el reequilibrio de los sistemas de soporte de fondo.
 
-Visualice datos de solicitud de red para las aplicaciones en la consola de Mobile Analytics.
+Esta vista contiene gráficos que trazan en un rango de datos determinado el Tiempo promedio de ida y vuelta de las llamadas de API salientes de la aplicación, el número de solicitudes realizadas por llamada de API, el número de solicitudes con éxito frente a las que han fallado agrupadas por códigos de respuesta.  Los gráficos de esta vista se pueden filtrar según el nombre de la app, el sistema operativo o las versiones del sistema operativo.
 
-Dispone de datos para las siguientes medidas:
-
-**Tiempo de ida y vuelta** - define el período de tiempo, en milisegundos, que la aplicación tarda en realizar solicitudes de red.
-**Recuento de solicitudes** - muestra la frecuencia con la que la app realiza solicitudes. Los datos también se muestran como promedio.
-Los gráficos se pueden filtrar según el nombre de la app, el sistema operativo o las versiones del sistema operativo.
-
-## Informes que se pueden visualizar: Bloqueos
+## Bloqueos
 {: #reports_visualized_crashes}
+Esta vista le ayuda con información sobre la estabilidad de la aplicación durante un periodo de tiempo seleccionado y le ayuda a decidir si el diseño/implementación de su aplicación debería corregirse.  Proporciona gráficos que contrastan el número de bloqueos contra el número total de usos y la frecuencia de bloqueo general.  Los gráficos de esta vista se pueden filtrar en *nombre de app*, *sistema operativo* o *versión del sistema operativo*.
 
-Puede ver información sobre los bloqueos de aplicaciones en la consola de Mobile Analytics para supervisar mejor y resolver los problemas de las aplicaciones.
 
-En la página Bloqueos, la tabla **Visión general de bloqueos** muestra las columnas de datos siguientes:
-
-**Aplicación**: nombre de aplicación<br/>
-**Bloqueos**: número total de bloqueos de dicha aplicación<br/>
-**Usos totales**: número total de veces que un usuario abre y cierra la aplicación<br/>
-**Frecuencia de bloqueos**: porcentaje de bloqueos por uso<br/>
-Puede ver rápidamente información sobre los bloqueos de aplicación en la tabla Bloqueos. El gráfico de barras Bloqueos muestra un histograma de bloqueos a lo largo del tiempo.<br/>
-
-Puede visualizar los datos de bloqueos de dos formas:
-
-1.  Visualizar frecuencia de bloqueos: frecuencia de bloqueos con el tiempo
-2.  Visualizar bloqueos totales: bloqueos totales con el tiempo
-
-## Informes que se pueden visualizar: Resolución de problemas
+## Resolución de problemas
 {: #reports_visualized_troubleshooting}
+Esta vista proporciona toda la información necesaria que un desarrollador de aplicaciones podría necesitar para resolver problemas en una aplicación.  Esta vista proporciona un análisis más detallado de los bloqueos de la aplicación en términos de los dispositivos afectados, el sistema operativo de host, el tiempo específico del bloqueo, el seguimiento de pila en el momento del bloqueo y también los registros de bloqueos que se pueden descargar para obtener un análisis más detallado.  
 
-La página **Resolución de problemas** de la consola Mobile Analytics ofrece una vista detallada de los bloqueos de aplicación, utilizando la tabla **Resumen de bloqueos**.
-
-La tabla **Resumen de bloqueos** se puede ordenar e incluye las siguientes columnas de datos:
-
-* Bloqueos
-* Dispositivos
-* Último bloqueo
-* Aplicación
-* Sistema operativo
-* Mensaje
-
-Pulse el icono +, situado junto a cualquier entrada, para ver la tabla **Detalles de bloqueo**, que incluye las siguientes columnas:
-
-* Hora del bloqueo
-* Versión de aplicación
-* Versión de sistema operativo
-* Modelo de dispositivo
-* ID de dispositivo
-* Descarga: Enlace para descargar los registros que han provocado el bloqueo
-
-Expanda cualquier entrada de la tabla **Detalles de bloqueo** para obtener información más detallada (por ejemplo, un seguimiento de pila).
-
-Los datos de la tabla **Resumen de bloqueos** se rellenan consultando los registros de aplicaciones de nivel muy grave. Si la aplicación no recopila registros de aplicaciones muy graves, no habrá datos disponibles.
+Los registros de bloqueos se recopilan buscando registros de apps que se han registrado en el nivel FATAL.  El SDK de cliente de Analytics para Android e iOS nativo maneja las excepciones y registra detalles sobre ellos, como mensajes de registro de nivel FATAL.  Sin embargo, en el caso de Cordova cualquier bloqueo en la capa de JavaScript debe ser manejada por el desarrollador y los registros de bloqueo enviados al servicio de Mobile Analytics para que se visualicen y analicen en la consola de Mobile Analytics.
 {: note}
 
 
-## Informes que se pueden visualizar: Comentarios de usuarios
+## Comentarios de usuarios
 {: #reports_visualized_userfeedback}
+Esta vista proporciona información acerca de la experiencia interactiva real que están viviendo los usuarios mientras utilizan la app y cómo se sienten al respecto.
 
-Los comentarios de usuarios proporcionan un análisis de comentarios integrados en la app utilizando Mobile Analytics.
-Con esta característica de Mobile Analytics:
-* Los **usuarios y responsables de las pruebas** pueden registrar y enviar comentarios e informes de errores desde la app a medida que ejecutan y utilizan la aplicación.
-* Los **propietarios de apps** reciben información detallada sobre la experiencia del usuario con la aplicación con el contexto de los comentarios de los usuarios.
+* Los **Propietarios de las apps** pueden obtener una vista detallada y rica en contexto de los errores y otros comentarios enviados por **Usuarios y probadores**, tal y como se registró al ejecutar la aplicación
 * Los **desarrolladores** reciben contextos precisos de aplicación para diagnosticar y solucionar errores o deficiencias en la funcionalidad.
+* Los **Propietarios de apps** y los **Desarrolladores** pueden utilizar esta vista para gestionar también las acciones basadas en los comentarios recibidos como, por ejemplo, grabar comentarios o enlaces a problemas creados en los sistemas de seguimiento de errores.  También se puede establecer un estado de revisión general en cada comentario para ayudar a resumir las acciones realizadas a raíz de los comentarios del usuario.
 
-### Habilitación de comentarios de usuario
-{: #enable_user_feedback}
-
-Complete los pasos siguientes para habilitar la aplicación móvil y capturar comentarios de los usuarios.
-
-#### Instrumentar la app
-{: #instrument_app}
-
-* Instrumente la app móvil para introducir la modalidad de comentarios. Llame a la API `Analytics.triggerFeedbackMode();` para invocar la modalidad de comentarios. <!--For more information, refer to the documentation [here](instrument_an_app.html)-->.
-* La API se puede llamar en cualquier suceso de aplicación como, por ejemplo, botones, acciones de menú o gestos.
-
-#### Recibir comentarios de los usuarios
-{: #receive_feedback}
-
-* Los usuarios y los encargados de las pruebas de la app pueden cambiar a la modalidad de comentarios activando la acción de la aplicación que se ha instrumentado para recibir comentarios.
-* En la modalidad de comentarios es posible recopilar comentarios contextuales y capturas de pantalla que después se podrán enviar a Mobile Analytics.
-
-#### Analizar los comentarios de los usuarios
-{: #analyze_feedback}
-
-* Mobile Analytics recibe y consolida los comentarios enviados desde aplicaciones móviles.
-* Inicie sesión en la consola de Mobile Analytics y seleccione la opción **Comentarios de usuarios** para ver los comentarios.
-* Un propietario de la aplicación puede revisar los comentarios, añadir comentarios adicionales y etiquetar los comentarios con un estado de revisión. Los comentarios podrían ser acciones planificadas, como enlaces a temas de Git creados para trabajar con la información o los comentarios podrían constituir la declaración de las razones por las que no es necesaria ninguna acción en la respuesta.
-* El estado de revisión se puede utilizar para gestionar de forma eficiente los comentarios clasificándolos en una de las distintas opciones de estado de revisión.
+## Gráficos personalizados
+Esta vista amplía Mobile Analytics a los casos personalizados en los que los **Propietarios de apps** y los **Desarrolladores** desearían crear sus propios análisis específicos de aplicaciones.   Con este recurso puede crear sus propias vistas de analíticas (gráficos, tablas, etc.) a partir de datos de análisis estándar capturados por el SDK de cliente, así como datos personalizados o datos específicos de la aplicación que estén registrados.  Consulte [aquí](/docs/services/mobilefoundation?topic=mobilefoundation-build_custom_charts#build_custom_charts) para obtener más información sobre este recurso de análisis ampliado.
 

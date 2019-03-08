@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -25,14 +25,17 @@ lastupdated: "2019-01-04"
 {:reactnative: .ph data-hd-programlang='reactnative'}
 {:csharp: .ph data-hd-programlang='csharp'}
 
-# Interfaz de programación de aplicaciones (API) para las plataformas de cliente soportadas
+# SDK de cliente
+{: #client_sdks}
+
+## Interfaz de programación de aplicaciones (API) para las plataformas de cliente soportadas
 
 ### JavaScript
 {: javascript }
 API para Cordova / aplicaciones web.
 {: javascript }
-* **[API del lado del cliente](javascript_client_sdk_api.html)**  
-    Puede utilizar la API de JavaScript para desarrollar aplicaciones para todos los entornos.
+* **[API del lado del cliente](/docs/services/mobilefoundation?topic=mobilefoundation-javascript_client_sdk_api#javascript_client_sdk_api)**  
+    Puede utilizar la API de JavaScript para desarrollar apps para todos los entornos.
     {: javascript }
 * **[API push del lado del cliente ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-hybrid-cordova-js-apidoc/html/refjavascript-mfp-push-hybrid/html/index.html)**  
     Puede utilizar la API push de JavaScript para ejecutar funciones push en las aplicaciones del lado del cliente.
@@ -57,10 +60,10 @@ API para aplicaciones de iOS nativas.
 API aplicaciones Android nativas.
 {: java }
 * **[API del lado del cliente ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://mobilefirstplatform.ibmcloud.com/api-ref/wl-android-n-java-apidoc/html/refjava-worklight-android-native/html/index.html)**  
-    Puede utilizar la API de Java para desarrollar aplicaciones para el entorno de Android.
+    Puede utilizar la API de Java para desarrollar apps para el entorno de Android.
     {: java }
 * **[API push del lado del cliente ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-android-n-java-apidoc/html/refjava-mfp-push-android-native/html/index.html)**  
-    Puede utilizar la API push de Java para desarrollar aplicaciones para el entorno de Android.
+    Puede utilizar la API push de Java para desarrollar apps para el entorno de Android.
     {: java }
 * **[API de JSONStore del lado del cliente ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://mobilefirstplatform.ibmcloud.com/api-ref/mfp-client-android-jsonstore-8/html/refjava-mfp-client-android-jsonstore/html/)**  
     Puede utilizar la API de JSONStore para trabajar con el almacén del entorno de Android.

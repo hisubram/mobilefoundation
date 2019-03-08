@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 {:generic: .ph data-hd-programlang='generic'}
@@ -27,14 +27,14 @@ lastupdated: "2019-01-04"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Configuración avanzada de almacenamiento fuera de línea 
-{: #adv_configure_offline_storage}
+# JSONStore avanzado 
+{: #advanced_jsonstore}
 
 ## Seguridad en JSONStore
-{: #security_jsonstore} 
+{: #security_jsonstore}
 
 <!--### Cordova
-{: security_jsonstore_cordova}-->
+{: #security_jsonstore_cordova}-->
 
 Proteja todas las recopilaciones en un almacén pasando una contraseña para la función `init`. Si no se pasa una contraseña, los documentos de todas las recopilaciones en el almacén no se cifran.
 {: cordova}
@@ -107,9 +107,9 @@ Utilice `changeCurrentPassword` para cambiar la contraseña.
 {: android}
 
 ```java
-    Context  context = getContext();
+Context  context = getContext();
     try {
-      JSONStoreCollection people = new JSONStoreCollection("people");
+  JSONStoreCollection people = new JSONStoreCollection("people");
   people.setSearchField("name", SearchFieldType.STRING);
   people.setSearchField("age", SearchFieldType.INTEGER);
   List<JSONStoreCollection> collections = new LinkedList<JSONStoreCollection>();
@@ -180,9 +180,9 @@ Es posible crear varios almacenes con varias recopilaciones en una única aplica
 {: android}
 
 ```java
-    Context  context = getContext();
+Context  context = getContext();
     try {
-      JSONStoreCollection people = new JSONStoreCollection("people");
+  JSONStoreCollection people = new JSONStoreCollection("people");
   people.setSearchField("name", SearchFieldType.STRING);
   people.setSearchField("age", SearchFieldType.INTEGER);
   List<JSONStoreCollection> collections = new LinkedList<JSONStoreCollection>();

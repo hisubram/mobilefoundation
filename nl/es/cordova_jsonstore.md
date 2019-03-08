@@ -56,7 +56,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 
 ### Obtener
 {: #get }
-Utilice `get` para crear un accesor a la recopilación. Debe llamar a `init` antes de llamar a `get`, de lo contrario el resultado de esta llamada no estará definido.
+Utilice `get` para crear un descriptor de acceso a la recopilación. Debe llamar a `init` antes de llamar a `get`, de lo contrario el resultado de esta llamada no estará definido.
 
 ```javascript
 var collectionName = 'people';
@@ -207,7 +207,7 @@ WL.JSONStore.destroy().then(function () {
 {: #security }
 Proteja todas las recopilaciones en un almacén pasando una contraseña para la función `init`. Si no se pasa una contraseña, los documentos de todas las recopilaciones en el almacén no se cifran.
 
-El cifrado de datos solo está disponible en entornos Android, iOS, Windows 8.1 Universal y Windows 10 UWP.  
+El cifrado de datos solo está disponible en entornos Android, iOS, Windows 8.1 Universal y Windows 10 UWP.  
 Algunos metadatos de seguridad se almacenan la *cadena de claves* (iOS), en las *preferencias compartidas* (Android) o en la *caja de seguridad de credenciales* (Windows 8.1).  
 El almacén se cifra con una clave AES (Advanced Encryption Standard) de 256 bits. Todas las claves están reforzadas mediante PBKDF2 (Password-Based Key Derivation Function 2).
 
@@ -409,7 +409,7 @@ Se incluye un proyecto Maven de un adaptador JavaScript.
 
 ![App de ejemplo de JSONStore](images/jsonstore-cordova.png)
 
-[ Pulse para descargar](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCordova/tree/release80) el proyecto de Cordova.  
+[Pulse para descargar](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCordova/tree/release80) el proyecto de Cordova.  
 [Pulse para descargar](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80) el proyecto Maven del adaptador.  
 
 ### Uso de ejemplo

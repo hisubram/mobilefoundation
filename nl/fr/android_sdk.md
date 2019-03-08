@@ -6,8 +6,8 @@ lastupdated:  "2018-11-26"
 
 ---
 
-##	SDK Android
-{: #android_sdk}
+#	Logiciel SDK Android
+{: #android_sdk_api}
 
 Téléchargez les SDK Android à partir du référentiel maven.
 

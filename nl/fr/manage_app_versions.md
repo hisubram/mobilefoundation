@@ -38,6 +38,6 @@ A l'aide de la console Mobile Foundation Operations, vous pouvez surveiller et g
    *  Exporter une version
 
 
-Voir [Gestion des équipements](manage_devices.html), pour en savoir plus sur la gestion des équipements. Voir [Désactivation à distance d'une version de l'application](remote_disable_app_version.html) pour en savoir plus sur la désactivation à distance d'une version spécifique d'une application.
+Voir [Gestion des équipements](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices), pour en savoir plus sur la gestion des équipements. Voir [Désactivation à distance d'une version de l'application](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version) pour en savoir plus sur la désactivation à distance d'une version spécifique d'une application.
 {: note}
 

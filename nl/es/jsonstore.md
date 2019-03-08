@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2019-01-04"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,14 +14,14 @@ lastupdated:  "2019-01-04"
 {:pre: .pre}
 
 
-# Almacenamiento fuera de línea utilizando JSONStore
-{: #overview }
+# JSONStore
+{: #jsonstore }
 {{site.data.keyword.mobilefoundation_short}} **JSONStore** es una API del lado del cliente opcional que proporciona un sistema ligero de almacenamiento orientado a documentos. JSONStore ofrece un almacenamiento persistente de **documentos JSON**. Los documentos en una aplicación están disponibles en JSONStore incluso cuando el dispositivo que ejecuta la aplicación está fuera de línea. Este almacenamiento persistente que siempre está disponible puede ser útil para que los usuarios accedan a documentos cuando, por ejemplo, no hay ninguna conexión de red disponible en el dispositivo.
 
 Puesto que es familiar para los desarrolladores, a veces en esta documentación se utiliza terminología de bases de datos relacionales para explicar JSONStore. Sin embargo, hay muchas diferencias entre una base de datos relacional y JSONStore. Por ejemplo, el esquema estricto que se utiliza para almacenar datos en las bases de datos relacionales es distinto de la aproximación con JSONStore. Con JSONStore, se puede almacenar cualquier contenido JSON e indexar el contenido que se necesita buscar.
 
 ## Características clave
-{: #key-features }
+{: #key-features-jsonstore }
 * Indexación de datos para una búsqueda eficiente
 * Mecanismo de seguimiento cambios únicamente locales en los datos almacenados
 * Soporte para muchos usuarios
@@ -30,7 +30,7 @@ Puesto que es familiar para los desarrolladores, a veces en esta documentación 
 Un único almacén puede tener muchas recopilaciones y cada recopilación puede tener muchos documentos. También es posible tener una aplicación de MobileFirst con varios almacenes. Consulte el soporte de múltiples usuarios de JSONStore para obtener más información.
 
 ## Nivel de soporte
-{: #support-level }
+{: #support-level-jsonstore }
 * JSONStore está soportado en aplicaciones Android e iOS nativas (no hay soporte para Windows nativo (Universal y UWP)).
 * JSONStore está soportado en aplicaciones Cordova iOS, Android y Windows (Universal y UWP).
 
@@ -138,7 +138,8 @@ var query2 = {name: 'carlos', age: 99};
 {: #query-parts }
 Las partes de consulta se utilizan para crear búsquedas más avanzadas. Algunas operaciones de JSONStore como, por ejemplo, algunas versiones de `find` o `count` utilizan partes de consulta. La información dentro de la parte de consulta está unida mediante sentencias `AND` y `OR`. El criterio de búsqueda solo devuelve una coincidencia si todos elementos de la parte de consulta se evalúan como **true**. Utilice una o varias partes de consulta para buscar coincidencias que satisfagan una o varias de las partes de consulta.
 
-Las búsquedas con partes de consulta solo funcionan con campos de búsqueda de nivel superior. Por ejemplo: `name` y no `name.first`. Utilice varias recopilaciones donde todos los campos de búsqueda sean de nivel superior para resolver este comportamiento. Las operaciones de partes de consulta que funcionan con campos de búsqueda de nivel superior son: `equal`, `notEqual`, `like`, `notLike`, `rightLike`, `notRightLike`, `leftLike` y `notLeftLike`. El comportamiento es indeterminado si utiliza campos de búsqueda que no sean de un nivel superior.
+Las búsquedas con partes de consulta solo funcionan con campos de búsqueda de nivel superior. Por ejemplo: `name` y no `name.first`. Utilice varias recopilaciones donde todos los campos de búsqueda sean de nivel superior para resolver este comportamiento. Las operaciones de partes de consulta que funcionan con campos de búsqueda de nivel superior son:
+`equal`, `notEqual`, `like`, `notLike`, `rightLike`, `notRightLike`, `leftLike` y `notLeftLike`. El comportamiento es indeterminado si utiliza campos de búsqueda que no sean de un nivel superior.
 
 ## Tabla de características
 {: #features-table }
@@ -150,15 +151,15 @@ JSONStore es similar a otras tecnologías como, por ejemplo, LocalStorage, Index
 
 | Característica                                            | JSONStore      | LocalStorage | IndexedDB | Cordova storage API | Cordova file API |
 |----------------------------------------------------|----------------|--------------|-----------|---------------------|------------------|
-| Soporte Android (aplicaciones nativas y Cordova)|	     ✔ 	      |     ✔	     |        ✔	           |         ✔	      |         ✔	      |
-| Soporte iOS (aplicaciones nativas y Cordova)	     |	     ✔ 	      |     ✔	     |        ✔	           |         ✔	      |         ✔	      |
-| Windows 8.1 Universal y Windows 10 UWP (aplicaciones Cordova)          |	     ✔ 	      |     ✔	     |     ✔	     |        -	           |         ✔	      |
+| Soporte Android (aplicaciones nativas y Cordova)|	     ✔ 	      |      ✔	    |     ✔	     |        ✔	           |         ✔	      |
+| Soporte iOS (aplicaciones nativas y Cordova)	     |	     ✔ 	      |      ✔	    |     ✔	     |        ✔	           |         ✔	      |
+| Windows 8.1 Universal y Windows 10 UWP (aplicaciones Cordova)          |	     ✔ 	      |      ✔	    |     ✔	     |        -	           |         ✔	      |
 | Cifrado de datos	                                 |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
-| Máximo almacenamiento	                                 |Espacio disponible |    ~5 MB     |   ~5 MB 	 | Espacio disponible  | Espacio disponible  |
-| Almacenamiento fiable (ver nota)	                     |	     ✔ 	      |      -	    |     -	     |         ✔	      |         ✔	      |
+| Máximo almacenamiento	                                 |Espacio disponible |    ~5 MB     |   ~5 MB 	 | Espacio disponible	   | Espacio disponible  |
+| Almacenamiento fiable (ver nota)	                     |	     ✔ 	      |      -	    |     -	     |        ✔	           |         ✔	      |
 | Mantener seguimiento de cambios locales	                     |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
 | Soporte a varios usuarios                                 |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
-| Indexación	                                         |	     ✔ 	      |      -	    |        ✔	           |        ✔	           |         -	      |
+| Indexación	                                         |	     ✔ 	      |      -	    |     ✔	     |        ✔	           |         -	      |
 | Tipo de almacenamiento	                                 | Documentos JSON | Valores clave-valor | Documentos JSON | Relacional (SQL) | Series     |
 
 Almacenamiento fiable significa que no se suprimen los datos a no ser que se produzca una de las siguientes situaciones:
@@ -175,7 +176,7 @@ La API init (JavaScript) u open (iOS nativo y Android nativo) pueden tomar un ob
 Un caso de uso de ejemplo sería el de varios usuarios que comparten un dispositivo físico (por ejemplo, una tableta iPad o Android) y una aplicación de MobileFirst. El soporte de múltiples usuarios es útil si los empleados trabajan en distintos turnos y manejan datos privados de distintos clientes al utilizar la aplicación de MobileFirst.
 
 ## Seguridad
-{: #security }
+{: #security-jsonstore }
 Todas las recopilaciones se pueden cifrar en un almacén para protegerlas.
 
 Para cifrar todas las recopilaciones en un almacén, pase una contraseña a la API `init` (JavaScript) u `open` (iOS nativo y Android nativo). Si no se pasa una contraseña, no se cifrará ningún documento en las recopilaciones del almacén.
@@ -204,7 +205,7 @@ Para descifrar los datos, puede buscar en los metadatos en una recopilación JSO
 
 Estos metadatos pueden incluir la clave, la sal, el vector de inicialización (IV), el tipo de archivo o la vía de acceso al archivo, entre otros.
 
-Aprenda más sobre los [Programas de utilidad de JSONStore](security_utilities.html#security_utilities).
+Aprenda más sobre los [Programas de utilidad de JSONStore](/docs/services/mobilefoundation?topic=mobilefoundation-security_utilities#security_utilities).
 {: tip}
 
 ### Cifrado de Windows 8.1 Universal y Windows 10 UWP
@@ -237,17 +238,17 @@ Si no necesita cifrado, JSONStore es funcionalmente completo (excepto por el cif
    {: codeblock}
 
 ## Rendimiento
-{: #performance }
+{: #performance-jsonstore }
 Los siguientes factores pueden afectar al rendimiento de JSONStore.
 
 ### Red
-{: #network }
+{: #network-jsonstore }
 * Compruebe la conectividad de red antes de realizar operaciones como, por ejemplo, enviar todos los documentos "sucios" a un adaptador.
 * La cantidad de datos que se envían a través de la red a un cliente afectan en gran medida al rendimiento. Envíe solo los datos que sean necesarios para la aplicación, en lugar de copiar todo dentro de su base de datos de fondo.
 * Si está utilizando un adaptador, considere establecer el distintivo compressResponse en true. De este modo, las respuestas se comprimen, lo que generalmente supone utilizar menos ancho de banda y tiene un tiempo de transferencia más bajo que sin compresión.
 
 ### Memoria
-{: #memory }
+{: #memory-jsonstore }
 * Cuando se utiliza la API de JavaScript, los documentos JSONStore se serializan y deserializan como series entre la capa nativa (Objective-C, Java o C#) y la capa de JavaScript. Una forma para mitigar posibles problemas de memoria es utilizar limit y offset al utilizar la API find. De esta forma, limita la cantidad de memoria asignada a los resultados y puede implementar funcionalidades como la paginación (mostrar x números de resultados por página).
 * En lugar de utilizar nombres de clave largos que al final se serializan y deserializan como series, considere el correlacionar estos nombres de clave largos con otros más cortos (por ejemplo: `myVeryVeryVerLongKeyName` en `k` o `key`). Lo ideal sería correlacionarlos con nombres de clave cortos al enviarlos desde el adaptador al cliente, y correlacionarlos con los nombres de clave largos al enviar datos de nuevo a los sistemas de fondo.
 * Considere dividir los datos dentro de un almacén en varias recopilaciones. Es mejor utilizar varios documentos pequeños en distintas recopilaciones en lugar de utilizar documentos monolíticos en una única recopilación. Este aspecto depende de cómo están relacionados los datos y los casos de uso para dichos datos.
@@ -255,7 +256,7 @@ Los siguientes factores pueden afectar al rendimiento de JSONStore.
 * JavaScript y Java™ tienen recopiladores de basura, mientras que Objective-C utiliza ARC (Automatic Reference Counting). Deje que funcionen, pero no dependa de ellos en su totalidad. Intente asignar a null las referencias que no utilice y utilice la herramienta de creación de perfiles para comprobar que la utilización de memoria disminuye cuando espere que así ocurra.
 
 ### CPU
-{: #cpu }
+{: #cpu-jsonstore }
 * La cantidad de campos de búsqueda y campos de búsqueda adicionales que se utilizan afectan al rendimiento cuando se llama al método add, que realiza la indexación. Indexe únicamente los valores que utilice en las consultas para el método find.
 * De forma predeterminada, JSONStore realiza un seguimiento de los cambios locales a sus documentos. Este comportamiento se puede inhabilitar, ahorrando por lo tanto ciclos, estableciendo el distintivo `markDirty` en **false** al utilizar las API add, remove y replace.
 * La habilitación de la seguridad añade algo de sobrecarga a las API `init` u `open`, así como a otras operaciones, que funcionan con documentos dentro de la recopilación. Considere si realmente necesita la seguridad. Por ejemplo, la API open es mucho más lenta con cifrado puesto que debe generar las claves de cifrado que se utilizarán para el cifrado y el descifrado.
@@ -264,9 +265,9 @@ Los siguientes factores pueden afectar al rendimiento de JSONStore.
 * Las API `find` (`find`, `findAll` y `findById`) se ven afectadas por el cifrado, puesto que deben descifrar cada documento para ver si hay una coincidencia. Para una búsqueda mediante una consulta, si se pasa un límite, podría ser más rápido al detenerse la consulta al alcanzar el límite de los resultados. JSONStore no necesita descifrar el resto de los documentos para averiguar si quedan otros resultados de búsqueda.
 
 ## Simultaneidad
-{: #concurrency }
-### JavaScript
-{: #javascript }
+{: #concurrency-jsonstore }
+### Simultaneidad en JavaScript
+{: #javascript-jsonstore }
 La mayoría de las operaciones que se pueden realizar en una recopilación, como son las de añadir o buscar, son asíncronas. Estas operaciones devuelven una promesa de jQuery que se resuelve cuando la operación se completa de forma satisfactoria y se rechaza cuando se da una anomalía. Estas promesas son similares a las devoluciones de llamada de éxito y anomalías.
 
 Un deferred de jQuery es una promesa que se puede resolver o rechazar. Los siguientes ejemplos no son específicos para JSONStore, están pensados para ayudar a entender su uso en general.
@@ -328,16 +329,16 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 });
 ```
 
-### Objective-C
-{: #objective-c }
+### Simultaneidad en Objective-C
+{: #objective-c-jsonstore }
 Cuando se utiliza la API iOS nativa para JSONStore, todas las operaciones se añaden a la cola de asignación asíncrona. Este comportamiento asegura que las operaciones que afectan al almacén se ejecutan en orden en una hebra que no es la hebra principal. Para obtener más información, consulte la documentación de Apple en [Grand Central Dispatch (GCD) ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window}.
 
-### Java™
-{: #java }
+### Simultaneidad en Java 
+{: #java-jsonstore }
 Cuando se utiliza la API Android nativa para JSONStore, todas las operaciones se ejecutan en la hebra principal. Debe crear hebras o utilizar agrupaciones de hebras para obtener un comportamiento asíncrono. Todas las operaciones de almacenamiento son de proceso múltiple.
 
 ## Analíticas
-{: #analytics }
+{: #analytics-jsonstore }
 Puede recopilar elementos clave de información analítica relacionados con JSONStore
 
 ### Información de archivo
@@ -348,9 +349,7 @@ Si se llama a la API JSONStore con el distintivo de analíticas establecido en *
 {: #performance-metrics }
 Las métricas de rendimiento se recopilan cada vez que se llama a una API JSONStore con información sobre los tiempos de inicio y finalización de una operación. Utilice esta información para determinar lo que pueden tardar las distintas operaciones en milisegundos.
 
-### Ejemplos
-{: #examples }
-#### iOS
+### Ejemplo de JSONStore para iOS
 {: #ios-example}
 ```objc
 JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
@@ -359,7 +358,7 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
 
-#### Android
+### Ejemplo de JSONStore para Android
 {: #android-example }
 ```java
 JSONStoreInitOptions initOptions = new JSONStoreInitOptions();
@@ -368,7 +367,7 @@ initOptions.setAnalytics(true);
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
 
-#### JavaScript
+### Ejemplo de JSONStore para JavaScript
 {: #java-script-example }
 ```javascript
 var options = {
@@ -387,16 +386,16 @@ Se puede trabajar con los datos externos en diferentes conceptos: **Pull** y **P
 Muchos sistemas utilizan el término pull para hacer referencia a la obtención de datos de una origen externo.  
 Los tres elementos más importantes son:
 
-#### Origen de datos externo
-{: #external-data-source }
+#### Extracción desde el origen de datos externo
+{: #external-data-source-pull }
 Este origen puede ser una base de datos, una API SOAP o REST, o muchos otros. El único requisito es que debe ser accesible desde el servidor de MobileFirst o directamente desde la aplicación de cliente. Lo más conveniente es que este origen de datos devuelva datos en formato JSON.
 
-#### Capa de transporte
-{: #transport-layer }
+#### Capa de transporte para la extracción
+{: #transport-layer-pull }
 Este origen es cómo obtiene datos desde el origen externo en su origen interno, una recopilación de JSONStore dentro del almacén. Una alternativa es un adaptador.
 
-#### API de origen de datos interno
-{: #internal-data-source-api }
+#### API de origen de datos interno para la extracción
+{: #internal-data-source-api-pull }
 Este origen son las API de JSONStore que se pueden utilizar para añadir datos JSON a una recopilación.
 
 El almacén interno se puede cumplimentar con datos que se leen desde un archivo, un campo de entrada o datos codificados mediante programación para una variable. No tienen que venir de una forma exclusiva desde un origen externo que precisa comunicación de red.
@@ -548,7 +547,7 @@ Se devuelve una matriz de datos desde el adaptador:
 ```
 {: codeblock}
 
-Puede utilizar otras API para realizar cambios en los documentos locales que se almacenan. Obtenga siempre un accesor para la recopilación en la que desea realizar operaciones.
+Puede utilizar otras API para realizar cambios en los documentos locales que se almacenan. Obtenga siempre un descriptor de acceso para la recopilación en la que desea realizar operaciones.
 
 ```javascript
 var accessor = WL.JSONStore.get('people')
@@ -582,15 +581,15 @@ Muchos sistemas utilizan el término push para hacer referencia al envío de dat
 
 Los tres elementos más importantes son:
 
-#### API de origen de datos interno
+#### API de origen de datos interno para Push
 {: #internal-data-source-api-push }
 Este origen de datos es la API JSONStore que devuelve documentos únicamente con cambios locales ("sucios").
 
-#### Capa de transporte
+#### Capa de transporte para Push
 {: #transport-layer-push }
 Este origen permitirá contactar con el origen de datos externo para enviar los cambios.
 
-#### Origen de datos externo
+#### Envío push a origen de datos externo
 {: #external-data-source-push }
 Este origen de datos es habitualmente una base de datos, un punto final REST o SOAP, entre otros, que recibe las actualizaciones que el cliente realiza a los datos.
 
@@ -600,7 +599,7 @@ Utilice adaptadores para la capa de transporte. Algunas de las ventajas de utili
 {: note}
 
 **API de origen de datos interno: JSONStore**  
-Después de obtener un accesor para la recopilación, llame a la API `getAllDirty` para obtener todos los elementos marcados como "sucios". Estos documentos tienen cambios únicamente locales que desea enviar al origen de datos externo a través de una capa de transporte.
+Después de obtener un descriptor de acceso para la recopilación, llame a la API `getAllDirty` para obtener todos los elementos marcados como "sucios". Estos documentos tienen cambios únicamente locales que desea enviar al origen de datos externo a través de una capa de transporte.
 
 ```javascript
 var accessor = WL.JSONStore.get('people');
@@ -766,8 +765,8 @@ El sistema de fondo acepta o rechaza los cambios y, a continuación, retransmite
 
 Después de que los documentos se marquen como "limpios", no aparecerán en la salida de la API `getAllDirty`.
 
-## Resolución de problemas
-{: #troubleshooting }
+## Resolución de problemas de JSONStore
+{: #troubleshooting-jsonstore }
 
 ## Proporciona información cuando solicite ayuda
 {: #provide-information-when-you-ask-for-help }
@@ -829,7 +828,7 @@ Siga estos pasos para aislar el problema y notificarlo de forma más precisa.
 6. Utilice el depurador.
 
 ## Problemas habituales
-{: #common-issues }
+{: #common-issues-jsonstore }
 La comprensión de las siguientes características de JSONSTore puede ayudarle a resolver algunos de los problemas comunes con los que se puede encontrar.  
 
 * La única forma de almacenar datos binarios en JSONStore es codificarlo primero en base64. Almacene los nombres de archivo o vías en lugar de los archivos reales en JSONStore.
@@ -860,7 +859,7 @@ manualmente. Esto eliminará la necesidad de tener código específico de plataf
 
     * añada la función siguiente:  
     ```javascript                                         
-function initWL(){                                                     
+    function initWL(){                                                     
         var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
         : {};                                                                
         WL.Client.init(options);                                           
@@ -895,8 +894,8 @@ Los otros campos de JSONStore internos son:
 
 ## Errores de JSONStore
 {: #jsonstore-errors }
-### JavaScript
-{: #javascript }
+### Errores de JavaScript
+{: #javascript-errors }
 JSONStore utiliza un objeto de error para devolver mensajes sobre la causa de los errores.
 
 Cuando se produce un error durante una operación de JSONStore (por ejemplo, los métodos `find` y `add` en la clase `JSONStoreInstance`), se devuelve un objeto de error. Proporciona información sobre la causa de la anomalía.
@@ -915,8 +914,8 @@ var errorObject = {
 {: codeblock}
 No todos los pares de clave/valor forman parte de cada objeto de error. Por ejemplo, el valor de doc solo está disponible cuando la operación ha fallado debido a que un documento (por ejemplo, el método `remove` en la clase `JSONStoreInstance`) no ha podido eliminar otro documento.
 
-### Objective-C
-{: #objective-c }
+### Errores de Objective-C
+{: #objective-c-errors }
 Todas las API que pueden fallar toman un parámetro de error que lleva una dirección a un objeto NSError. Si no desea que se le notifiquen los errores, puede pasar en `nil`. Cuando una operación falla, la dirección se llena con un NSError, que tiene un error y posible `userInfo`. La `userInfo` puede contener detalles adicionales (por ejemplo, el documento que ha provocado el error).
 
 ```objc
@@ -927,8 +926,8 @@ NSError* error = nil;
 [JSONStore destroyDataAndReturnError:&error];
 ```
 
-### Java
-{: #java }
+### Errores de Java
+{: #java-errors }
 Todas las llamadas de API de Java generan una excepción determinada, en función del error que se haya producido. Puede manejar cada excepción por separado o puede detectar `JSONStoreException` como término para todas las excepciones de JSONStore.
 
 ```java
@@ -1001,7 +1000,7 @@ Lista de códigos de error comunes y su descripción:
 | 22 INVALID\_SEARCH\_FIELD | Uno de los campos de búsqueda no es válido. Compruebe que ninguno de los campos de búsqueda que se han pasado sean _id,json,_deleted, u _operation. |
 | 23 ERROR\_CLOSING\_ALL | Error genérico. Se ha producido un error al llamar el código nativo al método closeAll. |
 | 24 ERROR\_CHANGING\_PASSWORD | No se puede cambiar la contraseña. La contraseña antigua era incorrecta, por ejemplo. |
-| 25 ERROR\_DURING\_DESTROY | Error genérico. Se ha producido un error en la llamada del código nativo al método destroy. |
+| 25 ERROR\_DURING\_DESTROY | Error genérico. Se ha producido un error al llamar el código nativo al método destroy. |
 | 26 ERROR\_CLEARING\_COLLECTION | Error genérico. Se ha producido un error en la llamada del código nativo al método removeCollection. |
 | 27 INVALID\_PARAMETER\_FOR\_FIND\_BY\_ID | Error de validación. |
 | 28 INVALID\_SORT\_OBJECT | La matriz proporcionada para la ordenación no es válida porque uno de los objetos JSON no es válido. La sintaxis correcta es una matriz de objetos JSON, donde cada objeto contiene únicamente una propiedad. Esta propiedad busca en el campo con el que se debe ordenar, y si es ascendente o descendente. Por ejemplo: {searchField1 : "ASC"}. |

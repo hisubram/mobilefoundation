@@ -13,8 +13,8 @@ lastupdated: "2018-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# Resolución de problemas
-{: #troubleshooting}
+# Resolución general de problemas
+{: #general-troubleshooting}
 
 Para aislar y resolver problemas con los productos de {{site.data.keyword.IBM_notm}}, puede utilizar la información de resolución de problemas. Esta información contiene instrucciones para utilizar los recursos de determinación de problemas que se proporcionan con los productos de {{site.data.keyword.IBM_notm}}, incluido {{site.data.keyword.mobilefoundation_short}}.
 {: shortdesc}
@@ -99,10 +99,10 @@ No obstante, los problemas que puede reproducir pueden tener una desventaja: si 
 
 Si tiene problemas o preguntas sobre el uso de {{site.data.keyword.mobilefoundation_short}}, puede obtener ayuda buscando información o formulando preguntas en un foro. También puede abrir una incidencia de soporte.
 
-Al utilizar los foros para formular una pregunta, etiquete la pregunta de forma que la puedan ver los equipos de desarrollo de IBM {{site.data.keyword.Bluemix_notm}}.
+Al utilizar los foros para formular una pregunta, etiquete la pregunta para que la vean los equipos de desarrollo de IBM {{site.data.keyword.Bluemix_notm}}.
 
 Si tiene preguntas técnicas sobre el desarrollo o el despliegue de una app con {{site.data.keyword.mobilefoundation_short}}, publíquelas en [Stack Overflow ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window} y etiquete las preguntas con `bluemix` e `ibm-mobilefirst`.
 
 Para formular preguntas sobre el servicio y obtener instrucciones de iniciación, utilice el foro [IBM developerWorks dW Answers ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window}. Incluya las etiquetas `bluemix` y `mobilefirst`.
 
-Para obtener información sobre cómo abrir una incidencia de soporte de IBM, o sobre los niveles de soporte y la gravedad de las incidencias, consulte [Cómo obtener soporte ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://console.bluemix.net/docs/get-support/getstarttssup.html#typesofsupport  ){: new_window}.
+Para obtener información sobre cómo abrir una incidencia de soporte de IBM, o sobre los niveles de soporte y la gravedad de las incidencias, consulte [Cómo obtener soporte](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-02-14"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2018-12-21"
 {:screen: .screen}
 
 # Pasos alternativos para actualizar el contenido web de la app
-{: #alternate_steps_to_update_app_web_content}
+{: #alternate_steps_to_update_app_web_content_in_app}
 
 A continuación, se lista algunas de las formas alternativas de actualizar el contenido web en la app.
 

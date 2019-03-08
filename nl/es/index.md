@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-16"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,24 +14,24 @@ lastupdated:  "2018-11-16"
 {:note: .note}
 
 # Guía de aprendizaje de iniciación
-{: #gettingstartedtemplate}
+{: #getting-started-tutorial}
 
 {{site.data.keyword.mobilefoundation_long}} acelera la configuración de un entorno de {{site.data.keyword.mfp_full}} que puede utilizar para desarrollar, probar y ejecutar apps móviles de empresa. {{site.data.keyword.mobilefoundation_short}} ofrece los diferentes planes de servicio siguientes: Developer, Professional Per Device y Professional 1 Application.
 {: shortdesc}
 
-Utilizando el plan Professional 1 Application se puede gestionar una sola aplicación incorporada en una de las plataformas operativas soportadas. Los sistemas operativos soportados son Android, iOS, Windows o web móvil. El plan Developer está pensado para entornos de desarrollo y pruebas. Puede revisar todos los planes disponibles [aquí](https://console.bluemix.net/catalog/services/mobile-foundation).
+Utilizando el plan Professional 1 Application se puede gestionar una sola aplicación incorporada en una de las plataformas operativas soportadas. Los sistemas operativos soportados son Android, iOS, Windows o web móvil. El plan Developer está pensado para entornos de desarrollo y pruebas. Puede revisar todos los planes disponibles [aquí](https://cloud.ibm.com/catalog/services/mobile-foundation).
 
 Esta guía de aprendizaje de iniciación le permite crear una instancia de servicio de {{site.data.keyword.mobilefoundation_short}} utilizando uno de los planes soportados. Después podrá registrar una aplicación. Descargue y edite la aplicación registrada, despliegue un adaptador y pruebe la aplicación.
 
 ## Antes de empezar
-{: #prereqs}
+{: #prereqs-gs}
 
 Necesitará una cuenta de {{site.data.keyword.Bluemix}} y una instancia del servicio de {{site.data.keyword.mobilefoundation_short}}.
 
 ## Paso 1: Cree una instancia del servicio de {{site.data.keyword.mobilefoundation_short}}
 {: #step1create}
 
-1. En el **catálogo** de {{site.data.keyword.Bluemix_notm}}, seleccione [**{{site.data.keyword.mobilefoundation_short}}**](https://{domainName}/catalog/services/mobile-foundation). Se abre la pantalla de configuración del servicio.
+1. En el **catálogo** de {{site.data.keyword.Bluemix_notm}}, seleccione [**{{site.data.keyword.mobilefoundation_short}}**](https://cloud.ibm.com/catalog/services/mobile-foundation). Se abre la pantalla de configuración del servicio.
 2. Dé un nombre a la instancia de servicio, o utilice el nombre preestablecido.
 3. Seleccione la región, la organización y el espacio en los que desea crear la instancia de servicio.
 4. Seleccione el **Plan de precios** y pulse **Crear**.
@@ -62,7 +62,7 @@ Después de crear una instancia del servicio de {{site.data.keyword.mobilefounda
 
       + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}}, en la lista de espacios disponibles en la `Organización` seleccionada.
 
-      + Seleccione el `Nombre de servicio` y `Credenciales ` de {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} para conectarse a la instancia de servicio existente de {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}}.
+      + Seleccione el `Nombre de servicio` y `Credenciales` de {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} para conectarse a la instancia de servicio existente de {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}}.
 
       + Pruebe la conexión a la instancia de servicio seleccionada de {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} pulsando **Probar conexión**.
 
@@ -86,7 +86,7 @@ Después de crear una instancia del servicio de {{site.data.keyword.mobilefounda
 
       +	Pulse **Iniciar consola** para abrir la {{site.data.keyword.mfp_oc_short_notm}}.      
 
-      Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p5.html#using_mfs_advanced_p5), para obtener más información.
+      Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5), para obtener más información.
       {: tip}
 
 ### Para el plan {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application
@@ -100,7 +100,7 @@ Después de crear una instancia del servicio {{site.data.keyword.mobilefoundatio
 
       + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}}, en la lista de espacios disponibles en la `Organización` seleccionada.
 
-      + Seleccione el `Nombre de servicio` y `Credenciales ` de {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} para conectarse a la instancia de servicio existente de {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}}.
+      + Seleccione el `Nombre de servicio` y `Credenciales` de {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} para conectarse a la instancia de servicio existente de {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}}.
 
       + Pruebe la conexión a la instancia de servicio seleccionada de {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} pulsando **Probar conexión**.
 
@@ -124,7 +124,7 @@ Después de crear una instancia del servicio {{site.data.keyword.mobilefoundatio
 
       +  Pulse **Iniciar consola** para abrir la {{site.data.keyword.mfp_oc_short_notm}}.  
 
-      Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](c_using_mfs_p2.html#using_mfs_advanced_p2), para obtener más información.
+      Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2), para obtener más información.
       {: tip}
 
 Vaya a [Utilización del servicio Mobile Foundation para configurar el servidor de MobileFirst ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window} para obtener más información sobre la iniciación a {{site.data.keyword.mobilefoundation_short}}.
@@ -246,17 +246,8 @@ Después de crear e iniciar la instancia de servidor de Mobile Foundation, siga 
 
 
 ## Siguientes pasos
-{: #nextsteps}
+{: #nextsteps-gs}
 
 Siga las [Guías de aprendizaje rápido ![Icono de enlace externo](../../icons/launch-glyph.svg "Guías de aprendizaje rápido")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} para trabajar con más aplicaciones de ejemplo y explorar el funcionamiento de {{site.data.keyword.mobilefoundation_short}}.
 
 Hay guías de aprendizaje rápido para explicar el funcionamiento de {{site.data.keyword.mobilefoundation_short}} para apps de iOS, Android, Web, Cordova, Windows React Native, Ionic y Xamarin.
-
-# Enlaces relacionados
-{: #rellinks  notoc}
-
-## Enlaces relacionados
-{: #general notoc}
-
-*	[Documentación del producto IBM MobileFirst Platform Foundation V8.0.0 ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}
-*	[IBM MobileFirst Platform Developer Center ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://mobilefirstplatform.ibmcloud.com){: new_window}

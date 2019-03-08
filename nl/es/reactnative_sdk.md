@@ -2,12 +2,12 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-26"
+lastupdated:  "2019-02-11"
 
 ---
 
-##	SDK de React Native
-{: #reactnative_sdk}
+#	SDK de React Native
+{: #reactnative_sdk_api}
 
 Descargue los SDK de React Native desde npm.
 

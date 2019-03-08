@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-12-21"
+lastupdated: "2019-02-14"
 
 ---
 
@@ -53,9 +53,9 @@ Una vez haya realizado los cambios en los recursos web, puede empaquetarlos y ca
   ```
   El mandato `mfpdev app webupdate` empaqueta los recursos web actualizados en un archivo `.zip` y los cargará al servidor de Mobile Foundation predeterminado ejecutándose en la estación de trabajo del desarrollador. Los recursos web empaquetados se pueden encontrar en la carpeta `[cordova-project-root-folder]/mobilefirst/`.
 
-Para ver los pasos alternativos a la actualización del contenido web en la app, diríjase [aquí](update_web_content_in_app_alternate_steps.html).
+Para ver los pasos alternativos a la actualización del contenido web en la app, diríjase [aquí](/docs/services/mobilefoundation?topic=mobilefoundation-alternate_steps_to_update_app_web_content_in_app#alternate_steps_to_update_app_web_content_in_app).
 
 ## Configuración avanzada de Direct Update
-{: #advanced_direct_update_config}
+{: #direct_update_advanced_config}
 
-Para ver temas avanzados sobre la configuración de Direct Update, diríjase [aquí](update_web_content_in_app_advanced.html).
+Para ver temas avanzados sobre la configuración de Direct Update, diríjase [aquí](/docs/services/mobilefoundation?topic=mobilefoundation-advanced_direct_update_configuration#advanced_direct_update_configuration).

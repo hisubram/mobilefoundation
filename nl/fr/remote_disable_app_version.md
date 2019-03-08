@@ -14,7 +14,7 @@ lastupdated: "2018-11-29"
 {:screen: .screen}
 
 # Désactivation à distance d'une version de l'application
-{: #remote_disable_app_version}
+{: #remotely_disable_an_app_version}
 
 Dans cette section, nous verrons comment désactiver l'accès des utilisateurs à une version spécifique d'une application sur un système d'exploitation mobile spécifique et comment adresser un message personnalisé à l'utilisateur.
 

@@ -27,22 +27,22 @@ lastupdated:  "2019-01-04"
 {:android: .ph data-hd-programlang='Android'}
 {:cordova: .ph data-hd-programlang='Cordova'}
 
-#	Ajout du logiciel SDK de Mobile Foundation à une application 
+#	Ajout du logiciel SDK de Mobile Foundation à une application
 {: #add_sdk_to_app}
 
-### Ajout du logiciel SDK Android à votre application 
+### Ajout du logiciel SDK Android à votre application
 {: android}
 
 Ouvrez Android Studio, choisissez la vue Android, puis choisissez **Gradle Scripts**, sélectionnez le fichier `build.gradle (Module: app)`, et suivez les étapes ci-dessous pour ajouter le logiciel SDK Android à votre application android.
 {: android}
 
-1. Ajoutez la ligne suivante à la section `dependencies` : 
+1. Ajoutez la ligne suivante à la section `dependencies` :
    ```bash
    compile 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundation:8.0.+'
    ```
    {: codeblock}
    {: android}
-2. Ajoutez la ligne suivante à la section `android` : 
+2. Ajoutez la ligne suivante à la section `android` :
    ```
    packagingOptions {
               pickFirst 'META-INF/ASL2.0'
@@ -74,12 +74,12 @@ Il s'agit du logiciel SDK de base pour IBM Mobile Foundation, qui se compose d'A
 {: ios}
 
 1. Accédez au dossier racine de votre application iOS et exécutez la commande suivante pour créer un fichier Pod :
-```bash
+    ```bash
     pod init
     ```
     {: codeblock}
     {: ios}
-2. Ouvrez le fichier Pod dans l'éditeur de code de votre choix. 
+2. Ouvrez le fichier Pod dans l'éditeur de code de votre choix.
    ```bash
    use_frameworks!
    platform :ios, 8.0
@@ -89,96 +89,96 @@ Il s'agit du logiciel SDK de base pour IBM Mobile Foundation, qui se compose d'A
    ```
    {: codeblock}
    {: ios}
-3. Mettez à jour le pod à l'aide de la commande suivante : 
+3. Mettez à jour le pod à l'aide de la commande suivante :
    ```bash
    pod update
    ```
    {: codeblock}
    {: ios}
-4. Installez le pod à l'aide de la commande suivante : 
+4. Installez le pod à l'aide de la commande suivante :
    ```bash
    pod install
    ```
    {: codeblock}
    {: ios}
-5. Ouvrez [NomProjet].xcworkspace pour ouvrir le projet dans Xcode. 
-6. Ajoutez le fichier `mfpclient.plist` dans l'espace de travail Xcode. 
-7. Depuis une invite de commande, accédez au dossier du projet et enregistrez votre application dans votre instance Mobile Foundation. 
+5. Ouvrez [NomProjet].xcworkspace pour ouvrir le projet dans Xcode.
+6. Ajoutez le fichier `mfpclient.plist` dans l'espace de travail Xcode.
+7. Depuis une invite de commande, accédez au dossier du projet et enregistrez votre application dans votre instance Mobile Foundation.
    ```bash
    mfpdev app register
    ```
    {: codeblock}
    {: ios}
 
-### Ajout du logiciel SDK Cordova à votre application 
+### Ajout du logiciel SDK Cordova à votre application
 {: cordova}
 
 Il s'agit du logiciel SDK de base pour IBM Mobile Foundation, qui se compose d'API pour l'implémentation de la sécurité, de l'autorisation, de la journalisation, de l'appel d'adaptateurs et d'autres fonctions de base de Mobile Foundation. Suivez les étapes ci-dessous pour ajouter le logiciel SDK Cordova à votre application.
 {: cordova}
 
-1. Créez un projet Cordova. 
+1. Créez un projet Cordova.
    ```bash
    cordova create Hello com.example.helloworld HelloWorld
    ```
    {: codeblock}
    {: cordova}
-2. Placez-vous dans le répertoire racine du projet Cordova. 
+2. Placez-vous dans le répertoire racine du projet Cordova.
    ```bash
    cd Hello
    ```
    {: codeblock}
    {: cordova}
-3. Ajoutez une ou plusieurs plateformes prises en charge au projet Cordova via l'interface de ligne de commande Cordova. 
+3. Ajoutez une ou plusieurs plateformes prises en charge au projet Cordova via l'interface de ligne de commande Cordova.
    ```bash
    cordova platform add ios|android|windows
    ```
    {: codeblock}
    {: cordova}
-4. Ajoutez le plug-in Cordova de base pour Mobile Foundation. 
+4. Ajoutez le plug-in Cordova de base pour Mobile Foundation.
    ```bash
    cordova plugin add cordova-plugin-mfp
    ```
    {: codeblock}
    {: cordova}
-5. Préparez les ressources d'application en exécutant la commande suivante : 
+5. Préparez les ressources d'application en exécutant la commande suivante :
    ```bash
    cordova prepare
    ```
    {: codeblock}
    {: cordova}
-6. Enregistrez l'application sur le serveur Mobile Foundation. 
+6. Enregistrez l'application sur le serveur Mobile Foundation.
    ```bash
    mfpdev app register
    ```
    {: codeblock}
    {: cordova}
 
-### Ajout du plug-in de logiciel SDK de React Native à votre application 
+### Ajout du plug-in de logiciel SDK de React Native à votre application
 {: reactnative}
 
 Pour pouvoir ajouter des fonctions Mobile Foundation à une application React Native existante, vous devez ajouter le plug-in `react-native-ibm-mobilefirst` à votre application. Le plug-in `react-native-ibm-mobilefirst` contient le logiciel SDK de Mobile Foundation. Suivez les étapes ci-dessous pour ajouter le plug-in React Native à votre application React Native.
 {: reactnative}
 
-1. Ajoutez ce plug-in de la même façon que n'importe quel autre plug-in `npm` à votre application. 
+1. Ajoutez ce plug-in de la même façon que n'importe quel autre plug-in `npm` à votre application.
    ```bash
    npm install react-native-ibm-mobilefirst --save
    ```
    {: codeblock}
    {: reactnative}
-2. La première étape consiste à créer un projet React Native, par exemple *MobileFirstApp*. Utilisez l'interface de ligne de commande de React Native pour créer un projet. 
+2. La première étape consiste à créer un projet React Native, par exemple *MobileFirstApp*. Utilisez l'interface de ligne de commande de React Native pour créer un projet.
    ```bash
    react-native init MobileFirstApp
    ```
    {: codeblock}
    {: reactnative}
-3. Ensuite, ajoutez le plug-in React Native à votre application. 
+3. Ensuite, ajoutez le plug-in React Native à votre application.
    ```bash
    cd MobileFirstApp
    npm install react-native-ibm-mobilefirst --save
    ```
    {: codeblock}
    {: reactnative}
-4. Liez votre projet pour que toutes les dépendances natives soient ajoutées à votre projet React Native. 
+4. Liez votre projet pour que toutes les dépendances natives soient ajoutées à votre projet React Native.
    ```bash
    react-native link
    ```
@@ -193,7 +193,7 @@ Pour pouvoir ajouter des fonctions Mobile Foundation à une application React Na
    ```
    {: codeblock}
    {: reactnative}
-6. Ajoutez **tools:replace='android:allowBackup'** à la balise `application`. 
+6. Ajoutez **tools:replace='android:allowBackup'** à la balise `application`.
    ```xml
    <application
             android:name=".MainApplication"

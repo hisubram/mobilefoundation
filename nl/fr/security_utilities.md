@@ -15,7 +15,6 @@ lastupdated:  "2018-11-19"
 #	Utilitaires de sécurité
 {: #security_utilities}
 
-## Présentation
 L'API côté client de Mobile Foundation fournit des utilitaires de sécurité permettant de protéger les données de vos utilisateurs. Des fonctions telles que JSONStore sont idéales pour
 protéger les objets JSON. Cependant, il est déconseillé de stocker des objets blobs binaires dans une collection JSONStore.
 
@@ -47,24 +46,23 @@ données est augmentée d'environ 1,37 fois la taille d'origine.
 ## Configuration
 Veillez à importer les fichiers ci-après pour l'utilisation des API des utilitaires de sécurité JSONStore.
 
-### iOS
+### Configuration d'iOS
 
 ```objc
 #import "WLSecurityUtils.h"
 ```
 
-### Android
+### Configuration d'Android
 
 ```java
 import com.worklight.wlclient.api.SecurityUtils
 ```
 
-### JavaScript
+### Configuration de JavaScript
 Aucune configuration n'est requise.
 
-## Exemples
-### iOS
-#### Chiffrement et déchiffrement
+## Exemples pour iOS
+### Chiffrement et déchiffrement dans iOS
 
 ```objc
 // User provided password, hardcoded only for simplicity.
@@ -98,7 +96,7 @@ NSString* decryptedString = [WLSecurityUtils decryptWithKey:key
 ```
 {: codeblock}
 
-#### Codage et décodage base64
+### Codage et décodage base64 dans iOS
 
 ```objc
 // Input string.
@@ -113,7 +111,7 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-#### Obtention d'une chaîne aléatoire distante
+### Obtention d'une chaîne aléatoire distante dans iOS
 
 ```objc
 [WLSecurityUtils getRandomStringFromServerWithBytes:32
@@ -128,8 +126,8 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-### Android
-#### Chiffrement et déchiffrement
+## Exemples pour Android
+### Chiffrement et déchiffrement dans Android
 
 ```java
 String password = "HelloPassword";
@@ -147,7 +145,7 @@ String decipheredText = SecurityUtils.decrypt(key, encryptedObject);
 ```
 {: codeblock}
 
-#### Codage et décodage base64
+### Codage et décodage base64 dans Android
 
 ```java
 import android.util.Base64;
@@ -164,7 +162,7 @@ String decodedText = new String(base64Decoded, "UTF-8");
 ```
 {: codeblock}
 
-#### Obtention d'une chaîne aléatoire distante
+### Obtention d'une chaîne aléatoire distante dans Android
 
 ```java
 Context context; // This is the current Activity's context.
@@ -187,7 +185,7 @@ SecurityUtils.getRandomStringFromServer(byteLength, context, listener);
 ```
 {: codeblock}
 
-#### Obtention d'une chaîne aléatoire locale
+### Obtention d'une chaîne aléatoire locale dans Android
 
 ```java
 int byteLength = 32;
@@ -195,8 +193,8 @@ String randomString = SecurityUtils.getRandomString(byteLength);
 ```
 {: codeblock}
 
-### JavaScript
-#### Chiffrement et déchiffrement
+## Exemples pour JavaScript
+### Chiffrement et déchiffrement dans JavaScript
 
 ```javascript
 // Keep the key in a variable so that it can be passed to the encrypt and decrypt API.
@@ -244,7 +242,7 @@ WL.SecurityUtils.keygen({
 ```
 {: codeblock}
 
-#### Codage et décodage base64
+### Codage et décodage base64 dans JavaScript
 
 ```javascript
 WL.SecurityUtils.base64Encode('Hello World!')
@@ -260,7 +258,7 @@ WL.SecurityUtils.base64Encode('Hello World!')
 ```
 {: codeblock}
 
-#### Obtention d'une chaîne aléatoire distante
+### Obtention d'une chaîne aléatoire distante dans JavaScript
 
 ```javascript
 WL.SecurityUtils.remoteRandomString(32)
@@ -273,7 +271,7 @@ WL.SecurityUtils.remoteRandomString(32)
 ```
 {: codeblock}
 
-#### Obtention d'une chaîne aléatoire locale
+### Obtention d'une chaîne aléatoire locale dans JavaScript
 
 ```javascript
 WL.SecurityUtils.localRandomString(32)

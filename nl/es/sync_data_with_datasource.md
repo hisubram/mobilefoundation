@@ -24,13 +24,13 @@ Puede sincronizar automáticamente los datos entre una recopilación de JSONStor
 
 Para configurar la sincronización automática entre JSONStore y Cloudant, complete los pasos siguientes:
 
-1. Defina la **política de sincronización** en la aplicación móvil.
+1. Defina la **política de sincronización** en la app móvil.
 2. Despliegue el **adaptador de sincronización** en Mobile Foundation.
 
 ### Definición de la política de sincronización
 {: #define_sync_policy}
 
-El método de sincronización entre una recopilación de JSONStore y una base de datos Cloudant está definido por la **política de sincronización**. Especifique la **política de sincronización** en la aplicación para cada recopilación.
+El método de sincronización entre una recopilación de JSONStore y una base de datos Cloudant está definido por la **política de sincronización**. Especifique la **política de sincronización** en la app para cada recopilación.
 Se debe inicializar una recopilación de JSONStore con un campo de **política de sincronización**. La **política de sincronización** puede ser una de las tres siguientes políticas:
 
 * `SYNC_DOWNSTREAM`

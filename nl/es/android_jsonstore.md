@@ -37,7 +37,7 @@ compile 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundationjsonstore:8.0
       }
  ```     
  {: codeblock}
- > **Nota**: Añadimos *abiFilters* para garantizar que las aplicaciones que tengan JSONStore ejecuten en cualquiera de las arquitecturas especificadas. La adición de *abiFilters* es necesaria ya que JSONStore depende de una biblioteca de terceros que sólo da soporte a estas arquitecturas.
+ > **Nota**: Añadimos *abiFilters* para garantizar que las apps que tengan JSONStore ejecuten en cualquiera de las arquitecturas especificadas. La adición de *abiFilters* es necesaria ya que JSONStore depende de una biblioteca de terceros que sólo da soporte a estas arquitecturas.
 
 ## Uso básico
 {: #basic-usage }
@@ -67,7 +67,7 @@ try {
 
 ### Obtener
 {: #get }
-Utilice `getCollectionByName` para crear un accesor a la recopilación. Es necesario llamar a `openCollections` antes de llamar a `getCollectionByName`.
+Utilice `getCollectionByName` para crear un descriptor de acceso a la recopilación. Es necesario llamar a `openCollections` antes de llamar a `getCollectionByName`.
 
 ```java
 Context context = getContext();

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-16"
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,24 +14,24 @@ lastupdated:  "2018-11-16"
 {:note: .note}
 
 # Tutoriel d'initiation
-{: #gettingstartedtemplate}
+{: #getting-started-tutorial}
 
 {{site.data.keyword.mobilefoundation_long}} accélère la configuration d'un environnement {{site.data.keyword.mfp_full}} qui vous permet de développer, tester et exécuter des applications mobiles d'entreprise. {{site.data.keyword.mobilefoundation_short}} offre les différents plans de service suivants : Développeur, Professionnel par appareil et Professionnel, 1 application.
 {: shortdesc}
 
-Grâce au plan Professionnel, 1 application, vous pouvez gérer une application unique créée sur l'un quelconque des systèmes d'exploitation pris en charge. Les systèmes d'exploitation pris en charge sont Android, iOS, Windows ou le Web mobile. Le plan Développeur convient particulièrement au développement et au test. Vous pouvez voir tous les plans disponibles [ici](https://console.bluemix.net/catalog/services/mobile-foundation).
+Grâce au plan Professionnel, 1 application, vous pouvez gérer une application unique créée sur l'un quelconque des systèmes d'exploitation pris en charge. Les systèmes d'exploitation pris en charge sont Android, iOS, Windows ou le Web mobile. Le plan Développeur convient particulièrement au développement et au test. Vous pouvez voir tous les plans disponibles [ici](https://cloud.ibm.com/catalog/services/mobile-foundation).
 
 Ce tutoriel d'initiation vous permet de créer une instance de service {{site.data.keyword.mobilefoundation_short}} à l'aide de l'un des plans pris en charge. Vous pouvez ensuite enregistrer une application. Téléchargez et éditez l'application enregistrée, déployez un adaptateur et enfin testez l'application.
 
 ## Avant de commencer
-{: #prereqs}
+{: #prereqs-gs}
 
 Vous aurez besoin d'un compte {{site.data.keyword.Bluemix}} et d'une instance du service {{site.data.keyword.mobilefoundation_short}}.
 
 ## Etape 1 : créez une instance du service {{site.data.keyword.mobilefoundation_short}}
 {: #step1create}
 
-1. Dans le **catalogue** {{site.data.keyword.Bluemix_notm}}, sélectionnez [**{{site.data.keyword.mobilefoundation_short}}**](https://{domainName}/catalog/services/mobile-foundation). L'écran de configuration du service s'ouvre.
+1. Dans le **catalogue** {{site.data.keyword.Bluemix_notm}}, sélectionnez [**{{site.data.keyword.mobilefoundation_short}}**](https://cloud.ibm.com/catalog/services/mobile-foundation). L'écran de configuration du service s'ouvre.
 2. Donnez un nom à votre instance de service ou utilisez le nom prédéfini.
 3. Choisissez la région, l'organisation et l'espace où vous voulez créer l'instance de service.
 4. Sélectionnez votre **Plan de tarification** et cliquez sur **Créer**.
@@ -86,7 +86,7 @@ Après avoir créé une instance du service {{site.data.keyword.mobilefoundation
 
       +	Cliquez sur **Lancer la console** pour ouvrir la console {{site.data.keyword.mfp_oc_short_notm}}.      
 
-      Pour créer une instance de serveur {{site.data.keyword.mobilefirst_notm}} avec la configuration avancée de la topologie, de la sécurité et d'autres paramètres de configuration du serveur, cliquez sur **Démarrer le serveur avec la configuration avancée**. Pour plus d'informations, consultez [Mise en place d'une configuration avancée](c_using_mfs_p5.html#using_mfs_advanced_p5).
+      Pour créer une instance de serveur {{site.data.keyword.mobilefirst_notm}} avec la configuration avancée de la topologie, de la sécurité et d'autres paramètres de configuration du serveur, cliquez sur **Démarrer le serveur avec la configuration avancée**. Pour plus d'informations, consultez [Mise en place d'une configuration avancée](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5).
       {: tip}
 
 ### Pour le plan {{site.data.keyword.mobilefoundation_short}} : Professionnel, 1 application
@@ -124,7 +124,7 @@ Après avoir créé une instance du service {{site.data.keyword.mobilefoundation
 
       +  Cliquez sur **Lancer la console** pour ouvrir la console {{site.data.keyword.mfp_oc_short_notm}}.  
 
-      Pour créer une instance de serveur {{site.data.keyword.mobilefirst_notm}} avec la configuration avancée de la topologie, de la sécurité et d'autres paramètres de configuration du serveur, cliquez sur **Démarrer le serveur avec la configuration avancée**. Pour plus d'informations, consultez [Mise en place d'une configuration avancée](c_using_mfs_p2.html#using_mfs_advanced_p2).
+      Pour créer une instance de serveur {{site.data.keyword.mobilefirst_notm}} avec la configuration avancée de la topologie, de la sécurité et d'autres paramètres de configuration du serveur, cliquez sur **Démarrer le serveur avec la configuration avancée**. Pour plus d'informations, consultez [Mise en place d'une configuration avancée](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2).
       {: tip}
 
 Accédez à [Using the Mobile Foundation service to set up MobileFirst Server![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window} pour vous familiariser avec {{site.data.keyword.mobilefoundation_short}}.
@@ -233,7 +233,7 @@ Une fois votre instance de serveur Mobile Foundation créée et démarrée, vous
 ## Etape 7 : testez l'application
 {: #testapp}
 
-  1. Dans la barre de menus latérale **Project** d'Android Studio, sélectionnez le fichier **app → src → main →assets → mfpclient.properties** et éditez les propriétés `protocol`, `host` et `port` avec des valeurs correctes correspondant à votre instance de serveur MobileFirst. 
+  1. Dans la barre de menus latérale **Project** d'Android Studio, sélectionnez le fichier **app → src → main →assets → mfpclient.properties** et éditez les propriétés `protocol`, `host` et `port` avec des valeurs correctes correspondant à votre instance de serveur MobileFirst.
 
    Ces valeurs sont normalement https (pour le protocole), *adresse-de-votre-serveur* et 443 (pour le numéro de port).
    {: tip}
@@ -246,17 +246,8 @@ Une fois votre instance de serveur Mobile Foundation créée et démarrée, vous
 
 
 ## Etapes suivantes
-{: #nextsteps}
+{: #nextsteps-gs}
 
 Vous pouvez suivre les [tutoriels de démarrage rapide ![Icône de lien externe](../../icons/launch-glyph.svg "Tutoriels de démarrage rapide")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} pour découvrir et manipuler d'autres exemples d'application et explorer le fonctionnement de {{site.data.keyword.mobilefoundation_short}}.
 
 La page Démarrage rapide donne accès à des tutoriels expliquant le principe de fonctionnement de {{site.data.keyword.mobilefoundation_short}} pour les applications iOS, Android, Web, Cordova, Windows, React Native, Ionic et Xamarin.
-
-# Liens connexes
-{: #rellinks  notoc}
-
-## Liens connexes
-{: #general notoc}
-
-*	[Documentation du produit IBM MobileFirst Platform Foundation V8.0.0 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}
-*	[Centre de développement IBM MobileFirst Platform ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com){: new_window}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-12"
 
 ---
 
@@ -30,16 +30,16 @@ lastupdated: "2019-01-04"
 # Configurar el almacenamiento fuera de línea
 {: #configure_offline_storage}
 
-JSONStore de Mobile Foundation es una API del lado del cliente opcional que proporciona un sistema ligero de almacenamiento orientado a documentos. JSONStore ofrece un almacenamiento persistente de documentos JSON. Los documentos en una aplicación están disponibles en JSONStore incluso cuando el dispositivo que ejecuta la aplicación está fuera de línea. Este almacenamiento persistente que siempre está disponible puede ser útil para que los usuarios accedan a documentos cuando, por ejemplo, no hay ninguna conexión de red disponible en el dispositivo. Para obtener una visión general de los conceptos y la terminología de JSONStore, consulte [esto](jsonstore.html).
+JSONStore de Mobile Foundation es una API del lado del cliente opcional que proporciona un sistema ligero de almacenamiento orientado a documentos. JSONStore ofrece un almacenamiento persistente de documentos JSON. Los documentos en una aplicación están disponibles en JSONStore incluso cuando el dispositivo que ejecuta la aplicación está fuera de línea. Este almacenamiento persistente que siempre está disponible puede ser útil para que los usuarios accedan a documentos cuando, por ejemplo, no hay ninguna conexión de red disponible en el dispositivo. Para obtener una visión general de los conceptos y la terminología de JSONStore, consulte [esto](/docs/services/mobilefoundation?topic=mobilefoundation-jsonstore#jsonstore).
 
-Para obtener una configuración de almacenamiento fuera de línea, consulte [esto](advanced_jsonstore.html).
+Para obtener una configuración de almacenamiento fuera de línea, consulte [esto](/docs/services/mobilefoundation?topic=mobilefoundation-advanced_jsonstore#advanced_jsonstore).
 {: note}
 
-### Configure el almacenamiento fuera de línea para las aplicaciones Cordova o Ionic
+### Configure el almacenamiento fuera de línea para las apps Cordova o Ionic
 {: #configure_offline_storage_cordova}
 {: cordova}
 
-Asegúrese de que el SDK de Cordova de Mobile Foundation se ha añadido al proyecto.
+Asegúrese de que el SDK de Cordova de Mobile Foundation se ha añadido al proyecto. 
 {: cordova}
 
 Siga la guía de aprendizaje [Adición del SDK de Mobile Foundation a aplicaciones Cordova ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/cordova/).
@@ -81,11 +81,11 @@ WL.JSONStore.init(collections).then(function (collections) {
 {: codeblock}
 {: cordova}
 
-#### Obtener un descriptor de acceso para la recopilación de JSONStore
+#### Obtener un descriptor de acceso para la recopilación de Cordova JSONStore
 {: #get_jsonstore_cordova} 
 {: cordova}
 
-Utilice `get` para crear un accesor a la recopilación. Debe llamar a `init` antes de llamar a `get`, de lo contrario el resultado de esta llamada será *undefined* (no definido).
+Utilice `get` para crear un descriptor de acceso a la recopilación. Debe llamar a `init` antes de llamar a `get`, de lo contrario el resultado de esta llamada será *undefined* (no definido).
 {: cordova}
 ```javascript
 var collectionName = 'people';
@@ -97,7 +97,7 @@ var people = WL.JSONStore.get(collectionName);
 La variable *people* se puede utilizar ahora para realizar operaciones en la recopilación *people* como, por ejemplo, `add`, `find` y `replace`.
 {: cordova}
 
-#### Añadir documentos a una colección
+#### Añadir documentos a una recopilación de Cordova
 {: #add_jsonstore_cordova} 
 {: cordova}
 
@@ -118,7 +118,7 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 {: codeblock}
 {: cordova}
 
-#### Buscar documentos en una colección
+#### Buscar documentos en una recopilación de Cordova
 {: #find_jsonstore_cordova} 
 {: cordova}
 
@@ -169,7 +169,7 @@ else {
 {: codeblock}
 {: cordova}
 
-#### Sustituir documentos en una colección
+#### Sustituir documentos en una recopilación de Cordova
 {: #replace_jsonstore_cordova} 
 {: cordova}
 
@@ -195,7 +195,7 @@ WL.JSONStore.get(collectionName).replace(document, options).then(function (numbe
 En este ejemplo se supone que el documento `{_id: 1, json: {name: 'yoel', age: 23} }` está en la recopilación.
 {: cordova}
 
-#### Eliminar documentos de una recopilación
+#### Eliminar documentos de una recopilación de Cordova
 {: #remove_jsonstore_cordova} 
 {: cordova}
 
@@ -216,14 +216,14 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: codeblock}
 {: cordova}
 
-#### Eliminar una recopilación completa
+#### Eliminar una recopilación de Cordova completa
 {: #remove_collection_jsonstore_cordova} 
 {: cordova}
 
 Utilice `removeCollection` para suprimir todos los documentos que se almacenan dentro de una recopilación. Esta operación es similar a descartar una tabla en términos de una base de datos.
 {: cordova}
 
-#### Destruir JSONStore
+#### Destruir Cordova JSONStore
 {: #destroy_jsonstore_cordova} 
 {: cordova}
 
@@ -238,7 +238,7 @@ Utilice `destroy` para eliminar los siguientes datos:
 {: #configure_offline_storage_ios}
 {: ios}
 
-Asegúrese de que el SDK nativo de Mobile Foundation se haya añadido al proyecto de Xcode.
+Asegúrese de que el SDK nativo de Mobile Foundation se haya añadido al proyecto de Xcode. 
 {: ios}
 
 Siga la guía de aprendizaje [Adición del SDK de Mobile Foundation a aplicaciones iOS ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/ios/).
@@ -274,7 +274,7 @@ Siga la guía de aprendizaje [Adición del SDK de Mobile Foundation a aplicacion
    {: codeblock}
    {: ios}
 
-#### Abra la recopilación de JSONStore: iOS
+#### Abrir una recopilación de iOS JSONStore 
 {: #open_ios} 
 {: ios}
 
@@ -296,16 +296,16 @@ do {
 {: codeblock}
 {: ios}
 
-#### Obtener un descriptor de acceso para la recopilación de JSONStore
+#### Obtener un descriptor de acceso para la recopilación de iOS JSONStore
 {: #get_jsonstore_ios} 
 {: ios}
 
-Utilice `getCollectionWithName` para crear un accesor a la recopilación. Es necesario llamar a `openCollections` antes de llamar a `getCollectionWithName`.
+Utilice `getCollectionWithName` para crear un descriptor de acceso a la recopilación. Es necesario llamar a `openCollections` antes de llamar a `getCollectionWithName`.
 {: ios}
 
 ```swift
 let collectionName:String = "people"
-let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWithName(collectionName)
+    let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWithName(collectionName)
 ```
 {: codeblock}
 {: ios}
@@ -313,7 +313,7 @@ let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWit
 La variable collection se puede utilizar ahora para realizar operaciones en la recopilación `people` como, por ejemplo, `add`, `find` y `replace`.
 {: ios}
 
-#### Añadir documentos a una colección
+#### Añadir documentos a una recopilación de iOS
 {: #add_jsonstore_ios} 
 {: ios}
 
@@ -322,11 +322,11 @@ Utilice `addData` para almacenar datos como documentos dentro de una recopilaci�
 
 ```swift
 let collectionName:String = "people"
-let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWithName(collectionName)
+    let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWithName(collectionName)
 
 let data = ["name" : "yoel", "age" : 23]
 
-do  {
+do {
   try collection.addData([data], andMarkDirty: true, withOptions: nil)
 } catch let error as NSError {
   // handle error
@@ -335,7 +335,7 @@ do  {
 {: codeblock}
 {: ios}
 
-#### Buscar documentos en una colección
+#### Buscar documentos en una recopilación de iOS
 {: #find_jsonstore_ios} 
 {: ios}
 
@@ -362,7 +362,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Sustituir documentos en una colección
+#### Sustituir documentos en una recopilación de iOS
 {: #replace_jsonstore_ios} 
 {: ios}
 
@@ -371,7 +371,7 @@ Utilice `replaceDocuments` para modificar documentos dentro de una recopilación
 
 ```swift
 let collectionName:String = "people"
-let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWithName(collectionName)
+    let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWithName(collectionName)
 
 var document:Dictionary<String,AnyObject> = Dictionary()
 document["name"] = "chevy"
@@ -393,16 +393,16 @@ do {
 En este ejemplo se supone que el documento `{_id: 1, json: {name: 'yoel', age: 23} }` está en la recopilación.
 {: ios}
 
-#### Eliminar documentos de una recopilación
+#### Eliminar documentos de una recopilación de iOS
 {: #remove_jsonstore_ios} 
 {: ios}
 
-Utilice `removeWithIds` para suprimir un documento de una recopilación. Los documentos no se quitan de la recopilación hasta que no llame a `markDocumentClean`.
+Utilice `removeWithIds` para suprimir un documento de una recopilación. Los documentos no se quitan de la recopilación hasta que no llame a `markDocumentClean`. 
 {: ios}
 
 ```swift
 let collectionName:String = "people"
-let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWithName(collectionName)
+    let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWithName(collectionName)
 
 do {
   try collection.removeWithIds([1], andMarkDirty: true)
@@ -413,7 +413,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Eliminar una recopilación completa
+#### Eliminar una recopilación de iOS completa
 {: #remove_collection_jsonstore_ios} 
 {: ios}
 
@@ -422,7 +422,7 @@ Utilice `removeCollection` para suprimir todos los documentos que se almacenan d
 
 ```swift
 let collectionName:String = "people"
-let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWithName(collectionName)
+    let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWithName(collectionName)
 
 do {
   try collection.removeCollection()
@@ -433,7 +433,7 @@ do {
 {: codeblock}
 {: ios}
 
-#### Destruir JSONStore
+#### Destruir un iOS JSONStore
 {: #destroy_jsonstore_ios} 
 {: ios}
 
@@ -458,7 +458,7 @@ do {
 {: #configure_offline_storage_android}
 {: android}
 
-Asegúrese de que el SDK nativo de Mobile Foundation se haya añadido al proyecto de Android Studio.
+Asegúrese de que el SDK nativo de Mobile Foundation se haya añadido al proyecto de Android Studio. 
 {: android}
 
 Siga la guía de aprendizaje [Adición del SDK de Mobile Foundation a aplicaciones Android ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/android/).
@@ -480,15 +480,15 @@ Siga la guía de aprendizaje [Adición del SDK de Mobile Foundation a aplicacion
    ```gradle
    ndk {
      abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
-   }
+      }
    ``` 
    {: codeblock}
    {: android}
-   Añadimos `abiFilters` para garantizar que las aplicaciones que tengan JSONStore ejecuten en cualquiera de las arquitecturas especificadas antes. Esto es necesario ya que JSONStore depende de una biblioteca tercera que sólo soporte estas arquitecturas.
+   Añadimos `abiFilters` para garantizar que las apps que tengan JSONStore ejecuten en cualquiera de las arquitecturas especificadas antes. Esto es necesario ya que JSONStore depende de una biblioteca tercera que sólo soporte estas arquitecturas.
    {: note}
    {: android}
 
-#### Abra la recopilación de JSONStore: Android
+#### Abrir una recopilación de Android JSONStore
 {: #open_android} 
 {: android}
 
@@ -512,11 +512,11 @@ try {
 {: codeblock}
 {: android}
 
-#### Obtener un descriptor de acceso para la recopilación de JSONStore
+#### Obtener un descriptor de acceso para la recopilación de Android JSONStore
 {: #get_jsonstore_android} 
 {: android}
 
-Utilice `getCollectionByName` para crear un accesor a la recopilación. Es necesario llamar a `openCollections` antes de llamar a `getCollectionByName`.
+Utilice `getCollectionByName` para crear un descriptor de acceso a la recopilación. Es necesario llamar a `openCollections` antes de llamar a `getCollectionByName`.
 {: android}
 
 ```java
@@ -535,7 +535,7 @@ try {
 La variable collection se puede utilizar ahora para realizar operaciones en la recopilación `people` como, por ejemplo, `add`, `find` y `replace`.
 {: android}
 
-#### Añadir documentos a una colección
+#### Añadir documentos a una recopilación de Android
 {: #add_jsonstore_android} 
 {: android}
 
@@ -560,7 +560,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Buscar documentos en una colección
+#### Buscar documentos en una recopilación de Android
 {: #find_jsonstore_android} 
 {: android}
 
@@ -589,7 +589,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Sustituir documentos en una colección
+#### Sustituir documentos en una recopilación de Android
 {: #replace_jsonstore_android} 
 {: android}
 
@@ -617,11 +617,11 @@ try {
 En este ejemplo se supone que el documento `{_id: 1, json: {name: 'yoel', age: 23} }` está en la recopilación.
 {: android}
 
-#### Eliminar documentos de una recopilación
+#### Eliminar documentos de una recopilación de Android
 {: #remove_jsonstore_android} 
 {: android}
 
-Utilice `removeDocumentById` para suprimir un documento de una recopilación. Los documentos no se quitan de la recopilación hasta que no llame a `markDocumentClean`.
+Utilice `removeDocumentById` para suprimir un documento de una recopilación. Los documentos no se quitan de la recopilación hasta que no llame a `markDocumentClean`. 
 {: android}
 
 ```java
@@ -641,7 +641,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Eliminar una recopilación completa
+#### Eliminar una recopilación de Android completa
 {: #remove_collection_jsonstore_android} 
 {: android}
 
@@ -662,7 +662,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Destruir JSONStore
+#### Destruir un Android JSONStore
 {: #destroy_jsonstore_android} 
 {: android}
 

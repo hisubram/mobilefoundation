@@ -12,8 +12,8 @@ lastupdated:  "2018-11-19"
 {:tip: .tip}
 {:pre: .pre}
 
-#	CLI de {{ site.data.keyword.mobilefoundation_short }}
-{: #using_mobilefoundation_cli}
+#	CLI de Mobile Foundation
+{: #mobile_foundation_cli}
 
 {{ site.data.keyword.mobilefoundation_short }} proporciona una herramienta de interfaz de línea de mandatos (CLI) a desarrolladores, **mfpdev**, para gestionar fácilmente los artefactos del cliente y del servidor de {{site.data.keyword.mobilefoundation_short}}.
 

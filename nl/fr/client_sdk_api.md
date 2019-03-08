@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-11"
 
 ---
 
@@ -25,13 +25,16 @@ lastupdated: "2019-01-04"
 {:reactnative: .ph data-hd-programlang='reactnative'}
 {:csharp: .ph data-hd-programlang='csharp'}
 
-# Interface de programmation (API) pour les plateformes client prises en charge
+# SDK client
+{: #client_sdks}
+
+## Interface de programmation (API) pour les plateformes client prises en charge
 
 ### JavaScript
 {: javascript }
 API pour applications Cordova / Web.
 {: javascript }
-* **[API côté client](javascript_client_sdk_api.html)**  
+* **[API côté client](/docs/services/mobilefoundation?topic=mobilefoundation-javascript_client_sdk_api#javascript_client_sdk_api)**  
     Vous pouvez utiliser l'API JavaScript pour développer des applications pour tous les environnements.
     {: javascript }
 * **[API push côté client ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-hybrid-cordova-js-apidoc/html/refjavascript-mfp-push-hybrid/html/index.html)**  

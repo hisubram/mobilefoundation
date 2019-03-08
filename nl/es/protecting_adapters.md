@@ -24,9 +24,6 @@ lastupdated: "2018-11-19"
 # Protección de adaptadores
 {: #protecting_adapters}
 
-## Protección de recursos de adaptador
-{: #protecting_adapters_resources}
-
 En el adaptador puede especificar el ámbito de protección para el método Java o un procedimiento de recurso de JavaScript, o para toda una clase de recursos Java, tal y como se indica en las siguientes secciones [Java](#protect-java-adapter-resources) y [JavaScript](#protect-javascript-adapter-resources). Un ámbito se define como una serie de uno o más elementos de ámbito separados por espacios ("scopeElement1 scopeElement2..."), o nulo para aplicar el ámbito predeterminado.
 
 El ámbito MobileFirst predeterminado es `RegisteredClient`, que requiere una señal de acceso para acceder al recurso y verifica que la solicitud de recurso procede de una aplicación que está registrada con el servidor de MobileFirst. Esta protección siempre se aplica, a menos que [inhabilite la protección de recurso](#disabling-resource-protection). Por lo tanto, incluso si no establece un ámbito para el recurso, este sigue protegido.
@@ -95,8 +92,8 @@ El código siguiente protege un método `userName` con un ámbito que contiene l
 ```
 {: codeblock}
 
-## Inhabilitación de la protección de recurso
-{: #disabling-resource-protection}
+## Inhabilitación de la protección de recursos de adaptador
+{: #disabling-adapter-resource-protection}
 
 Puede inhabilitar la [protección de recursos de MobileFirst predeterminada](#protecting_adapters_resources) para un recurso de adaptador Java o JavaScript específico o para toda una clase Java, tal y como se indica en las siguientes secciones Java y JavaScript. Cuando la protección de recursos está inhabilitada, la infraestructura de seguridad de MobileFirst no requiere una señal para acceder al recurso.
 

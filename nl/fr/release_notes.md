@@ -17,16 +17,16 @@ lastupdated: "2018-11-27"
 # Notes sur l'édition
 {: #release_notes}
 
-Les mises à jour du service Mobile Foundation sont fournies via des correctifs temporaires (iFixes) et des mises à jour en continu (mise à jour de l'édition CD). Les correctifs temporaires (iFixes) et les mises à jour de l'édition CD sont cumulatifs. Les mises à jour des fonctionnalités sont fournies dans la mise à jour de l'édition CD. 
+Les mises à jour du service Mobile Foundation sont fournies via des correctifs temporaires (iFixes) et des mises à jour en continu (mise à jour de l'édition CD). Les correctifs temporaires (iFixes) et les mises à jour de l'édition CD sont cumulatifs. Les mises à jour des fonctionnalités sont fournies dans la mise à jour de l'édition CD.
 
 Pour en savoir plus sur le modèle de prise en charge de la distribution continue, consultez l'[annonce de prise en charge de l'édition CD de Mobile Foundation version 8.0 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/897/ENUS217-390/index.html&request_locale=en).
 {: note}
 
-## Edition CD, mise à jour 04 (19 décembre 2018) 
+## Edition CD, mise à jour 04 (19 décembre 2018)
 {: #cd_update_4}
 
-* Prise en charge du protocole HTTP/2 pour les notifications push du service APN. 
-* Logiciel SDK React Native pour Push (react-native-ibm-mobilefirst-push 1.0.0) publié. 
+* Prise en charge du protocole HTTP/2 pour les notifications push du service APN.
+* Logiciel SDK React Native pour Push (react-native-ibm-mobilefirst-push 1.0.0) publié.
 
 Vous pouvez consulter l'annonce de l'édition CD, mise à jour 04 [ici ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com/blog/2018/12/24/8-0-cd-update-release/).
 {: note}

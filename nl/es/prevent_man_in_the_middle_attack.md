@@ -183,4 +183,4 @@ El método de fijación de certificados devuelve una promesa:
 
 A continuación, si se realiza una solicitud asegurada al servidor cuyo certificado no está fijado, se llama a la devolución de llamada ``onFailure`` de la solicitud específica (por ejemplo, ``obtainAccessToken`` o ``WLResourceRequest``).
 
->Obtenga más información sobre el método de API de fijación de certificados en la [Referencia de API](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/).
+>Obtenga más información sobre el método de API de fijación de certificados en la [Referencia de API](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks).

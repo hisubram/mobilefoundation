@@ -33,19 +33,19 @@ lastupdated: "2019-01-30"
 # Instrumentation de votre application
 {: #instrument_your_app}
 
-Mobile Analytics est une fonction imbriquée dans le service {{ site.data.keyword.mobilefoundation_short }}. Elle fournit des informations essentielles sur l'utilisation et les performances des applications aux développeurs d'applications mobiles et aux propriétaires d'application. 
+Mobile Analytics est une fonction imbriquée dans le service {{ site.data.keyword.mobilefoundation_short }}. Elle fournit des informations essentielles sur l'utilisation et les performances des applications aux développeurs d'applications mobiles et aux propriétaires d'application.
 
-Vous devez instrumenter votre application mobile pour commencer à utiliser la fonction Mobile Analytics afin de surveiller l'utilisation et les performances de votre application, et d'obtenir d'autres statistiques. Pour instrumenter votre application, effectuez les étapes suivantes :  
+Vous devez instrumenter votre application mobile pour commencer à utiliser la fonction Mobile Analytics afin de surveiller l'utilisation et les performances de votre application, et d'obtenir d'autres statistiques. Pour instrumenter votre application, effectuez les étapes suivantes : 
 
-1.  Importez et installez le logiciel SDK client de Mobile Analytics. 
-2.  Instrumentez votre application en fonction du type de données d'analyse que vous voulez collecter. 
+1.  Importez et installez le logiciel SDK client de Mobile Analytics.
+2.  Instrumentez votre application en fonction du type de données d'analyse que vous voulez collecter.
 
-Les sections ci-après expliquent ces étapes en détail, pour chaque plateforme prise en charge. 
+Les sections ci-après expliquent ces étapes en détail, pour chaque plateforme prise en charge.
 
-### Instrumentation d'une application Android 
+### Instrumentation d'une application Android
 {: #instrument_android_app}
 {: android}
-#### Etape 1 : importez et installez le logiciel SDK client de Mobile Analytics 
+#### Etape 1 : importez et installez le logiciel SDK client de Mobile Analytics pour Android 
 {: #install_analytics_sdk_android }
 {: android}
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation)
@@ -79,7 +79,7 @@ Le logiciel SDK client de Mobile Analytics est distribué avec Gradle, qui est u
   {: android}
 
   La première dépendance concerne le logiciel SDK client de Mobile Analytics, pour la capture et la journalisation d'événements du contexte d'exécution de l'application ; la deuxième dépendance
-permet d'activer les commentaires en retour des utilisateurs de l'application lors de l'interaction avec l'utilisateur de l'application. Elle n'est requise que si vous activez les commentaires en retour des utilisateurs de l'application.
+permet d'activer les commentaires en retour des utilisateurs de l'application lors de l'interaction avec l'utilisateur de l'application. Elle n'est requise que si vous activez les commentaires en retour des utilisateurs de l'application. 
   {: android}
 
 4. Synchronisez votre projet avec Gradle en cliquant sur **Tools &gt; Android &gt; Sync Project with Gradle Files**.
@@ -114,7 +114,7 @@ permet d'activer les commentaires en retour des utilisateurs de l'application lo
 {: #instrument_app_based_on_data_android }
 {: android}
 
-1. Initialisez votre application pour capturer et envoyer des données d'analyse au service Mobile Analytics. Tout d'abord, ajoutez les instructions `import` suivantes au début de votre classe d'application ou d'activité :
+1. Initialisez votre application pour capturer et envoyer des données d'analyse au service Mobile Analytics.  Tout d'abord, ajoutez les instructions `import` suivantes au début de votre classe d'application ou d'activité :
 {: android}
 
    ```Java
@@ -124,7 +124,7 @@ permet d'activer les commentaires en retour des utilisateurs de l'application lo
    {: codeblock}
    {: android}
 
-   Ensuite, utilisez le logiciel SDK client de Mobile Analytics pour configurer ou initialiser la capture des données d'analyse.   
+   Ensuite, utilisez le logiciel SDK client de Mobile Analytics pour configurer ou initialiser la capture des données d'analyse.  
    Ajoutez le code d'initialisation dans la méthode `onCreate` de l'activité principale dans votre application Android ou à un emplacement adapté à votre projet d'application.
    {: android}
 
@@ -134,49 +134,49 @@ permet d'activer les commentaires en retour des utilisateurs de l'application lo
    {: codeblock}
    {: android}
 
-   Avant d'appeler la méthode init, vous devez vous assurer que votre application imbrique le code requis pour l'authentification et l'autorisation du appareil dans le service MobileFoundation. Il s'agit d'une étape commune requise par toutes les applications des services Mobile Foundation ; elle n'est pas propre à la capture de données d'analyse. <!--  Refer <need to link doc that talks about auth> -->
+   Avant d'appeler la méthode init, vous devez vous assurer que votre application imbrique le code requis pour l'authentification et l'autorisation du appareil dans le service MobileFoundation.  Il s'agit d'une étape commune requise par toutes les applications des services Mobile Foundation ; elle n'est pas propre à la capture de données d'analyse. <!--  Refer <need to link doc that talks about auth> -->
    {: android}
 
-   Une fois l'initialisation terminée, votre application peut capturer des informations sur les appareils et les journaux du logiciel SDK de Mobile Analytics sans qu'il ne soit nécessaire d'ajouter du code. Les API et le code présentés dans les sections ci-après sont facultatifs ; vous pouvez les ajouter selon le type de données d'analyse à capturer.
+   Une fois l'initialisation terminée, votre application peut capturer des informations sur les appareils et les journaux du logiciel SDK de Mobile Analytics sans qu'il ne soit nécessaire d'ajouter du code.  Les API et le code présentés dans les sections ci-après sont facultatifs ; vous pouvez les ajouter selon le type de données d'analyse à capturer.
    {: android}
 
-2. Pour capturer des événements de cycle de vie de l'application, comme des informations sur les sessions et les pannes de l'application, configurez votre application en ajoutant la ligne suivante : 
+2. Pour capturer des événements de cycle de vie de l'application, comme des informations sur les sessions et les pannes de l'application, configurez votre application en ajoutant la ligne suivante :
   ```Java
     WLAnalytics.addDeviceEventListener(WLAnalytics.DeviceEvent.LIFECYCLE);
   ```
   {: codeblock}
   {: android}
 
-3. Pour capturer des événements de réseau qui capturent les interactions des applications sur le réseau, configurez votre application en ajoutant la ligne suivante :  
+3. Pour capturer des événements de réseau qui capturent les interactions des applications sur le réseau, configurez votre application en ajoutant la ligne suivante : 
   ```Java
     WLAnalytics.addDeviceEventListener(WLAnalytics.DeviceEvent.NETWORK);
   ```
   {: codeblock}
   {: android}
 
-4. Vous venez d'initialiser votre application pour capturer des données d'analyse. Maintenant, vous devez envoyer les données capturées au service Mobile Analytics.
+4. Vous venez d'initialiser votre application pour capturer des données d'analyse.  Maintenant, vous devez envoyer les données capturées au service Mobile Analytics.
    Utilisez l'API suivante pour envoyer les données d'analyse au service Mobile Analytics :
-
    ```java
     WLAnalytics.send();
    ```
    {: codeblock}
    {: android}
 
-  Vous pouvez décider à quel moment appeler cette API dans votre flux d'application afin d'envoyer les données d'analyse capturées au service Mobile Analytics. En attendant, toutes les données d'analyse capturées sont stockées localement sur l'appareil.
+  Vous pouvez décider à quel moment appeler cette API dans votre flux d'application afin d'envoyer les données d'analyse capturées au service Mobile Analytics.  En attendant, toutes les données d'analyse capturées sont stockées localement sur l'appareil.
   {: android}
 
-5. Pour capturer et envoyer des journaux d'application au service Mobile Analytics, utilisez les API du consignateur du logiciel SDK client de Mobile Analytics.      
-   L'infrastructure de journalisation du logiciel SDK client de Mobile Analytics prend en charge les niveaux de journalisation suivants, répertoriés du moins prolixe au plus prolixe, avec des recommandations d'utilisation : 
+5. Pour capturer et envoyer des journaux d'application au service Mobile Analytics, utilisez les API du consignateur du logiciel SDK client de Mobile Analytics.     
+   L'infrastructure de journalisation du logiciel SDK client de Mobile Analytics prend en charge les niveaux de journalisation suivants, répertoriés du moins prolixe au plus prolixe, avec des recommandations d'utilisation :
     * FATAL : pour les pannes et les blocages irrémédiables. Le niveau FATAL est réservé aux erreurs irrémédiables de journalisation, qui se matérialisent pour l'utilisateur sous la forme d'une panne de l'application.
     * ERROR : pour les exceptions inattendues ou les erreurs de protocole de réseau inattendues.
-    * WARN : pour les avertissements relatifs à l'utilisation qui ne sont pas considérés comme des erreurs critiques, par exemple l'utilisation d'API dépréciées ou un temps de réponse long du réseau. 
+    * WARN : pour les avertissements relatifs à l'utilisation qui ne sont pas considérés comme des erreurs critiques, par exemple l'utilisation d'API dépréciées ou un temps de réponse long du réseau.
     * INFO : pour afficher des événements d'initialisation et d'autres données qui peuvent être importants, mais non urgents.
-    * DEBUG : pour afficher des informations de débogage pouvant aider les développeurs à résoudre les bogues de l'application. Lorsque le niveau de journalisation est DEBUG, vous obtenez également les journaux du logiciel SDK client de Mobile Analytics qui sont inclus lorsque vous envoyez des journaux.
+    * DEBUG : pour afficher des informations de débogage pouvant aider les développeurs à résoudre les bogues de l'application.
+    Lorsque le niveau de journalisation est DEBUG, vous obtenez également les journaux du logiciel SDK client de Mobile Analytics qui sont inclus lorsque vous envoyez des journaux.
    {: note}
    {: android}
 
-   Les fragments de code suivants représentent un exemple d'utilisation du consignateur pour Android : 
+   Les fragments de code suivants représentent un exemple d'utilisation du consignateur pour Android :
    ```java
    // Set the logging level (optional)
    // The default setting is Logger.LEVEL.DEBUG
@@ -198,7 +198,7 @@ permet d'activer les commentaires en retour des utilisateurs de l'application lo
    {: codeblock}
    {: android}
 
-6.  Pour obtenir des informations sur les modèles d'intégration utilisateur (nouveaux utilisateurs/utilisateurs existants), vous devez associer une identité d'utilisateur à votre session d'application. Pour ce faire, vous pouvez appeler l'API suivante :
+6.  Pour obtenir des informations sur les modèles d'intégration utilisateur (nouveaux utilisateurs/utilisateurs existants), vous devez associer une identité d'utilisateur à votre session d'application.  Pour ce faire, vous pouvez appeler l'API suivante :
     ```java
       WLAnalytics.setUserContext("userName or userIdentity");
     ```
@@ -208,8 +208,8 @@ permet d'activer les commentaires en retour des utilisateurs de l'application lo
     Notez que toutes les données d'analyse capturées et stockées localement sont envoyées au service Mobile Analytics uniquement lorsque l'API WLAnalytics.send() est appelée.
     {: android}
 
-7.  Pour obtenir des informations sur vos modèles d'interaction sur le réseau HTTP des applications, comme les API HTTP appelées, le nombre de demandes et les temps de réponse moyens, vous devez utiliser la classe WLResourceRequest du logiciel SDK client de Mobile Foundation Service pour effectuer les appels HTTP. Bien que vous ayez peut-être initialisé Analytics pour la capture d'événements de réseau, si vous utilisez WLResourceRequest, Mobile Analytics peut s'introduire dans les appels de réseau et capturer les données pertinentes. Voici comment vous devez effectuer vos appels HTTP :
-```java
+7.  Pour obtenir des informations sur vos modèles d'interaction sur le réseau HTTP des applications, comme les API HTTP appelées, le nombre de demandes et les temps de réponse moyens, vous devez utiliser la classe WLResourceRequest du logiciel SDK client de Mobile Foundation Service pour effectuer les appels HTTP.  Bien que vous ayez peut-être initialisé Analytics pour la capture d'événements de réseau, si vous utilisez WLResourceRequest, Mobile Analytics peut s'introduire dans les appels de réseau et capturer les données pertinentes.  Voici comment vous devez effectuer vos appels HTTP :
+    ```java
       WLResourceRequest request = new WLResourceRequest(new URI(url), WLResourceRequest.GET);
             request.send(new WLResponseListener() {
 
@@ -228,7 +228,7 @@ permet d'activer les commentaires en retour des utilisateurs de l'application lo
     {: android}
 
 8.  Pour obtenir une analyse des pannes et les journaux, vous pouvez appeler l'API suivante au démarrage de votre application afin de vérifier si la session précédente est tombée en panne et le cas échéant, envoyer les journaux de panne capturés au service Mobile Analytics :
-```java
+    ```java
       if (Logger.isUnCaughtExceptionDetected()) {
             //add any other handling you may want and call the following APIs
             WLAnalytics.send();
@@ -256,21 +256,21 @@ permet d'activer les commentaires en retour des utilisateurs de l'application lo
     Les données personnalisées journalisées peuvent être représentées dans des graphiques personnalisés que vous pouvez définir dans la console Mobile Analytics afin de déduire des informations personnalisées.
     {: android}
 
-10. Utilisez les commentaires en retour des utilisateurs de l'application pour approfondir votre analyse des performances de l'application. Vous pouvez permettre aux **utilisateurs et testeurs** de votre application d'envoyer des commentaires en retour contextuels et riches aux propriétaires d'application. Les **propriétaires d'application** obtiennent des commentaires en retour en temps réel de la part de leurs utilisateurs concernant l'expérience d'utilisation de l'application, que les **propriétaires d'application** et les **développeurs** peuvent ensuite améliorer. Ces commentaires apportent une grande souplesse pour la maintenance de l'application. Utilisez l'API suivante afin de définir le mode de commentaires en retour interactifs pour votre application dans tout gestionnaire d'action de votre application, par exemple lors du traitement du clic d'un bouton ou de la sélection d'un élément de menu.
+10. Utilisez les commentaires en retour des utilisateurs de l'application pour approfondir votre analyse des performances de l'application.   Vous pouvez permettre aux **utilisateurs et testeurs** de votre application d'envoyer des commentaires en retour contextuels et riches aux propriétaires d'application. Les **propriétaires d'application** obtiennent des commentaires en retour en temps réel de la part de leurs utilisateurs concernant l'expérience d'utilisation de l'application, que les **propriétaires d'application** et les **développeurs** peuvent ensuite améliorer.  Ces commentaires apportent une grande souplesse pour la maintenance de l'application.  Utilisez l'API suivante afin de définir le mode de commentaires en retour interactifs pour votre application dans tout gestionnaire d'action de votre application, par exemple lors du traitement du clic d'un bouton ou de la sélection d'un élément de menu.
     ```java
         WLAnalytics.triggerFeedbackMode();
     ```
     {: codeblock}
     {: android}
 
-### Instrumentation d'une application iOS 
+### Instrumentation d'une application iOS
 {: #instrument_ios_app}
 {: ios}
 
 Etapes pour l'instrumentation de votre application iOS :
 {: ios}
 
-#### Etape 1 : importez et installez le logiciel SDK client de Mobile Analytics pour iOS 
+#### Etape 1 : importez et installez le logiciel SDK client de Mobile Analytics pour iOS
 {: #install_analytics_sdk_ios }
 {: ios}
 
@@ -281,7 +281,7 @@ Etapes pour l'instrumentation de votre application iOS :
 Le logiciel SDK Swift est disponible pour iOS et watchOS.
 {: ios}
 
-1. Ajoutez le code suivant au fichier Pod existant, qui se trouve à la racine du projet Xcode : 
+1. Ajoutez le code suivant au fichier Pod existant, qui se trouve à la racine du projet Xcode :
    ```bash
    use_frameworks!
    platform :ios, 8.0
@@ -300,19 +300,20 @@ Le logiciel SDK Swift est disponible pour iOS et watchOS.
    {: codeblock}
    {: ios}
 
-#### Etape 2 : instrumentez votre application iOS en fonction du type de données d'analyse à collecter 
+#### Etape 2 : instrumentez votre application iOS en fonction du type de données d'analyse à collecter
 {: #instrument_app_based_on_data_ios }
 {: ios}
 
 1. Initialisez votre application pour permettre l'envoi de journaux à Mobile Analytics.
    Le logiciel SDK Swift est disponible pour iOS et watchOS. Importez les infrastructures `BMSCore` et `BMSAnalytics` en ajoutant les instructions `import` suivantes au début de votre fichier de projet `AppDelegate.swift` :
-	```Swift
+    ```Swift
     import IBMMobileFirstPlatformFoundation
     ```
     {: codeblock}
     {: ios}
 
-   Ensuite, utilisez le logiciel SDK client de Mobile Analytics pour configurer ou initialiser la capture des données d'analyse. Ajoutez le code d'initialisation dans un emplacement adapté à vote projet d'application.
+   Ensuite, utilisez le logiciel SDK client de Mobile Analytics pour configurer ou initialiser la capture des données d'analyse.
+   Ajoutez le code d'initialisation dans un emplacement adapté à vote projet d'application.
    {: ios}
 
    ```Swift
@@ -321,10 +322,10 @@ Le logiciel SDK Swift est disponible pour iOS et watchOS.
    {: codeblock}
    {: ios}
 
-   Avant d'appeler la méthode init, vous devez vous assurer que votre application imbrique le code requis pour l'authentification et l'autorisation de l'appareil dans le service MobileFoundation. Il s'agit d'une étape commune requise par toutes les applications des services Mobile Foundation ; elle n'est pas propre à la capture de données d'analyse. <!--  Refer <need to link doc that talks about auth> -->
+   Avant d'appeler la méthode init, vous devez vous assurer que votre application imbrique le code requis pour l'authentification et l'autorisation de l'appareil dans le service MobileFoundation.  Il s'agit d'une étape commune requise par toutes les applications des services Mobile Foundation ; elle n'est pas propre à la capture de données d'analyse. <!--  Refer <need to link doc that talks about auth> -->
    {: ios}
 
-   Une fois l'initialisation terminée, votre application peut capturer des informations sur les appareils et les journaux du logiciel SDK de Mobile Analytics sans qu'il ne soit nécessaire d'ajouter du code. Les API et le code présentés dans les sections ci-après sont facultatifs ; vous pouvez les ajouter selon le type de données d'analyse à capturer.
+   Une fois l'initialisation terminée, votre application peut capturer des informations sur les appareils et les journaux du logiciel SDK de Mobile Analytics sans qu'il ne soit nécessaire d'ajouter du code.  Les API et le code présentés dans les sections ci-après sont facultatifs ; vous pouvez les ajouter selon le type de données d'analyse à capturer.
    {: ios}
 
 2. Pour capturer des événements de cycle de vie de l'application, comme des informations sur les sessions et les pannes de l'application, configurez votre application en ajoutant la ligne suivante :
@@ -341,30 +342,31 @@ Le logiciel SDK Swift est disponible pour iOS et watchOS.
     {: codeblock}
     {: ios}
 
-4. Vous venez d'initialiser votre application pour capturer des données d'analyse. Maintenant, vous devez envoyer les données capturées au service Mobile Analytics.
-   Utilisez l'API suivante pour envoyer les données d'analyse au service Mobile Analytics : 
+4. Vous venez d'initialiser votre application pour capturer des données d'analyse.  Maintenant, vous devez envoyer les données capturées au service Mobile Analytics.
+   Utilisez l'API suivante pour envoyer les données d'analyse au service Mobile Analytics :
    ```Swift
     WLAnalytics.sharedInstance().send();
    ```
    {: codeblock}
    {: ios}
 
-    Vous pouvez décider à quel moment appeler cette API dans votre flux d'application afin d'envoyer les données d'analyse capturées au service Mobile Analytics. En attendant, toutes les données d'analyse capturées sont stockées localement sur l'appareil.
+    Vous pouvez décider à quel moment appeler cette API dans votre flux d'application afin d'envoyer les données d'analyse capturées au service Mobile Analytics.  En attendant, toutes les données d'analyse capturées sont stockées localement sur l'appareil.
     {: ios}
 
 5. Pour capturer et envoyer des journaux d'application au service Mobile Analytics, utilisez les API du consignateur du logiciel SDK client de Mobile Analytics.
-   L'infrastructure de journalisation du logiciel SDK client de Mobile Analytics prend en charge les niveaux de journalisation suivants, répertoriés du moins prolixe au plus prolixe, avec des recommandations d'utilisation : 
+   L'infrastructure de journalisation du logiciel SDK client de Mobile Analytics prend en charge les niveaux de journalisation suivants, répertoriés du moins prolixe au plus prolixe, avec des recommandations d'utilisation :
     * FATAL : pour les pannes et les blocages irrémédiables. Le niveau FATAL est réservé aux erreurs irrémédiables de journalisation, qui se matérialisent pour l'utilisateur sous la forme d'une panne de l'application.
     * ERROR : pour les exceptions inattendues ou les erreurs de protocole de réseau inattendues.
-    * WARN : pour les avertissements relatifs à l'utilisation qui ne sont pas considérés comme des erreurs critiques, par exemple l'utilisation d'API dépréciées ou un temps de réponse long du réseau. 
+    * WARN : pour les avertissements relatifs à l'utilisation qui ne sont pas considérés comme des erreurs critiques, par exemple l'utilisation d'API dépréciées ou un temps de réponse long du réseau.
     * INFO : pour afficher des événements d'initialisation et d'autres données qui peuvent être importants, mais non urgents.
-    * DEBUG : pour afficher des informations de débogage pouvant aider les développeurs à résoudre les bogues de l'application. Lorsque le niveau de journalisation est DEBUG, vous obtenez également les journaux du logiciel SDK client de Mobile Analytics qui sont inclus lorsque vous envoyez des journaux.
+    * DEBUG : pour afficher des informations de débogage pouvant aider les développeurs à résoudre les bogues de l'application.
+    Lorsque le niveau de journalisation est DEBUG, vous obtenez également les journaux du logiciel SDK client de Mobile Analytics qui sont inclus lorsque vous envoyez des journaux.
    {: note}
-    {: ios}
+   {: ios}
 
-    Suivez [le tutoriel ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com/tutorials/it/foundation/8.0/application-development/client-side-log-collection/ios/) pour découvrir des fragments de code de consignateur permettant d'ajouter des fonctions de journalisation dans les applications iOS. 
+    Suivez [le tutoriel ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com/tutorials/it/foundation/8.0/application-development/client-side-log-collection/ios/) pour découvrir des fragments de code de consignateur permettant d'ajouter des fonctions de journalisation dans les applications iOS.
 
-6.  Pour obtenir des informations sur les modèles d'intégration utilisateur (nouveaux utilisateurs/utilisateurs existants), vous devez associer une identité d'utilisateur à votre session d'application. Pour ce faire, vous pouvez appeler l'API suivante :
+6.  Pour obtenir des informations sur les modèles d'intégration utilisateur (nouveaux utilisateurs/utilisateurs existants), vous devez associer une identité d'utilisateur à votre session d'application.  Pour ce faire, vous pouvez appeler l'API suivante :
     ```Swift
       WLAnalytics.sharedInstance().setUserContext("userName or userIdentity")
     ```
@@ -374,7 +376,7 @@ Le logiciel SDK Swift est disponible pour iOS et watchOS.
     Notez que toutes les données d'analyse capturées et stockées localement sont envoyées au service Mobile Analytics uniquement lorsque l'API WLAnalytics.sharedInstance().send() est appelée.
     {: ios}
 
-7.  Pour obtenir des informations sur vos modèles d'interaction sur le réseau HTTP des applications, comme les API HTTP appelées, le nombre de demandes et les temps de réponse moyens, vous devez utiliser la classe WLResourceRequest du logiciel SDK client de Mobile Foundation Service pour effectuer les appels HTTP. Bien que vous ayez peut-être initialisé Analytics pour la capture d'événements de réseau, si vous utilisez WLResourceRequest, Mobile Analytics peut s'introduire dans les appels de réseau et capturer les données pertinentes. Voici comment vous devez effectuer vos appels HTTP :
+7.  Pour obtenir des informations sur vos modèles d'interaction sur le réseau HTTP des applications, comme les API HTTP appelées, le nombre de demandes et les temps de réponse moyens, vous devez utiliser la classe WLResourceRequest du logiciel SDK client de Mobile Foundation Service pour effectuer les appels HTTP.  Bien que vous ayez peut-être initialisé Analytics pour la capture d'événements de réseau, si vous utilisez WLResourceRequest, Mobile Analytics peut s'introduire dans les appels de réseau et capturer les données pertinentes.  Voici comment vous devez effectuer vos appels HTTP :
     ```Swift
       let request = WLResourceRequest( url: URL(string: "/adapters/JavaAdapter/users"), method: WLHttpMethodGet )
 
@@ -402,7 +404,7 @@ Le logiciel SDK Swift est disponible pour iOS et watchOS.
     {: ios}
 
 9.  Pour définir des analyses personnalisées et vos propres données d'analyse au-delà des éléments pris en charge intrinsèquement dans le logiciel SDK client, vous pouvez utiliser l'API de journalisation personnalisée :
-```Swift
+    ```Swift
         //create an array object with key value pair as custom data
         let eventObject = ["FromPage": "LoginPage"]
 
@@ -418,32 +420,32 @@ Le logiciel SDK Swift est disponible pour iOS et watchOS.
     The logged custom data can be plotted over custom charts you can define in the Mobile Analytics console to derive custom insights.
     {: ios}
 
-10. Utilisez les commentaires en retour des utilisateurs de l'application pour approfondir votre analyse des performances de l'application. Vous pouvez permettre aux **utilisateurs et testeurs** de votre application d'envoyer des commentaires en retour contextuels et riches aux propriétaires d'application. Les **propriétaires d'application** obtiennent des commentaires en retour en temps réel de la part de leurs utilisateurs concernant l'expérience d'utilisation de l'application, que les **propriétaires d'application** et les **développeurs** peuvent ensuite améliorer. Ces commentaires apportent une grande souplesse pour la maintenance de l'application. Utilisez l'API ci-après afin de définir le mode de commentaires en retour interactifs pour votre application dans tout gestionnaire d'action de votre application, par exemple lors du traitement du clic d'un bouton ou de la sélection d'un élément de menu.
+10. Utilisez les commentaires en retour des utilisateurs de l'application pour approfondir votre analyse des performances de l'application.   Vous pouvez permettre aux **utilisateurs et testeurs** de votre application d'envoyer des commentaires en retour contextuels et riches aux propriétaires d'application. Les **propriétaires d'application** obtiennent des commentaires en retour en temps réel de la part de leurs utilisateurs concernant l'expérience d'utilisation de l'application, que les **propriétaires d'application** et les **développeurs** peuvent ensuite améliorer.  Ces commentaires apportent une grande souplesse pour la maintenance de l'application.  Utilisez l'API ci-après afin de définir le mode de commentaires en retour interactifs pour votre application dans tout gestionnaire d'action de votre application, par exemple lors du traitement du clic d'un bouton ou de la sélection d'un élément de menu.
     ```Swift
         WLAnalytics.sharedInstance().triggerFeedbackMode();
     ```
     {: codeblock}
     {: ios}
 
-### Instrumentation d'une application Cordova 
+### Instrumentation d'une application Cordova
 {: #instrument_cordova_app}
 {: cordova}
 Etapes pour l'instrumentation de votre application Cordova :
 {: cordova}
 
-#### Etape 1 : importez et installez le plug-in du logiciel SDK client de Foundation et d'Analytics pour Cordova 
+#### Etape 1 : importez et installez le plug-in du logiciel SDK client de Foundation et d'Analytics pour Cordova
 {: #install_analytics_sdk_cordova }
 Le plug-in Cordova de Mobile Analytics vous permet d'instrumenter votre application mobile.
 {: cordova}
 
-#### Installation du logiciel SDK client Cordova 
+#### Installation du logiciel SDK client Cordova
 {: #install_cordova_sdk}
 {: cordova}
 
 1. Créez un projet [Cordova ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://cordova.apache.org/#getstarted){: new_window} ou ouvrez un projet existant.
     {: cordova}
 
-2. Ajoutez les plateformes Android ou iOS de votre choix à votre application Cordova. Exécutez l'une des commandes ci-dessous ou les deux à partir de la ligne de commande. <br/>
+2. Ajoutez les plateformes Android ou iOS de votre choix à votre application Cordova. Exécutez l'une des commandes ci-dessous ou les deux à partir de la ligne de commande.<br/>
     **Android** :
     ```
     cordova platform add android
@@ -479,22 +481,22 @@ Le plug-in Cordova de Mobile Analytics vous permet d'instrumenter votre applicat
     {: codeblock}
     {: cordova}
 
-#### Etape 2 : instrumentez votre application Cordova en fonction du type de données d'analyse à collecter 
+#### Etape 2 : instrumentez votre application Cordova en fonction du type de données d'analyse à collecter
 {: #instrument_app_based_on_data_cordova }
 {: cordova}
 
-1. Dans les applications Cordova, aucune configuration n'est nécessaire et l'initialisation est intégrée.  
+1. Dans les applications Cordova, aucune configuration n'est nécessaire et l'initialisation est intégrée. 
 
-   Avant d'appeler l'une des méthodes d'analyse ci-dessous, vous devez vous assurer que votre application imbrique le code requis pour l'authentification et l'autorisation de l'appareil dans le service MobileFoundation. Il s'agit d'une étape commune requise par toutes les applications des services Mobile Foundation ; elle n'est pas propre à la capture de données d'analyse. <!--  Refer <need to link doc that talks about auth> -->
+   Avant d'appeler l'une des méthodes d'analyse ci-dessous, vous devez vous assurer que votre application imbrique le code requis pour l'authentification et l'autorisation de l'appareil dans le service MobileFoundation.  Il s'agit d'une étape commune requise par toutes les applications des services Mobile Foundation ; elle n'est pas propre à la capture de données d'analyse. <!--  Refer <need to link doc that talks about auth> -->
    {: cordova}
 
-   Une fois l'initialisation terminée, votre application peut capturer des informations sur les appareils et les journaux du logiciel SDK de Mobile Analytics sans qu'il ne soit nécessaire d'ajouter du code. Les API et le code présentés dans les sections ci-après sont facultatifs ; vous pouvez les ajouter selon le type de données d'analyse à capturer.
+   Une fois l'initialisation terminée, votre application peut capturer des informations sur les appareils et les journaux du logiciel SDK de Mobile Analytics sans qu'il ne soit nécessaire d'ajouter du code.  Les API et le code présentés dans les sections ci-après sont facultatifs ; vous pouvez les ajouter selon le type de données d'analyse à capturer.
    {: cordova}
 
-2. Pour que la capture des événements de cycle de vie soit activée, elle doit être initialisée sur la plateforme native de l'application Cordova. 
-    * Pour la plateforme Android : 
-      * Ouvrez le fichier **[dossier_racine_application_Cordova] → platforms → android → src → com → sample → [nom_application] → MainActivity.java**. 
-      * Recherchez la méthode `onCreate` et suivez les étapes ci-après pour activer les activités `LIFECYCLE` et `NETWORK` : 
+2. Pour que la capture des événements de cycle de vie soit activée, elle doit être initialisée sur la plateforme native de l'application Cordova.
+    * Pour la plateforme Android :
+      * Ouvrez le fichier **[dossier_racine_application_Cordova] → platforms → android → src → com → sample → [nom_application] → MainActivity.java**.
+      * Recherchez la méthode `onCreate` et suivez les étapes ci-après pour activer les activités `LIFECYCLE` et `NETWORK` :
         * Pour activer la journalisation des événements de cycle de vie :
           ```Java
           WLAnalytics.addDeviceEventListener(DeviceEvent.LIFECYCLE);
@@ -508,9 +510,9 @@ Le plug-in Cordova de Mobile Analytics vous permet d'instrumenter votre applicat
           {: codeblock}
           {: cordova}
       * Générez le projet Cordova en exécutant la commande suivante : `cordova build`.
-    * Pour la plateforme iOS : 
-      * Ouvrez le fichier **[dossier_racine_application_Cordova] → platforms → ios → Classes** et recherchez le fichier **AppDelegate.swift** (Swift). 
-      * Suivez les étapes ci-après pour activer les activités `LIFECYCLE` et `NETWORK`. 
+    * Pour la plateforme iOS :
+      * Ouvrez le fichier **[dossier_racine_application_Cordova] → platforms → ios → Classes** et recherchez le fichier **AppDelegate.swift** (Swift).
+      * Suivez les étapes ci-après pour activer les activités `LIFECYCLE` et `NETWORK`.
         * Pour activer la journalisation des événements de cycle de vie :
           ```Swift
           WLAnalytics.sharedInstance().addDeviceEventListener(LIFECYCLE);
@@ -536,17 +538,18 @@ Le plug-in Cordova de Mobile Analytics vous permet d'instrumenter votre applicat
    {: cordova}
 
 4. Pour capturer et envoyer des journaux d'application au service Mobile Analytics, utilisez les API du consignateur du logiciel SDK client de Mobile Analytics.
-   L'infrastructure de journalisation du logiciel SDK client de Mobile Analytics prend en charge les niveaux de journalisation suivants, répertoriés du moins prolixe au plus prolixe, avec des recommandations d'utilisation : 
+   L'infrastructure de journalisation du logiciel SDK client de Mobile Analytics prend en charge les niveaux de journalisation suivants, répertoriés du moins prolixe au plus prolixe, avec des recommandations d'utilisation :
     * FATAL : pour les pannes et les blocages irrémédiables. Le niveau FATAL est réservé aux erreurs irrémédiables de journalisation, qui se matérialisent pour l'utilisateur sous la forme d'une panne de l'application.
     * ERROR : pour les exceptions inattendues ou les erreurs de protocole de réseau inattendues.
-    * WARN : pour les avertissements relatifs à l'utilisation qui ne sont pas considérés comme des erreurs critiques, par exemple l'utilisation d'API dépréciées ou un temps de réponse long du réseau. 
+    * WARN : pour les avertissements relatifs à l'utilisation qui ne sont pas considérés comme des erreurs critiques, par exemple l'utilisation d'API dépréciées ou un temps de réponse long du réseau.
     * INFO : pour afficher des événements d'initialisation et d'autres données qui peuvent être importants, mais non urgents.
-    * DEBUG : pour afficher des informations de débogage pouvant aider les développeurs à résoudre les bogues de l'application. Lorsque le niveau de journalisation est DEBUG, vous obtenez également les journaux du logiciel SDK du client Mobile Analytics qui sont inclus lorsque vous envoyez des journaux.
+    * DEBUG : pour afficher des informations de débogage pouvant aider les développeurs à résoudre les bogues de l'application.
+    Lorsque le niveau de journalisation est DEBUG, vous obtenez également les journaux du logiciel SDK du client Mobile Analytics qui sont inclus lorsque vous envoyez des journaux.
     * TRACE : pour les points d'entrée et de sortie de méthode.
    {: note}
    {: cordova}
 
-   Les fragments de code suivants représentent un exemple d'utilisation du consignateur pour Cordova : 
+   Les fragments de code suivants représentent un exemple d'utilisation du consignateur pour Cordova :
     ```Javascript
     // Set the logging level (optional)
     // The default setting is DEBUG
@@ -568,7 +571,7 @@ Le plug-in Cordova de Mobile Analytics vous permet d'instrumenter votre applicat
     {: codeblock}
     {: cordova}
 
-5.  Pour obtenir des informations sur les modèles d'intégration utilisateur (nouveaux utilisateurs/utilisateurs existants), vous devez associer une identité d'utilisateur à votre session d'application. Aucune API spécifique n'est disponible depuis le niveau Javascript. Toutefois, vous pouvez effectuer cette action au niveau du code natif en appelant l'API suivante :
+5.  Pour obtenir des informations sur les modèles d'intégration utilisateur (nouveaux utilisateurs/utilisateurs existants), vous devez associer une identité d'utilisateur à votre session d'application.  Aucune API spécifique n'est disponible depuis le niveau Javascript. Toutefois, vous pouvez effectuer cette action au niveau du code natif en appelant l'API suivante :
 
     **Android :**
       ```java
@@ -587,7 +590,7 @@ Le plug-in Cordova de Mobile Analytics vous permet d'instrumenter votre applicat
     Notez que toutes les données d'analyse capturées et stockées localement sont envoyées au service Mobile Analytics uniquement lorsque l'API WL.Analytics.send() au niveau javascript [ou] WLAnalytics.send() API sur un système d'exploitation android natif [ou] WLAnalytics.sharedInstance().send() sur un système d'exploitation iOS natif est appelée.
     {: cordova}
 
-6. Pour obtenir des informations sur vos modèles d'interaction sur le réseau HTTP des applications, comme les API HTTP appelées, le nombre de demandes et les temps de réponse moyens, vous devez utiliser la classe WLResourceRequest du logiciel SDK client de Mobile Foundation Service pour effectuer les appels HTTP. Bien que vous ayez peut-être initialisé Analytics pour la capture d'événements de réseau, si vous utilisez WLResourceRequest, Mobile Analytics peut s'introduire dans les appels de réseau et capturer les données pertinentes. Voici comment vous devez effectuer vos appels HTTP :
+6. Pour obtenir des informations sur vos modèles d'interaction sur le réseau HTTP des applications, comme les API HTTP appelées, le nombre de demandes et les temps de réponse moyens, vous devez utiliser la classe WLResourceRequest du logiciel SDK client de Mobile Foundation Service pour effectuer les appels HTTP.  Bien que vous ayez peut-être initialisé Analytics pour la capture d'événements de réseau, si vous utilisez WLResourceRequest, Mobile Analytics peut s'introduire dans les appels de réseau et capturer les données pertinentes.  Voici comment vous devez effectuer vos appels HTTP :
     ```Javascript
       var resourceRequest = new WLResourceRequest("url-path", WLResourceRequest.GET);
       resourceRequest.send().then(
@@ -617,25 +620,25 @@ Le plug-in Cordova de Mobile Analytics vous permet d'instrumenter votre applicat
     Les données personnalisées journalisées peuvent être représentées dans des graphiques personnalisés que vous pouvez définir dans la console Mobile Analytics afin de déduire des informations personnalisées.
     {: cordova}
 
-8. Utilisez les commentaires en retour des utilisateurs de l'application pour approfondir votre analyse des performances de l'application. Vous pouvez permettre aux **utilisateurs et testeurs** de votre application d'envoyer des commentaires en retour contextuels et riches aux propriétaires d'application. Les **propriétaires d'application** obtiennent des commentaires en retour en temps réel de la part de leurs utilisateurs concernant l'expérience d'utilisation de l'application, que les **propriétaires d'application** et les **développeurs** peuvent ensuite améliorer. Ces commentaires apportent une grande souplesse pour la maintenance de l'application. Utilisez l'API ci-après afin de définir le mode de commentaires en retour interactifs pour votre application dans tout gestionnaire d'action de votre application, par exemple lors du traitement du clic d'un bouton ou de la sélection d'un élément de menu.
+8. Utilisez les commentaires en retour des utilisateurs de l'application pour approfondir votre analyse des performances de l'application.   Vous pouvez permettre aux **utilisateurs et testeurs** de votre application d'envoyer des commentaires en retour contextuels et riches aux propriétaires d'application. Les **propriétaires d'application** obtiennent des commentaires en retour en temps réel de la part de leurs utilisateurs concernant l'expérience d'utilisation de l'application, que les **propriétaires d'application** et les **développeurs** peuvent ensuite améliorer.  Ces commentaires apportent une grande souplesse pour la maintenance de l'application.  Utilisez l'API ci-après afin de définir le mode de commentaires en retour interactifs pour votre application dans tout gestionnaire d'action de votre application, par exemple lors du traitement du clic d'un bouton ou de la sélection d'un élément de menu.
     ```Javascript
         WL.Analytics.triggerFeedbackMode();
     ```
     {: codeblock}
     {: cordova}
 
-### Instrumentation d'une application Web 
+### Instrumentation d'une application Web
 {: #instrument_web_app}
 {: web}
 
 Etapes pour l'instrumentation de votre application Web :
 {: web}
 
-#### Etape 1 : importez et installez le logiciel SDK client de Mobile Analytics pour Web 
+#### Etape 1 : importez et installez le logiciel SDK client de Mobile Analytics pour Web
 {: #install_analytics_sdk_web }
 {: web}
 
-#### Installation du logiciel SDK client Web 
+#### Installation du logiciel SDK client Web
 {: #install_web_sdk}
 Le logiciel SDK de Mobile Analytics vous permet d'instrumenter votre application Web.
 {: web}
@@ -648,11 +651,11 @@ Le logiciel SDK de Mobile Analytics vous permet d'instrumenter votre application
     {: web}
 
 
-#### Etape 2 : instrumentez votre application Web en fonction du type de données d'analyse à collecter 
+#### Etape 2 : instrumentez votre application Web en fonction du type de données d'analyse à collecter
 {: #instrument_app_based_on_data_web }
 {: web}
 
-1. Référencez les fichiers ibmmfpf.js et ibmmfpfanalytics.js dans l'élément `head` de votre page html principale 
+1. Référencez les fichiers ibmmfpf.js et ibmmfpfanalytics.js dans l'élément `head` de votre page html principale
 
     ```html
       <head>
@@ -664,7 +667,7 @@ Le logiciel SDK de Mobile Analytics vous permet d'instrumenter votre application
     {: codeblock}
     {: web}
 
-2. Initialisez le logiciel SDK Web de Mobile Foundation en spécifiant les valeurs de racine contextuelle et d'ID d'application dans le fichier JavaScript principal de votre application Web 
+2. Initialisez le logiciel SDK Web de Mobile Foundation en spécifiant les valeurs de racine contextuelle et d'ID d'application dans le fichier JavaScript principal de votre application Web
 
     ```Javascript
       var wlInitOptions = {
@@ -681,13 +684,13 @@ Le logiciel SDK de Mobile Analytics vous permet d'instrumenter votre application
     {: codeblock}
     {: web}
 
-   Avant d'appeler l'une des méthodes d'analyse ci-dessous, vous devez vous assurer que votre application imbrique le code requis pour l'authentification et l'autorisation de l'appareil dans le service MobileFoundation. Il s'agit d'une étape commune requise par toutes les applications des services Mobile Foundation ; elle n'est pas propre à la capture de données d'analyse. <!--  Refer <need to link doc that talks about auth> -->
+   Avant d'appeler l'une des méthodes d'analyse ci-dessous, vous devez vous assurer que votre application imbrique le code requis pour l'authentification et l'autorisation de l'appareil dans le service MobileFoundation.  Il s'agit d'une étape commune requise par toutes les applications des services Mobile Foundation ; elle n'est pas propre à la capture de données d'analyse. <!--  Refer <need to link doc that talks about auth> -->
    {: web}
 
-   Une fois l'initialisation terminée, votre application peut capturer des informations sur les appareils et les journaux du logiciel SDK de Mobile Analytics sans qu'il ne soit nécessaire d'ajouter du code. Les API et le code présentés dans les sections ci-après sont facultatifs ; vous pouvez les ajouter selon le type de données d'analyse à capturer.
+   Une fois l'initialisation terminée, votre application peut capturer des informations sur les appareils et les journaux du logiciel SDK de Mobile Analytics sans qu'il ne soit nécessaire d'ajouter du code.  Les API et le code présentés dans les sections ci-après sont facultatifs ; vous pouvez les ajouter selon le type de données d'analyse à capturer.
    {: web}
 
-3. Ajoutez la ligne suivante à votre logique d'application pour capturer des événements de cycle de vie de l'application et des événements de réseau. 
+3. Ajoutez la ligne suivante à votre logique d'application pour capturer des événements de cycle de vie de l'application et des événements de réseau.
 
     ```Javascript
     ibmmfpfanalytics.logger.config({analyticsCapture: true});
@@ -695,8 +698,7 @@ Le logiciel SDK de Mobile Analytics vous permet d'instrumenter votre application
     {: codeblock}
     {: web}
 
-4. Vous venez d'initialiser votre application pour capturer des données d'analyse. Maintenant, vous devez envoyer les données capturées au service Mobile Analytics. Utilisez l'API suivante pour envoyer les données d'analyse au service Mobile Analytics :
-   
+4. Vous venez d'initialiser votre application pour capturer des données d'analyse.  Maintenant, vous devez envoyer les données capturées au service Mobile Analytics. Utilisez l'API suivante pour envoyer les données d'analyse au service Mobile Analytics :
 
    ```Javascript
    ibmmfpfanalytics.send();
@@ -704,21 +706,22 @@ Le logiciel SDK de Mobile Analytics vous permet d'instrumenter votre application
    {: codeblock}
    {: web}
 
-    Vous pouvez décider à quel moment appeler cette API dans votre flux d'application afin d'envoyer les données d'analyse capturées au service Mobile Analytics. En attendant, toutes les données d'analyse capturées sont stockées localement sur l'appareil.
+    Vous pouvez décider à quel moment appeler cette API dans votre flux d'application afin d'envoyer les données d'analyse capturées au service Mobile Analytics.  En attendant, toutes les données d'analyse capturées sont stockées localement sur l'appareil.
     {: web}
 
 5. Pour capturer et envoyer des journaux d'application au service Mobile Analytics, utilisez les API du consignateur du logiciel SDK client de Mobile Analytics.
-   L'infrastructure de journalisation du logiciel SDK client de Mobile Analytics prend en charge les niveaux de journalisation suivants, répertoriés du moins prolixe au plus prolixe, avec des recommandations d'utilisation : 
+   L'infrastructure de journalisation du logiciel SDK client de Mobile Analytics prend en charge les niveaux de journalisation suivants, répertoriés du moins prolixe au plus prolixe, avec des recommandations d'utilisation :
     * FATAL : pour les pannes et les blocages irrémédiables. Le niveau FATAL est réservé aux erreurs irrémédiables de journalisation, qui se matérialisent pour l'utilisateur sous la forme d'une panne de l'application.
     * ERROR : pour les exceptions inattendues ou les erreurs de protocole de réseau inattendues.
-    * WARN : pour les avertissements relatifs à l'utilisation qui ne sont pas considérés comme des erreurs critiques, par exemple l'utilisation d'API dépréciées ou un temps de réponse long du réseau. 
+    * WARN : pour les avertissements relatifs à l'utilisation qui ne sont pas considérés comme des erreurs critiques, par exemple l'utilisation d'API dépréciées ou un temps de réponse long du réseau.
     * INFO : pour afficher des événements d'initialisation et d'autres données qui peuvent être importants, mais non urgents.
-    * DEBUG : pour afficher des informations de débogage pouvant aider les développeurs à résoudre les bogues de l'application. Lorsque le niveau de journalisation est DEBUG, vous obtenez également les journaux du logiciel SDK client de Mobile Analytics qui sont inclus lorsque vous envoyez des journaux.
+    * DEBUG : pour afficher des informations de débogage pouvant aider les développeurs à résoudre les bogues de l'application.
+    Lorsque le niveau de journalisation est DEBUG, vous obtenez également les journaux du logiciel SDK client de Mobile Analytics qui sont inclus lorsque vous envoyez des journaux.
     * TRACE : pour les points d'entrée et de sortie de méthode.
    {: note}
-    {: web}
+   {: web}
 
-   Les fragments de code suivants présentent un exemple d'utilisation du consignateur pour une application Web : 
+   Les fragments de code suivants présentent un exemple d'utilisation du consignateur pour une application Web :
    ```Javascript
     //Create a logger instance.  You can create multiple loggers to organize your logs as you wish
     
@@ -739,7 +742,7 @@ Le logiciel SDK de Mobile Analytics vous permet d'instrumenter votre application
    {: note}
    {: web}
 
-6. Pour obtenir des informations sur les modèles d'intégration utilisateur (nouveaux utilisateurs/utilisateurs existants), vous devez associer une identité d'utilisateur à votre session d'application. Pour ce faire, vous pouvez appeler l'API suivante :
+6. Pour obtenir des informations sur les modèles d'intégration utilisateur (nouveaux utilisateurs/utilisateurs existants), vous devez associer une identité d'utilisateur à votre session d'application.  Pour ce faire, vous pouvez appeler l'API suivante :
     ```Javascript
     ibmmfpfanalytics.setUserContext("userName or userIdentity");
     ```
@@ -749,8 +752,8 @@ Le logiciel SDK de Mobile Analytics vous permet d'instrumenter votre application
     Notez que toutes les données d'analyse capturées et stockées localement sont envoyées au service Mobile Analytics uniquement lorsque l'API ibmmfpfanalytics.send() est appelée.
     {: web}
 
-7.  Pour obtenir des informations sur vos modèles d'interaction sur le réseau HTTP des applications, comme les API HTTP appelées, le nombre de demandes et les temps de réponse moyens, vous devez utiliser la classe WLResourceRequest du logiciel SDK client de Mobile Foundation Service pour effectuer les appels HTTP. Bien que vous ayez peut-être initialisé Analytics pour la capture d'événements de réseau, si vous utilisez WLResourceRequest, Mobile Analytics peut s'introduire dans les appels de réseau et capturer les données pertinentes. Voici comment vous devez effectuer vos appels HTTP :
-```Javascript
+7.  Pour obtenir des informations sur vos modèles d'interaction sur le réseau HTTP des applications, comme les API HTTP appelées, le nombre de demandes et les temps de réponse moyens, vous devez utiliser la classe WLResourceRequest du logiciel SDK client de Mobile Foundation Service pour effectuer les appels HTTP.  Bien que vous ayez peut-être initialisé Analytics pour la capture d'événements de réseau, si vous utilisez WLResourceRequest, Mobile Analytics peut s'introduire dans les appels de réseau et capturer les données pertinentes.  Voici comment vous devez effectuer vos appels HTTP :
+    ```Javascript
       var resourceRequest = new WL.ResourceRequest("url_path", WLResourceRequest.GET);
       resourceRequest.send().then(function(response) {
             console.log('handle success' + JSON.stringify(data));
@@ -776,13 +779,15 @@ Le logiciel SDK de Mobile Analytics vous permet d'instrumenter votre application
     Les données personnalisées journalisées peuvent être représentées dans des graphiques personnalisés que vous pouvez définir dans la console Mobile Analytics afin de déduire des informations personnalisées.
     {: web}
 
-## Etapes suivantes
-{: #next_steps}
+## Etape suivante
+{: #next_steps_analytics}
 
-Mobile Foundation met à disposition des API REST qui permettent aux développeurs d'importer (POST) et d'exporter (GET) des données d'analyse. 
+Essayez un exemple simple [ici](https://github.com/MobileFirst-Platform-Developer-Center/mfp-analytics-samples). En moins de 5 minutes vous serez en mesure d'exécuter le modèle d'application et d'avoir une idée des fonctionnalités de l'API présentée sur cette page. Vous verrez également les différents modes d'affichage des informations d'analyse sur la console d'analyse.   
 
-Essayez l'API REST d'analyse décrite dans la documentation Swagger depuis [cette page](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/). 
+Le service d'analyse Mobile Foundation met à disposition des API REST qui permettent aux développeurs d'importer (POST) et d'exporter (GET) des données d'analyse. 
 
-{: note}
+Essayez l'API REST d'analyse décrite dans la documentation Swagger depuis [cette page](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/).
 
-A présent, vous pouvez accéder à la console Mobile Analytics pour consulter des données d'utilisation, par exemple les nouveaux appareils et le nombre total d'appareils utilisant votre application. Vous pouvez aussi surveiller votre application en créant des graphiques personnalisés, en définissant des alertes et en surveillant les pannes de l'application. 
+
+
+

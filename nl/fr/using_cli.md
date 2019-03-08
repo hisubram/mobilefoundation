@@ -12,8 +12,8 @@ lastupdated:  "2018-11-19"
 {:tip: .tip}
 {:pre: .pre}
 
-#	Interface de ligne de commande (CLI) {{ site.data.keyword.mobilefoundation_short }}
-{: #using_mobilefoundation_cli}
+#	Interface de ligne de commande Mobile Foundation
+{: #mobile_foundation_cli}
 
 {{ site.data.keyword.mobilefoundation_short }} fournit un outil d'interface de ligne de commande (CLI) pour le développeur **mfpdev** afin de faciliter la gestion du client {{site.data.keyword.mobilefoundation_short}} et des artefacts du serveur.
 

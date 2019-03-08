@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-22"
+lastupdated: "2019-02-01"
 
 ---
 
@@ -17,139 +17,58 @@ lastupdated: "2018-11-22"
 # Visualisation des informations sur la console
 {: #visualize_insights_on_console}
 
-Dans la console MobileFirst Analytics, vous pouvez afficher et configurer les rapports d'analyse, gérer les alertes et afficher les journaux du client. Lancez la console Analytics à partir de la console Mobile Foundation Operations en cliquant sur **Analytics Console** dans la barre de navigation de gauche.
+Pour visualiser les données d'analyse capturées et envoyées à partir de votre application, vous devez lancer la console Mobile Analytics en cliquant sur l'option **Analytics Console** dans la barre de navigation de gauche de la console Mobile Foundation Operations. 
 
-La console Analytics est lancée et le tableau de bord par défaut apparaît. Si une application client a déjà envoyé des journaux et des données d'analyse au serveur, les rapports pertinents sont créés et affichés. Dans le tableau de bord, vous pouvez examiner les données d'analyse collectées. Ces données d'analyse peuvent être liées aux pannes d'application, aux sessions d'application et au temps de traitement du serveur. De plus, vous pouvez créer des graphiques personnalisés et gérer les alertes.
+La console Mobile Analytics peut s'exécuter dans deux modes : 
+  - **Mode démonstration ACTIVE**, qui est destiné uniquement à des fins de démonstration et affiche les différentes vues d'analyse (graphiques et tableaux) à l'aide de flux de données simulées. 
+  - **Mode démonstration DESACTIVE**, qui affiche les différentes vues d'analyse en fonction des flux de données en temps réel provenant de vos applications [instrumentées pour Mobile Analytics](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app). 
+  
+Toutes les vues d'analyse peuvent être élaguées en appliquant des filtres aux options *Nom de l'application*, *Version*, *Système d'exploitation du terminal* et *Période*, ce qui vous permet d'obtenir des informations émanant de différents points de vue. 
 
-Outre une vue récapitulative de vos analyses mobiles, la fonctionnalité d'analyse offre la possibilité d'effectuer une recherche brute dans les journaux client, les données capturées sur les incidents client et toutes les données supplémentaires que vous fournissez explicitement via des appels de fonction d'API client qui alimentent Mobile Analytics.
+Pour visualiser des informations pour votre application, vérifiez que : 
+  - Votre application est correctement instrumentée pour capturer et envoyer les données d'analyse pertinentes au service Mobile Analytics. 
+  - Vous avez désactivé le mode démonstration dans la console d'analyse. 
+  - Vous appliquez les filtres appropriés. Par exemple, vérifiez que vous avez sélectionné une période lorsque votre application a été déployée dans la zone et est active chez des utilisateurs. 
 
-## Surveillance des données d'application
-{: #monitoring_app_data}
+La console Mobile Analytics fournit différents types d'analyse de l'utilisation et des performances de votre application mobile, selon les catégories indiquées dans le volet de navigation de gauche de la console d'analyse. Les sections suivantes détaillent les différentes vues d'analyse :  
 
-Mobile Analytics assure la surveillance et l'analyse de vos applications mobiles. Vous pouvez enregistrer des journaux d'application et surveiller des données avec le logiciel SDK client de Mobile Analytics. Les développeurs peuvent contrôler à quel moment envoyer ces données au service Mobile Analytics. Lorsque les données sont livrées à Mobile Analytics, vous pouvez utiliser la console Mobile Analytics pour obtenir des informations d'analyse sur vos applications mobiles, vos appareils et les journaux des applications.
 
-Certaines des informations qui peuvent être dérivées sont les suivantes :
-
-**Mesures prédéfinies**
-
-Avec des mesures prédéfinies, vous pouvez répondre à des questions telles que :
-* Quel est le nombre de nouveaux utilisateurs de mon application ?
-* Combien de personnes utilisent-elles activement mon application ?
-* A quelle fréquence les personnes utilisent-elles mon application ?
-* A quelle heure de la journée les personnes utilisent-elles mon application ?
-* Quels sont les modèles d'appareil préférés des utilisateurs de mon application ?
-* Quand cesser la prise en charge de systèmes d'exploitation surannés ?
-* Quelles sont les applications qui présentent des problèmes de performance ?
-
-**Evénements personnalisés**
-
-En ajoutant vos propres événements personnalisés, vous pouvez répondre à des questions telles que :
-* Quelles sont les fonctions les plus utilisées, et celles les moins utilisées ?
-* A quel endroit les utilisateurs entrent-ils et quittent-ils mon application ?
-* Quelles sont les activités que visualisent le plus les utilisateurs ?
-* les utilisateurs suivent-ils jusqu'au bout les flux de travaux (par exemple, les entonnoirs de conversion) ?
-
-## Rapports pouvant être visualisés : Utilisateurs
+## Utilisateurs
 {: #reports_visualized_users}
+Cette vue vous aide à approfondir vos connaissances sur les modèles d'intégration utilisateur, comme le nombre d'utilisateurs actifs ayant utilisé l'application dans une plage de dates donnée et une comparaison du nombre de nouveaux utilisateurs par rapport au nombre d'utilisateurs existants recommençant à utiliser votre application. Les graphiques de cette vue peuvent être filtrés selon le *nom de l'application*, le *système d'exploitation* ou la *version du système d'exploitation*. 
 
-Ce rapport affiche un graphique indiquant le nombre d'utilisateurs actifs ayant utilisé l'application dans une plage de dates spécifiée. Le rapport indique également le nombre de nouveaux utilisateurs qui sont des utilisateurs uniques qui utilisent l'application pour la première fois, pour la plage de dates spécifiée.
-Les graphiques peuvent être filtrés selon le nom de l'application, le système d'exploitation ou les versions du système d'exploitation.
-
-## Rapports pouvant être visualisés : Sessions
+## Sessions
 {: #reports_visualized_sessions}
+Cette vue vous aide à approfondir vos connaissances des modèles d'utilisation de votre application en termes de *sessions d'application* pour la plage de dates spécifiée. Une session est enregistrée lorsqu'une application est amenée au premier plan d'un appareil. Vous obtiendrez plus de détails sur les heures de la journée où votre application est la plus et la moins utilisée, ce qui peut être utile pour votre entreprise. Les graphiques de cette vue peuvent être filtrés selon le *nom de l'application*, le *système d'exploitation* ou la *version du système d'exploitation*. 
 
-Ce rapport affiche un graphique montrant les sessions d'application pour la plage de dates spécifiée. Une session est enregistrée lorsqu'une application est amenée au premier plan d'un appareil. Les graphiques peuvent être filtrés selon le nom de l'application, le système d'exploitation ou les versions du système d'exploitation.
-
-## Rapports pouvant être visualisés : Demandes de réseau
+## Demandes de réseau
 {: #reports_visualized_network_requests}
+Cette vue vous aide à approfondir vos connaissances sur votre expérience de l'application, car elle effectue des appels d'API vers les systèmes de back end. Elle comporte des tableaux et des graphiques qui permettent de savoir quelles sont les fonctions de vos systèmes de back end les plus utilisées et quels sont leurs temps de réponse et leur stabilité, et si vous devez envisager de rééquilibrer vos systèmes de support de back end. 
 
-Visualisez les données de demande de réseau de vos applications dans la console Mobile Analytics.
+Cette vue contient des graphiques qui tracent sur une plage de données spécifique la durée moyenne d'aller-retour des appels d'API sortants de votre application, le nombre de demandes effectuées par appel d'API, le nombre de demandes ayant abouti par rapport à celles qui ont échoué, regroupées par codes de réponse. Les graphiques de cette vue peuvent être filtrés selon le nom de l'application, le système d'exploitation ou les versions du système d'exploitation.
 
-Les données sont disponibles pour les mesures suivantes :
-
-**Durée de la boucle** - définit la durée, en millisecondes, nécessaire à votre application pour effectuer des demandes de réseau.
-**Nombre de demandes** - affiche la fréquence à laquelle une application effectue des demandes de réseau. Les données sont également affichées en tant que moyenne.
-Les graphiques peuvent être filtrés selon le nom de l'application, le système d'exploitation ou les versions du système d'exploitation.
-
-## Rapports pouvant être visualisés : Pannes
+## Pannes
 {: #reports_visualized_crashes}
+Cette vue vous aide à savoir dans quelle mesure votre application a été stable sur une période donnée et à décider si la conception/l'implémentation de votre application doit être corrigée. Elle fournit des graphiques qui opposent le nombre de pannes au nombre total d'utilisations et au taux de panne global. Les graphiques de cette vue peuvent être filtrés selon le *nom de l'application*, le *système d'exploitation* ou la *version du système d'exploitation*. 
 
-Vous pouvez afficher des informations sur les pannes de votre application dans la console Mobile Analytics afin de mieux surveiller et dépanner vos applications.
 
-Sur la page Pannes, le tableau **Présentation de la panne** affiche les colonnes de données suivantes :
-
-**Application** : nom d'application<br/>
-**Pannes** : nombre total de pannes pour cette application<br/>
-**Nombre total d'utilisations** : nombre total de fois qu'un utilisateur ouvre et ferme cette application<br/>
-**Taux de pannes** : pourcentage de pannes par utilisation<br/>
-Vous pouvez rapidement afficher des informations sur les pannes de votre application dans le tableau des Pannes. Le diagramme à barres
-Pannes affiche un histogramme des pannes au fil du temps.<br/>
-
-Vous pouvez afficher les données de panne de deux façons :
-
-1.  Afficher le taux de panne : taux de panne dans le temps
-2.  Afficher le nombre total de pannes : nombre total de pannes dans le temps
-
-## Rapports pouvant être visualisés : Traitement des incidents
+## Traitement des incidents
 {: #reports_visualized_troubleshooting}
+Cette vue fournit toutes les informations nécessaires à un développeur d'applications pour traiter les incidents d'une application. Elle offre une analyse plus détaillée des pannes de votre application en ce qui concerne les périphériques affectés, le système d'exploitation hôte, l'heure spécifique de la panne, la trace de pile au moment de la panne, ainsi que les journaux de panne qui peuvent être téléchargés à des fins d'analyse plus détaillée.   
 
-La page **Traitement des incidents** dans la console Mobile Analytics offre une vue granulaire des pannes de votre application, à l'aide du tableau **Récapitulatif des pannes**.
-
-Le tableau **Récapitulatif des pannes** inclut les colonnes de données suivantes et peut être trié :
-
-* Pannes
-* Appareils
-* Dernière panne
-* Application
-* Système d'exploitation
-* Message
-
-Cliquez sur l'icône + située en regard de n'importe quelle entrée pour afficher le tableau **Détails des pannes**, qui inclut les colonnes suivantes :
-
-* Heure de la panne
-* Version de l'application
-* Version du système d'exploitation
-* Modèle d'appareil
-* ID d'appareil
-* Téléchargement : lien de téléchargement des journaux qui ont conduit à la panne
-
-Développez n'importe quelle entrée du tableau **Détails des pannes** pour obtenir plus de détails, y compris une trace de pile.
-
-Les données du tableau **Récapitulatif des pannes** sont renseignées en interrogeant les journaux d'application de niveau irrécupérable. Si votre application ne collecte pas de journaux d'application de niveau irrécupérable, aucune donnée n'est disponible.
+Pour regrouper les journaux de panne, recherchez les journaux d'application qui ont été consignés au niveau FATAL. Le SDK du client d'analyse pour Android et iOS natif traite les exceptions non interceptées et consigne des détails à leur sujet sous la forme de messages de journal de niveau FATAL. Toutefois, dans le cas de Cordova, les pannes sur la couche Javascript doivent être traitées par le développeur et les journaux de panne doivent être envoyés au service Mobile Analytics pour être visualisés et analysés dans la console Mobile Analytics.
 {: note}
 
 
-## Rapports pouvant être visualisés : Commentaires en retour des utilisateurs
+## Commentaires en retour des utilisateurs
 {: #reports_visualized_userfeedback}
+Cette vue vous permet d'approfondir vos connaissances sur l'expérience interactive réelle de vos utilisateurs lorsqu'ils se servent de l'application, et de connaître plus précisément leurs impressions. 
 
-Les commentaires en retour des utilisateurs permettent une analyse des commentaires relatifs à l'utilisation de l'application à l'aide de Mobile Analytics.
-Avec cette fonctionnalité de Mobile Analytics :
-* Les **utilisateurs et testeurs** peuvent enregistrer et envoyer des commentaires en retour et des rapports de bogues à partir de l'application pendant qu'ils exécutent et utilisent l'application.
-* Les **propriétaires d'application** ont une idée plus précise de l'expérience utilisateur de l'application grâce à ce retour d'informations riche en contexte.
-* Les **développeurs** reçoivent cependant des contextes d'application précis permettant de diagnostiquer et de corriger les bogues ou les lacunes de fonctionnalités.
+* Les **propriétaires d'application** peuvent accéder à une vue enrichie détaillée et contextuelle des bogues et à d'autres commentaires en retour envoyés par les
+**utilisateurs et les testeurs** et consignés lors de l'exécution de l'application. 
+* Les **développeurs** peuvent recevoir des contextes d'application précis pour diagnostiquer et corriger des bogues ou des écarts de fonctionnalité. 
+* Les **propriétaires d'application** et les **développeurs** peuvent utiliser cette vue pour gérer également des actions sur les commentaires en retour reçus, par exemple l'enregistrement de commentaires ou de liens vers des problèmes créés dans les systèmes de suivi des bogues. Un statut global des vérifications peut également être défini pour chaque commentaire afin d'aider à récapituler les actions effectuées suite aux commentaires. 
 
-### Activation des commentaires en retour des utilisateurs
-{: #enable_user_feedback}
-
-Effectuez les étapes suivantes pour permettre à votre application mobile de capturer les commentaires des utilisateurs.
-
-#### Instrumentation de votre application
-{: #instrument_app}
-
-* Instrumentez votre application mobile pour passer en mode commentaires en retour. Appelez l'API `Analytics.triggerFeedbackMode();` pour appeler le mode commentaires en retour. <!--For more information, refer to the documentation [here](instrument_an_app.html)-->.
-* L'API peut être appelée sur tout événement d'application tel que des boutons, des actions de menu ou des gestes.
-
-#### Réception de commentaires en retour des utilisateurs
-{: #receive_feedback}
-
-* Les utilisateurs et les testeurs de votre application peuvent basculer en mode commentaires en retour en déclenchant l'action d'application instrumentée pour les commentaires en retour.
-* A partir du mode commentaires en retour, des commentaire en retour contextuels détaillés ainsi qu'une capture d'écran peuvent être rassemblés et envoyés à Mobile Analytics.
-
-#### Analyse des commentaires en retour des utilisateurs
-{: #analyze_feedback}
-
-* Mobile Analytics reçoit et consolide les riches commentaires en retour contextuels envoyés par les applications mobiles.
-* Connectez-vous à la console Mobile Analytics et sélectionnez l'option **Commentaires en retour des utilisateurs** pour afficher les commentaires.
-* Un propriétaire d'application peut consulter les commentaires en retour, ajouter des commentaires et les étiqueter avec un statut de révision. Les commentaires peuvent généralement être des actions planifiées, telles que des liens vers des problèmes Git, créés pour travailler sur les commentaires en retour, ou les commentaires peuvent indiquer pourquoi aucune action n'est requise sur les commentaires en retour.
-* Le statut de révision peut être utilisé pour gérer efficacement les commentaires en retour en les classant dans l'une des différentes options de statut de révision.
+## Graphiques personnalisés
+Cette vue étend Mobile Analytics à des cas personnalisés où les **propriétaires d'application** et les **développeurs** souhaiteraient créer leur propre analyse spécifique à l'application. Cette fonction vous permet de générer vos propres vues d'analyse (graphiques, tableaux, etc.) à partir de données d'analyse standard capturées par le SDK client, mais également de personnaliser les données ou les données spécifiques à l'application qui sont consignées. Reportez-vous [ici](/docs/services/mobilefoundation?topic=mobilefoundation-build_custom_charts#build_custom_charts) pour plus d'informations sur cette fonction d'analyse étendue. 
 

@@ -17,7 +17,7 @@ lastupdated:  "2018-06-18"
 
 ## Cordova
 {: #cordova }
-### Inicializar y abrir conexiones, obtener un accesor y añadir datos
+### Inicializar y abrir conexiones, obtener un descriptor de acceso y añadir datos
 {: #initialize-and-open-connections-get-an-accessor-and-add-data }
 ```javascript
 var collectionName = 'people';
@@ -529,7 +529,7 @@ var arr2 = WL.JSONStore.QueryPart().leftLike('name', 'los');  // returns {name: 
 
 ## iOS
 {: #ios }
-### Inicializar y abrir conexiones, obtener un accesor y añadir datos
+### Inicializar y abrir conexiones, obtener un descriptor de acceso y añadir datos
 {: #ios-initialize-and-open-connections-get-an-accessor-and-add-data }
 ```objc
 // Create the collections object that will be initialized.
@@ -859,7 +859,7 @@ NSArray* results = [[JSONStore sharedInstance] fileInfoAndReturnError:&error];
 
 ## Android
 {: #android }
-### Inicializar y abrir conexiones, obtener un accesor y añadir datos
+### Inicializar y abrir conexiones, obtener un descriptor de acceso y añadir datos
 {: #android-initialize-and-open-connections-get-an-accessor-and-add-data }
 ```java
 // Fill in the blank to get the Android application context.

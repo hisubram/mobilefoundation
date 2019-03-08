@@ -57,9 +57,7 @@ El mejor momento para completar este procedimiento es al finalizar el desarrollo
 * cordova run
 * cordova emulate
 * mfpdev app webupdate
-
 * mfpdev app preview
-
 
 Si ejecuta alguno de los mandatos de la lista después de cifrar los recursos web, debe completar este procedimiento de nuevo para cifrar los recursos web.
 
