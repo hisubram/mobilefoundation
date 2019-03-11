@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated:  "2018-11-23"
+  years: 2018, 2019
+lastupdated:  "2019-02-13"
 
 ---
 
@@ -11,14 +11,21 @@ lastupdated:  "2018-11-23"
 {:screen: .screen}
 {:tip: .tip}
 {:pre: .pre}
+{:ios: .ph data-hd-programlang='iOS'}
+{:android: .ph data-hd-programlang='Android'}
+{:cordova: .ph data-hd-programlang='Cordova'}
 
 #	JSONStore 代码样本
 {: #code_samples}
 
-## Cordova
-{: #cordova }
-### 初始化并打开连接，获取存取器，以及添加数据
-{: #initialize-and-open-connections-get-an-accessor-and-add-data }
+### Cordova 的样本
+{: #samples_cordova }
+{: cordova}
+
+#### 在 Cordova 中初始化并打开连接，获取存取器，以及添加数据
+{: #initialize-and-open-connections-get-an-accessor-and-add-data-cordova }
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -74,9 +81,12 @@ WL.JSONStore.init(collections, options)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 查找 - 找到存储区中的文档
+#### 查找 - 找到存储区中的文档
 {: #find-locate-documents-inside-the-store }
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -117,8 +127,10 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 替换 - 更改已存储在集合中的文档
+#### 替换 - 在 Cordova 中更改已存储在集合中的文档
+{: cordova}
 
 ```javascript
 var collectionName = 'people';
@@ -146,9 +158,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 除去 - 删除与查询匹配的所有文档
-{: #remove-delete-all-documents-that-match-the-query }
+#### 除去 - 在 Cordova 中删除与查询匹配的所有文档
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -177,9 +191,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 计数 - 获取与查询匹配的文档总数
-{: #count-gets-the-total-number-of-documents-that-match-a-query }
+#### 计数 - 在 Cordova 中获取与查询匹配的文档总数
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -206,9 +222,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 销毁 - 擦除所有用户的数据，销毁内部存储器并清除安全工件
-{: #destroy-wipes-data-for-all-users-destroys-the-internal-storage-and-clears-security-artifacts }
+#### 销毁 - 在 Cordova 中擦除所有用户的数据，销毁内部存储器并清除安全工件
+{: cordova}
+
 ```javascript
 WL.JSONStore.destroy()
 
@@ -220,9 +238,12 @@ WL.JSONStore.destroy()
   // Handle failure.
 });
 ```
+{: codeblock}
+{: cordova}
 
-### 安全性 - 关闭当前用户对所有打开的集合的访问权
-{: #security-close-access-to-all-opened-collections-for-the-current-user }
+#### 安全性 - 在 Cordova 中关闭当前用户对所有打开的集合的访问权
+{: cordova}
+
 ```javascript
 WL.JSONStore.closeAll()
 
@@ -235,9 +256,11 @@ WL.JSONStore.closeAll()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 安全性 - 更改用于访问存储区的密码
-{: #security-change-the-password-that-is-used-to-access-a-store }
+#### 安全性 - 在 Cordova 中更改用于访问存储区的密码
+{: cordova}
+
 ```javascript
 // The password should be user input.
 // It is hard-coded in the example for brevity.
@@ -271,9 +294,11 @@ WL.JSONStore.changePassword(oldPassword, newPassword, username)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 推送 - 获取标记为“脏”的所有文档，将其发送到适配器，然后将其标记为“干净”
-{: #push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
+#### 推送 - 在 Cordova 中获取标记为“脏”的所有文档，将其发送到适配器，然后将其标记为“干净”
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 var dirtyDocs;
@@ -312,9 +337,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 拉取 - 从适配器获取新数据
-{: #pull-get-new-data-from-an-adapter }
+#### 拉取 - 在 Cordova 中从适配器获取新数据
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -363,9 +390,11 @@ resource.send()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 检查文档是否为脏文档
-{: #check-whether-a-document-is-dirty }
+#### 在 Cordova 中检查文档是否为脏文档
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 var doc = {_id: 1, json: {name: 'carlitos', age: 99}};
@@ -376,8 +405,7 @@ WL.JSONStore.get(collectionName)
 
 .then(function (isDocumentDirty) {
   // Handle success.
-
-  // isDocumentDirty - true if dirty, false otherwise.
+// isDocumentDirty - true if dirty, false otherwise.
 })
 
 .fail(function (errorObject) {
@@ -385,9 +413,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 检查脏文档数
-{: #check-the-number-of-dirty-documents }
+#### 在 Cordova 中检查脏文档数
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -403,9 +433,12 @@ WL.JSONStore.get(collectionName)
   // Handle failure.
 });
 ```
+{: codeblock}
+{: cordova}
 
-### 除去集合
-{: #remove-a-collection }
+#### 在 Cordova 中除去集合
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -425,9 +458,11 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 清除集合中的所有数据
-{: #clear-all-data-that-is-inside-a-collection }
+#### 在 Cordova 中清除集合中的所有数据
+{: cordova}
+
 ```javascript
 var collectionName = 'people';
 
@@ -436,6 +471,7 @@ WL.JSONStore.get(collectionName)
 .clear()
 
 .then(function () {
+
   // Handle success.
 
   // Note: You might want to use the 'removeCollection' API
@@ -447,9 +483,12 @@ WL.JSONStore.get(collectionName)
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 启动事务，添加一些数据，除去文档，落实事务，并在发生故障时回滚事务
-{: transaction }
+#### 在 Cordova 中启动事务，添加一些数据，除去文档，落实事务，并在发生故障时回滚事务
+{: #cordova-transaction }
+{: cordova}
+
 ```javascript
 WL.JSONStore.startTransaction()
 
@@ -492,9 +531,10 @@ WL.JSONStore.startTransaction()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 获取文件信息
-{: #get-file-information }
+#### 在 Cordova 中获取文件信息
+
 ```javascript
 WL.JSONStore.fileInfo()
 .then(function (res) {
@@ -506,9 +546,11 @@ WL.JSONStore.fileInfo()
 });
 ```
 {: codeblock}
+{: cordova}
 
-### 使用 like、rightLike 和 leftLike 执行搜索
-{: #search-with-like-rightlike-and-leftlike }
+#### 在 Cordova 中使用 like、rightLike 和 leftLike 执行搜索
+{: cordova}
+
 ```javascript
 // Match all records that contain the search string on both sides.
 // %searchString%
@@ -526,11 +568,15 @@ var arr = WL.JSONStore.QueryPart().leftLike('name', 'ca');  // returns nothing
 var arr2 = WL.JSONStore.QueryPart().leftLike('name', 'los');  // returns {name: 'carlos', age: 10}
 ```
 {: codeblock}
+{: cordova}
 
-## iOS
-{: #ios }
-### 初始化并打开连接，获取存取器，以及添加数据
-{: #ios-initialize-and-open-connections-get-an-accessor-and-add-data }
+### iOS 的样本
+{: #samples-ios }
+{: ios}
+
+#### 在 iOS 中初始化并打开连接，获取存取器，以及添加数据
+{: ios}
+
 ```objc
 // Create the collections object that will be initialized.
 JSONStoreCollection* people = [[JSONStoreCollection alloc] initWithName:@"people"];
@@ -584,9 +630,11 @@ Initialize with a secure random token from the server
 }];
 ```
 {: codeblock}
+{: ios}
 
-### 查找 - 找到存储区中的文档
-{: #ios-find-locate-documents-inside-the-store }
+#### 查找 - 在 iOS 中找到存储区中的文档
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -624,9 +672,11 @@ for (NSDictionary* result in results) {
 }
 ```
 {: codeblock}
+{: ios}
 
-### 替换 - 更改已存储在集合中的文档
-{: #ios-replace-change-the-documents-that-are-already-stored-inside-a-collection }
+#### 替换 - 在 iOS 中更改已存储在集合中的文档
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -642,9 +692,11 @@ NSError* error = nil;
 int docsReplaced = [[people replaceDocuments:docs andMarkDirty:NO error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### 除去 - 删除与查询匹配的所有文档
-{: #ios-remove-delete-all-documents-that-match-the-query }
+#### 除去 - 在 iOS 中删除与查询匹配的所有文档
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -656,9 +708,11 @@ NSError* error = nil;
 int docsRemoved = [[people removeWithIds:@[@1] andMarkDirty:NO error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### 计数 - 获取与查询匹配的文档总数
-{: #ios-count-gets-the-total-number-of-documents-that-match-a-query }
+#### 计数 - 在 iOS 中获取与查询匹配的文档总数
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -676,9 +730,11 @@ NSError* error = nil;
 int countResult = [[people countWithQueryParts:@[queryPart] error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### 销毁 - 擦除所有用户的数据，销毁内部存储器并清除安全工件
-{: #ios-destroy-wipes-data-for-all-users-destroys-the-internal-storage-and-clears-security-artifacts }
+#### 销毁 - 在 iOS 中擦除所有用户的数据，销毁内部存储器并清除安全工件
+{: ios}
+
 ```objc
 // This object will point to an error if one occurs.
 NSError* error = nil;
@@ -687,9 +743,11 @@ NSError* error = nil;
 [[JSONStore sharedInstance] destroyDataAndReturnError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### 安全性 - 关闭当前用户对所有打开的集合的访问权
-{: #ios-security-close-access-to-all-opened-collections-for-the-current-user }
+#### 安全性 - 在 iOS 中关闭当前用户对所有打开的集合的访问权
+{: ios}
+
 ```objc
 // This object will point to an error if one occurs.
 NSError* error = nil;
@@ -698,9 +756,11 @@ NSError* error = nil;
 [[JSONStore sharedInstance] closeAllCollectionsAndReturnError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### 安全性 - 更改用于访问存储区的密码
-{: #ios-security-change-the-password-that-is-used-to-access-a-store }
+#### 安全性 - 在 iOS 中更改用于访问存储区的密码
+{: ios}
+
 ```objc
 // The password should be user input.
 // It is hardcoded in the example for brevity.
@@ -711,6 +771,7 @@ NSString* username = @"carlos";
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
+
 // Perform the change password operation.
 [[JSONStore sharedInstance] changeCurrentPassword:oldPassword withNewPassword:newPassword forUsername:username error:&error];
 
@@ -719,9 +780,11 @@ oldPassword = nil;
 newPassword = nil;
 ```
 {: codeblock}
+{: ios}
 
-### 推送 - 获取标记为“脏”的所有文档，将其发送到适配器，然后将其标记为“干净”
-{: #ios-push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
+#### 推送 - 在 iOS 中获取标记为“脏”的所有文档，将其发送到适配器，然后将其标记为“干净”
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -739,9 +802,11 @@ NSArray* dirtyDocs = [people allDirtyAndReturnError:&error];
 int numCleaned = [[people markDocumentsClean:dirtyDocs error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### 拉取 - 从适配器获取新数据
-{: #ios-pull-get-new-data-from-an-adapter }
+#### 拉取 - 在 iOS 中从适配器获取新数据
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -758,9 +823,11 @@ NSArray* data = @[ @{@"id" : @1, @"ssn": @"111-22-3333", @"name": @"carlos"} ];
 int numChanged = [[people changeData:data withReplaceCriteria:@[@"id", @"ssn"] addNew:YES markDirty:NO error:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### 检查文档是否为脏文档
-{: #ios-check-whether-a-document-is-dirty }
+#### 在 iOS 中检查文档是否为脏文档
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -772,9 +839,11 @@ NSError* error = nil;
 BOOL isDirtyResult = [people isDirtyWithDocumentId:1 error:&error];
 ```
 {: codeblock}
+{: ios}
 
-### 检查脏文档数
-{: #ios-check-the-number-of-dirty-documents }
+#### 在 iOS 中检查脏文档数
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -786,9 +855,11 @@ NSError* error = nil;
 int dirtyDocsCount = [[people countAllDirtyDocumentsWithError:&error] intValue];
 ```
 {: codeblock}
+{: ios}
 
-### 除去集合
-{: #ios-remove-a-collection }
+#### 在 iOS 中除去集合
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -800,9 +871,11 @@ NSError* error = nil;
 [people removeCollectionWithError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### 清除集合中的所有数据
-{: #ios-clear-all-data-that-is-inside-a-collection }
+#### 在 iOS 中清除集合中的所有数据
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -814,9 +887,12 @@ NSError* error = nil;
 [people clearCollectionWithError:&error];
 ```
 {: codeblock}
+{: ios}
 
-### 启动事务，添加一些数据，除去文档，落实事务，并在发生故障时回滚事务
+#### 在 iOS 中启动事务，添加一些数据，除去文档，落实事务，并在发生故障时回滚事务
 {: #ios-transaction }
+{: ios}
+
 ```objc
 // Get the accessor to an already initialized collection.
 JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:@"people"];
@@ -844,9 +920,11 @@ if (addError != nil || removeError != nil) {
 }
 ```
 {: codeblock}
+{: ios}
 
-### 获取文件信息
-{: #ios-get-file-information }
+#### 在 iOS 中获取文件信息
+{: ios}
+
 ```objc
 // This object will point to an error if one occurs
 NSError* error = nil;
@@ -856,11 +934,15 @@ NSArray* results = [[JSONStore sharedInstance] fileInfoAndReturnError:&error];
 // => [{@"isEncrypted" : @(true), @"name" : @"carlos", @"size" : @3072}]
 ```
 {: codeblock}
+{: ios}
 
-## Android
-{: #android }
-### 初始化并打开连接，获取存取器，以及添加数据
-{: #android-initialize-and-open-connections-get-an-accessor-and-add-data }
+### Android 的样本
+{: #samples_android }
+{: android}
+
+#### 在 Android 中初始化并打开连接，获取存取器，以及添加数据
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -899,9 +981,11 @@ throw ex;
 }
 ```
 {: codeblock}
+{: android}
 
-### 使用来自服务器的安全随机令牌进行初始化
-{: #android-initialize-with-a-secure-random-token-from-the-server }
+#### 在 Android 中使用来自服务器的安全随机令牌进行初始化
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -961,9 +1045,11 @@ AsyncTask<Context, Void, Void> aTask = new AsyncTask<Context, Void, Void>() {
 aTask.execute(ctx);
 ```
 {: codeblock}
+{: android}
 
-### 查找 - 找到存储区中的文档
-{: #android-find-locate-documents-inside-the-store }
+#### 查找 - 在 Android 中找到存储区中的文档
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1003,9 +1089,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 替换 - 更改已存储在集合中的文档
-{: #android-replace-change-the-documents-that-are-already-stored-inside-a-collection }
+#### 替换 - 在 Android 中更改已存储在集合中的文档
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1031,9 +1119,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 除去 - 删除与查询匹配的所有文档
-{: #android-remove-delete-all-documents-that-match-the-query }
+#### 除去 - 在 Android 中删除与查询匹配的所有文档
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1063,9 +1153,11 @@ catch (JSONException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 计数 - 获取与查询匹配的文档总数
-{: android-count-gets-the-total-number-of-documents-that-match-a-query }
+#### 计数 - 在 Android 中获取与查询匹配的文档总数
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1092,9 +1184,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 销毁 - 擦除所有用户的数据，销毁内部存储器并清除安全工件
-{: #android-destory-wipes-data-for-all-users-destroys-the-internal-storage-and-clears-security-artifacts }
+#### 销毁 - 在 Android 中擦除所有用户的数据，销毁内部存储器并清除安全工件
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1109,9 +1203,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 安全性 - 关闭当前用户对所有打开的集合的访问权
-{: #android-security-close-access-to-all-opened-collections-for-the-current-user }
+#### 安全性 - 在 Android 中关闭当前用户对所有打开的集合的访问权
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1126,9 +1222,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 安全性 - 更改用于访问存储区的密码
-{: #android-security-change-the-password-that-is-used-to-access-a-store }
+#### 安全性 - 在 Android 中更改用于访问存储区的密码
+{: android}
+
 ```java
 // The password should be user input.
 // It is hard-coded in the example for brevity.
@@ -1153,9 +1251,11 @@ finally {
 }
 ```
 {: codeblock}
+{: android}
 
-### 推送 - 获取标记为“脏”的所有文档，将其发送到适配器，然后将其标记为“干净”
-{: #android-push-get-all-documents-that-are-marked-as-dirty-send-them-to-an-adapter-and-mark-them-clean }
+#### 推送 - 在 Android 中获取标记为“脏”的所有文档，将其发送到适配器，然后将其标记为“干净”
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1176,9 +1276,11 @@ try {
 }
 ```
 {: codeblock}
+{: android}
 
-### 拉取 - 从适配器获取新数据
-{: #android-pull-get-new-data-from-an-adapter }
+#### 拉取 - 在 Android 中从适配器获取新数据
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1218,9 +1320,11 @@ catch (JSONException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 检查文档是否为脏文档
-{: #android-check-whetther-a-document-is-dirty }
+#### 在 Android 中检查文档是否为脏文档
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1238,9 +1342,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-#### 检查脏文档数
-{: #android-check-the-number-of-dirty-documents }
+#### 在 Android 中检查脏文档数
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1258,9 +1364,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 除去集合
-{: #android-remove-a-collection }
+#### 在 Android 中除去集合
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1279,9 +1387,11 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 清除集合中的所有数据
-{: #android-clear-all-data-that-is-inside-a-collection }
+#### 在 Android 中清除集合中的所有数据
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1299,9 +1409,12 @@ catch (JSONStoreException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 启动事务，添加一些数据，除去文档，落实事务，并在发生故障时回滚事务
+#### 在 Android 中启动事务，添加一些数据，除去文档，落实事务，并在发生故障时回滚事务
 {: #android-transaction }
+{: android}
+
 ```java
 // Fill in the blank to get the Android application context.
 Context ctx = getContext();
@@ -1341,9 +1454,11 @@ catch (JSONException ex) {
 }
 ```
 {: codeblock}
+{: android}
 
-### 获取文件信息
-{: #android-get-file-information }
+#### 在 Android 中获取文件信息
+{: android}
+
 ```java
 Context ctx = getContext();
 List<JSONStoreFileInfo> allFileInfo = WLJSONStore.getInstance(ctx).getFileInfo();
@@ -1355,3 +1470,4 @@ for(JSONStoreFileInfo fileInfo : allFileInfo) {
 }
 ```
 {: codeblock}
+{: android}

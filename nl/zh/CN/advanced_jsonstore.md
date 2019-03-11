@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-28"
+  years: 2018, 2019
+lastupdated: "2019-02-12"
 
 ---
 {:generic: .ph data-hd-programlang='generic'}
@@ -16,8 +16,9 @@ lastupdated: "2018-11-28"
 {:swift: .ph data-hd-programlang='swift'}
 {:curl: .ph data-hd-programlang='curl'}
 {:generic: .ph data-hd-operatingsystem='generic'}
-{:ios: .ph data-hd-operatingsystem='iOS'}
-{:android: .ph data-hd-operatingsystem='Android'}
+{:ios: .ph data-hd-programlang='iOS'}
+{:android: .ph data-hd-programlang='Android'}
+{:cordova: .ph data-hd-programlang='Cordova'}
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:tip: .tip}
@@ -26,51 +27,48 @@ lastupdated: "2018-11-28"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# 高级脱机存储器配置 
-{: #adv_configure_offline_storage}
-
-使用上面的选项卡可在此页面上查看特定于操作系统的指示信息。有关特定于 Android 的指示信息，请选择 **Java**；有关特定于 Cordova 的指示信息，请选择 **Node**；有关特定于 iOS 的指示信息，请选择 **Swift**。
-{: note}
+# 高级 JSONStore 
+{: #advanced_jsonstore}
 
 ## JSONStore 中的安全性
-{: #security_jsonstore} 
+{: #security_jsonstore}
 
 <!--### Cordova
-{: security_jsonstore_cordova}-->
+{: #security_jsonstore_cordova}-->
 
 您可以通过将密码传递到 `init` 函数来保护存储区中的所有集合。如果未传递密码，那么不会加密存储区中所有集合的文档。
-{: javascript}
+{: cordova}
 
 数据加密仅适用于 Android、iOS、Windows 8.1 Universal 和 Windows 10 UWP 环境。某些安全元数据存储在密钥链 (iOS)、共享首选项 (Android) 或凭据保险箱 (Windows8.1) 中。存储区利用 256 位高级加密标准 (AES) 密钥进行加密。所有密钥通过基于密码的密钥派生函数 2 (PBKDF2) 进行增强。
-{: javascript}
+{: cordova}
 
 使用 `closeAll` 可锁定对所有集合的访问，直至再次调用 `init`。如果将 `init` 当作登录函数，那么可将 `closeAll` 当作对应的注销函数。使用 `changePassword` 可更改密码。
-{: javascript}
+{: cordova}
 
 仅在 iOS 中支持加密。缺省情况下，Mobile Foundation Cordova SDK for iOS 依赖于 iOS 提供的 API 进行加密。如果想要将此项替换为 OpenSSL，请执行以下操作：
-{: javascript}
+{: cordova}
 
 * 添加 `cordova-plugin-mfp-encrypt-utils` 插件： 
   ```bash
   cordova plugin add cordova-plugin-mfp-encrypt-utils.
   ```
 * 在应用程序逻辑中，使用 `WL.SecurityUtils.enableNativeEncryption(false)` 来启用 OpenSSL 选项。
-{: javascript}
+{: cordova}
 
 <!--### iOS
 {: #security_jsonstore_ios} -->
 
 您可以通过将包含密码的 `JSONStoreOpenOptions` 对象传递到 `openCollections` 函数来保护存储区中的所有集合。如果未传递密码，那么不会加密存储区中所有集合的文档。
-{: swift}
+{: ios}
 
 某些安全元数据存储在密钥链 (iOS) 中。存储区利用 256 位高级加密标准 (AES) 密钥进行加密。所有密钥通过基于密码的密钥派生函数 2 (PBKDF2) 进行增强。
-{: swift}
+{: ios}
 
 使用 `closeAllCollections` 可锁定对所有集合的访问，直至再次调用 `openCollections`。如果将 `openCollections` 当作登录函数，那么可将 `closeAllCollections` 当作对应的注销函数。
 {: ios}
 
 使用 `changeCurrentPassword` 可更改密码。
-{: swift}
+{: ios}
 
 ```swift
 let collection:JSONStoreCollection = JSONStoreCollection(name: "people")
@@ -87,22 +85,22 @@ do {
 }
 ```
 {: codeblock}
-{: swift}
+{: ios}
 
 <!--### Android
 {: #security_jsonstore_android} -->
 
 您可以通过将包含密码的 `JSONStoreInitOptions` 对象传递到 `openCollections` 函数来保护存储区中的所有集合。如果未传递密码，那么不会加密存储区中所有集合的文档。
-{: java}
+{: android}
 
 某些安全元数据存储在共享首选项 (Android) 中。存储区利用 256 位高级加密标准 (AES) 密钥进行加密。所有密钥通过基于密码的密钥派生函数 2 (PBKDF2) 进行增强。
-{: java}
+{: android}
 
 使用 `closeAllCollections` 可锁定对所有集合的访问，直至再次调用 `openCollections`。如果将 `openCollections` 当作登录函数，那么可将 `closeAllCollections` 当作对应的注销函数。
-{: java}
+{: android}
 
 使用 `changeCurrentPassword` 可更改密码。
-{: java}
+{: android}
 
 ```java
 Context context = getContext();
@@ -118,10 +116,10 @@ try {
   // handle success
 } catch(JSONStoreException e) {
   // handle failure
-}
-```
+      }
+      ```
 {: codeblock}
-{: java}
+{: android}
 
 ## JSONStore 中的多用户支持
 {: #multiple_user_jsonstore} 
@@ -130,7 +128,7 @@ try {
 {: #multiple_user_jsonstore_cordova} -->
 
 您可以在单个 MobileFirst 应用程序中创建包含不同集合的多个存储区。`init` 函数可接受包含用户名的 options 对象。如果未提供任何用户名，那么缺省用户名为 *jsonstore*。
-{: javascript}
+{: cordova}
 
 ```javascript
 var collections = {
@@ -146,13 +144,13 @@ WL.JSONStore.init(collections, options).then(function () {
 });
 ```
 {: codeblock}
-{: javascript}
+{: cordova}
 
 <!--### iOS
 {: #multiple_user_jsonstore_ios} -->
 
 您可以在单个 MobileFirst 应用程序中创建包含不同集合的多个存储区。`init` 函数可接受包含用户名的 options 对象。如果未提供任何用户名，那么缺省用户名为 *jsonstore*。
-{: swift}
+{: ios}
 
 ```swift
 let collection:JSONStoreCollection = JSONStoreCollection(name: "people")
@@ -169,13 +167,13 @@ do {
 }
 ```
 {: codeblock}
-{: swift}
+{: ios}
 
 <!--### Android
 {: #multiple_user_jsonstore_android} -->
 
 您可以在单个 Mobile Foundation 应用程序中创建包含不同集合的多个存储区。`openCollections` 函数可接受包含用户名的 options 对象。如果未提供任何用户名，那么缺省用户名为 *jsonstore*。
-{: java}
+{: android}
 
 ```java
 Context context = getContext();
@@ -191,10 +189,10 @@ try {
   // handle success
 } catch(JSONStoreException e) {
   // handle failure
-}
-```
+      }
+      ```
 {: codeblock}
-{: java}
+{: android}
 
 ## 适配器集成
 {: #adapter_integration}
@@ -203,7 +201,7 @@ try {
 {: #adapter_integration_cordova}-->
 
 适配器集成是可选的，它提供了将数据从集合发送到适配器以及从适配器将数据获取到集合的方法。如果需要提高灵活性，可以使用 `WLResourceRequest` 或 `jQuery.ajax` 来实现这些目标。
-{: javascript}
+{: cordova}
 
 1. 创建一个适配器并将其命名为 **JSONStoreAdapter**。
 2. 定义其过程：`addPerson`、`getPeople`、`pushPeople`、`removePerson` 和 `replacePerson`。
@@ -235,8 +233,7 @@ try {
         return;
     }
    ```
-   {: codeblock}
-   {: javascript}
+   {: cordova}
 3. 要从适配器装入数据，请使用 `WLResourceRequest`。
    ```javascript
    try {
@@ -251,8 +248,7 @@ try {
         alert("Failed to load data from adapter " + e.Messages);
     }
    ```
-   {: codeblock}
-   {: javascript}
+   {: cordova}   
 4. 调用 `getPushRequired` 将返回所谓“脏文档”的数组，这些是包含后端系统上不存在的本地修订的文档。在调用 `push` 时，会将这些文档发送到适配器。
    ```javascript
    var collectionName = 'people';
@@ -263,9 +259,10 @@ try {
    });
    ```
    {: codeblock}
-   {: javascript}
+   {: cordova}
    为阻止 JSONStore 将文档标记为“脏”，请将 `{markDirty:false}` 选项传递到 `add`、`replace` 和 `remove`。
    {: tip} 
+   {: cordova}
 5. 您还可以使用 `getAllDirty` API 来检索脏文档。
    ```javascript
    WL.JSONStore.get(collectionName).getAllDirty()
@@ -273,10 +270,10 @@ try {
         // handle success
     }).fail(function (errorObject) {
         // handle failure
-    });
-   ```
-   {: javascript}
+});
+```
    {: codeblock}
+   {: cordova}
 6. 要将更改推送到适配器，请调用 `getAllDirty` 以获取包含修订的文档的列表，然后使用 `WLResourceRequest`。在发送数据并且收到成功响应后，确保调用 `markClean`。
    ```javascript
    try {
@@ -304,7 +301,7 @@ try {
     }
    ```
    {: codeblock}
-   {: javascript}
+   {: cordova}
 7. 使用 `enhance` 通过向集合原型添加函数来扩展核心 API 以适合您的需求。此示例（以下代码片段）显示如何使用 `enhance` 来添加作用于 `keyvalue` 集合的函数 `getValue`。它接受 key（字符串）作为其唯一参数并返回单个结果。
    ```javascript
    var collectionName = 'keyvalue';
@@ -326,48 +323,18 @@ try {
     }); 
    ```
    {: codeblock}
-   {: javascript}
+   {: cordova}
 8. 请参阅**样本**部分中 Cordova 应用程序的 JSONStore 样本。此项目包含使用 JSONStore API 集合的 Cordova 应用程序。可从[此处](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)下载 JavaScript 适配器 Maven 项目。
-{: javascript}
+{: cordova}
 
 <!--### iOS
 {: #adapter_integration_ios}-->
 
 适配器集成是可选的，它提供了将数据从集合发送到适配器以及从适配器将数据获取到集合的方法。可以使用 `WLResourceRequest` 来实现这些目标。
-{: swift}
+{: ios}
 
 1. 创建一个适配器并将其命名为 **People**。
 2. 定义其过程：`addPerson`、`getPeople`、`pushPeople`、`removePerson` 和 `replacePerson`。
-   ```swift
-    function getPeople() {
-        var data = { peopleList : [{name: 'chevy', age: 23}, {name: 'yoel', age: 23}] };
-        WL.Logger.debug('Adapter: people, procedure: getPeople called.');
-        WL.Logger.debug('Sending data: ' + JSON.stringify(data));
-        return data;
-    }
-    function pushPeople(data) {
-        WL.Logger.debug('Adapter: people, procedure: pushPeople called.');
-        WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-        return;
-    }
-    function addPerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: addPerson called.');
-        WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-        return;
-    }
-    function removePerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: removePerson called.');
-        WL.Logger.debug('Got data from JSONStore to REMOVE: ' + data);
-        return;
-    }
-    function replacePerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: replacePerson called.');
-        WL.Logger.debug('Got data from JSONStore to REPLACE: ' + data);
-        return;
-    }
-   ```
-   {: codeblock}
-   {: swift}
 3. 要从适配器装入数据，请使用 `WLResourceRequest`。
    ```swift
     // Start - LoadFromAdapter
@@ -390,7 +357,7 @@ try {
     pull.sendWithDelegate(loadDelegate)
    ```
    {: codeblock}
-   {: swift}
+   {: ios}
 4. 调用 `allDirty` 将返回所谓“脏文档”的数组，这些是包含后端系统上不存在的本地修订的文档。
    ```swift
     let collectionName:String = "people"
@@ -403,7 +370,7 @@ try {
     }
    ```
    {: codeblock}
-   {: swift}
+   {: ios}
    为阻止 JSONStore 将文档标记为“脏”，请将 `{markDirty:false}` 选项传递到 `add`、`replace` 和 `remove`。
    {: tip} 
 5. 要将更改推送到适配器，请调用 `allDirty` 以获取包含修订的文档的列表，然后使用 `WLResourceRequest`。在发送数据并且收到成功响应后，确保调用 `markDocumentsClean`。
@@ -437,48 +404,18 @@ try {
     }
    ```
    {: codeblock}
-   {: swift}
+   {: ios}
 6. 从**样本**部分下载本机 iOS Swift 应用程序项目。此项目包含使用 JSONStore API 集合的本机 iOS Swift 应用程序。可从[此处](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)下载 JavaScript 适配器 Maven 项目。
-{: swift}
+{: ios}
 
 <!--### Android
 {: #adapter_integration_android}-->
 
 适配器集成是可选的，它提供了将数据从集合发送到适配器以及从适配器将数据获取到集合的方法。如果需要提高灵活性，可以使用 `WLResourceRequest` 之类的函数或者自己的 `HttpClient` 实例来实现这些目标。
-{: java}
+{: android}
 
 1. 创建一个适配器并将其命名为 **JSONStoreAdapter**。
 2. 定义其过程：`addPerson`、`getPeople`、`pushPeople`、`removePerson` 和 `replacePerson`。
-   ```javascript
-    function getPeople() {
-      var data = { peopleList : [{name: 'chevy', age: 23}, {name: 'yoel', age: 23}] };
-      WL.Logger.debug('Adapter: people, procedure: getPeople called.');
-      WL.Logger.debug('Sending data: ' + JSON.stringify(data));
-      return data;
-    }
-    function pushPeople(data) {
-      WL.Logger.debug('Adapter: people, procedure: pushPeople called.');
-      WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-      return;
-    }
-    function addPerson(data) {
-      WL.Logger.debug('Adapter: people, procedure: addPerson called.');
-      WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-      return;
-    }
-    function removePerson(data) {
-      WL.Logger.debug('Adapter: people, procedure: removePerson called.');
-      WL.Logger.debug('Got data from JSONStore to REMOVE: ' + data);
-      return;
-    }
-    function replacePerson(data) {
-      WL.Logger.debug('Adapter: people, procedure: replacePerson called.');
-      WL.Logger.debug('Got data from JSONStore to REPLACE: ' + data);
-      return;
-    }
-   ```
-   {: codeblock}
-   {: java}
 3. 要从适配器装入数据，请使用 `WLResourceRequest`。
    ```java
     WLResponseListener responseListener = new WLResponseListener() {
@@ -504,7 +441,7 @@ try {
     }
    ```
    {: codeblock}
-   {: java}
+   {: android}
 4. 调用 `findAllDirtyDocuments` 将返回所谓“脏文档”的数组，这些是包含后端系统上不存在的本地修订的文档。
    ```java
     Context  context = getContext();
@@ -518,9 +455,10 @@ try {
     }
    ```
    {: codeblock}
-   {: java}
+   {: android}
    要阻止 JSONStore 将文档标记为“脏”，请将 `options.setMarkDirty(false)` 选项传递到 `add`、`replace` 和 `remove`。
    {: tip} 
+   {: android}
 5. 要将更改推送到适配器，请调用 `findAllDirtyDocuments` 以获取包含修订的文档的列表，然后使用 `WLResourceRequest`。在发送数据并且收到成功响应后，确保调用 `markDocumentsClean`。
    ```java
     WLResponseListener responseListener = new WLResponseListener() {
@@ -552,6 +490,6 @@ try {
     }
    ```
    {: codeblock}
-   {: java}
+   {: android}
 6. 从**样本**部分下载本机 Android 应用程序项目。此项目包含使用 JSONStore API 集合的本机 Android 应用程序。可从[此处](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)下载 JavaScript 适配器 Maven 项目。
-{: java}
+{: android}

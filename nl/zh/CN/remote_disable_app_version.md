@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-29"
 
 ---
@@ -14,7 +14,7 @@ lastupdated: "2018-11-29"
 {:screen: .screen}
 
 # 远程禁用应用程序版本
-{: #remote_disable_app_version}
+{: #remotely_disable_an_app_version}
 
 在此部分中，我们将讨论如何禁用对特定移动操作系统上特定应用程序版本的用户访问权，以及如何向用户提供定制消息。
 

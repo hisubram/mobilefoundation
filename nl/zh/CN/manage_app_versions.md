@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-29"
 
 ---
@@ -38,6 +38,6 @@ Mobile Foundation 服务器会跟踪对移动基础架构的所有访问尝试�
    *  导出版本
 
 
-请参阅[管理设备](manage_devices.html)，以了解有关管理设备的信息。请参阅[远程禁用应用程序版本](remote_disable_app_version.html)，以了解有关远程禁用特定应用程序版本的信息。
+请参阅[管理设备](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices)，以了解有关管理设备的信息。请参阅[远程禁用应用程序版本](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version)，以了解有关远程禁用特定应用程序版本的信息。
 {: note}
 

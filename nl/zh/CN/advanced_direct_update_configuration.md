@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-21"
+  years: 2018, 2019
+lastupdated: "2019-02-14"
 
 ---
 
@@ -264,7 +264,7 @@ wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
 
 * CDN 必须是 Mobile Foundation 服务器前端或其他逆向代理前端（如果需要）的逆向代理。
 * 在开发环境中构建应用程序时，将目标服务器设置为 CDN 主机和端口，而不设置为 Mobile Foundation 服务器的主机和端口。例如，运行 Mobile Foundation CLI 命令 `mfpdev server add` 时，提供 CDN 主机和端口。
-* 在 CDN 管理面板上，需要标记以下 Direct Update URL 以进行高速缓存，从而确保 CDN 将 Direct Update 请求之外的其他所有请求传递给 Mobile Foundation 服务器。对于 Direct Update 请求，CDN 会确定它是否包含内容。如果包含内容，CDN 会返回内容，而不转至 Mobile Foundation 服务器；如果不包含内容，CDN 会转至 Mobile Foundation 服务器，获取 Direct Update 归档（.zip 文件），并存储该归档以用于对该特定 URL 的后续请求。对于使用 {{site.data.keyword.mobilefoundation_short}} V8.0 构建的应用程序，Direct Update URL 为：`PROTOCOL://DOMAIN:PORT/CONTEXT_PATH/api/directupdate/VERSION/CHECKSUM/TYPE`。
+* 在 CDN 管理面板上，需要标记以下 Direct Update URL 以进行高速缓存，从而确保 CDN 将 Direct Update 请求之外的其他所有请求传递给 Mobile Foundation 服务器。对于 Direct Update 请求，CDN 会确定其是否包含内容。如果包含内容，CDN 会返回内容，而不转至 Mobile Foundation 服务器；如果不包含内容，CDN 会转至 Mobile Foundation 服务器，获取 Direct Update 归档（.zip 文件），并存储该归档以用于对该特定 URL 的后续请求。对于使用 {{site.data.keyword.mobilefoundation_short}} V8.0 构建的应用程序，Direct Update URL 为：`PROTOCOL://DOMAIN:PORT/CONTEXT_PATH/api/directupdate/VERSION/CHECKSUM/TYPE`。
 `PROTOCOL://DOMAIN:PORT/CONTEXT_PATH` 前缀是用于所有运行时请求的常量。例如：`http://my.cdn.com:9080/mfp/api/directupdate/0.0.1/742914155/full?appId=com.ibm.DirectUpdateTestApp&clientPlatform=android`
 
 在此示例中，还存在其他请求参数，这些参数也是请求的一部分。

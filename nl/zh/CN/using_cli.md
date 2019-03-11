@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-19"
 
 ---
@@ -12,8 +12,8 @@ lastupdated:  "2018-11-19"
 {:tip: .tip}
 {:pre: .pre}
 
-#	{{ site.data.keyword.mobilefoundation_short }} CLI
-{: #using_mobilefoundation_cli}
+#	Mobile Foundation CLI
+{: #mobile_foundation_cli}
 
 {{ site.data.keyword.mobilefoundation_short }} 提供了命令行界面 (CLI) 工具，供开发者 **mfpdev** 轻松管理 {{site.data.keyword.mobilefoundation_short}} 客户机和服务器工件。
 

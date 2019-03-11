@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated:  "2018-11-19"
+  years: 2018, 2019
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -10,16 +10,18 @@ lastupdated:  "2018-11-19"
 {:codeblock: .codeblock}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
 {:pre: .pre}
 
-# 使用 JSONStore 的脱机存储器
-{: #overview }
+
+# JSONStore
+{: #jsonstore }
 {{site.data.keyword.mobilefoundation_short}} **JSONStore** 是一个可选的客户机端 API，提供了面向文档的轻量级存储系统。JSONStore 支持持久存储 **JSON 文档**。即使在运行应用程序的设备脱机时，该应用程序中的文档在 JSONStore 中仍可用。这种始终可用的持久性存储器非常有用，例如可在设备中没有网络连接可用时，支持用户访问文档。
 
 因为开发者十分熟悉关系数据库术语，所以在本文档中有时会使用关系数据库术语来帮助说明 JSONStore。但是关系数据库和 JSONStore 之间有很多不同。例如，用于在关系数据库中存储数据的严格模式与 JSONStore 方法不同。使用 JSONStore，您可以存储任何 JSON 内容，并可对您需要搜索的内容建立索引。
 
 ## 主要功能
-{: #key-features }
+{: #key-features-jsonstore }
 * 用于高效搜索的数据索引
 * 用于跟踪对已存储数据的仅本地更改的机制
 * 支持多个用户
@@ -28,7 +30,7 @@ lastupdated:  "2018-11-19"
 一个存储区可以有多个集合，每个集合可以有多个文档。还可以使一个 MobileFirst 应用程序包含多个存储区。有关信息，请参阅 JSONStore 多用户支持。
 
 ## 支持级别
-{: #support-level }
+{: #support-level-jsonstore }
 * 在本机 iOS 和 Android 应用程序中支持 JSONStore（本机 Windows（Universal 和 UWP）不支持）。
 * 在 Cordova iOS、Android 和 Windows（Universal 和 UWP）应用程序中支持 JSONStore。
 
@@ -61,7 +63,7 @@ var docs = [
 ### 集合 (Collection)
 {: #collection }
 JSONStore 集合类似于数据库术语中的表。  
-以下代码示例并不是在磁盘上存储文档的方式，但很适合用于在高级别直观显示集合的外观。
+以下代码示例并不是在磁盘上存储文档的方式，但很适合用于在高级别可视化集合的外观。
 
 ```javascript
 [
@@ -159,10 +161,10 @@ JSONStore 类似于 LocalStorage、Indexed DB、Cordova Storage API 和 Cordova 
 |建立索引|	     ✔|      -	    |✔|✔|         -	      |
 |存储类型|JSON 文档|键值对|JSON 文档|关系数据库 (SQL)|字符串|
 
-**注：**“可靠存储”表示除非发生下列其中一个事件，否则不会删除您的数据：
-
+“可靠存储”表示除非发生以下其中一个事件，否则不会删除您的数据：
 * 从设备上除去应用程序。
 * 调用除去数据的某种方法。
+{: note}
 
 ## 多用户支持
 {: #multiple-user-support }
@@ -173,7 +175,7 @@ init (JavaScript) 或 open（本机 iOS 和本机 Android）API 可采用具有�
 示例用例是共享物理设备（例如，iPad 或 Android 平板电脑）和 MobileFirst 应用程序的各种员工。员工使用 MobileFirst 应用程序按不同轮班工作并处理来自不同客户的私有数据时，多用户支持非常有用。
 
 ## 安全性
-{: #security }
+{: #security-jsonstore }
 您可以加密存储区中的所有集合以确保其安全性。
 
 要加密存储区中的所有集合，请将密码传递到 `init` (JavaScript) 或 `open`（本机 iOS 和本机 Android）API。如果未传递密码，那么不会加密存储区集合中的任何文档。
@@ -203,7 +205,7 @@ MobileFirst 客户机端 API 提供了一些安全实用程序来帮助保护用
 
 此元数据可包括密钥、加密盐 (Salt)、初始化向量 (IV)、文件类型、文件路径等。
 
-了解有关 [JSONStore 安全实用程序](security_utilities.html#security_utilities)的更多信息。
+了解有关 [JSONStore 安全实用程序](/docs/services/mobilefoundation?topic=mobilefoundation-security_utilities#security_utilities)的更多信息。
 {: tip}
 
 ### Windows 8.1 Universal 和 Windows 10 UWP 加密
@@ -236,17 +238,17 @@ JSONStore for Windows 8 Universal 改为将 SQLite 作为底层数据库包含�
    {: codeblock}
 
 ## 性能
-{: #performance }
+{: #performance-jsonstore }
 下面是可能会影响 JSONStore 性能的因素。
 
 ### 网络
-{: #network }
+{: #network-jsonstore }
 * 在执行操作（例如，将所有脏文档发送到适配器）之前，请先检查网络连接。
 * 通过网络发送到客户机的数据量会严重影响性能。因此，请仅发送应用程序所需的数据，而不要复制后端数据库中的所有内容。
 * 如果在使用适配器，请考虑将 compressResponse 标志设置为 true。这将压缩响应，与无压缩相比，通常压缩后的响应所用带宽较少，并且传输速度更快。
 
 ### 内存
-{: #memory }
+{: #memory-jsonstore }
 * 在使用 JavaScript API 时，JSONStore 文档将序列化和反序列化为本机（Objective-C、Java 或 C#）层和 JavaScript 层之间的字符串。缓解可能的内存问题的一种方法是在使用 find API 时应用限制和偏移量。这样，您可限制针对结果分配的内存量，并且可实现分页（每页显示 X 个结果）等功能。
 * 请不要使用最终序列化和反序列化为字符串的长密钥名称，而是考虑将这些长密钥名称映射到较短的名称（例如：将 `myVeryVeryVerLongKeyName` 映射到 `k` 或 `key`）。理想情况下，您在从适配器发送到客户机时，将长密钥名称映射到短密钥名称；在将数据发送回后端时，将其映射到原始长密钥名称。
 * 考虑将存储区中的数据拆分为不同的集合。让小型文档分布在各个集合中，而不是在单个集合中包含整个文档。此注意事项取决于数据间的相关程度以及这些数据的用例。
@@ -254,7 +256,7 @@ JSONStore for Windows 8 Universal 改为将 SQLite 作为底层数据库包含�
 * JavaScript 和 Java™ 具有垃圾收集器，而 Objective-C 具有自动引用计数。可以使用这些工具，但不要完全依赖这些工具。尝试使不再使用的引用失效，并且在预计内存使用量会下降时，使用概要分析工具来检查内存使用量是否在下降。
 
 ### CPU
-{: #cpu }
+{: #cpu-jsonstore }
 * 在调用建立索引的 add 方法时，使用的搜索字段和额外搜索字段的数量会影响性能。仅对 find 方法的查询中使用的值建立索引。
 * 缺省情况下，JSONStore 会跟踪对其文档的本地更改。通过在使用 add、remove 和 replace API 时，将 `markDirty` 标志设置为 **false**，可以禁用此行为，从而节省若干周期。
 * 启用安全性会为 `init` 或 `open` API 以及使用集合中文档的其他操作增加一些开销。请考虑是否真正需要安全性。例如，open API 在使用加密时的速度要慢得多，因为它必须生成用于加密和解密的加密密钥。
@@ -263,9 +265,9 @@ JSONStore for Windows 8 Universal 改为将 SQLite 作为底层数据库包含�
 * `find` API（`find`、`findAll` 和 `findById`）受加密影响，因为这些 API 必须解密每个文档，以确定该文档是否匹配。对于按查询查找，如果超过了限制，查找速度可能会更快，这是因为在达到结果限制时会停止查找。JSONStore 不需要解密其余文档，以弄清楚是否还有其他任何搜索结果。
 
 ## 并行
-{: #concurrency }
-### JavaScript
-{: #javascript }
+{: #concurrency-jsonstore }
+### JavaScript 中的并行操作
+{: #javascript-jsonstore }
 可以对集合执行的大部分操作都是异步的，例如 add 和 find。这些操作会在操作成功完成时返回解析的 jQuery Promise，在发生失败时返回拒绝的 jQuery Promise。这些 Promise 类似于成功和失败回调。
 
 jQuery Deferred 是可以解析或拒绝的 Promise。以下示例虽然不是特定于 JSONStore 的示例，但旨在帮助您了解其一般用法。
@@ -286,7 +288,6 @@ var asyncOperation = function () {
   return deferred.promise();
 };
 ```
-{: codeblock}
 
 **示例 Promise 用法**
 
@@ -296,7 +297,6 @@ asyncOperation.then(function (response) {
   // response = 'Hello'
 });
 ```
-{: codeblock}
 
 **示例回调定义**
 
@@ -307,7 +307,6 @@ var asyncOperation = function (callback) {
   }, 1000);
 };
 ```
-{: codeblock}
 
 **示例回调用法**
 
@@ -317,7 +316,6 @@ asyncOperation(function (response) {
   // response = 'Hello'
 });
 ```
-{: codeblock}
 
 **示例事件**
 
@@ -330,18 +328,17 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
   // collectionName - Name of the collection
 });
 ```
-{: codeblock}
 
-### Objective-C
-{: #objective-c }
+### Objective-C 中的并行操作
+{: #objective-c-jsonstore }
 在将本机 iOS API 用于 JSONStore 时，所有操作都将添加到同步分派队列。此行为可确保涉及存储区的操作按顺序在非主线程上运行。有关更多信息，请参阅 Apple 文档：[Grand Central Dispatch (GCD) ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window}。
 
-### Java™
-{: #java }
+### Java 中的并行操作 
+{: #java-jsonstore }
 在将本机 Android API 用于 JSONStore 时，所有操作都将在主线程上运行。您必须创建线程或者使用线程池以使用异步行为。所有存储区操作都是线程安全的。
 
 ## 分析
-{: #analytics }
+{: #analytics-jsonstore }
 您可以收集与 JSONStore 相关的关键分析信息片段。
 
 ### 文件信息
@@ -352,9 +349,7 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 {: #performance-metrics }
 每次使用有关操作开始和结束时间的信息调用 JSONStore API 时，都将收集性能度量值。您可以使用这些信息来确定各种操作所用的时间（毫秒）。
 
-### 示例
-{: #examples }
-#### iOS
+### iOS 的 JSONStore 示例
 {: #ios-example}
 ```objc
 JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
@@ -362,9 +357,8 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
-{: codeblock}
 
-#### Android
+### Android 的 JSONStore 示例
 {: #android-example }
 ```java
 JSONStoreInitOptions initOptions = new JSONStoreInitOptions();
@@ -372,9 +366,8 @@ initOptions.setAnalytics(true);
 
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
-{: codeblock}
 
-#### JavaScript
+### JavaScript 的 JSONStore 示例
 {: #java-script-example }
 ```javascript
 var options = {
@@ -383,7 +376,6 @@ var options = {
 
 WL.JSONStore.init(..., options);
 ```
-{: codeblock}
 
 ## 使用外部数据
 {: #working-with-external-data }
@@ -394,24 +386,25 @@ WL.JSONStore.init(..., options);
 许多系统使用术语“拉取”来指从外部源获取数据。  
 有三个重要部分：
 
-#### 外部数据源
-{: #external-data-source }
+#### 从外部数据源拉取
+{: #external-data-source-pull }
 此源可以是数据库、REST 或 SOAP API 等等。唯一的要求是源必须可从 MobileFirst 服务器或直接从客户机应用程序进行访问。理想情况下，您希望此源以 JSON 格式返回数据。
 
-#### 传输层
-{: #transport-layer }
+#### 用于拉取的传输层
+{: #transport-layer-pull }
 此源表示您如何将数据从外部源传送到内部源（存储区中的 JSONStore 集合）。一个备选方案是适配器。
 
-#### 内部数据源 API
-{: #internal-data-source-api }
+#### 用于拉取的内部数据源 API
+{: #internal-data-source-api-pull }
 此源是可用于将 JSON 数据添加到集合的 JSONStore API。
 
-**注：**可以使用从文件读取的数据、输入字段或变量中的硬编码数据来填充内部存储区。填充内容不必专门来自需要网络通信的外部源。
+可以使用从文件读取的数据、输入字段或变量中的硬编码数据来填充内部存储区。填充内容不必专门来自需要网络通信的外部源。
+{: note}
 
 以下所有代码示例都是以类似于 JavaScript 的伪码编写的。
 
-**注：**针对传输层使用适配器。使用适配器的一些优点包括服务器端代码和客户机端代码的 XML 到 JSON 转换、安全性、过滤和解耦。
-
+针对传输层使用适配器。使用适配器的一些优点包括服务器端代码和客户机端代码的 XML 到 JSON 转换、安全性、过滤和解耦。
+{: note}
 **外部数据源：后端 REST 端点**  
 假设您具有一个 REST 端点，用于从数据库读取数据并将其作为 JSON 对象数组返回。
 
@@ -464,7 +457,9 @@ resource.send()
 ```
 {: codeblock}
 
-**注：**您可能希望利用可传递到 `WLResourceRequest` API 的 `compressResponse`、`timeout` 以及其他参数。  
+您可能希望利用可传递到 `WLResourceRequest` API 的 `compressResponse`、`timeout` 以及其他参数。  
+{: note}
+
 （可选）您可以跳过适配器，而使用类似于 jQuery.ajax 的内容来直接通过要存储的数据联系 REST 端点。
 
 ```javascript
@@ -585,21 +580,22 @@ accessor.remove(doc, {markDirty: true})
 
 有三个重要部分：
 
-#### 内部数据源 API
+#### 用于推送的内部数据源 API
 {: #internal-data-source-api-push }
 此源是 JSONStore API，用于返回包含仅本地更改（脏）的文档。
 
-#### 传输层
+#### 用于推送的传输层
 {: #transport-layer-push }
 此源是您希望联系外部数据源以发送更改的方式。
 
-#### 外部数据源
+#### 推送到外部数据源
 {: #external-data-source-push }
 此源通常是数据库、REST 或 SOAP 端点等等，用于接收客户机对数据进行的更新。
 
 以下所有代码示例都是以类似于 JavaScript 的伪码编写的。
 
-**注：**针对传输层使用适配器。使用适配器的一些优点包括服务器端代码和客户机端代码的 XML 到 JSON 转换、安全性、过滤和解耦。
+针对传输层使用适配器。使用适配器的一些优点包括服务器端代码和客户机端代码的 XML 到 JSON 转换、安全性、过滤和解耦。
+{: note}
 
 **内部数据源 API：JSONStore**  
 获取集合的存取器后，调用 `getAllDirty` API 以获取标记为“脏”的所有文档。这些文档中包含您要通过传输层发送到外部数据源的仅本地更改。
@@ -650,7 +646,8 @@ accessor.getAllDirty()
 ```
 {: codeblock}
 
-**注：**您可能希望利用可传递到 `WLResourceRequest` API 的 `compressResponse`、`timeout` 以及其他参数。
+您可能希望利用可传递到 `WLResourceRequest` API 的 `compressResponse`、`timeout` 以及其他参数。
+{: note}
 
 在 MobileFirst 服务器上，适配器具有 `updatePeople` 过程，该过程可能类似于以下示例：
 
@@ -767,8 +764,8 @@ $.when.apply(this, arrayOfPromises)
 
 将文档标记为“干净”后，这些文档就不会显示在 `getAllDirty` API 的输出中。
 
-## 故障诊断
-{: #troubleshooting }
+## 对 JSONStore 进行故障诊断
+{: #troubleshooting-jsonstore }
 
 ## 在寻求帮助时提供信息
 {: #provide-information-when-you-ask-for-help }
@@ -797,7 +794,7 @@ $.when.apply(this, arrayOfPromises)
 4. 查看 JSONStore 生成的 SQLite 数据库文件。必须关闭加密。
 
    * Android 仿真器：
-
+   
    ```bash
    $ adb shell
    $ cd /data/data/com.<app-name>/databases/wljsonstore
@@ -819,7 +816,7 @@ $.when.apply(this, arrayOfPromises)
    ```
 
    * **注：**在 Web 浏览器（Firefox、Chrome、Safari、Internet Explorer）上运行的“仅 JavaScript”实现不使用 SQLite 数据库。该文件存储在 HTML5 LocalStorage 中。
-   * 使用 `.schema` 查看 `searchFields`，并使用 `SELECT * FROM <collection-name>;` 选择数据。要退出 sqlite3，请输入 `.exit`。如果将用户名传递到 init 方法，那么该文件名为 **the-username.sqlite**。如果未传递用户名，那么缺省情况下该文件名为 **jsonstore.sqlite**。
+   * 使用 `.schema` 查看 `searchFields`，并使用 `SELECT * FROM <collection-name>;`. 要退出 sqlite3，请输入 `.exit`。如果将用户名传递到 init 方法，那么该文件名为 **the-username.sqlite**。如果未传递用户名，那么缺省情况下该文件名为 **jsonstore.sqlite**。
 5. （仅限 Android）启用详细 JSONStore。
 
    ```bash
@@ -830,7 +827,7 @@ $.when.apply(this, arrayOfPromises)
 6. 使用调试器。
 
 ## 常见问题
-{: #common-issues }
+{: #common-issues-jsonstore }
 了解以下 JSONStore 特征可帮助解决您可能遇到的一些常见问题。  
 
 * 在 JSONStore 中存储二进制数据的唯一方法是首先以 Base64 格式对该数据进行编码。将文件名或路径（而不是实际文件）存储在 JSONStore 中。
@@ -864,16 +861,18 @@ function initWL(){
         var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
         : {};                                                                
         WL.Client.init(options);                                           
-}                                                                      
-```                                                                       
+    } 
+    ```                                                                     
 
-  这会等待 `mfpjsonjsloaded` 事件（在 `wlCommonInit` 外部）以确保已装入脚本，随后调用 `WL.Client.init` 以触发 `wlCommonInit`，然后调用 `WL.JSONStore.init`。
+这会等待 `mfpjsonjsloaded` 事件（在 `wlCommonInit` 外部），确保已装入脚本，随后调用 `WL.Client.init` 以触发 `wlCommonInit`，然后调用 `WL.JSONStore.init`。
 
 ## 存储区内部内容
 {: #store-internals }
 请参阅有关如何存储 JSONStore 数据的示例。
 
 此简化示例中包含以下关键元素：
+
+
 
 * `_id` 是唯一标识（例如，AUTO INCREMENT PRIMARY KEY）。
 * `json` 包含已存储的 JSON 对象的确切表示法。
@@ -889,17 +888,23 @@ function initWL(){
 
 其他内部 JSONStore 字段包括：
 
+
+
 * `_dirty`：确定文档是否标记为“脏”。此字段用于跟踪文档更改。
+
 * `_deleted`：是否将文档标记为“已删除”。此字段用于从集合中除去对象，以后使用这些对象跟踪后端更改以及确定是否除去这些对象。
+
 * `_operation`：用于反映要对文档执行的最后一个操作（例如，replace）的字符串。
 
 ## JSONStore 错误
 {: #jsonstore-errors }
-### JavaScript
-{: #javascript }
+### JavaScript 错误
+{: #javascript-errors }
 JSONStore 使用 error 对象返回有关故障原因的消息。
 
 在执行 JSONStore 操作（例如，`JSONStoreInstance` 类中的 `find` 和 `add` 方法）期间发生错误时，会返回一个 error 对象。该对象提供与故障原因有关的信息。
+
+
 
 ```javascript
 var errorObject = {
@@ -912,12 +917,13 @@ var errorObject = {
   res: {...} // Response from the server.
 }
 ```
-
+{: codeblock}
 并非所有键/值对都属于每个 error 对象。例如，仅当操作因未能除去某个文档而失败（例如，`JSONStoreInstance` 类中的 `remove` 方法）时，doc 值才可用。
 
-### Objective-C
-{: #objective-c }
-所有可能失败的 API 都会接受 error 参数，此参数带有 NSError 对象的地址。如果您不想收到错误通知，可以传递 `nil`。操作失败时，将使用 NSError（包含一个错误和一些可能的 `userInfo`）填充此地址。`userInfo` 可能包含额外的详细信息（例如，引起这次失败的文档）。
+### Objective-C 错误
+{: #objective-c-errors }
+所有可能失败的 API 都会接受 error 参数，此参数采用 NSError 对象的地址。如果您不想收到错误通知，可以传入 `nil`。操作失败时，将使用 NSError（包含一个错误和一些可能的 `userInfo`）填充此地址。`userInfo` 可能包含额外的详细信息（例如，导致失败的文档）。
+
 ```objc
 // This NSError points to an error if one occurs.
 NSError* error = nil;
@@ -926,8 +932,8 @@ NSError* error = nil;
 [JSONStore destroyDataAndReturnError:&error];
 ```
 
-### Java
-{: #java }
+### Java 错误
+{: #java-errors }
 根据发生的错误，所有 Java API 调用都会抛出某个特定异常。您可以分别处理每个异常，也可以捕获 `JSONStoreException` 以囊括所有 JSONStore 异常。
 
 ```java
@@ -939,72 +945,72 @@ catch(JSONStoreException e) {
   // Handle error condition.
 }
 ```
-
+{: codeblock}
 ### 错误代码列表
 {: #list-of-error-codes }
 常见错误代码及其描述的列表：
 
-|错误代码        | 描述        |
+|错误代码| 描述|
 |----------------|-------------|
-| -100 UNKNOWN_FAILURE | 无法识别的错误。   |
-| -75 OS\_SECURITY\_FAILURE | 此错误代码与 requireOperatingSystemSecurity 标志相关。如果 destroy API 未能除去受操作系统安全性（带有密码备选项的 Touch ID）保护的安全性元数据，或者如果 init 或 open API 找不到安全性元数据，那么可能发生此错误。如果设备不支持操作系统安全性，但请求了使用操作系统安全性，那么也可能失败。|
-| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore 已关闭。尝试首先调用 JSONStore 类中的 open 方法以启用对该存储区的访问。 |
-| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | 回滚事务时发生问题。 |
-| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION |正在执行事务时无法调用 removeCollection。 |
-| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | 正在执行事务时无法调用 destroy。 |
-| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | 存在事务时无法调用 closeAll。 |
-| -44 TRANSACTION\_FAILURE\_DURING\_INIT | 正在执行事务时无法初始化存储区。 |
-| -43 TRANSACTION_FAILURE | 事务发生问题。 |
-| -42 NO\_TRANSACTION\_IN\_PROGRESS | 没有事务在执行时无法落实回滚事务。 |
-| -41 TRANSACTION\_IN\_POGRESS | 正在执行其他事务时无法启动新事务。 |
-| -40 FIPS\_ENABLEMENT\_FAILURE | FIPS 发生问题。 |
-| -24 JSON\_STORE\_FILE\_INFO\_ERROR | 从文件系统获取文件信息时发生问题。 |
-| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | 替换集合中的文档时发生问题。 |
-| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | 从集合中除去文档时发生问题。 |
-| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | 存储数据保护密钥 (DPK) 时发生问题。 |
-| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | 对输入数据建立索引时发生问题。 |
-| -12 INVALID\_SEARCH\_FIELD\_TYPES | 检查要传递到 searchFields 的类型是 string、integer、number 还是 boolean。 |
-| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | 对文档数组执行的操作（例如，replace 方法）在处理特定文档时可能失败。将返回失败的文档并回滚该事务。在 Android 上，尝试在不受支持的体系结构上使用 JSONStore 时也会发生此错误。 |
-| -10 ACCEPT\_CONDITION\_FAILED | 用户提供的 accept 函数返回了 false。 |
-| -9 OFFSET\_WITHOUT\_LIMIT | 要使用偏移量，还必须指定限制。 |
-| -8 INVALID\_LIMIT\_OR\_OFFSET | 验证错误，必须是正整数。 |
-| -7 INVALID_USERNAME | 验证错误（只能是 [A-Z]、[a-z] 或 [0-9]）。|
-| -6 USERNAME\_MISMATCH\_DETECTED | 要注销，JSONStore 用户必须首先调用 closeAll 方法。每次只能有一个用户。 |
-| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED | destroy 方法尝试删除用于保存存储区内容的文件时发生问题。 |
-| -4 DESTROY\_REMOVE\_KEYS\_FAILED | destroy 方法尝试清除密钥链 (iOS) 或共享用户首选项 (Android) 时发生问题。 |
-| -3 INVALID\_KEY\_ON\_PROVISION | 向加密存储区传递了错误的密码。 |
-| -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | 搜索字段不是动态字段。如果不在对新搜索字段调用 init 或 open 方法之前调用 destroy 方法或 removeCollection 方法，那么无法更改搜索字段。如果更改搜索字段的名称或类型，可能会发生此错误。例如，将 {key: 'string'} 更改为 {key: 'number'}，或者将 {myKey: 'string'} 更改为 {theKey: 'string'}。 |
-| -1 PERSISTENT\_STORE\_FAILURE | 一般错误。本机代码出现错误，很可能是在调用 init 方法时。 |
-| 0 SUCCESS | 在某些情况下，JSONStore 本机代码返回 0 以指示成功。 |
-| 1 BAD\_PARAMETER\_EXPECTED\_INT | 验证错误。 |
-| 2 BAD\_PARAMETER\_EXPECTED\_STRING | 验证错误。 |
-| 3 BAD\_PARAMETER\_EXPECTED\_FUNCTION | 验证错误。 |
-| 4 BAD\_PARAMETER\_EXPECTED\_ALPHANUMERIC\_STRING | 验证错误。 |
-| 5 BAD\_PARAMETER\_EXPECTED\_OBJECT | 验证错误。 |
-| 6 BAD\_PARAMETER\_EXPECTED\_SIMPLE\_OBJECT | 验证错误。 |
-| 7 BAD\_PARAMETER\_EXPECTED\_DOCUMENT | 验证错误。 |
-| 8 FAILED\_TO\_GET\_UNPUSHED\_DOCUMENTS\_FROM\_DB |用于选择已标记为“脏”的所有文档的查询失败。在 SQL 中，此查询的示例如下：SELECT * FROM [collection] WHERE _dirty > 0。 |
-| 9 NO\_ADAPTER\_LINKED\_TO\_COLLECTION | 要使用 JSONStoreCollection 类中 push 和 load 方法之类的函数，必须向 init 方法传递适配器。 |
-| 10 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ARRAY\_OF\_DOCUMENTS | 验证错误 |
-| 11 INVALID\_PASSWORD\_EXPECTED\_ALPHANUMERIC\_STRING\_WITH\_LENGTH\_GREATER\_THAN\_ZERO | 验证错误 |
-| 12 ADAPTER_FAILURE | 调用 WL.Client.invokeProcedure 时发生问题，具体是连接到适配器时发生问题。此错误与尝试调用后端的适配器中发生的故障不同。 |
-| 13 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ID | 验证错误 |
-| 14 CAN\_NOT\_REPLACE\_DEFAULT\_FUNCTIONS | 不允许调用 JSONStoreCollection 类中的 enhance 方法来替换现有函数（find 和 add）。 |
-| 15 COULD\_NOT\_MARK\_DOCUMENT\_PUSHED | 推送向适配器发送文档，但 JSONStore 未能将此文档标记为非脏文档。 |
-| 16 COULD\_NOT\_GET\_SECURE\_KEY | 要发起含密码的集合，必须存在与 {{ site.data.keys.mf_server }} 的连接，因为它会返回“安全的随机令牌”。IBM Worklight V5.0.6 和更高版本允许开发者在本地生成安全的随机令牌，并通过 options 对象将 {localKeyGen: true} 传递到 init 方法。 |
-| 17 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER | 无法装入数据，因为 WL.Client.invokeProcedure 已调用失败回调。 |
-| 18 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER\_INVALID\_LOAD\_OBJ | 传递到 init 方法的 load 对象未通过验证。 |
-| 19 INVALID\_KEY\_IN\_LOAD\_OBJECT | 调用 add 方法时 load 对象中使用的密钥发生问题。 |
-| 20 UNDEFINED\_PUSH\_OPERATION | 未定义将脏文档推送到服务器的过程。例如：调用了 init 方法（新文档为脏文档，操作为“add”）和 push 方法（发现了新文档，操作为“add”），但未在链接到集合的适配器中找到添加密钥（含添加过程）。链接适配器是在 init 方法中执行的。 |
+| -100 UNKNOWN_FAILURE |无法识别的错误。|
+| -75 OS\_SECURITY\_FAILURE |此错误代码与 requireOperatingSystemSecurity 标志相关。如果 destroy API 未能除去受操作系统安全性（带有密码备选项的 Touch ID）保护的安全性元数据，或者如果 init 或 open API 找不到安全性元数据，那么可能发生此错误。如果设备不支持操作系统安全性，但请求了使用操作系统安全性，那么也可能失败。|
+| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore 已关闭。请首先尝试调用 JSONStore 类中的 open 方法，以启用对存储区的访问。|
+| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK |回滚事务时发生问题。|
+| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION |有事务正在处理时，无法调用 removeCollection。|
+| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY |有事务正在处理时，无法调用 destroy。|
+| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL |有事务存在时，无法调用 closeAll。|
+| -44 TRANSACTION\_FAILURE\_DURING\_INIT |有事务正在处理时，无法初始化存储区。|
+| -43 TRANSACTION_FAILURE |事务发生问题。|
+| -42 NO\_TRANSACTION\_IN\_PROGRESS |没有事务正在处理时，无法落实回滚事务|
+| -41 TRANSACTION\_IN\_POGRESS |正在处理某个事务时，无法启动另一个新事务。|
+| -40 FIPS\_ENABLEMENT\_FAILURE |FIPS 有问题。|
+| -24 JSON\_STORE\_FILE\_INFO\_ERROR |从文件系统中获取文件信息时发生问题。|
+| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE |替换集合中的文档时发生问题。|
+| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE |从集合中除去文档时发生问题。|
+| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE |存储数据保护密钥 (DPK) 时发生问题。|
+| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE |对输入数据建立索引时发生问题。|
+| -12 INVALID\_SEARCH\_FIELD\_TYPES |检查要传递到 searchFields 的类型是 string、integer、number 还是 boolean。|
+| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT |对文档数组执行的操作（例如，replace 方法）在处理特定文档时可能失败。将返回失败的文档并回滚该事务。在 Android 上，尝试在不支持的体系结构上使用 JSONStore 时也会发生此错误。|
+| -10 ACCEPT\_CONDITION\_FAILED |用户提供的 accept 函数返回 false。|
+| -9 OFFSET\_WITHOUT\_LIMIT |要使用偏移量，还必须指定限制。|
+| -8 INVALID\_LIMIT\_OR\_OFFSET |验证错误，必须是正整数。|
+| -7 INVALID_USERNAME |验证错误（只能为 [A-Z]、[a-z] 或 [0-9]）。|
+| -6 USERNAME\_MISMATCH\_DETECTED |要注销，JSONStore 用户必须首先调用 closeAll 方法。一次只能有一个用户。|
+| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED |destroy 方法在尝试删除保存存储区内容的文件时发生问题。|
+| -4 DESTROY\_REMOVE\_KEYS\_FAILED |destroy 方法在尝试清除钥匙串 (iOS) 或共享用户首选项 (Android) 时发生问题。|
+| -3 INVALID\_KEY\_ON\_PROVISION |传递到已加密存储区的密码不正确。|
+| -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH |搜索字段不是动态的。如果不在对新搜索字段调用 init 或 open 方法之前调用 destroy 方法或 removeCollection 方法，那么无法更改搜索字段。如果更改搜索字段的名称或类型，可能会发生此错误。例如：将 {key: 'string'} 更改为 {key: 'number'}，或者将 {myKey: 'string'} 更改为 {theKey: 'string'}。|
+| -1 PERSISTENT\_STORE\_FAILURE |一般错误。本机代码中发生故障，最可能是因为调用 init 方法。|
+| 0 SUCCESS |在某些情况下，JSONStore 本机代码会返回 0 以指示成功。|
+| 1 BAD\_PARAMETER\_EXPECTED\_INT |验证错误。|
+| 2 BAD\_PARAMETER\_EXPECTED\_STRING |验证错误。|
+| 3 BAD\_PARAMETER\_EXPECTED\_FUNCTION |验证错误。|
+| 4 BAD\_PARAMETER\_EXPECTED\_ALPHANUMERIC\_STRING |验证错误。|
+| 5 BAD\_PARAMETER\_EXPECTED\_OBJECT |验证错误。|
+| 6 BAD\_PARAMETER\_EXPECTED\_SIMPLE\_OBJECT |验证错误。|
+| 7 BAD\_PARAMETER\_EXPECTED\_DOCUMENT |验证错误。|
+| 8 FAILED\_TO\_GET\_UNPUSHED\_DOCUMENTS\_FROM\_DB |用于选择标记为“脏”的所有文档的查询失败。查询的 SQL 示例为：SELECT * FROM [collection] WHERE _dirty > 0。|
+| 9 NO\_ADAPTER\_LINKED\_TO\_COLLECTION |要使用 JSONStoreCollection 类中的 push 和 load 方法之类的函数，必须将适配器传递到 init 方法。|
+| 10 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ARRAY\_OF\_DOCUMENTS |验证错误|
+| 11 INVALID\_PASSWORD\_EXPECTED\_ALPHANUMERIC\_STRING\_WITH\_LENGTH\_GREATER\_THAN\_ZERO |验证错误|
+| 12 ADAPTER_FAILURE |调用 WL.Client.invokeProcedure 时发生问题，具体是连接到适配器时发生问题。此错误与尝试调用后端的适配器中发生的故障不同。|
+| 13 BAD\_PARAMETER\_EXPECTED\_DOCUMENT\_OR\_ID |验证错误|
+| 14 CAN\_NOT\_REPLACE\_DEFAULT\_FUNCTIONS |不允许调用 JSONStoreCollection 类中的enhance 方法来替换现有函数（find 和 add）。|
+| 15 COULD\_NOT\_MARK\_DOCUMENT\_PUSHED |推送操作将文档发送到适配器，但 JSONStore 无法将文档标记为不脏。|
+| 16 COULD\_NOT\_GET\_SECURE\_KEY |要使用密码启动集合，必须连接到 {{ site.data.keys.mf_server }}，因为它会返回“安全随机令牌”。IBM Worklight V5.0.6 和更高版本允许开发者本地生成安全随机令牌，并通过 options 对象将 {localKeyGen: true} 传递到 init 方法。|
+| 17 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER |无法加载数据，因为 WL.Client.invokeProcedure 调用了失败回调。|
+| 18 FAILED\_TO\_LOAD\_INITIAL\_DATA\_FROM\_ADAPTER\_INVALID\_LOAD\_OBJ |传递到 init 方法的装入对象未通过验证。|
+| 19 INVALID\_KEY\_IN\_LOAD\_OBJECT |调用 add 方法时，装入对象中使用的密钥发生问题。|
+| 20 UNDEFINED\_PUSH\_OPERATION |未定义用于将脏文档推送到服务器的过程。例如：调用了 init 方法（新文档为脏文档，操作为“add”）和 push 方法（发现了新文档，操作为“add”），但未在链接到集合的适配器中找到添加密钥（含添加过程）。链接适配器是在 init 方法中执行的。 |
 | 21 INVALID\_ADD\_INDEX\_KEY | 额外搜索字段发生问题。 |
-| 22 INVALID\_SEARCH\_FIELD | 某一个搜索字段无效。请验证传入的搜索字段中是否不包括 _id、json、_deleted 或 _operation。 |
-| 23 ERROR\_CLOSING\_ALL | 一般错误。本机代码调用 closeAll 方法时发生错误。 |
-| 24 ERROR\_CHANGING\_PASSWORD | 无法更改密码。例如，传递的旧密码错误。 |
-| 25 ERROR\_DURING\_DESTROY | 一般错误。本机代码调用 destroy 方法时发生错误。 |
-| 26 ERROR\_CLEARING\_COLLECTION | 一般错误。本机代码调用 removeCollection 方法时发生错误。 |
-| 27 INVALID\_PARAMETER\_FOR\_FIND\_BY\_ID | 验证错误。 |
-| 28 INVALID\_SORT\_OBJECT | 提供的用于排序的数组无效，因为其中一个 JSON 对象无效。正确的语法是 JSON 对象数组，其中每个对象仅包含单个属性。此属性将搜索作为排序依据的字段，并指定是升序还是降序。例如：{searchField1 : "ASC"}。 |
-| 29 INVALID\_FILTER\_ARRAY | 提供的用于过滤结果的数组无效。此数组的正确语法是字符串数组，其中每个字符串是搜索字段或内部 JSONStore 字段。有关更多信息，请参阅“存储区内部内容”。 |
-| 30 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_OBJECTS | 数组不是仅含 JSON 对象的数组时发生验证错误。 |
-| 31 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_CLEAN\_DOCUMENTS | 验证错误。 |
-| 32 BAD\_PARAMETER\_WRONG\_SEARCH\_CRITERIA | 验证错误。 |
+| 22 INVALID\_SEARCH\_FIELD | 某一个搜索字段无效。请验证传入的搜索字段中是否不包括 _id、json_、deleted 或 _operation。|
+| 23 ERROR\_CLOSING\_ALL |一般错误。本机代码调用 closeAll 方法时发生错误。 |
+| 24 ERROR\_CHANGING\_PASSWORD | 无法更改密码。例如，传递了错误的旧密码。|
+| 25 ERROR\_DURING\_DESTROY |一般错误。本机代码调用 destroy 方法时发生错误。|
+| 26 ERROR\_CLEARING\_COLLECTION |一般错误。本机代码调用 removeCollection 方法时发生错误。|
+| 27 INVALID\_PARAMETER\_FOR\_FIND\_BY\_ID |验证错误。|
+| 28 INVALID\_SORT\_OBJECT |提供的用于排序的数组无效，因为其中一个 JSON 对象无效。正确的语法是 JSON 对象数组，其中每个对象仅包含单个属性。此属性将搜索作为排序依据的字段，并指定是升序还是降序。例如：{searchField1 : "ASC"}。 |
+| 29 INVALID\_FILTER\_ARRAY | 提供的用于过滤结果的数组无效。此数组的正确语法是字符串数组，其中每个字符串是搜索字段或内部 JSONStore 字段。有关更多信息，请参阅“存储区内部内容”。|
+| 30 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_OBJECTS |数组不是仅包含 JSON 对象的数组时发生验证错误。|
+| 31 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_CLEAN\_DOCUMENTS |验证错误。|
+| 32 BAD\_PARAMETER\_WRONG\_SEARCH\_CRITERIA |验证错误。|

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-02-12"
 
 ---
@@ -13,8 +13,8 @@ lastupdated: "2018-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# 故障诊断
-{: #troubleshooting}
+# 一般故障诊断
+{: #general-troubleshooting}
 
 要隔离并解决 {{site.data.keyword.IBM_notm}} 产品的问题，您可以使用故障诊断信息。此信息包含有关使用 {{site.data.keyword.IBM_notm}} 产品（包括 {{site.data.keyword.mobilefoundation_short}}）随附的问题确定资源的指示信息。
 {: shortdesc}
@@ -105,4 +105,4 @@ lastupdated: "2018-02-12"
 
 有关服务和入门指示信息的问题，请使用 [IBM developerWorks dW Answers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} 论坛。另请加上 `bluemix` 和 `mobilefirst` 标记。
 
-有关提交 IBM 支持凭单以及支持级别和凭单严重性的信息，请参阅[联系支持人员 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/docs/get-support/getstarttssup.html#typesofsupport  ){: new_window}。
+有关提交 IBM 支持凭单或支持级别和凭单严重性的信息，请参阅[联系支持人员](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}。

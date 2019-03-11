@@ -1,13 +1,13 @@
 ---
 
 copyright:
-  years: 2016, 2018
-lastupdated:  "2018-11-26"
+  years: 2018, 2019
+lastupdated:  "2019-02-11"
 
 ---
 
-##	Web SDK
-{: #rweb_sdk}
+#	Web SDK
+{: #web_sdk_api}
 
 从 npm 下载 Web SDK。
 

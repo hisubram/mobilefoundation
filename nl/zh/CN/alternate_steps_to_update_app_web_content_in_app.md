@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-21"
+  years: 2018, 2019
+lastupdated: "2019-02-14"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2018-12-21"
 {:screen: .screen}
 
 # 在应用程序中更新 Web 内容的备用步骤
-{: #alternate_steps_to_update_app_web_content}
+{: #alternate_steps_to_update_app_web_content_in_app}
 
 下面列出了更新应用程序中 Web 内容的一些备用方法。
 

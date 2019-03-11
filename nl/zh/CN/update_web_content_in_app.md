@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-21"
+  years: 2018, 2019
+lastupdated: "2019-02-14"
 
 ---
 
@@ -53,9 +53,9 @@ Web 资源的 Direct Update 仅适用于特定版本的应用程序。例如，�
   ```
   `mfpdev app webupdate` 命令将更新后的 Web 资源打包成 `.zip` 文件，并将其上传到开发者工作站中运行的缺省 Mobile Foundation 服务器。可以在 `[cordova-project-root-folder]/mobilefirst/` 文件夹中找到打包的 Web 资源。
 
-有关在应用程序中更新 Web 内容的备用步骤，请参阅[此处](update_web_content_in_app_alternate_steps.html)。
+有关在应用程序中更新 Web 内容的备用步骤，请参阅[此处](/docs/services/mobilefoundation?topic=mobilefoundation-alternate_steps_to_update_app_web_content_in_app#alternate_steps_to_update_app_web_content_in_app)。
 
-## 高级 Direct Update 配置
-{: #advanced_direct_update_config}
+## Direct Update 高级配置
+{: #direct_update_advanced_config}
 
-有关 Direct Update 配置的高级主题，请参阅[此处](update_web_content_in_app_advanced.html)。
+有关 Direct Update 配置的高级主题，请参阅[此处](/docs/services/mobilefoundation?topic=mobilefoundation-advanced_direct_update_configuration#advanced_direct_update_configuration)。

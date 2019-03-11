@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-24"
+  years: 2018, 2019
+lastupdated: "2019-02-11"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2018-12-24"
 {:ruby: .ph data-hd-programlang='ruby'}
 {:c#: .ph data-hd-programlang='c#'}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:ios: .ph data-hd-programlang='iOS'}
 {:python: .ph data-hd-programlang='python'}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:php: .ph data-hd-programlang='PHP'}
@@ -24,13 +25,16 @@ lastupdated: "2018-12-24"
 {:reactnative: .ph data-hd-programlang='reactnative'}
 {:csharp: .ph data-hd-programlang='csharp'}
 
-# 用于受支持客户机平台的应用程序编程接口 (API)
+# 客户机 SDK
+{: #client_sdks}
+
+## 用于受支持客户机平台的应用程序编程接口 (API)
 
 ### JavaScript
 {: javascript }
 用于 Cordova / Web 应用程序的 API。
 {: javascript }
-* **[客户机端 API](javascript_client_sdk_api.html)**  
+* **[客户机端 API](/docs/services/mobilefoundation?topic=mobilefoundation-javascript_client_sdk_api#javascript_client_sdk_api)**  
     可以使用 JavaScript API 为所有环境开发应用程序。
     {: javascript }
 * **[Client-side push API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-hybrid-cordova-js-apidoc/html/refjavascript-mfp-push-hybrid/html/index.html)**  
@@ -41,15 +45,15 @@ lastupdated: "2018-12-24"
     {: javascript }
 
 ### Objective C
-{: objectc }
+{: ios }
 用于本机 iOS 应用程序的 API。
-{: objectc }
+{: ios }
 * **[Client-side API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://mobilefirstplatform.ibmcloud.com/api-ref/wl-ios-objc-apidoc/html/refobjc-worklight-ios/html/index.html)**   
     使用此 API 为 iOS 环境开发本机应用程序。
-    {: objectc }
+    {: ios }
 * **[Client-side push API ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-ios-n-objc-apidoc/html/refobjc-mfp-push-ios-native/html/index.html)**  
     使用此 push API 为 iOS 环境开发应用程序。
-    {: objectc }
+    {: ios }
 
 ### Java
 {: java }

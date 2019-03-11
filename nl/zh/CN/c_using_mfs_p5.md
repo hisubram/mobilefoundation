@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2018
-lastupdated:  "2018-11-20"
+  years: 2016, 2019
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated:  "2018-11-20"
 
 使用 Professional Per Device 套餐，用户可以在生产环境中构建、测试和运行移动应用程序，与移动用户或设备数无关。收费根据的是每日客户机设备数。此套餐支持大型部署和高可用性。创建 {{site.data.keyword.mobilefoundation_short}}: Professional Per Device 服务实例后，请阅读以下过程以开始使用该服务。
 
-## 先决条件
+## Professional Per Device 套餐的先决条件
 {: #prerequisites_p5}
 
 配置 {{site.data.keyword.mobilefoundation_short}}: Professional Per Device 服务实例之前，请考虑以下问题：
@@ -72,7 +72,7 @@ lastupdated:  "2018-11-20"
 您无法更改已配置为由 {{site.data.keyword.mobilefoundation_short}} 服务实例使用的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例。但是，您可以在多个 {{site.data.keyword.mobilefoundation_short}} 服务实例上使用同一 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例，因为每个 {{site.data.keyword.mobilefoundation_short}} 服务实例都会在所选 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例中创建自己的模式。
 {: note}
 
-## 启动 MobileFirst 服务器
+## 启动使用 Professional Per Device 套餐创建的 MobileFirst 服务器
 {: #start_mobilefoundation_p5}
 
 * 要使用缺省设置启动 {{site.data.keyword.mfserver_short_notm}}，请单击**启动基本服务器**。
@@ -97,7 +97,7 @@ lastupdated:  "2018-11-20"
 
 
 
-## 重新创建 MobileFirst 服务器
+## 使用 Professional Per Device 套餐重新创建 MobileFirst 服务器
 {: #recreate_mobilefoundation_p5}
 
 *	单击**重新创建**以重新创建服务器。
@@ -107,7 +107,7 @@ lastupdated:  "2018-11-20"
 先前服务器实例中的数据（包括有关应用程序和适配器的信息）会持久存储在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例中。在重新创建服务器时会使用这些数据。
 {: note}
 
-##	设置高级配置
+##	设置 Professional Per Device 套餐中的高级配置
 {: #using_mfs_advanced_p5}
 
 使用“`概述`”页面中的**使用高级配置启动服务器**，可使用高级或定制设置创建服务器。还可以通过单击**设置**选项卡更新服务器设置，以定制服务器配置。{{site.data.keyword.mobilefoundation_short}} 为您提供对某些高级设置的访问权。
@@ -117,13 +117,11 @@ lastupdated:  "2018-11-20"
 
   - **实例**显示已创建的实例数。
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Professional Per Device 套餐中的 Mobile Analytics
+{: #mobile_analytics_p5}
 
 Mobile Foundation: Developer 套餐服务实例中包含并预配置了 Mobile Analytics 服务器。
 
 * 从 {{site.data.keyword.mfp_oc_short_notm}} 启动 Mobile Analytics 控制台。
 
-有关 Mobile Analytics 的更多信息，可以参阅 [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}。
-
-请参阅 [{{site.data.keyword.mobilefoundation_long}} 文档 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}，以了解更多详细信息。
+有关 Mobile Analytics 的更多信息，可以参阅[此处](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}。

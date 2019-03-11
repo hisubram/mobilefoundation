@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-16"
 
 ---
@@ -35,7 +35,7 @@ lastupdated:  "2018-11-16"
 
 > **注：**
 >  * 用户将无法对其 {{site.data.keyword.mobilefoundation_short}} 服务实例应用自己的修订和更新。
->  * 请参阅[在 Professional Per Device 套餐中重新创建服务器](c_using_mfs_p5.html#recreate_mobilefoundation_p5)和[在 Professional 1 Application 套餐中重新创建服务器](c_using_mfs_p2.html#recreate_mobilefoundation_p2)，以了解单击**重新创建** 后不同套餐之间的行为差异。
+>  * 请参阅[在 Professional Per Device 套餐中重新创建服务器](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#recreate_mobilefoundation_p5)和[在 Professional 1 Application 套餐中重新创建服务器](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#recreate_mobilefoundation_p2)，以了解单击**重新创建** 后不同套餐之间的行为差异。
 >
 
 ## 如何为我的 {{site.data.keyword.mobilefoundation_short}} 服务器实例配置定制域？
