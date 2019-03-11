@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-19"
 
 ---
@@ -15,7 +15,6 @@ lastupdated:  "2018-11-19"
 #	安全公用程式
 {: #security_utilities}
 
-## 概觀
 Mobile Foundation 用戶端 API 提供一些安全公用程式，以協助保護使用者的資料。如果您要保護 JSON 物件，優先推薦 JSONStore 這類特性。不過，建議您不要在 JSONStore 集合中儲存二進位 Blob。
 
 而是將二進位資料儲存在檔案系統上，並將檔案路徑和其他 meta 資料儲存在 JSONStore 集合內。如果您要保護影像這類檔案，可以將它們編碼為 base64 字串，並進行加密，然後將輸出寫入磁碟。若要解密資料，您可以查閱 JSONStore 集合中的 meta 資料。讀取磁碟中的已加密資料，然後使用所儲存的 meta 資料予以解密。此 meta 資料可以包括索引鍵、salt、起始設定向量 (IV)、檔案類型、檔案路徑及其他項目。
@@ -36,24 +35,23 @@ Mobile Foundation 用戶端 API 提供一些安全公用程式，以協助保護
 ## 設定
 請確定您匯入下列檔案，以使用 JSONStore 安全公用程式 API。
 
-### iOS
+### 設定 iOS
 
 ```objc
 #import "WLSecurityUtils.h"
 ```
 
-### Android
+### 設定 Android
 
 ```java
 import com.worklight.wlclient.api.SecurityUtils
 ```
 
-### JavaScript
+### 設定 JavaScript
 不需要任何設定。
 
-## 範例
-### iOS
-#### 加密及解密
+## 適用於 iOS 的範例
+### 在 iOS 中加密及解密
 
 ```objc
 // User provided password, hardcoded only for simplicity.
@@ -87,7 +85,7 @@ NSString* decryptedString = [WLSecurityUtils decryptWithKey:key
 ```
 {: codeblock}
 
-#### 編碼及解碼 base64
+### 在 iOS 中編碼及解碼 base64
 
 ```objc
 // Input string.
@@ -102,7 +100,7 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-#### 取得遠端隨機
+### 在 iOS 中取得遠端隨機
 
 ```objc
 [WLSecurityUtils getRandomStringFromServerWithBytes:32
@@ -117,8 +115,8 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-### Android
-#### 加密及解密
+## 適用於 Android 的範例
+### 在 Android 中加密及解密
 
 ```java
 String password = "HelloPassword";
@@ -136,7 +134,7 @@ String decipheredText = SecurityUtils.decrypt(key, encryptedObject);
 ```
 {: codeblock}
 
-#### 編碼及解碼 base64
+### 在 Android 中編碼及解碼 base64
 
 ```java
 import android.util.Base64;
@@ -153,7 +151,7 @@ String decodedText = new String(base64Decoded, "UTF-8");
 ```
 {: codeblock}
 
-#### 取得遠端隨機
+### 在 Android 中取得遠端隨機
 
 ```java
 Context context; // This is the current Activity's context.
@@ -176,7 +174,7 @@ SecurityUtils.getRandomStringFromServer(byteLength, context, listener);
 ```
 {: codeblock}
 
-#### 取得本端隨機
+### 在 Android 中取得本端隨機
 
 ```java
 int byteLength = 32;
@@ -184,8 +182,8 @@ String randomString = SecurityUtils.getRandomString(byteLength);
 ```
 {: codeblock}
 
-### JavaScript
-#### 加密及解密
+## 適用於 JavaScript 的範例
+### 在 JavaScript 中加密及解密
 
 ```javascript
 // Keep the key in a variable so that it can be passed to the encrypt and decrypt API.
@@ -233,7 +231,7 @@ WL.SecurityUtils.keygen({
 ```
 {: codeblock}
 
-#### 編碼及解碼 base64
+### 在 JavaScript 中編碼及解碼 base64
 
 ```javascript
 WL.SecurityUtils.base64Encode('Hello World!')
@@ -249,7 +247,7 @@ WL.SecurityUtils.base64Encode('Hello World!')
 ```
 {: codeblock}
 
-#### 取得遠端隨機
+### 在 JavaScript 中取得遠端隨機
 
 ```javascript
 WL.SecurityUtils.remoteRandomString(32)
@@ -262,7 +260,7 @@ WL.SecurityUtils.remoteRandomString(32)
 ```
 {: codeblock}
 
-#### 取得本端隨機
+### 在 JavaScript 中取得本端隨機
 
 ```javascript
 WL.SecurityUtils.localRandomString(32)

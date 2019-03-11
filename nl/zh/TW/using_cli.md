@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-19"
 
 ---
@@ -12,8 +12,8 @@ lastupdated:  "2018-11-19"
 {:tip: .tip}
 {:pre: .pre}
 
-#	{{ site.data.keyword.mobilefoundation_short }} CLI
-{: #using_mobilefoundation_cli}
+#	Mobile Foundation CLI
+{: #mobile_foundation_cli}
 
 {{ site.data.keyword.mobilefoundation_short }} 提供「指令行介面 (CLI)」工具，讓開發人員 **mfpdev** 可以輕鬆地管理 {{site.data.keyword.mobilefoundation_short}} 用戶端及伺服器構件。
 
@@ -253,7 +253,7 @@ mfpdev app webupdate <server_name> <runtime>
 ```
 {: codeblock}
 
-您可以使用 –build 參數，搭配已包裝的 Web 資源來產生壓縮檔 (*.zip*)，但不將它上傳至伺服器。
+您可以使用 -build 參數，搭配已包裝的 Web 資源來產生壓縮檔 (*.zip*)，但不將它上傳至伺服器。
 ```
 mfpdev app webupdate --build
 ```
@@ -265,7 +265,7 @@ mfpdev app webupdate --file mobilefirst/com.ibm.test-android-1.0.0.zip
 ```
 {: codeblock}
 
-也可以選擇使用 –encrypt 參數來加密套件的內容：
+也可以選擇使用 -encrypt 參數來加密套件的內容：
 ```
 mfpdev app webupdate --encrypt
 ```

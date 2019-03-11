@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-27"
 
 ---
@@ -20,6 +20,15 @@ lastupdated: "2018-11-27"
 Mobile Foundation 服務的更新項目是透過臨時修正程式 (iFix) 及持續交付更新 (CD Update) 提供的。iFix 及 CD Update 是累積的。CD Update 中提供特性更新。
 
 若要進一步瞭解持續交付支援模型，請參閱 [Mobile Foundation 8.0 版 CD 支援公告 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/897/ENUS217-390/index.html&request_locale=en)。
+{: note}
+
+## CD Update 04（2018 年 12 月 19 日）
+{: #cd_update_4}
+
+* APN 推送通知的 HTTP/2 支援。
+* 已發行 React Native SDK for Push (react-native-ibm-mobilefirst-push 1.0.0)。
+
+在[這裡 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobilefirstplatform.ibmcloud.com/blog/2018/12/24/8-0-cd-update-release/) 檢視 CD Update 04 公告。
 {: note}
 
 ## CD Update 03（2018 年 11 月 5 日）

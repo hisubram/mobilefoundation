@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-29"
 
 ---
@@ -38,6 +38,6 @@ Mobile Foundation 伺服器會追蹤所有存取行動基礎架構的嘗試，�
    *  匯出版本
 
 
-請參閱[管理裝置](manage_devices.html)，以瞭解如何管理裝置。請參閱[遠端停用應用程式版本](remote_disable_app_version.html)，以瞭解遠端停用應用程式的特定版本。
+請參閱[管理裝置](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices)，以瞭解如何管理裝置。請參閱[遠端停用應用程式版本](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version)，以瞭解遠端停用應用程式的特定版本。
 {: note}
 

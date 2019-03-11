@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-02-12"
 
 ---
@@ -13,8 +13,8 @@ lastupdated: "2018-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# 疑難排解
-{: #troubleshooting}
+# 一般疑難排解
+{: #general-troubleshooting}
 
 若要隔離及解決 {{site.data.keyword.IBM_notm}} 產品問題，您可以使用疑難排解資訊。此資訊包含使用 {{site.data.keyword.IBM_notm}} 產品（包括 {{site.data.keyword.mobilefoundation_short}}）所隨附問題判斷資源的指示。
 {: shortdesc}
@@ -40,7 +40,7 @@ lastupdated: "2018-02-12"
 
 - 是誰或何者提報問題？
 - 錯誤碼及訊息內容？
-- 系統失敗的狀況為何？例如，它是迴圈、當掉、當機、效能退化或是結果不正確？
+- 系統失敗的狀況為何？例如，它是迴圈、當掉、損毀、效能退化或是結果不正確？
 
 ### 哪裡發生問題？
 
@@ -105,4 +105,4 @@ lastupdated: "2018-02-12"
 
 如需服務的相關問題和開始使用的指示，請使用 [IBM developerWorksdW Answers ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} 討論區。請包含 `bluemix` 和 `mobilefirst` 標籤。
 
-如需開立 IBM 支援問題單的相關資訊，或支援層次與問題單嚴重性的相關資訊，請參閱[與支援中心聯絡 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://console.bluemix.net/docs/get-support/getstarttssup.html#typesofsupport  ){: new_window}。
+如需開啟 IBM 支援問題單的相關資訊，或支援層次與問題單嚴重性的相關資訊，請參閱[與支援中心聯絡](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}。

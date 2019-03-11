@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2019
 lastupdated: "2018-12-21"
 
 ---
@@ -22,18 +22,21 @@ lastupdated: "2018-12-21"
 {:php: .ph data-hd-programlang='PHP'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# 適用於 Cordova/Web 應用程式的 API (Javascript)
+# Javascript 用戶端 SDK API
+{: #javascript_client_sdk_api}
+
+## 適用於 Cordova/Web 應用程式的 API (Javascript)
 
 下表列出您可以在 Javascript 應用程式中執行的函數，以及對應的 API 方法。
 
 | 函數 | 說明 |
 |----------|-------------|
-| `WL.Client`、`WL.App` | 起始設定及重新載入應用程式，將應用程式文字全球化 |
+| `WL.Client`、`WL.App` | 起始設定及重新載入應用程式，將應用程式文字全球化 | 
 | `WLAuthorizationManager` | 取得用戶端 ID 及授權標頭 |
 | `WL.Logger` | 將日誌訊息列印至該環境的日誌 |
 | `WL.NativePage` | 使用原生撰寫的頁面來切換目前顯示的 Web 型畫面 |
-| `WLResourceRequest` | 將要求傳送至受保護及未受保護的資源 |
-| `WL.JSONStore` | 提供輕量型文件導向儲存空間系統的用戶端 API |
+| `WLResourceRequest` | 將要求傳送至受保護及未受保護的資源 | 
+| `WL.JSONStore` | 提供輕量型文件導向儲存空間系統的用戶端 API | 
 
 ## 其他資訊
 {: #additional-information }
@@ -58,8 +61,8 @@ options = {
 | 內容 | 說明 |
 |----------|-------------|
 | `onSuccess` | 選用。要在順利完成非同步呼叫時呼叫的函數。`onSuccess` 函數的語法如下：`success-handler-function(response)`，其中 `response` 是最少包含下列內容的物件：{::nomarkdown}<ul><li><b>invocationContext</b> - <code>options</code> 物件中原始傳遞至 {{ site.data.keys.mf_server }} 的 <code>invocationContext</code> 物件，或者，如果未傳遞任何 <code>invocationContext</code> 物件，則為 <code>undefined</code>。</li><li><b>status</b> - HTTP 回應狀態</li></ul>{:/} **附註：**針對 `response` 物件包含其他內容的方法，這些內容詳述為特定方法之說明的一部分。|
-| `onFailure` | 選用。要在非同步呼叫失敗時呼叫的函數。這類失敗包括伺服器端錯誤，以及非同步呼叫期間所發生的用戶端錯誤（例如伺服器連線失敗或逾時呼叫）。**附註：**針對藉由擲出異常狀況來停止執行的用戶端錯誤，不會呼叫此函數。onFailure 函數的語法如下：`failure-handler-function(response)`，其中 `response` 是包含下列內容的物件：{::nomarkdown}<ul><li><b>invocationContext</b> - <code>options</code> 物件中原始傳遞至 {{ site.data.keys.mf_server }} 的 <code>invocationContext</code> 物件，或者，如果未傳遞任何 <code>invocationContext</code> 物件，則為 <code>undefined</code>。</li><li><b>errorCode</b> - 錯誤碼字串。所有可傳回的錯誤碼都定義為 <b>worklight.js</b> 檔案內 <code>WL.ErrorCode</code> 物件中的常數。</li><li><b>errorMsg</b> - {{ site.data.keys.mf_server }} 所提供的錯誤訊息。此訊息僅供開發人員使用，不應向使用者顯示。它不會被翻譯為使用者的語言。</li><li><b>status</b> - HTTP 回應狀態</li></ul>{:/} **附註：**針對 `response` 物件包含其他內容的方法，這些內容詳述為特定方法之說明的一部分。|
-| `invocationContext` | 選用。傳回給成功及失敗處理程式的物件。使用 `invocationContext` 物件，保留呼叫端非同步服務從服務傳回時的環境定義。例如，可能會使用相同的成功處理程式來連續呼叫 `invokeProcedure` 方法。成功處理程式必須能夠識別正在處理的 invokeProcedure 呼叫。其中一個解決方案是將 `invocationContext` 物件實作為整數，並針對每個 `invokeProcedure` 呼叫將其值加 1。當它呼叫成功處理程式時，{{ site.data.keys.product_adj }} 架構會將與 `invokeProcedure` 方法相關聯之 options 物件的 `invocationContext` 物件傳遞給它。`invocationContext` 物件的值可以用來識別與正在處理的結果相關聯的 `invokeProcedure` 呼叫。|
+| `onFailure` | 選用。要在非同步呼叫失敗時呼叫的函數。這類失敗包括伺服器端錯誤，以及非同步呼叫期間所發生的用戶端錯誤（例如伺服器連線失敗或逾時呼叫）。**附註：**針對藉由擲出異常狀況來停止執行的用戶端錯誤，不會呼叫此函數。onFailure 函數的語法如下：`failure-handler-function(response)`，其中 `response` 是包含下列內容的物件：{::nomarkdown}<ul><li><b>invocationContext</b> - <code>options</code> 物件中原始傳遞至 {{ site.data.keys.mf_server }} 的 <code>invocationContext</code> 物件，或者，如果未傳遞任何 <code>invocationContext</code> 物件，則為 <code>undefined</code>。</li><li><b>errorCode</b> - 錯誤碼字串。所有可傳回的錯誤碼都定義為 <b>worklight.js</b> 檔案內 <code>WL.ErrorCode</code> 物件中的常數。</li><li><b>errorMsg</b> - {{ site.data.keys.mf_server }} 所提供的錯誤訊息。此訊息僅供開發人員使用，不應向使用者顯示。它不會被翻譯為使用者的語言。</li><li><b>status</b> - HTTP 回應狀態</li></li></ul>{:/} **附註：**針對 `response` 物件包含其他內容的方法，這些內容詳述為特定方法之說明的一部分。|
+| `invocationContext` | 選用。傳回給成功及失敗處理程式的物件。使用 `invocationContext` 物件，保留呼叫端非同步服務從服務傳回時的環境定義。例如，可能會使用相同的成功處理程式來連續呼叫 `invokeProcedure` 方法。成功處理程式必須能夠識別正在處理的 invokeProcedure 呼叫。其中一個解決方案是將 `invocationContext` 物件實作為整數，並針對每個 `invokeProcedure` 呼叫將其值加 1。當它呼叫成功處理程式時，{{ site.data.keys.product_adj }} 架構會將與 `invokeProcedure` 方法相關聯之 options 物件的 `invocationContext` 物件傳遞給它。`invocationContext` 物件的值可以用來識別與正在處理的結果相關聯的 `invokeProcedure` 呼叫。| 
 
 ## WL.ClientMessages 物件
 {: #the-wlclientmessages-object }

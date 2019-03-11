@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated: "2018-11-29"
 
 ---
@@ -14,7 +14,7 @@ lastupdated: "2018-11-29"
 {:screen: .screen}
 
 # 遠端停用應用程式版本
-{: #remote_disable_app_version}
+{: #remotely_disable_an_app_version}
 
 在此章節中，我們將討論如何停用特定行動作業系統上特定應用程式版本的使用者存取權，以及如何向使用者提供自訂訊息。
 

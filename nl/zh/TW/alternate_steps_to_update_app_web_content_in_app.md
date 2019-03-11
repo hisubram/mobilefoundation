@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-21"
+  years: 2018, 2019
+lastupdated: "2019-02-14"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2018-12-21"
 {:screen: .screen}
 
 # 更新應用程式中 Web 內容的替代步驟
-{: #alternate_steps_to_update_app_web_content}
+{: #alternate_steps_to_update_app_web_content_in_app}
 
 以下列出更新應用程式中 Web 內容的部分替代方式。
 

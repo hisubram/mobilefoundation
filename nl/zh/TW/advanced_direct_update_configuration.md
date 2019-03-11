@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-21"
+  years: 2018, 2019
+lastupdated: "2019-02-14"
 
 ---
 
@@ -332,7 +332,7 @@ wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
 然後，應該依照以下指示使用所產生的值：
 
 1. 開啟**指令行**視窗，並導覽至 Cordova 專案的根目錄。
-2. 執行指令：`mfpdev app config`，並選取**直接更新確實性公開金鑰**選項。
+2. 執行下列指令：`mfpdev app config`，並選取**直接更新確實性公開金鑰**選項。
 3. 提供公開金鑰並確認。
 
 用戶端應用程式的所有未來「直接更新」交付將受到「直接更新」確實性保護。

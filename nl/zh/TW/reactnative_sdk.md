@@ -1,13 +1,13 @@
 ---
 
 copyright:
-  years: 2016, 2018
-lastupdated:  "2018-11-26"
+  years: 2018, 2019
+lastupdated:  "2019-02-11"
 
 ---
 
-##	React Native SDK
-{: #reactnative_sdk}
+#	React Native SDK
+{: #reactnative_sdk_api}
 
 從 npm 下載 React Native SDK。
 

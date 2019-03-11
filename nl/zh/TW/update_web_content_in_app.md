@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-12-21"
+  years: 2018, 2019
+lastupdated: "2019-02-14"
 
 ---
 
@@ -47,15 +47,15 @@ Web 資源的「直接更新」僅適用於應用程式的特定版本。例如�
 {: tip}
 
 1. 開啟指令行視窗，並導覽至 Cordova 專案的根目錄。
-2. 執行指令：
+2. 執行下列指令：
   ```bash
   mfpdev app webupdate
   ```
   `mfpdev app webupdate` 指令會將已更新的 Web 資源包裝為 `.zip` 檔案，然後將它上傳至在開發人員工作站中執行的預設 Mobile Foundation 伺服器。您可在 `[cordova-project-root-folder]/mobilefirst/` 資料夾中找到包裝的 Web 資源。
 
-如需更新應用程式中 Web 內容的替代步驟，請參閱[這裡](update_web_content_in_app_alternate_steps.html)。
+如需更新應用程式中 Web 內容的替代步驟，請參閱[這裡](/docs/services/mobilefoundation?topic=mobilefoundation-alternate_steps_to_update_app_web_content_in_app#alternate_steps_to_update_app_web_content_in_app)。
 
-## 進階直接更新配置
-{: #advanced_direct_update_config}
+## 直接更新進階配置
+{: #direct_update_advanced_config}
 
-如需有關「直接更新」配置的進階主題，請參閱[這裡](update_web_content_in_app_advanced.html)。
+如需有關「直接更新」配置的進階主題，請參閱[這裡](/docs/services/mobilefoundation?topic=mobilefoundation-advanced_direct_update_configuration#advanced_direct_update_configuration)。

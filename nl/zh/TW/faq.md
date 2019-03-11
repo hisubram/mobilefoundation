@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-16"
 
 ---
@@ -35,7 +35,7 @@ lastupdated:  "2018-11-16"
 
 > **附註：**
 >  * 使用者將無法將自己的修正程式及更新套用至其 {{site.data.keyword.mobilefoundation_short}} 服務實例。
->  * 請參閱[在 Professional Per Device 方案中重建伺服器](c_using_mfs_p5.html#recreate_mobilefoundation_p5)及[在 Professional 1 Application 方案中重建伺服器](c_using_mfs_p2.html#recreate_mobilefoundation_p2)，以瞭解按一下**重建* 時，方案之間的行為差異。
+>  * 請參閱[在 Professional Per Device 方案中重建伺服器](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#recreate_mobilefoundation_p5)及[在 Professional 1 Application 方案中重建伺服器](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#recreate_mobilefoundation_p2)，以瞭解按一下**重建* 時，方案之間的行為差異。
 >
 
 ## 如何配置 {{site.data.keyword.mobilefoundation_short}} 伺服器實例的自訂網域？

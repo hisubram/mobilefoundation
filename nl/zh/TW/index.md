@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2018
-lastupdated:  "2018-11-16"
+  years: 2016, 2019
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -14,24 +14,24 @@ lastupdated:  "2018-11-16"
 {:note: .note}
 
 # 入門指導教學
-{: #gettingstartedtemplate}
+{: #getting-started-tutorial}
 
 {{site.data.keyword.mobilefoundation_long}} 可加速設定 {{site.data.keyword.mfp_full}} 環境，您可以使用該環境來開發、測試及執行企業行動應用程式。{{site.data.keyword.mobilefoundation_short}} 提供下列不同的服務方案：Developer、Professional Per Device 及 Professional 1 Application。
 {: shortdesc}
 
-使用 Professional 1 Application 方案，即可管理在任何支援作業系統上建置的單一應用程式。支援的作業系統包含 Android、iOS、Windows 或行動 Web。Developer 方案主要適用於開發及測試。您可以在[這裡](https://console.bluemix.net/catalog/services/mobile-foundation)檢閱所有可用的方案。
+使用 Professional 1 Application 方案，即可管理在任何支援作業系統上建置的單一應用程式。支援的作業系統包含 Android、iOS、Windows 或行動 Web。Developer 方案主要適用於開發及測試。您可以在[這裡](https://cloud.ibm.com/catalog/services/mobile-foundation)檢閱所有可用的方案。
 
 此入門指導教學可讓您使用其中一個支援的方案來建立 {{site.data.keyword.mobilefoundation_short}} 服務實例。然後，您可以登錄應用程式。下載並編輯已登錄的應用程式、部署配接器，最後測試應用程式。
 
 ## 開始之前
-{: #prereqs}
+{: #prereqs-gs}
 
 您需要有 {{site.data.keyword.Bluemix}} 帳戶及 {{site.data.keyword.mobilefoundation_short}} 服務實例。
 
 ## 步驟 1：建立 {{site.data.keyword.mobilefoundation_short}} 服務實例
 {: #step1create}
 
-1. 在 {{site.data.keyword.Bluemix_notm}} ** 型錄**中，選取 [**{{site.data.keyword.mobilefoundation_short}}**](https://{domainName}/catalog/services/mobile-foundation)。即會開啟服務配置畫面。
+1. 在 {{site.data.keyword.Bluemix_notm}} ** 型錄**中，選取 [**{{site.data.keyword.mobilefoundation_short}}**](https://cloud.ibm.com/catalog/services/mobile-foundation)。即會開啟服務配置畫面。
 2. 提供服務實例的名稱，或使用預設名稱。
 3. 選擇您要建立服務實例的地區、組織及空間。
 4. 選取**定價方案**，然後按一下**建立**。
@@ -86,7 +86,7 @@ lastupdated:  "2018-11-16"
 
       +	按一下**啟動主控台**，以啟動 {{site.data.keyword.mfp_oc_short_notm}}。      
 
-      若要使用拓蹼、安全及其他伺服器配置的進階配置來建立 {{site.data.keyword.mobilefirst_notm}} 伺服器實例，請按一下**使用進階配置啟動伺服器**。如需相關資訊，請參閱[設定進階配置](c_using_mfs_p5.html#using_mfs_advanced_p5)。
+      若要使用拓蹼、安全及其他伺服器配置的進階配置來建立 {{site.data.keyword.mobilefirst_notm}} 伺服器實例，請按一下**使用進階配置啟動伺服器**。如需相關資訊，請參閱[設定進階配置](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5)。
       {: tip}
 
 ### 針對 {{site.data.keyword.mobilefoundation_short}}：Professional 1 Application 方案
@@ -124,7 +124,7 @@ lastupdated:  "2018-11-16"
 
       +  按一下**啟動主控台**，以啟動 {{site.data.keyword.mfp_oc_short_notm}}。  
 
-      若要使用拓蹼、安全及其他伺服器配置的進階配置來建立 {{site.data.keyword.mobilefirst_notm}} 伺服器實例，請按一下**使用進階配置啟動伺服器**。如需相關資訊，請參閱[設定進階配置](c_using_mfs_p2.html#using_mfs_advanced_p2)。
+      若要使用拓蹼、安全及其他伺服器配置的進階配置來建立 {{site.data.keyword.mobilefirst_notm}} 伺服器實例，請按一下**使用進階配置啟動伺服器**。如需相關資訊，請參閱[設定進階配置](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2)。
       {: tip}
 
 移至[使用 Mobile Foundation 服務來設定 MobileFirst Server ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window}，以進一步瞭解開始使用 {{site.data.keyword.mobilefoundation_short}}。
@@ -246,17 +246,8 @@ lastupdated:  "2018-11-16"
 
 
 ## 後續步驟
-{: #nextsteps}
+{: #nextsteps-gs}
 
 您可以遵循[快速入門指導教學 ![外部鏈結圖示](../../icons/launch-glyph.svg "快速入門指導教學")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} 來使用其他範例應用程式，以及探索 {{site.data.keyword.mobilefoundation_short}} 的運作。
 
 「快速入門」的指導教學說明適用於 iOS、Android、Web、Cordova、Windows、React Native、Ionic 及 Xamarin 應用程式之 {{site.data.keyword.mobilefoundation_short}} 的運作。
-
-# 相關鏈結
-{: #rellinks  notoc}
-
-## 相關鏈結
-{: #general notoc}
-
-*	[IBM MobileFirst Platform Foundation 8.0.0 版產品文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/wl_welcome.html){: new_window}
-*	[IBM MobileFirst Platform Developer Center ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobilefirstplatform.ibmcloud.com){: new_window}

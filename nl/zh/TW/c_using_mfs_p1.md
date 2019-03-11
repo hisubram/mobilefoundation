@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2018
-lastupdated:  "2018-11-20"
+  years: 2016, 2019
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -29,13 +29,12 @@ lastupdated:  "2018-11-20"
 
 您現在可以管理行動應用程式及行動裝置、使用伺服器作為行動後端、傳送推送通知，以及執行其他作業。
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Developer 方案中的 Mobile Analytics
+{: #mobile_analytics_p1}
 
 Mobile Foundation: Developer 方案服務實例已包含並預先配置 Mobile Analytics 伺服器。
 
 * 從 {{site.data.keyword.mfp_oc_short_notm}} 啟動「Mobile Analytics 主控台」。
 
-如需 Mobile Analytics 的相關資訊，您可以參閱 [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}。
+如需使用 Mobile Analytics 來檢測應用程式的相關資訊，您可以參閱[這裡](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}。
 
-如需詳細資料，請參閱 [{{site.data.keyword.mobilefoundation_long}} 文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}。

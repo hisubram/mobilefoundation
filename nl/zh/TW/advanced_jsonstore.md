@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-11-28"
+  years: 2018, 2019
+lastupdated: "2019-02-12"
 
 ---
 {:generic: .ph data-hd-programlang='generic'}
@@ -16,8 +16,9 @@ lastupdated: "2018-11-28"
 {:swift: .ph data-hd-programlang='swift'}
 {:curl: .ph data-hd-programlang='curl'}
 {:generic: .ph data-hd-operatingsystem='generic'}
-{:ios: .ph data-hd-operatingsystem='iOS'}
-{:android: .ph data-hd-operatingsystem='Android'}
+{:ios: .ph data-hd-programlang='iOS'}
+{:android: .ph data-hd-programlang='Android'}
+{:cordova: .ph data-hd-programlang='Cordova'}
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
 {:tip: .tip}
@@ -26,51 +27,48 @@ lastupdated: "2018-11-28"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# 進階離線儲存空間配置 
-{: #adv_configure_offline_storage}
-
-請使用上方的標籤，以查看此頁面上的作業系統特定指示。選取 **Java** 以取得 Android 特定指示、選取 **Node** 以取得 Cordova 特定指示，或選取 **Swift** 以取得 iOS 特定指示。
-{: note}
+# 進階 JSONStore 
+{: #advanced_jsonstore}
 
 ## JSONStore 中的安全
-{: #security_jsonstore} 
+{: #security_jsonstore}
 
 <!--### Cordova
-{: security_jsonstore_cordova}-->
+{: #security_jsonstore_cordova}-->
 
 您可以將密碼傳遞至 `init` 函數，來保護儲存庫中所有集合的安全。如果未傳遞密碼，則不會將儲存庫中所有集合的文件加密。
-{: javascript}
+{: cordova}
 
 資料加密僅適用於 Android、iOS、Windows 8.1 Universal 及 Windows 10 UWP 環境。有些安全 meta 資料儲存在金鑰鏈 (iOS)、共用喜好設定 (Android) 或認證鎖定器 (Windows 8.1) 中。儲存庫會以 256 位元的「進階加密標準 (AES)」金鑰進行加密。所有金鑰都是使用密碼型金鑰鍵衍生函數 2 (PBKDF2) 來增強。
-{: javascript}
+{: cordova}
 
 使用 `closeAll` 來鎖定所有集合的存取權，直到再次呼叫 `init` 為止。如果您將 `init` 視為登入函數，則可以將 `closeAll` 視為對應的登出函數。請使用 `changePassword` 來變更密碼。
-{: javascript}
+{: cordova}
 
 只有 iOS 才支援加密。依預設，Mobile Foundation Cordova SDK for iOS 依賴 iOS 提供的 API 以進行加密。如果您偏好使用 OpenSSL 來取代：
-{: javascript}
+{: cordova}
 
 * 新增 `cordova-plugin-mfp-encrypt-utils` 外掛程式： 
   ```bash
   cordova plugin add cordova-plugin-mfp-encrypt-utils.
   ```
 * 在應用程式邏輯中，使用 `WL.SecurityUtils.enableNativeEncryption(false)` 來啟用 OpenSSL 選項。
-{: javascript}
+{: cordova}
 
 <!--### iOS
 {: #security_jsonstore_ios} -->
 
 您可以將 `JSONStoreOpenOptions` 物件與密碼傳遞至 `openCollections` 函數，來保護儲存庫中所有集合的安全。如果未傳遞密碼，則不會將儲存庫中所有集合的文件加密。
-{: swift}
+{: ios}
 
 有些安全 meta 資料儲存在金鑰鏈 (iOS) 中。儲存庫會以 256 位元的「進階加密標準 (AES)」金鑰進行加密。所有金鑰都是使用密碼型金鑰鍵衍生函數 2 (PBKDF2) 來增強。
-{: swift}
+{: ios}
 
 使用 `closeAllCollections` 來鎖定所有集合的存取權，直到再次呼叫 `openCollections` 為止。如果您將 `openCollections` 視為登入函數，則可以將 `closeAllCollections` 視為對應的登出函數。
 {: ios}
 
 請使用 `changeCurrentPassword` 來變更密碼。
-{: swift}
+{: ios}
 
 ```swift
 let collection:JSONStoreCollection = JSONStoreCollection(name: "people")
@@ -87,22 +85,22 @@ do {
 }
 ```
 {: codeblock}
-{: swift}
+{: ios}
 
 <!--### Android
 {: #security_jsonstore_android} -->
 
 您可以將 `JSONStoreInitOptions` 物件與密碼傳遞至 `openCollections` 函數，來保護儲存庫中所有集合的安全。如果未傳遞密碼，則不會將儲存庫中所有集合的文件加密。
-{: java}
+{: android}
 
 有些安全 meta 資料儲存在共用喜好設定 (Android) 中。儲存庫會以 256 位元的「進階加密標準 (AES)」金鑰進行加密。所有金鑰都是使用密碼型金鑰鍵衍生函數 2 (PBKDF2) 來增強。
-{: java}
+{: android}
 
 使用 `closeAllCollections` 來鎖定所有集合的存取權，直到再次呼叫 `openCollections` 為止。如果您將 `openCollections` 視為登入函數，則可以將 `closeAllCollections` 視為對應的登出函數。
-{: java}
+{: android}
 
 請使用 `changeCurrentPassword` 來變更密碼。
-{: java}
+{: android}
 
 ```java
 Context context = getContext();
@@ -118,10 +116,10 @@ try {
   // handle success
 } catch(JSONStoreException e) {
   // handle failure
-}
-```
+      }
+      ```
 {: codeblock}
-{: java}
+{: android}
 
 ## JSONStore 中的多使用者支援
 {: #multiple_user_jsonstore} 
@@ -130,7 +128,7 @@ try {
 {: #multiple_user_jsonstore_cordova} -->
 
 您可以在單一 MobileFirst 應用程式中建立多個包含不同集合的儲存庫。`init` 函數可接受具有使用者名稱的 options 物件。如果未提供任何使用者名稱，預設使用者名稱是 *jsonstore*。
-{: javascript}
+{: cordova}
 
 ```javascript
 var collections = {
@@ -146,13 +144,13 @@ WL.JSONStore.init(collections, options).then(function () {
 });
 ```
 {: codeblock}
-{: javascript}
+{: cordova}
 
 <!--### iOS
 {: #multiple_user_jsonstore_ios} -->
 
 您可以在單一 MobileFirst 應用程式中建立多個包含不同集合的儲存庫。`init` 函數可接受具有使用者名稱的 options 物件。如果未提供任何使用者名稱，預設使用者名稱是 *jsonstore*。
-{: swift}
+{: ios}
 
 ```swift
 let collection:JSONStoreCollection = JSONStoreCollection(name: "people")
@@ -169,13 +167,13 @@ do {
 }
 ```
 {: codeblock}
-{: swift}
+{: ios}
 
 <!--### Android
 {: #multiple_user_jsonstore_android} -->
 
 您可以在單一 MobileFirst 應用程式中建立多個包含不同集合的儲存庫。`openCollections` 函數可接受具有使用者名稱的 options 物件。如果未提供任何使用者名稱，預設使用者名稱是 *jsonstore*。
-{: java}
+{: android}
 
 ```java
 Context context = getContext();
@@ -191,10 +189,10 @@ try {
   // handle success
 } catch(JSONStoreException e) {
   // handle failure
-}
-```
+      }
+      ```
 {: codeblock}
-{: java}
+{: android}
 
 ## 配接器整合
 {: #adapter_integration}
@@ -203,7 +201,7 @@ try {
 {: #adapter_integration_cordova}-->
 
 配接器整合是選用性的，它提供了方法來將資料從集合傳送到配接器，以及將資料從配接器傳送到集合。如果您需要更大的彈性，可以使用 `WLResourceRequest` 或 `jQuery.ajax` 來達成這些目標。
-{: javascript}
+{: cordova}
 
 1. 建立配接器，並將它命名為 **JSONStoreAdapter**。
 2. 定義其程序 `addPerson`、`getPeople`、`pushPeople`、`removePerson` 和 `replacePerson`。
@@ -235,8 +233,7 @@ try {
         return;
     }
    ```
-   {: codeblock}
-   {: javascript}
+   {: cordova}
 3. 如果要從配接器載入資料，請使用 `WLResourceRequest`。
    ```javascript
    try {
@@ -251,8 +248,7 @@ try {
         alert("Failed to load data from adapter " + e.Messages);
     }
    ```
-   {: codeblock}
-   {: javascript}
+   {: cordova}   
 4. 呼叫 `getPushRequired` 會傳回所謂「只在本端變動過的文件」的陣列，這些文件具有本端修改，而修改並不存在於後端系統上。當呼叫 `push` 時，會將這些文件傳送到配接器。
    ```javascript
    var collectionName = 'people';
@@ -263,9 +259,10 @@ try {
    });
    ```
    {: codeblock}
-   {: javascript}
+   {: cordova}
    若要防止 JSONStore 將文件標示為「已變動」，請傳遞選項 `{markDirty:false}` 給 `add`、`replace` 和 `remove`。
    {: tip} 
+   {: cordova}
 5. 您也可以使用 `getAllDirty` API 來擷取變動過的文件。
    ```javascript
    WL.JSONStore.get(collectionName).getAllDirty()
@@ -273,10 +270,10 @@ try {
         // handle success
     }).fail(function (errorObject) {
         // handle failure
-    });
-   ```
-   {: javascript}
+});
+```
    {: codeblock}
+   {: cordova}
 6. 若要將變更推送至配接器，請呼叫 `getAllDirty` 以取得有修改的文件清單，然後使用 `WLResourceRequest`。在傳送資料並收到成功的回應之後，請務必呼叫 `markClean`。
    ```javascript
    try {
@@ -304,7 +301,7 @@ try {
     }
    ```
    {: codeblock}
-   {: javascript}
+   {: cordova}
 7. 使用 `enhance` 可將函數新增至集合原型來延伸核心 API，以符合您的需求。本範例（下面的程式碼 Snippet）顯示如何使用 `enhance` 來新增 `getValue` 函數，它會處理 `keyvalue` 集合。它會接受一個 key（字串）作為其唯一參數，並傳回單一結果。
    ```javascript
    var collectionName = 'keyvalue';
@@ -326,48 +323,18 @@ try {
     }); 
    ```
    {: codeblock}
-   {: javascript}
+   {: cordova}
 8. 參閱**範例**小節的 Cordova 應用程式 JSONStore 範例。此專案包含使用 JSONStore API 集的 Cordova 應用程式。JavaScript 配接器 Maven 專案可以從[這裡](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)下載。
-{: javascript}
+{: cordova}
 
 <!--### iOS
 {: #adapter_integration_ios}-->
 
 配接器整合是選用性的，它提供了方法來將資料從集合傳送到配接器，以及將資料從配接器傳送到集合。您可以使用 `WLResourceRequest` 來達成這些目標。
-{: swift}
+{: ios}
 
 1. 建立配接器，並將它命名為 **People**。
 2. 定義其程序 `addPerson`、`getPeople`、`pushPeople`、`removePerson` 和 `replacePerson`。
-   ```swift
-    function getPeople() {
-        var data = { peopleList : [{name: 'chevy', age: 23}, {name: 'yoel', age: 23}] };
-        WL.Logger.debug('Adapter: people, procedure: getPeople called.');
-        WL.Logger.debug('Sending data: ' + JSON.stringify(data));
-        return data;
-    }
-    function pushPeople(data) {
-        WL.Logger.debug('Adapter: people, procedure: pushPeople called.');
-        WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-        return;
-    }
-    function addPerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: addPerson called.');
-        WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-        return;
-    }
-    function removePerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: removePerson called.');
-        WL.Logger.debug('Got data from JSONStore to REMOVE: ' + data);
-        return;
-    }
-    function replacePerson(data) {
-        WL.Logger.debug('Adapter: people, procedure: replacePerson called.');
-        WL.Logger.debug('Got data from JSONStore to REPLACE: ' + data);
-        return;
-    }
-   ```
-   {: codeblock}
-   {: swift}
 3. 如果要從配接器載入資料，請使用 `WLResourceRequest`。
    ```swift
     // Start - LoadFromAdapter
@@ -390,7 +357,7 @@ try {
     pull.sendWithDelegate(loadDelegate)
    ```
    {: codeblock}
-   {: swift}
+   {: ios}
 4. 呼叫 `allDirty` 會傳回所謂「只在本端變動過的文件」的陣列，這些文件具有本端修改，而修改並不存在於後端系統上。
    ```swift
     let collectionName:String = "people"
@@ -403,7 +370,7 @@ try {
     }
    ```
    {: codeblock}
-   {: swift}
+   {: ios}
    若要防止 JSONStore 將文件標示為「已變動」，請傳遞選項 `{markDirty:false}` 給 `add`、`replace` 和 `remove`。
    {: tip} 
 5. 若要將變更推送至配接器，請呼叫 `allDirty` 以取得有修改的文件清單，然後使用 `WLResourceRequest`。在傳送資料並收到成功的回應之後，請務必呼叫 `markDocumentsClean`。
@@ -437,48 +404,18 @@ try {
     }
    ```
    {: codeblock}
-   {: swift}
+   {: ios}
 6. 從**範例**小節下載原生 iOS Swift 應用程式專案。專案包含使用 JSONStore API 集的原生 iOS Swift 應用程式。JavaScript 配接器 Maven 專案可以從[這裡](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)下載。
-{: swift}
+{: ios}
 
 <!--### Android
 {: #adapter_integration_android}-->
 
 配接器整合是選用性的，它提供了方法來將資料從集合傳送到配接器，以及將資料從配接器傳送到集合。如果您需要更大的彈性，可以使用例如 `WLResourceRequest` 的函數或自己的 `HttpClient` 實例來達成這些目標。
-{: java}
+{: android}
 
 1. 建立配接器，並將它命名為 **JSONStoreAdapter**。
 2. 定義其程序 `addPerson`、`getPeople`、`pushPeople`、`removePerson` 和 `replacePerson`。
-   ```javascript
-    function getPeople() {
-      var data = { peopleList : [{name: 'chevy', age: 23}, {name: 'yoel', age: 23}] };
-      WL.Logger.debug('Adapter: people, procedure: getPeople called.');
-      WL.Logger.debug('Sending data: ' + JSON.stringify(data));
-      return data;
-    }
-    function pushPeople(data) {
-      WL.Logger.debug('Adapter: people, procedure: pushPeople called.');
-      WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-      return;
-    }
-    function addPerson(data) {
-      WL.Logger.debug('Adapter: people, procedure: addPerson called.');
-      WL.Logger.debug('Got data from JSONStore to ADD: ' + data);
-      return;
-    }
-    function removePerson(data) {
-      WL.Logger.debug('Adapter: people, procedure: removePerson called.');
-      WL.Logger.debug('Got data from JSONStore to REMOVE: ' + data);
-      return;
-    }
-    function replacePerson(data) {
-      WL.Logger.debug('Adapter: people, procedure: replacePerson called.');
-      WL.Logger.debug('Got data from JSONStore to REPLACE: ' + data);
-      return;
-    }
-   ```
-   {: codeblock}
-   {: java}
 3. 如果要從配接器載入資料，請使用 `WLResourceRequest`。
    ```java
     WLResponseListener responseListener = new WLResponseListener() {
@@ -504,7 +441,7 @@ try {
     }
    ```
    {: codeblock}
-   {: java}
+   {: android}
 4. 呼叫 `findAllDirtyDocuments` 會傳回所謂「只在本端變動過的文件」的陣列，這些文件具有本端修改，而修改並不存在於後端系統上。
    ```java
     Context  context = getContext();
@@ -518,9 +455,10 @@ try {
     }
    ```
    {: codeblock}
-   {: java}
+   {: android}
    若要防止 JSONStore 將文件標示為「已變動」，請傳遞選項 `options.setMarkDirty(false)` 給 `add`、`replace` 和 `remove`。
    {: tip} 
+   {: android}
 5. 若要將變更推送至配接器，請呼叫 `findAllDirtyDocuments` 以取得有修改的文件清單，然後使用 `WLResourceRequest`。在傳送資料並收到成功的回應之後，請務必呼叫 `markDocumentsClean`。
    ```java
     WLResponseListener responseListener = new WLResponseListener() {
@@ -552,6 +490,6 @@ try {
     }
    ```
    {: codeblock}
-   {: java}
+   {: android}
 6. 從**範例**小節下載原生 Android 應用程式專案。專案包含使用 JSONStore API 集的原生 Android 應用程式。JavaScript 配接器 Maven 專案可以從[這裡](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)下載。
-{: java}
+{: android}

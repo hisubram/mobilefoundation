@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2016, 2018
-lastupdated:  "2018-11-20"
+  years: 2016, 2019
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated:  "2018-11-20"
 使用 Professional 1 Application 方案，使用者可以建立 1 個含有各種行動作業系統的行動應用程式。
 建立 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服務實例之後，請閱讀下列程序，以開始使用該服務。
 
-## 必要條件
+## Professional 1 Application 方案的必要條件
 {: #prerequisites_p2}
 
 在配置 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服務實例之前，請考量下列各項。
@@ -30,10 +30,10 @@ lastupdated:  "2018-11-20"
 > **附註**：{{site.data.keyword.Db2_on_Cloud_short}}（**精簡**方案以外的任何方案）或 {{site.data.keyword.composeForPostgreSQL}} 服務實例可存在於 {{site.data.keyword.Bluemix_notm}} `Organization` 的任何 `Space` 中或您具有存取權的任何其他 `Organization` 中。請確定您具有存取 {{site.data.keyword.Db2_on_Cloud_short}} 或 {{site.data.keyword.composeForPostgreSQL}} 服務實例所存在的 `Space` 的許可權。
 
 
-## 新增資料庫連線
+## 配置資料庫連線
 {: #configure_dashdb_p2}
 
-###  首要步驟
+###  配置的首要步驟
 {: #firststeps_p2}
 
 建立 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服務實例之後，請遵循程序以開始使用。
@@ -73,7 +73,7 @@ lastupdated:  "2018-11-20"
 您無法變更配置以供 {{site.data.keyword.mobilefoundation_short}} 服務實例使用的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。不過，您能夠在多個 {{site.data.keyword.mobilefoundation_short}} 服務實例之間使用相同的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例，因為每一個 {{site.data.keyword.mobilefoundation_short}} 服務實例都會在所選取的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例中建立自己的綱目。
 {: note}
 
-## 啟動 MobileFirst 伺服器
+## 啟動使用 Professional 1 Application 方案建立的 MobileFirst 伺服器
 {: #start_mobilefoundation_p2}
 
 * 若要以預設值啟動 {{site.data.keyword.mfserver_short_notm}}，請按一下**啟動基本伺服器**。
@@ -97,7 +97,7 @@ lastupdated:  "2018-11-20"
 
 
 
-## 重建 MobileFirst 伺服器
+## 使用 Professional 1 Application 方案時重新建立 MobileFirst 伺服器
 {: #recreate_mobilefoundation_p2}
 
 *	按一下**重建**，以重建伺服器。
@@ -107,7 +107,7 @@ lastupdated:  "2018-11-20"
 來自舊版伺服器實例的資料（包括應用程式及配接器的相關資訊）會持續保存在已配置的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例中。這項資料可用來重建您的伺服器。
 {: note}
 
-##	設定進階配置
+##	在 Professional 1 Application 方案中設定進階配置
 {: #using_mfs_advanced_p2}
 
 使用 `Overview` 頁面中的**使用進階配置啟動伺服器**頁面，以使用進階或自訂設定來建立伺服器。您也可以更新伺服器設定來自訂伺服器配置，方法是按一下**配置**標籤。{{site.data.keyword.mobilefoundation_short}} 可讓您存取一些進階設定。
@@ -117,13 +117,11 @@ lastupdated:  "2018-11-20"
 
   - **實例**會顯示已建立的實例數目。
 
-## Mobile Analytics
-{: #mobile_analytics}
+## Professional 1 Application 方案中的 Mobile Analytics
+{: #mobile_analytics_p2}
 
 Mobile Foundation: Developer 方案服務實例已包含並預先配置 Mobile Analytics 伺服器。
 
 * 從 {{site.data.keyword.mfp_oc_short_notm}} 啟動「Mobile Analytics 主控台」。
 
-如需 Mobile Analytics 的相關資訊，您可以參閱 [MobileFirst Foundation Operational Analytics](https://cloud.ibm.com/docs/services/mobileanalytics/mobileanalytics_overview.html#about-mobile-analytics){: new_window}。
-
-如需詳細資料，請參閱 [{{site.data.keyword.mobilefoundation_long}} 文件 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/){: new_window}。
+如需 Mobile Analytics 的相關資訊，您可以參閱[這裡](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}。

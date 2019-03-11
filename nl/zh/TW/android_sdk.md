@@ -1,13 +1,13 @@
 ---
 
 copyright:
-  years: 2016, 2018
+  years: 2018, 2019
 lastupdated:  "2018-11-26"
 
 ---
 
-##	Android SDK
-{: #android_sdk}
+#	Android SDK
+{: #android_sdk_api}
 
 從 Maven 儲存庫下載 Android SDK。
 

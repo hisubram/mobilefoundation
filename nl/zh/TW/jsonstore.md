@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated:  "2018-11-19"
+  years: 2018, 2019
+lastupdated:  "2019-02-12"
 
 ---
 
@@ -10,16 +10,18 @@ lastupdated:  "2018-11-19"
 {:codeblock: .codeblock}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
 {:pre: .pre}
 
-# 使用 JSONStore 的離線儲存空間
-{: #overview }
+
+#  JSONStore      
+{: #jsonstore }
 {{site.data.keyword.mobilefoundation_short}} **JSONStore** 是選用的用戶端 API，可提供輕量型文件導向的儲存空間系統。JSONStore 會啟用 **JSON 文件**的持續性儲存空間。應用程式中的文件會在 JSONStore 中提供，即使執行應用程式的裝置已離線。例如，裝置中沒有可用的網路連線時，這個持續性且一律可用的儲存空間可協助使用者存取文件。
 
 因為 JSONStore 是開發人員所熟悉的，所以本文件有時會使用關聯式資料庫術語來協助說明 JSONStore。不過，關聯式資料庫與 JSONStore 之間有許多差異。例如，用來將資料儲存至關聯式資料庫的嚴格綱目與 JSONStore 的方法不同。使用 JSONStore，您可以儲存任何 JSON 內容，並檢索需要搜尋的內容。
 
 ## 主要特性
-{: #key-features }
+{: #key-features-jsonstore }
 * 資料檢索，以進行有效率地搜尋
 * 適用於追蹤對已儲存資料所做之僅限本端變更的機制
 * 支援多位使用者
@@ -28,7 +30,7 @@ lastupdated:  "2018-11-19"
 單一儲存庫可以有多個集合，而每個集合都可以有多份文件。也可能有由多個儲存庫組成的 MobileFirst 應用程式。如需相關資訊，請參閱 JSONStore 多重使用者支援。
 
 ## 支援層次
-{: #support-level }
+{: #support-level-jsonstore }
 * 原生 iOS 及 Android 應用程式中支援 JSONStore（原生 Windows（Universal 及 UWP）不予支援）。
 * Cordova iOS、Android 及 Windows（Universal 及 UWP）應用程式中支援 JSONStore。
 
@@ -148,21 +150,21 @@ JSONStore 類似於 LocalStorage、Indexed DB、Cordova Storage API 及 Cordova 
 
 | 特性                                               | JSONStore      | LocalStorage | IndexedDB | Cordova Storage API | Cordova File API |
 |----------------------------------------------------|----------------|--------------|-----------|---------------------|------------------|
-| Android 支援（Cordova 及原生應用程式）             |	     ✔ 	      |      ✔	    |     ✔	     |        ✔	           |         ✔	      |
-| iOS 支援（Cordova 及原生應用程式）                 |	     ✔ 	      |      ✔	    |     ✔	     |        ✔	           |         ✔	      |
-| Windows 8.1 Universal 及 Windows 10 UWP（Cordova 應用程式）          |	     ✔ 	      |      ✔	    |     ✔	     |        -	           |         ✔	      |
+| Android 支援（Cordova 及原生應用程式）             |	     ✔ 	      |     ✔	     |        ✔	           |         ✔	      |         ✔	      |
+| iOS 支援（Cordova 及原生應用程式）                 |	     ✔ 	      |     ✔	     |        ✔	           |         ✔	      |         ✔	      |
+| Windows 8.1 Universal 及 Windows 10 UWP（Cordova 應用程式）          |	     ✔ 	      |     ✔	     |     ✔	     |        -	           |         ✔	      |
 | 資料加密       	                                 |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
-| 儲存空間上限   	                                 |可用空間       |    ~5 MB     |   ~5 MB 	 | 可用空間	   | 可用空間  |
-| 可靠的儲存空間（請參閱附註）                     |	     ✔ 	      |      -	    |     -	     |        ✔	           |         ✔	      |
+| 儲存空間上限   	                                 |可用空間       |    ~5 MB     |   ~5 MB 	 | 可用空間  | 可用空間  |
+| 可靠的儲存空間（請參閱附註）                     |	     ✔ 	      |      -	    |     -	     |         ✔	      |         ✔	      |
 | 追蹤本端變更                                     |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
 | 多使用者支援                                     |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
-| 檢索   	                                         |	     ✔ 	      |      -	    |     ✔	     |        ✔	           |         -	      |
+| 檢索   	                                         |	     ✔ 	      |      -	    |        ✔	           |        ✔	           |         -	      |
 | 儲存空間類型                                     | JSON 文件     | 鍵值組          | JSON 文件      | 關聯式 (SQL)     | 字串        |
 
-**附註：**「可靠的儲存空間」表示除非發生下列其中一個事件，否則不會刪除您的資料：
-
+「可靠的儲存空間」表示除非發生下列其中一個事件，否則不會刪除您的資料：
 * 從裝置中移除應用程式。
 * 呼叫用於移除資料的其中一種方法。
+{: note}
 
 ## 多使用者支援
 {: #multiple-user-support }
@@ -173,12 +175,13 @@ init (JavaScript) 或 open（原生 iOS 及原生 Android）API 可以採用具�
 使用案例範例：如共用實體裝置（例如 iPad 或 Android 平板電腦）及 MobileFirst 應用程式的多位員工。若員工在不同班次工作，並處理來自不同客戶的專用資料，同時使用 MobileFirst 應用程式，則多使用者支援非常有用。
 
 ## 安全
-{: #security }
+{: #security-jsonstore }
 您可以加密儲存庫中的所有集合，來保護它們的安全。
 
 若要加密儲存庫中的所有集合，請將密碼傳遞至 `init` (JavaScript) 或 `open`（原生 iOS 及原生 Android）API。如果未傳遞任何密碼，則不會加密儲存庫集合中的任何文件。
 
-部分安全構件（例如 salt）儲存在金鑰鏈 (iOS)、共用喜好設定 (Android) 及認證鎖定器（Windows Universal 8.1 及 Windows 10 UWP）中。儲存庫會以 256 位元的「進階加密標準 (AES)」金鑰進行加密。所有金鑰都是使用「密碼型金鑰衍生函數 2 (PBKDF2)」予以增強。您可以選擇為應用程式加密資料收集，但無法切換已加密與純文字格式，或混合使用儲存庫內的格式。
+部分安全構件（例如 salt）儲存在金鑰鏈 (iOS)、共用喜好設定 (Android) 及認證鎖定器（Windows Universal 8.1 及 Windows 10 UWP）中。儲存庫會以 256 位元的「進階加密標準 (AES)」金鑰進行加密。所有金鑰都是使用密碼型金鑰鍵衍生函數 2 (PBKDF2) 來增強。
+您可以選擇為應用程式加密資料收集，但無法切換已加密與純文字格式，或混合使用儲存庫內的格式。
 
 用於保護儲存庫中資料的金鑰係根據您所提供的使用者密碼。金鑰不會到期，但您可以藉由呼叫 changePassword API 來進行變更。
 
@@ -202,7 +205,7 @@ MobileFirst 用戶端 API 提供一些安全公用程式，以協助保護使用
 
 此 meta 資料可以包括索引鍵、salt、起始設定向量 (IV)、檔案類型、檔案路徑及其他項目。
 
-進一步瞭解 [JSONStore 安全公用程式](security_utilities.html#security_utilities)。
+進一步瞭解 [JSONStore 安全公用程式](/docs/services/mobilefoundation?topic=mobilefoundation-security_utilities#security_utilities)。
 {: tip}
 
 ### Windows 8.1 Universal 及 Windows 10 UWP 加密
@@ -235,17 +238,17 @@ JSONStore 在所有平台上使用 SQLCipher。在 Android 及 iOS 上，提供�
    {: codeblock}
 
 ## 效能
-{: #performance }
+{: #performance-jsonstore }
 下列因素會影響 JSONStore 效能。
 
 ### 網路
-{: #network }
+{: #network-jsonstore }
 * 執行將所有變動過的文件傳送給配接器這類作業之前，請先檢查網路連線功能。
 * 透過網路傳送至用戶端的資料量會嚴重影響效能。僅傳送應用程式所需要的資料，而不是複製後端資料庫內的所有資料。
 * 如果您使用配接器，請考慮將 compressResponse 旗標設為 true。如此一來，即會壓縮回應，這通常會使用較少的頻寬，而且傳送時間比不使用壓縮的速度更快。
 
 ### 記憶體
-{: #memory }
+{: #memory-jsonstore }
 * 當您使用 JavaScript API 時，會將 JSONStore 文件序列化並解除序列化為原生（Objective-C、Java 或 C#）層與 JavaScript 層之間的字串。降低可能記憶體問題的其中一種方法，是在使用 find API 時使用限制及偏移。如此一來，您會限制針對結果所配置的記憶體數量，而且可以實作分頁（每頁顯示 X 個結果）這類事項。
 * 考慮將最終序列化及解除序列化為「字串」的長金鑰名稱對映到較短的金鑰名稱（例如：`myVeryVeryVerLongKeyName` 到 `k` 或 `key`），而不要使用那些長金鑰名稱。理想狀況下，當您將它們從配接器傳送至用戶端時，可以將它們對映至短金鑰名稱，而在您將資料送回後端時，會將它們對映至原始長金鑰名稱。
 * 考慮將儲存庫內的資料分割為各種集合。具有各種集合的小型文件，而不是單一集合的龐大文件。此考量取決於資料的緊密相關程度與所指定資料的使用案例。
@@ -253,7 +256,7 @@ JSONStore 在所有平台上使用 SQLCipher。在 Android 及 iOS 上，提供�
 * JavaScript 及 Java™ 具有記憶體回收器，而 Objective-C 具有「自動參照計數」。容許它運作，但不完全依賴。嘗試將不再使用的參照設為空值，並使用側寫工具來確認記憶體用量在您預期它下降時下降。
 
 ### CPU
-{: #cpu }
+{: #cpu-jsonstore }
 * 當您呼叫執行檢索的 add 方法時，所使用的搜尋欄位及額外搜尋欄位數量會影響效能。只會檢索用於 find 方法之查詢中的值。
 * 依預設，JSONStore 會追蹤其文件的本端變更。此行為可以予以停用，因此節省一些循環，方法是在您使用 add、remove 及 replace API 時將 `markDirty` 旗標設為 **false**。
 * 啟用安全會將一些額外負擔新增至 `init` 或 `open` API，以及其他使用集合內文件的作業。請考量是否真的需要安全。例如，open API 的加密速度較慢，因為它必須產生用於加密及解密的加密金鑰。
@@ -262,9 +265,9 @@ JSONStore 在所有平台上使用 SQLCipher。在 Android 及 iOS 上，提供�
 * `find` API（`find`、`findAll` 及 `findById`）受到加密的影響，因為它們必須解密每份文件才能看到它是否符合。對於依查詢尋找，如果通過限制，則可能較為快速，因為當它達到結果限制時就會停止。JSONStore 不需要將其餘的文件解密，即可瞭解是否還有任何其他搜尋結果。
 
 ## 並行性
-{: #concurrency }
-### JavaScript
-{: #javascript }
+{: #concurrency-jsonstore }
+### JavaScript 中的並行性
+{: #javascript-jsonstore }
 可對集合執行的大部分作業（例如新增及尋找）都是非同步作業。這些作業會傳回一個 jQuery 承諾，在作業順利完成時會解決此承諾，而在作業失敗時拒絕此承諾。這些承諾與成功及失敗回呼類似。
 
 「jQuery 延遲」是可解決或拒絕的承諾。下列範例並非 JSONStore 特有的，但一般是要協助您瞭解其使用情形。
@@ -285,7 +288,6 @@ var asyncOperation = function () {
   return deferred.promise();
 };
 ```
-{: codeblock}
 
 **承諾使用情形範例**
 
@@ -295,7 +297,6 @@ asyncOperation.then(function (response) {
   // response = 'Hello'
 });
 ```
-{: codeblock}
 
 **回呼定義範例**
 
@@ -306,7 +307,6 @@ var asyncOperation = function (callback) {
   }, 1000);
 };
 ```
-{: codeblock}
 
 **回呼使用情形範例**
 
@@ -316,7 +316,6 @@ asyncOperation(function (response) {
   // response = 'Hello'
 });
 ```
-{: codeblock}
 
 **事件範例**
 
@@ -329,18 +328,17 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
   // collectionName - Name of the collection
 });
 ```
-{: codeblock}
 
-### Objective-C
-{: #objective-c }
+### Objective-C 中的並行性
+{: #objective-c-jsonstore }
 當您使用適用於 JSONStore 的 Native iOS API 時，會將所有作業新增至同步分派佇列。此行為確保觸及儲存庫的作業依序在不是主要執行緒的執行緒上執行。如需相關資訊，請參閱 Apple 文件，網址為 [Grand Central Dispatch (GCD) ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window}。
 
-### Java™
-{: #java }
+### Java 中的並行性 
+{: #java-jsonstore }
 當您使用適用於 JSONStore 的 Native Android API 時，所有作業都會在主要執行緒上執行。您必須建立執行緒，或使用執行緒儲存區，才能具有非同步行為。所有儲存作業都是安全執行緒。
 
 ## 分析
-{: #analytics }
+{: #analytics-jsonstore }
 您可以收集與 JSONStore 相關的重要分析資訊部分
 
 ### 檔案資訊
@@ -351,9 +349,7 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 {: #performance-metrics }
 每次使用作業的開始及結束時間相關資訊來呼叫 JSONStore API 時，就會收集效能度量值。您可以使用此資訊來判斷各項作業所花費的時間（毫秒）。
 
-### 範例
-{: #examples }
-#### iOS
+### 適用於 iOS 的 JSONStore 範例
 {: #ios-example}
 ```objc
 JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
@@ -361,9 +357,8 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
-{: codeblock}
 
-#### Android
+### 適用於 Android 的 JSONStore 範例
 {: #android-example }
 ```java
 JSONStoreInitOptions initOptions = new JSONStoreInitOptions();
@@ -371,9 +366,8 @@ initOptions.setAnalytics(true);
 
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
-{: codeblock}
 
-#### JavaScript
+### 適用於 JavaScript 的 JSONStore 範例
 {: #java-script-example }
 ```javascript
 var options = {
@@ -382,7 +376,6 @@ var options = {
 
 WL.JSONStore.init(..., options);
 ```
-{: codeblock}
 
 ## 使用外部資料
 {: #working-with-external-data }
@@ -393,24 +386,25 @@ WL.JSONStore.init(..., options);
 許多系統都使用「取回」術語來表示從外部來源取得資料。  
 有三個重要部分：
 
-#### 外部資料來源
-{: #external-data-source }
+#### 從外部資料來源取回
+{: #external-data-source-pull }
 此來源可以是資料庫、REST 或 SOAP API，或是許多其他項目。唯一的需求是必須可從「MobileFirst 伺服器」或直接從用戶端應用程式進行存取。理想狀況下，您希望此來源以 JSON 格式傳回資料。
 
-#### 傳輸層
-{: #transport-layer }
+#### 取回的傳輸層
+{: #transport-layer-pull }
 此來源是如何將外部來源中的資料放入內部來源（即儲存庫內的 JSONStore 集合）。替代方案是使用配接器。
 
-#### 內部資料來源 API
-{: #internal-data-source-api }
+#### 取回的內部資料來源 API
+{: #internal-data-source-api-pull }
 此來源是 JSONStore API，可用來將 JSON 資料新增至集合。
 
-**附註：**您可以將從檔案、輸入欄位或變數中編碼資料所讀取的資料移入內部儲存庫中。它不一定只來自需要網路通訊的外部來源。
+您可以將從檔案、輸入欄位或變數中編寫之資料所讀取的資料移入內部儲存庫中。它不一定只來自需要網路通訊的外部來源。
+{: note}
 
 下列所有程式碼範例都是以虛擬碼撰寫，其與 JavaScript 類似。
 
-**附註：**請將配接器用於「傳輸層」。使用配接器的一些優點包含：XML 至 JSON、安全、過濾以及取消伺服器端程式碼與用戶端程式碼的連結。
-
+請將配接器用於「傳輸層」。使用配接器的一些優點包含：XML 至 JSON、安全、過濾以及取消伺服器端程式碼與用戶端程式碼的連結。
+{: note}
 **外部資料來源：後端 REST 端點**  
 假設您有一個 REST 端點，該端點會從資料庫讀取資料，並將其作為 JSON 物件陣列傳回。
 
@@ -463,7 +457,9 @@ resource.send()
 ```
 {: codeblock}
 
-**附註：**建議您充分運用 `compressResponse`、`timeout` 以及可傳遞給 `WLResourceRequest` API 的其他參數。  
+建議您充分運用 `compressResponse`、`timeout` 以及可傳遞給 `WLResourceRequest` API 的其他參數。  
+{: note}
+
 您可以選擇跳過配接器，並使用 jQuery.ajax 這類項目直接聯絡 REST 端點與您要儲存的資料。
 
 ```javascript
@@ -522,7 +518,7 @@ change API 會取得資料及部分選項：
 名稱已從 `Carlitos` 變更為 `Carlos`。如果有多份文件符合取代準則，則所有符合的文件都會取代為個別的輸入資料。
 
 **addNew**  
-沒有任何文件符合取代準則時，change API 會查看此旗標的值。如果此旗標設為 **true**，則 change API 會建立新的文件，並將它新增至儲存庫。否則，不採取任何進一步動作。
+沒有任何文件符合取代準則時，change API 會查看此旗標的值。如果此旗標設為 **true**，則 change API 會建立新的文件，並將它新增至儲存庫。否則，不採取其他任何動作。
 
 **markDirty**  
 決定 change API 是否將已取代或新增的文件標示為「變動過」。
@@ -585,21 +581,22 @@ accessor.remove(doc, {markDirty: true})
 
 有三個重要部分：
 
-#### 內部資料來源 API
+#### 推送的內部資料來源 API
 {: #internal-data-source-api-push }
 此來源是指傳回具有僅限本端變更（變動過）之文件的 JSONStore API。
 
-#### 傳輸層
+#### 推送的傳輸層
 {: #transport-layer-push }
 此來源說明您要如何聯絡外部資料來源以傳送變更。
 
-#### 外部資料來源
+#### 推送至外部資料來源
 {: #external-data-source-push }
 此來源一般是指資料庫、REST 或 SOAP 端點及其他項目，可收到用戶端對資料所做的更新。
 
 下列所有程式碼範例都是以虛擬碼撰寫，其與 JavaScript 類似。
 
-**附註：**請將配接器用於「傳輸層」。使用配接器的部分優點是 XML 至 JSON、安全、過濾以及取消伺服器端程式碼與用戶端程式碼的連結。
+請將配接器用於「傳輸層」。使用配接器的一些優點包含：XML 至 JSON、安全、過濾以及取消伺服器端程式碼與用戶端程式碼的連結。
+{: note}
 
 **內部資料來源 API：JSONStore**  
 在您取得集合的存取元之後，請呼叫 `getAllDirty` API 來取得所有標示為「變動過」的文件。這些文件具有僅限本端變更，而您想要透過傳輸層將其傳送至外部資料來源。
@@ -650,7 +647,8 @@ accessor.getAllDirty()
 ```
 {: codeblock}
 
-**附註：**建議您充分運用 `compressResponse`、`timeout` 以及可傳遞給 `WLResourceRequest` API 的其他參數。
+建議您充分運用 `compressResponse`、`timeout` 以及可傳遞給 `WLResourceRequest` API 的其他參數。
+{: note}
 
 在「MobileFirst 伺服器」上，配接器具有 `updatePeople` 程序，其可能類似下列範例：
 
@@ -767,8 +765,8 @@ $.when.apply(this, arrayOfPromises)
 
 文件在標示為全新之後，就不會顯示在 `getAllDirty` API 的輸出中。
 
-## 疑難排解
-{: #troubleshooting }
+## 疑難排解 JSONStore
+{: #troubleshooting-jsonstore }
 
 ## 在您尋求協助時提供資訊
 {: #provide-information-when-you-ask-for-help }
@@ -797,7 +795,7 @@ $.when.apply(this, arrayOfPromises)
 4. 查看 JSONStore 所產生的 SQLite 資料庫檔案。必須關閉加密。
 
    * Android 模擬器：
-
+   
    ```bash
    $ adb shell
    $ cd /data/data/com.<app-name>/databases/wljsonstore
@@ -830,7 +828,7 @@ $.when.apply(this, arrayOfPromises)
 6. 使用除錯器。
 
 ## 常見問題
-{: #common-issues }
+{: #common-issues-jsonstore }
 瞭解下列 JSONStore 特徵有助於解決您可能遇到的一些常見問題。  
 
 * 在 JSONStore 中儲存二進位資料的唯一方法是先以 base64 進行編碼。儲存檔名或路徑，而不是 JSONStore 中的實際檔案。
@@ -863,10 +861,10 @@ $.when.apply(this, arrayOfPromises)
             var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
             : {};                                                                
             WL.Client.init(options);                                           
-    }                                                                      
-    ```                                                                       
+    } 
+    ```                                                                     
 
-  這將等待 `mfpjsonjsloaded` 事件（在 `wlCommonInit` 外部），這會確定已載入 Script 並且隨後會呼叫 `WL.Client.init` 以觸發 `wlCommonInit`，接著這會呼叫 `WL.JSONStore.init`。
+這將等待 `mfpjsonjsloaded` 事件（在 `wlCommonInit` 外部），這會確定已載入 Script 並且隨後會呼叫 `WL.Client.init` 以觸發 `wlCommonInit`，接著這會呼叫 `WL.JSONStore.init`。
 
 ## 儲存庫內容
 {: #store-internals }
@@ -894,8 +892,8 @@ $.when.apply(this, arrayOfPromises)
 
 ## JSONStore 錯誤
 {: #jsonstore-errors }
-### JavaScript
-{: #javascript }
+### JavaScript 錯誤
+{: #javascript-errors }
 JSONStore 使用 error 物件來傳回失敗原因的訊息。
 
 在 JSONStore 作業（例如，`JSONStoreInstance` 類別中的 `find` 及 `add` 方法）期間發生錯誤時，會傳回 error 物件。它會提供失敗原因的相關資訊。
@@ -911,11 +909,11 @@ var errorObject = {
   res: {...} // Response from the server.
 }
 ```
-
+{: codeblock}
 並非所有鍵值組都是每個 error 物件的一部分。例如，只有在作業失敗時，才能使用 doc 值，因為文件（例如，`JSONStoreInstance` 類別中的 `remove` 方法）無法移除文件。
 
-### Objective-C
-{: #objective-c }
+### Objective-C 錯誤
+{: #objective-c-errors }
 所有可能會失敗的 API 都會採用使用 NSError 物件位址的 error 參數。如果您不要收到錯誤通知，可以傳入 `nil`。作業失敗時，會將 NSError 移入位址，而 NSError 具有錯誤及某些可能的 `userInfo`。`userInfo` 可能會包含額外詳細資料（例如，導致失敗的文件）。
 
 ```objc
@@ -926,8 +924,8 @@ NSError* error = nil;
 [JSONStore destroyDataAndReturnError:&error];
 ```
 
-### Java
-{: #java }
+### Java 錯誤
+{: #java-errors }
 所有 Java API 呼叫都會擲出特定異常狀況（視發生的錯誤而定）。您可以個別處理每個異常狀況，也可以捕捉 `JSONStoreException` 作為所有 JSONStore 異常狀況的保護傘。
 
 ```java
@@ -939,42 +937,42 @@ catch(JSONStoreException e) {
   // Handle error condition.
 }
 ```
-
+{: codeblock}
 ### 錯誤碼清單
 {: #list-of-error-codes }
 一般錯誤碼及其說明的清單：
 
 |錯誤碼          | 說明 |
 |----------------|-------------|
-| -100 UNKNOWN_FAILURE | Unrecognized error. |
-| -75 OS\_SECURITY\_FAILURE | This error code is related to the requireOperatingSystemSecurity flag. It can occur if the destroy API fails to remove security metadata that is protected by operating system security (Touch ID with passcode fallback), or the init or open APIs are unable to locate the security metadata. It can also fail if the device does not support operating system security, but operating system security usage was requested. |
-| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore is closed. Try calling the open method in the JSONStore class class first to enable access to the store. |
-| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | There was a problem with rolling back the transaction. |
-| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION |Cannot call removeCollection while a transaction is in progress. |
-| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | Cannot call destroy while there are transactions in progress. |
-| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | Cannot call closeAll while there are transactions in place. |
-| -44 TRANSACTION\_FAILURE\_DURING\_INIT | Cannot initialize a store while there are transactions in progress. |
-| -43 TRANSACTION_FAILURE | There was a problem with transactions. |
-| -42 NO\_TRANSACTION\_IN\_PROGRESS | Cannot commit to rolled back a transaction when there is no transaction is progress |
-| -41 TRANSACTION\_IN\_POGRESS | Cannot start a new transaction while another transaction is in progress. |
-| -40 FIPS\_ENABLEMENT\_FAILURE |Something is wrong with FIPS. |
-| -24 JSON\_STORE\_FILE\_INFO\_ERROR | Problem getting the file information from the file system. |
-| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | Problem replacing documents from a collection. |
-| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | Problem removing documents from a collection. |
-| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | Problem storing the Data Protection Key (DPK). |
-| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | Problem indexing input data. |
-| -12 INVALID\_SEARCH\_FIELD\_TYPES | Check that the types that you are passing to the searchFields are stringinteger,number, orboolean. |
-| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | An operation on an array of documents, for example the replace method can fail while it works with a specific document. The document that failed is returned and the transaction is rolled back. On Android, this error also occurs when trying to use JSONStore on unsupported architectures. |
-| -10 ACCEPT\_CONDITION\_FAILED | The accept function that the user provided returned false. |
-| -9 OFFSET\_WITHOUT\_LIMIT | To use offset, you must also specify a limit. |
-| -8 INVALID\_LIMIT\_OR\_OFFSET | Validation error, must be a positive integer. |
-| -7 INVALID_USERNAME | Validation error (Must be [A-Z] or [a-z] or [0-9] only). |
-| -6 USERNAME\_MISMATCH\_DETECTED | To log out, a JSONStore user must call the closeAll method first. There can be only one user at a time. |
-| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED |A problem with the destroy method while it tried to delete the file that holds the contents of the store. |
-| -4 DESTROY\_REMOVE\_KEYS\_FAILED | Problem with the destroy method while it tried to clear the keychain (iOS) or shared user preferences (Android). |
-| -3 INVALID\_KEY\_ON\_PROVISION | Passed the wrong password to an encrypted store. |
-| -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | Search fields are not dynamic. It is not possible to change search fields without calling the destroy method or the removeCollection method before you call the init or openmethod with the new search fields. This error can occur if you change the name or type of the search field. For example: {key: 'string'} to {key: 'number'} or {myKey: 'string'} to {theKey: 'string'}. |
-| -1 PERSISTENT\_STORE\_FAILURE | Generic Error. A malfunction in native code, most likely calling the init method. |
+| -100 UNKNOWN_FAILURE | 無法辨識的錯誤。|
+| -75 OS\_SECURITY\_FAILURE | 此錯誤碼與 requireOperatingSystemSecurity 旗標有關。如果 destroy API 無法移除受作業系統安全保護的安全 meta 資料（具有密碼撤回的 Touch ID），或是 init 或 open API 找不到安全 meta 資料，則可能發生此錯誤。如果裝置不支援作業系統安全，但要求使用作業系統安全，則也可能失敗。|
+| -50 PERSISTENT\_STORE\_NOT\_OPEN | 關閉 JSONStore。請先嘗試在 JSONStore 類別中呼叫 open 方法，以啟用儲存庫的存取。|
+| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | 回復交易時發生問題。|
+| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION | 無法在進行一個交易的同時呼叫 removeCollection。|
+| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | 無法在進行多個交易的同時呼叫 destroy。|
+| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | 無法在有多個交易的同時呼叫 closeAll。|
+| -44 TRANSACTION\_FAILURE\_DURING\_INIT | 無法在進行多個交易的同時起始設定儲存庫。|
+| -43 TRANSACTION_FAILURE | 交易發生問題。|
+| -42 NO\_TRANSACTION\_IN\_PROGRESS | 無法在沒有進行中交易時確定回復交易 |
+| -41 TRANSACTION\_IN\_POGRESS | 無法在進行另一個交易的同時啟動新的交易。|
+| -40 FIPS\_ENABLEMENT\_FAILURE | FIPS 發生錯誤。|
+| -24 JSON\_STORE\_FILE\_INFO\_ERROR | 從檔案系統取得檔案資訊時發生問題。|
+| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | 取代集合中的文件時發生問題。|
+| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | 移除集合中的文件時發生問題。|
+| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | 儲存「資料保護金鑰 (DPK)」時發生問題。|
+| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | 檢索輸入資料時發生問題。|
+| -12 INVALID\_SEARCH\_FIELD\_TYPES | 檢查您要傳遞給 searchFields 的類型是 stringinteger、number、orboolean。|
+| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | 對文件陣列的作業，例如 replace 方法在與特定文件搭配使用時可能會失敗。會傳回失敗的文件，並回復交易。在 Android 上，嘗試在不受支援的架構上使用 JSONStore 時，也會發生此錯誤。|
+| -10 ACCEPT\_CONDITION\_FAILED | 使用者提供的 accept 函數已傳回 false。|
+| -9 OFFSET\_WITHOUT\_LIMIT | 若要使用偏移，您也必須指定限制。|
+| -8 INVALID\_LIMIT\_OR\_OFFSET | 驗證錯誤，必須是正整數。|
+| -7 INVALID_USERNAME | 驗證錯誤（只能是 [A-Z] 或 [a-z] 或 [0-9]）。|
+| -6 USERNAME\_MISMATCH\_DETECTED | 若要登出，JSONStore 使用者必須先呼叫 closeAll 方法。一次只能有一位使用者。|
+| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED | destroy 方法在嘗試刪除保留儲存庫內容的檔案時發生問題。|
+| -4 DESTROY\_REMOVE\_KEYS\_FAILED | destroy 方法在嘗試清除金鑰鏈 (iOS) 或共用使用者喜好設定 (Android) 時發生問題。|
+| -3 INVALID\_KEY\_ON\_PROVISION | 已將錯誤的密碼傳遞至已加密的儲存庫。|
+| -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | 搜尋欄位不是動態的。對新的搜尋欄位呼叫 init 或 openmethod 之前，需要呼叫 destroy 方法或 removeCollection 方法，才能變更搜尋欄位。如果您變更搜尋欄位的名稱或類型，則可能發生此錯誤。例如：{key: 'string'} 到 {key: 'number'}，或 {myKey: 'string'} 到 {theKey: 'string'}。|
+| -1 PERSISTENT\_STORE\_FAILURE | 一般錯誤。原生程式碼異常，很可能是呼叫 init 方法。|
 | 0 SUCCESS | 在某些情況下，JSONStore 原生程式碼會傳回 0 以指出成功。|
 | 1 BAD\_PARAMETER\_EXPECTED\_INT | 驗證錯誤。|
 | 2 BAD\_PARAMETER\_EXPECTED\_STRING | 驗證錯誤。|
