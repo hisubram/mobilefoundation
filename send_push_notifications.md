@@ -222,9 +222,8 @@ HTTP/2 based notifications can be sent via a HTTP Proxy. To enable routing of th
 {: #proxy-support }
 You can make use proxy settings to set the optional proxy through which notifications are sent to Android and iOS devices. You can set the proxy by using the **push.apns.proxy.** and **push.gcm.proxy.** configuration properties. For more information, see [List of JNDI properties for {{ site.data.keyword.mfserver_short_notm }} push service](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/installation-configuration/production/server-configuration/#list-of-jndi-properties-for-mobilefirst-server-push-service).
 
-## Tutorials to follow next
-{: #tutorials-to-follow-next }
-With the server-side now set-up, setup the client-side and handle received notifications.
+## Next steps
+{: #next-tutorial-to-follow }
+With the server-side now set-up, setup the client-side and handle received notifications by following the tutorial below.
 
 * [Handling push notifications in Client applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_client_applications#handling_push_notifications_in_client_applications)
-

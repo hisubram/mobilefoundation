@@ -107,7 +107,7 @@ If the {{ site.data.keyword.mobilefirst_notm }} Native Android SDK is not alread
         ```
         {: codeblock}
         {: android}
- 
+
     * Add the following to the `application` tag:
 
         ```xml
@@ -130,7 +130,7 @@ If the {{ site.data.keyword.mobilefirst_notm }} Native Android SDK is not alread
                   <action android:name="com.google.android.c2dm.intent.RECEIVE" />
               </intent-filter>
         </service>
- 
+
         <!-- MFPPush Instance ID Listener Service -->
         <service
               android:name="com.ibm.mobilefirstplatform.clientsdk.android.push.api.MFPPushInstanceIDListenerService"
@@ -139,7 +139,7 @@ If the {{ site.data.keyword.mobilefirst_notm }} Native Android SDK is not alread
                   <action android:name="com.google.android.gms.iid.InstanceID" />
               </intent-filter>
         </service>
- 
+
         <activity android:name="com.ibm.mobilefirstplatform.clientsdk.android.push.api.MFPPushNotificationHandler"
              android:theme="@android:style/Theme.NoDisplay"/>
  	    ```
@@ -181,7 +181,8 @@ Alternatively you can call `MFPPush.getInstance().<api_call>` for each instance 
 If the `push.mobileclient` scope is mapped to a **security check**, you need to make sure matching **challenge handlers** exist and are registered before using any of the Push APIs.
 {: android}
 
-> Learn more about challenge handlers in the [credential validation](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/credentials-validation/android/) tutorial.
+Learn more about challenge handlers in the [credential validation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/credentials-validation/android/) tutorial.
+{: note}
 {: android}
 
 ##### Client-side
@@ -457,7 +458,7 @@ Setting up an application in FCM is a bit different compared to the old GCM mode
        compile 'com.google.firebase:firebase-messaging:10.2.6'
        .....
     }
-    
+
     apply plugin: 'com.google.gms.google-services'
     ```
     {: codeblock}
@@ -467,7 +468,7 @@ Setting up an application in FCM is a bit different compared to the old GCM mode
       `classpath 'com.google.gms:google-services:3.0.0'`
       {: codeblock}
       {: android}
-      
+
     - Remove below GCM plugin from build.gradle file `compile  com.google.android.gms:play-services-gcm:+`
      {: android}
  3. Configure the AndroidManifest file. Following changes are required in the `AndroidManifest.xml`
@@ -633,7 +634,7 @@ Alternatively you can call `MFPPush.sharedInstance().methodName()` for each inst
 If the `push.mobileclient` scope is mapped to a **security check**, you need to make sure matching **challenge handlers** exist and are registered before using any of the Push APIs.
 {: ios}
 
-Learn more about challenge handlers in the [credential validation](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/credentials-validation/ios/) tutorial.
+Learn more about challenge handlers in the [credential validation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/credentials-validation/ios/) tutorial.
 {: note}
 {: ios}
 
@@ -876,7 +877,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 {: codeblock}
 {: ios}
 
-Learn more about handling notifications in iOS from the [Apple documentation](http://bit.ly/1ESSGdQ).
+Learn more about handling notifications in iOS from the [Apple documentation ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1).
 {: note}
 {: ios}
 
@@ -977,14 +978,14 @@ In Android Studio, add the following `activity` to the `application` tag:
 
 | Javascript Function | Description |
 | --- | --- |
-| [`MFPPush.initialize(success, failure)`](#initialization) | Initialize the MFPPush instance. | 
-| [`MFPPush.isPushSupported(success, failure)`](#is-push-supported) | Does the device support push notifications. | 
-| [`MFPPush.registerDevice(options, success, failure)`](#register-device) | Registers the device with the Push Notifications Service. | 
-| [`MFPPush.getTags(success, failure)`](#get-tags) | Retrieves all the tags available in a push notification service instance. | 
-| [`MFPPush.subscribe(tag, success, failure)`](#subscribe) | Subscribes to a particular tag. | 
-| [`MFPPush.getSubsciptions(success, failure)`](#get-subscriptions) | Retrieves the tags device is currently subscribed to | 
-| [`MFPPush.unsubscribe(tag, success, failure)`](#unsubscribe) | Unsubscribes from a particular tag. | 
-| [`MFPPush.unregisterDevice(success, failure)`](#unregister) | Unregisters the device from the Push Notifications Service | 
+| [`MFPPush.initialize(success, failure)`](#initialization) | Initialize the MFPPush instance. |
+| [`MFPPush.isPushSupported(success, failure)`](#is-push-supported) | Does the device support push notifications. |
+| [`MFPPush.registerDevice(options, success, failure)`](#register-device) | Registers the device with the Push Notifications Service. |
+| [`MFPPush.getTags(success, failure)`](#get-tags) | Retrieves all the tags available in a push notification service instance. |
+| [`MFPPush.subscribe(tag, success, failure)`](#subscribe) | Subscribes to a particular tag. |
+| [`MFPPush.getSubsciptions(success, failure)`](#get-subscriptions) | Retrieves the tags device is currently subscribed to |
+| [`MFPPush.unsubscribe(tag, success, failure)`](#unsubscribe) | Unsubscribes from a particular tag. |
+| [`MFPPush.unregisterDevice(success, failure)`](#unregister) | Unregisters the device from the Push Notifications Service |
 {: cordova}
 
 ##### API implementation
@@ -1243,7 +1244,7 @@ Alternatively you can call `MFPPush.GetInstance().methodName()` for each instanc
 If the `push.mobileclient` scope is mapped to a **security check**, you need to make sure matching **challenge handlers** exist and are registered before using any of the Push APIs.
 {: windows}
 
-Learn more about challenge handlers in the [credential validation](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/credentials-validation/windows-8-10/) tutorial.
+Learn more about challenge handlers in the [credential validation ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/credentials-validation/windows-8-10/) tutorial.
 {: note}
 {: windows}
 

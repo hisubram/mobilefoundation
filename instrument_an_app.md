@@ -35,7 +35,7 @@ lastupdated: "2019-01-30"
 
 Mobile Analytics is a feature embedded within the {{ site.data.keyword.mobilefoundation_short }} service. Mobile Analytics provides key application usage and application performance insights for mobile application developers and application owners.
 
-You’ll need to instrument your mobile application to start using the Mobile Analytics feature to monitor your application usage, performance and to get other statistics. Instrumenting you application has the following steps: 
+You’ll need to instrument your mobile application to start using the Mobile Analytics feature to monitor your application usage, performance and to get other statistics. Instrumenting you application has the following steps:
 
 1.  Import and install the Mobile Analytics Client SDK.
 2.  Instrument your application based on the type of analytics data you want to collect.
@@ -48,8 +48,8 @@ The following sections will provide the details for these steps, for each of the
 #### Step 1: Import and install the Mobile Analytics Client SDK for Android
 {: #install_analytics_sdk_android }
 {: android}
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundationanalytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundationanalytics)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation/badge.svg) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundationanalytics/badge.svg) ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundationanalytics)
 {: android}
 
 The Mobile Analytics Client SDK is distributed with Gradle, a dependency manager for Android projects. Gradle automatically downloads artifacts from repositories and makes them available to your Android application.
@@ -79,7 +79,7 @@ The Mobile Analytics Client SDK is distributed with Gradle, a dependency manager
   {: android}
 
   The first dependency is for the Mobile Analytics client sdk for capturing and logging application runtime events
-  and the second dependency is for enabling in-app user feedback interacting with the application user. The second dependency is only required if you enable in-app user feedback 
+  and the second dependency is for enabling in-app user feedback interacting with the application user. The second dependency is only required if you enable in-app user feedback
   {: android}
 
 4. Synchronize your project with Gradle by clicking **Tools &gt; Android &gt; Sync Project with Gradle Files**.
@@ -90,7 +90,7 @@ The Mobile Analytics Client SDK is distributed with Gradle, a dependency manager
 
   ```xml
    <uses-permission android:name="android.permission.INTERNET" />
- 
+
   ```
   {: codeblock}
   If you're using SDK version greater than >= 1.2, then you need to put the following lines inside the `<application>` element of the `AndroidManifest.xml` file.
@@ -147,7 +147,7 @@ The Mobile Analytics Client SDK is distributed with Gradle, a dependency manager
   {: codeblock}
   {: android}
 
-3. To capture network events that capture the applications network interactions configure your application by adding the following: 
+3. To capture network events that capture the applications network interactions configure your application by adding the following:
   ```Java
     WLAnalytics.addDeviceEventListener(WLAnalytics.DeviceEvent.NETWORK);
   ```
@@ -181,17 +181,17 @@ The Mobile Analytics Client SDK is distributed with Gradle, a dependency manager
    // Set the logging level (optional)
    // The default setting is Logger.LEVEL.DEBUG
    Logger.setLogLevel(Logger.LEVEL.INFO);
-    
+
    //Create a logger instance.  You can create multiple loggers to organize your logs as you wish
    Logger logger = Logger.getInstance("loggerName");
-   
+
    // Log messages with different levels
    // Debug message for feature 1
    // Info message for feature 2
    logger.debug("debug message");
    //the logger.debug message is not logged because the logLevelFilter is set to Info
    logger.info("info message");
-      
+
    // Send logs to the Mobile Analytics
    Logger.send();
    ```
@@ -215,7 +215,7 @@ The Mobile Analytics Client SDK is distributed with Gradle, a dependency manager
 
                 @Override
                 public void onSuccess(WLResponse wlResponse) {
-                    //handle success of HTTP call and use wlResponse 
+                    //handle success of HTTP call and use wlResponse
                 }
 
                 @Override
@@ -240,13 +240,13 @@ The Mobile Analytics Client SDK is distributed with Gradle, a dependency manager
 
 9.  To define Custom Analytics and define your own analytics data over and above what is supported inherently in the Client SDK you could use the custom logging API
     ```java
-        //create a JSON to capture the custom data 
+        //create a JSON to capture the custom data
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("FromPage", "LoginPage");
-   
+
         //log the custom data with a message
         WLAnalytics.log("log message", jsonObject);
-        
+
         //Send the captured custom data and log to the Mobile Analytics service
         WLAnalytics.send();
     ```
@@ -485,7 +485,7 @@ The Mobile Analytics Cordova plug-in enables you to instrument your mobile appli
 {: #instrument_app_based_on_data_cordova }
 {: cordova}
 
-1. In Cordova applications, no setup is required and initialization is built-in. 
+1. In Cordova applications, no setup is required and initialization is built-in.
 
    Before calling any of the below analytic methods you must ensure that your application embeds the required code to authenticate and authorize the device with the MobileFoundation service.  This is a common step that is required of all Mobile Foundation services applications and is not specific to Analytics data capture. <!--  Refer <need to link doc that talks about auth> -->
    {: cordova}
@@ -724,7 +724,7 @@ The Mobile Analytics SDK enables you to instrument your web application.
    The following code snippets show sample Logger usage for Web app:
    ```Javascript
     //Create a logger instance.  You can create multiple loggers to organize your logs as you wish
-    
+
     var logger = ibmmfpfanalytics.logger.pkg("loggerName");
     // Log messages with different levels
     // Debug message for feature 1
@@ -737,7 +737,7 @@ The Mobile Analytics SDK enables you to instrument your web application.
    ```
    {: codeblock}
    {: web}
-   
+
    For the Web SDK the level cannot be set by the client. All logging is sent to the server until the configuration is changed by retrieving the server configuration profile.
    {: note}
    {: web}
@@ -787,7 +787,3 @@ Try a simple sample from [here](https://github.com/MobileFirst-Platform-Develope
 Mobile Foundation Analytics Service provides REST APIs to help developers with importing (POST) and exporting (GET) analytics data.
 
 Try out the analytics REST API on Swagger Docs from [here](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/).
-
-
-
-
