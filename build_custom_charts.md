@@ -19,17 +19,17 @@ lastupdated: "2018-11-22"
 # Build Custom Charts
 {: #build_custom_charts}
 
-The Custom Charts view in the Mobile Analytics console provides you the flexibility to build your own visualizations around the analytics data captured and stored.  This helps in deepening insights further from what is provided out of the box or even extend it seamlessly into Business Analytics formulated around custom data.
+The Custom Charts view in the Mobile Analytics console provides you the flexibility to build your own visualizations around the analytics data that is captured and stored.  The custom charts help in deepening insights further from what is provided out of the box or even extend it seamlessly into Business Analytics that is formulated around custom data.
 
-In this view you can choose any one of the supported analytics datasets and then select one of the supported chart types to plot the dataset.  You may even further prune the visualization by defining filters to be applied over the data being plotted.  
+In this view, you can choose any one of the supported analytics datasets and then select one of the supported chart types to plot the dataset.  You may even further prune the visualization by defining filters to be applied over the data that is being plotted.  
 
-Supported datasets:
+Supported datasets are,
  * App Logs
  * App Sessions
  * Custom Data
  * Network Transactions
 
-Supported chart types:
+Supported chart types are,
  * Bar Graph
  * Flow Chart
  * Line Graph
@@ -37,18 +37,18 @@ Supported chart types:
  * Pie Chart
  * Table
 
-The selection of the dataset, the chart type to plot, definition of the chart characteristics, and data filters to apply can be pulled together into a Custom Chart Definition and saved.  You may create and save as many Custom Chart definitions as you need. Saved Custom Charts show up on the Custom Charts view with the relevant analytics data plotted.
+The selection of the dataset, the chart type to plot, definition of the chart characteristics, and data filters to apply can be pulled together into a Custom Chart Definition and saved.  You can create and save as many Custom Chart definitions as you need. Saved Custom Charts show up on the Custom Charts view with the relevant analytics data plotted.
 
 ## Creating a custom chart
 {: #creating_custom_chart}
 
-Create a custom chart using the following steps:
+Create a custom chart by using the following steps:
 
 1.  Click the **Create Chart** button in the **Custom Charts** tab from the Mobile Analytics dashboard.
-2.  In the **General Settings** tab, select **Chart Title**, **Event Type** and the **Chart Type**.
+2.  In the **General Settings** tab, select **Chart Title**, **Event Type**, and the **Chart Type**.
 3.  On selecting the *Event Type* and *Chart Type*, the **Chart Definition** tab appears. Use the *Chart Definition* tab to define the chart for the specified chart type that you previously selected. After you define the chart, you can set the chart filters and chart properties.
 4.  **Chart Filters** are used to fine-tune the custom chart. More than one filter can be defined for a chart.
-    For example, after defining a chart to visualize average app session duration if you wish to visualize this chart only for a specific app you can create a filter as follows:
+    For example, after you define a chart to visualize average app session duration if you wish to visualize this chart only for a specific app you can create a filter as follows:
     * Select **Application Name** for **Property**.
     * Select **Equals** for **Operator**.
     * Select the name of your app for **Value**.
@@ -61,11 +61,11 @@ Create a custom chart using the following steps:
 ## Obtaining custom insights from custom data logs
 {: #creating_custom_chart_for_client_logs}    
 
-If you wish to gain deeper custom insights such as users trail across the application then firstly you should capture the relevant user trail information such as page chosen or option selected or button clicked as custom data and log them.  See the topic on [instrumenting your app](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app), on how to log custom data.
+If you wish to gain deeper custom insights such as users trail across the application then first you are required to capture the relevant user trail information such as page chosen or option that is selected or button clicked as custom data and log them.  See the topic on [instrumenting your app](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app), on how to log custom data.
 
-Next, create a custom chart definition with Custom Data as the EventType and choose a Chart Type. As you proceed to define  **Chart Properties** or **Chart Filters** you will notice the Custom Data types and values showing up in the drop down boxes.  Make the relevant selections for the kind of insight you are looking for.  
+Next, create a custom chart definition with Custom Data as the EventType and choose a Chart Type. As you proceed to define  **Chart Properties** or **Chart Filters**, you notice the Custom Data types and values show up in the drop-down boxes.  Make the relevant selections for the kind of insight you are looking for.  
 
-The depth and usefulness of custom insights entirely depends on how effectively or relevantly you have defined and captured custom data in your applications.
+The depth and usefulness of custom insights entirely depends on how effectively or relevantly the custom data in your applications is defined and captured.
 {: note}
 
 ## Types of charts
@@ -76,7 +76,7 @@ The depth and usefulness of custom insights entirely depends on how effectively 
 
 The bar graph allows for visualization of numeric data over an X-axis. When you define a bar graph, you must choose the value for X-Axis first. You can choose from the following possible values.
 
-* **Timeline** - if you want to see your data as a trend (for example, average app session duration over time), choose *Timeline* for X-Axis .
+* **Timeline** - if you want to see your data as a trend (for example, average app session duration over time), choose *Timeline* for X-Axis.
 * **Property** - choose Property if you want to see a count breakdown for the specific property. If you choose Property for X-Axis, then Total is implicitly chosen for Y-Axis. For example, choose *Property* for X-Axis and *Application Name* for *Property* to see a count for a specified event type, which is broken down by app name.
 
 After you define a value for X-Axis, you can define a value for Y-Axis. If you choose *Timeline* for X-Axis, you can choose the following possible values for Y-Axis.
@@ -89,7 +89,7 @@ After you define the chart axes, you must choose a value for Property.
 ### Line graph
 {:  #line_graph}
 
-The line graph allows for the visualization of some metric over time. This type of chart is valuable when you want to visualize data trending over time. The first value to define when you create a line graph is **Measure**, which has the following possible values.
+The line graph allows for the visualization of some metric over time. This type of chart is valuable when you want to visualize the data that is trending over time. The first value to define when you create a line graph is **Measure**, which has the following possible values.
 
 * **Average** - averages a numeric property in the supplied event type.
 * **Total** - a total count of a property in the supplied event type.

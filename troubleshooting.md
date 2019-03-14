@@ -36,7 +36,7 @@ The answers to these questions typically lead to a good description of the probl
 
 ### What are the symptoms of the problem?
 
-When starting to describe a problem, the most obvious question is "What is the problem?" This question might seem straightforward; however, you can break it down into several more-focused questions that create a more descriptive picture of the problem. These questions can include:
+When you start to describe a problem, the most obvious question is "What is the problem?" This question might seem straightforward; however, you can break it down into several more-focused questions that create a more descriptive picture of the problem. These questions can include the following,
 
 - Who, or what, is reporting the problem?
 - What are the error codes and messages?
@@ -53,11 +53,11 @@ The following questions help you to focus on where the problem occurs to isolate
 - Do all users have the problem?
 - (For multi-site installations.) Do all sites have the problem?
 
-If one layer reports the problem, the problem does not necessarily originate in that layer. Part of identifying where a problem originates is understanding the environment in which it exists. Take some time to completely describe the problem environment, including the operating system and version, all corresponding software and versions, and hardware information. Confirm that you are running within an environment that is a supported configuration; many problems can be traced back to incompatible levels of software that are not intended to run together or have not been fully tested together.
+If one layer reports the problem, the problem does not necessarily originate in that layer. Part of identifying where a problem originates is understanding the environment in which it exists. Take some time to completely describe the problem environment, including the operating system and version, all corresponding software and versions, and hardware information. Confirm that you are running within an environment that is a supported configuration, many problems can be traced back to incompatible levels of software that are not intended to run together or are not fully tested together.
 
 ### When does the problem occur?
 
-Develop a detailed timeline of events leading up to a failure, especially for those cases that are one-time occurrences. You can most easily develop a timeline by working backward: Start at the time an error was reported (as precisely as possible, even down to the millisecond), and work backward through the available logs and information. Typically, you need to look only as far as the first suspicious event that you find in a diagnostic log.
+Develop a detailed timeline of events that lead up to a failure, especially for those cases that are one-time occurrences. You can most easily develop a timeline by working backward: Start at the time an error was reported (as precisely as possible, even down to the millisecond), and work backward through the available logs and information. Typically, you need to look only as far as the first suspicious event that you find in a diagnostic log.
 
 To develop a detailed timeline of events, answer these questions:
 
@@ -76,11 +76,11 @@ Knowing which systems and applications are running at the time that a problem oc
 - Does a certain sequence of events need to happen for the problem to occur?
 - Do any other applications fail at the same time?
 
-Answering these types of questions can help you explain the environment in which the problem occurs and correlate any dependencies. Remember that just because multiple problems might have occurred around the same time, the problems are not necessarily related.
+Answering these types of questions can help you explain the environment in which the problem occurs and correlate any dependencies. Just because multiple problems occurred around the same time, the problems are not necessarily related.
 
 ### Can the problem be reproduced?
 
-From a troubleshooting standpoint, the ideal problem is one that can be reproduced. Typically, when a problem can be reproduced you have a larger set of tools or procedures at your disposal to help you investigate. Consequently, problems that you can reproduce are often easier to debug and solve.
+From a troubleshooting standpoint, the ideal problem is one that can be reproduced. Typically, when a problem can be reproduced you have a larger set of tools or procedures at your disposal to help you investigate. Therefore, problems that you can reproduce are often easier to debug and solve.
 
 However, problems that you can reproduce can have a disadvantage: If the problem is of significant business impact, you do not want it to recur. If possible, re-create the problem in a test or development environment, which typically offers you more flexibility and control during your investigation.
 
@@ -92,17 +92,17 @@ However, problems that you can reproduce can have a disadvantage: If the problem
 ##  Known limitations
 {: #knownlimitations_mfp}
 
-* The {{site.data.keyword.mobilefoundation_short}} service UI does not use the user selected locale-specific pattern to display numbers.
+* The {{site.data.keyword.mobilefoundation_short}} service UI does not use the user-selected locale-specific pattern to display numbers.
 
 ## Getting help and support for Mobile Foundation
 {: #getting_help_mobilefoundation}
 
-If you have problems or questions when using {{site.data.keyword.mobilefoundation_short}}, you can get help by searching for information or by asking questions through a forum. You can also open a support ticket.
+If you have problems or questions when you use {{site.data.keyword.mobilefoundation_short}}, you can get help by searching for information or by asking questions through a forum. You can also open a support ticket.
 
-When using the forums to ask a question, tag your question so that it is seen by the IBM  {{site.data.keyword.Bluemix_notm}} development teams.
+When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.
 
 If you have technical questions about developing or deploying an app with {{site.data.keyword.mobilefoundation_short}}, post your question on [Stack Overflow ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window} and tag your question with `bluemix` and `ibm-mobilefirst`.
 
 For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} forum. Include the `bluemix` and  `mobilefirst` tags.
 
-For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.
+For more information on opening an IBM support ticket, or on support levels and ticket severities, see [Contacting support](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.
