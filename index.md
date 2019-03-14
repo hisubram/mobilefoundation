@@ -20,20 +20,21 @@ lastupdated:  "2019-02-12"
 {: shortdesc}
 
 Using the Professional 1 Application plan a single application built on any of the supported operating systems can be managed. The supported operating systems are Android, iOS, Windows or mobile Web. The Developer plan is best suited for development and test. You can review all the available plans [here](https://cloud.ibm.com/catalog/services/mobile-foundation).
+{: note}
 
-This getting started tutorial enables you to create a {{site.data.keyword.mobilefoundation_short}} service instance using one of the supported plans. You can then register an application. Download and edit the registered application, deploy an adapter and finally test the application.
+Create a {{site.data.keyword.mobilefoundation_short}} service instance that uses one of the supported plans by following this getting started tutorial. You can then register an application. Download and edit the registered application, deploy an adapter, and finally test the application.
 
 ## Before you begin
 {: #prereqs-gs}
 
-You'll need a {{site.data.keyword.Bluemix}} account and an instance of the {{site.data.keyword.mobilefoundation_short}} service.
+You need an {{site.data.keyword.Bluemix}} account and an instance of the {{site.data.keyword.mobilefoundation_short}} service.
 
 ## Step 1: Create an instance of {{site.data.keyword.mobilefoundation_short}} service
 {: #step1create}
 
 1. In the {{site.data.keyword.Bluemix_notm}} **catalog**, select [**{{site.data.keyword.mobilefoundation_short}}**](https://cloud.ibm.com/catalog/services/mobile-foundation). The service configuration screen opens.
 2. Give your service instance a name, or use the preset name.
-3. Choose the region, organization and space where you would want to create the service instance.
+3. Choose the region, organization, and space where you would want to create the service instance.
 4. Select your **Pricing Plan** and click **Create**.
 
 ## Step 2: Build you mobile channel
@@ -47,9 +48,9 @@ After you create an instance of the {{site.data.keyword.mobilefoundation_short}}
 * You can instantly access and work with the Mobile Foundation Server.
 
   This selection creates an {{site.data.keyword.mfserver_long_notm}} with the following settings:
-  *	1 GB of memory. This size is enough for development, light testing activities and small scale production workloads.
+  *	1 GB of memory. This size is enough for development, light testing activities, and small scale production workloads.
 
-  * To access the Mobile Foundation Server using CLI you'll need the credentials, which are available when you click **Service credentials** from the left navigation pane of the IBM Cloud console.
+  * To access the Mobile Foundation Server by using CLI you need the credentials, which are available when you click **Service credentials** from the left navigation pane of the IBM Cloud console.
 
 ### For {{site.data.keyword.mobilefoundation_short}}: Professional Per Device plan
 {: #buildchannelprofdeviceplan}
@@ -66,16 +67,16 @@ After you create an instance of the {{site.data.keyword.mobilefoundation_short}}
 
       + Test the connection to the selected {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance by clicking **Test Connection**.
 
-      + Click **Add** followed by **Continue** on the pop-up window asking for confirmation on the selected {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service. This action creates the required tables in the configured {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} database service instance.
+      + Click **Add** followed by **Continue** on the pop-up window that asks for confirmation on the selected {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service. This action creates the required tables in the configured {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} database service instance.
 
       After you add a {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} connection to the {{site.data.keyword.mobilefoundation_short}} instance, you'll not be able to change it.
-      {: note} 
+      {: note}
   2.  Create and start the server.
 
       1. Create a {{site.data.keyword.mobilefirst_notm}} server instance with the default configuration, click **Start Basic Server**.
 
       + This selection provisions an {{site.data.keyword.mfserver_long_notm}} with the following settings:
-          - Two nodes with 1 GB memory each. This size is good for development, moderate testing activities and small scale production workloads.
+          - Two nodes with 1 GB memory each. This size is good for development, moderate testing activities, and small scale production workloads.
 
           -	The `username` and `password` are automatically generated for you. You have access to them when the server is up and running.
 
@@ -86,7 +87,7 @@ After you create an instance of the {{site.data.keyword.mobilefoundation_short}}
 
       +	Click **Launch Console** to open the {{site.data.keyword.mfp_oc_short_notm}}.      
 
-      To create a {{site.data.keyword.mobilefirst_notm}} server instance with advanced configuration for topology, security, and other server configuration, click **Start Server with Advanced Configuration**. See [Setting up advanced configuration](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5), for more information.
+      To create a {{site.data.keyword.mobilefirst_notm}} server instance with advanced configuration for topology, security, and other server configuration, click **Start Server with Advanced Configuration**. For more information, see [Setting up advanced configuration](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5).
       {: tip}
 
 ### For {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application plan
@@ -104,7 +105,7 @@ After you create an instance of the {{site.data.keyword.mobilefoundation_short}}
 
       + Test the connection to the selected {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} service instance by clicking **Test Connection**.
 
-      + Click **Add** followed by **Continue** on the pop-up window asking for confirmation on the selected {{site.data.keyword.Db2_on_Cloud_short}} or {{site.data.keyword.composeForPostgreSQL}} service. This action creates the required tables in the configured {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} database service instance.
+      + Click **Add** followed by **Continue** on the pop-up window that asks for confirmation on the selected {{site.data.keyword.Db2_on_Cloud_short}} or {{site.data.keyword.composeForPostgreSQL}} service. This action creates the required tables in the configured {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} database service instance.
 
       After you add a {{site.data.keyword.Db2_on_Cloud_short}} (any plan other than the **Lite** plan) or {{site.data.keyword.composeForPostgreSQL}} connection to the {{site.data.keyword.mobilefoundation_short}} instance, you won't be able to change it.
       {: note}
@@ -124,7 +125,7 @@ After you create an instance of the {{site.data.keyword.mobilefoundation_short}}
 
       +  Click **Launch Console** to open the {{site.data.keyword.mfp_oc_short_notm}}.  
 
-      To create a {{site.data.keyword.mobilefirst_notm}} server instance with advanced configuration for topology, security, and other server configuration, click **Start Server with Advanced Configuration**. See [Setting up advanced configuration](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2), for more information.
+      To create a {{site.data.keyword.mobilefirst_notm}} server instance with advanced configuration for topology, security, and other server configuration, click **Start Server with Advanced Configuration**. For more information, see [Setting up advanced configuration](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2).
       {: tip}
 
 Go to [Using the Mobile Foundation service to set up MobileFirst Server ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window} to learn more about getting started with {{site.data.keyword.mobilefoundation_short}}.
@@ -133,7 +134,7 @@ Go to [Using the Mobile Foundation service to set up MobileFirst Server ![Extern
 ## Step 3: Register your application in {{site.data.keyword.mobilefoundation_short}}
 {: #registerapp}
 
-After creating and starting your Mobile Foundation server instance, you can carry out the following steps to register an Android application.
+After you create and start your Mobile Foundation server instance, you can carry out the following steps to register an Android application.
 
   1.  Invoke the {{site.data.keyword.mfp_oc_short_notm}} by loading the URL: `http://<your-server-host>:<server-port>/mfpconsole`. Use the `username` and `password` generated at the time of provisioning.
 
@@ -228,7 +229,7 @@ After creating and starting your Mobile Foundation server instance, you can carr
 ## Step 6: Deploy an adapter
 {: #deployadapter}
 
-  1. Download this [adapter artifact](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/javaAdapter.adapter){: download} and deploy it from {{site.data.keyword.mfp_oc_short_notm}} using **Actions → Deploy adapter**.
+  1. Download this [adapter artifact](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/javaAdapter.adapter){: download} and deploy it from {{site.data.keyword.mfp_oc_short_notm}} by using **Actions → Deploy adapter**.
 
 ## Step 7: Test the application
 {: #testapp}
@@ -239,9 +240,9 @@ After creating and starting your Mobile Foundation server instance, you can carr
    {: tip}
 
   2. Click **Run App** in Android Studio.
-     * You'll see the app started on a device emulator.
-     * Click **Ping MobileFirst Server** in your application, this will display `Connected to MobileFirst Server`.
-     * If the application was able to connect to the MobileFirst Server, a resource request call using the deployed Java adapter will take place.
+     * You'll see that the app started on a device emulator.
+     * Click **Ping MobileFirst Server** in your application, this displays `Connected to MobileFirst Server`.
+     * If the application was able to connect to the MobileFirst Server, the Java adapter that is deployed will make a resource request call.
      * The adapter response is then printed in Android Studio’s LogCat view.
 
 
@@ -250,4 +251,4 @@ After creating and starting your Mobile Foundation server instance, you can carr
 
 You can follow the [Quick Start tutorials ![External link icon](../../icons/launch-glyph.svg "Quick Start tutorials")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} to work with more sample applications and to explore the working of {{site.data.keyword.mobilefoundation_short}}.
 
-Quick Start has tutorials explaining the working of {{site.data.keyword.mobilefoundation_short}} for  iOS, Android, Web, Cordova, Windows, React Native, Ionic, and Xamarin apps.
+Quick Start has tutorials that explains the working of {{site.data.keyword.mobilefoundation_short}} for  iOS, Android, Web, Cordova, Windows, React Native, Ionic, and Xamarin apps.
