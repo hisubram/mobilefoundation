@@ -83,12 +83,12 @@ APIs for React Native applications.
 
 ### C Sharp
 {: csharp}
-APIs for native Windows 10 UWP, Windows 8 Universal, Xamarin.iOS and Xamarin.Android applications.
+APIs for native Windows 10 UWP, Windows 8 Universal, Xamarin.iOS, and Xamarin.Android applications.
 {: csharp}
-* **[Client-side API for Windows 10 Universal Windows Platform and Windows 8 Universal, Xamarin.iOS and Xamarin.Android apps ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_api.pdf)**  
-    You can use C# API to develop apps for the Windows 10 Universal Windows Platform (UWP), Windows 8 Universal,Xamarin.iOS and Xamarin.Android
+* **[Client-side API for Windows 10 Universal Windows Platform and Windows 8 Universal, Xamarin.iOS, and Xamarin.Android apps ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_api.pdf)**  
+    You can use C# API to develop apps for the Windows 10 Universal Windows Platform (UWP), Windows 8 Universal,Xamarin.iOS, and Xamarin.Android
     environment.
     {: csharp}
-* **[Client-side push API for Windows 10 Universal Windows Platform and Windows 8 Universal, Xamarin.iOS and Xamarin.Android apps ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_push_api.pdf)**  
-    You can use C# push APIs to develop apps which can send push notifications, for the Windows 10 Universal Windows Platform (UWP) and Windows 8 Universal, Xamarin.iOS and Xamarin.Android environment.
+* **[Client-side push API for Windows 10 Universal Windows Platform and Windows 8 Universal, Xamarin.iOS, and Xamarin.Android apps ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_push_api.pdf)**  
+    You can use C# push APIs to develop apps, which can send push notifications, for the Windows 10 Universal Windows Platform (UWP) and Windows 8 Universal, Xamarin.iOS, and Xamarin.Android environment.
     {: csharp}

@@ -29,13 +29,13 @@ lastupdated: "2019-03-13"
 {:xml: .ph data-hd-programlang='xml'}
 
 
-# Delivering {{ site.data.keyword.mobilefoundation_short }} apps using {{ site.data.keyword.cloud_notm }} {{ site.data.keyword.jazzhub_short }}
+# Delivering {{ site.data.keyword.mobilefoundation_short }} apps by using {{ site.data.keyword.cloud_notm }} {{ site.data.keyword.jazzhub_short }}
 {: #delivering_mobile_foundation_apps_using_ibm_cloud_devops_services}
 
-This tutorial helps you to automate the delivery of apps and adapters to IBM  {{ site.data.keyword.mobilefoundation_short }} using the {{ site.data.keyword.jazzhub_title }}
+This tutorial helps you to automate the delivery of apps and adapters to IBM  {{ site.data.keyword.mobilefoundation_short }} by using the {{ site.data.keyword.jazzhub_title }}
  on {{ site.data.keyword.cloud_notm }}.
 
-Here is an overview of the pipeline.
+The following image provides an overview of the pipeline.
 
 ![overview_of_pipeline](images/p00_overview_of_pipeline.png)
 
@@ -47,35 +47,35 @@ Here is an overview of the pipeline.
 * [mfpdev-cli](https://www.npmjs.com/package/mfpdev-cli)
 * A sample App and [MFP Adapter](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/)
 * [GitHub](http://github.com/) Account
-* **Optional:** [Bitbar](https://bitbar.com/testing/) instance and Bitbar API Key (You may make use of any service as per your requirements).
+* **Optional:** [Bitbar](https://bitbar.com/testing/) instance and Bitbar API Key (You can use of any service as per your requirements).
 
 
 ## Creating Continuous Delivery Service and Toolchain
 {: #creating-continuous-delivery-service-and-toolchain }
 
 * Search for "Continuous Delivery" the {{ site.data.keyword.cloud_notm }} Catalog (or [click here](https://cloud.ibm.com/catalog/services/continuous-delivery)).
-* Create the service by providing service name, region, etc.
+* Create the service by providing service name, region, and so on.
 
-    In the following example we have used the service name as "MFP App/Adapter delivery Test", region/location as "London" and resource group as "Default".
+    In the following example, we use the service name as "MFP App/Adapter delivery Test", region/location as "London" and resource group as "Default".
 
     ![configuring_continuous_delivery_service](images/p01_configuring_continuous_delivery_service.png)
 
 * From the {{ site.data.keyword.jazzhub_title }}
- section in the hamburger menu  on the left corner; create a toolchain and search for “Build your own toolchain” to create a toolchain from scratch.
+ section in the hamburger menu  on the left, create a toolchain and search for “Build your own toolchain” to create a toolchain from scratch.
 
     ![search_build_your_own_toolchain](images/p02_search_build_your_own_toolchain.png)
 
-* Provide the toolchain name, region, etc. to configure.
+* Provide the toolchain name, region, and so on, to configure.
 
 
 ## Integrating GitHub with the toolchain for version control and pipeline trigger
 {: #integrating-github-with-the-toolchain}
 
 * In the toolchain overview from the left menu. Click **Add a Tool** and search for GitHub.
-* Configure GitHub tool for **GitHub server address**, **repository type** and **repository URL**.
+* Configure GitHub tool for **GitHub server address**, **repository type**, and **repository URL**.
 * You can create a new repository, fork, clone or use an existing repository.
 
-    In the following example we have used GitHub server as "[https://github.com](http://github.com/)", repository type as "Existing" and Repository URL as "https://github.com/sagar20896/mfp-devops-20181210030116092".
+    In the following example we use GitHub server as "[https://github.com](http://github.com/)", repository type as "Existing" and Repository URL as "https://github.com/sagar20896/mfp-devops-20181210030116092".
 
     ![configuring_toolchain](images/p03_configuring_toolchain.png)
 
@@ -91,17 +91,17 @@ Use **Add Tool** and search for *Delivery Pipeline*. Configure pipeline and clic
 
 {: #stage1-setting-up-mobile-foundation}
 
-In this stage we would be spinning up an instance of {{ site.data.keyword.mobilefoundation_short }}. Adding GitHub to the pipeline would be in this stage and it will trigger the pipeline whenever a change is pushed to the git repository. See GitHub configured as the input below. You may set the stage trigger based on your requirement. It could be manual or automatic.
+In this stage, we would be spinning up an instance of {{ site.data.keyword.mobilefoundation_short }}. Adding GitHub to the pipeline would be in this stage and it triggers the pipeline whenever a change is pushed to the git repository. Following steps show the GitHub configuration. You can set the stage trigger based on your requirement. It could be manual or automatic.
 
-In the following example we set Input Type as *Git repository*, Git repository as *mfp-devops-20181210030116092* and Git URL as *https://github.com/sagar20896/mfp-devops-20181210030116092* and branch as *master*.
+In the following example, we set Input Type as *Git repository*, Git repository as *mfp-devops-20181210030116092* and Git URL as *https://github.com/sagar20896/mfp-devops-20181210030116092* and branch as *master*.
 
 ![first_stage_git_input](images/p4_first_stage_git_input.png)
 
-- Click **Add stage** and set the above configuration details in **Input** tab to point to the GitHub repo.
+- Click **Add stage** and configure the **Input** tab to point to the GitHub repo as shown in the image.
 - In the **Jobs** tab, click **ADD JOB** and select *Deploy* as job type. Select **Deployer type** as *Cloud Foundry*.
 - If you do not have an API key, you can create one for your {{ site.data.keyword.cloud_notm }} account [here](https://cloud.ibm.com/iam/#/apikeys).
 
-Select/fill the other fields as required. Add the following in **Deploy script**:
+Select/fill the other fields as required. Add the following lines in the **Deploy script**:
 
 ```
 	#!/bin/bash
@@ -131,7 +131,7 @@ Select/fill the other fields as required. Add the following in **Deploy script**
 ```
 {: codeblock}
 
-In the above script we use Cloud Foundry CLI to create a {{ site.data.keyword.mobilefoundation_short }} service instance.
+In the above script, we use Cloud Foundry CLI to create a {{ site.data.keyword.mobilefoundation_short }} service instance.
 
 ![stage1_jobs_tab_config](images/p05_stage1_jobs_tab_config.png)
 
@@ -142,11 +142,11 @@ In the **Environment properties** tab, Add property *INSTANCE\_NAME* (as text pr
 #### Stage 2 - Building an Adapter
 {: #stage2-building-an-adapter}
 
-In this stage we pull the adapter source code and build it.
+In this stage, we pull the adapter source code and build it.
 
 - Click **Add stage** and configure the stage based on your preferences for adding GitHub repository as input. The **Stage trigger** must be set to *Run jobs when the previous stage is completed*.
 
-- Switch to **Jobs** tab and add a build job. Select builder type as *Maven* and add the following in the build scripts.
+- Switch to the **Jobs** tab and add a build job. Select builder type as *Maven* and add the following lines in the build scripts.
 
 ```
 	#!/bin/bash
@@ -163,25 +163,25 @@ In this stage we pull the adapter source code and build it.
 ```
 {: codeblock}
 
-In the above script we install [mfpdev-cli](https://www.npmjs.com/package/mfpdev-cli) to build adapters using adapter command in our repository's adapters/JavaAdapter.
+In the above script, we install [mfpdev-cli](https://www.npmjs.com/package/mfpdev-cli) to build adapters by using adapter command in our repository's `adapters/JavaAdapter`.
 
-In the following example we use **Builder type** as *npm* and use the script provided above in the build script. We leave **Working directory** and **Build archive directory** parameters empty.
+In the following example, we use **Builder type** as *npm* and use the script that is provided in the build script. We leave **Working directory** and **Build archive directory** parameters empty.
 
 ![build_adapter_stage_jobs_config](images/p07_build_adapter_stage_jobs_config.png)
 
 #### Stage 3 - Deploying an adapter
 {: #stage3-deploying-an-adapter}
 
-In this stage we will deploy the adapter to the {{ site.data.keyword.mobilefoundation_short }} instance that we created in the first stage.
+In this stage, we deploy the adapter to the {{ site.data.keyword.mobilefoundation_short }} instance that we created in the first stage.
 
-- Add a new stage.
+- Add a stage.
 - Configure the input.
-- Set the input type to **Build Artifacts**, **Stage** as the stage name where adapter is built, and the job that build the adapter in the build adapter stage.
+- Set the input type to **Build Artifacts**, **Stage** as the stage name where adapter is built, and the job that builds the adapter in the build adapter stage.
 - The **Stage trigger** must be set to *Run jobs when the previous stage is completed*.
 - Add a deploy job from the **Jobs** tab.
 - Select **Deployer type** as *Cloud Foundry* and configure the rest based on your preferences.
 
-In the example below we use **Deployer type** as *Cloud Foundry*, **{{ site.data.keyword.cloud_notm }} Region** as *Dallas*, API key as the same that we created in the first stage.
+In the following example, we use **Deployer type** as *Cloud Foundry*, **{{ site.data.keyword.cloud_notm }} Region** as *Dallas*, API key as the same that we created in the first stage.
 
 ![deploy_adapter](images/p08_deploy_adapter.png)
 
@@ -220,7 +220,7 @@ Use the below **Deploy script**:
 ```
 {: codeblock}
 
-The above script uses mfpdev-cli's adapter deploy command to deploy adapter to the MFP instance.
+The script uses mfpdev-cli's adapter deploy command to deploy adapter to the MFP instance.
 
 - Set **INSTANCE_NAME** in the Environment properties tab as the one set in first stage when {{ site.data.keyword.mobilefoundation_short }} instance was created. We use the same instance name so that the adapter gets deployed to the instance we created in the first stage.
 
@@ -228,7 +228,7 @@ The above script uses mfpdev-cli's adapter deploy command to deploy adapter to t
 #### Stage 4 - Test Adapter
 {: #stage4-test-adapter}
 
-In this stage we intend to test the adapter that were built and deployed in the previous stages. In our sample adapter repository, we have scripts at ‘adapters/JavaAdapter/tests’ to test the adapter end points.
+In this stage, we intend to test the adapter that were built and deployed in the previous stages. In our sample adapter repository, we have scripts at ‘adapters/JavaAdapter/tests’ to test the adapter end points.
 
 - Set the **Input** as *GitHub repository* same as the configurations of build adapters.
 
@@ -277,17 +277,17 @@ Use the following scripts for testing adapters.
 
 - Add *INSTANCE_NAME* in environment properties, same values that we add in previous stages.
 
-You may use API testing framework for testing the adapters. In the example above we have shell scripts that call the adapter and test for correctness.
+You can use API testing framework for testing the adapters. In this example, we have shell scripts that call the adapter and test for correctness.
 
 
 #### Stage 5 - Building apps with Fastlane
 {: #stage5-building-apps-with-fastlane}
 
-Input for this should be the GitHub repo we have used in the previous stages. This stage must get triggered after the previous stage (Test Adapter) passes.
+Input for this stage should be the GitHub repo that we used in the previous stages. This stage must get triggered after the previous stage (Test Adapter) passes.
 
 For building the app we use deploy job template in the **Jobs** tab. Use *Cloud Foundry* as **Deployer type**.
 
-Use the below deploy script to build the app:
+Use the following script to build the app:
 
 ```
 	# To use Node.js 6.7.0, uncomment the following line:
@@ -365,15 +365,15 @@ Use the below deploy script to build the app:
 ```
 {: codeblock}
 
-In the above script we use `mfpdev-cli` to register the app to {{ site.data.keyword.mobilefoundation_short }}
+In the above script, we use `mfpdev-cli` to register the app to {{ site.data.keyword.mobilefoundation_short }}
  [Fastlane](https://fastlane.tools/) to build and release the app.
 
-The environment variables used in the script shall be defined in the next **Environment properties** tab.
+The environment variables that are used in the script is defined in the next **Environment properties** tab.
 
-In the environment properties, add the below properties:
+In the environment properties, add the following properties,
 
 - *INSTANCE_NAME* as the **mfp instance name**
-- *appPublishUrl* as **Repository** where the app should be published so that testing stage can pull it.
+- *appPublishUrl* as **Repository** where the app is required to be published so that the testing stage can pull it.
 - *gitPushUser* as the **GitHub username**
 - *gitPushEmail* as the **GitHub user’s email**
 - *gitPushToken* as the **git push token**
@@ -381,16 +381,16 @@ In the environment properties, add the below properties:
     `eg.: https://$gitPushToken:x-oauth-basic@github.com/ShinojEdakkara/mfp-apps master`
 
 
-#### Stage 6 - Test the app using Bitbar
+#### Stage 6 - Test the app by using Bitbar
 {: #stage6-test-the-app-using-bitbar}
 
-This stage also is open ended, you may use any testing framework based on your requirements. In this example we use [Bitbar](https://bitbar.com/testing/).
+This stage also is open ended. You can use any testing framework based on your requirements. In this example, we use [Bitbar](https://bitbar.com/testing/).
 
-- Add the GitHub repository details about the test project you have (this would consist of all the test scripts and artifacts used to support the testing).
+- Add the GitHub repository details about the test project you have (this project would consist of all the test scripts and artifacts that are used to support the testing).
 
 - For Bitbar, add a build job under **Jobs** tab and select the **Builder type** as *Maven*.
 
-Use the build script similar to the below:
+Use a build script similar to the following script,
 
 ```
 	#!/bin/bash
@@ -399,25 +399,25 @@ Use the build script similar to the below:
 ```
 {: codeblock}
 
-For the above some script you would require a few environment variables.
+For the above script you would require a few environment variables.
 
 - *screenshot\_dir* as **/home/pipeline/home/pipeline/$BUILD\_ID/target**
 - *applicationPath* as the **GitHub path** to the application you intend to test
 - *executionType* as the **Execution type**
 - *test* as the **Test** you wish to perform
 - *bitbarApiKey* as the **Bitbar API Key**
-- *testdroid_project* as the as the **Project**.
+- *testdroid_project* as the **Project**.
 
 
 #### Stage 7 - Tearing down {{ site.data.keyword.mobilefoundation_short }}
 {: #stage7-tearing-down-mobile-foundation}
 
-In this stage we would be tearing down the {{ site.data.keyword.mobilefoundation_short }} instance that was created in the first stage for build, deploy and testing in the previous stages.
+In this stage we would be tearing down the {{ site.data.keyword.mobilefoundation_short }} instance that was created in the first stage for build, deploy, and testing in the previous stages.
 
 There wouldn't be any input to this stage.
 
 - Create a *Deploy job* in the **Jobs** tab.
-- Use below script:
+- Use the following script,
 
 ```
 	#!/bin/bash
@@ -432,4 +432,3 @@ There wouldn't be any input to this stage.
 {: codeblock}
 
 - Set *INSTANCE_NAME* in the **Environment properties** tab as the one set in first stage when {{ site.data.keyword.mobilefoundation_short }} instance was created.
-
