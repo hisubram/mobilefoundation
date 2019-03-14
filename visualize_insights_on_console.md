@@ -22,20 +22,20 @@ To visualize insights from the analytics data captured and sent from your applic
 The Mobile Analytics Console can be run in two modes:
   - **Demo Mode ON** which is purely for demonstration purposes showing the different analytics views (charts and tables) using simulated data feeds.
   - **Demo Mode OFF** which shows the various analytics views based on realtime data feeds coming from your applications [instrumented for Mobile Analytics](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app).
-  
+
 All analytics views can be pruned by applying filters around *application name*, *version*, *device OS* and *time period* thus allowing you to obtain insights from different perspectives.
 
 To visualize insights for your application ensure that:
   - Your application is appropriately instrumented to capture and send the relevant analytics data to Mobile Analytics service.
   - You have turned OFF the Demo mode in the Analytics console
-  - You apply the right fiters.  For example, ensure you select a time period when your application has been deployed in the field and is active with users.
+  - You apply the right filters. For example, ensure you select a time period when your application has been deployed in the field and is active with users.
 
-The Mobile Analytics console provides different types of analysis of your mobile application usage and performance as categorized in the left navigation pane of the Analytics console.  The following sections detail the different analytics views: 
+The Mobile Analytics console provides different types of analysis of your mobile application usage and performance as categorized in the left navigation pane of the Analytics console.  The following sections detail the different analytics views:
 
 
 ## Users
 {: #reports_visualized_users}
-This view helps you get insigts into 'User Onboarding Patterns' such as the number of active users who have used the app within a specified date range and a comparison of the number of new users versus existing users returning to use your app.
+This view helps you get insights into 'User Onboarding Patterns' such as the number of active users who have used the app within a specified date range and a comparison of the number of new users versus existing users returning to use your app.
 The charts in this view can be filtered on *app name*, *operating system* or *operating system version*.
 
 ## Sessions
@@ -57,7 +57,7 @@ This view helps you with insights as to how stable your application has been ove
 {: #reports_visualized_troubleshooting}
 This view provides all the necessary information an application developer might need to troubleshoot an application.  This view provides a more detailed analysis of your application's crashes in terms of the devices affected, the host OS, specific time of the crash, the stacktrace at the time of the crash and also crash logs that can be downloaded for a more detailed analysis.  
 
-Crash logs are gathered by looking up for app logs that have been logged at the FATAL level.  The Analytics Client SDK for Android and iOS native handles uncaught exceptions and logs details about them as FATAL level log messages.  However, in the case of Cordova any crashes at the JavaScript layer needs to be handled by the developer and crash logs sent to the Mobile Analytics service to be viewed and analysed in the Mobile Analytics console.
+Crash logs are gathered by looking up for app logs that have been logged at the FATAL level.  The Analytics Client SDK for Android and iOS native handles uncaught exceptions and logs details about them as FATAL level log messages.  However, in the case of Cordova any crashes at the JavaScript layer needs to be handled by the developer and crash logs sent to the Mobile Analytics service to be viewed and analyzed in the Mobile Analytics console.
 {: note}
 
 
@@ -71,4 +71,3 @@ This view provides insights into the actual interactive experience your users ar
 
 ## Custom Charts
 This view extends Mobile Analytics to custom cases where **App owners** and **Developers** would like to build their own, application specific analytics.   Using this facility you can build your own analytics views (charts, tables etc.) around standard analytics data that is captured by the Client SDK and also custom data or application specific data that is logged.  See [here](/docs/services/mobilefoundation?topic=mobilefoundation-build_custom_charts#build_custom_charts) for more information about this extended analytics facility.
-

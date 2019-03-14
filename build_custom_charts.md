@@ -19,7 +19,7 @@ lastupdated: "2018-11-22"
 # Build Custom Charts
 {: #build_custom_charts}
 
-The Custom Charts view in the Mobile Analytics console provides you the flexibility to build your own visualizations around the analytics data captured and stored.  This helps in deepening insights further from what is provided out of the box or even extend it seamlessly into Business Analytics fomulated around custom data.
+The Custom Charts view in the Mobile Analytics console provides you the flexibility to build your own visualizations around the analytics data captured and stored.  This helps in deepening insights further from what is provided out of the box or even extend it seamlessly into Business Analytics formulated around custom data.
 
 In this view you can choose any one of the supported analytics datasets and then select one of the supported chart types to plot the dataset.  You may even further prune the visualization by defining filters to be applied over the data being plotted.  
 
@@ -28,16 +28,16 @@ Supported datasets:
  * App Sessions
  * Custom Data
  * Network Transactions
- 
+
 Supported chart types:
  * Bar Graph
  * Flow Chart
  * Line Graph
- * Metric Group 
+ * Metric Group
  * Pie Chart
  * Table
- 
-The selection of the dataset, the chart type to plot, definition of the chart characteristics, and data filters to apply can be pulled together into a Custom Chart Definition and saved.  You may create and save as many Custom Chart definitions as you need. Saved Custom Charts show up on the Custom Charts view with the relevant analytics data plotted. 
+
+The selection of the dataset, the chart type to plot, definition of the chart characteristics, and data filters to apply can be pulled together into a Custom Chart Definition and saved.  You may create and save as many Custom Chart definitions as you need. Saved Custom Charts show up on the Custom Charts view with the relevant analytics data plotted.
 
 ## Creating a custom chart
 {: #creating_custom_chart}
@@ -63,7 +63,7 @@ Create a custom chart using the following steps:
 
 If you wish to gain deeper custom insights such as users trail across the application then firstly you should capture the relevant user trail information such as page chosen or option selected or button clicked as custom data and log them.  See the topic on [instrumenting your app](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app), on how to log custom data.
 
-Next, create a custom chart defintion with Custom Data as the EventType and choose a Chart Type. As you proceed to define  **Chart Properties** or **Chart Filters** you will notice the Custom Data types and values showing up in the drop down boxes.  Make the relevant selections for the kind of insight you are looking for.  
+Next, create a custom chart definition with Custom Data as the EventType and choose a Chart Type. As you proceed to define  **Chart Properties** or **Chart Filters** you will notice the Custom Data types and values showing up in the drop down boxes.  Make the relevant selections for the kind of insight you are looking for.  
 
 The depth and usefulness of custom insights entirely depends on how effectively or relevantly you have defined and captured custom data in your applications.
 {: note}
@@ -135,4 +135,3 @@ The resulting pie chart shows the breakdown of app sessions that were closed by 
 
 The table is useful when you want to see the raw data. Building a table is as simple as adding columns for the raw data that you want to see.
 Since not all properties are required for specific event types, null values can appear in your table. If you want to prevent these rows from appearing in your table, add an *Exists* filter for a specific property in the **Chart Filters** tab
-

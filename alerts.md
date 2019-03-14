@@ -43,7 +43,7 @@ You can create an alert definition that is based on App Logs.  For example if yo
             * **Threshold**: *Total for Application Instance*<br/>
               If you choose the *Average for Application* option, the app logs are averaged by the number of devices. For example, if you have two devices and one device sends six app logs while the other device sends three app logs, the average is 4.5 app logs.
               {: note}
-            * **Operator**: *is greater than or equals* 
+            * **Operator**: *is greater than or equals*
             * Threshold value: *3*
 4.  Click **Next** and provide the following value:
     * **Method**: *Analytics Console Only*<br/>
@@ -56,7 +56,7 @@ You can create an alert definition that is based on App Logs.  For example if yo
 
 You've now created an alert definition to trigger an alert at the end of every 5 minute interval when the number of app logs reached the threshold of 3 or more error logs.
 
-This alert stays live and active, monitoring by the setup frequency until the alert defintion is disabled or deleted.
+This alert stays live and active, monitoring by the setup frequency until the alert definition is disabled or deleted.
 {: note}
 
 ## Creating an alert definition for application crashes
@@ -74,7 +74,7 @@ Here is an example of setting up alerts around application crashes.  This alert 
         * **Application Name**: *Any application*
         * **Any application**: *Any version*
     * **Threshold**: *Crash Count*
-    * **Operator**: *is greater than or equals* 
+    * **Operator**: *is greater than or equals*
     * Threshold value: *5*
 4.  Click **Distribution Method** or **Next** and provide the following value:
     * **Method**: *Analytics Console Only*<br/>
@@ -85,7 +85,7 @@ Here is an example of setting up alerts around application crashes.  This alert 
       * **POST Request Body**
 5. Click **Save**.  
 
-This alert stays live and active, monitoring by the setup frequency until the alert defintion is disabled or deleted.
+This alert stays live and active, monitoring by the setup frequency until the alert definition is disabled or deleted.
 {: note}
 
 ## Managing alert definitions
@@ -109,4 +109,3 @@ You can view the alerts, which were triggered from the alert **Logs** page.
     If the corresponding alert definition wasn’t deleted or modified, you can edit the alert definition by clicking **Edit Alert**. Otherwise, the **Edit Alert** button is unavailable and the following message displays:
     `This alert definition has since been modified or deleted.`
 3.  You can optionally select an alert and click the trash icon to delete the alert.
-

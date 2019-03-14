@@ -9,14 +9,14 @@ lastupdated:  "2018-11-27"
 #	Overview
 {: #overview_mobilefoundation}
 
-{{site.data.keyword.mobilefoundation_short}} provides an integrated set of backend capabilities for Mobile, Web and Progressive Web Apps (PWA). Developers can choose to use front-end tools or frameworks of their choice and leverage the rich set of backend capabilities provided by {{site.data.keyword.mobilefoundation_short}} service. {{site.data.keyword.mobilefoundation_short}} SDKs are available for Cordova, iOS, Android, Xamarin, Windows 10, React Native and Mobile Web. 
+{{site.data.keyword.mobilefoundation_short}} provides an integrated set of backend capabilities for Mobile, Web and Progressive Web Apps (PWA). Developers can choose to use front-end tools or frameworks of their choice and leverage the rich set of backend capabilities provided by {{site.data.keyword.mobilefoundation_short}} service. {{site.data.keyword.mobilefoundation_short}} SDKs are available for Cordova, iOS, Android, Xamarin, Windows 10, React Native and Mobile Web.
 
 ## Key capabilities offered by {{site.data.keyword.mobilefoundation_short}}
 
 ### User Engagement
 {: #user_engagement}
 
-Building engaging mobile apps is the key to the success of an app strategy for any business. User engagement can be built into apps using push notifications. {{site.data.keyword.mobilefoundation_short}} supports sending notifications to iOS, Android, and Windows 10 devices. Notifications can be sent to all users, a subset of users or to users based on their area of interest. Interactive and silent notifications are supported for relevant platforms. Personalisation is a key aspect for user engagement. You can segment the users and tailor apps for specific user segments with the **Live Update** capability.
+Building engaging mobile apps is the key to the success of an app strategy for any business. User engagement can be built into apps using push notifications. {{site.data.keyword.mobilefoundation_short}} supports sending notifications to iOS, Android, and Windows 10 devices. Notifications can be sent to all users, a subset of users or to users based on their area of interest. Interactive and silent notifications are supported for relevant platforms. Personalization is a key aspect for user engagement. You can segment the users and tailor apps for specific user segments with the **Live Update** capability.
 
 ###  App Insights
 {: #app_insights}
@@ -48,4 +48,3 @@ Manage application versions and block outdated application versions. Skip app st
 {:  #cognitive_apis}
 
 Build smart apps by using Watson APIs (*Tone Analyzer, Language Translator, Discovery or Conversation*) in your mobile apps. This integration helps leverage the mobile channel security and obtain insights on the APIs.
-

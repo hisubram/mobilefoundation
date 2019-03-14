@@ -78,8 +78,8 @@ Certificate pinning consists of the following overloaded API method, where one m
 {: #certpinapiandroid}
 
 * Single certificate:
- 
-    Syntax: pinTrustedCertificatePublicKeyFromFile(String certificateFilename); 
+
+    Syntax: pinTrustedCertificatePublicKeyFromFile(String certificateFilename);
 
     Example:
 
@@ -115,8 +115,8 @@ The certificate pinning method will raise an exception in two cases:
     * The file does not exist
     * The file is in the wrong format
 
-* Multiple certificate pinning 
- 
+* Multiple certificate pinning
+
     syntax: pinTrustedCertificatePublicKeyFromFiles:(NSArray*) certificateFilenames;
 
     The certificate pinning method will raise an exception in two cases:
@@ -141,7 +141,7 @@ NSArray *arrayOfCerts = [NSArray arrayWithObjects:@“Cert1”,@“Cert2”,@“
 
 **In Swift**:
 
-Example: Single certfiicate:
+Example: Single certificate:
 
 ```
 WLClient.sharedInstance().pinTrustedCertificatePublicKeyFromFile("myCertificate.cer")

@@ -19,7 +19,7 @@ lastupdated: "2018-11-19"
 # Prevent tampered apps accessing backend
 {: #prevent_tampered_apps_accessing_backend}
 
-Application authenticiy helps to check the application validity before enabling any services, thus preventing tampered application from accessing the backend services.
+Application authenticity helps to check the application validity before enabling any services, thus preventing tampered application from accessing the backend services.
 {: shortdesc}
 
 To properly secure your application, enable the predefined MobileFirst application-authenticity security check (``appAuthenticity``). When enabled, this check validates the authenticity of the application before providing it with any services. Applications in production environment should have this feature enabled.
@@ -52,7 +52,7 @@ For application authenticity to be enabled in your application:
 2. Select your application from the navigation sidebar and click on the **Authenticity** menu item.
 3. Toggle the **On/Off** button in the **Status** box.
 
-![Enabling Application Authencity](/images/enable_application_authenticity.png)
+![Enabling Application Authenticity](/images/enable_application_authenticity.png)
 
 MobileFirst Server validates the application’s authenticity on the first attempt to connect to the server. To apply this validation also to protected resources, add the appAuthenticity security check to the protecting scope.
 

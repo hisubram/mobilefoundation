@@ -364,7 +364,7 @@ The Swift SDK is available for iOS and watchOS.
    {: note}
    {: ios}
 
-    Follow [the tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/it/foundation/8.0/application-development/client-side-log-collection/ios/) for code snipets for Logger in order to add logging capabilities in iOS applications.
+    Follow [the tutorial ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/client-side-log-collection/ios/) for code snippets for Logger in order to add logging capabilities in iOS applications.
 
 6.  To get insights on user onboarding patterns (new users versus returning users) you must associate a user identity with your application session.  This can be done by calling the following API
     ```Swift

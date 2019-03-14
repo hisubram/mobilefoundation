@@ -36,7 +36,7 @@ wl_DirectUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
 
 If the web resources are newer on the Mobile Foundation server than in the application, Direct Update challenge data is added to the server response. Whenever the Mobile Foundation client-side framework detects this direct update challenge, it invokes the `wl_directUpdateChallengeHandler.handleDirectUpdate` function.
 
-The function provides a default Direct Update design: A default message dialog that is displayed when a Direct Update is available and a default progress screen that is displayed when the direct update process is initiated. You can implement custom Direct Update user interface behaviour or customise the Direct Update dialog box by overriding this function and implementing your own logic.
+The function provides a default Direct Update design: A default message dialog that is displayed when a Direct Update is available and a default progress screen that is displayed when the direct update process is initiated. You can implement custom Direct Update user interface behaviour or customize the Direct Update dialog box by overriding this function and implementing your own logic.
 
 In the example code below, a `handleDirectUpdate` function implements a custom message in the Direct Update dialog. Add this code into the `www/js/index.js` file of the Cordova project.
 Additional examples for a customized Direct Update UI:

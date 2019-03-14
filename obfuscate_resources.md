@@ -25,7 +25,7 @@ By obfuscation, an application becomes much more difficult to reverse-engineer, 
 
 Code obfuscation consists of many different techniques and application security techniques:
 
-* Rename Obfuscation - Renaming alters the name of methods and variables and makes the decompiled source harder for human to understand with but does not alter application execution. Most preferred method of obfuscation by .NET, iOS, Java and Android obfuscators. 
+* Rename Obfuscation - Renaming alters the name of methods and variables and makes the decompiled source harder for human to understand with but does not alter application execution. Most preferred method of obfuscation by .NET, iOS, Java and Android obfuscators.
 * String Encryption
 * Control Flow Obfuscation
 * Instruction Pattern Transformation

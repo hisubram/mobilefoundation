@@ -43,6 +43,7 @@ Refer to the following sections to learn how to handle incoming push notificatio
 {: android}
 Before Android applications are able to handle any received push notifications, support for Google Play Services needs to be configured. Once an application has been configured, {{ site.data.keyword.mobilefirst_notm }}-provided Notifications API can be used in order to register &amp; unregister devices, and subscribe &amp; unsubscribe to tags. In this tutorial, you will learn how to handle push notification in Android applications.
 {: android}
+
 **Prerequisites:**
 {: android}
 * {{ site.data.keyword.mfserver_short_notm }} to run locally, or a remotely running {{ site.data.keyword.mfserver_short_notm }}.
@@ -857,7 +858,7 @@ MFPPush.sharedInstance().unregisterDevice { (response, error)  -> Void in
 {: #handling-a-push-notification }
 {: ios}
 
-Push notifications are handled by the native iOS framework directly. Depending on your application lifecyle, different methods will be called by the iOS framework.
+Push notifications are handled by the native iOS framework directly. Depending on your application lifecycle, different methods will be called by the iOS framework.
 {: ios}
 
 For example if a simple notification is received while the application is running, **AppDelegate**'s `didReceiveRemoteNotification` will be triggered:
@@ -900,7 +901,7 @@ For information about Silent or Interactive notifications in iOS, see:
 * [Interactive Notifications](/docs/services/mobilefoundation?topic=mobilefoundation-interactive_notifications#interactive_notifications)
 {: cordova}
 
-**Prequisites:**
+**Prerequisites:**
 {: cordova}
 
 * {{ site.data.keyword.mfserver_short }} to run locally, or a remotely running {{ site.data.keyword.mfserver_short }}
