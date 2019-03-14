@@ -38,7 +38,7 @@ lastupdated: "2019-03-13"
 ## Prerequisites
 {: #cos-prerequisites}
 
-1. Install the [mfpdev-cli](https://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_wl_cli_description.html) by running `npm install -g mfpdev-cli`. This cli is used to register the ionic app and deploy the adapter to the MF server. Alternatively these activites can be performed from the MF server dashboard. 
+1. Install the [mfpdev-cli](https://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_wl_cli_description.html) by running `npm install -g mfpdev-cli`. This cli is used to register the ionic app and deploy the adapter to the MF server. Alternatively these activities can be performed from the MF server dashboard. 
 
 2. Install [{{ site.data.keyword.cloud_notm}} CLI](https://console.bluemix.net/docs/cli/index.html#overview) on your machine.
 
@@ -98,7 +98,7 @@ The {{ site.data.keyword.mobilefoundation_short}} server is set on {{ site.data.
 ## MFP-COS Ionic App and Java Adapter
 {: #mfp-cos-ionic-app-and-java-adapter}
 
-Download the above [git repo](https://github.com/MobileFirst-Platform-Developer-Center/COS_MF_Short_Stories_Ionic_App) or clone it. This repo consists of two main components: 
+Download the above [git repo](https://github.com/MobileFirst-Platform-Developer-Center/COS_MF_Short_Stories_Ionic_App) or clone it. This repo consists of two main components:
 
 1. An MF Java Adapter
 2. An ionic mobile application
@@ -106,22 +106,22 @@ Download the above [git repo](https://github.com/MobileFirst-Platform-Developer-
 ### Configuring mfpdev-cli
 {: #configuring-mfpdev-cli}
 
-Add the server details to the cli. On the command prompt execute 	`mfpdev server add`. 
+Add the server details to the cli. On the command prompt execute 	`mfpdev server add`.
 
 ```
-? Enter the name of the new server profile: 
+? Enter the name of the new server profile:
 ```
 
 Provide a name for the server and press enter. In this sample, the name provided is `mfpserver`.
 
 ```
-? Enter the fully qualified URL of this server: 
+? Enter the fully qualified URL of this server:
 ```
 
 Enter the url of the server. For MF server on {{ site.data.keyword.cloud_notm}}, the service credentials tab contains the url. The port for the https MF server on {{ site.data.keyword.cloud_notm}} is 443 and for the http MF server instance is 80.
 
 ```
-? Enter the MobileFirst Server administrator login ID: (admin) 
+? Enter the MobileFirst Server administrator login ID: (admin)
 ```
 
 Enter `admin` and press **Enter**.
@@ -133,7 +133,7 @@ Enter `admin` and press **Enter**.
 Enter the password available in the service credentials.
 
 ```
-? Save the administrator password for this server?: (Y/n) 
+? Save the administrator password for this server?: (Y/n)
 ```
 
 Based on your preference, enter *Y/N* and enter details as asked by the prompts.
@@ -145,12 +145,12 @@ Based on your preference, enter *Y/N* and enter details as asked by the prompts.
 Set 30 sec as the default timeout
 
 ```
-? Make this server the default?: (Y/n) 
+? Make this server the default?: (Y/n)
 ```
 
 Enter *Y* and press **Enter**.
 
-***Expected output***: 
+***Expected output***:
 
 ```
 Verifying server configuration...
@@ -161,10 +161,10 @@ Server profile 'mfpserver' added successfully.
 ### Configuring the MF Java adapter
 {: #configuring-the-mf-java-adapter}
 
-To connect to your COS instance, some details of your COS instance need to be provided in the `adapter.xml` file. Furnish values for the following: 
+To connect to your COS instance, some details of your COS instance need to be provided in the `adapter.xml` file. Furnish values for the following:
 
 1. **endpointURL**: This is the public endpoint url for your COS object. This can be found on your COS's dashboard -> Buckets (on the left menu options) -> <your-bucket-name> (sharedgallery in this sample) -> Configuration -> Endpoints -> Public
-2. **AuthToken**: In this tutorial we will be using the IAM authentication. 
+2. **AuthToken**: In this tutorial we will be using the IAM authentication.
 
 For the java adapter to connect to your instance of COS, authentication using IAM or HMAC is needed. Below are the steps to get the IAM token. For further details on IAM and HMAC authentication processes, click [here](https://console.bluemix.net/docs/services/cloud-object-storage/api-reference/api-reference-buckets.html#bucket-operations#AuthenticationOptions).
 
@@ -174,11 +174,11 @@ For the java adapter to connect to your instance of COS, authentication using IA
 1. First, make sure you have an API key. Get this from [{{ site.data.keyword.cloud_notm}} Identity and Access Management](https://console.bluemix.net/iam/#/users).
 2. Login to the {{ site.data.keyword.cloud_notm}} Platform using the CLI.
 
-    ``` 
+    ```
 	`bx login --apikey <value>`
-    ```	
-    Your output will be similar to: 
-	
+    ```
+    Your output will be similar to:
+
 	```
 	Authenticating...
 	OK
@@ -193,14 +193,14 @@ For the java adapter to connect to your instance of COS, authentication using IA
 	Account:          <account-name> (<account-id>)
 	Resource group:   default
 	```
-	
+
 3. To get all the service instances on your {{ site.data.keyword.cloud_notm}} account, run the below command on the CLI.
 
 	```
     `bx resource service-instances`
     ```
-	Expected output: 
- 
+	Expected output:
+
 	```
  	Retrieving service instances in resource group Default and all 	locations under account <account-name> as <email-address>...
 	OK
@@ -212,8 +212,8 @@ For the java adapter to connect to your instance of COS, authentication using IA
 
     ```
 	`bx resource service-instance <instance-name>`
-    ```	
-	Expected output: 
+    ```
+	Expected output:
 
 	```
 	Retrieving service instance <sinstance-name> in resource group 	Default under account <account-name> as<email-address>...
@@ -231,17 +231,17 @@ For the java adapter to connect to your instance of COS, authentication using IA
 
 5. To get IAM token:
     ```
-	`bx iam oauth-tokens` 
+	`bx iam oauth-tokens`
     ```
-	
+
 	Expected output:
-	
+
 	```
 	IAM token:  Bearer <token>
 	UAA token:  Bearer <refresh-token>
 	```
-	
-After adding the endpointURL and the authToken values, build the adapter. Navigate to the adapter's root folder in the command prompt and execute 
+
+After adding the endpointURL and the authToken values, build the adapter. Navigate to the adapter's root folder in the command prompt and execute
 
 ```
 `mfpdev adapter build`
@@ -251,7 +251,7 @@ After adding the endpointURL and the authToken values, build the adapter. Naviga
 This creates the '*.adapter' file in the "target" folder. Execute 	
 
 ```
-`mfpdev adapter deploy` 
+`mfpdev adapter deploy`
 ```
 {: codeblock}
 
@@ -263,70 +263,70 @@ Alternatively, the adapter can be deployed on the MF server dashboard. Open the 
 
 Then click on **Deploy Adapter** and upload the `.adapter` file from the **target** folder.
 
-	
+
 ### Configuring the Ionic App
 {: #configuring-the-ionic-app}
 
 In the app:
 
 1. Navigate to the folder containing the Ionic application.
-	
+
 2. Add the cordova MF plugin
-	
+
 	```
     `ionic cordova plugin add cordova-plugin-mfp`
     ```
-	
+
 3. Add the android or ios platform
 
-    ```	
+    ```
 	`ionic cordova platform add android`
-    ```	
+    ```
 	or
-	
+
 	```
 	`ionic cordova platform add ios`
 	```
 
-4. Register your app to the MF server by executing 
-	
+4. Register your app to the MF server by executing
+
     ```
 	`mfpdev app register`
 	```
 
-	Alternatively, the app can be registered on the MF server dashboard. Open the MF server dashboard and on the left side menu click on **Applications -> New**. 
-	
-	The below page loads: 
+	Alternatively, the app can be registered on the MF server dashboard. Open the MF server dashboard and on the left side menu click on **Applications -> New**.
+
+	The below page loads:
 
 	![MFPNewAppRegister](images/mfp_new_app_register.png)
-	
-	Enter the details requested. Give a name for your application in the textbox 'Application Name'. Choose the required platform. 
-	
+
+	Enter the details requested. Give a name for your application in the textbox 'Application Name'. Choose the required platform.
+
 	For Android, the 'Package' textbox accepts the 'Application identifier'. This can be found in the 'AndroidManifest.xml' as "package" of your Android application. The 'Version' textbox field has to be filled with the 'versionName' value from the 'AndroidManifest.xml'
-	
+
 	For IOS, the 'Bundle ID' textbox accepts 'Application identifier (case sensitive)'. This can be found in the 'mfpclient.plist' of your IOS application. The 'Version' textbox field has to be filled with the 'version' value from the 'mfpclient.plist' file in your IOS application.
-	
+
 5. Execute `ionic cordova prepare` for changes to percolate to the environments added.
-6. Execute 
+6. Execute
     ```
-	`ionic cordova build android` 
+	`ionic cordova build android`
     ```
-	or 
+	or
     ```
-	`ionic cordova build ios` 
+	`ionic cordova build ios`
     ```
 	to ensure that the typescript changes are added to the environments.
 
-7. Attach device or run emulator/simulator and execute the command 
-	
+7. Attach device or run emulator/simulator and execute the command
+
 	```
-    `ionic cordova run android` 
+    `ionic cordova run android`
 	```
-	or 
+	or
 	```
 	`ionic cordova run ios`
     ```
-	
+
 ### Navigating the Ionic application
 {: #navigating-the-ionic-application}
 
@@ -338,7 +338,7 @@ The initial COS objects list looks like this.
 
 The home page of the application provides an option to either "Get all stories" or "Add story"
 
-![App home screen](images/app-home-screen.png) 
+![App home screen](images/app-home-screen.png)
 
 On clicking **Get all stories**, the stories available on COS are displayed.
 
