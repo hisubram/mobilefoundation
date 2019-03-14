@@ -55,7 +55,7 @@ If the notification is silent, the **alert**, **sound**, and **badge** propertie
 
 In the JavaScript push notification callback method, you must do the following steps:
 
-1. Check the notification type. For example:
+1. Check the notification type. For example,
 
    ```javascript
    if(props['content-available'] == 1) {
@@ -64,7 +64,8 @@ In the JavaScript push notification callback method, you must do the following s
         //Normal notification
    }
    ```
-
+   {: codeblock}
+   
 2. If the notification is silent or mixed, after you complete the background job, invoke `WL.Client.Push.backgroundJobDone` API.
 
 ## Handling silent push notifications in native iOS applications

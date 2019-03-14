@@ -15,13 +15,13 @@ lastupdated:  "2018-11-19"
 #	Security Utilities
 {: #security_utilities}
 
-The Mobile Foundation client-side API provides some security utilities to help protect your user's data. Features like JSONStore are great if you want to protect JSON objects. However, it’s not suggested to store binary blobs in a JSONStore collection.
+The Mobile Foundation client-side API provides some security utilities to help protect your user's data. Features like JSONStore are great if you want to protect JSON objects. We suggest not to store binary blobs in a JSONStore collection.
 
 Instead, store binary data on the file system, and store the file paths and other metadata inside a JSONStore collection. If you want to protect files like images, you can encode them as base64 strings, encrypt it, and write the output to disk. To decrypt the data, you can look up the metadata in a JSONStore collection. Read the encrypted data from the disk, and decrypt it using the metadata that was stored. This metadata can include the key, salt, Initialization Vector (IV), type of file, path to the file, and others.
 
 At a high level, the SecurityUtils API provides the following APIs:
 
-* Key generation - Instead of passing a password directly to the encryption function, this key generation function uses Password-Based Key Derivation Function v2 (PBKDF2) to generate a strong 256-bit key for the encryption API. It takes a parameter for the number of iterations. The higher the number, the more time it takes an attacker to brute force your key. Use a value of at least 10,000. The salt must be unique and it helps ensure that attackers have a harder time using existing hash information to attack your password. Use a length of 32 bytes.
+* Key generation - Instead of passing a password directly to the encryption function, this key generation function uses Password-Based Key Derivation Function v2 (PBKDF2) to generate a strong 256-bit key for the encryption API. It takes a parameter for the number of iterations. The higher the number, the more time it takes an attacker to brute force your key. Use a value of at least 10,000. The salt must be unique, which ensures that the attackers who use existing hash information to attack your password, have a hard time. Use a length of 32 bytes.
 * Encryption - Input is encrypted by using the Advanced Encryption Standard (AES). The API takes a key that is generated with the key generation API. Internally, it generates a secure IV, which is used to add randomization to the first block cipher. Text is encrypted. If you want to encrypt an image or other binary format, turn your binary into base64 text by using these APIs. This encryption function returns an object with the following parts:
     * ct (cipher text, which is also called the encrypted text)
     * IV

@@ -31,17 +31,17 @@ lastupdated: "2019-02-28"
 # Interactive Notifications
 {: #interactive_notifications}
 
-With interactive notification, when a notification arrives, users can take actions without opening the application. When an interactive notification arrives, the device shows action buttons along with the notification message.
+With interactive notification, when a notification arrives, users can act on the notification without opening the application. When an interactive notification arrives, the device shows action buttons along with the notification message.
 {: shortdesc}
 
-Interactive notifications are supported on devices with iOS version 8 and above. If an interactive notification is sent to an iOS device with version earlier than 8, the notification actions are not displayed.
+Interactive notifications are supported on devices with iOS version 8 and higher. If an interactive notification is sent to an iOS device with version earlier than 8, the notification actions are not displayed.
 
 ## Sending interactive push notification
 {: #sending-interactive-push-notification }
 
 Prepare the notification and send notification. For more information, see [Sending push notifications](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications).
 
-You can set a string to indicate the category of the notification with the notification object, under **{{ site.data.keyword.mfp_oc_short_notm }} → [your application] → Push → Send Notifications → iOS custom settings**. Based on the category value, the notification action buttons are displayed. For example:
+You can set a string to indicate the category of the notification with the notification object, under **{{ site.data.keyword.mfp_oc_short_notm }} → [your application] → Push → Send Notifications → iOS custom settings**. Based on the category value, the notification action buttons are displayed. For example,
 
 ![Setting categories for iOS interactive notifications in the {{ site.data.keyword.mfp_oc_short_notm }}](images/categories-for-interactive-notifications.png)
 
