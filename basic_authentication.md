@@ -27,9 +27,9 @@ The OAuth protocol separates the roles of the authorization server and the resou
 * The authorization server manages the client authorization and token generation.
 * The resource server uses the authorization server to validate the access token that is provided by the client, and ensure that it matches the protecting scope of the requested resource.
 
-The security framework is built around an authorization server that implements the OAuth protocol, and exposes the OAuth endpoints with which the client interacts to obtain access tokens. The security framework provides the building blocks for implementing a custom authorization logic on top of the authorization server and the underlying OAuth protocol. By default, MobileFirst Server functions also as the **authorization server**. However, you can configure an IBM WebSphere DataPower appliance to act as the authorization server and interact with MobileFirst Server.
+The security framework is built around an authorization server that implements the OAuth protocol, and exposes the OAuth endpoints with which the client interacts to obtain access tokens. The security framework provides the building blocks for implementing a custom authorization logic over the authorization server and the underlying OAuth protocol. By default, MobileFirst Server functions also as the **authorization server**. However, you can configure an IBM WebSphere DataPower appliance to act as the authorization server and interact with MobileFirst Server.
 
-The client application can then use these tokens to access resources on a **resource server**, which can be either the MobileFirst Server itself or an external server. The resource server checks the validity of the token to make sure that the client can be granted access to the requested resource. The separation between resource server and authorization server allows you to enforce security on resources that are running outside MobileFirst Server.
+The client application can then use these tokens to access resources on a **resource server**, which can be either the MobileFirst Server itself or an external server. The resource server checks the validity of the token to make sure that the client can be granted access to the requested resource. The separation between resource server and authorization server enforces security on resources that are running outside MobileFirst Server.
 
 Application developers protect access to their resources by defining the required scope for each protected resource, and implementing security checks and challenge handlers. The server-side security framework and the client-side API handle the OAuth message exchange and the interaction with the authorization server transparently, allowing developers to focus only on the authorization logic.
 
@@ -64,8 +64,11 @@ Configure the application’s maximum access-token expiration period by using on
 
 * Editing the application's configuration file
 
-    1. From a **command-line window**, navigate to the project's root folder and run the ``mfpdev app pull``.
-    2. Open the configuration file, located in the **[project-folder]\mobilefirst** folder.
+    1. From a CLI, navigate to the project's root folder and run the following command.
+      ```bash
+      mfpdev app pull
+      ```
+    2. Open the configuration file, which is located in the `[project-folder]\mobilefirst` folder.
     3. Edit the file by defining a `maxTokenExpiration` property and set its value to the maximum access-token expiration period, in seconds:
         ```java
         {
@@ -79,7 +82,7 @@ Configure the application’s maximum access-token expiration period by using on
 **Access-token response structure**
 {: #acs_access-tokens-structure}
 
-A successful HTTP response to an access-token request contains a JSON object with the access token and additional data. Following is an example of a valid-token response from the authorization server:
+A successful HTTP response to an access-token request contains a JSON object with the access token and extra data. Following is an example of a valid-token response from the authorization server:
 
 ```json
 HTTP/1.1 200 OK
@@ -104,14 +107,14 @@ The token-response JSON object has these property objects:
 
 The **expires_in** and **scope** information is also contained within the token itself (**access_token**).
 
->**Note**: The structure of a valid access-token response is relevant if you use the low-level `WLAuthorizationManager` class and manage the OAuth interaction between the client and the authorization and resource servers yourself, or if you use a confidential client. If you are using the high-level `WLResourceRequest` class, which encapsulates the OAuth flow for accessing protected resources, the security framework handles the processing of access-token responses for you. See [Client security APIs](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_oauth_client_apis.html?view=kc#c_oauth_client_apis) and [Confidential clients](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/confidential-clients/).
+>**Note**: The structure of a valid access-token response is relevant if you use the low level `WLAuthorizationManager` class and manage the OAuth interaction between the client and the authorization and resource servers yourself, or if you use a confidential client. If you are using the high level `WLResourceRequest` class, which encapsulates the OAuth flow for accessing protected resources, the security framework handles the processing of access-token responses for you. See [Client security APIs](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_oauth_client_apis.html?view=kc#c_oauth_client_apis) and [Confidential clients](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/confidential-clients/).
 
 ### Refresh Tokens
 {: #acs_refresh_tokens}
 
 A Refresh token is a special type of token, which can be used to obtain a new access token when the access token expires. To request a new access token, a valid refresh token can be presented. The refresh tokens are long-lived tokens and remain valid for a longer duration of time compared to access tokens.
 
-Refresh token must be used with caution by an application because they can allow a user to remain authenticated forever. Social media applications, e-commerce applications, product catalog browsing and such utility applications, where the application provider does not authenticate users regularly can use refresh tokens. Applications that mandate user authentication frequently must avoid using refresh tokens.
+Refresh token must be used with caution by an application because they can allow a user to remain authenticated forever. Social media applications, e-commerce applications, product catalog browsing, and such utility applications, where the application provider does not authenticate users regularly can use refresh tokens. Applications that mandate user authentication frequently must avoid the use of refresh tokens.
 MobileFirst Refresh Token
 
 A MobileFirst refresh token is a digitally signed entity like access token that describes the authorization permissions of a client. Refresh token can be used to get new access token of the same scope. After the client’s authorization request for a specific scope is granted and the client is authenticated, the authorization server’s token endpoint sends the client an HTTP response that contains the requested access token and refresh token. When the access token expires, the client sends refresh token to authorization server’s token endpoint to get a new set of access token and refresh token.
@@ -126,28 +129,28 @@ Similar to the MobileFirst access token, the MobileFirst refresh token contains 
 
 **Token Expiration**
 
-The token expiration period for refresh token is longer than the typical access token expiry period. The refresh token once granted remains valid until its expiration time elapses. Within this validity period, a client can use the refresh token to get a new set of access token and refresh token. The refresh token has a fixed expiry period of 30 days. Every time the client receives a new set of access token and refresh token successfully, the refresh token expiry is reset thus giving the client an experience of a never expiring token. The access token expiry rules remain same as explained in section **Access Token**.
+The token expiration period for refresh token is longer than the typical access token expiry period. The refresh token that is once granted remains valid until its expiration time elapses. Within this validity period, a client can use the refresh token to get a new set of access token and refresh token. The refresh token has a fixed expiry period of 30 days. Every time the client receives a new set of access token and refresh token successfully, the refresh token expiry is reset thus giving the client an experience of a never expiring token. The access token expiry rules remain same as explained in section **Access Token**.
 
 **Enabling Refresh Token feature**
 {: #acs_enable-refresh-token}
 
-Refresh token feature can be enabled using the following properties on client side and server side respectively.
+Refresh token feature can be enabled by using the following properties on client side and server side respectively.
 
-**Client side property (Android)**
+**Client-side property (Android)**
 *File name*: mfpclient.properties
 *Property name*: wlEnableRefreshToken
 *Property value*: true
 For example,
 *wlEnableRefreshToken*=true
 
-**Client side property (iOS)**
+**Client-side property (iOS)**
 *File name*: mfpclient.plist
 *Property name*: wlEnableRefreshToken
 *Property value*: true
 For example,
 *wlEnableRefreshToken*=true
 
-**server-side property**
+**Server-side property**
 *File name*: server.xml
 *Property name*: mfp.security.refreshtoken.enabled.apps
 *Property value*: application bundle id separated by ‘;’
@@ -179,7 +182,7 @@ Following is an example of a valid refresh token response from the authorization
 ```        
 {: codeblock}
 
-The refresh-token response has the additional property object refresh_token apart from the other property objects explained as part of the access token response structure.
+The refresh token response has an additional property object `refresh_token` apart from the other property objects that is explained as part of the access token response structure.
 
 >**Note**: The refresh tokens are long-lived compared to access tokens. Hence the refresh token feature must be used with caution. Applications where periodic user authentication is not necessary are ideal candidates for using the refresh token feature.
 
@@ -203,9 +206,9 @@ The following predefined security checks are available:
 #### Challenge Handler entity
 {: #challengehandler_entity}
 
-When trying to access a protected resource, the client may be faced with a challenge. A challenge is a question, a security test, a prompt by the server to make sure that the client is allowed to access this resource. Most commonly, this challenge is a request for credentials, such as a user name and password.
+When you try to access a protected resource, the client might be faced with a challenge. A challenge is a question, a security test, a prompt by the server to make sure that the client is allowed to access this resource. Most commonly, this challenge is a request for credentials, such as a user name and password.
 
-A challenge handler is a client-side entity that implements the client-side security logic and the related user interaction. 
+A challenge handler is a client-side entity that implements the client-side security logic and the related user interaction.
 
 >**Important**: After a challenge is received, it cannot be ignored. You must answer or cancel it. Ignoring a challenge might lead to unexpected behavior.
 
@@ -219,17 +222,17 @@ A scope is defined as a string of one or more space-separated scope elements (�
 #### Scope Elements
 {: #scopeelements}
 
-A scope element can be one of the following:
+A scope element can be one of the following,
 
 * The name of a security check.
-* An arbitrary keyword such as `access-restricted` or `deletePrivilege` which defines the level of security needed for this resource. This keyword is later mapped to a security check.
+* An arbitrary keyword such as `access-restricted` or `deletePrivilege`, which defines the level of security that is needed for this resource. This keyword is later mapped to a security check.
 
 #### Scope Mapping
 {: #scopemapping}
 
-By default, the **scope elements** you write in your **scope** are mapped to a **security check with the same name**. For example, if you write a security check called `PinCodeAttempts`, you can use a scope element with the same name within your scope.
+By default, the **scope elements** you write in your **scope** are mapped to a **security check** with the same name. For example, if you write a security check that is called `PinCodeAttempts`, you can use a scope element with the same name within your scope.
 
-Scope Mapping allows to map scope elements to security checks. When the client asks for a scope element, this configuration defines which security checks should be applied. For example, you can map the scope element `access-restricted` to your `PinCodeAttempts` security check.
+Scope Mapping allows mapping scope elements to security checks. When the client asks for a scope element, this configuration defines which security checks are required to be applied. For example, you can map the scope element `access-restricted` to your `PinCodeAttempts` security check.
 
 Scope mapping is useful if you want to protect a resource differently depending on which application is trying to access it. You can also map a scope to a list of zero or more security checks.
 
@@ -249,7 +252,7 @@ For example: scope = `access-restricted deletePrivilege`
 You can also manually edit the application’s configuration JSON file with the required configuration and push the changes back to a MobileFirst Server.
 
 1. From a **command-line window**, navigate to the project’s root folder and run the `mfpdev app pull`.
-2. Open the configuration file, located in the **[project-folder]\mobilefirst** folder.
+2. Open the configuration file, which is located in the `[project-folder]\mobilefirst` folder.
 3. Edit the file by defining a `scopeElementMapping` property. In this property, define data pairs that are each composed of the name of your selected scope element, and a string of zero or more space-separated security checks to which the element maps. For example:
 
 ```java
@@ -258,9 +261,13 @@ You can also manually edit the application’s configuration JSON file with the 
          "SSOUserValidation": "LtpaBasedSSO CredentialsValidation"
      }
 ```
-4. Deploy the updated configuration JSON file by running the command: `mfpdev app push`.
+4. Deploy the updated configuration JSON file by running the following command,
+  ```bash
+  mfpdev app push
+  ```
 
->You can also push updated configurations to remote servers. Refer to Using MobileFirst CLI to Manage MobileFirst artifacts tutorial.
+You can also push updated configurations to remote servers. Refer to Using MobileFirst CLI to Manage MobileFirst artifacts tutorial.
+{: note}
 
 ### Protecting resources
 {: #protecting-resources}
@@ -272,10 +279,10 @@ You can protect your resources in various ways:
 #### Mandatory application scope
 {: #mandatoryappscope}
 
-At the application level, you can define a scope that will apply to all the resources used by the application. The security framework runs these checks (if exist) in addition to the security checks of the requested resource scope.
+At the application level, you can define a scope that applies to all the resources used by the application. The security framework runs these checks (if exist) in addition to the security checks of the requested resource scope.
 
 >**Note**:
->* The mandatory application scope is not applied when accessing an unprotected resource.
+>* The mandatory application scope is not applied when you access an unprotected resource.
 >* The access token that is granted for the resource scope does not contain the mandatory application scope.
 
 In the MobileFirst Operations Console, select your application from the **Applications** section of the navigation sidebar, and then select the **Security** tab. Under **Mandatory Application Scope**, select **Add to Scope**.
@@ -285,8 +292,8 @@ In the MobileFirst Operations Console, select your application from the **Applic
 You can also manually edit the application’s configuration JSON file with the required configuration and push the changes back to a MobileFirst Server.
 
 1. From a **command-line window**, navigate to the project’s root folder and run the `mfpdev app pull`.
-2. Open the configuration file, located in the **project-folder\mobilefirst** folder.
-3. Edit the file by defining a `mandatoryScope` property, and setting the property value to a scope string that contains a space-separated list of your selected scope elements. For example:
+2. Open the configuration file, which is located in the **project-folder\mobilefirst** folder.
+3. Edit the file by defining a `mandatoryScope` property, and setting the property value to a scope string that contains a space-separated list of your selected scope elements. For example,
 
     ```java
         "mandatoryScope": "appAuthenticity PincodeValidation"
@@ -298,7 +305,7 @@ You can also manually edit the application’s configuration JSON file with the 
 #### Protecting adapter resources
 {: #protectadapterres}
 
-In your adapter, you can specify the protecting scope for a Java method or JavaScript resource procedure, or for an entire Java resource class. A scope is defined as a string of one or more space-separated scope elements (“scopeElement1 scopeElement2 …”), or null to apply the default scope. For more details on protecting adapter resources, refer to [Protecting Adapters](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
+In your adapter, you can specify the protecting scope for a Java method or JavaScript resource procedure, or for an entire Java resource class. A scope is defined as a string of one or more space-separated scope elements (“scopeElement1 scopeElement2 …”), or null to apply the default scope. For more information on protecting adapter resources, see [Protecting Adapters](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
 
 ### Disabling resource protection
 {: #disablingresprotection}
@@ -368,4 +375,4 @@ An unprotected resource is a resource that does not require an access token. The
 ### Protecting external resources
 {: #protecextresources}
 
-To protect external resources, you add a resource filter with an access-token validation module to the external resource server. The token-validation module uses the introspection endpoint of the security framework’s authorization server to validate MobileFirst access tokens before granting the OAuth client access to the resources. You can use the MobileFirst REST API for the MobileFirst runtime to create your own access-token validation module for any external server. Alternatively, use one of the provided MobileFirst extensions for protecting external Java resources.
+To protect external resources, you add a resource filter with an access-token validation module to the external resource server. The token-validation module uses the introspection endpoint of the security framework’s authorization server to validate MobileFirst access tokens before the OAuth client access is granted to the resources. You can use the MobileFirst REST API for the MobileFirst runtime to create your own access-token validation module for any external server. Alternatively, use one of the provided MobileFirst extensions for protecting external Java resources.

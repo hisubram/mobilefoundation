@@ -222,7 +222,7 @@ Use the below **Deploy script**:
 
 The script uses mfpdev-cli's adapter deploy command to deploy adapter to the MFP instance.
 
-- Set **INSTANCE_NAME** in the Environment properties tab as the one set in first stage when {{ site.data.keyword.mobilefoundation_short }} instance was created. We use the same instance name so that the adapter gets deployed to the instance we created in the first stage.
+- Set *INSTANCE_NAME* in the **Environment properties** tab with the value same as the one set in first stage when {{ site.data.keyword.mobilefoundation_short }} instance was created. We use the same instance name so that the adapter gets deployed to the instance we created in the first stage.
 
 
 #### Stage 4 - Test Adapter

@@ -31,14 +31,14 @@ lastupdated: "2019-03-13"
 # Using {{ site.data.keyword.cos_full_notm }} with {{ site.data.keyword.IBM_notm}} {{ site.data.keyword.mobilefoundation_short}}
 {: #using_ibm_cloud_object_storage_with_ibm_mobile_foundation}
 
-{{ site.data.keyword.IBM_notm}} {{ site.data.keyword.mobilefoundation_short}} (MF) delivers enterprise-grade capabilities uniquely designed to support building and deploying of the next generation of cognitive, contextual and personalized mobile apps. {{ site.data.keyword.cos_full_notm }} (COS) is a flexible, cost-effective and scalable cloud storage for unstructured data. This how-to guide will explain how a mobile appplication using {{ site.data.keyword.mobilefoundation_short}} can connect and fetch/upload data to {{ site.data.keyword.cos_full_notm }} through an ionic application. The ionic application, adapter and related files for this how-to tutorial are available [here](https://github.com/MobileFirst-Platform-Developer-Center/COS_MF_Short_Stories_Ionic_App).
+{{ site.data.keyword.IBM_notm}} {{ site.data.keyword.mobilefoundation_short}} (MF) delivers enterprise-grade capabilities uniquely designed to support building and deploying of the next generation of cognitive, contextual and personalized mobile apps. {{ site.data.keyword.cos_full_notm }} (COS) is a flexible, cost-effective and scalable cloud storage for unstructured data. This how-to guide will explain how a mobile application using {{ site.data.keyword.mobilefoundation_short}} can connect and fetch/upload data to {{ site.data.keyword.cos_full_notm }} through an ionic application. The ionic application, adapter and related files for this how-to tutorial are available [here](https://github.com/MobileFirst-Platform-Developer-Center/COS_MF_Short_Stories_Ionic_App).
 {: shortdesc}
 
 
 ## Prerequisites
 {: #cos-prerequisites}
 
-1. Install the [mfpdev-cli](https://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_wl_cli_description.html) by running `npm install -g mfpdev-cli`. This cli is used to register the ionic app and deploy the adapter to the MF server. Alternatively these activities can be performed from the MF server dashboard. 
+1. Install the [mfpdev-cli](https://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_wl_cli_description.html) by running `npm install -g mfpdev-cli`. This cli is used to register the ionic app and deploy the adapter to the MF server. Alternatively these activities can be performed from the MF server dashboard.
 
 2. Install [{{ site.data.keyword.cloud_notm}} CLI](https://console.bluemix.net/docs/cli/index.html#overview) on your machine.
 

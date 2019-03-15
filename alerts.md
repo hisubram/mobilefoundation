@@ -17,9 +17,9 @@ lastupdated: "2018-11-23"
 # Set up alerts
 {: #set_up_alerts}
 
-Mobile Analytics provides the Alerts feature, which allows you to define alerts to monitor your applications. You can configure thresholds, which if exceeded triggers alerts to notify the Mobile Analytics console monitor. The triggered alerts can be visualized on the console or can be configured to be relayed to a custom webhook for appropriate handling.
+Mobile Analytics provides the Alerts feature, which allows defining alerts to monitor your applications. You can configure thresholds, which if exceeded triggers alerts to notify the Mobile Analytics console monitor. The triggered alerts can be visualized on the console or can be configured to be relayed to a custom webhook for appropriate handling.
 
-This feature provides the means for detecting and alerting threshold breaches observed over application error logs, application crashes and network transactions. Reactive thresholds and alerts bring agility in responses to application performance conditions without having to continuously monitor the corresponding views / charts.
+This feature provides the means for detecting and alerting threshold breaches observed over application error logs, application crashes, and network transactions. Reactive thresholds and alerts bring agility in responses to application performance conditions without having to continuously monitor the corresponding views / charts.
 
 This feature is in BETA.
 {: note}
@@ -29,7 +29,7 @@ The following sections detail the creation, management of alerts and their viewi
 ## Creating an alert definition for Application Logs (App Logs)
 {: #creating_alert_def}
 
-You can create an alert definition that is based on App Logs.  For example if you wish to monitor your application logs every 5 minutes to check if your application of a specific version has logged errors more than three times then here is how you can go about setting this up.
+You can create an alert definition that is based on App Logs.  For example, if you wish to monitor your application logs every 5 minutes to check whether your application of a specific version logged errors more than three times, then here is how you can set this up.
 
 1.  In the Mobile Analytics console, click **Definitions** to go to the alert definitions page.
 2.  Click **Create Alert**.
@@ -47,14 +47,14 @@ You can create an alert definition that is based on App Logs.  For example if yo
             * Threshold value: *3*
 4.  Click **Next** and provide the following value:
     * **Method**: *Analytics Console Only*<br/>
-      Choose the *Analytics Console and Network Post* option, if you want to additionally send a POST message with a JSON payload to your customized URL. The following fields are available if you choose this option.
+      Additionally, choose the *Analytics Console and Network Post* option, if you want to send a POST message with a JSON payload to your customized URL. The following fields are available if you choose this option.
       * **Network Post URL**
       * **Headers**
       * **Authentication Type**
       * **POST Request Body**
 5. Click **Save**.  
 
-You've now created an alert definition to trigger an alert at the end of every 5 minute interval when the number of app logs reached the threshold of 3 or more error logs.
+You now created an alert definition to trigger an alert at the end of every 5-minute interval when the number of app logs reached the threshold of 3 or more error logs.
 
 This alert stays live and active, monitoring by the setup frequency until the alert definition is disabled or deleted.
 {: note}
@@ -62,7 +62,7 @@ This alert stays live and active, monitoring by the setup frequency until the al
 ## Creating an alert definition for application crashes
 {: #creating_alert_crashes}
 
-Here is an example of setting up alerts around application crashes.  This alert monitors in every two minutes, all application crashes and triggers an alert if the number of crashes observed crosses a count of 5.
+Following is an example of setting up alerts around application crashes.  This alert monitors in every 2 minutes, all application crashes and triggers an alert if the number of crashes that are observed crosses a count of 5.
 
 1.  In the Mobile Analytics console, click **Definitions** to go to the alert definitions page.
 2.  Click **Create Alert**.
@@ -78,7 +78,7 @@ Here is an example of setting up alerts around application crashes.  This alert 
     * Threshold value: *5*
 4.  Click **Distribution Method** or **Next** and provide the following value:
     * **Method**: *Analytics Console Only*<br/>
-      Choose the *Analytics Console and Network Post* option, if you want to additionally send a POST message with a JSON payload to your customized URL. The following fields are available if you choose this option.
+      Additionally, choose the *Analytics Console and Network Post* option, if you want to send a POST message with a JSON payload to your customized URL. The following fields are available if you choose this option.
       * **Network Post URL**
       * **Headers**
       * **Authentication Type**
@@ -93,9 +93,9 @@ This alert stays live and active, monitoring by the setup frequency until the al
 
 You manage your alert definitions from the alert **Definitions** page.
 
-For each alert definition you can do the following operations:
+For each alert definition you can do the following operations,
 * Toggle the check-box under the **Enabled** column to enable or disable a specific alert definition.
-* If you want to create a copy of an alert definition and change some values, click the duplicate icon .
+* If you want to create a copy of an alert definition and change some values, click the duplicate icon.
 * Click the pencil icon, if you want to edit an alert definition.
 * Click the trash icon, if you want to delete an alert definition.
 
