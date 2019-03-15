@@ -36,7 +36,7 @@ Push notifications can be sent either from the {{ site.data.keyword.mfp_oc_short
 {: shortdesc}
 
 * With the {{ site.data.keyword.mfp_oc_short_notm }}, two types of notifications can be sent: tag and broadcast.
-* With the REST APIs, all forms of notifications can be sent: tag, broadcast and authenticated.
+* With the REST APIs, all forms of notifications can be sent: tag, broadcast, and authenticated.
 
 ## Sending Push Notifications from {{ site.data.keyword.mfp_oc_short_notm }}
 {: #sending-push-notification-from-mobilefirst-operations-console }
@@ -46,7 +46,7 @@ Notifications can be sent to a single Device ID, a single or several User IDs, o
 ### Tag notifications
 {: #tag-notifications }
 
-Tag notifications are notification messages that are targeted to all the devices that are subscribed to a particular tag. Tags represent topics of interest to the user and provide the ability to receive notifications according to the chosen interest.
+Tag notifications are notification messages that are targeted to all the devices that are subscribed to a particular tag. Tags represent topics of interest to the user and provides the ability to receive notifications according to the chosen interest.
 
 In the {{ site.data.keyword.mfp_oc_short_notm }} → **[your application] → Push → Send Notifications tab**, select **Devices By Tags** from the **Send To** tab and provide the **Notification Text**. Then, click **Send**.
 
@@ -61,13 +61,13 @@ In the {{ site.data.keyword.mfp_oc_short_notm }} → **[your application] → Pu
 
 <img class="gifplayer" alt="Sending to all" src="images/sending-to-all.png"/>
 
-## Sending Push Notifications using REST APIs
+## Sending Push Notifications by using REST APIs
 {: #sending-push-notifications-using-rest-apis }
 
-When using the REST APIs to send notifications, all forms of notifications can be sent: tag &amp; broadcast notifications, and authenticated notifications.
+When you use the REST APIs to send notifications, all forms of notifications can be sent: tag and broadcast notifications, and authenticated notifications.
 
-To send a notification, a request is made using POST to the REST endpoint: `imfpush/v1/apps/<application-identifier>/messages`.  
-Example URL:
+To send a notification, a request is made by using POST to the REST endpoint: `imfpush/v1/apps/<application-identifier>/messages`.  
+Following is an example URL,
 
 ```
 https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
@@ -80,17 +80,17 @@ https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
 
 The request can contain the following payload properties:
 
-Payload Properties| Definition
---- | ---
-message | The alert message to be sent
-settings | The settings are the different attributes of the notification.
-target | Set of targets can be consumer Ids, devices, platforms, or tags. Only one of the targets can be set.
-deviceIds | An array of the devices represented by the device identifiers. Devices with these ids receive the notification. This is a unicast notification.
-notificationType | Integer value to indicate the channel (Push/SMS) used to send message. Allowed values are 1 (only Push), 2 (only SMS) and 3 (Push and SMS)
-platforms | An array of device platforms. Devices running on these platforms receive the notification. Supported values are A (Apple/iOS), G (Google/Android) and M (Microsoft/Windows).
-tagNames | An array of tags specified as tagNames. Devices that are subscribed to these tags receive the notification. Use this type of target for tag based notifications.
-userIds | An array of users represented by their userIds to send the notification. This is a unicast notification.
-phoneNumber | The phone number used for registering the device and receiving notifications. This is a unicast notification.
+|Payload Properties| Definition
+|--- | ---
+|message | The alert message to be sent
+|settings | The settings are the different attributes of the notification.
+|target | Set of targets can be consumer Ids, devices, platforms, or tags. Only one of the targets can be set.
+|deviceIds | An array of the devices represented by the device identifiers. Devices with these ids receive the notification. This is a unicast notification.
+|notificationType | Integer value to indicate the channel (Push or SMS) used to send message. Allowed values are 1 (for Push only), 2 (for SMS only) and 3 (for both Push and SMS)
+|platforms | An array of device platforms. Devices running on these platforms receive the notification. Supported values are A (Apple/iOS), G (Google/Android) and M (Microsoft/Windows).
+|tagNames | An array of tags that are specified as tagNames. Devices that are subscribed to these tags receive the notification. Use this type of target for tag-based notifications.
+|userIds | An array of users represented by their userIds to send the notification. This is a unicast notification.
+|phoneNumber | The phone number that is used for registering the device and receiving notifications. This is a unicast notification.
 
 **Push Notifications Payload JSON Example**
 
@@ -141,7 +141,7 @@ phoneNumber | The phone number used for registering the device and receiving not
 ## Sending the notification
 {: #sending-the-notification }
 
-The notification can be sent using different tools. For testing purposes, Postman is used as described below:
+The notification can be sent by using different tools. For testing purposes, **Postman** is used, following steps describe the setup,
 
 1. [Configure a Confidential Client](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/confidential-clients/).
   Sending a Push Notification via the REST API uses the space-separated scope elements `messages.write` and `push.application.<applicationId>.`
@@ -151,11 +151,11 @@ The notification can be sent using different tools. For testing purposes, Postma
   - If using a remote {{ site.data.keyword.mobilefirst_notm }}, replace the `hostname` and `port` values with your own.
   - Update the application identifier value with your own.
 4. Set a Header:
-    - **Authorization**: `Bearer eyJhbGciOiJSUzI1NiIsImp ...`
-    - Replace the value after "Bearer" with the value of your access token from step (1) above.
-    ![authorization header](images/postman_authorization_header.png)
+    - `**Authorization**: Bearer eyJhbGciOiJSUzI1NiIsImp ...`
+    - Replace the value after **Bearer** with the value of your access token from step (1).
+    ![Authorization header](images/postman_authorization_header.png)
 5. Set a Body:
-  - Update its properties as described in [Notification payload](#notification-payload) above.
+  - Update its properties as described in [Notification payload](#notification-payload).
   - For example, by adding the **target** property with the **userIds** attribute, you can send a notification to specific registered users.
     ```json
     {
@@ -165,16 +165,16 @@ The notification can be sent using different tools. For testing purposes, Postma
     }
     ```
 
-    ![authorization header](images/postman_json.png)
+    ![Authorization header](images/postman_json.png)
 
-    After clicking on the **Send** button, the device should have now received a notification:
+    After you click the **Send** button, the device receives a notification:
 
     ![Image of the sample application](images/notifications-app.png)
 
 ## Customizing Notifications
 {: #customizing-notifications }
 
-Before sending the notification message, you can also customize the following notification attributes.  
+Before you send the notification message, you can also customize the following notification attributes.  
 
 In the {{ site.data.keyword.mfp_oc_short_notm }} → **[your application] → Push → Tags → Send Notifications tab**, expend the **iOS/Android Custom Settings** section to change notification attributes.
 
@@ -187,17 +187,17 @@ In the {{ site.data.keyword.mfp_oc_short_notm }} → **[your application] → Pu
 ### iOS
 {: #ios }
 
-* Notification sound, custom payload, action key title, notification type and badge number.
+* Notification sound, custom payload, action key title, notification type, and badge number.
 
-  ![customizing push notifications](images/customizing-push-notifications.png)
+  ![Customizing push notifications](images/customizing-push-notifications.png)
 
 ## HTTP/2 Support for APNs Push Notifications
 {: #http2-support-for-apns-push-notifications}
 
-Apple Push Notification service (APNs) supports a new API based on HTTP/2 network protocol. Support for HTTP/2 provides many  benefits, including those listed below:
+Apple Push Notification service (APNs) supports a new API based on HTTP/2 network protocol. Support for HTTP/2 provides many  benefits, including the following,
 
-* Message length increased from 2 KB to 4 KB, which enables to add extra content to notifications.
-* Eliminates the need for multiple connections between client and server, this improves the throughput.
+* Message length that is increased from 2 KB to 4 KB, which enables to add extra content to notifications.
+* Eliminates the need for multiple connections between client and server, which improves the throughput.
 * Universal Push Notification Client SSL Certificate support.
 
 >Push Notifications in {{ site.data.keyword.mobilefirst_notm }} now supports the HTTP/2 based APNs Push Notifications along with the legacy TCP Socket based notifications.
@@ -205,25 +205,25 @@ Apple Push Notification service (APNs) supports a new API based on HTTP/2 networ
 ### Enabling HTTP/2
 {: #enabling-http2}
 
-HTTP/2 based notifications can be enabled using a JNDI Property.
+HTTP/2 based notifications can be enabled by using a JNDI Property.
 ```xml
 <jndiEntry jndiName="imfpush/mfp.push.apns.http2.enabled" value= "true"/>
 ```
 
->**Note:** If the above JNDI property is added, legacy TCP Socket based notifications will not be used and only the HTTP/2 based notifications will be enabled.
+If the JNDI property is added, legacy TCP Socket based notifications is not used and only the HTTP/2 based notifications are enabled.
 {: note}
 
 ### Proxy Support for HTTP/2
 {: #proxy-support-for-http2}
 
-HTTP/2 based notifications can be sent via a HTTP Proxy. To enable routing of the notifications via a proxy, see [here](#proxy-support).
+HTTP/2 based notifications can be sent via an HTTP Proxy. To enable routing of the notifications via a proxy, see [here](#proxy-support).
 
 ## Proxy Support
 {: #proxy-support }
-You can make use proxy settings to set the optional proxy through which notifications are sent to Android and iOS devices. You can set the proxy by using the **push.apns.proxy.** and **push.gcm.proxy.** configuration properties. For more information, see [List of JNDI properties for {{ site.data.keyword.mfserver_short_notm }} push service](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/installation-configuration/production/server-configuration/#list-of-jndi-properties-for-mobilefirst-server-push-service).
+You can make use proxy settings to set the optional proxy through which notifications are sent to Android and iOS devices. You can set the proxy by using the `push.apns.proxy.*` and `push.gcm.proxy.*` configuration properties. For more information, see [List of JNDI properties for {{ site.data.keyword.mfserver_short_notm }} push service](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/installation-configuration/production/server-configuration/#list-of-jndi-properties-for-mobilefirst-server-push-service).
 
 ## Next steps
 {: #next-tutorial-to-follow }
-With the server-side now set-up, setup the client-side and handle received notifications by following the tutorial below.
+With the server-side now set-up, set up the client-side and handle the received notifications by using the following tutorial.
 
 * [Handling push notifications in Client applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_client_applications#handling_push_notifications_in_client_applications)
