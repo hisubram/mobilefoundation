@@ -32,10 +32,18 @@ lastupdated: "2019-02-28"
 # Configure Push Notifications
 {: #configure_push_notifications}
 
-In order to send push notifications to iOS, Android or Windows devices, the {{ site.data.keyword.mfserver_short_notm }} first needs to be configured with the FCM details for Android, an APNS certificate for iOS or WNS credentials for Windows 8.1 Universal / Windows 10 UWP.
+In order to send push notifications to iOS, Android, or Windows devices, the {{ site.data.keyword.mfserver_short_notm }} first needs to be configured with the FCM details for Android, an APNS certificate for iOS or WNS credentials for Windows 8.1 Universal / Windows 10 UWP.
 {: shortdesc}
 
-Notifications can then be sent to: all devices (broadcast), devices that registered to specific tags, a single Device ID, User Ids, only iOS devices, only Android devices, only Windows devices, or based on the authenticated user.
+Notifications can then be sent by using following options:
+* all devices (broadcast)
+* devices that registered to specific tags
+* a single Device ID,
+* User Ids
+* only iOS devices
+* only Android devices
+* only Windows devices
+* based on the authenticated user.
 
 ## Setting up Notifications
 {: #setting-up-notifications }
@@ -47,19 +55,20 @@ On the server-side, required set-up includes: configuring the needed vendor (APN
 ### Firebase Cloud Messaging
 {: #firebase-cloud-messaging }
 
-Google has [deprecated GCM](https://developers.google.com/cloud-messaging/faq) and has integrated Cloud Messaging with Firebase. If you are using a GCM project, ensure that you [migrate the GCM client apps on Android to FCM](https://developers.google.com/cloud-messaging/android/android-migrate-fcm).
+Google [deprecated GCM](https://developers.google.com/cloud-messaging/faq) and has integrated Cloud Messaging with Firebase. If you are using a GCM project, ensure that you [migrate the GCM client apps on Android to FCM](https://developers.google.com/cloud-messaging/android/android-migrate-fcm).
 {: note}
 
 Android devices use the Firebase Cloud Messaging (FCM) service for push notifications.
 
-To setup FCM:
+To set up FCM:
 
 1. Visit the [Firebase Console](https://console.firebase.google.com/?pli=1).
-2. Create a new project and provide a project name.
+2. Create a project and provide a project name.
 3. Click on the Settings "cog wheel" icon and select **Project settings**.
 4. Click the **Cloud Messaging** tab to generate a **Server API Key** and a **Sender ID** and click **Save**.
 
-> You can also setup FCM using either the [REST API for the {{ site.data.keyword.mobilefirst_notm }} Push service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_gcm_settings_put.html#Push-GCM-Settings--PUT-) or the [REST API for the {{ site.data.keyword.mobilefirst_notm }} administration service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_gcm_settings_put.html#restservicesapi).
+You can also set up FCM by using either the [REST API for the {{ site.data.keyword.mobilefirst_notm }} Push service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_gcm_settings_put.html#Push-GCM-Settings--PUT-) or the [REST API for the {{ site.data.keyword.mobilefirst_notm }} administration service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_gcm_settings_put.html#restservicesapi).
+{: note}
 
 If your organization has a firewall that restricts the traffic to or from the Internet, you must go through the following steps:  
 * Configure the firewall to allow connectivity with FCM in order for your FCM client apps to receive messages.
@@ -75,12 +84,12 @@ If your organization has a firewall that restricts the traffic to or from the In
 
 iOS devices use Apple's Push Notification Service (APNS) for push notifications.  
 
-To setup APNS:
+To set up APNS:
 
 1. Generate a push notification certificate for development or production. For detailed steps, refer the `For iOS` section [here](https://cloud.ibm.com/docs/services/mobilepush?topic=mobile-pushnotification-push_step_1#push_step_1).
 2. In the {{ site.data.keyword.mfp_oc_short_notm }} → **[your application] → Push → Push Settings**, select the certificate type and provide the certificate's file and password. Then, click **Save**.
 
-  * For push notifications to be sent, the following servers must be accessible from a {{ site.data.keyword.mfserver_short_notm }} instance:
+  * For push notifications to be sent, the following servers must be accessible from a {{ site.data.keyword.mfserver_short_notm }} instance,
     * Sandbox servers:
       * gateway.sandbox.push.apple.com:2195
       * feedback.sandbox.push.apple.com:2196
@@ -90,13 +99,14 @@ To setup APNS:
       * 1-courier.push.apple.com 5223
   * During the development phase, use the apns-certificate-sandbox.p12 sandbox certificate file.
   * During the production phase, use the apns-certificate-production.p12 production certificate file.
-    * The APNS production certificate can only be tested once the application that utilizes it has been successfully submitted to the Apple App Store.
+    * The APNS production certificate can be tested only when the application that utilizes it is successfully submitted to the Apple App Store.
     {: note }
 
 MobileFirst does not support Universal certificates.
 {: note }
 
-> You can also setup APNS using either the [REST API for the {{ site.data.keyword.mobilefirst_notm }} Push service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_apns_settings_put.html#Push-APNS-settings--PUT-) or the [REST API for the {{ site.data.keyword.mobilefirst_notm }} administration service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_apns_settings_put.html?view=kc).
+You can also set up APNS by using either the [REST API for the {{ site.data.keyword.mobilefirst_notm }} Push service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_apns_settings_put.html#Push-APNS-settings--PUT-) or the [REST API for the {{ site.data.keyword.mobilefirst_notm }} administration service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_apns_settings_put.html?view=kc).
+{: note}
 
 <img class="gifplayer" alt="Image of adding the APNS credentials" src="images/apns-setup.png"/>
 
@@ -105,12 +115,12 @@ MobileFirst does not support Universal certificates.
 
 Windows devices use the Windows Push Notifications Service (WNS) for push notifications.  
 
-To setup WNS:
+To set up WNS:
 
 1. Follow the [instructions provided by Microsoft](https://msdn.microsoft.com/en-in/library/windows/apps/hh465407.aspx) to generate the **Package Security Identifier (SID)** and **Client secret** values.
 2. In the {{ site.data.keyword.mfp_oc_short_notm }} → **[your application] → Push → Push Settings**, add these values and click **Save**.
 
-> You can also setup WNS using either the [REST API for the {{ site.data.keyword.mobilefirst_notm }} Push service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_wns_settings_put.html?view=kc) or the [REST API for the {{ site.data.keyword.mobilefirst_notm }} administration service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_wns_settings_put.html?view=kc)
+> You can also set up WNS by using either the [REST API for the {{ site.data.keyword.mobilefirst_notm }} Push service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_wns_settings_put.html?view=kc) or the [REST API for the {{ site.data.keyword.mobilefirst_notm }} administration service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_wns_settings_put.html?view=kc)
 
 <img class="gifplayer" alt="Image of adding the WNS credentials" src="images/wns-setup.png"/>
 
@@ -122,7 +132,7 @@ Map the **push.mobileclient** scope element to the application.
 1. Load the {{ site.data.keyword.mfp_oc_short_notm }} and navigate to **[your application] → Security → Scope-Elements Mapping**, click on **New**.
 2. Write "push.mobileclient" in the **Scope element** field. Then, click **Add**.
 
-**List of additional available scopes**
+**List of more available scopes**
 
 **Scopes** | **Description**
 ---|---
@@ -165,14 +175,13 @@ Provide the appropriate `Tag Name` and `Description` and click **Save**.
 
 <img class="gifplayer" alt="Adding tags" src="images/adding-tags.png"/>
 
-Subscriptions tie together a device registration and a tag. When a device is unregistered from a tag, all associated subscriptions are automatically unsubscribed from the device itself. In a scenario where there are multiple users of a device, subscriptions should be implemented in mobile applications based on user log-in criteria. For example, the subscribe call is made after a user successfully logs in to an application and the unsubscribe call is made explicitly as part of the logout action handling.
+Subscriptions tie together a device registration and a tag. When a device is unregistered from a tag, all associated subscriptions are automatically unsubscribed from the device itself. In a scenario where multiple users of a device exist, subscriptions must be implemented in mobile applications based on user log-in criteria. For example, the subscribe call is made after a user successfully logs in to an application and the unsubscribe call is made explicitly as part of the logout action handling.
 
 ## Tutorials to follow next
 {: #tutorials-to-follow-next }
 
 * [Send Push Notifications](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications)
 
-With the server-side now set-up, setup the client-side and handle received notifications.
+With the server-side now set-up, set up the client-side and handle received notifications.
 
 * [Handling push notifications in Client applications](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_client_applications#handling_push_notifications_in_client_applications)
-
