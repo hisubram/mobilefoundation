@@ -33,7 +33,7 @@ lastupdated:  "2019-01-04"
 ### Adding the Android SDK to your app
 {: android}
 
-Open Android Studio, choose the Android view and choose **Gradle Scripts**. Select the `build.gradle (Module: app)` file, then perform the following steps to add the Android SDK to your android application.
+Open Android Studio, choose the Android view and choose **Gradle Scripts**, select the `build.gradle (Module: app)` file, then follow the steps below to add the Android SDK to your android application.
 {: android}
 
 1. Add the following line to the `dependencies` section.
@@ -52,7 +52,7 @@ Open Android Studio, choose the Android view and choose **Gradle Scripts**. Sele
   ```
   {: codeblock}
   {: android}
-3. In the Android view, open **app → manifests → AndroidManifest.xml** file. Add the following permissions before the `application` element.
+3. In the Android view, open **app → manifests → AndroidManifest.xml** file. Add the following permissions above the `application` element.
    ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -70,7 +70,7 @@ Open Android Studio, choose the Android view and choose **Gradle Scripts**. Sele
 ### Adding the iOS SDK to your app
 {: ios}
 
-This SDK is the Core SDK for IBM Mobile Foundation consisting of APIs for implementing Mobile Foundation security, authorization, logging, calling adapters and other core functions. Perform the following steps to add the iOS SDK to your iOS application.
+This is the Core SDK for IBM Mobile Foundation consisting of APIs for implementing Mobile Foundation security, authorization, logging, calling adapters and other core functions. Follow the steps below to add the iOS SDK to your iOS application.
 {: ios}
 
 1. Go to root folder of your iOS app, run the following command to create a Podfile.
@@ -89,13 +89,13 @@ This SDK is the Core SDK for IBM Mobile Foundation consisting of APIs for implem
    ```
    {: codeblock}
    {: ios}
-3. Update pod by using following command.
+3. Update pod using following command.
    ```bash
    pod update
    ```
    {: codeblock}
    {: ios}
-4. Install pod by using following command.
+4. Install pod using following command.
    ```bash
    pod install
    ```
@@ -113,7 +113,7 @@ This SDK is the Core SDK for IBM Mobile Foundation consisting of APIs for implem
 ### Adding the Cordova SDK to your app
 {: cordova}
 
-This SDK is the Core SDK for IBM Mobile Foundation consisting of APIs for implementing Mobile Foundation security, authorization, logging, calling adapters and other core functions. Perform the following steps to add the Cordova SDK to your application.
+This is the Core SDK for IBM Mobile Foundation consisting of APIs for implementing Mobile Foundation security, authorization, logging, calling adapters and other core functions. Follow the steps below to add the Cordova SDK to your application.
 {: cordova}
 
 1. Create a Cordova project.
@@ -156,7 +156,7 @@ This SDK is the Core SDK for IBM Mobile Foundation consisting of APIs for implem
 ### Adding the React Native SDK plug-in to your app
 {: reactnative}
 
-To add Mobile Foundation capabilities to an existing React Native app, you need to add the `react-native-ibm-mobilefirst` plug-in to your app. The `react-native-ibm-mobilefirst` plug-in contains Mobile Foundation SDK. Perform the following steps to add the React Native plug-in to your React Native application.
+To add Mobile Foundation capabilities to an existing React Native app, you need to add the `react-native-ibm-mobilefirst` plug-in to your app. The `react-native-ibm-mobilefirst` plug-in contains Mobile Foundation SDK. Follow the steps below to add the React Native plug-in to your React Native application.
 {: reactnative}
 
 1. Add this plug-in in the same way that you add any other `npm` plug-in to your app.
@@ -186,8 +186,8 @@ To add Mobile Foundation capabilities to an existing React Native app, you need 
    {: reactnative}
 5. For Android, make the following changes to `AndroidManifest.xml` (`<PROJECT_ROOT>/android/app/src/main/`).
    ```xml
-   <manifest
-          xmlns:android="http://schemas.android.com/apk/res/android"
+   <manifest 
+          xmlns:android="http://schemas.android.com/apk/res/android" 
           xmlns:tools="http://schemas.android.com/tools"
           package="com.mobilefirstapp">
    ```
@@ -207,3 +207,4 @@ To add Mobile Foundation capabilities to an existing React Native app, you need 
    {: reactnative}
 7. For iOS, open XCode, in the project navigator, drag and drop `mfpclient.plist` from `ios` folder. This step is applicable only for iOS platform.
 {: reactnative}
+
