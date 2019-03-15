@@ -31,10 +31,10 @@ lastupdated: "2019-03-26"
 # Push Notifications
 {: #push_notifications}
 
-Notifications is the ability of a mobile device to receive messages that are "pushed" from a server. Notifications are received regardless of whether the application is currently running in the foreground or background.  
+Notifications is the ability of a mobile device to receive messages that are "pushed" from a server. Notifications are received regardless of whether the application is running in the foreground or background.  
 {: shortdesc}
 
-{{ site.data.keyword.IBM_notm }} {{ site.data.keyword.mobilefoundation_short }} provides a unified set of API methods to send push notifications to iOS, Android, Windows 8.1 Universal, Windows 10 UWP and Cordova (iOS, Android) applications. The notifications are sent from the {{ site.data.keyword.mfserver_short_notm }} to the vendor (Apple, Google, Microsoft, SMS Gateways) infrastructure, and from there to the relevant devices. The unified notification mechanism makes the entire process of communicating with the users and devices completely transparent to the developer.
+{{ site.data.keyword.IBM_notm }} {{ site.data.keyword.mobilefoundation_short }} provides a unified set of API methods to send push notifications to iOS, Android, Windows 8.1 Universal, Windows 10 UWP, and Cordova (iOS, Android) applications. The notifications are sent from the {{ site.data.keyword.mfserver_short_notm }} to the vendor (Apple, Google, Microsoft, SMS Gateways) infrastructure, and from there to the relevant devices. The unified notification mechanism makes the entire process of communicating with the users and devices transparent to the developer.
 
 ## Device support
 {: #device-support }
@@ -52,8 +52,8 @@ Notifications can take several forms:
 * **Sound** (iOS, Android, Windows) - a sound file playing when a notification is received
 * **Badge** (iOS), Tile (Windows) - a graphical representation that allows a short text or image
 * **Banner** (iOS), Toast (Windows) - a disappearing pop-up text message at the top of the device display
-* **Interactive** (iOS 8 and above) - action buttons inside the banner of a received notification
-* **Silent** (iOS 8 and above) - sending notifications without disturbing the user
+* **Interactive** (iOS 8 and higher) - action buttons inside the banner of a received notification
+* **Silent** (iOS 8 and higher) - sending notifications without disturbing the user
 
 ### Push notification types
 {: #push-notification-types }
@@ -63,7 +63,7 @@ Notifications can take several forms:
 
     Tag notifications are notification messages that are targeted to all the devices that are subscribed to a particular tag.  
 
-    Tags-based notifications allow segmentation of notifications based on subject areas or topics. Notification recipients can choose to receive notifications only if it is about a subject or topic that is of interest. Therefore, tags-based notification provides a means to segment recipients. This feature enables you to define tags and send or receive messages by tags. A message is targeted to only the devices that are subscribed to a tag.
+    Tags-based notifications allow segmentation of notifications based on subject areas or topics. Notification recipients can choose to receive notifications only if it is about a subject or topic that is of interest. Therefore, tags-based notification provides a means to segment recipients. With this feature you can define tags and send or receive messages by tags. A message is targeted to only the devices that are subscribed to a tag.
 
 * **Broadcast notifications**
 {: #broadcast-notifications }
@@ -73,12 +73,12 @@ Notifications can take several forms:
 * **Unicast notifications**
 {:# unicast-notifications }
 
-    Unicast notifications, or User Authenticated Notifications are secured with OAuth. These are notification messages targeted to a particular device or a userID(s). The userID in the user subscription can come from the underlying security context.
+    Unicast notifications, or User Authenticated Notifications are secured with OAuth. These notification messages are targeted to a particular device or a userID(s). The userID in the user subscription can come from the underlying security context.
 
 * **Interactive notifications**
 {: #interactive-notifications-overview }
 
-    With interactive notification, when a notification arrives, users can take actions without opening the application. When an interactive notification arrives, the device shows action buttons along with the notification message. Currently, interactive notifications are supported on devices with iOS version 8 onwards. If an interactive notification is sent to an iOS device with version earlier than 8, the notification actions are not displayed.
+    With interactive notification, when a notification arrives, users can act without opening the application. When an interactive notification arrives, the device shows action buttons along with the notification message. Currently, interactive notifications are supported on devices with iOS version 8 onwards. If an interactive notification is sent to an iOS device with version earlier than 8, the notification actions are not displayed.
 
     > Learn how to handle [Interactive notifications](/docs/services/mobilefoundation?topic=mobilefoundation-interactive_notifications#interactive_notifications).
 
@@ -111,7 +111,7 @@ APNs is not supported.
 #### Configuring the {{ site.data.keyword.mfserver_short_notm }}
 {: #proxy-settings-datapower-1 }
 
-In `server.xml` configure the following JNDI property:
+In `server.xml` configure the following JNDI property.
 ```xml
 <jndiEntry jndiName="imfpush/mfp.push.dp.endpoint" value = '"https://host"' />
 <jndiEntry jndiName="imfpush/mfp.push.dp.gcm.port" value = '"port"' />
@@ -129,16 +129,16 @@ where `host` is the hostname of DataPower and `port` is the port number on which
 3. Provide a name with which you can identify the configuration.
 4. Select XML Manager, Multi-Protocol Gateway Policy as default and URL Rewrite Policy to none.
 5. Select **static-backend** radio button, and select any of the following options for **set Default Backend URL**:
-    - For FCM:	`https://gcm-http.googleapis.com`
-    - For WNS:	`https://hk2.notify.windows.com`
+    - For FCM,	`https://gcm-http.googleapis.com`
+    - For WNS,	`https://hk2.notify.windows.com`
 6. Select the Response Type, Request Type as pass through.
 
 #### Generating a certificate
 {: #proxy-settings-datapower-3 }
 
-To generate certificate, choose any of the following:
+To generate certificate, choose any of the following options:
 
-- For FCM:
+- For FCM,
 	1. From command line, issue `Openssl` to get the FCM certificates.
 	2. Run the following command:
 		```
@@ -146,22 +146,22 @@ To generate certificate, choose any of the following:
 		```
     {: codeblock}
 
-	3. Copy the contents from -----BEGIN CERTIFICATE-----  to -----END CERTIFICATE----- and save it in a file with the `.pem` extension.
+	3. Copy the contents from *-----BEGIN CERTIFICATE-----  to -----END CERTIFICATE-----* and save it in a file with the `.pem` extension.
 
-- For WNS:
+- For WNS,
 	1. From command-line, use `Openssl` to get the WNS certificates.
 	2. Run the following command:
 		```
 		openssl s_client -connect https://hk2.notify.windows.com:443
 		```
     {: codeblock}
-	3. Copy the contents from -----BEGIN CERTIFICATE-----  to -----END CERTIFICATE----- and save it in a file with the `.pem` extension.
+	3. Copy the contents from *-----BEGIN CERTIFICATE-----  to -----END CERTIFICATE-----* and save it in a file with the `.pem` extension.
 
 #### Backside settings
 {: #proxy-settings-datapower-4 }
 
-- For FCM and WNS:
-    1. Create a Crypto Certificate:
+- For FCM and WNS,
+    1. Create a Crypto Certificate.
 
         a. Navigate to **Objects** > **Crypto Configuration** and click **Crypto certificate**.
 
@@ -175,15 +175,15 @@ To generate certificate, choose any of the following:
 
         ![Configure Crypto certificate](images/bck_1.gif)
 
-    2. Create a Crypto Validation Credential:
+    2. Create a Crypto Validation Credential.
 
         a. Navigate to **Objects** > **Crypto Configuration** and click **Crypto Validation Credential**.
 
         b. Provide a unique name.
 
-        c. For Certificates, select the Crypto Certificate that you had created in the preceding step - step 1.
+        c. For Certificates, select the Crypto Certificate that you created in the preceding step - step 1.
 
-        d. For **Certificate Validation Mode** select Match exact certificate or immediate issuer.
+        d. For **Certificate Validation Mode**, select Match exact certificate or immediate issuer.
 
         e. Click **Apply**.
 
@@ -197,7 +197,7 @@ To generate certificate, choose any of the following:
 
         c. Provide a unique name.
 
-        d. For **Validation Credentials**, select the validation credential created in the preceding step - step 2 from the drop down menu, set Identification Credentials to **none**.
+        d. For **Validation Credentials**, select the validation credential that is created in the preceding step - step 2 from the drop down menu, set Identification Credentials to **none**.
 
         e. Click **Apply**.
 
@@ -252,7 +252,7 @@ To generate certificate, choose any of the following:
 
         c. Provide a unique name.
 
-        d. For the Crypto Key and Certificate, select the key and certificate generated from the preceding step - step 1 from the list box.
+        d. For the Crypto Key and Certificate, select the key and certificate that is generated from the preceding step - step 1 from the list box.
 
         e. Click **Apply**.
 
@@ -266,7 +266,7 @@ To generate certificate, choose any of the following:
 
         c. Provide a unique name.
 
-        d. For Identification Credentials, select the identification credential created from the preceding step - step 2 from the list box. Set Validation credentials to none.
+        d. For Identification Credentials, select the identification credential that is created from the preceding step - step 2 from the list box. Set Validation credentials to none.
 
         e. Click **Apply**.
 
@@ -282,7 +282,7 @@ To generate certificate, choose any of the following:
 
         d. Select SSL Direction as **Reverse** from the list box.
 
-        e. For Reverse (Server) Crypto Profile, select the crypto profile created in the preceding step - step 3.  
+        e. For Reverse (Server) Crypto Profile, select the crypto profile that is created in the preceding step - step 3.  
 
         f. Click **Apply**.
 
@@ -304,7 +304,7 @@ To generate certificate, choose any of the following:
 
         g. Select **Proxy Profile** as the SSL server type.
 
-        h. For SSL proxy profile (deprecated), select the ssl proxy profile created in the preceding step - step 4.
+        h. For SSL proxy profile (deprecated), select the ssl proxy profile that is created in the preceding step - step 4.
 
         i. Click **Apply**.
 
@@ -314,12 +314,12 @@ To generate certificate, choose any of the following:
 
         ![General configuration](images/frnt_6.gif)
 
-    The certificate that is being used by DataPower in Front side settings, is a self-signed one. Unless that certificate is added to the JRE keystore used by {{ site.data.keyword.mobilefirst_notm }}, connections to DataPower will fail.
+    The certificate that is being used by DataPower in Front side settings, is a self-signed one. Connections to the DataPower fails unless the certificate is added to the JRE keystore used by {{ site.data.keyword.mobilefirst_notm }}.
 
 ## Next steps
 {: #next-steps }
 
-Follow through the below required setup of the server-side and client-side in order to be able to send and receive push notifications:
+Follow through the required setup of the server-side and client-side in order to send and receive push notifications:
 
 * [Configure Push Notifications](/docs/services/mobilefoundation?topic=mobilefoundation-configure_push_notifications#configure_push_notifications)
 * [Send Push Notifications](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications)
