@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-03-06"
 
+keywords: push notifications, notifications, set up android app for notification, set up iOS app for notification, set up cordova app for notification, set up windows app for notification
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

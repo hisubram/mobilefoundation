@@ -4,6 +4,9 @@ copyright:
   years: 2019
 lastupdated: "2018-12-21"
 
+keywords: sdk api, javascript sdk api
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

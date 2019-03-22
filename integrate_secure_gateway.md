@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-13"
 
+keywords: integration, mobile foundation, secure gateway
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -45,7 +48,7 @@ The following image illustrates the architecture used in the integration scenari
 {: #implementing_sg_integration}
 
 ### Create a Secure Gateway service instance
-Log in to IBM Cloud and create an instance of the [Secure Gateway service](https://cloud.ibm.com/catalog/services/secure-gateway/). 
+Log in to IBM Cloud and create an instance of the [Secure Gateway service](https://cloud.ibm.com/catalog/services/secure-gateway/).
 
 ![IBM Cloud](images/SecureGatewayInst.gif)
 
@@ -68,7 +71,7 @@ From within your new gateway from the **Clients** tab, click **Connect Client**.
 
 You can use any of the clients of your choice and run the Secure Gateway client on your on-premise environment. The steps to setup the Secure Gateway client are available in the Secure Gateway console.
 
-In this tutorial, we will use the Docker container option to run the Secure Gateway client. 
+In this tutorial, we will use the Docker container option to run the Secure Gateway client.
 Follow the steps below:
 *   Install Docker on your on-premise machine, if it is not already installed.
 *   Launch a terminal and run the Secure Gateway client on a container using the command shown in the service console.
@@ -120,20 +123,20 @@ In this tutorial, we will connect to the Secure Gateway endpoint using a Mobile 
 
 Build and deploy the adapter in Mobile Foundation Operations console using [mfpdev-cli](/docs/services/mobilefoundation?topic=mobilefoundation-mobile_foundation_cli#mobile_foundation_cli) commands.
 ```bash
-mfpdev adapter build 
+mfpdev adapter build
 mfpdev adapter deploy
 ```
 {: codeblock}
 
 Learn about building and deploying adapters from [here ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/).
 {: tip}
- 
-Provide the cloud host and port details for the resource endpoint in the JavaHTTP adapter, got from the previous section. 
+
+Provide the cloud host and port details for the resource endpoint in the JavaHTTP adapter, got from the previous section.
 
 ![AdapterConfiguration ](images/AdapterConfiguration.png)
 
 where `cap-sg-prd-5.securegateway.appdomain.cloud` and `18946` are Secure Gateway host and port respectively.
- 
+
 The Mobile Foundation adapter is now configured and the Mobile Foundation service is now enabled to work with an on-premise system within the enterprise using the Secure Gateway service.
 
 ### Creating and registering Mobile Foundation sample app
@@ -152,4 +155,3 @@ You can connect to multiple on-premise endpoints by configuring multiple destina
 {: #summary_int_sec_gw}
 
 Using this tutorial you should be able to establish a secure connection between the Mobile Foundation adapters running on IBM Cloud and an on-premise HTTP endpoint, using the Secure Gateway service.
-

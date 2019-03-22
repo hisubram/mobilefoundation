@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2018-11-19"
 
+keywords: command line, cli, mfpdev-cli, cli commands
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

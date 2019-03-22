@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-03-26"
 
+keywords: Push Notifications, notifications, unicast notifications, tag notifications, interactive notifications, silent notifications, configure DataPower
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

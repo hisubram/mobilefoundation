@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-29"
 
+keywords: app versions, disabling apps
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

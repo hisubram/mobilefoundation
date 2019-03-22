@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-01"
 
+keywords: mobile analytics, charts, visualize data, analytics console
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

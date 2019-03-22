@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-03-13"
 
+keywords: mobile foundation, integration, cloud object storage, COS, ibm cloud
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

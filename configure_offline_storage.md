@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, offline storage, add jsonstore to cordova, add jsonstore to iOS, add jsonstore to android, jsonstore methods, jsonstore operations
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -39,7 +42,7 @@ For advanced offline storage configuration, see [here](/docs/services/mobilefoun
 {: #configure_offline_storage_cordova}
 {: cordova}
 
-Make sure the Mobile Foundation Cordova SDK was added to the project. 
+Make sure the Mobile Foundation Cordova SDK was added to the project.
 {: cordova}
 
 Follow the [Adding the Mobile Foundation SDK to Cordova applications ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/cordova/) tutorial.
@@ -51,7 +54,7 @@ Follow the [Adding the Mobile Foundation SDK to Cordova applications ![External 
 {: cordova}
 
 1. Open a command line window and navigate to your Cordova project folder.
-2. Run the command: 
+2. Run the command:
    ```bash
    cordova plugin add cordova-plugin-mfp-jsonstore
    ```
@@ -82,7 +85,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 {: cordova}
 
 #### Get an accessor to your Cordova JSONStore collection
-{: #get_jsonstore_cordova} 
+{: #get_jsonstore_cordova}
 {: cordova}
 
 Use `get` to create an accessor to the collection. You must call `init` before you call get otherwise the result of `get` will be *undefined*.
@@ -98,7 +101,7 @@ The variable *people* can now be used to perform operations on the *people* coll
 {: cordova}
 
 #### Add documents to a Cordova collection
-{: #add_jsonstore_cordova} 
+{: #add_jsonstore_cordova}
 {: cordova}
 
 Use `add` to store data as documents inside a collection.
@@ -119,7 +122,7 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 {: cordova}
 
 #### Find documents inside a Cordova collection
-{: #find_jsonstore_cordova} 
+{: #find_jsonstore_cordova}
 {: cordova}
 
 * Use `find` to locate a document inside a collection by using a query.
@@ -170,7 +173,7 @@ else {
 {: cordova}
 
 #### Replace documents inside a Cordova collection
-{: #replace_jsonstore_cordova} 
+{: #replace_jsonstore_cordova}
 {: cordova}
 
 Use `replace` to modify documents inside a collection. The field that you use to perform the replacement is `_id`, the document unique identifier.
@@ -196,7 +199,7 @@ This examples assumes that the document `{_id: 1, json: {name: 'yoel', age: 23} 
 {: cordova}
 
 #### Remove documents from a Cordova collection
-{: #remove_jsonstore_cordova} 
+{: #remove_jsonstore_cordova}
 {: cordova}
 
 Use `remove` to delete a document from a collection.
@@ -217,14 +220,14 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: cordova}
 
 #### Remove an entire Cordova collection
-{: #remove_collection_jsonstore_cordova} 
+{: #remove_collection_jsonstore_cordova}
 {: cordova}
 
 Use `removeCollection` to delete all the documents that are stored inside a collection. This operation is similar to dropping a table in database terms.
 {: cordova}
 
 #### Destroy Cordova JSONStore
-{: #destroy_jsonstore_cordova} 
+{: #destroy_jsonstore_cordova}
 {: cordova}
 
 Use `destroy` to remove the following data:
@@ -238,7 +241,7 @@ Use `destroy` to remove the following data:
 {: #configure_offline_storage_ios}
 {: ios}
 
-Make sure the Mobile Foundation Native SDK was added to the Xcode project. 
+Make sure the Mobile Foundation Native SDK was added to the Xcode project.
 {: ios}
 
 Follow the [Adding the Mobile Foundation SDK to iOS applications ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/ios/) tutorial.
@@ -255,17 +258,17 @@ Follow the [Adding the Mobile Foundation SDK to iOS applications ![External link
    ```
    {: codeblock}
    {: ios}
-2. From command line, go to the root of the Xcode project and run the command: 
+2. From command line, go to the root of the Xcode project and run the command:
    ```bash
    pod install
-   ``` 
+   ```
    {: codeblock}
    {: ios}
 3. Whenever you want to use JSONStore, make sure that you import the JSONStore header:
    **Objective-C**:
    ```objectivec
    #import <IBMMobileFirstPlatformFoundationJSONStore/IBMMobileFirstPlatformFoundationJSONStore.h>
-   ``` 
+   ```
    {: codeblock}
    **Swift:**
    ```swift
@@ -274,8 +277,8 @@ Follow the [Adding the Mobile Foundation SDK to iOS applications ![External link
    {: codeblock}
    {: ios}
 
-#### Open iOS JSONStore collection 
-{: #open_ios} 
+#### Open iOS JSONStore collection
+{: #open_ios}
 {: ios}
 
 Use `openCollections` to open one or more JSONStore collections.
@@ -297,7 +300,7 @@ do {
 {: ios}
 
 #### Get an accessor to your iOS JSONStore collection
-{: #get_jsonstore_ios} 
+{: #get_jsonstore_ios}
 {: ios}
 
 Use `getCollectionWithName` to create an accessor to the collection. You must call `openCollections` before you call `getCollectionWithName`.
@@ -314,7 +317,7 @@ The variable collection can now be used to perform operations on the `people` co
 {: ios}
 
 #### Add documents to an iOS collection
-{: #add_jsonstore_ios} 
+{: #add_jsonstore_ios}
 {: ios}
 
 Use `addData` to store data as documents inside a collection.
@@ -336,7 +339,7 @@ do  {
 {: ios}
 
 #### Find documents inside an iOS collection
-{: #find_jsonstore_ios} 
+{: #find_jsonstore_ios}
 {: ios}
 
 Use `findWithQueryParts` to locate a document inside a collection by using a query. Use `findAllWithOptions` to retrieve all the documents inside a collection. Use `findWithIds` to search by the document unique identifier.
@@ -363,7 +366,7 @@ do  {
 {: ios}
 
 #### Replace documents inside an iOS collection
-{: #replace_jsonstore_ios} 
+{: #replace_jsonstore_ios}
 {: ios}
 
 Use `replaceDocuments` to modify documents inside a collection. The field that you use to perform the replacement is `_id`, the document unique identifier.
@@ -394,10 +397,10 @@ This example assumes that the document `{_id: 1, json: {name: 'yoel', age: 23} }
 {: ios}
 
 #### Remove documents from an iOS collection
-{: #remove_jsonstore_ios} 
+{: #remove_jsonstore_ios}
 {: ios}
 
-Use `removeWithIds` to delete a document from a collection. Documents aren’t erased from the collection until you call `markDocumentClean`. 
+Use `removeWithIds` to delete a document from a collection. Documents aren’t erased from the collection until you call `markDocumentClean`.
 {: ios}
 
 ```swift
@@ -414,7 +417,7 @@ do {
 {: ios}
 
 #### Remove an entire iOS collection
-{: #remove_collection_jsonstore_ios} 
+{: #remove_collection_jsonstore_ios}
 {: ios}
 
 Use `removeCollection` to delete all the documents that are stored inside a collection. This operation is similar to dropping a table in database terms.
@@ -434,7 +437,7 @@ do {
 {: ios}
 
 #### Destroy an iOS JSONStore
-{: #destroy_jsonstore_ios} 
+{: #destroy_jsonstore_ios}
 {: ios}
 
 Use `destroyData` to remove the following data:
@@ -458,7 +461,7 @@ do {
 {: #configure_offline_storage_android}
 {: android}
 
-Make sure the Mobile Foundation Native SDK was added to the Android Studio project. 
+Make sure the Mobile Foundation Native SDK was added to the Android Studio project.
 {: android}
 
 Follow the [Adding the Mobile Foundation SDK to Android applications ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/android/) tutorial.
@@ -470,10 +473,10 @@ Follow the [Adding the Mobile Foundation SDK to Android applications ![External 
 {: android}
 
 1. From **Android → Gradle Scripts**, select the `build.gradle (Module: app)` file.
-2. Add the following to the existing `dependencies` section: 
+2. Add the following to the existing `dependencies` section:
    ```bash
    compile 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundationjsonstore:8.0.+'
-   ``` 
+   ```
    {: codeblock}
    {: android}
 3. Add the following to the `DefaultConfig` section of your `build.gradle` file:
@@ -481,7 +484,7 @@ Follow the [Adding the Mobile Foundation SDK to Android applications ![External 
    ndk {
      abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
    }
-   ``` 
+   ```
    {: codeblock}
    {: android}
    We add the `abiFilters` to ensure that the apps having JSONStore will run in any of the architectures specified above. This is required as JSONStore is dependent on a third party library which supports only these architectures.
@@ -489,7 +492,7 @@ Follow the [Adding the Mobile Foundation SDK to Android applications ![External 
    {: android}
 
 #### Open an Android JSONStore collection
-{: #open_android} 
+{: #open_android}
 {: android}
 
 Use `openCollections` to open one or more JSONStore collections.
@@ -513,7 +516,7 @@ try {
 {: android}
 
 #### Get an accessor to your Android JSONStore collection
-{: #get_jsonstore_android} 
+{: #get_jsonstore_android}
 {: android}
 
 Use `getCollectionByName` to create an accessor to the collection. You must call `openCollections` before you call `getCollectionByName`.
@@ -536,7 +539,7 @@ The variable collection can now be used to perform operations on the `people` co
 {: android}
 
 #### Add documents to an Android collection
-{: #add_jsonstore_android} 
+{: #add_jsonstore_android}
 {: android}
 
 Use `addData` to store data as documents inside a collection.
@@ -561,7 +564,7 @@ try {
 {: android}
 
 #### Find documents inside an Android collection
-{: #find_jsonstore_android} 
+{: #find_jsonstore_android}
 {: android}
 
 Use `findDocuments` to locate a document inside a collection by using a query. Use `findAllDocuments` to retrieve all the documents inside a collection. Use `findDocumentById` to search by the document unique identifier..
@@ -590,7 +593,7 @@ try {
 {: android}
 
 #### Replace documents inside an Android collection
-{: #replace_jsonstore_android} 
+{: #replace_jsonstore_android}
 {: android}
 
 Use `replaceDocuments` to modify documents inside a collection. The field that you use to perform the replacement is `_id`, the document unique identifier.
@@ -618,10 +621,10 @@ This example assumes that the document `{_id: 1, json: {name: 'yoel', age: 23} }
 {: android}
 
 #### Remove documents from an Android collection
-{: #remove_jsonstore_android} 
+{: #remove_jsonstore_android}
 {: android}
 
-Use `removeDocumentById` to delete a document from a collection. Documents aren’t erased from the collection until you call `markDocumentClean`. 
+Use `removeDocumentById` to delete a document from a collection. Documents aren’t erased from the collection until you call `markDocumentClean`.
 {: android}
 
 ```java
@@ -642,7 +645,7 @@ try {
 {: android}
 
 #### Remove an entire Android collection
-{: #remove_collection_jsonstore_android} 
+{: #remove_collection_jsonstore_android}
 {: android}
 
 Use `removeCollection` to delete all the documents that are stored inside a collection. This operation is similar to dropping a table in database terms.
@@ -663,7 +666,7 @@ try {
 {: android}
 
 #### Destroy an Android JSONStore
-{: #destroy_jsonstore_android} 
+{: #destroy_jsonstore_android}
 {: android}
 
 Use `destroy` to remove the following data:
@@ -684,4 +687,3 @@ try {
 ```
 {: codeblock}
 {: android}
-

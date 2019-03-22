@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2018-11-16"
 
+keywords: mobile foundation faq, updates to mobile foundation, custom domain
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}

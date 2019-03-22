@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-22"
 
+keywords: mobile analytics, charts, app sessions, crashes, graph
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

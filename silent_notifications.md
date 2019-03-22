@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-28"
 
+keywords: push notifications, notification, sending silent notifications
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -65,7 +68,7 @@ In the JavaScript push notification callback method, you must do the following s
    }
    ```
    {: codeblock}
-   
+
 2. If the notification is silent or mixed, after you complete the background job, invoke `WL.Client.Push.backgroundJobDone` API.
 
 ## Handling silent push notifications in native iOS applications

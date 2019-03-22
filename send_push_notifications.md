@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-28"
 
+keywords: push notifications, notifications, sending notification, HTTP/2
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

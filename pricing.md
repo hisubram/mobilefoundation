@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-27"
 
+keywords: mobile foundation pricing, plan pricing
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -17,7 +20,8 @@ lastupdated: "2018-11-27"
 {: #pricing}
 
 Mobile Foundation service on IBM Cloud offers three different plan options. The pricing on the paid plans can be viewed country or region specific from [here](https://cloud.ibm.com/catalog/services/mobile-foundation). Following plans are provided for the Mobile Foundation service.
-* Developer 
+* Lite
+* 
 * Professional 1 Application
 * Professional Per Device
 

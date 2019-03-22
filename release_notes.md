@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-27"
 
+keywords: mobile foundation release notes, cd updates, updates, continuous delivery updates
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

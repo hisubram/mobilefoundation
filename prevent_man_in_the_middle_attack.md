@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-10-16"
 
+keywords: mobile foundation security, MIM attack, certificate pinning
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

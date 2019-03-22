@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, adapter security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -162,4 +165,3 @@ The following code disables resource protection for a `userName` procedure:
 {: #unprotected-resources}
 
 An unprotected resource is a resource that does not require an access token. The MobileFirst security framework does not manage access to unprotected resources, and does not validate or check the identity of clients that access these resources. Therefore, features such as Direct Update, blocking device access, or remotely disabling an application, are not supported for unprotected resources.
-

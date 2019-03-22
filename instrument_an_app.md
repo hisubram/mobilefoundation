@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-01-30"
 
+keywords: mobile analytics, instrumenting cordova app, instrumenting iOS app, instrumenting android app
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

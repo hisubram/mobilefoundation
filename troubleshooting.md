@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-02-12"
 
+keywords: troubleshooting techniques
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

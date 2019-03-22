@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-23"
 
+keywords: mobile analytics, set up alerts, alert definitions
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

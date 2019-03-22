@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, authentication, using challenge handlers
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ For example, this tutorial describes an application that has two resources prote
 ## Referencing a Security Check
 {: #referencing-a-security-check}
 
-Create two security checks: `StepUpPinCode` and `StepUpUserLogin`. 
+Create two security checks: `StepUpPinCode` and `StepUpUserLogin`.
 
 In this example, `StepUpPinCode` depends on `StepUpUserLogin`. The user should be asked to enter a PIN code only after a successful login to `StepUpUserLogin`. For this purpose, `StepUpPinCode` must be able to reference the `StepUpUserLogin` class.
 

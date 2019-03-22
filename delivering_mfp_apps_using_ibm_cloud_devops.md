@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-03-13"
 
+keywords: mobile foundation, integration, devops, ibmcloud, pipeline
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

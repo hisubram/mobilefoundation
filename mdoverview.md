@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2018-11-27"
 
+keywords: mobile foundation, features, overview
+
+subcollection:  mobilefoundation
 ---
 
 #	Overview

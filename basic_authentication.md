@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: security, basic authentication, protecting resources, tokens, scopemapping
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

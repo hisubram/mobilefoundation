@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation, mobile analytics, professional plan, configure database
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}

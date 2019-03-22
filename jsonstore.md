@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-12"
 
+keywords: JSONStore, offline storage, jsonstore error codes
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-23"
 
+keywords: synchronization of data, sync with offline storage, jsonstore sync
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -46,7 +49,7 @@ A JSONStore collection has to be initialized with a **Sync Policy** field. **Syn
   ```objc
   openOptions.syncPolicy = SYNC_DOWNSTREAM;
   ```
-  
+
   *Cordova*
   ```javascript
   collection.sync = {
@@ -67,7 +70,7 @@ A JSONStore collection has to be initialized with a **Sync Policy** field. **Syn
   ```objc
   openOptions.syncPolicy = SYNC_UPSTREAM;
   ```
-  
+
   *Cordova*
   ```javascript
   collection.sync = {
@@ -97,7 +100,7 @@ This configuration takes the adapter name that is deployed.
  ```objc
   openOptions.syncAdapterPath = @"JSONStoreCloudantSync";
  ```
-  
+
 *Cordova or Ionic*
  ```javascript
   collection.sync = {
@@ -128,9 +131,8 @@ This API performs a downstream sync if the calling collection has a sync policy 
  ```objc
   collection.sync(); //Here collection is the JSONStore collection object that was initialized
  ```
-  
+
 *Cordova*
  ```javascript
   WL.JSONStore.get(collectionName).sync();
  ```
-
