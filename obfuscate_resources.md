@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-10-16"
+lastupdated: "2019-03-26"
 
 keywords: obfuscating resources, security
 
@@ -47,7 +47,12 @@ Obfuscation makes it much more difficult for attackers to review the code and an
 ## Encrypting the web resources of your Cordova packages
 {: #encryptingcordovapackage}
 
-To minimize the risk of viewing and modifying your web resources by someone, while it is in the ``.apk`` or ``.ipa`` package, you can use the MobileFirst CLI ```mfpdev app webencrypt``` command or the `mfpwebencrypt` flag to encrypt the information. This procedure does not provide encryption that is impossible to defeat, but it provides a basic level of obfuscation.
+To minimize the risk of viewing and modifying your web resources by someone, while it is in the `.apk` or `.ipa` package, you can use the following MobileFirst CLI command:
+```bash
+mfpdev app webencrypt
+```
+{: codeblock}
+or the `mfpwebencrypt` flag to encrypt the information. This procedure does not provide encryption that is impossible to defeat but it provides a basic level of obfuscation.
 
 ### Prerequisites
 
@@ -71,9 +76,11 @@ If you run one of the listed commands after you encrypt the web resources, you m
     * ```bash
       cordova prepare
       ```
+      {: codeblock}
     * ```bash
       mfpdev app webupdate
       ```
+      {: codeblock}
 3. Complete one of the following procedures to encrypt the content,
     * Enter the following command:
       ```bash
@@ -81,27 +88,35 @@ If you run one of the listed commands after you encrypt the web resources, you m
       ```
       {: codeblock}
 
-      You can view information about the ```mfpdev app webencrypt``` command by entering ```mfpdev help app webencrypt```.
+      You can view information about the `mfpdev app webencrypt` command by entering 
+      ```bash
+      mfpdev help app webencrypt
+      ```
+      {: codeblock}
       {: tip}
 
-    * You can also encrypt the web resources of your Cordova packages by adding the `mfpwebencrypt` flag to the ```cordova compile``` or to the ```cordova build``` command when you build your packages.
+    * You can also encrypt the web resources of your Cordova packages by adding the `mfpwebencrypt` flag to the `cordova compile` or to the `cordova build` command when you build your packages.
        * ```bash
          cordova compile -- --mfpwebencrypt
          ```
+         {: codeblock}
          or
          ```bash
          cordova build -- --mfpwebencrypt
          ```
+         {: codeblock}
          The operating system information in the **www** folder is replaced by a **resources.zip** file that contains the encrypted content.
          If your app is for the Android operating system and the **resources.zip** file is larger than 1 MB, the **resources.zip** file is divided into smaller 768 KB .zip files that are named **resources.zip.nnn**. The variable nnn is a number from 001 through 999.
 4. Test the application with the encrypted resources by using the emulator that is provided with the platform-specific tools. For example, you can use the emulator in Android Studio for Android, or Xcode for iOS.
 
 Do not use the following Cordova commands to test the application after you encrypt it,
-* ```
+* ```bash
   cordova run
   ```
-* ```
+  {: codeblock}
+* ```bash
   cordova emulate
   ```
+  {: codeblock}
 These commands refresh the content that was encrypted in the www folder, and saves it again as decrypted content. If you use these commands, remember to complete the procedure again to encrypt it before you publish the app.
 {: note}
