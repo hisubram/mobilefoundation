@@ -134,5 +134,5 @@ Mobile Foundation
     Developer community
         [StackOverflow](https://stackoverflow.com/questions/tagged/ibm-mobile-services)
         [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/bluemix-mobile-foundation/?smartspace=bluemix)
-        [MFP Dev Slack channel](https://slackin.mybluemix.net)
+        [IBM Mobile Dev YouTube channel](https://www.youtube.com/channel/UCbacV2-Y2NVAOsUMfeitAdg)
     {: .navgroup-end}

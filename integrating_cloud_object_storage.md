@@ -169,12 +169,12 @@ To connect to your COS instance, some details of your COS instance need to be pr
 1. **endpointURL**: This field is the public endpoint url for your COS object. This URL can be found on your COS's dashboard, under **Buckets (on the left menu options) -> <your-bucket-name> (`sharedgallery` in this sample) -> Configuration -> Endpoints -> Public**
 2. **AuthToken**: In this tutorial, we are using the IAM authentication.
 
-For the java adapter to connect to your instance of COS, authentication that uses IAM or HMAC is needed. Following are the steps to get the IAM token. For further details on IAM and HMAC authentication processes, click [here](https://console.bluemix.net/docs/services/cloud-object-storage/api-reference/api-reference-buckets.html#bucket-operations#AuthenticationOptions).
+For the java adapter to connect to your instance of COS, authentication that uses IAM or HMAC is needed. Following are the steps to get the IAM token. For further details on IAM and HMAC authentication processes, click [here](https://cloud.ibm.com/docs/services/cloud-object-storage/api-reference/api-reference-buckets.html#bucket-operations#AuthenticationOptions).
 
 #### Obtaining IAM Oauth token by using {{ site.data.keyword.cloud_notm}} CLI
 {: #obtaining-iam-oath-token-using-ibm-cloud-cli}
 
-1. First, make sure that you have an API key. Get the API key from [{{ site.data.keyword.cloud_notm}} Identity and Access Management](https://console.bluemix.net/iam/#/users).
+1. First, make sure that you have an API key. Get the API key from [{{ site.data.keyword.cloud_notm}} Identity and Access Management](https://cloud.ibm.com/iam/#/users).
 2. Log in to the {{ site.data.keyword.cloud_notm}} Platform by using the CLI.
 
   ```bash
