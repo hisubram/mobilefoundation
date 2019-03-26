@@ -37,7 +37,7 @@ subcollection:  mobilefoundation
 {: javascript }
 APIs for Cordova / Web applications.
 {: javascript }
-* **[Client-side API](/docs/services/mobilefoundation?topic=mobilefoundation-javascript_client_sdk_api#javascript_client_sdk_api)**  
+* **[Client-side API ![External link icon](../../icons/launch-glyph.svg "External link icon"](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/javascript/client/)**  
     You can use JavaScript API to develop apps for all environments.
     {: javascript }
 * **[Client-side push API ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-hybrid-cordova-js-apidoc/html/refjavascript-mfp-push-hybrid/html/index.html)**  

@@ -59,6 +59,7 @@ Mobile Foundation
     Obtain application insights
         instrument_an_app.md
         visualize_insights_on_console.md
+        build_custom_charts.md
         alerts.md
     add_sdk_to_app.md
 
