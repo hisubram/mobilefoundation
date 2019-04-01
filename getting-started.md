@@ -20,7 +20,6 @@ subcollection:  mobilefoundation
 {: #getting-started-tutorial}
 
 {{site.data.keyword.mobilefoundation_long}} expedites the setting up of an {{site.data.keyword.mfp_full}} environment using which you can develop, test, and run enterprise mobile apps. {{site.data.keyword.mobilefoundation_short}} offers the following different service plans:
-* **Lite**: Provisions a hosted instance of the Foundation Server that is limited by memory and CPU. Permits any number of applications with the total number of connected devices across all applications limited to 10.  Free of charge and to be used for trial purposes only.
 * **Developer**: Provisions an instance of Foundation Server in user's account. Permits any number of applications with the total number of connected devices across all applications limited to 10. Free of charge and to be used for development and testing purposes only.
 * **Professional Per Device**: Provisions an instance of Foundation Server in user's account and charged by the number of  actively connected devices
 * **Professional 1 Application**: Provisions an instance of Foundation Server in user's account and permits any number of users and devices to be actively connected for a single application only.    
@@ -46,18 +45,6 @@ You need an {{site.data.keyword.Bluemix}} account and an instance of the {{site.
 
 ## Step 2: Build you mobile channel
 {: #buildmobilechannel}
-
-
-### For {{site.data.keyword.mobilefoundation_short}}: Lite plan
-{: #buildchannelliteplan}
-After you create an instance of the {{site.data.keyword.mobilefoundation_short}}: Lite, you can start building your mobile channel by completing the following steps.
-
-* You can instantly access and work with the hosted instance of the Mobile Foundation Server.
-
-  This selection creates a hosted instance of {{site.data.keyword.mfserver_long_notm}} with the following settings:
-  *	1 GB of memory, which is sufficient for trying out the capabilities of {{site.data.keyword.mfserver_long_notm}}.  
-
-  * To access the Mobile Foundation Server by using CLI you need the credentials, which are available when you click **Service credentials** from the left navigation pane of the IBM Cloud console.
 
 
 ### For {{site.data.keyword.mobilefoundation_short}}: Developer plan
