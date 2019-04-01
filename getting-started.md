@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-03-14"
+lastupdated:  "2019-04-01"
 
 keywords: getting started, mobile foundation, plans, configure mobile foundation server, sample app, setup
 
