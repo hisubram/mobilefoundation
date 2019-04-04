@@ -2,8 +2,11 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated:  "2019-03-14"
 
+keywords: getting started, mobile foundation, plans, configure mobile foundation server, sample app, setup
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -16,17 +19,22 @@ lastupdated:  "2019-02-12"
 # 入门教程
 {: #getting-started-tutorial}
 
-{{site.data.keyword.mobilefoundation_long}} 加快设置 {{site.data.keyword.mfp_full}} 环境，您可使用此环境开发、测试和运行企业移动应用程序。{{site.data.keyword.mobilefoundation_short}} 提供了以下不同的服务套餐：Developer、Professional Per Device 和 Professional 1 Application。
+{{site.data.keyword.mobilefoundation_long}} 加快设置 {{site.data.keyword.mfp_full}} 环境，您可使用此环境开发、测试和运行企业移动应用程序。{{site.data.keyword.mobilefoundation_short}} 提供以下不同的服务套餐：
+* **轻量**：供应受内存和 CPU 限制的 Foundation Server 的托管实例。允许任意数量的应用程序，所有应用程序上连接设备的总数限制为 10。免费，只能用于试用目的。
+* **Developer**：在用户帐户中供应 Foundation Server 的实例。允许任意数量的应用程序，所有应用程序上连接设备的总数限制为 10。免费，只能用于开发和测试目的。
+* **Professional Per Device**：在用户帐户中供应 Foundation Server 的实例，并按主动连接的设备数量收费。
+* **Professional 1 Application**：在用户帐户中供应 Foundation Server 的实例，并且允许仅针对单个应用程序主动连接任意数量的用户和设备。    
 {: shortdesc}
 
-使用 Professional 1 Application 套餐，可管理任何受支持操作系统上构建的单个应用程序。受支持的操作系统为 Android、iOS、Windows 或移动 Web。Developer 套餐最适合进行开发和测试。您可以在[此处](https://cloud.ibm.com/catalog/services/mobile-foundation)查看所有可用的套餐。
+您可以在[此处](https://cloud.ibm.com/catalog/services/mobile-foundation)查看所有可用的套餐。
+{: note}
 
-通过本入门教程，您能够使用其中一个受支持的套餐来创建 {{site.data.keyword.mobilefoundation_short}} 服务实例。然后，您可以注册应用程序。下载并编辑已注册的应用程序，部署适配器，最后测试应用程序。
+通过遵循此入门教程，创建使用其中一个受支持套餐的 {{site.data.keyword.mobilefoundation_short}} 服务实例。然后，您可以注册应用程序。下载并编辑已注册的应用程序，部署适配器，最后测试应用程序。
 
 ## 开始之前
 {: #prereqs-gs}
 
-您将需要 {{site.data.keyword.Bluemix}} 帐户和 {{site.data.keyword.mobilefoundation_short}} 服务的实例。
+您需要 {{site.data.keyword.Bluemix}} 帐户和 {{site.data.keyword.mobilefoundation_short}} 服务的实例。
 
 ## 步骤 1：创建 {{site.data.keyword.mobilefoundation_short}} 服务的实例
 {: #step1create}
@@ -38,6 +46,19 @@ lastupdated:  "2019-02-12"
 
 ## 步骤 2：构建移动通道
 {: #buildmobilechannel}
+
+
+### 对于 {{site.data.keyword.mobilefoundation_short}}：轻量套餐
+{: #buildchannelliteplan}
+创建“{{site.data.keyword.mobilefoundation_short}}：轻量”的实例后，可以通过完成以下步骤开始构建移动通道。
+
+* 您可以立即访问和使用 Mobile Foundation 服务器的托管实例。
+
+  此选择将创建具有以下设置的 {{site.data.keyword.mfserver_long_notm}} 的托管实例：
+  *	1 GB 内存，足够用于试用 {{site.data.keyword.mfserver_long_notm}} 的功能。  
+
+  * 要使用 CLI 访问 Mobile Foundation 服务器，您将需要凭证。在 IBM Cloud 控制台的左侧导航窗格中单击**服务凭证**即可获取凭证。
+
 
 ### 对于 {{site.data.keyword.mobilefoundation_short}}: Developer 套餐
 {: #buildchanneldevplan}
@@ -69,7 +90,7 @@ lastupdated:  "2019-02-12"
       + 在要求对所选 {{site.data.keyword.Db2_on_Cloud_short}}（除**轻量**套餐以外的其他任何套餐）或 {{site.data.keyword.composeForPostgreSQL}} 服务进行确认的弹出窗口上，单击**添加**，然后单击**继续**。此操作将在配置的 {{site.data.keyword.Db2_on_Cloud_short}}（除**轻量**套餐以外的其他任何套餐）或 {{site.data.keyword.composeForPostgreSQL}} 数据库服务实例中创建必需的表。
 
       在添加与 {{site.data.keyword.mobilefoundation_short}} 实例的 {{site.data.keyword.Db2_on_Cloud_short}}（除**轻量**套餐以外的其他任何套餐）或 {{site.data.keyword.composeForPostgreSQL}} 连接之后，您将无法对其进行更改。
-      {: note} 
+      {: note}
   2.  创建并启动服务器。
 
       1. 使用缺省配置创建 {{site.data.keyword.mobilefirst_notm}} 服务器实例，然后单击**启动基本服务器**。
@@ -86,7 +107,7 @@ lastupdated:  "2019-02-12"
 
       +	单击**启动控制台**以打开 {{site.data.keyword.mfp_oc_short_notm}}。      
 
-      要使用拓扑、安全性和其他服务器配置的高级配置来创建 {{site.data.keyword.mobilefirst_notm}} 服务器实例，请单击**使用高级配置启动服务器**。请参阅[设置高级配置](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5)，以获取更多信息。
+      要使用拓扑、安全性和其他服务器配置的高级配置来创建 {{site.data.keyword.mobilefirst_notm}} 服务器实例，请单击**使用高级配置启动服务器**。有关更多信息，请参阅[设置高级配置](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5)。
       {: tip}
 
 ### 对于 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 套餐
@@ -124,7 +145,7 @@ lastupdated:  "2019-02-12"
 
       +  单击**启动控制台**以打开 {{site.data.keyword.mfp_oc_short_notm}}。  
 
-      要使用拓扑、安全性和其他服务器配置的高级配置来创建 {{site.data.keyword.mobilefirst_notm}} 服务器实例，请单击**使用高级配置启动服务器**。请参阅[设置高级配置](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2)，以获取更多信息。
+      要使用拓扑、安全性和其他服务器配置的高级配置来创建 {{site.data.keyword.mobilefirst_notm}} 服务器实例，请单击**使用高级配置启动服务器**。有关更多信息，请参阅[设置高级配置](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2)。
       {: tip}
 
 转至[使用 Mobile Foundation 服务设置 MobileFirst 服务器 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window}，以了解有关开始使用 {{site.data.keyword.mobilefoundation_short}} 的更多信息。
@@ -213,8 +234,8 @@ lastupdated:  "2019-02-12"
             }
 
             @Override
-            public void onFailure(WLFailResponse wlFailResponse) {
-                System.out.println("Did not receive an access token from server: " + wlFailResponse.getErrorMsg());
+                    public void onFailure(WLFailResponse wlFailResponse) {
+                        System.out.println("Did not receive an access token from server: " + wlFailResponse.getErrorMsg());
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -243,7 +264,7 @@ lastupdated:  "2019-02-12"
   2. 单击 Android Studio 中的**运行应用程序**。
      * 您将看到应用程序在设备仿真器上启动。
      * 在应用程序中，单击**对 MobileFirst 服务器执行 Ping 操作**，这将显示`已连接到 MobileFirst 服务器`。
-     * 如果应用程序能够连接到 MobileFirst 服务器，将使用部署的 Java 适配器执行资源请求调用。
+     * 如果应用程序能够连接到 MobileFirst 服务器，那么部署的 Java 适配器将执行资源请求调用。
      * 然后将适配器响应打印到 Android Studio 的 LogCat 视图中。
 
 

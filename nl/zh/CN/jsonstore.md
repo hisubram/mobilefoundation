@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-12"
 
+keywords: JSONStore, offline storage, jsonstore error codes
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -192,16 +195,16 @@ JSONStore API 的 JavaScript 实现中提供 localKeyGen 密钥并且其值为 t
 牌，或者您可以通过 secureRandom 选项来传递此种令牌。
 
 以下各项之间的权衡如下：
-* 以脱机方式打开存储区并信任客户机，以生成该随机令牌（安全性较低），或者 
+* 以脱机方式打开存储区并信任客户机，以生成该随机令牌（安全性较低），或者
 * 通过访问 MobileFirst 服务器（需要连接）并信任该服务器来打开存储区（安全性更高）
 
 ### 安全实用程序
 {: #security-utilities }
 MobileFirst 客户机端 API 提供了一些安全实用程序来帮助保护用户的数据。如果要保护 JSON 对象，那么 JSONStore 等功能非常有用。但是，建议不要在 JSONStore 集合中存储二进制 Blob。
 
-应改为在文件系统上存储二进制数据，并将文件路径和其他元数据存储在 JSONStore 集合中。如果要保护图像等文件，可以将其编码为 Base64 字符串，对其加密，然后将输出写入磁盘。 
+应改为在文件系统上存储二进制数据，并将文件路径和其他元数据存储在 JSONStore 集合中。如果要保护图像等文件，可以将其编码为 Base64 字符串，对其加密，然后将输出写入磁盘。
 
-要对数据进行解密，可以在 JSONStore 集合中查找元数据，从磁盘读取加密的数据，然后使用存储的元数据对其进行解密。 
+要对数据进行解密，可以在 JSONStore 集合中查找元数据，从磁盘读取加密的数据，然后使用存储的元数据对其进行解密。
 
 此元数据可包括密钥、加密盐 (Salt)、初始化向量 (IV)、文件类型、文件路径等。
 
@@ -333,7 +336,7 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 {: #objective-c-jsonstore }
 在将本机 iOS API 用于 JSONStore 时，所有操作都将添加到同步分派队列。此行为可确保涉及存储区的操作按顺序在非主线程上运行。有关更多信息，请参阅 Apple 文档：[Grand Central Dispatch (GCD) ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window}。
 
-### Java 中的并行操作 
+### Java 中的并行操作
 {: #java-jsonstore }
 在将本机 Android API 用于 JSONStore 时，所有操作都将在主线程上运行。您必须创建线程或者使用线程池以使用异步行为。所有存储区操作都是线程安全的。
 
@@ -794,7 +797,7 @@ $.when.apply(this, arrayOfPromises)
 4. 查看 JSONStore 生成的 SQLite 数据库文件。必须关闭加密。
 
    * Android 仿真器：
-   
+
    ```bash
    $ adb shell
    $ cd /data/data/com.<app-name>/databases/wljsonstore
@@ -861,7 +864,7 @@ function initWL(){
         var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
         : {};                                                                
         WL.Client.init(options);                                           
-    } 
+    }
     ```                                                                     
 
 这会等待 `mfpjsonjsloaded` 事件（在 `wlCommonInit` 外部），确保已装入脚本，随后调用 `WL.Client.init` 以触发 `wlCommonInit`，然后调用 `WL.JSONStore.init`。

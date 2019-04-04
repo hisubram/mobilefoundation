@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, restrict backend access, tampered apps
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

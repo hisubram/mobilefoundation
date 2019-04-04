@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-01-30"
 
+keywords: mobile analytics, instrumenting cordova app, instrumenting iOS app, instrumenting android app
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -35,12 +38,12 @@ lastupdated: "2019-01-30"
 
 Mobile Analytics 是 {{ site.data.keyword.mobilefoundation_short }} 服务中嵌入的功能。Mobile Analytics 为移动应用程序开发者和应用程序所有者提供关键的应用程序使用情况和应用程序性能洞察。
 
-您需要检测移动应用程序，以开始使用 Mobile Analytics 功能来监视应用程序使用情况、性能以及获取其他统计信息。检测应用程序包含以下步骤： 
+您需要检测移动应用程序以使用 Mobile Analytics 功能来监视应用程序使用情况、性能以及获取其他统计信息。检测应用程序包含以下步骤：
 
 1.  导入并安装 Mobile Analytics 客户机 SDK。
 2.  根据要收集的分析数据的类型来检测应用程序。
 
-以下各部分将针对每个支持的平台提供这些步骤的详细信息。
+以下各部分针对每个支持的平台提供这些步骤的详细信息。
 
 ### 检测 Android 应用程序
 {: #instrument_android_app}
@@ -48,8 +51,8 @@ Mobile Analytics 是 {{ site.data.keyword.mobilefoundation_short }} 服务中嵌
 #### 步骤 1：导入并安装用于 Android 的 Mobile Analytics 客户机 SDK
 {: #install_analytics_sdk_android }
 {: android}
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundationanalytics/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundationanalytics)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation/badge.svg) ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundation)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundationanalytics/badge.svg) ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://maven-badges.herokuapp.com/maven-central/com.ibm.mobile.foundation/ibmmobilefirstplatformfoundationanalytics)
 {: android}
 
 Mobile Analytics 客户机 SDK 随 Gradle 一起分发，Gradle 是 Android 项目的依赖项管理器。Gradle 会自动从存储库下载工件，并使其可供 Android 应用程序使用。
@@ -65,7 +68,7 @@ Mobile Analytics 客户机 SDK 随 Gradle 一起分发，Gradle 是 Android 项�
   {: tip}
   {: android}
 
-3. 找到 `build.gradle` 文件中的 `Dependencies` 部分，然后为 {{site.data.keyword.mobileanalytics_short}} 客户机 SDK 添加 compile 依赖项。存储库语句应该类似于以下代码示例：
+3. 找到 `build.gradle` 文件中的 `Dependencies` 部分，然后为 {{site.data.keyword.mobileanalytics_short}} 客户机 SDK 添加 compile 依赖项。存储库语句必须类似于以下代码示例：
 {: android}
 
   ```
@@ -113,7 +116,7 @@ Mobile Analytics 客户机 SDK 随 Gradle 一起分发，Gradle 是 Android 项�
 {: #instrument_app_based_on_data_android }
 {: android}
 
-1. 初始化应用程序，以捕获分析数据并将其发送到 Mobile Analytics 服务。首先，将以下 `import` 语句添加到 application 或 activity 类的开头
+1. 初始化应用程序，以捕获分析数据并将其发送到 Mobile Analytics 服务。首先，将以下 `import` 语句添加到 application 或 activity 类的开头：
 {: android}
 
    ```Java
@@ -133,27 +136,28 @@ Mobile Analytics 客户机 SDK 随 Gradle 一起分发，Gradle 是 Android 项�
    {: codeblock}
    {: android}
 
-   在调用 init 方法之前，必须确保应用程序嵌入必需的代码，以便通过 Mobile Foundation 服务认证和授权设备。这是所有 Mobile Foundation 服务应用程序都需要的通用步骤，而不是特定于分析数据捕获的步骤。<!--  Refer <need to link doc that talks about auth> -->
+   在调用 init 方法之前，必须确保应用程序嵌入必需的代码，以便通过 Mobile Foundation 服务认证和授权设备。此步骤是所有 Mobile Foundation 服务应用程序都需要的通用步骤，而不是特定于分析数据捕获的步骤。<!--  Refer <need to link doc that talks about auth> -->
    {: android}
 
    初始化完成后，无需添加进一步的代码，应用程序现在就可以捕获设备信息和 Mobile Analytics SDK 日志。以下各部分中讨论的任何进一步 API 和代码都是可选的，可以根据要捕获的分析数据类型进行添加。
    {: android}
 
-2. 要捕获应用程序生命周期事件（例如，应用程序会话和崩溃信息），请通过添加以下内容来配置应用程序：
+2. 要捕获应用程序生命周期事件（例如，应用程序会话和崩溃信息），请通过添加以下代码行来配置应用程序：
+    
   ```Java
     WLAnalytics.addDeviceEventListener(WLAnalytics.DeviceEvent.LIFECYCLE);
   ```
   {: codeblock}
   {: android}
 
-3. 要捕获用于捕获应用程序网络交互的网络事件，请通过添加以下内容来配置应用程序： 
+3. 要捕获用于捕获应用程序网络交互的网络事件，请通过添加以下代码行来配置应用程序：
   ```Java
     WLAnalytics.addDeviceEventListener(WLAnalytics.DeviceEvent.NETWORK);
   ```
   {: codeblock}
   {: android}
 
-4. 现在，您已初始化应用程序，可捕获分析数据。接下来，您应该将捕获到的数据发送到 Mobile Analytics 服务。
+4. 现在，您已初始化应用程序，可捕获分析数据。接下来，您必须将捕获到的数据发送到 Mobile Analytics 服务。
    使用以下 API 将分析数据发送到 Mobile Analytics 服务。
    ```java
     WLAnalytics.send();
@@ -161,7 +165,7 @@ Mobile Analytics 客户机 SDK 随 Gradle 一起分发，Gradle 是 Android 项�
    {: codeblock}
    {: android}
 
-  您可以自由决定何时在应用程序流中调用此 API，以将捕获到的分析数据发送到 Mobile Analytics 服务。在调用此 API 之前，所有捕获到的分析数据都会本地存储在设备上。
+  您可以自由决定何时在应用程序流中调用此 API，以将捕获到的分析数据发送到 Mobile Analytics 服务。在此发送操作之前，所有捕获到的分析数据都会本地存储在设备上。
   {: android}
 
 5. 要捕获应用程序日志并将其发送到 Mobile Analytics 服务，请使用 Mobile Analytics 客户机 SDK 记录器 API。     
@@ -197,17 +201,17 @@ Mobile Analytics 客户机 SDK 随 Gradle 一起分发，Gradle 是 Android 项�
    {: codeblock}
    {: android}
 
-6.  要获取有关用户引导模式（新用户与老用户）的洞察，必须将用户身份与应用程序会话相关联。可以通过调用以下 API 来完成此操作：
+6.  要获取有关用户上线模式（新用户与老用户）的洞察，必须将用户身份与应用程序会话相关联。可以通过调用以下 API 来完成此步骤：
     ```java
       WLAnalytics.setUserContext("userName or userIdentity");
     ```
     {: codeblock}
     {: android}
 
-    请注意，仅当调用了 WLAnalytics.send() API 时，才会将捕获到并本地存储的所有分析数据发送到 Mobile Analytics 服务。
+    仅当调用了 WLAnalytics.send() API 时，才会将捕获到并本地存储的所有分析数据发送到 Mobile Analytics 服务。
     {: android}
 
-7.  要获取应用程序 HTTP 网络交互模式的洞察，例如 HTTP API 调用数、请求数和平均响应时间，必须使用 Mobile Foundation 服务客户机 SDK 的 WLResourceRequest 类来发出 HTTP 调用。虽然您可能已初始化 Analytics 来捕获网络事件，但使用 WLResourceRequest 可使 Mobile Analytics 与网络调用挂钩并捕获相关数据。下面说明了应该如何发出 HTTP 调用。
+7.  要获取应用程序 HTTP 网络交互模式的洞察，例如 HTTP API 调用数、请求数和平均响应时间，必须使用 Mobile Foundation 服务客户机 SDK 的 WLResourceRequest 类来发出 HTTP 调用。虽然您已初始化 Analytics 来捕获网络事件，但使用 `WLResourceRequest` 可使 Mobile Analytics 与网络调用挂钩并捕获相关数据。如以下代码中所示生成 HTTP 调用。
     ```java
       WLResourceRequest request = new WLResourceRequest(new URI(url), WLResourceRequest.GET);
             request.send(new WLResponseListener() {
@@ -242,10 +246,10 @@ Mobile Analytics 客户机 SDK 随 Gradle 一起分发，Gradle 是 Android 项�
         //create a JSON to capture the custom data 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("FromPage", "LoginPage");
-   
+
         //log the custom data with a message
         WLAnalytics.log("log message", jsonObject);
-        
+
         //Send the captured custom data and log to the Mobile Analytics service
         WLAnalytics.send();
     ```
@@ -255,7 +259,7 @@ Mobile Analytics 客户机 SDK 随 Gradle 一起分发，Gradle 是 Android 项�
     可以在定制图表（可在 Mobile Analytics 控制台中定义）上绘制记录的定制数据，以获取定制洞察。
     {: android}
 
-10. 使用“应用程序内用户反馈”可深化应用程序性能分析。您可以使应用程序**用户和测试者**能够向应用程序所有者提供丰富的上下文反馈。 **应用程序所有者**从其用户那里获取有关应用程序使用体验的实时反馈，然后**应用程序所有者**和**开发者**可基于这些反馈执行进一步操作。这使应用程序维护具有极高的敏捷性。使用以下 API 将应用程序切换到应用程序中任何操作处理程序中的“交互式反馈方式”，例如在处理按钮单击或菜单项选择时。
+10. 使用“应用程序内用户反馈”可深化应用程序性能分析。您可以使应用程序**用户和测试者**能够向应用程序所有者提供丰富的上下文反馈。 **应用程序所有者**从其用户那里获取有关应用程序使用体验的实时反馈，然后**应用程序所有者**和**开发者**可基于这些反馈执行进一步操作。此功能部件为应用程序维护带来极高的敏捷性。使用以下 API 将应用程序切换到应用程序中任何操作处理程序中的“交互式反馈方式”，例如在处理按钮单击或菜单项选择时。
     ```java
         WLAnalytics.triggerFeedbackMode();
     ```
@@ -311,8 +315,7 @@ Swift SDK 可用于 iOS 和 watchOS。
     {: codeblock}
     {: ios}
 
-   接下来，使用 Mobile Analytics 客户机 SDK 来设置或初始化分析数据的捕获。
-   在最适合应用程序项目运行的位置中，添加初始化代码。
+   接下来，使用 Mobile Analytics 客户机 SDK 来设置或初始化分析数据的捕获。在最适合应用程序项目运行的位置中，添加初始化代码。
    {: ios}
 
    ```Swift
@@ -321,27 +324,27 @@ Swift SDK 可用于 iOS 和 watchOS。
    {: codeblock}
    {: ios}
 
-   在调用 init 方法之前，必须确保应用程序嵌入必需的代码，以便通过 Mobile Foundation 服务认证和授权设备。这是所有 Mobile Foundation 服务应用程序都需要的通用步骤，而不是特定于分析数据捕获的步骤。<!--  Refer <need to link doc that talks about auth> -->
+   在调用 init 方法之前，必须确保应用程序嵌入必需的代码，以便通过 Mobile Foundation 服务认证和授权设备。此步骤是所有 Mobile Foundation 服务应用程序都需要的通用步骤，而不是特定于分析数据捕获的步骤。<!--  Refer <need to link doc that talks about auth> -->
    {: ios}
 
    初始化完成后，无需添加进一步的代码，应用程序现在就可以捕获设备信息和 Mobile Analytics SDK 日志。以下各部分中讨论的任何进一步 API 和代码都是可选的，可以根据要捕获的分析数据类型进行添加。
    {: ios}
 
-2. 要捕获应用程序生命周期事件（例如，应用程序会话和崩溃信息），请通过添加以下内容来配置应用程序：
+2. 要捕获应用程序生命周期事件（例如，应用程序会话和崩溃信息），请通过添加以下代码行来配置应用程序：
     ```Swift
       WLAnalytics.sharedInstance().addDeviceEventListener(LIFECYCLE)
     ```
     {: codeblock}
     {: ios}
 
-3. 要捕获用于捕获应用程序网络交互的网络事件，请通过添加以下内容来配置应用程序：
+3. 要捕获用于捕获应用程序网络交互的网络事件，请通过添加以下代码行来配置应用程序：
     ```Swift
       WLAnalytics.sharedInstance().addDeviceEventListener(NETWORK)
     ```
     {: codeblock}
     {: ios}
 
-4. 现在，您已初始化应用程序，可捕获分析数据。接下来，您应该将捕获到的数据发送到 Mobile Analytics 服务。
+4. 现在，您已初始化应用程序，可捕获分析数据。接下来，您必须将捕获到的数据发送到 Mobile Analytics 服务。
    使用以下 API 将分析数据发送到 Mobile Analytics 服务。
    ```Swift
     WLAnalytics.sharedInstance().send();
@@ -349,8 +352,8 @@ Swift SDK 可用于 iOS 和 watchOS。
    {: codeblock}
    {: ios}
 
-    您可以自由决定何时在应用程序流中调用此 API，以将捕获到的分析数据发送到 Mobile Analytics 服务。在调用此 API 之前，所有捕获到的分析数据都会本地存储在设备上。
-  {: ios}
+    您可以自由决定何时在应用程序流中调用此 API，以将捕获到的分析数据发送到 Mobile Analytics 服务。在此发送操作之前，所有捕获到的分析数据都会本地存储在设备上。
+    {: ios}
 
 5. 要捕获应用程序日志并将其发送到 Mobile Analytics 服务，请使用 Mobile Analytics 客户机 SDK 记录器 API。Mobile Analytics 客户机 SDK 日志记录框架支持以下日志级别，这些级别按从最不详细到最详细的顺序列出，同时列出建议的使用准则：
     * FATAL - 用于不可恢复的崩溃或挂起。FATAL 级别保留用于记录不可恢复的错误，这些错误对于用户显示为应用程序崩溃
@@ -362,19 +365,19 @@ Swift SDK 可用于 iOS 和 watchOS。
    {: note}
    {: ios}
 
-    遵循[教程 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://mobilefirstplatform.ibmcloud.com/tutorials/it/foundation/8.0/application-development/client-side-log-collection/ios/) 来获取记录器的代码片段，以便在 iOS 应用程序中添加日志记录功能。
+    遵循[教程 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/client-side-log-collection/ios/) 来获取 Logger 的代码片段，以便在 iOS 应用程序中添加日志记录功能。
 
-6.  要获取有关用户引导模式（新用户与老用户）的洞察，必须将用户身份与应用程序会话相关联。可以通过调用以下 API 来完成此操作：
+6.  要获取有关用户上线模式（新用户与老用户）的洞察，必须将用户身份与应用程序会话相关联。可以通过调用以下 API 来完成此关联：
     ```Swift
       WLAnalytics.sharedInstance().setUserContext("userName or userIdentity")
     ```
     {: codeblock}
     {: ios}
 
-    请注意，仅当调用了 WLAnalytics.sharedInstance().send() API 时，才会将捕获到并本地存储的所有分析数据发送到 Mobile Analytics 服务。
+    仅当调用了 `WLAnalytics.sharedInstance().send()` API 时，才会将捕获到并本地存储的所有分析数据发送到 Mobile Analytics 服务。
     {: ios}
 
-7.  要获取应用程序 HTTP 网络交互模式的洞察，例如 HTTP API 调用数、请求数和平均响应时间，必须使用 Mobile Foundation 服务客户机 SDK 的 WLResourceRequest 类来发出 HTTP 调用。虽然您可能已初始化 Analytics 来捕获网络事件，但使用 WLResourceRequest 可使 Mobile Analytics 与网络调用挂钩并捕获相关数据。下面说明了应该如何发出 HTTP 调用。
+7.  要获取应用程序 HTTP 网络交互模式的洞察，例如 HTTP API 调用数、请求数和平均响应时间，必须使用 Mobile Foundation 服务客户机 SDK 的 WLResourceRequest 类来发出 HTTP 调用。虽然您已初始化 Analytics 来捕获网络事件，但使用 `WLResourceRequest` 可使 Mobile Analytics 与网络调用挂钩并捕获相关数据。如以下代码中所示生成 HTTP 调用。
     ```Swift
       let request = WLResourceRequest( url: URL(string: "/adapters/JavaAdapter/users"), method: WLHttpMethodGet )
 
@@ -390,7 +393,7 @@ Swift SDK 可用于 iOS 和 watchOS。
     {: codeblock}
     {: ios}
 
-8.  要获取崩溃分析和日志，可以在应用程序启动期间调用以下 API，以检查先前的会话是否已崩溃，并相应地将捕获到的崩溃日志发送到 Mobile Analytics 服务。
+8.  要获取崩溃分析和日志，可以在应用程序启动期间调用以下 API，以检查先前的会话是否已崩溃，并将捕获到的崩溃日志发送到 Mobile Analytics 服务。
     ```Swift
       if (OCLogger.isUnCaughtExceptionDetected()) {
             //add any other handling you may want and call the following APIs
@@ -418,7 +421,7 @@ Swift SDK 可用于 iOS 和 watchOS。
     可以在定制图表（可在 Mobile Analytics 控制台中定义）上绘制记录的定制数据，以获取定制洞察。
     {: ios}
 
-10. 使用“应用程序内用户反馈”可深化应用程序性能分析。您可以使应用程序**用户和测试者**能够向应用程序所有者提供丰富的上下文反馈。 **应用程序所有者**从其用户那里获取有关应用程序使用体验的实时反馈，然后**应用程序所有者**和**开发者**可基于这些反馈执行进一步操作。这使应用程序维护具有极高的敏捷性。使用以下 API 将应用程序切换到应用程序中任何操作处理程序中的“交互式反馈方式”，例如在处理按钮单击或菜单项选择时。
+10. 使用“应用程序内用户反馈”可深化应用程序性能分析。您可以使应用程序**用户和测试者**能够向应用程序所有者提供丰富的上下文反馈。 **应用程序所有者**从其用户那里获取有关应用程序使用体验的实时反馈，然后**应用程序所有者**和**开发者**可基于这些反馈执行进一步操作。此功能部件为应用程序维护带来极高的敏捷性。使用以下 API 将应用程序切换到应用程序中任何操作处理程序中的“交互式反馈方式”，例如在处理按钮单击或菜单项选择时。
     ```Swift
         WLAnalytics.sharedInstance().triggerFeedbackMode();
     ```
@@ -483,9 +486,9 @@ Swift SDK 可用于 iOS 和 watchOS。
 {: #instrument_app_based_on_data_cordova }
 {: cordova}
 
-1. 在 Cordova 应用程序中，无需进行设置，并且初始化已内置。 
+1. 在 Cordova 应用程序中，无需进行设置，并且初始化已内置。
 
-   在调用以下任一分析方法之前，必须确保应用程序嵌入必需的代码，以便通过 Mobile Foundation 服务认证和授权设备。这是所有 Mobile Foundation 服务应用程序都需要的通用步骤，而不是特定于分析数据捕获的步骤。<!--  Refer <need to link doc that talks about auth> -->
+   在调用以下任一分析方法之前，必须确保应用程序嵌入必需的代码，以便通过 Mobile Foundation 服务认证和授权设备。此步骤是所有 Mobile Foundation 服务应用程序都需要的通用步骤，而不是特定于分析数据捕获的步骤。<!--  Refer <need to link doc that talks about auth> -->
    {: cordova}
 
    初始化完成后，无需添加进一步的代码，应用程序现在就可以捕获设备信息和 Mobile Analytics SDK 日志。以下各部分中讨论的任何进一步 API 和代码都是可选的，可以根据要捕获的分析数据类型进行添加。
@@ -495,13 +498,13 @@ Swift SDK 可用于 iOS 和 watchOS。
     * 对于 Android 平台：
       * 打开 **[Cordova 应用程序根文件夹] → platforms → android → src → com → sample → [app-name] → MainActivity.java** 文件。
       * 查找 `onCreate` 方法，并执行以下步骤来启用 `LIFECYCLE` 和 `NETWORK` 活动：
-        * 启用客户机生命周期事件日志记录：
+        * 要启用客户机生命周期事件日志记录，请添加以下行：
           ```Java
           WLAnalytics.addDeviceEventListener(DeviceEvent.LIFECYCLE);
           ```
           {: codeblock}
           {: cordova}
-        * 启用客户机网络事件日志记录：
+        * 要启用客户机网络事件日志记录，请添加以下行：
           ```Java
           WLAnalytics.addDeviceEventListener(DeviceEvent.NETWORK);
           ```
@@ -510,14 +513,14 @@ Swift SDK 可用于 iOS 和 watchOS。
       * 通过运行以下命令来构建 Cordova 项目：`cordova build`。
     * 对于 iOS 平台：
       * 打开 **[Cordova 应用程序根文件夹] → platforms → ios → Classes** 文件夹，并找到 **AppDelegate.swift** (Swift) 文件。
-      * 执行以下步骤以启用 `LIFECYCLE` 和 `NETWORK` 活动。
-        * 启用客户机生命周期事件日志记录：
+      * 要启用 `LIFECYCLE` 和 `NETWORK` 活动，请执行以下步骤。
+        * 要启用客户机生命周期事件日志记录，请添加以下行：
           ```Swift
           WLAnalytics.sharedInstance().addDeviceEventListener(LIFECYCLE);
           ```
           {: codeblock}
           {: cordova}
-        * 启用客户机网络事件日志记录：
+        * 要启用客户机网络事件日志记录，请添加以下行：
           ```Swift
           WLAnalytics.sharedInstance().addDeviceEventListener(NETWORK);
           ```
@@ -535,8 +538,7 @@ Swift SDK 可用于 iOS 和 watchOS。
    {: codeblock}
    {: cordova}
 
-4. 要捕获应用程序日志并将其发送到 Mobile Analytics 服务，请使用 Mobile Analytics 客户机 SDK 记录器 API。
-   Mobile Analytics 客户机 SDK 日志记录框架支持以下日志级别，这些级别按从最不详细到最详细的顺序列出，同时列出建议的使用准则：
+4. 要捕获应用程序日志并将其发送到 Mobile Analytics 服务，请使用 Mobile Analytics 客户机 SDK 记录器 API。Mobile Analytics 客户机 SDK 日志记录框架支持以下日志级别，这些级别按从最不详细到最详细的顺序列出，同时列出建议的使用准则：
     * FATAL - 用于不可恢复的崩溃或挂起。FATAL 级别保留用于记录不可恢复的错误，这些错误对于用户显示为应用程序崩溃
     * ERROR - 用于意外异常或意外网络协议错误
     * WARN - 用于记录未视为严重错误的使用情况警告，例如使用不推荐的 API 或网络响应慢
@@ -569,7 +571,7 @@ Swift SDK 可用于 iOS 和 watchOS。
     {: codeblock}
     {: cordova}
 
-5.  要获取有关用户引导模式（新用户与老用户）的洞察，必须将用户身份与应用程序会话相关联。JavaScript 级别中没有提供特定 API。但是，可以通过调用以下 API 在本机代码中完成此操作：
+5.  要获取有关用户上线模式（新用户与老用户）的洞察，必须将用户身份与应用程序会话相关联。JavaScript 级别中没有提供特定 API。但是，可以通过调用以下 API 在本机代码中完成此操作：
 
     **Android：**
       ```java
@@ -585,10 +587,10 @@ Swift SDK 可用于 iOS 和 watchOS。
       {: codeblock}
       {: cordova}
 
-    请注意，仅当调用了 JavaScript 级别的 WL.Analytics.send() API [或] Android 本机中的 WWLAnalytics.send() API [或] iOS 本机中的 WLAnalytics.sharedInstance().send() API 时，才会将捕获到并本地存储的所有分析数据发送到 Mobile Analytics 服务。
+    仅当调用了 JavaScript 级别的 WL.Analytics.send() API [或] Android 本机中的 WWLAnalytics.send() API [或] iOS 本机中的 WLAnalytics.sharedInstance().send() API 时，才会将捕获到并本地存储的所有分析数据发送到 Mobile Analytics 服务。
     {: cordova}
 
-6. 要获取应用程序 HTTP 网络交互模式的洞察，例如 HTTP API 调用数、请求数和平均响应时间，必须使用 Mobile Foundation 服务客户机 SDK 的 WLResourceRequest 类来发出 HTTP 调用。虽然您可能已初始化 Analytics 来捕获网络事件，但使用 WLResourceRequest 可使 Mobile Analytics 与网络调用挂钩并捕获相关数据。下面说明了应该如何发出 HTTP 调用。
+6. 要获取应用程序 HTTP 网络交互模式的洞察，例如 HTTP API 调用数、请求数和平均响应时间，必须使用 Mobile Foundation 服务客户机 SDK 的 WLResourceRequest 类来发出 HTTP 调用。虽然您已初始化 Analytics 来捕获网络事件，但使用 `WLResourceRequest` 可使 Mobile Analytics 与网络调用挂钩并捕获相关数据。使用以下代码发出 HTTP 调用。
     ```Javascript
       var resourceRequest = new WLResourceRequest("url-path", WLResourceRequest.GET);
       resourceRequest.send().then(
@@ -618,7 +620,7 @@ Swift SDK 可用于 iOS 和 watchOS。
     可以在定制图表（可在 Mobile Analytics 控制台中定义）上绘制记录的定制数据，以获取定制洞察。
     {: cordova}
 
-8. 使用“应用程序内用户反馈”可深化应用程序性能分析。您可以使应用程序**用户和测试者**能够向应用程序所有者提供丰富的上下文反馈。 **应用程序所有者**从其用户那里获取有关应用程序使用体验的实时反馈，然后**应用程序所有者**和**开发者**可基于这些反馈执行进一步操作。这使应用程序维护具有极高的敏捷性。使用以下 API 将应用程序切换到应用程序中任何操作处理程序中的“交互式反馈方式”，例如在处理按钮单击或菜单项选择时。
+8. 使用“应用程序内用户反馈”可深化应用程序性能分析。您可以使应用程序**用户和测试者**能够向应用程序所有者提供丰富的上下文反馈。 **应用程序所有者**从其用户那里获取有关应用程序使用体验的实时反馈，然后**应用程序所有者**和**开发者**可基于这些反馈执行进一步操作。此步骤为应用程序维护带来极高的敏捷性。使用以下 API 将应用程序切换到应用程序中任何操作处理程序中的“交互式反馈方式”，例如在处理按钮单击或菜单项选择时。
     ```Javascript
         WL.Analytics.triggerFeedbackMode();
     ```
@@ -682,7 +684,7 @@ Swift SDK 可用于 iOS 和 watchOS。
     {: codeblock}
     {: web}
 
-   在调用以下任一分析方法之前，必须确保应用程序嵌入必需的代码，以便通过 Mobile Foundation 服务认证和授权设备。这是所有 Mobile Foundation 服务应用程序都需要的通用步骤，而不是特定于分析数据捕获的步骤。<!--  Refer <need to link doc that talks about auth> -->
+   在调用以下任一分析方法之前，必须确保应用程序嵌入必需的代码，以便通过 Mobile Foundation 服务认证和授权设备。此步骤是所有 Mobile Foundation 服务应用程序都需要的通用步骤，而不是特定于分析数据捕获的步骤。<!--  Refer <need to link doc that talks about auth> -->
    {: web}
 
    初始化完成后，无需添加进一步的代码，应用程序现在就可以捕获设备信息和 Mobile Analytics SDK 日志。以下各部分中讨论的任何进一步 API 和代码都是可选的，可以根据要捕获的分析数据类型进行添加。
@@ -696,7 +698,8 @@ Swift SDK 可用于 iOS 和 watchOS。
     {: codeblock}
     {: web}
 
-4. 现在，您已初始化应用程序，可捕获分析数据。接下来，您应该将捕获到的数据发送到 Mobile Analytics 服务。使用以下 API 将分析数据发送到 Mobile Analytics 服务。
+4. 现在，您已初始化应用程序，可捕获分析数据。接下来，您必须将捕获到的数据发送到 Mobile Analytics 服务。
+   使用以下 API 将分析数据发送到 Mobile Analytics 服务。
 
    ```Javascript
    ibmmfpfanalytics.send();
@@ -704,11 +707,10 @@ Swift SDK 可用于 iOS 和 watchOS。
    {: codeblock}
    {: web}
 
-    您可以自由决定何时在应用程序流中调用此 API，以将捕获到的分析数据发送到 Mobile Analytics 服务。在调用此 API 之前，所有捕获到的分析数据都会本地存储在设备上。
+    您可以自由决定何时在应用程序流中调用此 API，以将捕获到的分析数据发送到 Mobile Analytics 服务。在此发送操作之前，所有捕获到的分析数据都会本地存储在设备上。
   {: web}
 
-5. 要捕获应用程序日志并将其发送到 Mobile Analytics 服务，请使用 Mobile Analytics 客户机 SDK 记录器 API。
-   Mobile Analytics 客户机 SDK 日志记录框架支持以下日志级别，这些级别按从最不详细到最详细的顺序列出，同时列出建议的使用准则：
+5. 要捕获应用程序日志并将其发送到 Mobile Analytics 服务，请使用 Mobile Analytics 客户机 SDK 记录器 API。Mobile Analytics 客户机 SDK 日志记录框架支持以下日志级别，这些级别按从最不详细到最详细的顺序列出，同时列出建议的使用准则：
     * FATAL - 用于不可恢复的崩溃或挂起。FATAL 级别保留用于记录不可恢复的错误，这些错误对于用户显示为应用程序崩溃
     * ERROR - 用于意外异常或意外网络协议错误
     * WARN - 用于记录未视为严重错误的使用情况警告，例如使用不推荐的 API 或网络响应慢
@@ -735,22 +737,22 @@ Swift SDK 可用于 iOS 和 watchOS。
    ```
    {: codeblock}
    {: web}
-   
+
    对于 Web SDK，客户机无法设置级别。所有日志记录都会发送到服务器，直到通过检索服务器配置概要文件来更改配置。
    {: note}
    {: web}
 
-6. 要获取有关用户引导模式（新用户与老用户）的洞察，必须将用户身份与应用程序会话相关联。可以通过调用以下 API 来完成此操作：
+6. 要获取有关用户上线模式（新用户与老用户）的洞察，必须将用户身份与应用程序会话相关联。可以通过调用以下 API 来完成此操作：
     ```Javascript
     ibmmfpfanalytics.setUserContext("userName or userIdentity");
     ```
     {: codeblock}
     {: web}
 
-    请注意，仅当调用了 ibmmfpfanalytics.send() API 时，才会将捕获到并本地存储的所有分析数据发送到 Mobile Analytics 服务。
+    仅当调用了 ibmmfpfanalytics.send() API 时，才会将捕获到并本地存储的所有分析数据发送到 Mobile Analytics 服务。
     {: web}
 
-7.  要获取应用程序 HTTP 网络交互模式的洞察，例如 HTTP API 调用数、请求数和平均响应时间，必须使用 Mobile Foundation 服务客户机 SDK 的 WLResourceRequest 类来发出 HTTP 调用。虽然您可能已初始化 Analytics 来捕获网络事件，但使用 WLResourceRequest 可使 Mobile Analytics 与网络调用挂钩并捕获相关数据。下面说明了应该如何发出 HTTP 调用。
+7.  要获取应用程序 HTTP 网络交互模式的洞察，例如 HTTP API 调用数、请求数和平均响应时间，必须使用 Mobile Foundation 服务客户机 SDK 的 WLResourceRequest 类来发出 HTTP 调用。虽然您已初始化 Analytics 来捕获网络事件，但使用 `WLResourceRequest` 可使 Mobile Analytics 与网络调用挂钩并捕获相关数据。使用以下代码发出 HTTP 调用。
     ```Javascript
       var resourceRequest = new WL.ResourceRequest("url_path", WLResourceRequest.GET);
       resourceRequest.send().then(function(response) {
@@ -781,12 +783,8 @@ Swift SDK 可用于 iOS 和 watchOS。
 ## 下一步做什么？
 {: #next_steps_analytics}
 
-尝试执行[此处](https://github.com/MobileFirst-Platform-Developer-Center/mfp-analytics-samples)的简单样本。您将能够在不到 5 分钟的时间内运行样本应用程序并了解本页面上讨论的 API 的功能。您还将能够发现分析在 Analytics 控制台上如何呈现为不同的洞察。  
+尝试执行[此处](https://github.com/MobileFirst-Platform-Developer-Center/mfp-analytics-samples)的简单样本。您能够在不到 5 分钟的时间内运行样本应用程序并了解 API 的功能。您还会发现分析在 Analytics 控制台上如何呈现为不同的洞察。  
 
 Mobile Foundation Analytics 服务提供了 REST API，可帮助开发者导入 (POST) 和导出 (GET) 分析数据。
 
 请试用[此处](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)的 Swagger 文档上的分析 REST API。
-
-
-
-

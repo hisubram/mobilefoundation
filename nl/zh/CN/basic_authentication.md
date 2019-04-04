@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: security, basic authentication, protecting resources, tokens, scopemapping
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -29,7 +32,7 @@ OAuth 协议将授权服务器的角色与托管资源的资源服务器相分�
 
 安全框架是围绕实现 OAuth 协议的授权服务器而构建的，并公开客户机为了获取访问令牌而与之交互的 OAuth 端点。安全框架提供了构建块，用于基于授权服务器和底层 OAuth 协议实现定制授权逻辑。缺省情况下，MobileFirst 服务器还充当**授权服务器**。但是，可以配置 IBM WebSphere DataPower 设备来充当授权服务器并与 MobileFirst 服务器交互。
 
-然后，客户机应用程序可以使用这些令牌来访问**资源服务器**上的资源，资源可以是 MobileFirst 服务器本身，也可以是外部服务器。资源服务器会检查令牌的有效性，以确保可以授予客户机对所请求资源的访问权。通过将资源服务器与授权服务器相分隔，您能够对在 MobileFirst 服务器外部运行的资源强制实施安全性。
+然后，客户机应用程序可以使用这些令牌来访问**资源服务器**上的资源，资源可以是 MobileFirst 服务器本身，也可以是外部服务器。资源服务器会检查令牌的有效性，以确保可以授予客户机对所请求资源的访问权。通过将资源服务器与授权服务器相分隔，对在 MobileFirst 服务器外部运行的资源强制实施安全性。
 
 应用程序开发者通过为每个受保护资源定义所需的作用域，并实施安全性检查和质询处理程序来保护对其资源的访问。服务器端安全框架和客户机端 API 会透明地处理 OAuth 消息交换以及与授权服务器的交互，从而允许开发者仅关注授权逻辑。
 
@@ -64,8 +67,11 @@ MobileFirst 访问令牌包含以下信息：
 
 * 编辑应用程序的配置文件
 
-    1. 在**命令行窗口**中，导航至项目的根文件夹并运行 ``mfpdev app pull``。
-    2. 打开位于 **[project-folder]\mobilefirst** 文件夹中的配置文件。
+    1. 在 CLI 中，导航至项目的根文件夹并运行以下命令。
+      ```bash
+      mfpdev app pull
+      ```
+    2. 打开位于 `[project-folder]\mobilefirst` 文件夹中的配置文件。
     3. 编辑该文件，以定义 `maxTokenExpiration` 属性并将其值设置为最长访问令牌到期时间段（秒）：
         ```java
         {
@@ -179,7 +185,7 @@ MobileFirst 刷新令牌是一种数字签名实体，类似于访问令牌，�
 ```        
 {: codeblock}
 
-刷新令牌响应除了在访问令牌响应结构中说明的其他属性对象外，还有额外的属性对象 refresh_token。
+刷新令牌响应除了在访问令牌响应结构中说明的其他属性对象外，还有额外的属性对象 `refresh_token`。
 
 >**注**：与访问令牌相比，刷新令牌长期有效。因此，必须谨慎使用刷新令牌功能。不需要定期用户认证的应用程序非常适合使用刷新令牌功能。
 
@@ -203,9 +209,9 @@ MobileFirst 刷新令牌是一种数字签名实体，类似于访问令牌，�
 #### 质询处理程序实体
 {: #challengehandler_entity}
 
-客户机尝试访问受保护资源时，可能会面临质询。质询是一个问题、一项安全性测试或一项服务器提示，用于确保允许客户机访问此资源。在最常见的情况下，此类质询是请求提供凭证，例如用户名和密码。
+当您尝试访问受保护资源时，客户机可能会面临质询。质询是一个问题、一项安全性测试或一项服务器提示，用于确保允许客户机访问此资源。在最常见的情况下，此类质询是请求提供凭证，例如用户名和密码。
 
-质询处理程序是一种客户机端实体，用于实现客户机端安全逻辑和相关用户交互。 
+质询处理程序是一种客户机端实体，用于实现客户机端安全逻辑和相关用户交互。
 
 >**重要信息**：收到质询后，不能忽略不管。您必须应答或取消该质询。忽略质询可能会导致意外行为。
 
@@ -227,9 +233,9 @@ scope 元素可以是以下其中一项：
 #### 作用域映射
 {: #scopemapping}
 
-缺省情况下，在**作用域**中编写的 **scope 元素**会映射到**同名安全性检查**。例如，如果编写名为 `PinCodeAttempts` 的安全性检查，那么可以在作用域中使用同名的 scope 元素。
+缺省情况下，在**作用域**中编写的 **scope 元素**会映射到同名的**安全性检查**。例如，如果编写名为 `PinCodeAttempts` 的安全性检查，那么可以在作用域中使用同名的 scope 元素。
 
-作用域映射允许将 scope 元素映射到安全性检查。客户机要求 scope 元素时，此配置会定义应该应用哪些安全性检查。例如，可以将 scope 元素 `access-restricted` 映射到 `PinCodeAttempts` 安全性检查。
+作用域映射允许将 scope 元素映射到安全性检查。客户机要求 scope 元素时，此配置会定义需要应用哪些安全性检查。例如，可以将 scope 元素 `access-restricted` 映射到 `PinCodeAttempts` 安全性检查。
 
 如果要根据哪个应用程序正在尝试访问资源而采用不同方式保护资源，那么作用域映射非常有用。您还可以将作用域映射到包含零个或更多个安全性检查的列表。
 
@@ -249,7 +255,7 @@ scope 元素可以是以下其中一项：
 您还可以使用必需的配置来手动编辑应用程序的配置 JSON 文件，然后将更改推送回 MobileFirst 服务器。
 
 1. 在**命令行窗口**中，导航至项目的根文件夹并运行 `mfpdev app pull`。
-2. 打开位于 **[project-folder]\mobilefirst** 文件夹中的配置文件。
+2. 打开位于 `[project-folder]\mobilefirst` 文件夹中的配置文件。
 3. 编辑该文件以定义 `scopeElementMapping` 属性。在此属性中，定义数据对，每个数据对包含所选 scope 元素的名称，以及该元素映射到的由零个或更多个以空格分隔的安全性检查构成的字符串。例如：
 
 ```java
@@ -258,9 +264,13 @@ scope 元素可以是以下其中一项：
          "SSOUserValidation": "LtpaBasedSSO CredentialsValidation"
      }
 ```
-4. 通过运行以下命令部署更新的配置 JSON 文件：`mfpdev app push`。
+4. 通过运行以下命令部署更新的配置 JSON 文件：
+  ```bash
+mfpdev app push
+```
 
->您还可以将更新的配置推送到远程服务器。请参阅“使用 MobileFirst CLI 管理 MobileFirst 工件”教程。
+您还可以将更新的配置推送到远程服务器。请参阅“使用 MobileFirst CLI 管理 MobileFirst 工件”教程。
+{: note}
 
 ### 保护资源
 {: #protecting-resources}
@@ -286,7 +296,7 @@ scope 元素可以是以下其中一项：
 
 1. 在**命令行窗口**中，导航至项目的根文件夹并运行 `mfpdev app pull`。
 2. 打开位于 **project-folder\mobilefirst** 文件夹中的配置文件。
-3. 编辑该文件以定义 `mandatoryScope` 属性，并将该属性值设置为包含所选 scope 元素的空格分隔列表的作用域字符串。例如：
+3. 编辑该文件以定义 `mandatoryScope` 属性，并将该属性值设置为包含所选 scope 元素的空格分隔列表的作用域字符串。例如，
 
     ```java
         "mandatoryScope": "appAuthenticity PincodeValidation"
@@ -298,7 +308,7 @@ scope 元素可以是以下其中一项：
 #### 保护适配器资源
 {: #protectadapterres}
 
-在适配器中，可以为 Java 方法或 JavaScript 资源过程指定保护作用域，也可以为整个 Java 资源类指定保护作用域。作用域定义为由一个或多个以空格分隔的 scope 元素构成的字符串（“scopeElement1 scopeElement2 ...”），或者定义为空值以应用缺省作用域。有关保护适配器资源的更多详细信息，请参阅[保护适配器](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters)。
+在适配器中，可以为 Java 方法或 JavaScript 资源过程指定保护作用域，也可以为整个 Java 资源类指定保护作用域。作用域定义为由一个或多个以空格分隔的 scope 元素构成的字符串（“scopeElement1 scopeElement2 ...”），或者定义为空值以应用缺省作用域。有关保护适配器资源的更多信息，请参阅[保护适配器](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters)。
 
 ### 禁用资源保护
 {: #disablingresprotection}

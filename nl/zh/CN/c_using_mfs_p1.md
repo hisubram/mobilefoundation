@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation developer, mobile analytics
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -36,5 +39,4 @@ Mobile Foundation: Developer 套餐服务实例中包含并预配置了 Mobile A
 
 * 从 {{site.data.keyword.mfp_oc_short_notm}} 启动 Mobile Analytics 控制台。
 
-有关使用 Mobile Analytics 检测应用程序的更多信息，可以参阅[此处](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}。
-
+有关使用 Mobile Analytics 检测应用程序的更多信息，请参阅[此处](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}。

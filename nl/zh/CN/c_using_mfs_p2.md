@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation, mobile analytics, professional plan, configure database
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -24,7 +27,7 @@ lastupdated:  "2019-02-12"
 配置 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服务实例之前，请考虑以下内容。
 * 仅 {{site.data.keyword.Db2_on_Cloud_short}} 和 {{site.data.keyword.composeForPostgreSQL}} {{site.data.keyword.Bluemix_notm}} 套餐支持 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application。
 
-* 您应该拥有对 {{site.data.keyword.Db2_on_Cloud_short}} 或 {{site.data.keyword.composeForPostgreSQL}} 服务实例凭证的访问权，才能配置 {{site.data.keyword.mobilefoundation_short}} 服务实例的设置。
+* 您需要拥有对 {{site.data.keyword.Db2_on_Cloud_short}} 或 {{site.data.keyword.composeForPostgreSQL}} 服务实例凭证的访问权，才能配置 {{site.data.keyword.mobilefoundation_short}} 服务实例的设置。
 
 > **注**：{{site.data.keyword.Db2_on_Cloud_short}}（除**轻量**套餐以外的其他任何套餐）或 {{site.data.keyword.composeForPostgreSQL}} 服务实例可以存在于您的 {{site.data.keyword.Bluemix_notm}} `组织`或您有权访问的其他任何`组织`内的任何`空间`中。请确保您有权访问 {{site.data.keyword.Db2_on_Cloud_short}} 或 {{site.data.keyword.composeForPostgreSQL}} 服务实例所在的`空间`。
 
@@ -40,7 +43,7 @@ lastupdated:  "2019-02-12"
 ### 设置与 Db2 on Cloud 服务实例的连接
 {: #connect_dashdb_p2}
 
-创建 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服务实例之后，您将看到*概述*页面。在此，您需要指定 {{site.data.keyword.mobilefoundation_short}} 服务实例应该连接到的 {{site.data.keyword.Db2_on_Cloud_short}}（除**轻量**套餐以外的其他任何套餐）或 {{site.data.keyword.composeForPostgreSQL}} 服务实例的连接信息。
+创建 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服务实例之后，您将看到*概述*页面。在此，您需要指定 {{site.data.keyword.mobilefoundation_short}} 服务实例需要连接到的 {{site.data.keyword.Db2_on_Cloud_short}}（除**轻量**套餐以外的其他任何套餐）或 {{site.data.keyword.composeForPostgreSQL}} 服务实例的连接信息。
 
 如果您没有现有的 Db2 on Cloud 实例，那么可以创建新的 {{site.data.keyword.Db2_on_Cloud_short}}（除**轻量**套餐以外的其他任何套餐）或 {{site.data.keyword.composeForPostgreSQL}} 服务实例。
 
@@ -54,7 +57,7 @@ lastupdated:  "2019-02-12"
 
 这样就创建了新的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例，也就提供了具有 8 GB RAM、2 个 vCPU 和 500 GB 存储的专用 {{site.data.keyword.Db2_on_Cloud_short}} 实例。
 
-按照以下步骤，连接到现有的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例或刚创建的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例：
+按照以下步骤，连接到现有的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例或创建的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例：
 
 1. 选择 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例所在的 {{site.data.keyword.Bluemix_notm}} `组织`。
 
@@ -103,7 +106,7 @@ lastupdated:  "2019-02-12"
 
 * 此操作将停止现有服务器并删除数据。将会使用更新的版本（如果可用）来创建新的服务器实例。此操作会花费几分钟才能完成。
 
-先前服务器实例中的数据（包括有关应用程序和适配器的信息）会持久存储在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例中。在重新创建服务器时会使用这些数据。
+先前服务器实例中的数据（包含有关应用程序和适配器的信息）会持久存储在配置的 {{site.data.keyword.Db2_on_Cloud_short}} 服务实例中。在重新创建服务器时会使用这些数据。
 {: note}
 
 ##	设置 Professional 1 Application 套餐中的高级配置
@@ -123,4 +126,4 @@ Mobile Foundation: Developer 套餐服务实例中包含并预配置了 Mobile A
 
 * 从 {{site.data.keyword.mfp_oc_short_notm}} 启动 Mobile Analytics 控制台。
 
-有关 Mobile Analytics 的更多信息，可以参阅[此处](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}。
+有关 Mobile Analytics 的更多信息，请参阅[此处](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}。

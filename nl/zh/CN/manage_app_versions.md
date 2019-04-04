@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-29"
 
+keywords: app versions, disabling apps
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -21,7 +24,7 @@ Mobile Foundation 应用程序管理功能为 Mobile Foundation 服务器用户�
 
 Mobile Foundation 服务器会跟踪对移动基础架构的所有访问尝试，并存储有关应用程序、用户以及安装该应用程序的设备的信息。应用程序、用户和设备之间的映射构成了服务器的移动应用程序管理功能的基础。
 
-通过使用 Mobile Foundation Operations Console，您可以监视和管理对资源的访问权，还可以管理特定应用程序版本。
+通过使用 Mobile Foundation Operations Console，您可以监视和管理对资源的访问权。您还可以管理特定应用程序版本。
 
 1.  转至 Mobile Foundation Operations Console，单击**应用程序**，选择要管理的应用程序，从显示的**版本**列表中，选择您感兴趣的特定应用程序版本。
     ![管理应用程序版本](images/app_version_management.png)
@@ -38,6 +41,6 @@ Mobile Foundation 服务器会跟踪对移动基础架构的所有访问尝试�
    *  导出版本
 
 
-请参阅[管理设备](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices)，以了解有关管理设备的信息。请参阅[远程禁用应用程序版本](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version)，以了解有关远程禁用特定应用程序版本的信息。
+有关管理设备的更多信息，请参阅[管理设备](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices)。
+有关远程禁用应用程序版本的更多信息，请参阅[远程禁用应用程序版本](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version)。
 {: note}
-

@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, authentication, using challenge handlers
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ lastupdated: "2018-11-19"
 ## 引用安全性检查
 {: #referencing-a-security-check}
 
-创建两个安全性检查：`StepUpPinCode` 和 `StepUpUserLogin`。 
+创建两个安全性检查：`StepUpPinCode` 和 `StepUpUserLogin`。
 
 在此示例中，`StepUpPinCode` 从属于 `StepUpUserLogin`。用户成功登录到 `StepUpUserLogin` 后，系统应该会要求用户输入 PIN 码。出于此目的，`StepUpPinCode` 必须能够引用 `StepUpUserLogin` 类。
 

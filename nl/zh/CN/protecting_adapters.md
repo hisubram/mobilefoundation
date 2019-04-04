@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, adapter security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -162,4 +165,3 @@ public class WebSphereResources {
 {: #unprotected-resources}
 
 不受保护的资源是不需要访问令牌的资源。MobileFirst 安全框架不会管理对不受保护资源的访问，也不会验证或检查访问这些资源的客户机的身份。因此，不受保护的资源不支持 Direct Update、阻止设备访问或远程禁用应用程序等功能。
-

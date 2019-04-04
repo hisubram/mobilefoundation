@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-13"
 
+keywords: jsonstore, code samples, offline storage
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -448,8 +451,7 @@ WL.JSONStore.get(collectionName)
 
 .then(function () {
   // Handle success.
-
-  // Note: You must call the 'init' API to re-use the empty collection.
+// Note: You must call the 'init' API to re-use the empty collection.
   // See the 'clear' API if you just want to remove all data that is inside.
 })
 
@@ -471,10 +473,8 @@ WL.JSONStore.get(collectionName)
 .clear()
 
 .then(function () {
-
   // Handle success.
-
-  // Note: You might want to use the 'removeCollection' API
+// Note: You might want to use the 'removeCollection' API
   // instead if you want to change the search fields.
 })
 
@@ -591,7 +591,7 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-// Open the collections.
+  // Open the collections.
 [[JSONStore sharedInstance] openCollections:@[people] withOptions:options error:&error];
 
 // Add data to the collection
@@ -642,7 +642,7 @@ JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-// Add additional find options (optional).
+  // Add additional find options (optional).
 JSONStoreQueryOptions* options = [JSONStoreQueryOptions new];
 [options setLimit:@10]; // Returns a maximum of 10 documents, default no limit.
 [options setOffset:@0]; // Skip 0 documents, default no offset.
@@ -688,7 +688,7 @@ NSArray* docs = @[ @{@"_id" : @1, @"json" : @{ @"name": @"carlitos", @"age" : @9
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-// Perform the replacement.
+  // Perform the replacement.
 int docsReplaced = [[people replaceDocuments:docs andMarkDirty:NO error:&error] intValue];
 ```
 {: codeblock}
@@ -704,7 +704,7 @@ JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-// Find document with _id equal to 1 and remove it.
+  // Find document with _id equal to 1 and remove it.
 int docsRemoved = [[people removeWithIds:@[@1] andMarkDirty:NO error:&error] intValue];
 ```
 {: codeblock}
@@ -726,7 +726,7 @@ JSONStoreQueryPart *queryPart = [[JSONStoreQueryPart alloc] init];
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-// Perform the count.
+  // Perform the count.
 int countResult = [[people countWithQueryParts:@[queryPart] error:&error] intValue];
 ```
 {: codeblock}
@@ -739,7 +739,7 @@ int countResult = [[people countWithQueryParts:@[queryPart] error:&error] intVal
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-// Perform the destroy.
+  // Perform the destroy.
 [[JSONStore sharedInstance] destroyDataAndReturnError:&error];
 ```
 {: codeblock}
@@ -752,7 +752,7 @@ NSError* error = nil;
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-// Close access to all collections in the store.
+  // Close access to all collections in the store.
 [[JSONStore sharedInstance] closeAllCollectionsAndReturnError:&error];
 ```
 {: codeblock}
@@ -771,8 +771,7 @@ NSString* username = @"carlos";
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-
-// Perform the change password operation.
+  // Perform the change password operation.
 [[JSONStore sharedInstance] changeCurrentPassword:oldPassword withNewPassword:newPassword forUsername:username error:&error];
 
 // Remove the passwords from memory.
@@ -814,8 +813,7 @@ JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-
-// ACTION REQUIRED: Get data (e.g. Adapter).
+  // ACTION REQUIRED: Get data (e.g. Adapter).
 // For this example, it is hardcoded.
 NSArray* data = @[ @{@"id" : @1, @"ssn": @"111-22-3333", @"name": @"carlos"} ];
 
@@ -835,7 +833,7 @@ JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-// Check if document with _id '1' is dirty.
+  // Check if document with _id '1' is dirty.
 BOOL isDirtyResult = [people isDirtyWithDocumentId:1 error:&error];
 ```
 {: codeblock}
@@ -851,7 +849,7 @@ JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-// Check if document with _id '1' is dirty.
+  // Check if document with _id '1' is dirty.
 int dirtyDocsCount = [[people countAllDirtyDocumentsWithError:&error] intValue];
 ```
 {: codeblock}
@@ -867,7 +865,7 @@ JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-// Remove the collection.
+  // Remove the collection.
 [people removeCollectionWithError:&error];
 ```
 {: codeblock}
@@ -883,7 +881,7 @@ JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
-// Remove the collection.
+  // Remove the collection.
 [people clearCollectionWithError:&error];
 ```
 {: codeblock}

@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-13"
 
+keywords: integration, mobile foundation, secure gateway
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -45,7 +48,7 @@ node app.js
 {: #implementing_sg_integration}
 
 ### 创建 Secure Gateway 服务实例
-登录到 IBM Cloud，然后创建 [Secure Gateway 服务](https://cloud.ibm.com/catalog/services/secure-gateway/)实例。 
+登录到 IBM Cloud，然后创建 [Secure Gateway 服务](https://cloud.ibm.com/catalog/services/secure-gateway/)实例。
 
 ![IBM Cloud](images/SecureGatewayInst.gif)
 
@@ -125,13 +128,13 @@ mfpdev adapter deploy
 
 在[此处 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/) 了解有关构建和部署适配器的信息。
 {: tip}
- 
-在 JavaHTTP 适配器中提供从上一部分获取的资源端点的云主机和端口详细信息。 
+
+在 JavaHTTP 适配器中提供从上一部分获取的资源端点的云主机和端口详细信息。
 
 ![适配器配置](images/AdapterConfiguration.png)
 
 其中，`cap-sg-prd-5.securegateway.appdomain.cloud` 和 `18946` 分别是 Secure Gateway 主机和端口。
- 
+
 现在，Mobile Foundation 适配器已配置，并且 Mobile Foundation 服务现在已启用，可以通过 Secure Gateway 服务在企业内使用内部部署系统。
 
 ### 创建和注册 Mobile Foundation 样本应用程序
@@ -150,4 +153,3 @@ mfpdev adapter deploy
 {: #summary_int_sec_gw}
 
 通过使用本教程，您应该能够使用 Secure Gateway 服务在 IBM Cloud 上运行的 Mobile Foundation 适配器与内部部署 HTTP 端点之间建立安全连接。
-

@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-23"
 
+keywords: synchronization of data, sync with offline storage, jsonstore sync
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -45,7 +48,7 @@ JSONStore 集合与 Cloudant 数据库之间的同步方法由**同步策略**�
   ```objc
   openOptions.syncPolicy = SYNC_DOWNSTREAM;
   ```
-  
+
   *Cordova*
   ```javascript
   collection.sync = {
@@ -66,7 +69,7 @@ JSONStore 集合与 Cloudant 数据库之间的同步方法由**同步策略**�
   ```objc
   openOptions.syncPolicy = SYNC_UPSTREAM;
   ```
-  
+
   *Cordova*
   ```javascript
   collection.sync = {
@@ -96,7 +99,7 @@ JSONStore 集合与 Cloudant 数据库之间的同步方法由**同步策略**�
  ```objc
   openOptions.syncAdapterPath = @"JSONStoreCloudantSync";
  ```
-  
+
 *Cordova or Ionic*
  ```javascript
   collection.sync = {
@@ -127,9 +130,8 @@ JSONStore 集合与 Cloudant 数据库之间的同步方法由**同步策略**�
  ```objc
   collection.sync(); //Here collection is the JSONStore collection object that was initialized
  ```
-  
+
 *Cordova*
  ```javascript
   WL.JSONStore.get(collectionName).sync();
  ```
-

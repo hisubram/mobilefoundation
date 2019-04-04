@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-02-12"
 
+keywords: troubleshooting techniques
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -36,7 +39,7 @@ lastupdated: "2018-02-12"
 
 ### 问题有哪些症状？
 
-开始描述问题时，最明显的提问是“发生了什么问题？”。此提问可能看起来很直接；但是，您可以将其细分为多个更具针对性的提问，从而更好地描述问题。这些提问可能包括：
+开始描述问题时，最常见的提问是“发生了什么问题？”。此提问可能看起来很直接；但是，您可以将其细分为多个更具针对性的提问，从而更好地描述问题。这些提问可能包括：
 
 - 谁或哪个组件报告了该问题？
 - 有哪些错误代码和消息？
@@ -53,11 +56,11 @@ lastupdated: "2018-02-12"
 - 是否所有用户都遇到该问题？
 - （对于多站点安装。）是否所有站点都遇到该问题？
 
-如果某一层报告问题，并不一定说明问题源于该层。要确定问题源于何处，其中一部分工作是了解问题所在的环境。请花些时间完整描述问题环境，包括操作系统和版本、所有相应软件和版本以及硬件信息。请确认是否在受支持配置的环境中运行；很多问题可以追溯至软件级别不兼容：这些软件级别不能一起运行或尚未一起经过完整测试。
+如果某一层报告问题，并不一定说明问题源于该层。要确定问题源于何处，其中一部分工作是了解问题所在的环境。请花些时间完整描述问题环境，包括操作系统和版本、所有相应软件和版本以及硬件信息。请确认是否在受支持配置的环境中运行，很多问题可以追溯至不兼容的软件级别，这些软件不能一起运行或者尚未一起经过完整测试。
 
 ### 问题在何时发生？
 
-详细绘制引起失败的各个事件的时间线，尤其对于那些只发生一次的情况。通过回溯可以最方便地绘制时间线：从报告错误的时间开始（尽可能精确，甚至精确到毫秒），然后对可用日志和信息进行回溯。通常，您只需要查看在诊断日志中找到的第一个可疑事件即可。
+请制定导致故障的事件的详细时间线，尤其是那些仅发生一次的情况。通过回溯可以最方便地绘制时间线：从报告错误的时间开始（尽可能精确，甚至精确到毫秒），然后对可用日志和信息进行回溯。通常，您只需要查看在诊断日志中找到的第一个可疑事件即可。
 
 要绘制详细的事件时间线，请回答以下提问：
 
@@ -76,7 +79,7 @@ lastupdated: "2018-02-12"
 - 是否需要发生一系列特定事件才会产生该问题？
 - 在该问题发生的同时，是否有任何其他应用程序发生故障？
 
-回答这些类型的问题可以帮助您说明问题发生的环境并将所有的依赖性关联起来。请记住，仅凭多个问题在差不多相同的时间发生，并不能断定这些问题一定相关。
+回答这些类型的问题可以帮助您说明问题发生的环境并将所有的依赖性关联起来。仅凭多个问题在差不多相同的时间发生，并不能断定这些问题一定相关。
 
 ### 问题能否重现？
 
@@ -92,17 +95,17 @@ lastupdated: "2018-02-12"
 ##  已知限制
 {: #knownlimitations_mfp}
 
-* {{site.data.keyword.mobilefoundation_short}} 服务 UI 不会使用用户所选语言环境特定的模式来显示数字。
+* {{site.data.keyword.mobilefoundation_short}} 服务 UI 不会使用用户所选的特定于语言环境的模式来显示数字。
 
 ## 获取有关 Mobile Foundation 的帮助和支持
 {: #getting_help_mobilefoundation}
 
-如果您在使用 {{site.data.keyword.mobilefoundation_short}} 时有任何疑问或遇到任何问题，您可以在论坛中搜索相关信息或进行提问来获取帮助。还可以提交支持凭单。
+如果您在使用 {{site.data.keyword.mobilefoundation_short}} 时有任何疑问或遇到任何问题，您可以通过搜索相关信息或通过在论坛中提问来获取帮助。还可以提交支持凭单。
 
-使用论坛进行提问时，请使用适当的标记来标注您的问题，以方便 IBM {{site.data.keyword.Bluemix_notm}} 开发团队识别。
+使用论坛提问时，请标记您的问题，以方便 {{site.data.keyword.Bluemix_notm}} 开发团队识别。
 
 如果在使用 {{site.data.keyword.mobilefoundation_short}} 开发或部署应用程序时遇到技术问题，请在 [Stack Overflow ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window} 发帖，并使用 `bluemix` 和 `ibm-mobilefirst` 标记您的问题。
 
 有关服务和入门指示信息的问题，请使用 [IBM developerWorks dW Answers ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} 论坛。另请加上 `bluemix` 和 `mobilefirst` 标记。
 
-有关提交 IBM 支持凭单或支持级别和凭单严重性的信息，请参阅[联系支持人员](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}。
+有关开具 IBM 支持凭单或有关支持级别和凭单严重性的更多信息，请参阅[联系支持人员](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}。

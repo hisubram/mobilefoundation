@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-14"
 
+keywords: Direct Update, CDN support, secure direct update
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -36,7 +39,7 @@ wl_DirectUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
 
 如果 Mobile Foundation 服务器上的 Web 资源比应用程序中的 Web 资源更新，那么会将 Direct Update 质询数据添加到服务器响应中。Mobile Foundation 客户机端框架每次检测到此 Direct Update 质询时，都将调用 `wl_directUpdateChallengeHandler.handleDirectUpdate` 函数。
 
-该函数提供缺省的 Direct Update 设计：在 Direct Update 可用时显示的缺省消息对话框，以及启动 Direct Update 进程时显示的缺省进度屏幕。您可以实现定制的 Direct Update 用户界面行为，或者通过覆盖此函数并实现您自己的逻辑来定制 Direct Update 对话框。
+该函数提供缺省的 Direct Update 设计：在 Direct Update 可用时显示的缺省消息对话框，以及启动 Direct Update 进程时显示的缺省进度屏幕。您可以通过覆盖此函数并实施自己的逻辑来实施定制 Direct Update 用户界面行为或定制 Direct Update 对话框。
 
 在下面的示例代码中，`handleDirectUpdate` 函数在 Direct Update 对话框中实现定制消息。将此代码添加到 Cordova 项目的 `www/js/index.js` 文件中。
 定制 Direct Update UI 的其他示例：

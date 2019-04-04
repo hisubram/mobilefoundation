@@ -2,8 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-27"
+lastupdated: "2019-03-26"
 
+keywords: mobile foundation release notes, cd updates, updates, continuous delivery updates
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -20,6 +23,16 @@ lastupdated: "2018-11-27"
 Mobile Foundation 服务更新通过临时修订 (iFix) 和持续交付更新（CD 更新）进行交付。iFix 和 CD 更新是累积的。在“CD 更新”中会交付功能更新。
 
 要了解有关持续交付支持模型的更多信息，请参阅 [Mobile Foundation v8.0 CD support announcement ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/897/ENUS217-390/index.html&request_locale=en)。
+{: note}
+
+## CD 更新 05（2019 年 3 月 19 日）
+{: #cd_update_5}
+
+* CoreML 模型分发。
+* WatchOS 的应用程序真实性。
+* FCM 的其他消息功能和属性。
+
+在[此处 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://mobilefirstplatform.ibmcloud.com/blog/2019/03/22/8-0-cd-update-release) 查看 CD 更新 05 公告。
 {: note}
 
 ## CD 更新 04（2018 年 12 月 19 日）
@@ -77,4 +90,3 @@ Mobile Foundation 服务更新通过临时修订 (iFix) 和持续交付更新（
 
 在[此处 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://mobilefirstplatform.ibmcloud.com/blog/2017/11/27/8-0-cd-update-release/) 查看 CD 更新 01 公告。
 {: note}
-

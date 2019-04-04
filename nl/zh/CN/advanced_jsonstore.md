@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, advanced jsonstore, Cordova secure jsonstore, iOS secure jsonstore, android jsonstore, adapter integration
+
+subcollection:  mobilefoundation
 ---
 {:generic: .ph data-hd-programlang='generic'}
 {:java: .ph data-hd-programlang='java'}
@@ -27,7 +30,7 @@ lastupdated: "2019-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# 高级 JSONStore 
+# 高级 JSONStore
 {: #advanced_jsonstore}
 
 ## JSONStore 中的安全性
@@ -48,7 +51,7 @@ lastupdated: "2019-02-12"
 仅在 iOS 中支持加密。缺省情况下，Mobile Foundation Cordova SDK for iOS 依赖于 iOS 提供的 API 进行加密。如果想要将此项替换为 OpenSSL，请执行以下操作：
 {: cordova}
 
-* 添加 `cordova-plugin-mfp-encrypt-utils` 插件： 
+* 添加 `cordova-plugin-mfp-encrypt-utils` 插件：
   ```bash
   cordova plugin add cordova-plugin-mfp-encrypt-utils.
   ```
@@ -116,13 +119,13 @@ try {
   // handle success
 } catch(JSONStoreException e) {
   // handle failure
-      }
-      ```
+    }
+   ```
 {: codeblock}
 {: android}
 
 ## JSONStore 中的多用户支持
-{: #multiple_user_jsonstore} 
+{: #multiple_user_jsonstore}
 
 <!--### Cordova
 {: #multiple_user_jsonstore_cordova} -->
@@ -189,8 +192,8 @@ try {
   // handle success
 } catch(JSONStoreException e) {
   // handle failure
-      }
-      ```
+    }
+   ```
 {: codeblock}
 {: android}
 
@@ -261,7 +264,7 @@ try {
    {: codeblock}
    {: cordova}
    为阻止 JSONStore 将文档标记为“脏”，请将 `{markDirty:false}` 选项传递到 `add`、`replace` 和 `remove`。
-   {: tip} 
+   {: tip}
    {: cordova}
 5. 您还可以使用 `getAllDirty` API 来检索脏文档。
    ```javascript
@@ -270,8 +273,8 @@ try {
         // handle success
     }).fail(function (errorObject) {
         // handle failure
-});
-```
+   });
+   ```
    {: codeblock}
    {: cordova}
 6. 要将更改推送到适配器，请调用 `getAllDirty` 以获取包含修订的文档的列表，然后使用 `WLResourceRequest`。在发送数据并且收到成功响应后，确保调用 `markClean`。
@@ -320,7 +323,7 @@ try {
         // result contains an array of documents with the results from the find
     }).fail(function () {
         // handle failure
-    }); 
+   });
    ```
    {: codeblock}
    {: cordova}
@@ -372,7 +375,7 @@ try {
    {: codeblock}
    {: ios}
    为阻止 JSONStore 将文档标记为“脏”，请将 `{markDirty:false}` 选项传递到 `add`、`replace` 和 `remove`。
-   {: tip} 
+   {: tip}
 5. 要将更改推送到适配器，请调用 `allDirty` 以获取包含修订的文档的列表，然后使用 `WLResourceRequest`。在发送数据并且收到成功响应后，确保调用 `markDocumentsClean`。
    ```swift
     // Start - PushToAdapter
@@ -457,7 +460,7 @@ try {
    {: codeblock}
    {: android}
    要阻止 JSONStore 将文档标记为“脏”，请将 `options.setMarkDirty(false)` 选项传递到 `add`、`replace` 和 `remove`。
-   {: tip} 
+   {: tip}
    {: android}
 5. 要将更改推送到适配器，请调用 `findAllDirtyDocuments` 以获取包含修订的文档的列表，然后使用 `WLResourceRequest`。在发送数据并且收到成功响应后，确保调用 `markDocumentsClean`。
    ```java
