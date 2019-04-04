@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-11"
 
+keywords: ios sdk, ios sdk api
+
+subcollection:  mobilefoundation
 ---
 
 #	SDK de iOS
@@ -15,4 +18,3 @@ Descargue los SDK de iOS desde CocoaPods.
 * [SDK for Push Notifications ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cocoapods.org/pods/IBMMobileFirstPlatformFoundationPush)
 * [SDK for JSONStore ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cocoapods.org/pods/IBMMobileFirstPlatformFoundationJSONStore)
 * [SDK for LiveUpdate ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://cocoapods.org/pods/IBMMobileFirstPlatformFoundationLiveUpdate)
-

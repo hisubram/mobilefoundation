@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, adapter security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -162,4 +165,3 @@ El código siguiente inhabilita la protección de recurso para un procedimiento 
 {: #unprotected-resources}
 
 Un recurso desprotegido es un recurso que no requiere una señal de acceso. La infraestructura de seguridad de MobileFirst no gestiona el acceso a recursos no protegidos, y no valida ni comprueba la identidad de los clientes que acceden a estos recursos. Por lo tanto, no se da soporte a las funciones como Direct Update, bloqueo del acceso a un dispositivo o la inhabilitación remota de una aplicación en los recursos desprotegidos.
-

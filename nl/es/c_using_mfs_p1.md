@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation developer, mobile analytics
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -36,5 +39,5 @@ El servidor de Mobile Analytics está incluido y preconfigurado con la instancia
 
 * Inicie la consola de Mobile Analytics desde {{site.data.keyword.mfp_oc_short_notm}}.
 
-Para obtener más información sobre la instrumentación de la app utilizando Mobile Analytics, consulte [aquí](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.
-
+Para obtener más información sobre la instrumentación de la app utilizando Mobile Analytics, consulte
+[aquí](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.

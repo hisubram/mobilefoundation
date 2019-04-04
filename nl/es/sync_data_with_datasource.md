@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-23"
 
+keywords: synchronization of data, sync with offline storage, jsonstore sync
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -46,7 +49,7 @@ Utilice la política `SYNC_DOWNSTREAM` cuando desee descargar datos desde Clouda
   ```objc
   openOptions.syncPolicy = SYNC_DOWNSTREAM;
   ```
-  
+
   *Cordova*
   ```javascript
   collection.sync = {
@@ -67,7 +70,7 @@ Utilice la política `SYNC_DOWNSTREAM` cuando desee descargar datos desde Clouda
   ```objc
   openOptions.syncPolicy = SYNC_UPSTREAM;
   ```
-  
+
   *Cordova*
   ```javascript
   collection.sync = {
@@ -97,7 +100,7 @@ Esta configuración tiene el nombre del adaptador desplegado.
  ```objc
   openOptions.syncAdapterPath = @"JSONStoreCloudantSync";
  ```
-  
+
 *Cordova o Ionic*
  ```javascript
   collection.sync = {
@@ -128,9 +131,8 @@ Esta API realiza una sincronización en sentido descendente si la recopilación 
  ```objc
   collection.sync(); //Here collection is the JSONStore collection object that was initialized
  ```
-  
+
 *Cordova*
  ```javascript
   WL.JSONStore.get(collectionName).sync();
  ```
-

@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-11"
 
+keywords: mobile foundation, client sdk, sdk api, javascript api, java api, react native api, objective-c api, csharp api
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -34,7 +37,7 @@ lastupdated: "2019-02-11"
 {: javascript }
 API para Cordova / aplicaciones web.
 {: javascript }
-* **[API del lado del cliente](/docs/services/mobilefoundation?topic=mobilefoundation-javascript_client_sdk_api#javascript_client_sdk_api)**  
+* **[API del lado del cliente ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo"](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/javascript/client/)**  
     Puede utilizar la API de JavaScript para desarrollar apps para todos los entornos.
     {: javascript }
 * **[API push del lado del cliente ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-hybrid-cordova-js-apidoc/html/refjavascript-mfp-push-hybrid/html/index.html)**  
@@ -85,9 +88,9 @@ API para aplicaciones de React Native.
 {: csharp}
 API para aplicaciones de Windows 10 UWP nativo, Windows 8 Universal, Xamarin.iOS y Xamarin.Android nativas.
 {: csharp}
-* **[API del lado del cliente para apps de Windows 10 Universal Windows Platform y Windows 8 Universal, Xamarin.iOS and Xamarin.Android ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_api.pdf)**  
+* **[API del lado del cliente para apps de Windows 10 Universal Windows Platform y Windows 8 Universal, Xamarin.iOS y Xamarin.Android ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_api.pdf)**  
     Puede utilizar la C# API para desarrollar apps para entornos de Windows 10 Universal Windows Platform (UWP), Windows 8 Universal, Xamarin.iOS y Xamarin.Android.
     {: csharp}
-* **[API push del lado del cliente para apps de Windows 10 Universal Windows Platform y Windows 8 Universal, Xamarin.iOS and Xamarin.Android ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_push_api.pdf)**  
-    Puede utilizar API push C# para desarrollar apps que pueden enviar notificaciones push para entornos de the Windows 10 Universal Windows Platform (UWP) y Windows 8 Universal, Xamarin.iOS y Xamarin.Android.
+* **[API push del lado del cliente para apps de Windows 10 Universal Windows Platform y Windows 8 Universal, Xamarin.iOS y Xamarin.Android ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_push_api.pdf)**  
+    Puede utilizar API push C# para desarrollar apps que pueden enviar notificaciones push para entornos de Windows 10 Universal Windows Platform (UWP) y Windows 8 Universal, Xamarin.iOS y Xamarin.Android.
     {: csharp}

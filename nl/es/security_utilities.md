@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2018-11-19"
 
+keywords: security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -15,13 +18,13 @@ lastupdated:  "2018-11-19"
 #	Programa de utilidad de seguridad
 {: #security_utilities}
 
-La API del lado del cliente de Mobile Foundation proporciona algunos programas de utilidad de seguridad para proteger los datos del usuario. Las características como JSONStore son de gran utilidad si desea proteger objetos JSON. Sin embargo, no se recomienda almacenar blobs binarios en una recopilación de JSONStore.
+La API del lado del cliente de Mobile Foundation proporciona algunos programas de utilidad de seguridad para proteger los datos del usuario. Las características como JSONStore son de gran utilidad si desea proteger objetos JSON. Recomendamos no almacenar blobs binarios en una recopilación JSONStore.
 
 En su lugar, almacene los datos binarios en el sistema de archivos, y almacene las vías de acceso de archivos y otros metadatos dentro de una recopilación JSONStore. Si desea proteger los archivos como, por ejemplo, imágenes, puede codificarlas como series base64, cifrarlas, y grabar la salida en el disco. Para descifrar los datos, podrá buscar en los metadatos en una recopilación JSONStore. Lea los datos cifrados del disco y descífrelos mediante los metadatos almacenados. Estos metadatos pueden incluir la clave, la sal, el vector de inicialización (IV), el tipo de archivo o la vía de acceso al archivo, entre otros.
 
 A un alto nivel, las SecurityUtils API proporciona las siguientes API:
 
-* Generación de claves - En lugar de pasar directamente una contraseña a la función de cifrado, esta función de generación de claves utiliza PBKDF2 (Password-Based Key Derivation Function v2) para generar una clave de 256 bits para la API de cifrado. Toma un parámetro para el número de iteraciones. Cuanto mayor sea el número, más tiempo necesitará un atacante para averiguar su clave mediante fuerza bruta. Utilice un valor de al menos 10.000. La sal, que debe ser única, hace que para los atacantes sea más difícil utilizar información de hash para atacar la contraseña. Utilice una longitud de 32 bytes.
+* Generación de claves - En lugar de pasar directamente una contraseña a la función de cifrado, esta función de generación de claves utiliza PBKDF2 (Password-Based Key Derivation Function v2) para generar una clave de 256 bits para la API de cifrado. Toma un parámetro para el número de iteraciones. Cuanto mayor sea el número, más tiempo necesitará un atacante para averiguar su clave mediante fuerza bruta. Utilice un valor de al menos 10.000. La sal debe ser única, lo que dificulta mucho la labor de los atacantes que utilicen información hash existente para atacar su contraseña. Utilice una longitud de 32 bytes.
 * Cifrado - La entrada se cifra utilizando AES (Advanced Encryption Standard). La API toma una clave que se genera con la API de generación de claves. Internamente, genera un vector de inicialización (IV) seguro, que se utiliza para añadir aleatorización al primer cifrado de bloque. Se cifra el texto. Si desea cifrar una imagen u otro formato binario, convierta su código binario en texto base64 utilizando estas API. Esta función de cifrado devuelve un objeto con las siguientes partes:
     * ct (texto cifrado, también denominado texto encriptado)
     * IV (vector de inicialización)

@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, advanced jsonstore, Cordova secure jsonstore, iOS secure jsonstore, android jsonstore, adapter integration
+
+subcollection:  mobilefoundation
 ---
 {:generic: .ph data-hd-programlang='generic'}
 {:java: .ph data-hd-programlang='java'}
@@ -27,7 +30,7 @@ lastupdated: "2019-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# JSONStore avanzado 
+# JSONStore avanzado
 {: #advanced_jsonstore}
 
 ## Seguridad en JSONStore
@@ -50,7 +53,7 @@ Utilice `closeAll` para bloquear el acceso a las recopilaciones hasta que llame 
 Solo se ofrece soporte del cifrado en iOS. De forma predeterminada, el SDK de Cordova para iOS de Mobile Foundation se basa en las API que proporciona iOS para el cifrado. Si prefiere utilizar OpenSSL:
 {: cordova}
 
-* Añada el plugin `cordova-plugin-mfp-encrypt-utils`: 
+* Añada el plugin `cordova-plugin-mfp-encrypt-utils`:
   ```bash
   cordova plugin add cordova-plugin-mfp-encrypt-utils.
   ```
@@ -107,8 +110,8 @@ Utilice `changeCurrentPassword` para cambiar la contraseña.
 {: android}
 
 ```java
-Context  context = getContext();
-    try {
+Context context = getContext();
+try {
   JSONStoreCollection people = new JSONStoreCollection("people");
   people.setSearchField("name", SearchFieldType.STRING);
   people.setSearchField("age", SearchFieldType.INTEGER);
@@ -126,7 +129,7 @@ Context  context = getContext();
 {: android}
 
 ## Soporte de varios usuarios en JSONStore
-{: #multiple_user_jsonstore} 
+{: #multiple_user_jsonstore}
 
 <!--### Cordova
 {: #multiple_user_jsonstore_cordova} -->
@@ -180,8 +183,8 @@ Es posible crear varios almacenes con varias recopilaciones en una única aplica
 {: android}
 
 ```java
-Context  context = getContext();
-    try {
+Context context = getContext();
+try {
   JSONStoreCollection people = new JSONStoreCollection("people");
   people.setSearchField("name", SearchFieldType.STRING);
   people.setSearchField("age", SearchFieldType.INTEGER);
@@ -266,7 +269,7 @@ WL.JSONStore.get(collectionName).getPushRequired().then(function (dirtyDocuments
    {: codeblock}
    {: cordova}
    Para evitar que JSONStore marque los documentos como "sucios", pase la opción `{markDirty:false}` para `add`, `replace` y `remove`.
-   {: tip} 
+   {: tip}
    {: cordova}
 5. Utilice también la API `getAllDirty` para recuperar todos los documentos sucios.
    ```javascript
@@ -325,7 +328,7 @@ WL.JSONStore.get(collectionName).getPushRequired().then(function (dirtyDocuments
         // result contains an array of documents with the results from the find
     }).fail(function () {
         // handle failure
-    }); 
+    });
    ```
    {: codeblock}
    {: cordova}
@@ -378,7 +381,7 @@ Puede lograrlo utilizando `WLResourceRequest`.
    {: codeblock}
    {: ios}
    Para evitar que JSONStore marque los documentos como "sucios", pase la opción `{markDirty:false}` para `add`, `replace` y `remove`.
-   {: tip} 
+   {: tip}
 5. Para hacer push a los cambios para un adaptador, llame a `allDirty` para obtener una lista de documentos con modificaciones y, a continuación, utilizar `WLResourceRequest`. Después de enviar los datos y recibir una respuesta satisfactoria asegúrese de llamar a `markDocumentsClean`.
    ```swift
     // Start - PushToAdapter
@@ -464,7 +467,7 @@ Puede lograrlo utilizando funciones como, por ejemplo, `WLResourceRequest` o su 
    {: codeblock}
    {: android}
    Para evitar que JSONStore marque los documentos como "sucios", pase la opción `options.setMarkDirty(false)` para `add`, `replace` y `remove`.
-   {: tip} 
+   {: tip}
    {: android}
 5. Para hacer push a los cambios para un adaptador, llame a `findAllDirtyDocuments` para obtener una lista de documentos con modificaciones y, a continuación, utilizar `WLResourceRequest`. Después de enviar los datos y recibir una respuesta satisfactoria asegúrese de llamar a `markDocumentsClean`.
    ```java
@@ -498,5 +501,5 @@ Puede lograrlo utilizando funciones como, por ejemplo, `WLResourceRequest` o su 
    ```
    {: codeblock}
    {: android}
-6. Descargue el proyecto de aplicación Android nativo desde la sección **Ejemplos**. El proyecto contiene una aplicación Android nativa que utiliza el conjunto de API de JSONStore. Puede descargar el proyecto Maven del adaptador de JavaScript [aquí](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80). 
+6. Descargue el proyecto de aplicación Android nativo desde la sección **Ejemplos**. El proyecto contiene una aplicación Android nativa que utiliza el conjunto de API de JSONStore. Puede descargar el proyecto Maven del adaptador de JavaScript [aquí](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80).
 {: android}

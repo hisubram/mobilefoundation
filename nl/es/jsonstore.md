@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-12"
 
+keywords: JSONStore, offline storage, jsonstore error codes
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -20,7 +23,7 @@ lastupdated:  "2019-02-12"
 
 Puesto que es familiar para los desarrolladores, a veces en esta documentación se utiliza terminología de bases de datos relacionales para explicar JSONStore. Sin embargo, hay muchas diferencias entre una base de datos relacional y JSONStore. Por ejemplo, el esquema estricto que se utiliza para almacenar datos en las bases de datos relacionales es distinto de la aproximación con JSONStore. Con JSONStore, se puede almacenar cualquier contenido JSON e indexar el contenido que se necesita buscar.
 
-## Características clave
+## Características principales
 {: #key-features-jsonstore }
 * Indexación de datos para una búsqueda eficiente
 * Mecanismo de seguimiento cambios únicamente locales en los datos almacenados
@@ -192,16 +195,16 @@ La primera vez que JSONStore abre una recopilación con una contraseña, lo que 
 Cuando la clave localKeyGen está presente en la implementación JavaScript de la API JSONStore, y tiene un valor true, se genera localmente una señal criptográfica segura. De lo contrario, la señal se genera poniéndose en contacto con el servidor, con lo que se necesita conectividad al servidor de MobileFirst. Esta señal solamente es necesaria la primera vez que se abre un almacén con una contraseña. Con las implementaciones nativas (Objective-C y Java) se puede genera una señal criptográficamente segura de forma predeterminada, o el usuario puede pasar una mediante la opción secureRandom.
 
 Deberá valorar si es más conveniente:
-* abrir un almacén fuera de línea y confiar en el cliente para generar esta señal aleatoria (menos seguro) o 
+* abrir un almacén fuera de línea y confiar en el cliente para generar esta señal aleatoria (menos seguro) o
 * abrir el almacén con acceso al servidor de MobileFirst (es necesaria conectividad) y confiar en el servidor (más seguro)
 
 ### Programa de utilidad de seguridad
 {: #security-utilities }
 La API del lado del cliente de MobileFirst proporciona algunos programas de utilidad de seguridad para proteger los datos del usuario. Las características como JSONStore son de gran utilidad si desea proteger objetos JSON. Sin embargo, no se recomienda almacenar blobs binarios en una recopilación de JSONStore.
 
-En su lugar, almacene los datos binarios en el sistema de archivos, y almacene las vías de acceso de archivos y otros metadatos dentro de una recopilación JSONStore. Si desea proteger los archivos como, por ejemplo, imágenes, puede codificarlas como series base64, cifrarlas, y grabar la salida en el disco. 
+En su lugar, almacene los datos binarios en el sistema de archivos, y almacene las vías de acceso de archivos y otros metadatos dentro de una recopilación JSONStore. Si desea proteger los archivos como, por ejemplo, imágenes, puede codificarlas como series base64, cifrarlas, y grabar la salida en el disco.
 
-Para descifrar los datos, puede buscar en los metadatos en una recopilación JSONStore, leer los datos cifrados del disco y descifrarlos mediante los metadatos almacenados. 
+Para descifrar los datos, puede buscar en los metadatos en una recopilación JSONStore, leer los datos cifrados del disco y descifrarlos mediante los metadatos almacenados.
 
 Estos metadatos pueden incluir la clave, la sal, el vector de inicialización (IV), el tipo de archivo o la vía de acceso al archivo, entre otros.
 
@@ -333,7 +336,7 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 {: #objective-c-jsonstore }
 Cuando se utiliza la API iOS nativa para JSONStore, todas las operaciones se añaden a la cola de asignación asíncrona. Este comportamiento asegura que las operaciones que afectan al almacén se ejecutan en orden en una hebra que no es la hebra principal. Para obtener más información, consulte la documentación de Apple en [Grand Central Dispatch (GCD) ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window}.
 
-### Simultaneidad en Java 
+### Simultaneidad en Java
 {: #java-jsonstore }
 Cuando se utiliza la API Android nativa para JSONStore, todas las operaciones se ejecutan en la hebra principal. Debe crear hebras o utilizar agrupaciones de hebras para obtener un comportamiento asíncrono. Todas las operaciones de almacenamiento son de proceso múltiple.
 
@@ -795,7 +798,7 @@ Siga estos pasos para aislar el problema y notificarlo de forma más precisa.
 4. Busque en el archivo de base de datos SQLite que ha generado JSONStore. El cifrado debe estar desactivado.
 
    * Emulador de Android:
-   
+
    ```bash
    $ adb shell
    $ cd /data/data/com.<app-name>/databases/wljsonstore
@@ -863,7 +866,7 @@ manualmente. Esto eliminará la necesidad de tener código específico de plataf
         var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
         : {};                                                                
         WL.Client.init(options);                                           
-    } 
+    }
     ```                                                                     
 
 Esperará al suceso `mfpjsonjsloaded` (fuera de `wlCommonInit`), lo que garantizará que el script se ha cargado y que llama posteriormente a `WL.Client.init`, que iniciará `wlCommonInit`; este llamará después a `WL.JSONStore.init`.
@@ -949,28 +952,28 @@ Lista de códigos de error comunes y su descripción:
 | -100 UNKNOWN_FAILURE | Error no reconocido. |
 | -75 OS\_SECURITY\_FAILURE | Este código de error está relacionado con el distintivo requireOperatingSystemSecurity. Se puede producir si la API destroy no puede eliminar los metadatos de seguridad protegidos por la seguridad del sistema operativo (Touch ID con recuperación tras error del código de acceso) o las API init u open no pueden localizar los metadatos de seguridad. También puede fallar si el dispositivo no ofrece soporte a la seguridad del sistema operativo, aunque haya solicitado el uso de la seguridad del sistema operativo. |
 | -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore se cierra. Intente llamar al método open en la clase de JSONStore primero para habilitar el acceso al almacén. |
-| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | Se ha producido un problema al retrotraer la transacción. |
-| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION | No se puede llamar a removeCollection mientras hay una transacción en curso. |
-| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | No se puede llamar a destroy mientras haya transacciones en curso. |
-| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | No se puede llamar a closeAll mientras haya transacciones en curso. |
-| -44 TRANSACTION\_FAILURE\_DURING\_INIT | No se puede inicializar un almacenamiento mientras haya transacciones en curso. |
+| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | Ha habido un problema al retrotraer la transacción. |
+| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION |No se puede llamar a removeCollection mientras hay una transacción en curso. |
+| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | No se puede llamar a destroy mientras hay transacciones en curso. |
+| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | No se puede llamar a closeAll mientras hay transacciones en curso. |
+| -44 TRANSACTION\_FAILURE\_DURING\_INIT | No se puede inicializar un almacén mientras hay transacciones en curso. |
 | -43 TRANSACTION_FAILURE | Ha habido un problema con las transacciones. |
-| -42 NO\_TRANSACTION\_IN\_PROGRESS | No se puede confirmar como retrotraída una transacción cuando no hay ninguna transacción en curso. |
-| -41 TRANSACTION\_IN\_POGRESS | No se puede iniciar una nueva transacción mientras haya otra transacción en curso. |
-| -40 FIPS\_ENABLEMENT\_FAILURE | Se ha producido un problema con FIPS. |
+| -42 NO\_TRANSACTION\_IN\_PROGRESS | No se puede confirmar la retrotracción de una transacción cuando no hay ninguna transacción en curso. |
+| -41 TRANSACTION\_IN\_POGRESS | No se puede iniciar una transacción nueva mientras haya otra transacción en curso. |
+| -40 FIPS\_ENABLEMENT\_FAILURE |Ha habido un problema con FIPS. |
 | -24 JSON\_STORE\_FILE\_INFO\_ERROR | Se ha producido un problema al obtener información de archivo del sistema de archivos. |
-| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | Se ha producido un problema al reemplazar archivos de la recopilación. |
-| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | Se ha producido un problema al eliminar documentos de una recopilación. |
-| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | Se ha producido un problema al almacenar la clave de protección de datos (DPK). |
-| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | Se ha producido un problema con la indexación de datos de entrada. |
-| -12 INVALID\_SEARCH\_FIELD\_TYPES | Compruebe que los tipos que está pasando a searchFields son string, integer, number o boolean. |
-| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | Una operación en una matriz de documentos, por ejemplo, el método replace puede fallar mientras trabaja con un documento específico. El documento que ha fallado se devuelve y la transacción se retrotrae. En Android, este error también se produce al intentar utilizar JSONStore en arquitecturas no soportadas. |
+| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | Problema al sustituir documentos de una recopilación. |
+| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | Problema al eliminar documentos de una recopilación. |
+| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | Problema al almacenar la clave de protección de datos (DPK). |
+| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | Problema al indexar datos de entrada. |
+| -12 INVALID\_SEARCH\_FIELD\_TYPES | Compruebe que los tipos que se pasan a searchFields sean string, integer, number o boolean. |
+| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | Una operación en una matriz de documentos, por ejemplo, el método replace, puede fallar mientras trabaja con un documento específico. El documento que ha fallado se devuelve y la transacción se retrotrae. En Android, este error se produce también al intentar utilizar JSONStore en arquitecturas no soportadas. |
 | -10 ACCEPT\_CONDITION\_FAILED | La función de aceptación que el usuario ha proporcionado ha devuelto false. |
-| -9 OFFSET\_WITHOUT\_LIMIT | Para utilizar el lapso temporal, también debe especificar un límite. |
+| -9 OFFSET\_WITHOUT\_LIMIT | Para utilizar un desplazamiento, también debe especificar un límite. |
 | -8 INVALID\_LIMIT\_OR\_OFFSET | Error de validación, debe ser un entero positivo. |
-| -7 INVALID_USERNAME | Error de validación (Solo debe ser [A-Z] o [a-z] o [0-9]). |
+| -7 INVALID_USERNAME | Error de validación (debe ser solo [A-Z], [a-z] o [0-9]). |
 | -6 USERNAME\_MISMATCH\_DETECTED | Para cerrar sesión, un usuario de JSONStore debe llamar primero al método closeAll. Solo puede haber un usuario al mismo tiempo. |
-| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED | Se ha producido un problema con el método destroy mientras intentaba suprimir el archivo que contiene el contenido del almacén. |
+| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED |Se ha producido un problema con el método destroy mientras intentaba suprimir el archivo que contiene el contenido del almacén. |
 | -4 DESTROY\_REMOVE\_KEYS\_FAILED | Se ha producido un problema con el método destroy mientras intentaba borrar la cadena de claves (iOS) o las preferencias de usuario compartido (Android). |
 | -3 INVALID\_KEY\_ON\_PROVISION | Se ha enviado la contraseña incorrecta a un almacén cifrado. |
 | -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | Los campos de búsqueda no son dinámicos. No es posible cambiar los campos de búsqueda sin llamar los métodos destroy o removeCollection antes de llamar los métodos init u open con los nuevos campos de búsqueda. Este error se puede producir si cambia el nombre o el tipo del campo de búsqueda. Por ejemplo: {key: 'string'} a {key: 'number'} o {myKey: 'string'} a {theKey: 'string'}. |

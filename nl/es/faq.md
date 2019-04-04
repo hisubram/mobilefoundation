@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2018-11-16"
 
+keywords: mobile foundation faq, updates to mobile foundation, custom domain
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -65,4 +68,6 @@ Para utilizar su propio dominio será necesario configurar el dominio personaliz
 
 + Vaya al proveedor DNS para su dominio y añada una entrada CNAME, que dirigirá el tráfico de su dominio a la ruta de {{site.data.keyword.Bluemix_notm}} predeterminada, donde se está ejecutando el servidor.
 
-+ Si desea configurar `https` para el dominio personalizado, cargue el certificado SSL para su dominio en {{site.data.keyword.Bluemix_notm}}. Para hacerlo, vaya a **Gestionar organizaciones > DOMINIOS**, seleccione el dominio personalizado para el que desea configurar el certificado SSL, pulse **Cargar certificado** para cargar el certificado SSL para su dominio. Consulte [esta publicación ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window} para obtener más información.
++ Si desea configurar `https` para el dominio personalizado, cargue el certificado SSL para su dominio en {{site.data.keyword.Bluemix_notm}}. Para cargar el certificado SSL, vaya a **Gestionar organizaciones > DOMINIOS**, seleccione el dominio personalizado para el que desea configurar el certificado SSL, pulse **Cargar certificado** para cargar el certificado SSL para su dominio. Para obtener más información, consulte
+[esta publicación
+![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window}.

@@ -2,8 +2,11 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated:  "2019-03-14"
 
+keywords: getting started, mobile foundation, plans, configure mobile foundation server, sample app, setup
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -16,12 +19,17 @@ lastupdated:  "2019-02-12"
 # Guía de aprendizaje de iniciación
 {: #getting-started-tutorial}
 
-{{site.data.keyword.mobilefoundation_long}} acelera la configuración de un entorno de {{site.data.keyword.mfp_full}} que puede utilizar para desarrollar, probar y ejecutar apps móviles de empresa. {{site.data.keyword.mobilefoundation_short}} ofrece los diferentes planes de servicio siguientes: Developer, Professional Per Device y Professional 1 Application.
+{{site.data.keyword.mobilefoundation_long}} acelera la configuración de un entorno de {{site.data.keyword.mfp_full}} que puede utilizar para desarrollar, probar y ejecutar apps móviles de empresa. {{site.data.keyword.mobilefoundation_short}} ofrece los diferentes planes de servicio siguientes:
+* **Lite**: proporciona una instancia alojada del servidor de Foundation limitada por memoria y CPU. Permite cualquier número de aplicaciones con el número total de dispositivos conectados en todas las plataformas limitado a 10.  Es gratuito y solo se utiliza para fines de prueba.
+* **Developer**: proporciona una instancia del servidor de Foundation en la cuenta del usuario. Permite cualquier número de aplicaciones con el número total de dispositivos conectados en todas las plataformas limitado a 10. Es gratuito y solo se utiliza para fines de desarrollo y pruebas.
+* **Professional Per Device**: proporciona una instancia del servidor de Foundation en la cuenta del usuario y se factura según el número de dispositivos conectados de manera activa
+* **Professional 1 Application**: proporciona una instancia del servidor de Foundation en la cuenta del usuario y permite que cualquier número de usuarios y dispositivos se conecten activamente solo a una aplicación individual.    
 {: shortdesc}
 
-Utilizando el plan Professional 1 Application se puede gestionar una sola aplicación incorporada en una de las plataformas operativas soportadas. Los sistemas operativos soportados son Android, iOS, Windows o web móvil. El plan Developer está pensado para entornos de desarrollo y pruebas. Puede revisar todos los planes disponibles [aquí](https://cloud.ibm.com/catalog/services/mobile-foundation).
+Puede revisar todos los planes disponibles [aquí](https://cloud.ibm.com/catalog/services/mobile-foundation).
+{: note}
 
-Esta guía de aprendizaje de iniciación le permite crear una instancia de servicio de {{site.data.keyword.mobilefoundation_short}} utilizando uno de los planes soportados. Después podrá registrar una aplicación. Descargue y edite la aplicación registrada, despliegue un adaptador y pruebe la aplicación.
+Cree una instancia de servicio de {{site.data.keyword.mobilefoundation_short}} que utilice uno de los planes con soporte siguiendo esta guía de aprendizaje de iniciación. Después podrá registrar una aplicación. Descargue y edite la aplicación registrada, despliegue un adaptador y, por último, pruebe la aplicación.
 
 ## Antes de empezar
 {: #prereqs-gs}
@@ -38,6 +46,19 @@ Necesitará una cuenta de {{site.data.keyword.Bluemix}} y una instancia del serv
 
 ## Paso 2: Cree el canal móvil
 {: #buildmobilechannel}
+
+
+### Para el plan {{site.data.keyword.mobilefoundation_short}}: Lite
+{: #buildchannelliteplan}
+Después de crear una instancia de {{site.data.keyword.mobilefoundation_short}}: Lite, puede empezar a crear el canal móvil realizando los pasos siguientes.
+
+* Puede acceder instantáneamente a la instancia alojada del servidor de Mobile Foundation y trabajar con ella.
+
+  Esta selección crea una instancia alojada de {{site.data.keyword.mfserver_long_notm}} con la configuración siguiente:
+  *	1 GB de memoria, lo cual es suficiente para probar las funciones de {{site.data.keyword.mfserver_long_notm}}.  
+
+  * Para acceder al servidor de Mobile Foundation mediante la CLI, necesitará las credenciales, que están disponibles al pulsar **Credenciales de servicio** en el panel de navegación izquierdo de la consola de IBM Cloud.
+
 
 ### Para el plan {{site.data.keyword.mobilefoundation_short}}: Developer
 {: #buildchanneldevplan}
@@ -69,7 +90,7 @@ Después de crear una instancia del servicio de {{site.data.keyword.mobilefounda
       + Pulse **Añadir** seguido de **Continuar** en la ventana emergente que le solicita información sobre el servicio {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} seleccionado. Esta acción crea las tablas necesarias en la instancia de servicio de base de datos de {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} configurada.
 
       Después de añadir una conexión {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} a la instancia {{site.data.keyword.mobilefoundation_short}} no podrá cambiarla.
-      {: note} 
+      {: note}
   2.  Cree e inicie el servidor.
 
       1. Cree una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con la configuración predeterminada, pulse **Iniciar servidor básico**.
@@ -86,7 +107,7 @@ Después de crear una instancia del servicio de {{site.data.keyword.mobilefounda
 
       +	Pulse **Iniciar consola** para abrir la {{site.data.keyword.mfp_oc_short_notm}}.      
 
-      Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5), para obtener más información.
+      Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Para obtener más información, consulte [Ajuste de la configuración avanzada](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5).
       {: tip}
 
 ### Para el plan {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application
@@ -124,7 +145,7 @@ Después de crear una instancia del servicio {{site.data.keyword.mobilefoundatio
 
       +  Pulse **Iniciar consola** para abrir la {{site.data.keyword.mfp_oc_short_notm}}.  
 
-      Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Consulte [Ajuste de la configuración avanzada](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2), para obtener más información.
+      Para crear una instancia de servidor de {{site.data.keyword.mobilefirst_notm}} con configuración avanzada para la topología, seguridad y otros tipos de configuración del servidor, pulse **Iniciar servidor con configuración avanzada**. Para obtener más información, consulte [Ajuste de la configuración avanzada](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2).
       {: tip}
 
 Vaya a [Utilización del servicio Mobile Foundation para configurar el servidor de MobileFirst ![Icono de enlace externo](../../icons/launch-glyph.svg "Icono de enlace externo")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window} para obtener más información sobre la iniciación a {{site.data.keyword.mobilefoundation_short}}.
@@ -239,9 +260,9 @@ Después de crear e iniciar la instancia de servidor de Mobile Foundation, siga 
    {: tip}
 
   2. Pulse **Ejecutar App** en Android Studio.
-     * Verá la app iniciada en un emulador de dispositivo.
-     * Pulse **Hacer ping a servidor de MobileFirst** en la aplicación, se mostrará `Conectado al servidor de MobileFirst`.
-     * Si la aplicación se ha podido conectar al servidor de MobileFirst Server, se producirá una llamada de solicitud de recurso mediante el adaptador de Java desplegado.
+     * Verá que la app se ha iniciado en un emulador de dispositivo.
+     * Pulse **Hacer ping a servidor de MobileFirst** en la aplicación y se mostrará `Conectado al servidor de MobileFirst`.
+     * Si la aplicación se ha podido conectar al servidor de MobileFirst, el adaptador Java desplegado realizará una llamada de solicitud de recursos.
      * La respuesta del adaptador aparecerá en la vista de LogCat de Android Studio.
 
 
@@ -250,4 +271,4 @@ Después de crear e iniciar la instancia de servidor de Mobile Foundation, siga 
 
 Siga las [Guías de aprendizaje rápido ![Icono de enlace externo](../../icons/launch-glyph.svg "Guías de aprendizaje rápido")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window} para trabajar con más aplicaciones de ejemplo y explorar el funcionamiento de {{site.data.keyword.mobilefoundation_short}}.
 
-Hay guías de aprendizaje rápido para explicar el funcionamiento de {{site.data.keyword.mobilefoundation_short}} para apps de iOS, Android, Web, Cordova, Windows React Native, Ionic y Xamarin.
+Hay guías de aprendizaje rápido en las que se describe el funcionamiento de {{site.data.keyword.mobilefoundation_short}} para apps de iOS, Android, Web, Cordova, Windows React Native, Ionic y Xamarin.

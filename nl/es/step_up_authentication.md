@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, authentication, using challenge handlers
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ Por ejemplo, esta guía de aprendizaje describe una aplicación que tiene dos re
 ## Referencia a una comprobación de seguridad
 {: #referencing-a-security-check}
 
-Cree dos comprobaciones de seguridad separadas: `StepUpPinCode` y `StepUpUserLogin`. 
+Cree dos comprobaciones de seguridad separadas: `StepUpPinCode` y `StepUpUserLogin`.
 
 En este ejemplo, `StepUpPinCode` depende de `StepUpUserLogin`. Se debería pedir al usuario que introduzca un código PIN solo después de haber iniciado sesión en `StepUpUserLogin` correctamente. Para ello, `StepUpPinCode` debe poder hacer referencia a la clase `StepUpUserLogin`.
 

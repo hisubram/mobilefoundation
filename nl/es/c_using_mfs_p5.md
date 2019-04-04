@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation, mobile analytics, professional plan, configure database
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -25,7 +28,7 @@ Tras crear la instancia del servicio {{site.data.keyword.mobilefoundation_short}
 Tenga en cuenta lo siguiente antes de configurar la instancia del servicio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device.
 * {{site.data.keyword.mobilefoundation_short}}: Professional Per Device está soportado únicamente con los planes {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} {{site.data.keyword.Bluemix_notm}}.
 
-* Debe tener acceso a las credenciales de la instancia de servicio {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} antes de poder configurar los valores de la instancia de servicio de {{site.data.keyword.mobilefoundation_short}}.
+* Necesita tener acceso a las credenciales de la instancia de servicio {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} antes de poder configurar los valores de la instancia de servicio de {{site.data.keyword.mobilefoundation_short}}.
 
 La instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} (cualquier plan que no sea el plan **Lite**) o {{site.data.keyword.composeForPostgreSQL}} puede existir en cualquier `Espacio` dentro de la {{site.data.keyword.Bluemix_notm}} `Organización` o de cualquier otra `Organización` a la que tenga acceso. Asegúrese de que dispone de los permisos para acceder al `Espacio` donde existe la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} o {{site.data.keyword.composeForPostgreSQL}}.
 {: note}
@@ -55,12 +58,13 @@ Siga estos pasos para crear una nueva instancia de servicio de Db2 on Cloud:
 
 Se ha creado una nueva instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}}, que proporciona una instancia dedicada de {{site.data.keyword.Db2_on_Cloud_short}} con RAM de 8 GB y 2 vCPU, y 500 GB de almacenamiento.
 
-Siga estos pasos para conectarse a una instancia de servicio existente de {{site.data.keyword.Db2_on_Cloud_short}} o a la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} que acaba de crear:
+Siga estos pasos para conectarse a una instancia de servicio existente de {{site.data.keyword.Db2_on_Cloud_short}} o a la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} que ha creado:
 
 1. Seleccione la `Organización` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}.
 
 + Seleccione el `Espacio` de {{site.data.keyword.Bluemix_notm}} donde existe la instancia del servicio {{site.data.keyword.Db2_on_Cloud_short}}, en la lista de espacios disponibles en la `Organización` seleccionada.   
-Si no ve la `Organización` y el `Espacio` donde existe su instancia del servicio de {{site.data.keyword.Db2_on_Cloud_short}}, consulte si es miembro de la `Organización` y del `Espacio`. Se requiere el rol de *Desarrollador* para acceder a la organización y al espacio, ya que el servicio {{site.data.keyword.mobilefoundation_short}} accede a las credenciales desde el servicio {{site.data.keyword.Db2_on_Cloud_short}}.
+Si no ve la `Organización` y el `Espacio` donde existe su instancia de servicio de
+{{site.data.keyword.Db2_on_Cloud_short}}, compruebe si es miembro de dicha `Organización` y de dicho `Espacio`. Se requiere el rol de *Desarrollador* para acceder a la organización y al espacio, ya que el servicio {{site.data.keyword.mobilefoundation_short}} accede a las credenciales desde el servicio {{site.data.keyword.Db2_on_Cloud_short}}.
 {: note}
 + Seleccione el `Nombre de servicio` y las `Credenciales` de {{site.data.keyword.Db2_on_Cloud_short}} para conectarse con la instancia  de servicio {{site.data.keyword.Db2_on_Cloud_short}} existente.
 
@@ -103,7 +107,7 @@ Con la consola, puede gestionar sus apps móviles, adaptadores y dispositivos m�
 
 * Esta acción detiene el servidor existente y suprime los datos. Se crea una nueva instancia con una versión actualizada, si está disponible. Esta acción tarda unos minutos en completarse.
 
-Los datos de su instancia de servidor anterior, incluida la información sobre apps y adaptadores, se conservan en la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} configurada. Estos datos se utilizan para volver a crear el servidor.
+Los datos de su instancia de servidor anterior, que incluyen la información sobre apps y adaptadores, se conservan en la instancia de servicio de {{site.data.keyword.Db2_on_Cloud_short}} configurada. Estos datos se utilizan para volver a crear el servidor.
 {: note}
 
 ##	Establecer la configuración avanzada en el plan Professional Per Device
@@ -123,4 +127,4 @@ El servidor de Mobile Analytics está incluido y preconfigurado con la instancia
 
 * Inicie la consola de Mobile Analytics desde {{site.data.keyword.mfp_oc_short_notm}}.
 
-Para obtener más información sobre Mobile Analytics, consulte [aquí](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.
+Para obtener más información sobre Mobile Analytics, vaya [aquí](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.

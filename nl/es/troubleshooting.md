@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-02-12"
 
+keywords: troubleshooting techniques
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -36,7 +39,7 @@ Las respuestas a estas preguntas normalmente conducen a una buena descripción d
 
 ### ¿Cuáles son los síntomas del problema?
 
-Al empezar a describir un problema, la pregunta más evidente es "¿Cuál es el problema?". Esta pregunta puede parecer sencilla; sin embargo, puede dividirla en varias más precisas que creen una imagen más descriptiva del problema. Estas preguntas pueden incluir:
+Cuando empieza a describir un problema, la pregunta más obvia es "¿Cuál es el problema?" Esta pregunta puede parecer sencilla; sin embargo, puede dividirla en varias más precisas que creen una imagen más descriptiva del problema. Estas preguntas pueden incluir las siguientes,
 
 - ¿Quién o qué está informando del problema?
 - ¿Cuáles son los códigos y los mensajes de error?
@@ -53,11 +56,11 @@ Las siguientes preguntas le ayudarán a centrarse en dónde se produce el proble
 - ¿Tienen el problema todos los usuarios?
 - (Para instalaciones multisitio). ¿Tienen todos los sitios el problema?
 
-Si una capa notifica el problema, el problema no necesariamente se ha creado en esa capa. Parte de la identificación de dónde se origina un problema es comprender el entorno en el que existe. Dedique tiempo a describir completamente el entorno del problema, incluido el sistema operativo y la versión, todo el software y las versiones correspondientes, y la información de hardware. Confirme que está ejecutando dentro de un entorno que es una configuración admitida; muchos problemas pueden deberse a niveles incompatibles de software que no se han planeado para que se ejecuten juntos, o cuyo funcionamiento conjunto no se ha comprobado totalmente.
+Si una capa notifica el problema, el problema no necesariamente se ha creado en esa capa. Parte de la identificación de dónde se origina un problema es comprender el entorno en el que existe. Dedique tiempo a describir completamente el entorno del problema, incluido el sistema operativo y la versión, todo el software y las versiones correspondientes, y la información de hardware. Confirme que está ejecutando dentro de un entorno que es una configuración admitida, muchos problemas pueden deberse a niveles incompatibles de software que no se han planeado para que se ejecuten juntos, o cuyo funcionamiento conjunto no está totalmente comprobado.
 
 ### ¿Cuándo se produce el problema?
 
-Desarrolle una línea temporal detallada de sucesos que den como resultado un error, especialmente para los casos que sólo ocurran una vez. Puede desarrollar fácilmente una línea temporal realizando un retroceso: empiece en el momento en que se informó del error (tan detalladamente como sea posible, incluso hasta el milisegundo) y retroceda por los registros y la información disponibles. Normalmente sólo deberá llegar hasta el primer suceso sospechoso que encuentre en un registro de diagnóstico.
+Desarrolle una línea temporal detallada de sucesos que lleven hasta el error, especialmente para los casos en los que solo ocurra una vez. Puede desarrollar fácilmente una línea temporal realizando un retroceso: empiece en el momento en que se informó del error (tan detalladamente como sea posible, incluso hasta el milisegundo) y retroceda por los registros y la información disponibles. Normalmente sólo deberá llegar hasta el primer suceso sospechoso que encuentre en un registro de diagnóstico.
 
 Para desarrollar una línea temporal detallada de sucesos, responda a estas preguntas:
 
@@ -76,7 +79,7 @@ Saber qué sistemas y aplicaciones se están ejecutando en el momento en que se 
 - ¿Debe producirse una determinada secuencia de sucesos para que ocurra el problema?
 - ¿Hay otras aplicaciones que den error al mismo tiempo?
 
-La respuesta a este tipo de preguntas le ayudará a conocer el entorno en el que se produce el problema y establecer correlaciones de dependencias. Recuerde que aunque varios problemas hayan ocurrido al mismo tiempo estos no están necesariamente relacionados.
+La respuesta a este tipo de preguntas le ayudará a conocer el entorno en el que se produce el problema y establecer correlaciones de dependencias. Solo porque varios problemas se hayan producido más o menos al mismo tiempo, no significa que necesariamente tengan que estar relacionados.
 
 ### ¿Puede reproducirse el problema?
 
@@ -99,10 +102,12 @@ No obstante, los problemas que puede reproducir pueden tener una desventaja: si 
 
 Si tiene problemas o preguntas sobre el uso de {{site.data.keyword.mobilefoundation_short}}, puede obtener ayuda buscando información o formulando preguntas en un foro. También puede abrir una incidencia de soporte.
 
-Al utilizar los foros para formular una pregunta, etiquete la pregunta para que la vean los equipos de desarrollo de IBM {{site.data.keyword.Bluemix_notm}}.
+Cuando utilice los foros para hacer una pregunta, etiquete la pregunta para que puedan verla los equipos de desarrollo de
+{{site.data.keyword.Bluemix_notm}}.
 
 Si tiene preguntas técnicas sobre el desarrollo o el despliegue de una app con {{site.data.keyword.mobilefoundation_short}}, publíquelas en [Stack Overflow ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window} y etiquete las preguntas con `bluemix` e `ibm-mobilefirst`.
 
 Para formular preguntas sobre el servicio y obtener instrucciones de iniciación, utilice el foro [IBM developerWorks dW Answers ![icono de enlace externo](../../icons/launch-glyph.svg "icono de enlace externo")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window}. Incluya las etiquetas `bluemix` y `mobilefirst`.
 
-Para obtener información sobre cómo abrir una incidencia de soporte de IBM, o sobre los niveles de soporte y la gravedad de las incidencias, consulte [Cómo obtener soporte](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.
+Para obtener más información sobre cómo abrir una incidencia de soporte de IBM, o sobre los niveles y la gravedad de la incidencia, consulte
+[Cómo obtener soporte](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.

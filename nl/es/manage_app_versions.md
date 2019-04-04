@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-29"
 
+keywords: app versions, disabling apps
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -21,12 +24,12 @@ Las funciones de gestión de aplicaciones de Mobile Foundation proporcionan a lo
 
 El servidor de Mobile Foundation realiza un seguimiento de todos los intentos de acceder a la infraestructura móvil y almacena información sobre la aplicación, el usuario y el dispositivo en el que se ha instalado la aplicación. La correlación entre la aplicación, el usuario y el dispositivo forma la base de las funciones de gestión de aplicaciones móviles del servidor.
 
-Mediante la consola de operaciones de Mobile Foundation puede supervisar y gestionar el acceso a sus recursos, también puede gestionar la versión de aplicación específica.
+Mediante la consola de operaciones de Mobile Foundation puede supervisar y gestionar el acceso a sus recursos. También puede gestionar la versión específica de la aplicación.
 
 1.  Vaya a la consola de operaciones de Mobile Foundation, pulse en **Aplicaciones**, seleccione la aplicación que desea gestionar y seleccione la versión de la aplicación específica en la que está interesada de la lista de **Versiones** que se muestra.
     ![Manage application version](images/app_version_management.png)
 
-2. En el separador **Gestión**, verá las opciones para establecer el estado de la aplicación de la versión de aplicación seleccionada. Los estados soportados de una versión de aplicación son:
+2. En el separador **Gestión**, verá las opciones para establecer el estado de la aplicación de la versión de aplicación seleccionada. Los estados soportados de una versión de aplicación son,
    * Activo
    * Activo y notificando
    * Acceso inhabilitado
@@ -38,6 +41,8 @@ Mediante la consola de operaciones de Mobile Foundation puede supervisar y gesti
    *  Exportar versión
 
 
-Consulte [Gestión de dispositivos](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices) para obtener más información sobre la gestión de dispositivos. Consulte [Inhabilitar de forma remota una versión de app](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version) para obtener más información sobre la inhabilitación remota de la versión de una app específica.
+Para obtener más información sobre cómo gestionar los dispositivos, consulte
+[Gestión de dispositivos](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices).
+Para obtener más información sobre cómo inhabilitar de forma remota una versión de app, consulte
+[Inhabilitar de forma remota una versión de app](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version).
 {: note}
-

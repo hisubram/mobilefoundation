@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-22"
 
+keywords: mobile analytics, charts, app sessions, crashes, graph
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -19,25 +22,25 @@ lastupdated: "2018-11-22"
 # Crear gráficos personalizados
 {: #build_custom_charts}
 
-La vista Gráficos personalizados en la consola de Mobile Analytics le proporciona la flexibilidad necesaria para crear sus propias visualizaciones sobre los datos de análisis capturados y almacenados.  Esto le ayuda a extraer conocimientos de lo que se proporciona inicialmente o incluso ampliarlos fácilmente a la analítica de negocio formulada en torno a los datos personalizados.
+La vista Gráficos personalizados en la consola de Mobile Analytics le proporciona la flexibilidad necesaria para crear sus propias visualizaciones sobre los datos de análisis capturados y almacenados.  Los gráficos personalizados le ayudan a extraer conocimientos de lo que se proporciona inicialmente o incluso ampliarlos fácilmente a la analítica de negocio formulada en torno a los datos personalizados.
 
 En esta vista, puede elegir cualquiera de los conjuntos de datos de análisis soportados y, a continuación, seleccionar uno de los tipos de gráficos soportados para trazar el conjunto de datos.  Puedo incluso recortar aún más la visualización definiendo filtros que se aplicarán sobre los datos que se están trazando.  
 
-Conjuntos de datos soportados:
+Los conjuntos de datos soportados son,
  * Registros de apps
  * Sesiones de apps
  * Datos personalizados
  * Transacciones de red
- 
-Tipos de gráficos soportados:
+
+Los tipos de gráficos soportados son,
  * Gráfico de barras
  * Diagrama de flujo
  * Gráfico de líneas
- * Grupo de métricas 
+ * Grupo de métricas
  * Gráfico circular
  * Tabla
- 
-La selección del conjunto de datos, el tipo de gráfico a trazar, la definición de las características del gráfico y los filtros de datos que se van a aplicar se pueden compilar en una definición de gráfico personalizado y guardarse.  Puede crear y guardar todas las definiciones de gráficos personalizados que necesite. Los gráficos personalizados guardados se muestran en la vista Gráficos personalizados con los datos de análisis relevantes trazados. 
+
+La selección del conjunto de datos, el tipo de gráfico a trazar, la definición de las características del gráfico y los filtros de datos que se van a aplicar se pueden compilar en una definición de gráfico personalizado y guardarse.  Puede crear y guardar todas las definiciones de gráficos personalizados que necesite. Los gráficos personalizados guardados se muestran en la vista Gráficos personalizados con los datos de análisis relevantes trazados.
 
 ## Creación de un gráfico personalizado
 {: #creating_custom_chart}
@@ -61,11 +64,11 @@ Cree un gráfico personalizado siguiendo estos pasos:
 ## Obtención de información personalizada a partir de registros de datos personalizados
 {: #creating_custom_chart_for_client_logs}    
 
-Si desea obtener información detallada personalizada, como seguir el rastro de los usuarios en la aplicación, primero deberá capturar la información de rastreo del usuario relevante, como la página elegida, la opción seleccionada o el botón pulsado como datos personalizados y registrarlos.  Consulte el tema sobre [instrumentar su app](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app), sobre cómo registrar datos personalizados.
+Si desea obtener información detallada personalizada, como seguir el rastro de los usuarios en la aplicación, primero necesita capturar la información de rastreo del usuario relevante, como la página elegida, la opción seleccionada o el botón pulsado como datos personalizados y registrarlos.  Consulte el tema sobre [instrumentar su app](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app), sobre cómo registrar datos personalizados.
 
-A continuación, cree una definición de gráfico personalizado con datos personalizados como Tipo de suceso y elija un Tipo de gráfico. A medida que proceda a definir las **Propiedades de gráfico** o **Filtros de gráfico**, observará que aparecen los valores y los tipos de datos personalizados en los recuadros de lista desplegable.  Realice las selecciones correspondientes para el tipo de información que está buscando.  
+A continuación, cree una definición de gráfico personalizado con datos personalizados como Tipo de suceso y elija un Tipo de gráfico. A medida que proceda a definir las **Propiedades de gráfico** o **Filtros de gráfico**, observará que aparecen los valores y los tipos de datos personalizados en los recuadros desplegables.  Realice las selecciones correspondientes para el tipo de información que está buscando.  
 
-La profundidad y la utilidad de la información personalizada depende exclusivamente de la eficacia o relevancia con la que haya definido y capturado los datos personalizados en las aplicaciones.
+La profundidad y la utilidad de la información personalizada depende exclusivamente de la eficacia o relevancia con la que haya definido y capturado los datos personalizados de sus aplicaciones.
 {: note}
 
 ## Tipos de gráficos
@@ -135,4 +138,3 @@ El gráfico circular resultante muestra el desglose de las sesiones de app que f
 
 La tabla es útil cuando desea ver los datos sin procesar. La generación de una tabla es tan simple como añadir columnas de los datos sin procesar que desea ver.
 Como no todas las propiedades son necesarias para tipos de sucesos específicos, pueden aparecer valores nulos en la tabla. Si desea evitar que estas filas aparezcan en la tabla, añada un filtro *Existe* para una propiedad específica en el separador **Filtros de gráficos**
-
