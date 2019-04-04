@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-13"
 
+keywords: jsonstore, code samples, offline storage
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

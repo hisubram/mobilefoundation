@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-14"
 
+keywords: Direct Update, CDN support, secure direct update
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -45,7 +48,7 @@ Mobile Foundation 서버의 웹 리소스가 애플리케이션보다 최신인 
 * 옵션과 함께 사용자에게 표시되는 대체 HTML 등
 
 ```JavaScript
-wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, directUpdateContext) {        
+wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, directUpdateContext) {
     navigator.notification.confirm(  // Creates a dialog.
         'Custom dialog body text',
         // Handle dialog buttons.
@@ -188,13 +191,13 @@ wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
       savedDirectUpdateContext = directUpdateContext; // save direct update context
 
       var downloadSizeInMB = (directUpdateData.downloadSize / 1048576).toFixed(1).replace(".", WL.App.getDecimalSeparator());
-  var directUpdateMsg = WL.Utils.formatString(WL.ClientMessages.directUpdateNotificationMessage, downloadSizeInMB);
+      var directUpdateMsg = WL.Utils.formatString(WL.ClientMessages.directUpdateNotificationMessage, downloadSizeInMB);
 
       WL.SimpleDialog.show(WL.ClientMessages.directUpdateNotificationTitle, directUpdateMsg, [{
         text : WL.ClientMessages.update,
-    handler : function() {
+        handler : function() {
           directUpdateContext.start(directUpdateCustomListener);
-    }
+        }
       }]);
     };
     ```
@@ -204,7 +207,7 @@ wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
     ```JavaScript
     restartDirectUpdate = function () {
       savedDirectUpdateContext.start(directUpdateCustomListener); // use saved direct update context to restart direct update
-};
+    };
     ```
     {: codeblock}
 
@@ -212,20 +215,20 @@ wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
     ```JavaScript
     var directUpdateCustomListener = {
       onStart: function(totalSize){
-    alert('onStart: totalSize = ' + totalSize + 'Byte');
-  },
-  onProgress: function(status,totalSize,completeSize){
-    alert('onProgress: status = ' + status + ' completeSize = ' + completeSize + 'Byte');
-  },
-  onFinish: function(status){
-    alert('onFinish: status = ' + status);
-    var pos = status.indexOf("FAILURE");
-    if (pos > -1) {
+        alert('onStart: totalSize = ' + totalSize + 'Byte');
+      },
+      onProgress: function(status,totalSize,completeSize){
+        alert('onProgress: status = ' + status + ' completeSize = ' + completeSize + 'Byte');
+      },
+      onFinish: function(status){
+        alert('onFinish: status = ' + status);
+        var pos = status.indexOf("FAILURE");
+        if (pos > -1) {
           WL.SimpleDialog.show('Update Failed', 'Press try again button', [ {
             text : "Try Again",
-        handler : restartDirectUpdate // restart direct update
-      }]);
-    }
+            handler : restartDirectUpdate // restart direct update
+          }]);
+        }
       }
     };
     ```
@@ -323,7 +326,7 @@ Mobile Foundation 서버에 대한 DNS에서 다른 도메인을 작성하십시
 
 기본적으로 사용 안함으로 설정되는 보안 직접 업데이트를 사용하면 서드파티 공격자가 Mobile Foundation 서버 또는 CDN(Content Delivery Network)에서 클라이언트 애플리케이션으로 전송되는 웹 리소스를 변경하지 못합니다.
 
-**직접 업데이트 진위성을 사용하려면 다음을 수행하십시오.**  
+**직접 업데이트 진위성을 사용으로 설정하려면 다음을 수행하십시오.**  
 선호하는 도구를 사용하여 Mobile Foundation 서버 키 저장소에서 공개 키를 추출하여 base64로 변환하십시오.  
 생성되는 값은 아래에 지시된 대로 사용되어야 합니다.
 

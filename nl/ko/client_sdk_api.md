@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-11"
 
+keywords: mobile foundation, client sdk, sdk api, javascript api, java api, react native api, objective-c api, csharp api
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -34,7 +37,7 @@ lastupdated: "2019-02-11"
 {: javascript }
 Cordova/웹 애플리케이션용 API입니다.
 {: javascript }
-* **[클라이언트 측 API](/docs/services/mobilefoundation?topic=mobilefoundation-javascript_client_sdk_api#javascript_client_sdk_api)**  
+* **[클라이언트 측 API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘"](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/javascript/client/)**  
     JavaScript API를 사용하여 모든 환경용 앱을 개발할 수 있습니다.
     {: javascript }
 * **[클라이언트 측 푸시 API ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-hybrid-cordova-js-apidoc/html/refjavascript-mfp-push-hybrid/html/index.html)**  

@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, advanced jsonstore, Cordova secure jsonstore, iOS secure jsonstore, android jsonstore, adapter integration
+
+subcollection:  mobilefoundation
 ---
 {:generic: .ph data-hd-programlang='generic'}
 {:java: .ph data-hd-programlang='java'}
@@ -27,7 +30,7 @@ lastupdated: "2019-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# 고급 JSONStore 
+# 고급 JSONStore
 {: #advanced_jsonstore}
 
 ## JSONStore의 보안
@@ -50,7 +53,7 @@ lastupdated: "2019-02-12"
 암호화는 iOS에서만 지원됩니다. 기본적으로 iOS용 MobileFirst Cordova SDK는 iOS 제공 API를 암호화에 사용합니다. 이를 OpenSSL로 대체하려면 다음을 수행하십시오.
 {: cordova}
 
-* `cordova-plugin-mfp-encrypt-utils` 플러그인을 추가하십시오. 
+* `cordova-plugin-mfp-encrypt-utils` 플러그인을 추가하십시오.
   ```bash
   cordova plugin add cordova-plugin-mfp-encrypt-utils.
   ```
@@ -126,7 +129,7 @@ try {
 {: android}
 
 ## JSONStore의 다중 사용자 지원
-{: #multiple_user_jsonstore} 
+{: #multiple_user_jsonstore}
 
 <!--### Cordova
 {: #multiple_user_jsonstore_cordova} -->
@@ -266,7 +269,7 @@ try {
    {: codeblock}
    {: cordova}
    JSONStore에서 문서를 "더티"로 표시하지 않게 하려면 `{markDirty:false}` 옵션을 `add`, `replace` 및 `remove`에 전달하십시오.
-   {: tip} 
+   {: tip}
    {: cordova}
 5. `getAllDirty` API를 사용하여 더티 문서를 검색할 수도 있습니다.
    ```javascript
@@ -325,7 +328,7 @@ try {
         // result contains an array of documents with the results from the find
     }).fail(function () {
         // handle failure
-    }); 
+    });
    ```
    {: codeblock}
    {: cordova}
@@ -378,7 +381,7 @@ try {
    {: codeblock}
    {: ios}
    JSONStore에서 문서를 "더티"로 표시하지 않게 하려면 `{markDirty:false}` 옵션을 `add`, `replace` 및 `remove`에 전달하십시오.
-   {: tip} 
+   {: tip}
 5. 변경사항을 어댑터에 푸시하려면 `allDirty`를 호출하여 수정된 문서 목록을 가져온 후 `WLResourceRequest`를 사용하십시오. 데이터가 전송되고 성공적인 응답이 수신된 후 `markDocumentsClean`을 호출해야 합니다.
    ```swift
     // Start - PushToAdapter
@@ -464,7 +467,7 @@ try {
    {: codeblock}
    {: android}
    JSONStore에서 문서를 "더티"로 표시하지 않게 하려면 `options.setMarkDirty(false)` 옵션을 `add`, `replace` 및 `remove`에 전달하십시오.
-   {: tip} 
+   {: tip}
    {: android}
 5. 변경사항을 어댑터에 푸시하려면 `findAllDirtyDocuments`를 호출하여 수정된 문서 목록을 가져온 후 `WLResourceRequest`를 사용하십시오. 데이터가 전송되고 성공적인 응답이 수신된 후 `markDocumentsClean`을 호출해야 합니다.
    ```java
@@ -498,5 +501,5 @@ try {
    ```
    {: codeblock}
    {: android}
-6. **샘플** 절에서 네이티브 Android 애플리케이션 프로젝트를 다운로드하십시오. 이 프로젝트에는 JSONStore API 세트를 사용하는 네이티브 Android 애플리케이션이 포함되어 있습니다. [여기](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)에서 JavaScript 어댑터 Maven 프로젝트를 다운로드할 수 있습니다. 
+6. **샘플** 절에서 네이티브 Android 애플리케이션 프로젝트를 다운로드하십시오. 이 프로젝트에는 JSONStore API 세트를 사용하는 네이티브 Android 애플리케이션이 포함되어 있습니다. [여기](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)에서 JavaScript 어댑터 Maven 프로젝트를 다운로드할 수 있습니다.
 {: android}

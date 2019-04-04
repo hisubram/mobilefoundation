@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-02-12"
 
+keywords: troubleshooting techniques
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -36,7 +39,7 @@ lastupdated: "2018-02-12"
 
 ### 문제점의 증상은 무엇입니까?
 
-문제점 설명을 시작할 때 가장 확실한 질문은 "문제점이 무엇입니까?"입니다. 이 질문은 다소 직설적으로 보이긴 하지만, 문제점을 보다 세부적으로 서술할 수 있는 몇 가지의 좀더 구체적인 질문으로 이 질문을 나눌 수 있습니다. 이러한 질문에는 다음 내용이 포함될 수 있습니다.
+문제점 설명을 시작할 때 가장 명확한 질문은 "문제점이 무엇입니까?"입니다. 이 질문은 다소 직설적으로 보이긴 하지만, 문제점을 보다 세부적으로 서술할 수 있는 몇 가지의 좀더 구체적인 질문으로 이 질문을 나눌 수 있습니다. 이러한 질문에는 다음 내용이 포함될 수 있습니다.
 
 - 누가 또는 어떤 상황에서 문제점이 보고되었습니까?
 - 오류 코드 및 메시지는 무엇입니까?
@@ -76,11 +79,11 @@ lastupdated: "2018-02-12"
 - 문제점을 발생시키려면 특정 이벤트 순서가 필요합니까?
 - 다른 애플리케이션도 동시에 실패합니까?
 
-이러한 유형의 질문에 응답하면 문제점이 발생하는 환경에 대해 설명하고 종속성을 관련시키는 데 도움이 됩니다. 여러 문제점이 동시에 발생할 수 있으므로 문제점을 반드시 관련시킬 필요는 없습니다.
+이러한 유형의 질문에 응답하면 문제점이 발생하는 환경에 대해 설명하고 종속성을 관련시키는 데 도움이 됩니다. 동시에 여러 문제점이 발생했을 수 있으므로 문제점이 반드시 관련되어 있는 것은 아닙니다.
 
 ### 문제점이 재현 가능합니까?
 
-문제점 해결의 관점에서 볼 때 이상적인 문제점은 재현할 수 있는 문제점입니다. 일반적으로, 문제점을 재현할 수 있으면 조사할 때 더욱 다양한 도구 또는 프로시저를 자유롭게 선택할 수 있습니다. 그 결과, 재현할 수 있는 문제점은 보다 쉽게 디버그하고 해결할 수 있는 경우가 많습니다.
+문제점 해결의 관점에서 볼 때 이상적인 문제점은 재현할 수 있는 문제점입니다. 일반적으로, 문제점을 재현할 수 있으면 조사할 때 더욱 다양한 도구 또는 프로시저를 자유롭게 선택할 수 있습니다. 따라서 재현할 수 있는 문제점은 보다 쉽게 디버그하고 해결할 수 있는 경우가 많습니다.
 
 그렇지만 재현할 수 있는 문제점에는 불이익도 있습니다. 문제점이 비즈니스에 주는 영향이 큰 경우에는 이 문제점을 반복하고 싶지 않을 것입니다. 가능하면 테스트 또는 개발 환경에서 문제점을 재현하십시오. 그러면 일반적으로 조사 중에 더 많은 유연성 및 제어가 제공됩니다.
 
@@ -99,10 +102,10 @@ lastupdated: "2018-02-12"
 
 {{site.data.keyword.mobilefoundation_short}} 사용할 때 문제점이 발생하거나 질문이 있는 경우 정보를 검색하거나 포럼에서 질문을 작성하여 도움을 받을 수 있습니다. 지원 티켓을 열 수도 있습니다.
 
-질문을 작성하는 데 포럼을 사용하는 경우 IBM {{site.data.keyword.Bluemix_notm}} 개발 팀에서 확인할 수 있도록 질문에 태그를 지정하십시오.
+포럼을 사용하여 질문을 작성하는 경우 IBM {{site.data.keyword.Bluemix_notm}} 개발 팀에서 확인할 수 있도록 질문에 태그를 지정하십시오.
 
 {{site.data.keyword.mobilefoundation_short}}을 사용하여 앱 개발 또는 배치에 대한 기술적인 질문이 있는 경우 [Stack Overflow ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window}에 질문을 게시하고 `bluemix` 및 `ibm-mobilefirst`를 사용하여 질문에 태그를 지정하십시오.
 
 서비스 및 시작하기 지시사항에 대한 질문은 [IBM developerWorks dW Answers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} 포럼을 사용하십시오. `bluemix` 및 `mobilefirst` 태그를 포함시키십시오.
 
-IBM 지원 티켓 개설 방법이나 지원 레벨 및 티켓 심각도 정보는 [지원 문의](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}를 참조하십시오.
+IBM 지원 티켓을 여는 방법이나 지원 레벨 및 티켓 심각도에 대한 자세한 정보는 [지원 문의](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}를 참조하십시오.

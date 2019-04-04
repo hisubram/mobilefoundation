@@ -2,8 +2,11 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated:  "2019-03-14"
 
+keywords: getting started, mobile foundation, plans, configure mobile foundation server, sample app, setup
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -16,12 +19,18 @@ lastupdated:  "2019-02-12"
 # 시작하기 튜토리얼
 {: #getting-started-tutorial}
 
-{{site.data.keyword.mobilefoundation_long}}는 엔터프라이즈 모바일 앱을 개발, 테스트 및 실행할 수 있는 {{site.data.keyword.mfp_full}} 환경의 설정을 신속히 처리합니다. {{site.data.keyword.mobilefoundation_short}}은 Developer, Professional Per Device 및 Professional 1 Application과 같은 여러 서비스 플랜을 제공합니다.
+{{site.data.keyword.mobilefoundation_long}}는 엔터프라이즈 모바일 앱을 개발, 테스트 및 실행할 수 있는 {{site.data.keyword.mfp_full}} 환경의 설정을 신속히 처리합니다. {{site.data.keyword.mobilefoundation_short}}은 다음과 같은 여러 서비스 플랜을 제공합니다.
+* **Lite**: 메모리 및 CPU로 제한되는 Foundation 서버의 호스팅된 인스턴스를 프로비저닝합니다. 모든 애플리케이션에서 연결된 디바이스의 총 수가 10개로 제한되는 임의 수의 애플리케이션을 허용합니다. 무료이며 시험용으로만 사용됩니다.
+* **Developer**: 사용자의 계정에 Foundation 서버의 인스턴스를 프로비저닝합니다. 모든 애플리케이션에서 연결된 디바이스의 총 수가 10개로 제한되는 임의 수의 애플리케이션을 허용합니다. 무료이며 개발 및 테스트용으로만 사용됩니다.
+* **Professional Per Device**: 사용자의 계정에 Foundation 서버의 인스턴스를 프로비저닝하며 활성 상태로 연결된 디바이스의 수에 따라  비용이 청구됩니다.
+* **Professional 1 Application**: 사용자의 계정에 Foundation 서버의 인스턴스를 프로비저닝하며 임의 수의 사용자 및 디바이스가 단일 애플리케이션에 대해서만 활성 상태로 연결되도록 허용합니다.
+    
 {: shortdesc}
 
-Professional 1 Application 플랜을 사용하면 지원되는 운영 플랫폼 중 하나에서 빌드된 단일 애플리케이션을 관리할 수 있습니다. 지원되는 운영 체제는 Android, iOS, Windows 또는 모바일 웹입니다. Developer 플랜은 개발과 테스트에 가장 적합합니다. [여기](https://cloud.ibm.com/catalog/services/mobile-foundation)에서 사용 가능한 모든 플랜을 검토할 수 있습니다.
+[여기](https://cloud.ibm.com/catalog/services/mobile-foundation)에서 사용 가능한 모든 플랜을 검토할 수 있습니다.
+{: note}
 
-이 시작하기 튜토리얼을 통해 지원되는 플랜 중 하나를 사용하여 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스를 작성할 수 있습니다. 그런 다음 애플리케이션을 등록할 수 있습니다. 등록된 애플리케이션을 다운로드 및 편집하고 어댑터를 배치한 후 마지막으로 애플리케이션을 테스트하십시오.
+이 시작하기 튜토리얼에 따라 지원되는 플랜 중 하나를 사용하는 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스를 작성하십시오. 그런 다음 애플리케이션을 등록할 수 있습니다. 등록된 애플리케이션을 다운로드 및 편집하고 어댑터를 배치한 후 마지막으로 애플리케이션을 테스트하십시오.
 
 ## 시작하기 전에
 {: #prereqs-gs}
@@ -39,6 +48,19 @@ Professional 1 Application 플랜을 사용하면 지원되는 운영 플랫폼 
 ## 2단계: 모바일 채널 빌드
 {: #buildmobilechannel}
 
+
+### {{site.data.keyword.mobilefoundation_short}}의 경우: Lite 플랜
+{: #buildchannelliteplan}
+{{site.data.keyword.mobilefoundation_short}}: Lite의 인스턴스를 작성한 후에는 다음 단계를 완료하여 모바일 채널 빌드를 시작할 수 있습니다.
+
+* Mobile Foundation 서버의 호스팅된 인스턴스에 즉시 액세스하여 작업할 수 있습니다.
+
+  이 선택사항은 다음 설정으로 {{site.data.keyword.mfserver_long_notm}}의 호스팅된 인스턴스를 작성합니다.
+  *	1GB의 메모리. {{site.data.keyword.mfserver_long_notm}}의 기능을 시험 사용하는 데 충분합니다.  
+
+  * CLI를 사용하여 Mobile Foundation 서버에 액세스하려면 IBM Cloud 콘솔의 왼쪽 탐색 분할창에서 **서비스 인증 정보**를 클릭할 때 사용 가능한 인증 정보가 필요합니다.
+
+
 ### {{site.data.keyword.mobilefoundation_short}}의 경우: Developer 플랜
 {: #buildchanneldevplan}
 
@@ -47,7 +69,7 @@ Professional 1 Application 플랜을 사용하면 지원되는 운영 플랫폼 
 * Mobile Foundation 서버에 즉시 액세스하여 작업할 수 있습니다.
 
   이 선택사항은 다음 설정으로 {{site.data.keyword.mfserver_long_notm}}를 작성합니다.
-  *	1GB의 메모리. 이 크기는 개발, 간단한 테스트 활동 및 소규모 프로덕션 워크로드에 충분합니다.
+  *	1GB의 메모리. 이 크기는 개발, 간단한 테스트 활동 및 소규모 프로덕션 워크로드에 적합합니다.
 
   * CLI를 사용하여 Mobile Foundation 서버에 액세스하려면 IBM Cloud 콘솔의 왼쪽 탐색 분할창에서 **서비스 인증 정보**를 클릭할 때 사용 가능한 인증 정보가 필요합니다.
 
@@ -69,13 +91,13 @@ Professional 1 Application 플랜을 사용하면 지원되는 운영 플랫폼 
       + **추가**를 클릭한 후 선택한 {{site.data.keyword.Db2_on_Cloud_short}}(**Lite** 플랜 이외의 모든 플랜) 또는 {{site.data.keyword.composeForPostgreSQL}} 서비스에 대한 확인을 요청하는 팝업 창에서 **계속**을 클릭하십시오. 이 조치는 구성된 {{site.data.keyword.Db2_on_Cloud_short}}(**Lite** 플랜 이외의 모든 플랜) 또는 {{site.data.keyword.composeForPostgreSQL}} 데이터베이스 서비스 인스턴스에 필수 테이블을 작성합니다.
 
 {{site.data.keyword.Db2_on_Cloud_short}}(**Lite** 플랜 이외의 모든 플랜) 또는 {{site.data.keyword.composeForPostgreSQL}} 연결을 {{site.data.keyword.mobilefoundation_short}} 인스턴스에 추가한 후에는 이를 변경할 수 없습니다.
-      {: note} 
+      {: note}
   2.  서버를 작성하고 시작하십시오.
 
       1. 기본 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하고 **기본 서버 시작**을 클릭하십시오.
 
       + 이 선택은 다음 설정으로 {{site.data.keyword.mfserver_long_notm}}를 프로비저닝합니다.
-          - 각각 1GB 메모리가 있는 두 개의 노드. 이 크기는 개발, 일반적인 테스트 활동 및 소규모 프로덕션 워크로드에 충분합니다.
+          - 각각 1GB 메모리가 있는 두 개의 노드. 이 크기는 개발, 일반적인 테스트 활동 및 소규모 프로덕션 워크로드에 적합합니다.
 
           -	`username`과 `password`가 자동으로 생성됩니다. 서버가 시작되고 실행되면 이에 액세스할 수 있습니다.
 
@@ -241,7 +263,7 @@ Mobile Foundation 서버 인스턴스를 작성하고 시작한 후에 다음 �
   2. Android Studio에서 **앱 실행**을 클릭하십시오.
      * 디바이스 에뮬레이터에서 시작된 앱을 볼 수 있습니다.
      * 애플리케이션에서 **MobileFirst Server Ping**을 클릭하면 `Connected to MobileFirst Server`가 표시됩니다.
-     * 애플리케이션이 MobileFirst Server에 연결할 수 있으면 배치된 Java 어댑터를 사용하는 리소스 요청 호출이 발생합니다.
+     * 애플리케이션이 MobileFirst Server에 연결할 수 있으면 배치된 Java 어댑터가 리소스 요청 호출을 작성합니다.
      * 그런 다음 어댑터 응답이 Android Studio의 LogCat 보기에 출력됩니다.
 
 

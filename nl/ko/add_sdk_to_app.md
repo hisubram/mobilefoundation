@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-01-04"
 
+keywords: Mobile Foundation SDK, android sdk, iOS sdk, cordova sdk, react native sdk
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ lastupdated:  "2019-01-04"
 ### 앱에 Android SDK 추가
 {: android}
 
-Android Studio를 열고 Android 보기를 선택한 다음 **Gradle 스크립트**를 선택하고 `build.gradle(Module: app)` 파일을 선택한 다음 아래 단계를 따라 Android 애플리케이션에 Android SDK를 추가하십시오.
+Android Studio를 열고 Android 보기를 선택한 후 **Gradle 스크립트**를 선택하십시오. `build.gradle (Module: app)` 파일을 선택한 후 다음 단계를 수행하여 Android 애플리케이션에 Android SDK를 추가하십시오.
 {: android}
 
 1. `dependencies` 섹션에 다음 행을 추가하십시오.
@@ -52,7 +55,7 @@ Android Studio를 열고 Android 보기를 선택한 다음 **Gradle 스크립�
   ```
   {: codeblock}
   {: android}
-3. Android 보기에서 **app → manifests → AndroidManifest.xml** 파일을 여십시오. `application` 요소 위에 다음 권한을 추가하십시오.
+3. Android 보기에서 **app → manifests → AndroidManifest.xml** 파일을 여십시오. `application` 요소 앞에 다음 권한을 추가하십시오.
    ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -70,7 +73,7 @@ Android Studio를 열고 Android 보기를 선택한 다음 **Gradle 스크립�
 ### 앱에 iOS SDK 추가
 {: ios}
 
-Mobile Foundation 보안, 권한 부여, 로깅, 어댑터 호출 및 기타 코어 함수를 구현하는 API로 구성된 IBM Mobile Foundation용 코어 SDK입니다. 아래 단계를 따라 iOS 애플리케이션에 iOS SDK를 추가하십시오.
+이 SDK는 Mobile Foundation 보안, 권한 부여, 로깅, 어댑터 호출 및 기타 코어 함수를 구현하는 API로 구성된 IBM Mobile Foundation용 코어 SDK입니다. 다음 단계를 수행하여 iOS 애플리케이션에 iOS SDK를 추가하십시오.
 {: ios}
 
 1. iOS 앱의 루트 폴더로 이동한 후 다음 명령을 실행하여 Podfile을 작성하십시오.
@@ -113,7 +116,7 @@ mfpdev app register
 ### 앱에 Cordova SDK 추가
 {: cordova}
 
-Mobile Foundation 보안, 권한 부여, 로깅, 어댑터 호출 및 기타 코어 함수를 구현하는 API로 구성된 IBM Mobile Foundation용 코어 SDK입니다. 아래 단계를 따라 애플리케이션에 Cordova SDK를 추가하십시오.
+이 SDK는 Mobile Foundation 보안, 권한 부여, 로깅, 어댑터 호출 및 기타 코어 함수를 구현하는 API로 구성된 IBM Mobile Foundation용 코어 SDK입니다. 다음 단계를 수행하여 애플리케이션에 Cordova SDK를 추가하십시오.
 {: cordova}
 
 1. Cordova 프로젝트를 작성하십시오.
@@ -156,7 +159,7 @@ mfpdev app register
 ### 앱에 React Native SDK 플러그인 추가
 {: reactnative}
 
-기존 React Native 앱에 Mobile Foundation 기능을 추가하려면 `react-native-ibm-mobilefirst` 플러그인을 앱에 추가해야 합니다. `react-native-ibm-mobilefirst` 플러그인에는 Mobile Foundation SDK가 포함되어 있습니다. 아래 단계를 따라 React Native 애플리케이션에 React Native 플러그인을 추가하십시오.
+기존 React Native 앱에 Mobile Foundation 기능을 추가하려면 `react-native-ibm-mobilefirst` 플러그인을 앱에 추가해야 합니다. `react-native-ibm-mobilefirst` 플러그인에는 Mobile Foundation SDK가 포함되어 있습니다. 다음 단계를 수행하여 React Native 애플리케이션에 React Native 플러그인을 추가하십시오.
 {: reactnative}
 
 1. 앱에 다른 `npm` 플러그인을 추가하는 방식과 동일하게 이 플러그인을 추가하십시오.
@@ -207,4 +210,3 @@ mfpdev app register
    {: reactnative}
 7. iOS의 경우 XCode를 열고 프로젝트 탐색기에서 `mfpclient.plist`를 `ios` 폴더에서 끌어서 놓으십시오. 이 단계는 iOS 플랫폼에만 적용됩니다.
 {: reactnative}
-

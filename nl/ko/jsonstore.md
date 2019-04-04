@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-12"
 
+keywords: JSONStore, offline storage, jsonstore error codes
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -150,15 +153,15 @@ JSONStore는 LocalStorage, 색인화된 DB, Cordova 스토리지 API 및 Cordova
 
 |기능                                            |JSONStore      |LocalStorage |IndexedDB |Cordova 스토리지 API |Cordova 파일 API |
 |----------------------------------------------------|----------------|--------------|-----------|---------------------|------------------|
-|Android 지원(Cordova 및 네이티브 애플리케이션)|	     ✔ 	      |    ✔	    |        ✔	     |         ✔	           |         ✔	      |
-|iOS 지원(Cordova 및 네이티브 애플리케이션)	     |	     ✔ 	      |    ✔	    |        ✔	     |         ✔	           |         ✔	      |
-|Windows 8.1 Universal 및 Windows 10 UWP(Cordova 애플리케이션)          |	     ✔ 	      |     ✔	    |     ✔	     |        -	           |         ✔	      |
+|Android 지원(Cordova 및 네이티브 애플리케이션)|	     ✔ 	      |        ✔	    |         ✔	     |         ✔	           |         ✔	      |
+|iOS 지원(Cordova 및 네이티브 애플리케이션)	     |	     ✔ 	      |        ✔	    |         ✔	     |         ✔	           |         ✔	      |
+|Windows 8.1 Universal 및 Windows 10 UWP(Cordova 애플리케이션)          |	     ✔ 	      |     ✔	    |         ✔	     |        -	           |         ✔	      |
 |데이터 암호화	                                 |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
 |최대 스토리지	                                 |사용 가능한 공간 |    ~5MB     |   ~5MB 	 |사용 가능한 공간	   |사용 가능한 공간  |
 |신뢰할 수 있는 스토리지(참고 참조)	                     |	     ✔ 	      |      -	    |     -	     |         ✔	           |         ✔	      |
 |로컬 변경사항 추적	                     |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
 |다중 사용자 지원                                 |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
-|색인 작성	                                         |	     ✔ 	      |      -	    |        ✔	     |        ✔	           |         -	      |
+|색인 작성	                                         |	     ✔ 	      |      -	    |        ✔	     |         ✔	           |         -	      |
 |스토리지 유형	                                 |JSON 문서 |키-값 쌍 |JSON 문서 |관계형(SQL) |문자열     |
 
 신뢰할 수 있는 스토리지는 다음 이벤트 중 하나가 발생하는 경우를 제외하고 데이터가 삭제되지 않음을 의미합니다.
@@ -191,16 +194,16 @@ init(JavaScript) 또는 open(네이티브 iOS 및 네이티브 Android) API는 �
 localKeyGen 키가 JSONStore API의 JavaScript 구현에 존재하고 값이 true인 경우 암호로 보안된 토큰이 로컬로 생성됩니다. 그렇지 않으면 토큰이 서버에 접속하여 생성되므로 MobileFirst Server에 대한 연결이 필요합니다. 이 토큰은 처음으로 비밀번호를 사용하여 저장소를 열 때만 필요합니다. 기본적으로 네이티브 구현(Objective-C 및 Java)에서는 암호로 보안된 토큰을 로컬로 생성합니다. 또는 secureRandom 옵션을 통해 전달할 수도 있습니다.
 
 다음 사이에 절충됩니다.
-* 오프라인에서 저장소를 열고 클라이언트를 신뢰하여 랜덤 토큰을 생성하도록 함(덜 안전함) 또는 
+* 오프라인에서 저장소를 열고 클라이언트를 신뢰하여 랜덤 토큰을 생성하도록 함(덜 안전함) 또는
 * 연결이 필요한 MobileFirst Server에 대한 액세스 권한을 사용하여 저장소를 열고 서버를 신뢰함(더 안전함)
 
 ### 보안 유틸리티
 {: #security-utilities }
 MobileFirst 클라이언트 측 API는 사용자의 데이터를 보호하는 데 도움이 되는 일부 보안 유틸리티를 제공합니다. JSON 오브젝트를 보호하려는 경우 JSONStore와 같은 기능이 매우 유용합니다. 그러나 JSONStore 콜렉션에 2진 BLOB을 저장하는 것은 권장되지 않습니다.
 
-대신 파일 시스템에 2진 데이터를 저장하고 파일 경로 및 기타 메타데이터를 JSONStore 콜렉션 내부에 저장하십시오. 이미지와 같은 파일을 보호하려면 base64 문자열로 인코딩하고 암호화한 후 디스크에 출력을 쓸 수 있습니다. 
+대신 파일 시스템에 2진 데이터를 저장하고 파일 경로 및 기타 메타데이터를 JSONStore 콜렉션 내부에 저장하십시오. 이미지와 같은 파일을 보호하려면 base64 문자열로 인코딩하고 암호화한 후 디스크에 출력을 쓸 수 있습니다.
 
-데이터를 복호화하려면 JSONStore 콜렉션에서 메타데이터를 찾고 디스크에서 암호화된 데이터를 읽은 후 저장된 메타데이터를 사용하여 이를 복호화할 수 있습니다. 
+데이터를 복호화하려면 JSONStore 콜렉션에서 메타데이터를 찾고 디스크에서 암호화된 데이터를 읽은 후 저장된 메타데이터를 사용하여 이를 복호화할 수 있습니다.
 
 이 메타데이터에는 키, salt, IV(Initialization Vector), 파일 유형, 파일 경로 등이 포함될 수 있습니다.
 
@@ -332,7 +335,7 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 {: #objective-c-jsonstore }
 JSONStore에 네이티브 iOS API를 사용하는 경우 모든 오퍼레이션이 동기 디스패치 큐에 추가됩니다. 이 동작은 저장소에 접촉하는 오퍼레이션이 기본 스레드가 아닌 스레드에서 적절하게 실행되도록 합니다. 자세한 정보는 [GCD(Grand Central Dispatch) ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window}의 Apple 문서를 참조하십시오.
 
-### Java의 동시성 
+### Java의 동시성
 {: #java-jsonstore }
 JSONStore에 네이티브 Android API를 사용하는 경우 모든 오퍼레이션이 기본 스레드에서 실행됩니다. 비동기 동작을 수행하려면 스레드를 작성하거나 스레드 풀을 사용해야 합니다. 모든 저장소 오퍼레이션은 스레드로부터 안전합니다.
 
@@ -794,7 +797,7 @@ $.when.apply(this, arrayOfPromises)
 4. JSONStore에서 생성된 SQLite 데이터베이스 파일을 살펴보십시오. 암호화가 꺼져 있어야 합니다.
 
    * Android 에뮬레이터:
-   
+
    ```bash
    $ adb shell
    $ cd /data/data/com.<app-name>/databases/wljsonstore
@@ -861,7 +864,7 @@ function initWL(){
         var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
         : {};                                                                
         WL.Client.init(options);                                           
-    } 
+    }
     ```                                                                     
 
 이 함수는 `mfpjsonjsloaded` 이벤트(`wlCommonInit` 외부)를 기다리고 스크립트가 로드되었는지 확인한 후 `wlCommonInit`를 트리거할 `WL.Client.init`를 호출합니다. 그런 다음 `WL.JSONStore.init`를 호출합니다.
@@ -944,35 +947,35 @@ catch(JSONStoreException e) {
 
 |오류 코드      | 설명 |
 |----------------|-------------|
-| -100 UNKNOWN_FAILURE | Unrecognized error. |
-| -75 OS\_SECURITY\_FAILURE | This error code is related to the requireOperatingSystemSecurity flag. It can occur if the destroy API fails to remove security metadata that is protected by operating system security (Touch ID with passcode fallback), or the init or open APIs are unable to locate the security metadata. It can also fail if the device does not support operating system security, but operating system security usage was requested. |
-| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore is closed. Try calling the open method in the JSONStore class class first to enable access to the store. |
-| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | There was a problem with rolling back the transaction. |
-| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION |Cannot call removeCollection while a transaction is in progress. |
-| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | Cannot call destroy while there are transactions in progress. |
-| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | Cannot call closeAll while there are transactions in place. |
-| -44 TRANSACTION\_FAILURE\_DURING\_INIT | Cannot initialize a store while there are transactions in progress. |
-| -43 TRANSACTION_FAILURE | There was a problem with transactions. |
-| -42 NO\_TRANSACTION\_IN\_PROGRESS | Cannot commit to rolled back a transaction when there is no transaction is progress |
-| -41 TRANSACTION\_IN\_POGRESS | Cannot start a new transaction while another transaction is in progress. |
-| -40 FIPS\_ENABLEMENT\_FAILURE |Something is wrong with FIPS. |
-| -24 JSON\_STORE\_FILE\_INFO\_ERROR | Problem getting the file information from the file system. |
-| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | Problem replacing documents from a collection. |
-| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | Problem removing documents from a collection. |
-| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | Problem storing the Data Protection Key (DPK). |
-| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | Problem indexing input data. |
-| -12 INVALID\_SEARCH\_FIELD\_TYPES | Check that the types that you are passing to the searchFields are stringinteger,number, orboolean. |
-| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | An operation on an array of documents, for example the replace method can fail while it works with a specific document. The document that failed is returned and the transaction is rolled back. On Android, this error also occurs when trying to use JSONStore on unsupported architectures. |
-| -10 ACCEPT\_CONDITION\_FAILED | The accept function that the user provided returned false. |
-| -9 OFFSET\_WITHOUT\_LIMIT | To use offset, you must also specify a limit. |
-| -8 INVALID\_LIMIT\_OR\_OFFSET | Validation error, must be a positive integer. |
-| -7 INVALID_USERNAME | Validation error (Must be [A-Z] or [a-z] or [0-9] only). |
-| -6 USERNAME\_MISMATCH\_DETECTED | To log out, a JSONStore user must call the closeAll method first. There can be only one user at a time. |
-| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED |A problem with the destroy method while it tried to delete the file that holds the contents of the store. |
-| -4 DESTROY\_REMOVE\_KEYS\_FAILED | Problem with the destroy method while it tried to clear the keychain (iOS) or shared user preferences (Android). |
-| -3 INVALID\_KEY\_ON\_PROVISION | Passed the wrong password to an encrypted store. |
-| -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | Search fields are not dynamic. It is not possible to change search fields without calling the destroy method or the removeCollection method before you call the init or openmethod with the new search fields. This error can occur if you change the name or type of the search field. For example: {key: 'string'} to {key: 'number'} or {myKey: 'string'} to {theKey: 'string'}. |
-| -1 PERSISTENT\_STORE\_FAILURE | Generic Error. A malfunction in native code, most likely calling the init method. |
+| -100 UNKNOWN_FAILURE | 인식되지 않는 오류입니다. |
+| -75 OS\_SECURITY\_FAILURE | 이 오류 코드는 requireOperatingSystemSecurity 플래그와 관련되어 있습니다. 이는 destroy API가 운영 체제 보안(패스코드 대체가 있는 Touch ID)으로 보호되는 보안 메타데이터를 제거하는 데 실패하거나 init 또는 open API가 보안 메타데이터를 찾을 수 없는 경우 발생할 수 있습니다. 또한 디바이스가 운영 체제 보안을 지원하지 않지만 운영 체제 보안 사용이 요청된 경우에도 실패할 수 있습니다. |
+| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore가 닫혀 있습니다. 먼저 JSONStore class 클래스에서 open 메소드를 호출하여 저장소에 대한 액세스를 사용으로 설정하십시오. |
+| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | 트랜잭션 롤백 중에 문제점이 발생했습니다. |
+| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION | 트랜잭션이 진행되는 동안 removeCollection을 호출할 수 없습니다.|
+| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | 트랜잭션이 진행되는 동안 destroy를 호출할 수 없습니다. |
+| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | 트랜잭션이 제 위치에 있는 동안 closeAll을 호출할 수 없습니다. |
+| -44 TRANSACTION\_FAILURE\_DURING\_INIT | 트랜잭션이 진행되는 동안 저장소를 초기화할 수 없습니다. |
+| -43 TRANSACTION_FAILURE | 트랜잭션에 문제점이 있습니다. |
+| -42 NO\_TRANSACTION\_IN\_PROGRESS | 진행 중인 트랜잭션이 없는 경우 롤백된 트랜잭션을 커미트할 수 없습니다. |
+| -41 TRANSACTION\_IN\_POGRESS | 트랜잭션이 진행되는 동안 새 트랜잭션을 시작할 수 없습니다. |
+| -40 FIPS\_ENABLEMENT\_FAILURE | FIPS에 문제점이 있습니다. |
+| -24 JSON\_STORE\_FILE\_INFO\_ERROR | 파일 시스템에서 파일 정보를 가져오는 중에 문제점이 발생했습니다. |
+| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | 콜렉션에서 문서를 바꾸는 중에 문제점이 발생했습니다. |
+| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | 콜렉션에서 문서를 제거하는 중에 문제점이 발생했습니다. |
+| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | 데이터 보호 키(DPK)를 저장하는 중에 문제점이 발생했습니다.|
+| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | 입력 데이터의 색인을 작성하는 중에 문제점이 발생했습니다. |
+| -12 INVALID\_SEARCH\_FIELD\_TYPES | searchFields에 전달 중인 유형이 문자열, 정수, 숫자 또는 부울인지 확인하십시오. |
+| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | 문서 배열에 대한 오퍼레이션(예: replace 메소드)이 특정 문서에 대해 작업하는 동안 실패할 수 있습니다. 실패한 문서가 리턴되고 트랜잭션이 롤백됩니다. Android에서는 지원되지 않는 아키텍처에서 JSONStore를 사용하려고 시도할 때에도 이 오류가 발생합니다. |
+| -10 ACCEPT\_CONDITION\_FAILED | 사용자가 제공한 accept 함수가 false를 리턴했습니다. |
+| -9 OFFSET\_WITHOUT\_LIMIT | 오프셋을 사용하려면 한계도 지정해야 합니다. |
+| -8 INVALID\_LIMIT\_OR\_OFFSET | 유효성 검증 오류, 양의 정수여야 합니다. |
+| -7 INVALID_USERNAME | 유효성 검증 오류입니다([A-Z], [a-z] 또는 [0-9]만 가능). |
+| -6 USERNAME\_MISMATCH\_DETECTED | 로그아웃하려면 JSONStore 사용자가 먼저 closeAll 메소드를 호출해야 합니다. 한 번에 한 명의 사용자만 있을 수 있습니다. |
+| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED | 저장소의 컨텐츠를 보유하는 파일을 삭제하려고 할 때 destroy 메소드에 문제점이 발생했습니다. |
+| -4 DESTROY\_REMOVE\_KEYS\_FAILED | 키 체인(iOS)또는 공유 사용자 환경 설정(Android)을 지우려고 할 때 destroy 메소드에 문제점이 발생했습니다. |
+|-3 INVALID\_KEY\_ON\_PROVISION | 암호화된 저장소에 잘못된 비밀번호를 전달했습니다. |
+|-2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | 검색 필드가 동적이 아닙니다. 새 검색 필드로 init 또는 open 메소드를 호출하기 전에 destroy 메소드 또는 removeCollection 메소드를 호출하지 않고 검색 필드를 변경할 수 없습니다. 이 오류는 검색 필드의 이름이나 유형을 변경하는 경우에 발생할 수 있습니다(예: {key: 'string'}을 {key: 'number'}로 또는 {myKey: 'string'}을 {theKey: 'string'}으로). |
+| -1 PERSISTENT\_STORE\_FAILURE | 일반 오류입니다. 대부분 init 메소드를 호출하는 원시 코드에서의 잘못된 기능입니다. |
 | 0 SUCCESS |어떤 경우에, JSONStore 네이티브 코드는 성공을 표시하기 위해 0을 리턴합니다. |
 | 1 BAD\_PARAMETER\_EXPECTED\_INT | 유효성 검증 오류입니다. |
 | 2 BAD\_PARAMETER\_EXPECTED\_STRING | 유효성 검증 오류입니다. |

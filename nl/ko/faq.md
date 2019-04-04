@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2018-11-16"
 
+keywords: mobile foundation faq, updates to mobile foundation, custom domain
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -32,7 +35,7 @@ lastupdated:  "2018-11-16"
 {: faq}
 
 **재작성**을 클릭하여 {{site.data.keyword.mobilefoundation_short}}에 대한 업데이트를 적용할 수 있습니다.
-업데이트 적용 시 {{site.data.keyword.mfp_oc_short_notm}}에 표시되는 대로 서버 업데이트 버전을 표시하도록 서버 버전이 수정됩니다.
+업데이트 적용 시 {{site.data.keyword.mfp_oc_short_notm}}에 표시된 대로 서버 업데이트 버전을 표시하도록 서버 버전이 수정됩니다.
 
 > **참고:**
 >  * 사용자는 고유 수정사항 및 업데이트를 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에 적용할 수 없습니다.
@@ -65,4 +68,4 @@ URL 또는 라우트는 {{site.data.keyword.Bluemix_notm}} `Region`을 기반으
 
 + 도메인의 DNS 제공자로 이동하여 CNAME 항목을 추가하십시오. 그러면 사용자 도메인에서 서버가 실행 중인 기본 {{site.data.keyword.Bluemix_notm}} 라우트로 트래픽이 라우팅됩니다.
 
-+ 사용자 정의 도메인에 대해 `https`를 구성하려면 {{site.data.keyword.Bluemix_notm}}의 도메인에 대한 SSL 인증서를 업로드하십시오. 이를 위해 **조직 관리 > 도메인**으로 이동하여 SSL 인증서를 구성하려는 사용자 정의 도메인을 선택하고 **인증서 업로드**를 클릭하여 도메인에 대한 SSL 인증서를 업로드하십시오. 자세한 정보는 [이 포스트 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window}를 참조하십시오.
++ 사용자 정의 도메인에 대해 `https`를 구성하려면 {{site.data.keyword.Bluemix_notm}}의 도메인에 대한 SSL 인증서를 업로드하십시오. SSL 인증서를 업로드하려면 **조직 관리 > 도메인**으로 이동하여 SSL 인증서를 구성하려는 사용자 정의 도메인을 선택하고 **인증서 업로드**를 클릭하여 사용자 도메인에 대한 SSL 인증서를 업로드하십시오. 자세한 정보는 [이 게시물 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window}을 참조하십시오.

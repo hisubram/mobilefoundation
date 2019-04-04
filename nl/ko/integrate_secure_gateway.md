@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-13"
 
+keywords: integration, mobile foundation, secure gateway
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -45,7 +48,7 @@ node app.js
 {: #implementing_sg_integration}
 
 ### Secure Gateway 서비스 인스턴스 작성
-IBM Cloud에 로그인하여 [ Secure Gateway 서비스](https://cloud.ibm.com/catalog/services/secure-gateway/)의 인스턴스를 작성하십시오. 
+IBM Cloud에 로그인하여 [ Secure Gateway 서비스](https://cloud.ibm.com/catalog/services/secure-gateway/)의 인스턴스를 작성하십시오.
 
 ![IBM Cloud](images/SecureGatewayInst.gif)
 
@@ -68,7 +71,7 @@ Secure Gateway 서비스 대시보드에서 **게이트웨이 추가**를 클릭
 
 선택한 클라이언트를 사용하고 온프레미스 환경에서 Secure Gateway 클라이언트를 실행할 수 있습니다. Secure Gateway 클라이언트를 설정하는 단계는 Secure Gateway 콘솔에서 사용할 수 있습니다.
 
-이 튜토리얼에서는 Docker 컨테이너 옵션을 사용하여 Secure Gateway 클라이언트를 실행합니다. 
+이 튜토리얼에서는 Docker 컨테이너 옵션을 사용하여 Secure Gateway 클라이언트를 실행합니다.
 아래의 단계를 따르십시오.
 *   이미 설치되어 있지 않은 경우 온프레미스 시스템에 Docker를 설치하십시오.
 *   터미널을 시작하고 서비스 콘솔에 표시된 명령을 사용하여 컨테이너에서 Secure Gateway 클라이언트를 실행하십시오.
@@ -127,13 +130,13 @@ mfpdev adapter deploy
 
 [여기 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/)에서 어댑터 빌드 및 배치에 관해 알아보십시오.
 {: tip}
- 
-이전 섹션에서 가져온 JavaHTTP 어댑터의 리소스 엔드포인트에 관한 클라우드 호스트와 포트 세부사항을 제공하십시오. 
+
+이전 섹션에서 가져온 JavaHTTP 어댑터의 리소스 엔드포인트에 관한 클라우드 호스트와 포트 세부사항을 제공하십시오.
 
 ![AdapterConfiguration ](images/AdapterConfiguration.png)
 
 여기서 `cap-sg-prd-5.securegateway.appdomain.cloud`와 `18946`은 각각 Secure Gateway 호스트와 포트입니다.
- 
+
 이제 Mobile Foundation 어댑터가 구성되고 Secure Gateway 서비스를 사용하여 엔터프라이즈의 온프레미스 시스템과 Mobile Foundation 서비스를 사용할 수 있습니다.
 
 ### Mobile Foundation 샘플 앱 작성 및 등록
@@ -152,4 +155,3 @@ Secure Gateway 서비스에 여러 대상을 구성하고 엔드포인트의 각
 {: #summary_int_sec_gw}
 
 이 튜토리얼을 사용하면 Secure Gateway 서비스를 사용하여 IBM Cloud에서 실행 중인 Mobile Foundation 어댑터와 온프레미스 HTTP 엔드포인트 간에 보안 연결을 설정할 수 있어야 합니다.
-

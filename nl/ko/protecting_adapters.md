@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, adapter security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -162,4 +165,3 @@ JavaScript 어댑터 리소스(프로시저)의 OAuth 보호를 완전히 사용
 {: #unprotected-resources}
 
 보호되지 않는 리소스는 액세스 토큰이 필요하지 않은 리소스입니다. MobileFirst 보안 프레임워크에서는 보호되지 않은 리소스에 대한 액세스는 관리하지 않으며 해당 리소스에 액세스하는 클라이언트 ID의 유효성을 검증하거나 확인하지 않습니다. 따라서 보호되지 않는 리소스에 대해서는 직접 업데이트, 디바이스 액세스 차단 또는 애플리케이션 사용 안함 원격 설정과 같은 기능이 지원되지 않습니다.
-

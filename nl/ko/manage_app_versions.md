@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-29"
 
+keywords: app versions, disabling apps
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -21,7 +24,7 @@ Mobile Foundation 애플리케이션 관리 기능은 Mobile Foundation 서버 �
 
 Mobile Foundation 서버는 모바일 인프라에 액세스하려는 모든 시도를 추적하고 애플리케이션, 사용자 및 애플리케이션이 설치된 디바이스에 대한 정보를 저장합니다. 애플리케이션, 사용자 및 디바이스 간의 맵핑이 서버의 모바일 애플리케이션 관리 기능에 대한 기초를 형성합니다.
 
-Mobile Foundation Operations 콘솔을 사용하여 리소스에 대한 액세스를 모니터하고 관리할 수 있으며 특정 애플리케이션 버전을 관리할 수도 있습니다.
+Mobile Foundation Operations 콘솔을 사용하여 리소스에 대한 액세스를 모니터하고 관리할 수 있습니다. 특정 애플리케이션 버전을 관리할 수도 있습니다.
 
 1.  Mobile Foundation Operations 콘솔로 이동하여 **애플리케이션**을 클릭하고 관리할 애플리케이션을 선택한 후 표시되는 **버전** 목록에서 관심 있는 애플리케이션의 특정 버전을 선택하십시오.
     ![애플리케이션 버전 관리](images/app_version_management.png)
@@ -38,6 +41,6 @@ Mobile Foundation Operations 콘솔을 사용하여 리소스에 대한 액세�
    *  버전 내보내기
 
 
-디바이스 관리에 대해 알아보려면 [디바이스 관리](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices)를 참조하십시오. 원격으로 특정 버전의 앱을 사용 안함으로 설정하는 방법에 대해 알아보려면 [ 원격으로 앱 버전을 사용 안함으로 설정](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version)을 참조하십시오.
+디바이스 관리에 대한 자세한 정보는 [디바이스 관리](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices)를 참조하십시오.
+원격으로 앱 버전을 사용 안함으로 설정하는 방법에 대해 자세한 정보는 [원격으로 앱 버전을 사용 안함으로 설정](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version)을 참조하십시오.
 {: note}
-

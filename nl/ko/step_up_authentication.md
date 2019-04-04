@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, authentication, using challenge handlers
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ lastupdated: "2018-11-19"
 ## 보안 검사 참조
 {: #referencing-a-security-check}
 
-두 개의 보안 검사 `StepUpPinCode` 및 `StepUpUserLogin`을 작성하십시오. 
+두 개의 보안 검사 `StepUpPinCode` 및 `StepUpUserLogin`을 작성하십시오.
 
 이 예에서 `StepUpPinCode`는 `StepUpUserLogin`에 따라 달라집니다. 사용자는 `StepUpUserLogin`에 성공적으로 로그인한 후에만 PIN 코드를 입력하도록 요청받아야 합니다. 이를 위해 `StepUpPinCode`가 `StepUpUserLogin` 클래스를 참조할 수 있어야 합니다.
 

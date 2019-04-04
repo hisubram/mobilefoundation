@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, offline storage, add jsonstore to cordova, add jsonstore to iOS, add jsonstore to android, jsonstore methods, jsonstore operations
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -39,7 +42,7 @@ IBM Mobile Foundation JSONStore는 경량의 문서 중심 스토리지 시스�
 {: #configure_offline_storage_cordova}
 {: cordova}
 
-Mobile Foundation Cordova SDK가 프로젝트에 추가되었는지 확인하십시오. 
+Mobile Foundation Cordova SDK가 프로젝트에 추가되었는지 확인하십시오.
 {: cordova}
 
 [Cordova 애플리케이션에 Mobile Foundation SDK 추가 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/cordova/) 튜토리얼에 따르십시오.
@@ -51,7 +54,7 @@ Mobile Foundation Cordova SDK가 프로젝트에 추가되었는지 확인하십
 {: cordova}
 
 1. 명령행 창을 열고 Cordova 프로젝트 폴더로 이동하십시오.
-2. 다음 명령을 실행하십시오. 
+2. 다음 명령을 실행하십시오.
    ```bash
    cordova plugin add cordova-plugin-mfp-jsonstore
    ```
@@ -82,7 +85,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 {: cordova}
 
 #### Cordova JSONStore 콜렉션에 대한 액세서 가져오기
-{: #get_jsonstore_cordova} 
+{: #get_jsonstore_cordova}
 {: cordova}
 
 `get`을 사용하여 콜렉션에 대한 액세서를 작성하십시오. get을 호출하기 전에 `init`를 호출해야 합니다. 그렇지 않으면 `get`의 결과가 *정의되지 않습니다*.
@@ -98,7 +101,7 @@ var people = WL.JSONStore.get(collectionName);
 {: cordova}
 
 #### Cordova 콜렉션에 문서 추가
-{: #add_jsonstore_cordova} 
+{: #add_jsonstore_cordova}
 {: cordova}
 
 데이터를 콜렉션 내부에 문서로 저장하려면 `add`를 사용하십시오.
@@ -119,7 +122,7 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 {: cordova}
 
 #### Cordova 콜렉션 내부에서 문서 찾기
-{: #find_jsonstore_cordova} 
+{: #find_jsonstore_cordova}
 {: cordova}
 
 * 조회를 사용하여 콜렉션 내부의 문서를 찾으려면 `find`를 사용하십시오.
@@ -170,7 +173,7 @@ else {
 {: cordova}
 
 #### Cordova 콜렉션 내부에서 문서 대체
-{: #replace_jsonstore_cordova} 
+{: #replace_jsonstore_cordova}
 {: cordova}
 
 콜렉션 내부의 문서를 수정하려면 `replace`를 사용하십시오. 대체를 수행하는 데 사용하는 필드는 문서 고유 ID인 `_id`입니다.
@@ -196,7 +199,7 @@ WL.JSONStore.get(collectionName).replace(document, options).then(function (numbe
 {: cordova}
 
 #### Cordova 콜렉션에서 문서 제거
-{: #remove_jsonstore_cordova} 
+{: #remove_jsonstore_cordova}
 {: cordova}
 
 콜렉션에서 문서를 삭제하려면 `remove`를 사용하십시오.
@@ -217,14 +220,14 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: cordova}
 
 #### 전체 Cordova 콜렉션 제거
-{: #remove_collection_jsonstore_cordova} 
+{: #remove_collection_jsonstore_cordova}
 {: cordova}
 
 콜렉션 내부에 저장된 모든 문서를 삭제하려면 `removeCollection`을 사용하십시오. 이 오퍼레이션은 데이터베이스 용어의 테이블 삭제와 유사합니다.
 {: cordova}
 
 #### Cordova JSONStore 영구 삭제
-{: #destroy_jsonstore_cordova} 
+{: #destroy_jsonstore_cordova}
 {: cordova}
 
 `destroy`를 사용하여 다음 데이터를 제거할 수 있습니다.
@@ -238,7 +241,7 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: #configure_offline_storage_ios}
 {: ios}
 
-Mobile Foundation 네이티브 SDK가 Xcode 프로젝트에 추가되었는지 확인하십시오. 
+Mobile Foundation 네이티브 SDK가 Xcode 프로젝트에 추가되었는지 확인하십시오.
 {: ios}
 
 [iOS 애플리케이션에 Mobile Foundation SDK 추가 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/ios/) 튜토리얼에 따르십시오.
@@ -255,17 +258,17 @@ Mobile Foundation 네이티브 SDK가 Xcode 프로젝트에 추가되었는지 �
    ```
    {: codeblock}
    {: ios}
-2. 명령행에서 Xcode 프로젝트의 루트로 이동하여 다음 명령을 실행하십시오. 
+2. 명령행에서 Xcode 프로젝트의 루트로 이동하여 다음 명령을 실행하십시오.
    ```bash
    pod install
-   ``` 
+   ```
    {: codeblock}
    {: ios}
 3. JSONStore를 사용할 때마다 JSONStore 헤더를 가져오십시오.
    **Objective-C**:
    ```objectivec
    #import <IBMMobileFirstPlatformFoundationJSONStore/IBMMobileFirstPlatformFoundationJSONStore.h>
-   ``` 
+   ```
    {: codeblock}
    **Swift:**
    ```swift
@@ -274,8 +277,8 @@ Mobile Foundation 네이티브 SDK가 Xcode 프로젝트에 추가되었는지 �
    {: codeblock}
    {: ios}
 
-#### iOS JSONStore 콜렉션 열기 
-{: #open_ios} 
+#### iOS JSONStore 콜렉션 열기
+{: #open_ios}
 {: ios}
 
 하나 이상의 JSONStore 콜렉션을 열려면 `openCollections`를 사용하십시오.
@@ -297,7 +300,7 @@ do {
 {: ios}
 
 #### iOS JSONStore 콜렉션에 대한 액세서 가져오기
-{: #get_jsonstore_ios} 
+{: #get_jsonstore_ios}
 {: ios}
 
 콜렉션에 대한 액세서를 작성하려면 `getCollectionWithName`을 사용하십시오. `getCollectionWithName`을 호출하기 전에 `openCollections`를 먼저 호출해야 합니다.
@@ -314,7 +317,7 @@ let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWit
 {: ios}
 
 #### iOS 콜렉션에 문서 추가
-{: #add_jsonstore_ios} 
+{: #add_jsonstore_ios}
 {: ios}
 
 데이터를 콜렉션 내부에 문서로 저장하려면 `addData`를 사용하십시오.
@@ -336,7 +339,7 @@ do  {
 {: ios}
 
 #### iOS 콜렉션 내부에서 문서 찾기
-{: #find_jsonstore_ios} 
+{: #find_jsonstore_ios}
 {: ios}
 
 조회를 사용하여 콜렉션 내부에서 문서를 찾으려면 `findWithQueryParts`를 사용하십시오. 콜렉션 내부의 모든 문서를 검색하려면 `findAllWithOptions`를 사용하십시오. 문서 고유 ID로 검색하려면 `findWithIds`를 사용하십시오.
@@ -363,7 +366,7 @@ do  {
 {: ios}
 
 #### iOS 콜렉션 내부에서 문서 대체
-{: #replace_jsonstore_ios} 
+{: #replace_jsonstore_ios}
 {: ios}
 
 콜렉션 내부의 문서를 수정하려면 `replaceDocuments`를 사용하십시오. 대체를 수행하는 데 사용하는 필드는 문서 고유 ID인 `_id`입니다.
@@ -394,10 +397,10 @@ do {
 {: ios}
 
 #### iOS 콜렉션에서 문서 제거
-{: #remove_jsonstore_ios} 
+{: #remove_jsonstore_ios}
 {: ios}
 
-콜렉션에서 문서를 삭제하려면 `removeWithIds`를 사용하십시오. `markDocumentClean`을 호출할 때까지 콜렉션에서 문서가 지워지지 않습니다. 
+콜렉션에서 문서를 삭제하려면 `removeWithIds`를 사용하십시오. `markDocumentClean`을 호출할 때까지 콜렉션에서 문서가 지워지지 않습니다.
 {: ios}
 
 ```swift
@@ -414,7 +417,7 @@ do {
 {: ios}
 
 #### 전체 iOS 콜렉션 제거
-{: #remove_collection_jsonstore_ios} 
+{: #remove_collection_jsonstore_ios}
 {: ios}
 
 콜렉션 내부에 저장된 모든 문서를 삭제하려면 `removeCollection`을 사용하십시오. 이 오퍼레이션은 데이터베이스 용어의 테이블 삭제와 유사합니다.
@@ -434,7 +437,7 @@ do {
 {: ios}
 
 #### iOS JSONStore 영구 삭제
-{: #destroy_jsonstore_ios} 
+{: #destroy_jsonstore_ios}
 {: ios}
 
 `destroyData`를 사용하여 다음 데이터를 제거할 수 있습니다.
@@ -458,7 +461,7 @@ do {
 {: #configure_offline_storage_android}
 {: android}
 
-Mobile Foundation 네이티브 SDK가 Android Studio 프로젝트에 추가되었는지 확인하십시오. 
+Mobile Foundation 네이티브 SDK가 Android Studio 프로젝트에 추가되었는지 확인하십시오.
 {: android}
 
 [Android 애플리케이션에 Mobile Foundation SDK 추가 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/android/) 튜토리얼에 따르십시오.
@@ -470,10 +473,10 @@ Mobile Foundation 네이티브 SDK가 Android Studio 프로젝트에 추가되�
 {: android}
 
 1. **Android → Gradle 스크립트**에서 `build.gradle (Module: app)` 파일을 선택하십시오.
-2. 기존 `dependencies` 섹션에 다음을 추가하십시오. 
+2. 기존 `dependencies` 섹션에 다음을 추가하십시오.
    ```bash
    compile 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundationjsonstore:8.0.+'
-   ``` 
+   ```
    {: codeblock}
    {: android}
 3. `build.gradle` 파일의 `DefaultConfig` 섹션에 다음을 추가하십시오.
@@ -481,7 +484,7 @@ Mobile Foundation 네이티브 SDK가 Android Studio 프로젝트에 추가되�
    ndk {
      abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
    }
-   ``` 
+   ```
    {: codeblock}
    {: android}
    JSONStore가 있는 앱이 위에서 지정된 아키텍처에서 실행될 수 있도록 `abiFilters`를 추가합니다. JSONStore는 이러한 아키텍처만 지원하는 서드파티 라이브러리에 종속되므로 이 작업이 필요합니다.
@@ -489,7 +492,7 @@ Mobile Foundation 네이티브 SDK가 Android Studio 프로젝트에 추가되�
    {: android}
 
 #### Android JSONStore 콜렉션 열기
-{: #open_android} 
+{: #open_android}
 {: android}
 
 하나 이상의 JSONStore 콜렉션을 열려면 `openCollections`를 사용하십시오.
@@ -513,7 +516,7 @@ try {
 {: android}
 
 #### Android JSONStore 콜렉션에 대한 액세서 가져오기
-{: #get_jsonstore_android} 
+{: #get_jsonstore_android}
 {: android}
 
 콜렉션에 대한 액세서를 작성하려면 `getCollectionByName`을 사용하십시오. `getCollectionByName`을 호출하기 전에 `openCollections`를 먼저 호출해야 합니다.
@@ -536,7 +539,7 @@ try {
 {: android}
 
 #### Android 콜렉션에 문서 추가
-{: #add_jsonstore_android} 
+{: #add_jsonstore_android}
 {: android}
 
 데이터를 콜렉션 내부에 문서로 저장하려면 `addData`를 사용하십시오.
@@ -561,7 +564,7 @@ try {
 {: android}
 
 #### Android 콜렉션 내부에서 문서 찾기
-{: #find_jsonstore_android} 
+{: #find_jsonstore_android}
 {: android}
 
 조회를 사용하여 콜렉션 내부에서 문서를 찾으려면 `findDocuments`를 사용하십시오. 콜렉션 내부의 모든 문서를 검색하려면 `findAllDocuments`를 사용하십시오. 문서 고유 ID로 검색하려면 `findDocumentById`를 사용하십시오.
@@ -590,7 +593,7 @@ try {
 {: android}
 
 #### Android 콜렉션 내부에서 문서 대체
-{: #replace_jsonstore_android} 
+{: #replace_jsonstore_android}
 {: android}
 
 콜렉션 내부의 문서를 수정하려면 `replaceDocuments`를 사용하십시오. 대체를 수행하는 데 사용하는 필드는 문서 고유 ID인 `_id`입니다.
@@ -618,10 +621,10 @@ try {
 {: android}
 
 #### Android 콜렉션에서 문서 제거
-{: #remove_jsonstore_android} 
+{: #remove_jsonstore_android}
 {: android}
 
-콜렉션에서 문서를 삭제하려면 `removeDocumentById`를 사용하십시오. `markDocumentClean`을 호출할 때까지 콜렉션에서 문서가 지워지지 않습니다. 
+콜렉션에서 문서를 삭제하려면 `removeDocumentById`를 사용하십시오. `markDocumentClean`을 호출할 때까지 콜렉션에서 문서가 지워지지 않습니다.
 {: android}
 
 ```java
@@ -642,7 +645,7 @@ try {
 {: android}
 
 #### 전체 Android Android 콜렉션 제거
-{: #remove_collection_jsonstore_android} 
+{: #remove_collection_jsonstore_android}
 {: android}
 
 콜렉션 내부에 저장된 모든 문서를 삭제하려면 `removeCollection`을 사용하십시오. 이 오퍼레이션은 데이터베이스 용어의 테이블 삭제와 유사합니다.
@@ -663,7 +666,7 @@ try {
 {: android}
 
 #### Android JSONStore 영구 삭제
-{: #destroy_jsonstore_android} 
+{: #destroy_jsonstore_android}
 {: android}
 
 `destroy`를 사용하여 다음 데이터를 제거할 수 있습니다.
@@ -684,4 +687,3 @@ try {
 ```
 {: codeblock}
 {: android}
-

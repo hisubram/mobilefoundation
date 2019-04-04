@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation developer, mobile analytics
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -23,7 +26,7 @@ Developer 플랜을 사용하여 {{site.data.keyword.mobilefoundation_short}} �
 * MobileFirst 서버에 즉시 액세스하여 작업할 수 있습니다.
 
   이 선택사항은 다음 설정으로 {{site.data.keyword.mfserver_long_notm}}를 작성합니다.
-  *	1GB의 메모리. 이 크기는 개발, 간단한 테스트 활동 및 소규모 프로덕션 워크로드에 충분합니다.
+  *	1GB의 메모리. 이 크기는 개발, 간단한 테스트 활동 및 소규모 프로덕션 워크로드에 적합합니다.
 
   * CLI를 사용하여 MobileFirst 서버에 액세스하려면 IBM Cloud 콘솔의 왼쪽 탐색 분할창에서 **서비스 인증 정보**를 클릭할 때 사용 가능한 인증 정보가 필요합니다.
 
@@ -36,5 +39,4 @@ Mobile Analytics 서버는 Mobile Foundation: Developer 플랜 서비스 인스�
 
 * {{site.data.keyword.mfp_oc_short_notm}}에서 Mobile Analytics 콘솔을 실행하십시오.
 
-Mobile Analytics를 사용하여 앱을 인스트루먼테이션하는 데 관한 자세한 정보는 [여기](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}를 참조하십시오.
-
+Mobile Analytics를 사용하여 앱을 인스트루먼트하는 방법에 대한 자세한 정보는 [여기](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}를 참조하십시오.
