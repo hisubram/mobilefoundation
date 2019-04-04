@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-02-12"
 
+keywords: troubleshooting techniques
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -36,7 +39,7 @@ lastupdated: "2018-02-12"
 
 ### 問題有何症狀？
 
-開始說明問題時，最常問的問題是「問題是什麼？」。此問題可能看起來直接明確；然而，您可以將它細分為數個更有針對性的問題，從而更詳細地說明問題。這些問題可包括：
+開始說明問題時，最明顯的問題是「問題是什麼？」。此問題可能看起來直接明確；然而，您可以將它細分為數個更有針對性的問題，從而更詳細地說明問題。這些問題可包括下列各項：
 
 - 是誰或何者提報問題？
 - 錯誤碼及訊息內容？
@@ -57,7 +60,7 @@ lastupdated: "2018-02-12"
 
 ### 何時發生問題？
 
-請列出導致失敗的事件詳細時間表，特別是那些只發生一次的案例。逆向運作可讓您輕鬆地開發時間表：從錯誤報告時間開始（盡可能精確，甚至精細到毫秒），透過可用的日誌及資訊逆向運作。通常，只需要查看您在診斷日誌中找到的第一個可疑事件即可。
+建立導致故障的事件的詳細時間表，尤其是那些僅發生一次的情況。逆向運作可讓您輕鬆地開發時間表：從錯誤報告時間開始（盡可能精確，甚至精細到毫秒），透過可用的日誌及資訊逆向運作。通常，只需要查看您在診斷日誌中找到的第一個可疑事件即可。
 
 若要擬訂詳細的事件時間表，請回答下列提問：
 
@@ -76,7 +79,7 @@ lastupdated: "2018-02-12"
 - 問題發生時，是否曾經發生某些事件？
 - 同一時間是否有任何其他應用程式失敗？
 
-回答這些類型的問題，可協助您說明發生問題的環境，並找出任何相依項的關聯性。請記住，因多個問題可能會在同時間前後發生，但問題不一定有關聯。
+回答這些類型的問題，可協助您說明發生問題的環境，並找出任何相依項的關聯性。多個問題可能會在同時間前後發生，但問題不一定有關聯。
 
 ### 可以重新產生問題嗎？
 
@@ -99,10 +102,10 @@ lastupdated: "2018-02-12"
 
 如果您使用 {{site.data.keyword.mobilefoundation_short}} 時有問題或疑問，可以搜尋資訊或透過討論區提問來取得協助。您也可以開立支援問題單。
 
-使用討論區提問時，請標記您的問題，以及 IBM  {{site.data.keyword.Bluemix_notm}} 開發團隊能看到它。
+使用討論區提問時，請標記您的問題，以便 {{site.data.keyword.Bluemix_notm}} 開發團隊能看到它。
 
 如果您有使用 {{site.data.keyword.mobilefoundation_short}} 開發或部署應用程式的相關技術問題，請將問題張貼在 [Stack Overflow ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window}，並使用 `bluemix` 及 `ibm-mobilefirst` 來標記您的問題。
 
-如需服務的相關問題和開始使用的指示，請使用 [IBM developerWorksdW Answers ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} 討論區。請包含 `bluemix` 和 `mobilefirst` 標籤。
+若為服務及開始使用指示的相關問題，請使用 [IBM developerWorksdW Answers ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} 討論區。請包含 `bluemix` 和 `mobilefirst` 標籤。
 
-如需開啟 IBM 支援問題單的相關資訊，或支援層次與問題單嚴重性的相關資訊，請參閱[與支援中心聯絡](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}。
+如需開立 IBM 支援問題單的相關資訊，或支援層次與問題單嚴重性的相關資訊，請參閱[與支援中心聯絡](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}。

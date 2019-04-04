@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-10-16"
 
+keywords: mobile foundation security, MIM attack, certificate pinning
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -17,13 +20,13 @@ lastupdated: "2018-10-16"
 {: #prevent_man_in_the_middle_attack}
 
 
-透過公用網路通訊時，必須安全地傳送及接收資訊。廣泛用來保護這些通訊安全的通訊協定是 SSL/TLS。SSL/TLS 使用數位憑證來提供鑑別及加密。這些根據憑證鏈驗證的通訊協定容易遭到許多危險的攻擊（包括攔截式攻擊），而這些攻擊發生於未獲授權方可以檢視及修改所有通過行動裝置與後端系統之間的資料流量時。
+透過公用網路通訊時，必須安全地傳送及接收資訊。廣泛用來保護這些通訊安全的通訊協定是 SSL/TLS。SSL/TLS 使用數位憑證來提供鑑別及加密。這些通訊協定依賴憑證鏈驗證，且容易遭到許多危險的攻擊（包括攔截式攻擊），而這些攻擊發生於未獲授權方可以檢視及修改所有通過行動裝置與後端系統之間的資料流量時。
 {: shortdesc}
 
 透過[憑證綁定](#cert_pinning)減少「安全攻擊」，並防止攔截式 (MitM) 攻擊。
 
-
->**附註**：這是選用的，並且只適用於「專業」方案。
+此為選用特性，僅適用於「專業」方案。
+{: note}
 
 憑證綁定處理程序由下列步驟組成：
 
@@ -46,11 +49,12 @@ IBM Mobile Foundation 提供 API 來啟用**憑證綁定**。已在原生 iOS、
 
 憑證綁定是建立主機與其預期公開金鑰之關聯的處理程序。您可以配置用戶端程式碼僅接受您網域名稱的特定憑證，而非對應至作業系統或瀏覽器所辨識授信 CA 主要憑證的任何憑證。憑證的副本放在用戶端應用程式中。在 SSL 信號交換期間（對伺服器的第一個要求），MobileFirst Client SDK 會驗證伺服器憑證的公開金鑰是否符合應用程式中所儲存憑證的公開金鑰。
 
->**附註**：您也可以綁定多個憑證與用戶端應用程式。所有憑證的副本都應該放在用戶端應用程式中。在 SSL 信號交換期間（對伺服器的第一個要求），MobileFirst Client SDK 會驗證伺服器憑證的公開金鑰是否符合應用程式中所儲存之其中一個憑證的公開金鑰。
+您也可以綁定多個憑證與用戶端應用程式。請將所有憑證的副本放在用戶端應用程式中。在 SSL 信號交換期間（對伺服器的第一個要求），MobileFirst Client SDK 會驗證伺服器憑證的公開金鑰是否符合應用程式中所儲存之其中一個憑證的公開金鑰。
+{: note}
 
 **重要事項**
 
-* 部分行動作業系統可能會快取憑證驗證檢查結果。因此，在提出安全的要求**之前**，您的程式碼應該呼叫憑證綁定 API 方法。否則，任何的後續要求都可能會跳過憑證驗證及綁定檢查。
+* 部分行動作業系統可能會快取憑證驗證檢查結果。因此，在提出安全的要求**之前**，您的程式碼會呼叫憑證綁定 API 方法。否則，任何的後續要求都可能會跳過憑證驗證及綁定檢查。
 * 務必僅將 Mobile Foundation API 用於所有與相關主機的通訊，甚至在憑證綁定之後也是一樣。使用協力廠商 API 以與相同主機互動，可能會導致非預期的行為，例如由行動作業系統快取未經驗證的憑證。
 * 第二次呼叫憑證綁定 API 方法會置換前一個綁定作業。
 
@@ -63,11 +67,11 @@ IBM Mobile Foundation 提供 API 來啟用**憑證綁定**。已在原生 iOS、
 
 憑證必須放在 MobileFirst Server 及應用程式中。請如下放置憑證：
 
-* 在 MobileFirst Server（WebSphere Application Server、WebSphere Application Server Liberty 或 Apache Tomcat）：如需如何配置 SSL/TLS 及憑證的相關資訊，請參閱特定應用程式伺服器的文件。
+* 在 MobileFirst Server（WebSphere Application Server、WebSphere Application Server Liberty 或 Apache Tomcat），如需如何配置 SSL/TLS 及憑證的相關資訊，請參閱特定應用程式伺服器的文件。
 * 在應用程式中：
-    * 原生 iOS：將憑證新增至應用程式**軟體組**
-    * 原生 Android：將憑證放在 **assets** 資料夾中
-    * Cordova：將憑證放在 **app-name\www\certificates** 資料夾（如果還沒有此資料夾，則請予以建立）
+    * 若為原生 iOS，將憑證新增至應用程式**軟體組**
+    * 若為原生 Android，將憑證放在 **assets** 資料夾中
+    * 若為 Cordova，將憑證放在 **app-name\www\certificates** 資料夾（如果還沒有此資料夾，則請予以建立）
 
 ## 憑證綁定 API
 {: #certpinapi}
@@ -78,8 +82,8 @@ IBM Mobile Foundation 提供 API 來啟用**憑證綁定**。已在原生 iOS、
 {: #certpinapiandroid}
 
 * 單一憑證：
- 
-    語法：pinTrustedCertificatePublicKeyFromFile(String certificateFilename); 
+
+    語法：pinTrustedCertificatePublicKeyFromFile(String certificateFilename);
 
     範例：
 
@@ -98,7 +102,7 @@ IBM Mobile Foundation 提供 API 來啟用**憑證綁定**。已在原生 iOS、
     WLClient.getInstance().pinTrustedCertificatePublicKey(certificates);
     ```
 
-憑證綁定方法將會在兩種情況下引發異常狀況：
+憑證綁定方法會在兩種情況下引發異常狀況：
 
 * 檔案不存在
 * 檔案的格式錯誤
@@ -110,16 +114,16 @@ IBM Mobile Foundation 提供 API 來啟用**憑證綁定**。已在原生 iOS、
 
     語法：pinTrustedCertificatePublicKeyFromFile:(NSString*) certificateFilename;
 
-    憑證綁定方法將會在兩種情況下引發異常狀況：
+    憑證綁定方法會在兩種情況下引發異常狀況：
 
     * 檔案不存在
     * 檔案的格式錯誤
 
-* 多個憑證綁定 
- 
+* 多個憑證綁定
+
     語法：pinTrustedCertificatePublicKeyFromFiles:(NSArray*) certificateFilenames;
 
-    憑證綁定方法將會在兩種情況下引發異常狀況：
+    憑證綁定方法會在兩種情況下引發異常狀況：
 
     * 憑證檔不存在
     * 憑證檔的格式不正確
@@ -128,13 +132,13 @@ IBM Mobile Foundation 提供 API 來啟用**憑證綁定**。已在原生 iOS、
 
 範例：單一憑證：
 
-```
+```objectc
 [[WLClient sharedInstance]pinTrustedCertificatePublicKeyFromFile:@"myCertificate.cer"];
 ```
 
 範例：多個憑證：
 
-```
+```objectc
 NSArray *arrayOfCerts = [NSArray arrayWithObjects:@“Cert1”,@“Cert2”,@“Cert3",nil];
 [[WLClient sharedInstance]pinTrustedCertificatePublicKeyFromFiles:arrayOfCerts];
 ```
@@ -143,13 +147,13 @@ NSArray *arrayOfCerts = [NSArray arrayWithObjects:@“Cert1”,@“Cert2”,@“
 
 範例：單一憑證：
 
-```
+```swift
 WLClient.sharedInstance().pinTrustedCertificatePublicKeyFromFile("myCertificate.cer")
 ```
 
 範例：多個憑證：
 
-```
+```swift
 let arrayOfCerts : [Any] = ["Cert1", "Cert2”, "Cert3”];
 WLClient.sharedInstance().pinTrustedCertificatePublicKey( fromFiles: arrayOfCerts)
 ```
@@ -176,11 +180,12 @@ WLClient.sharedInstance().pinTrustedCertificatePublicKey( fromFiles: arrayOfCert
 
 憑證綁定方法會傳回承諾：
 
-* 憑證綁定方法將會在成功綁定時呼叫 onSuccess 方法。
-* 憑證綁定方法將會在兩種情況下觸發 onFailure 回呼：
-* 檔案不存在
-* 檔案的格式錯誤
+* 如果綁定成功，則憑證綁定方法會呼叫 `onSuccess` 方法。
+* 在下列兩種情況下，憑證綁定方法會觸發 `onFailure` 回呼。
+  * 檔案不存在。
+  * 檔案的格式錯誤。
 
 稍後，如果對未綁定其憑證的伺服器提出安全的要求，則會呼叫特定要求的 `onFailure` 回呼（例如，`obtainAccessToken` 或 `WLResourceRequest`）。
 
->請在 [API 參考資料](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks)中進一步瞭解憑證綁定 API 方法。
+請在 [API 參考資料](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks)中進一步瞭解憑證綁定 API 方法。
+{: note}

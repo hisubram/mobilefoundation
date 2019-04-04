@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-11"
 
+keywords: web sdk, web sdk api
+
+subcollection:  mobilefoundation
 ---
 
 #	Web SDK
@@ -12,4 +15,3 @@ lastupdated:  "2019-02-11"
 從 npm 下載 Web SDK。
 
 * [SDK for Mobile Foundation ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.npmjs.com/package/ibm-mfp-web-sdk)
-

@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-11"
 
+keywords: ios sdk, ios sdk api
+
+subcollection:  mobilefoundation
 ---
 
 #	iOS SDK
@@ -15,4 +18,3 @@ lastupdated:  "2019-02-11"
 * [SDK for Push Notifications ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cocoapods.org/pods/IBMMobileFirstPlatformFoundationPush)
 * [SDK for JSONStore ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cocoapods.org/pods/IBMMobileFirstPlatformFoundationJSONStore)
 * [SDK for LiveUpdate ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://cocoapods.org/pods/IBMMobileFirstPlatformFoundationLiveUpdate)
-

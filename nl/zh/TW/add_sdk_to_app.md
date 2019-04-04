@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-01-04"
 
+keywords: Mobile Foundation SDK, android sdk, iOS sdk, cordova sdk, react native sdk
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ lastupdated:  "2019-01-04"
 ### 將 Android SDK 新增至應用程式
 {: android}
 
-開啟 Android Studio、選擇 Android 視圖、選擇 **Gradle Script**、選取 `build.gradle (Module: app)` 檔案，然後遵循下面的步驟以將 Android SDK 新增至 Android 應用程式。
+開啟 Android Studio，並選擇 Android 視圖，然後選擇 **Gradle Scripts**。選取 `build.gradle (Module: app)` 檔案，然後執行下列步驟以將 Android SDK 新增至 Android 應用程式。
 {: android}
 
 1. 將下行新增至 `dependencies` 區段。
@@ -52,7 +55,7 @@ lastupdated:  "2019-01-04"
   ```
   {: codeblock}
   {: android}
-3. 在 Android 視圖中，開啟 **app → manifests → AndroidManifest.xml** 檔案。將下列許可權新增至 'application' 元素上方。
+3. 在 Android 視圖中，開啟 **app → manifests → AndroidManifest.xml** 檔案。將下列許可權新增至 `application` 元素之前。
    ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -70,7 +73,7 @@ lastupdated:  "2019-01-04"
 ### 將 iOS SDK 新增至應用程式
 {: ios}
 
-這是 IBM Mobile Foundation 的 Core SDK，其中包含用於實作 Mobile Foundation 安全、授權、記載、呼叫配接器及其他核心功能的 API。遵循下面的步驟，以將 iOS SDK 新增至 iOS 應用程式。
+此 SDK 是 IBM Mobile Foundation 的 Core SDK，其中包含用於實作 Mobile Foundation 安全、授權、記載、呼叫配接器及其他核心功能的 API。請執行下列步驟，以將 iOS SDK 新增至 iOS 應用程式。
 {: ios}
 
 1. 移至 iOS 應用程式的根資料夾，並執行下列指令以建立 Podfile。
@@ -113,7 +116,7 @@ mfpdev app register
 ### 將 Cordova SDK 新增至應用程式
 {: cordova}
 
-這是 IBM Mobile Foundation 的 Core SDK，其中包含用於實作 Mobile Foundation 安全、授權、記載、呼叫配接器及其他核心功能的 API。遵循下面的步驟，以將 Cordova SDK 新增至應用程式。
+此 SDK 是 IBM Mobile Foundation 的 Core SDK，其中包含用於實作 Mobile Foundation 安全、授權、記載、呼叫配接器及其他核心功能的 API。請執行下列步驟，以將 Cordova SDK 新增至應用程式。
 {: cordova}
 
 1. 建立 Cordova 專案。
@@ -156,7 +159,7 @@ mfpdev app register
 ### 將 React Native SDK 外掛程式新增至應用程式
 {: reactnative}
 
-若要將 Mobile Foundation 功能新增至現有 React Native 應用程式，您需要將 `react-native-ibm-mobilefirst` 外掛程式新增至應用程式。`react-native-ibm-mobilefirst` 外掛程式包含 Mobile Foundation SDK。遵循下面的步驟，以將 React Native 外掛程式新增至 React Native 應用程式。
+若要將 Mobile Foundation 功能新增至現有 React Native 應用程式，您需要將 `react-native-ibm-mobilefirst` 外掛程式新增至應用程式。`react-native-ibm-mobilefirst` 外掛程式包含 Mobile Foundation SDK。請執行下列步驟，以將 React Native 外掛程式新增至 React Native 應用程式。
 {: reactnative}
 
 1. 使用將任何其他 `npm` 外掛程式新增至應用程式的相同方式，來新增此外掛程式。
@@ -207,4 +210,3 @@ mfpdev app register
    {: reactnative}
 7. 針對 iOS，開啟 XCode，並在專案導覽器中，從 `ios` 資料夾拖放 `mfpclient.plist`。此步驟僅適用於 iOS 平台。
 {: reactnative}
-

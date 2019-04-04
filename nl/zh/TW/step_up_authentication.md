@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, authentication, using challenge handlers
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ lastupdated: "2018-11-19"
 ## 參照安全檢查
 {: #referencing-a-security-check}
 
-建立兩個安全檢查：`StepUpPinCode` 及 `StepUpUserLogin`。 
+建立兩個安全檢查：`StepUpPinCode` 及 `StepUpUserLogin`。
 
 在此範例中，`StepUpPinCode` 相依於 `StepUpUserLogin`。只有在成功登入 `StepUpUserLogin` 之後，才應該要求使用者輸入 PIN 碼。基於此目的，`StepUpPinCode` 必須可以參照 `StepUpUserLogin` 類別。
 

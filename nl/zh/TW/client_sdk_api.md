@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-11"
 
+keywords: mobile foundation, client sdk, sdk api, javascript api, java api, react native api, objective-c api, csharp api
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -34,7 +37,7 @@ lastupdated: "2019-02-11"
 {: javascript }
 適用於 Cordova/Web 應用程式的 API。
 {: javascript }
-* **[用戶端 API](/docs/services/mobilefoundation?topic=mobilefoundation-javascript_client_sdk_api#javascript_client_sdk_api)**  
+* **[用戶端 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示"](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/javascript/client/)**  
     您可以使用 JavaScript API 為所有環境開發應用程式。
     {: javascript }
 * **[用戶端推送 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-hybrid-cordova-js-apidoc/html/refjavascript-mfp-push-hybrid/html/index.html)**  
@@ -85,9 +88,9 @@ lastupdated: "2019-02-11"
 {: csharp}
 適用於原生 Windows 10 UWP、Windows 8 Universal、Xamarin.iOS 及 Xamarin.Android 應用程式的 API。
 {: csharp}
-* **[適用於 Windows 10 Universal Windows Platform 以及 Windows 8 Universal、Xamarin.iOS 和 Xamarin.Android 應用程式的用戶端 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_api.pdf)**  
+* **[適用於 Windows 10 Universal Windows Platform 以及 Windows 8 Universal、Xamarin.iOS 及 Xamarin.Android 應用程式的用戶端 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_api.pdf)**  
     您可以使用 C# API 為 Windows 10 Universal Windows Platform (UWP)、Windows 8 Universal、Xamarin.iOS 及 Xamarin.Android 環境開發應用程式。
     {: csharp}
-* **[適用於 Windows 10 Universal Windows Platform 以及 Windows 8 Universal、Xamarin.iOS 和 Xamarin.Android 應用程式的用戶端推送 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_push_api.pdf)**  
-    您可以使用 C# 推送 API 為 Windows 10 Universal Windows Platform (UWP) 以及 Windows 8 Universal、Xamarin.iOS 和 Xamarin.Android 環境開發可傳送推送通知的應用程式。
+* **[適用於 Windows 10 Universal Windows Platform 和 Windows 8 Universal、Xamarin.iOS 及 Xamarin.Android 應用程式的用戶端推送 API ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_push_api.pdf)**  
+    您可以使用 C# 推送 API 為 Windows 10 Universal Windows Platform (UWP) 和 Windows 8 Universal、Xamarin.iOS 及 Xamarin.Android 環境開發可傳送推送通知的應用程式。
     {: csharp}

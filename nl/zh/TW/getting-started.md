@@ -2,8 +2,11 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated:  "2019-03-14"
 
+keywords: getting started, mobile foundation, plans, configure mobile foundation server, sample app, setup
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -16,12 +19,17 @@ lastupdated:  "2019-02-12"
 # 入門指導教學
 {: #getting-started-tutorial}
 
-{{site.data.keyword.mobilefoundation_long}} 可加速設定 {{site.data.keyword.mfp_full}} 環境，您可以使用該環境來開發、測試及執行企業行動應用程式。{{site.data.keyword.mobilefoundation_short}} 提供下列不同的服務方案：Developer、Professional Per Device 及 Professional 1 Application。
+{{site.data.keyword.mobilefoundation_long}} 可加速設定 {{site.data.keyword.mfp_full}} 環境，您可以使用該環境來開發、測試及執行企業行動應用程式。{{site.data.keyword.mobilefoundation_short}} 提供下列不同的服務方案：
+* **Lite**：佈建 Foundation Server 的管理實例，並以記憶體和 CPU 為限。允許任何數目的應用程式，而所有應用程式之間的連接裝置總數限制為 10。免費，且供僅用於試用用途。
+* **Developer**：在使用者帳戶中佈建 Foundation Server 實例。允許任何數目的應用程式，而所有應用程式之間的連接裝置總數限制為 10。免費，且僅供用於開發及測試用途。
+* **Professional Per Device**：在使用者帳戶中佈建 Foundation Server 實例，並依積極連接的裝置數收費。
+* **Professional 1 Application**：在使用者帳戶中佈建 Foundation Server 實例，並允許任意數目的使用者和裝置積極地連接（僅限於單一應用程式）。    
 {: shortdesc}
 
-使用 Professional 1 Application 方案，即可管理在任何支援作業系統上建置的單一應用程式。支援的作業系統包含 Android、iOS、Windows 或行動 Web。Developer 方案主要適用於開發及測試。您可以在[這裡](https://cloud.ibm.com/catalog/services/mobile-foundation)檢閱所有可用的方案。
+您可以在[這裡](https://cloud.ibm.com/catalog/services/mobile-foundation)檢閱所有可用的方案。
+{: note}
 
-此入門指導教學可讓您使用其中一個支援的方案來建立 {{site.data.keyword.mobilefoundation_short}} 服務實例。然後，您可以登錄應用程式。下載並編輯已登錄的應用程式、部署配接器，最後測試應用程式。
+遵循本入門指導教學，建立使用其中一個支援方案的 {{site.data.keyword.mobilefoundation_short}} 服務實例。然後，您可以登錄應用程式。下載並編輯已登錄的應用程式、部署配接器，最後測試應用程式。
 
 ## 開始之前
 {: #prereqs-gs}
@@ -39,17 +47,30 @@ lastupdated:  "2019-02-12"
 ## 步驟 2：建置行動通道
 {: #buildmobilechannel}
 
-### 針對 {{site.data.keyword.mobilefoundation_short}}：Developer 方案
+
+### 針對 {{site.data.keyword.mobilefoundation_short}}: Lite 方案
+{: #buildchannelliteplan}
+建立 {{site.data.keyword.mobilefoundation_short}}: Lite 的實例之後，您可以完成下列步驟來開始建置行動通道。
+
+* 您可以立即存取與使用 Mobile Foundation Server 的管理實例。
+
+  此選項會使用下列設定來建立 {{site.data.keyword.mfserver_long_notm}} 的管理實例：
+  *	1 GB 的記憶體，這足以嘗試 {{site.data.keyword.mfserver_long_notm}} 的功能。  
+
+  * 使用 CLI 存取 Mobile Foundation Server 時需要認證，您可以從 IBM Cloud 主控台的左導覽窗格按一下**服務認證**來取得認證。
+
+
+### 針對 {{site.data.keyword.mobilefoundation_short}}: Developer 方案
 {: #buildchanneldevplan}
 
 建立 {{site.data.keyword.mobilefoundation_short}}: Developer 的實例之後，您可以完成下列步驟來開始建置行動通道。
 
-* 您可以立即存取與使用「Mobile Foundation 伺服器」。
+* 您可以立即存取與使用 Mobile Foundation Server。
 
   此選項會使用下列設定來建立 {{site.data.keyword.mfserver_long_notm}}：
   *	1 GB 的記憶體。此大小就足以進行開發、輕量型測試活動及小規模正式作業工作負載。
 
-  * 使用 CLI 存取「Mobile Foundation 伺服器」時需要認證，您可以從 IBM Cloud 主控台的左導覽窗格按一下**服務認證**來取得認證。
+  * 使用 CLI 存取 Mobile Foundation Server 時需要認證，您可以從 IBM Cloud 主控台的左導覽窗格按一下**服務認證**來取得認證。
 
 ### 針對 {{site.data.keyword.mobilefoundation_short}}：Professional Per Device 方案
 {: #buildchannelprofdeviceplan}
@@ -69,7 +90,7 @@ lastupdated:  "2019-02-12"
       + 按一下**新增**，接著在要求確認所選取 {{site.data.keyword.Db2_on_Cloud_short}}（**精簡**方案以外的任何方案）或 {{site.data.keyword.composeForPostgreSQL}} 服務的蹦現視窗上按一下**繼續**。此動作會在配置的 {{site.data.keyword.Db2_on_Cloud_short}}（**精簡**方案以外的任何方案）或 {{site.data.keyword.composeForPostgreSQL}} 資料庫服務實例中建立必要的表格。
 
       將 {{site.data.keyword.Db2_on_Cloud_short}}（**精簡**方案以外的任何方案）或 {{site.data.keyword.composeForPostgreSQL}} 連線新增至 {{site.data.keyword.mobilefoundation_short}} 實例之後，即無法進行變更。
-      {: note} 
+      {: note}
   2.  建立及啟動伺服器。
 
       1. 使用預設配置建立 {{site.data.keyword.mobilefirst_notm}} 伺服器實例，然後按一下**啟動基本伺服器**。
@@ -240,8 +261,8 @@ lastupdated:  "2019-02-12"
 
   2. 按一下 Android Studio 中的**執行應用程式**。
      * 您會看到在裝置模擬器上啟動的應用程式。
-     * 按一下應用程式中的 **Ping MobileFirst 伺服器**，這會顯示 `Connected to MobileFirst Server`。
-     * 如果應用程式可以連接至 MobileFirst Server，則會進行使用已部署 Java 配接器的資源要求呼叫。
+     * 按一下應用程式中的 **Ping MobileFirst Server**，這會顯示 `Connected to MobileFirst Server`。
+     * 如果應用程式能夠連接至 MobileFirst Server，所部署的 Java 配接器會進行資源要求呼叫。
      * 配接器回應接著會列印在 Android Studio 的 LogCat 視圖中。
 
 

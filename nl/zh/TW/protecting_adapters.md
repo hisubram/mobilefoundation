@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, adapter security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -162,4 +165,3 @@ public class WebSphereResources {
 {: #unprotected-resources}
 
 未受保護的資源是不需要存取記號的資源。MobileFirst 安全架構不會管理對未受保護資源的存取權，而且不會驗證或檢查可存取這些資源之用戶端的身分。因此，不支援未受保護資源的「直接更新」、封鎖裝置存取或遠端停用應用程式這類特性。
-

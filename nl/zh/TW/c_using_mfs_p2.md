@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation, mobile analytics, professional plan, configure database
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -25,7 +28,7 @@ lastupdated:  "2019-02-12"
 在配置 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服務實例之前，請考量下列各項。
 * 只有 {{site.data.keyword.Db2_on_Cloud_short}} 及 {{site.data.keyword.composeForPostgreSQL}} {{site.data.keyword.Bluemix_notm}} 方案才支援 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application。
 
-* 您應該具有 {{site.data.keyword.Db2_on_Cloud_short}} 或 {{site.data.keyword.composeForPostgreSQL}} 服務實例認證的存取權，才能配置 {{site.data.keyword.mobilefoundation_short}} 服務實例的設定。
+* 您需要有 {{site.data.keyword.Db2_on_Cloud_short}} 或 {{site.data.keyword.composeForPostgreSQL}} 服務實例認證的存取權，才能配置 {{site.data.keyword.mobilefoundation_short}} 服務實例的設定。
 
 > **附註**：{{site.data.keyword.Db2_on_Cloud_short}}（**精簡**方案以外的任何方案）或 {{site.data.keyword.composeForPostgreSQL}} 服務實例可存在於 {{site.data.keyword.Bluemix_notm}} `Organization` 的任何 `Space` 中或您具有存取權的任何其他 `Organization` 中。請確定您具有存取 {{site.data.keyword.Db2_on_Cloud_short}} 或 {{site.data.keyword.composeForPostgreSQL}} 服務實例所存在的 `Space` 的許可權。
 
@@ -41,7 +44,7 @@ lastupdated:  "2019-02-12"
 ### 設定 Db2 on Cloud 服務實例的連線
 {: #connect_dashdb_p2}
 
-建立 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服務實例之後，您會看到*概觀* 頁面。在這裡，您需要指定 {{site.data.keyword.Db2_on_Cloud_short}}（**精簡**方案以外的任何方案）或 {{site.data.keyword.mobilefoundation_short}} 服務實例應該連接至其中之 {{site.data.keyword.composeForPostgreSQL}} 服務實例的連線資訊。
+建立 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 服務實例之後，您會看到*概觀* 頁面。在這裡，您需要指定 {{site.data.keyword.mobilefoundation_short}} 服務實例必須連接至其中之 {{site.data.keyword.Db2_on_Cloud_short}}（**精簡**方案以外的任何方案）或 {{site.data.keyword.composeForPostgreSQL}} 服務實例的連線資訊。
 
 如果 Cloud 實例上沒有現有的 Db2，您可以建立新的 {{site.data.keyword.Db2_on_Cloud_short}}（**精簡**方案以外的任何方案）或 {{site.data.keyword.composeForPostgreSQL}} 服務實例。
 
@@ -55,12 +58,12 @@ lastupdated:  "2019-02-12"
 
 即會建立新的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例，其會提供具有 8 GB RAM、2 個 vCPU 及 500 GB 儲存空間的專用 {{site.data.keyword.Db2_on_Cloud_short}} 實例。
 
-請遵循下列步驟，來連接至現有的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例或您剛建立的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。
+請遵循下列步驟，來連接至現有的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例或您建立的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例：
 
 1. 選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Organization`。
 
 + 從所選取 `Organization` 中可用的空間清單，選取 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 {{site.data.keyword.Bluemix_notm}} `Space`。   
-> **附註：**如果您未看到列出 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 `Organization` 及 `Space`，則請檢查您是否為該 `Organization` 及 `Space` 的成員。您需要具有對組織及空間的*開發人員* 角色存取權。{{site.data.keyword.mobilefoundation_short}} 服務會存取來自 {{site.data.keyword.Db2_on_Cloud_short}} 服務的認證。
+> **附註：**如果您未看到 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例所存在的 `Organization` 及 `Space`，則請檢查您是否為該 `Organization` 及 `Space` 的成員。您需要具有對組織及空間的*開發人員* 角色存取權。{{site.data.keyword.mobilefoundation_short}} 服務會存取來自 {{site.data.keyword.Db2_on_Cloud_short}} 服務的認證。
 
 + 選取 {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` 和 `Credentials`，以連接至現有的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。
 
@@ -73,13 +76,13 @@ lastupdated:  "2019-02-12"
 您無法變更配置以供 {{site.data.keyword.mobilefoundation_short}} 服務實例使用的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例。不過，您能夠在多個 {{site.data.keyword.mobilefoundation_short}} 服務實例之間使用相同的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例，因為每一個 {{site.data.keyword.mobilefoundation_short}} 服務實例都會在所選取的 {{site.data.keyword.Db2_on_Cloud_short}} 服務實例中建立自己的綱目。
 {: note}
 
-## 啟動使用 Professional 1 Application 方案建立的 MobileFirst 伺服器
+## 啟動使用 Professional 1 Application 方案建立的 MobileFirst Server
 {: #start_mobilefoundation_p2}
 
 * 若要以預設值啟動 {{site.data.keyword.mfserver_short_notm}}，請按一下**啟動基本伺服器**。
 
 * 此選項會使用下列設定來建立 {{site.data.keyword.mfserver_long_notm}}：
-    -  1 GB 的記憶體。此大小就足以進行開發、控管測試活動及小規模正式作業工作負載。
+    -  1 GB 的記憶體。此大小就足以進行開發、中等測試活動及小規模正式作業工作負載。
 
     -	自動產生 `username` 及 `password`。您可以在伺服器啟動並執行時存取它們。
 
@@ -97,7 +100,7 @@ lastupdated:  "2019-02-12"
 
 
 
-## 使用 Professional 1 Application 方案時重新建立 MobileFirst 伺服器
+## 使用 Professional 1 Application 方案時重新建立 MobileFirst Server
 {: #recreate_mobilefoundation_p2}
 
 *	按一下**重建**，以重建伺服器。
@@ -124,4 +127,4 @@ Mobile Foundation: Developer 方案服務實例已包含並預先配置 Mobile A
 
 * 從 {{site.data.keyword.mfp_oc_short_notm}} 啟動「Mobile Analytics 主控台」。
 
-如需 Mobile Analytics 的相關資訊，您可以參閱[這裡](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}。
+如需 Mobile Analytics 的相關資訊，請參閱[這裡](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}。

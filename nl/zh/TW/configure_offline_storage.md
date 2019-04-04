@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, offline storage, add jsonstore to cordova, add jsonstore to iOS, add jsonstore to android, jsonstore methods, jsonstore operations
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -51,7 +54,7 @@ Mobile Foundation JSONStore 是選用的用戶端 API，提供輕量型文件導
 {: cordova}
 
 1. 開啟指令行視窗，並導覽至 Cordova 專案資料夾。
-2. 執行下列指令： 
+2. 執行下列指令：
    ```bash
    cordova plugin add cordova-plugin-mfp-jsonstore
    ```
@@ -81,7 +84,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 {: cordova}
 
 #### 取得 Cordova JSONStore 集合的存取元
-{: #get_jsonstore_cordova} 
+{: #get_jsonstore_cordova}
 {: cordova}
 
 使用 `get`，以建立集合的存取元。您必須在呼叫 get 之前呼叫 `init`，否則 `get` 的結果會是*未定義的*。
@@ -97,7 +100,7 @@ var people = WL.JSONStore.get(collectionName);
 {: cordova}
 
 #### 新增文件至 Cordova 集合
-{: #add_jsonstore_cordova} 
+{: #add_jsonstore_cordova}
 {: cordova}
 
 使用 `add`，將資料儲存為集合內的文件。
@@ -118,7 +121,7 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 {: cordova}
 
 #### 尋找 Cordova 集合內的文件
-{: #find_jsonstore_cordova} 
+{: #find_jsonstore_cordova}
 {: cordova}
 
 * 使用 `find` 可使用查詢來尋找集合內的文件。
@@ -169,7 +172,7 @@ else {
 {: cordova}
 
 #### 取代 Cordova 集合內的文件
-{: #replace_jsonstore_cordova} 
+{: #replace_jsonstore_cordova}
 {: cordova}
 
 使用 `replace` 可修改集合內的文件。您用來執行取代的欄位是 `_id`，這是文件唯一 ID。
@@ -195,7 +198,7 @@ WL.JSONStore.get(collectionName).replace(document, options).then(function (numbe
 {: cordova}
 
 #### 從 Cordova 集合移除文件
-{: #remove_jsonstore_cordova} 
+{: #remove_jsonstore_cordova}
 {: cordova}
 
 使用 `remove` 可從集合刪除文件。在您呼叫 push 之前，不會從集合消除文件。
@@ -215,14 +218,14 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: cordova}
 
 #### 移除整個 Cordova 集合
-{: #remove_collection_jsonstore_cordova} 
+{: #remove_collection_jsonstore_cordova}
 {: cordova}
 
 使用 `removeCollection` 可刪除集合內儲存的所有文件。此作業類似於資料庫術語中的捨棄表格。
 {: cordova}
 
 #### 破壞 Cordova JSONStore
-{: #destroy_jsonstore_cordova} 
+{: #destroy_jsonstore_cordova}
 {: cordova}
 
 使用 `destroy` 可移除下列資料：
@@ -253,17 +256,17 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
    ```
    {: codeblock}
    {: ios}
-2. 從指令行中，移至 Xcode 專案根目錄，然後執行下列指令： 
+2. 從指令行中，移至 Xcode 專案根目錄，然後執行下列指令：
    ```bash
    pod install
-   ``` 
+   ```
    {: codeblock}
    {: ios}
 3. 每當您要使用 JSONStore 時，請務必匯入 JSONStore 標頭：
    **Objective-C**：
    ```objectivec
    #import <IBMMobileFirstPlatformFoundationJSONStore/IBMMobileFirstPlatformFoundationJSONStore.h>
-   ``` 
+   ```
    {: codeblock}
    **Swift：**
    ```swift
@@ -272,8 +275,8 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
    {: codeblock}
    {: ios}
 
-#### 開啟 iOS JSONStore 集合 
-{: #open_ios} 
+#### 開啟 iOS JSONStore 集合
+{: #open_ios}
 {: ios}
 
 使用 `openCollections` 可開啟一個以上的 JSONStore 集合。
@@ -295,7 +298,7 @@ do {
 {: ios}
 
 #### 取得 iOS JSONStore 集合的存取元
-{: #get_jsonstore_ios} 
+{: #get_jsonstore_ios}
 {: ios}
 
 使用 `getCollectionWithName` 可建立集合的存取元。在呼叫 `getCollectionWithName` 之前，您必須先呼叫 `openCollections`。
@@ -312,7 +315,7 @@ let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWit
 {: ios}
 
 #### 新增文件至 iOS 集合
-{: #add_jsonstore_ios} 
+{: #add_jsonstore_ios}
 {: ios}
 
 使用 `addData` 可將資料儲存為集合內的文件。
@@ -334,7 +337,7 @@ do {
 {: ios}
 
 #### 尋找 iOS 集合內的文件
-{: #find_jsonstore_ios} 
+{: #find_jsonstore_ios}
 {: ios}
 
 使用 `findWithQueryParts` 可使用查詢來尋找集合內的文件。使用 `findAllWithOptions` 可擷取集合內的所有文件。使用 `findWithIds` 可依文件唯一 ID 進行搜尋。
@@ -351,7 +354,7 @@ options.limit = 10
 let query:JSONStoreQueryPart = JSONStoreQueryPart()
 query.searchField("name", like: "yoel")
 
-do  {
+do {
   let results:NSArray = try collection.findWithQueryParts([query], andOptions: options)
 } catch let error as NSError {
   // handle error
@@ -361,7 +364,7 @@ do  {
 {: ios}
 
 #### 取代 iOS 集合內的文件
-{: #replace_jsonstore_ios} 
+{: #replace_jsonstore_ios}
 {: ios}
 
 使用 `replaceDocuments` 可修改集合內的文件。您用來執行取代的欄位是 `_id`，這是文件唯一 ID。
@@ -392,7 +395,7 @@ do {
 {: ios}
 
 #### 從 iOS 集合移除文件
-{: #remove_jsonstore_ios} 
+{: #remove_jsonstore_ios}
 {: ios}
 
 使用 `removeWithIds` 可從集合刪除文件。在您呼叫 `markDocumentClean` 之前，不會從集合消除文件。
@@ -412,7 +415,7 @@ do {
 {: ios}
 
 #### 移除整個 iOS 集合
-{: #remove_collection_jsonstore_ios} 
+{: #remove_collection_jsonstore_ios}
 {: ios}
 
 使用 `removeCollection` 可刪除集合內儲存的所有文件。此作業類似於資料庫術語中的捨棄表格。
@@ -432,7 +435,7 @@ do {
 {: ios}
 
 #### 破壞 iOS JSONStore
-{: #destroy_jsonstore_ios} 
+{: #destroy_jsonstore_ios}
 {: ios}
 
 使用 `destroyData`，以移除下列資料：
@@ -468,10 +471,10 @@ do {
 {: android}
 
 1. 從 **Android → Gradle Script** 中，選取 `build.gradle (Module: app)` 檔案。
-2. 將下列項目新增至現有的 `dependencies` 區段： 
+2. 將下列項目新增至現有的 `dependencies` 區段：
    ```bash
    compile 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundationjsonstore:8.0.+'
-   ``` 
+   ```
    {: codeblock}
    {: android}
 3. 將下列指令新增至 `build.gradle` 檔案的 `DefaultConfig` 區段：
@@ -479,7 +482,7 @@ do {
    ndk {
      abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
    }
-   ``` 
+   ```
    {: codeblock}
    {: android}
    我們新增了 `abiFilters`，以確保具有 JSONStore 的應用程式將在上述指定的任何架構中執行。這是必要的，因為 JSONStore 相依於只支援這些架構的協力廠商程式庫。
@@ -487,7 +490,7 @@ do {
    {: android}
 
 #### 開啟 Android JSONStore 集合
-{: #open_android} 
+{: #open_android}
 {: android}
 
 使用 `openCollections` 可開啟一個以上的 JSONStore 集合。
@@ -511,7 +514,7 @@ try {
 {: android}
 
 #### 取得 Android JSONStore 集合的存取元
-{: #get_jsonstore_android} 
+{: #get_jsonstore_android}
 {: android}
 
 使用 `getCollectionByName` 可建立集合的存取元。在呼叫 `getCollectionByName` 之前，您必須先呼叫 `openCollections`。
@@ -534,7 +537,7 @@ try {
 {: android}
 
 #### 新增文件至 Android 集合
-{: #add_jsonstore_android} 
+{: #add_jsonstore_android}
 {: android}
 
 使用 `addData` 可將資料儲存為集合內的文件。
@@ -559,7 +562,7 @@ try {
 {: android}
 
 #### 尋找 Android 集合內的文件
-{: #find_jsonstore_android} 
+{: #find_jsonstore_android}
 {: android}
 
 使用 `findDocuments` 可使用查詢來尋找集合內的文件。使用 `findAllDocuments` 可擷取集合內的所有文件。使用 `findDocumentById` 可依文件唯一 ID 進行搜尋。
@@ -588,7 +591,7 @@ try {
 {: android}
 
 #### 取代 Android 集合內的文件
-{: #replace_jsonstore_android} 
+{: #replace_jsonstore_android}
 {: android}
 
 使用 `replaceDocuments` 可修改集合內的文件。您用來執行取代的欄位是 `_id`，這是文件唯一 ID。
@@ -616,7 +619,7 @@ try {
 {: android}
 
 #### 從 Android 集合移除文件
-{: #remove_jsonstore_android} 
+{: #remove_jsonstore_android}
 {: android}
 
 使用 `removeDocumentById` 可從集合刪除文件。在您呼叫 `markDocumentClean` 之前，不會從集合消除文件。
@@ -640,7 +643,7 @@ try {
 {: android}
 
 #### 移除整個 Android 集合
-{: #remove_collection_jsonstore_android} 
+{: #remove_collection_jsonstore_android}
 {: android}
 
 使用 `removeCollection` 可刪除集合內儲存的所有文件。此作業類似於資料庫術語中的捨棄表格。
@@ -661,7 +664,7 @@ try {
 {: android}
 
 #### 破壞 Android JSONStore
-{: #destroy_jsonstore_android} 
+{: #destroy_jsonstore_android}
 {: android}
 
 使用 `destroy` 可移除下列資料：
@@ -682,4 +685,3 @@ try {
 ```
 {: codeblock}
 {: android}
-

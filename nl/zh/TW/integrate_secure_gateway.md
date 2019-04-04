@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-13"
 
+keywords: integration, mobile foundation, secure gateway
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -45,7 +48,7 @@ node app.js
 {: #implementing_sg_integration}
 
 ### 建立 Secure Gateway 服務實例
-登入 IBM Cloud，並建立 [Secure Gateway 服務](https://cloud.ibm.com/catalog/services/secure-gateway/)實例。 
+登入 IBM Cloud，並建立 [Secure Gateway 服務](https://cloud.ibm.com/catalog/services/secure-gateway/)實例。
 
 ![IBM Cloud](images/SecureGatewayInst.gif)
 
@@ -103,14 +106,14 @@ acl allow <resourceHost>:<resourcePort>
 ### 使用 Mobile Foundation 及 Mobile Foundation 配接器來配置 Secure Gateway 服務
 {: #configuration_sg_mfp}
 
-在本指導教學中，我們將使用 IBM Cloud 上的 Mobile Foundation 服務實例來配置 Mobile Foundation 伺服器。IBM cloud 上的 Mobile Foundation 服務可協助將 Liberty 運行環境上的 Mobile Foundation 伺服器佈建為 Cloud Foundry 應用程式。Mobile Foundation 服務可讓您採用本端環境上所開發的任何 Mobile Foundation 專案，並在 IBM Cloud 上執行它。
+在本指導教學中，我們將使用 IBM Cloud 上的 Mobile Foundation 服務實例來配置 Mobile Foundation Server。IBM cloud 上的 Mobile Foundation 服務可協助將 Liberty 運行環境上的 Mobile Foundation Server 佈建為 Cloud Foundry 應用程式。Mobile Foundation 服務可讓您採用本端環境上所開發的任何 Mobile Foundation 專案，並在 IBM Cloud 上執行它。
 
-### IBM Cloud 上的 Mobile Foundation 伺服器設定
+### IBM Cloud 上的 Mobile Foundation Server 設定
 {: #mf_server_setup}
 
 從 IBM Cloud 主控台中，建立 [Mobile Foundation 服務](https://cloud.ibm.com/catalog/services/mobile-foundation)實例。
 
-從 Mobile Foundation 服務主控台中，建立 [Mobile Foundation 伺服器 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/)。
+從 Mobile Foundation 服務主控台中，建立 [Mobile Foundation Server ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/)。
 
 
 ### 建置及部署 Mobile Foundation 配接器
@@ -127,13 +130,13 @@ mfpdev adapter deploy
 
 在[這裡 ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/)，瞭解建置及部署配接器。
 {: tip}
- 
-提供 JavaHTTP 配接器中資源端點的雲端主機及埠詳細資料（從上節取得）。 
+
+提供 JavaHTTP 配接器中資源端點的雲端主機及埠詳細資料（從上節取得）。
 
 ![AdapterConfiguration ](images/AdapterConfiguration.png)
 
 其中 `cap-sg-prd-5.securegateway.appdomain.cloud` 及 `18946` 分別是 Secure Gateway 主機及埠。
- 
+
 現在已配置 Mobile Foundation 配接器，而且現在已啟用 Mobile Foundation 服務，使用 Secure Gateway 服務來與企業內的內部部署系統搭配運作。
 
 ### 建立及登錄 Mobile Foundation 範例應用程式
@@ -152,4 +155,3 @@ mfpdev adapter deploy
 {: #summary_int_sec_gw}
 
 使用本指導教學，您應該可以使用 Secure Gateway 服務，在 IBM Cloud 上執行之 Mobile Foundation 配接器與內部部署 HTTP 端點間建立安全連線。
-

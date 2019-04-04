@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-23"
 
+keywords: synchronization of data, sync with offline storage, jsonstore sync
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -45,7 +48,7 @@ JSONStore 集合與 Cloudant 資料庫之間的同步化方法是透過**同步�
   ```objc
   openOptions.syncPolicy = SYNC_DOWNSTREAM;
   ```
-  
+
   *Cordova*
   ```javascript
   collection.sync = {
@@ -66,7 +69,7 @@ JSONStore 集合與 Cloudant 資料庫之間的同步化方法是透過**同步�
   ```objc
   openOptions.syncPolicy = SYNC_UPSTREAM;
   ```
-  
+
   *Cordova*
   ```javascript
   collection.sync = {
@@ -96,7 +99,7 @@ JSONStore 集合與 Cloudant 資料庫之間的同步化方法是透過**同步�
  ```objc
   openOptions.syncAdapterPath = @"JSONStoreCloudantSync";
  ```
-  
+
 *Cordova 或 Ionic*
  ```javascript
   collection.sync = {
@@ -104,7 +107,7 @@ JSONStore 集合與 Cloudant 資料庫之間的同步化方法是透過**同步�
   }
  ```
 
-* 從[這裡](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCloudantSync/)下載 `JSONStoreSync` 配接器、在 `src/main/adapter-resources/adapter.xml` 路徑中配置 Cloudant 認證，並將它部署至 Mobile Foundation 伺服器。
+* 從[這裡](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCloudantSync/)下載 `JSONStoreSync` 配接器、在 `src/main/adapter-resources/adapter.xml` 路徑中配置 Cloudant 認證，並將它部署至 Mobile Foundation Server。
 * 在「Mobile Foundation 作業主控台」中將認證配置至後端 Cloudant 資料庫。
 
 ### 手動執行同步作業
@@ -127,9 +130,8 @@ JSONStore 集合與 Cloudant 資料庫之間的同步化方法是透過**同步�
  ```objc
   collection.sync(); //Here collection is the JSONStore collection object that was initialized
  ```
-  
+
 *Cordova*
  ```javascript
   WL.JSONStore.get(collectionName).sync();
  ```
-

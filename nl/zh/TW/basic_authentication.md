@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: security, basic authentication, protecting resources, tokens, scopemapping
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -27,9 +30,9 @@ OAuth 通訊協定會區隔授權伺服器與資源管理所在之資源伺服�
 * 授權伺服器管理用戶端授權及記號產生。
 * 資源伺服器使用授權伺服器來驗證用戶端所提供的存取記號，並確定它符合所要求資源的保護範圍。
 
-安全架構以實作 OAuth 通訊協定的授權伺服器為主軸，並公開用戶端與其互動以取得存取記號的 OAuth 端點。安全架構提供構成要素以在授權伺服器及基礎 OAuth 通訊協定上實作自訂授權邏輯。依預設，MobileFirst Server 也會充當**授權伺服器**。不過，您可以配置 IBM WebSphere DataPower 應用裝置來充當授權伺服器，並與 MobileFirst Server 互動。
+安全架構以實作 OAuth 通訊協定的授權伺服器為主軸，並公開用戶端與其互動以取得存取記號的 OAuth 端點。安全架構提供構成要素，以透過授權伺服器及基礎 OAuth 通訊協定實作自訂授權邏輯。依預設，MobileFirst Server 也會充當**授權伺服器**。不過，您可以配置 IBM WebSphere DataPower 應用裝置來充當授權伺服器，並與 MobileFirst Server 互動。
 
-用戶端應用程式接著可以使用這些記號來存取**資源伺服器**上的資源，而資源伺服器可以是 MobileFirst Server 本身或外部伺服器。資源伺服器會檢查記號的有效性，以確定可以將所要求資源的存取權授與給用戶端。資源伺服器與授權伺服器之間的區隔，可讓您對在 MobileFirst Server 外部執行的資源施行安全保護。
+用戶端應用程式接著可以使用這些記號來存取**資源伺服器**上的資源，而資源伺服器可以是 MobileFirst Server 本身或外部伺服器。資源伺服器會檢查記號的有效性，以確定可以將所要求資源的存取權授與給用戶端。資源伺服器與授權伺服器之間的區隔，可用來對在 MobileFirst Server 外部執行的資源施行安全保護。
 
 應用程式開發人員藉由定義每個受保護資源的必要範圍，以及實作安全檢查和盤查處理程式，來保護對其資源的存取權。伺服器端安全架構及用戶端 API 會透通地處理 OAuth 訊息交換以及與授權伺服器的互動，讓開發人員可以只著眼於授權邏輯。
 
@@ -64,8 +67,11 @@ MobileFirst 存取記號包含下列資訊：
 
 * 編輯應用程式的配置檔
 
-    1. 從**指令行視窗**中，導覽至專案的根資料夾，然後執行 `mfpdev app pull`。
-    2. 開啟位於 **[project-folder]\mobilefirst** 資料夾中的配置檔。
+    1. 從 CLI 中，導覽至專案根目錄資料夾並執行下列指令。
+      ```bash
+      mfpdev app pull
+      ```
+    2. 開啟配置檔，其位於 `[project-folder]\mobilefirst` 資料夾中。
     3. 定義 `maxTokenExpiration` 內容來編輯檔案，以及將其值設為最大存取記號有效期限（以秒為單位）：
         ```java
         {
@@ -79,7 +85,7 @@ MobileFirst 存取記號包含下列資訊：
 **存取記號回應結構**
 {: #acs_access-tokens-structure}
 
-存取記號要求的成功 HTTP 回應包含具有存取記號及其他資料的 JSON 物件。以下是來自授權伺服器的有效記號回應範例：
+存取記號要求的成功 HTTP 回應包含具有存取記號及額外資料的 JSON 物件。以下是來自授權伺服器的有效記號回應範例：
 
 ```json
 HTTP/1.1 200 OK
@@ -142,7 +148,7 @@ MobileFirst 重新整理記號是說明用戶端授權許可權的數位簽署�
 **用戶端內容 (iOS)**
 *檔名*：mfpclient.plist
 *內容名稱*：wlEnableRefreshToken
-*內容值*：true
+*內容值e*：true
 例如，*wlEnableRefreshToken*=true
 
 **伺服器端內容**
@@ -177,7 +183,7 @@ MobileFirst 重新整理記號是說明用戶端授權許可權的數位簽署�
 ```        
 {: codeblock}
 
-除了說明為存取記號回應結構一部分的其他內容物件之外，重新整理記號回應還具有其他內容物件 refresh_token。
+除了說明為存取記號回應結構一部分的其他內容物件之外，重新整理記號回應還具有其他內容物件 `refresh_token`。
 
 >**附註**：相較於存取記號，重新整理記號會長期存在。因此，使用重新整理記號特性時請小心。不需要定期使用者鑑別的應用程式是用於使用重新整理記號特性的理想候選項目。
 
@@ -203,7 +209,7 @@ MobileFirst 重新整理記號是說明用戶端授權許可權的數位簽署�
 
 嘗試存取受保護的資源時，用戶端可能會面對盤查。盤查是一個問題、安全測試、由伺服器發出以確定容許用戶端存取此資源的提示。此盤查最常見的是認證的要求，例如使用者名稱及密碼。
 
-盤查處理程式是一種用戶端實體，可實作用戶端安全邏輯及相關使用者互動。 
+盤查處理程式是一種用戶端實體，可實作用戶端安全邏輯及相關使用者互動。
 
 >**重要事項**：接收到盤查之後，即無法予以忽略。您必須回答或取消它。忽略盤查可能會導致非預期的行為。
 
@@ -225,9 +231,9 @@ MobileFirst 重新整理記號是說明用戶端授權許可權的數位簽署�
 #### 範圍對映
 {: #scopemapping}
 
-依預設，您在**範圍**中寫入的**範圍元素**會對映至**同名的安全檢查**。例如，如果您寫入稱為 `PinCodeAttempts` 的安全檢查，則可以在範圍內使用同名的範圍元素。
+依預設，您在**範圍**中寫入的**範圍元素**會對映至同名的**安全檢查**。比方說，如果您寫入稱為 `PinCodeAttempts` 的安全檢查，則可以在範圍內使用同名的範圍元素。
 
-「範圍對映」容許將範圍元素對映至安全檢查。用戶端要求範圍元素時，此配置會定義應該套用的安全檢查。例如，您可以將範圍元素 `access-restricted` 對映至 `PinCodeAttempts` 安全檢查。
+「範圍對映」容許將範圍元素對映至安全檢查。用戶端要求範圍元素時，此配置會定義需要套用的安全檢查。例如，您可以將範圍元素 `access-restricted` 對映至 `PinCodeAttempts` 安全檢查。
 
 如果您要根據嘗試存取資源的應用程式以不同的方式保護資源，則範圍對映十分有用。您也可以將範圍對映至零個以上的安全檢查清單。
 
@@ -247,7 +253,7 @@ MobileFirst 重新整理記號是說明用戶端授權許可權的數位簽署�
 您也可以手動編輯具有必要配置的應用程式配置 JSON 檔案，並將變更推送回 MobileFirst Server。
 
 1. 從**指令行視窗**中，導覽至專案的根資料夾，然後執行 `mfpdev app pull`。
-2. 開啟位於 **[project-folder]\mobilefirst** 資料夾中的配置檔。
+2. 開啟配置檔，其位於 `[project-folder]\mobilefirst` 資料夾中。
 3. 定義 `scopeElementMapping` 內容，以編輯檔案。在此內容中，定義各包含所選取範圍元素名稱的資料配對，以及元素所對映的零個以上以空格區隔之安全檢查的字串。例如：
 
 ```java
@@ -256,9 +262,13 @@ MobileFirst 重新整理記號是說明用戶端授權許可權的數位簽署�
          "SSOUserValidation": "LtpaBasedSSO CredentialsValidation"
      }
 ```
-4. 執行下列指令，來部署已更新的配置 JSON 檔案：`mfpdev app push`。
+4. 執行下列指令，來部署已更新的配置 JSON 檔案：
+  ```bash
+mfpdev app push
+```
 
->您也可以將已更新的配置推送至遠端伺服器。請參閱「使用 MobileFirst CLI 管理 MobileFirst 構件」指導教學。
+您也可以將已更新的配置推送至遠端伺服器。請參閱「使用 MobileFirst CLI 管理 MobileFirst 構件」指導教學。
+{: note}
 
 ### 保護資源
 {: #protecting-resources}
@@ -283,8 +293,8 @@ MobileFirst 重新整理記號是說明用戶端授權許可權的數位簽署�
 您也可以手動編輯具有必要配置的應用程式配置 JSON 檔案，並將變更推送回 MobileFirst Server。
 
 1. 從**指令行視窗**中，導覽至專案的根資料夾，然後執行 `mfpdev app pull`。
-2. 開啟位於 **project-folder\mobilefirst** 資料夾中的配置檔。
-3. 編輯檔案，方法是定義 `mandatoryScope` 內容，以及將內容值設為包含以空格區隔的所選取範圍元素清單的範圍字串。例如：
+2. 開啟配置檔，其位於 **project-folder\mobilefirst** 資料夾中。
+3. 編輯檔案，方法是定義 `mandatoryScope` 內容，以及將內容值設為包含以空格區隔的所選取範圍元素清單的範圍字串。例如，
 
     ```java
         "mandatoryScope": "appAuthenticity PincodeValidation"
@@ -366,4 +376,4 @@ MobileFirst 重新整理記號是說明用戶端授權許可權的數位簽署�
 ### 保護外部資源
 {: #protecextresources}
 
-若要保護外部資源，您可以將具有存取記號驗證模組的資源過濾器新增至外部資源伺服器。記號驗證模組會先使用安全架構之授權伺服器的內部檢查端點來驗證 MobileFirst 存取記號，再將對資源的存取權授與 OAuth 用戶端。您可以使用 MobileFirst 運行環境的 MobileFirst REST API，針對任何外部伺服器建立您自己的存取記號驗證模組。或者，使用其中一個提供的 MobileFirst 延伸規格來保護外部 Java 資源。
+若要保護外部資源，您可以將具有存取記號驗證模組的資源過濾器新增至外部資源伺服器。記號驗證模組會先使用安全架構之授權伺服器的內部檢查端點來驗證 MobileFirst 存取記號，再將 OAuth 用戶端存取權授與資源。您可以使用 MobileFirst 運行環境的 MobileFirst REST API，針對任何外部伺服器建立您自己的存取記號驗證模組。或者，使用其中一個提供的 MobileFirst 延伸規格來保護外部 Java 資源。

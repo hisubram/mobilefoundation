@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2018-11-26"
 
+keywords: android sdk api
+
+subcollection:  mobilefoundation
 ---
 
 #	Android SDK
@@ -16,4 +19,3 @@ lastupdated:  "2018-11-26"
 * [SDK for Mobile Analytics ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://search.maven.org/search?q=a:ibmmobilefirstplatformfoundationanalytics)
 * [SDK for JSONStore ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://search.maven.org/search?q=a:ibmmobilefirstplatformfoundationjsonstore)
 * [SDK for LiveUpdate ![外部鏈結圖示](../../icons/launch-glyph.svg "外部鏈結圖示")](https://search.maven.org/search?q=a:ibmmobilefirstplatformfoundationliveupdate)
-

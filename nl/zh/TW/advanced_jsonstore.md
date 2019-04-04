@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, advanced jsonstore, Cordova secure jsonstore, iOS secure jsonstore, android jsonstore, adapter integration
+
+subcollection:  mobilefoundation
 ---
 {:generic: .ph data-hd-programlang='generic'}
 {:java: .ph data-hd-programlang='java'}
@@ -27,7 +30,7 @@ lastupdated: "2019-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# 進階 JSONStore 
+# 進階 JSONStore
 {: #advanced_jsonstore}
 
 ## JSONStore 中的安全
@@ -48,7 +51,7 @@ lastupdated: "2019-02-12"
 只有 iOS 才支援加密。依預設，Mobile Foundation Cordova SDK for iOS 依賴 iOS 提供的 API 以進行加密。如果您偏好使用 OpenSSL 來取代：
 {: cordova}
 
-* 新增 `cordova-plugin-mfp-encrypt-utils` 外掛程式： 
+* 新增 `cordova-plugin-mfp-encrypt-utils` 外掛程式：
   ```bash
   cordova plugin add cordova-plugin-mfp-encrypt-utils.
   ```
@@ -103,9 +106,9 @@ do {
 {: android}
 
 ```java
-Context context = getContext();
-try {
-  JSONStoreCollection people = new JSONStoreCollection("people");
+    Context  context = getContext();
+    try {
+      JSONStoreCollection people = new JSONStoreCollection("people");
   people.setSearchField("name", SearchFieldType.STRING);
   people.setSearchField("age", SearchFieldType.INTEGER);
   List<JSONStoreCollection> collections = new LinkedList<JSONStoreCollection>();
@@ -122,7 +125,7 @@ try {
 {: android}
 
 ## JSONStore 中的多使用者支援
-{: #multiple_user_jsonstore} 
+{: #multiple_user_jsonstore}
 
 <!--### Cordova
 {: #multiple_user_jsonstore_cordova} -->
@@ -176,9 +179,9 @@ do {
 {: android}
 
 ```java
-Context context = getContext();
-try {
-  JSONStoreCollection people = new JSONStoreCollection("people");
+    Context  context = getContext();
+    try {
+      JSONStoreCollection people = new JSONStoreCollection("people");
   people.setSearchField("name", SearchFieldType.STRING);
   people.setSearchField("age", SearchFieldType.INTEGER);
   List<JSONStoreCollection> collections = new LinkedList<JSONStoreCollection>();
@@ -261,7 +264,7 @@ try {
    {: codeblock}
    {: cordova}
    若要防止 JSONStore 將文件標示為「已變動」，請傳遞選項 `{markDirty:false}` 給 `add`、`replace` 和 `remove`。
-   {: tip} 
+   {: tip}
    {: cordova}
 5. 您也可以使用 `getAllDirty` API 來擷取變動過的文件。
    ```javascript
@@ -320,8 +323,8 @@ try {
         // result contains an array of documents with the results from the find
     }).fail(function () {
         // handle failure
-    }); 
-   ```
+});
+```
    {: codeblock}
    {: cordova}
 8. 參閱**範例**小節的 Cordova 應用程式 JSONStore 範例。此專案包含使用 JSONStore API 集的 Cordova 應用程式。JavaScript 配接器 Maven 專案可以從[這裡](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)下載。
@@ -372,7 +375,7 @@ try {
    {: codeblock}
    {: ios}
    若要防止 JSONStore 將文件標示為「已變動」，請傳遞選項 `{markDirty:false}` 給 `add`、`replace` 和 `remove`。
-   {: tip} 
+   {: tip}
 5. 若要將變更推送至配接器，請呼叫 `allDirty` 以取得有修改的文件清單，然後使用 `WLResourceRequest`。在傳送資料並收到成功的回應之後，請務必呼叫 `markDocumentsClean`。
    ```swift
     // Start - PushToAdapter
@@ -457,7 +460,7 @@ try {
    {: codeblock}
    {: android}
    若要防止 JSONStore 將文件標示為「已變動」，請傳遞選項 `options.setMarkDirty(false)` 給 `add`、`replace` 和 `remove`。
-   {: tip} 
+   {: tip}
    {: android}
 5. 若要將變更推送至配接器，請呼叫 `findAllDirtyDocuments` 以取得有修改的文件清單，然後使用 `WLResourceRequest`。在傳送資料並收到成功的回應之後，請務必呼叫 `markDocumentsClean`。
    ```java

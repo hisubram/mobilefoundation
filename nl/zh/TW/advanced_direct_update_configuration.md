@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-14"
 
+keywords: Direct Update, CDN support, secure direct update
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

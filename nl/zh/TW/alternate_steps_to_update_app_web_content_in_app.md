@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-14"
 
+keywords: update web content in apps, update apps
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -19,7 +22,7 @@ lastupdated: "2019-02-14"
 
 以下列出更新應用程式中 Web 內容的部分替代方式。
 
-* 建置 `.zip` 檔案，並將它上傳至不同的 Mobile Foundation 伺服器：`mfpdev app webupdate [server-name] [runtime-name]`。
+* 建置 `.zip` 檔案，並將它上傳至不同的 Mobile Foundation Server：`mfpdev app webupdate [server-name] [runtime-name]`。
   例如：
   ```bash
   mfpdev app webupdate myQAServer MyBankApps
@@ -31,7 +34,7 @@ lastupdated: "2019-02-14"
   mfpdev app webupdate myQAServer MyBankApps --file mobilefirst/ios/com.mfp.myBankApp-1.0.1.zip
   ```
 
-* 手動將已包裝的 Web 資源上傳至 Mobile Foundation 伺服器：
+* 手動將已包裝的 Web 資源上傳至 Mobile Foundation Server：
   1. 建置 .zip 檔案，但不上傳：
       ```bash
       mfpdev app webupdate --build

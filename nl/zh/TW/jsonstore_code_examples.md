@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-13"
 
+keywords: jsonstore, code samples, offline storage
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -248,7 +251,7 @@ WL.JSONStore.destroy()
 WL.JSONStore.closeAll()
 
 .then(function () {
-  // Handle success.
+    // Handle success.
 })
 
 .fail(function (errorObject) {
@@ -329,7 +332,7 @@ WL.JSONStore.get(collectionName)
 })
 
 .then(function () {
-  // Handle markClean success.
+    // Handle markClean success.
 })
 
 .fail(function (errorObject) {
@@ -382,7 +385,7 @@ resource.send()
 })
 
 .then(function () {
-  // Handle change success.
+    // Handle change success.
 })
 
 .fail(function (errorObject) {
@@ -447,9 +450,8 @@ WL.JSONStore.get(collectionName)
 .removeCollection()
 
 .then(function () {
-  // Handle success.
-
-  // Note: You must call the 'init' API to re-use the empty collection.
+    // Handle success.
+// Note: You must call the 'init' API to re-use the empty collection.
   // See the 'clear' API if you just want to remove all data that is inside.
 })
 
@@ -473,8 +475,7 @@ WL.JSONStore.get(collectionName)
 .then(function () {
 
   // Handle success.
-
-  // Note: You might want to use the 'removeCollection' API
+// Note: You might want to use the 'removeCollection' API
   // instead if you want to change the search fields.
 })
 
@@ -493,7 +494,7 @@ WL.JSONStore.get(collectionName)
 WL.JSONStore.startTransaction()
 
 .then(function () {
-  // Handle startTransaction success.
+    // Handle startTransaction success.
   // You can call every JSONStore API method except:
   // init, destroy, removeCollection, and closeAll.
 
@@ -688,6 +689,7 @@ NSArray* docs = @[ @{@"_id" : @1, @"json" : @{ @"name": @"carlitos", @"age" : @9
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
+
 // Perform the replacement.
 int docsReplaced = [[people replaceDocuments:docs andMarkDirty:NO error:&error] intValue];
 ```
@@ -726,6 +728,7 @@ JSONStoreQueryPart *queryPart = [[JSONStoreQueryPart alloc] init];
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
+
 // Perform the count.
 int countResult = [[people countWithQueryParts:@[queryPart] error:&error] intValue];
 ```
@@ -739,6 +742,7 @@ int countResult = [[people countWithQueryParts:@[queryPart] error:&error] intVal
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
+
 // Perform the destroy.
 [[JSONStore sharedInstance] destroyDataAndReturnError:&error];
 ```
@@ -751,6 +755,7 @@ NSError* error = nil;
 ```objc
 // This object will point to an error if one occurs.
 NSError* error = nil;
+
 
 // Close access to all collections in the store.
 [[JSONStore sharedInstance] closeAllCollectionsAndReturnError:&error];
@@ -835,6 +840,7 @@ JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
+
 // Check if document with _id '1' is dirty.
 BOOL isDirtyResult = [people isDirtyWithDocumentId:1 error:&error];
 ```
@@ -850,6 +856,7 @@ JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:
 
 // This object will point to an error if one occurs.
 NSError* error = nil;
+
 
 // Check if document with _id '1' is dirty.
 int dirtyDocsCount = [[people countAllDirtyDocumentsWithError:&error] intValue];
@@ -867,6 +874,7 @@ JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:
 // This object will point to an error if one occurs.
 NSError* error = nil;
 
+
 // Remove the collection.
 [people removeCollectionWithError:&error];
 ```
@@ -882,6 +890,7 @@ JSONStoreCollection* people = [[JSONStore sharedInstance] getCollectionWithName:
 
 // This object will point to an error if one occurs.
 NSError* error = nil;
+
 
 // Remove the collection.
 [people clearCollectionWithError:&error];
