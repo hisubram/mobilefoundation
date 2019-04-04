@@ -2,17 +2,21 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="mobilefoundation" service-name="Mobile Foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation/index.html" path="services/mobilefoundation"}
+{: .toc subcollection="mobilefoundation" service-name="Mobile Foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation?topic=mobilefoundation-getting-started-tutorial#getting-started-tutorial" path="services/mobilefoundation"}
 Mobile Foundation
 
     {: .navgroup id="learn"}
-    index.md
+    getting-started.md
 
     {: .topicgroup}
     製品情報
         mdoverview.md
         pricing.md
         release_notes.md
+
+    {: .topicgroup}
+    プッシュ通知
+        about_push_notifications.md
 
     {: .topicgroup}
     オフライン・ストレージ
@@ -35,6 +39,14 @@ Mobile Foundation
         export_import_apps_adapters.md
 
 	{: .topicgroup}
+    プッシュ通知の構成と送信
+        configure_push_notifications.md
+        send_push_notifications.md
+	    handling_push_notifications_in_client_applications.md
+		silent_notifications.md
+		interactive_notifications.md
+
+	{: .topicgroup}
     アプリのエンドツーエンドの保護
         prevent_man_in_the_middle_attack.md
         obfuscate_resources.md
@@ -47,6 +59,7 @@ Mobile Foundation
     アプリケーション洞察の取得
         instrument_an_app.md
         visualize_insights_on_console.md
+        build_custom_charts.md
         alerts.md
     add_sdk_to_app.md
 
@@ -68,6 +81,8 @@ Mobile Foundation
     {: .topicgroup}
     その他の IBM Cloud サービスとの統合
         integrate_secure_gateway.md
+        delivering_mfp_apps_using_ibm_cloud_devops.md
+		integrating_cloud_object_storage.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -119,5 +134,5 @@ Mobile Foundation
     開発者コミュニティー
         [StackOverflow](https://stackoverflow.com/questions/tagged/ibm-mobile-services)
         [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/bluemix-mobile-foundation/?smartspace=bluemix)
-        [MFP Dev Slack channel](https://slackin.mybluemix.net)
+        [IBM Mobile Dev YouTube チャネル](https://www.youtube.com/channel/UCbacV2-Y2NVAOsUMfeitAdg)
     {: .navgroup-end}

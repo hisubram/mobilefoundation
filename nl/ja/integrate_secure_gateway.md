@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-13"
 
+keywords: integration, mobile foundation, secure gateway
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -45,7 +48,7 @@ node app.js
 {: #implementing_sg_integration}
 
 ### Secure Gateway サービス・インスタンスの作成
-IBM Cloud にログインし、[Secure Gateway サービス](https://cloud.ibm.com/catalog/services/secure-gateway/)のインスタンスを作成します。 
+IBM Cloud にログインし、[Secure Gateway サービス](https://cloud.ibm.com/catalog/services/secure-gateway/)のインスタンスを作成します。
 
 ![IBM Cloud](images/SecureGatewayInst.gif)
 
@@ -68,7 +71,7 @@ Secure Gateway サービス・ダッシュボードで**「ゲートウェイの
 
 任意のクライアントを選択し、Secure Gateway クライアントをオンプレミス環境で実行することができます。 Secure Gateway クライアントをセットアップする手順が、Secure Gateway コンソールに表示されます。
 
-このチュートリアルでは、Docker コンテナー・オプションを使用して Secure Gateway クライアントを実行することにします。 
+このチュートリアルでは、Docker コンテナー・オプションを使用して Secure Gateway クライアントを実行することにします。
 次の手順に従ってください。
 *   まだインストールされていない場合は、Docker をオンプレミスのマシンにインストールします。
 *   端末を起動し、サービス・コンソールに表示されたコマンドを使用して、Secure Gateway クライアントをコンテナーで実行します。
@@ -127,13 +130,13 @@ mfpdev adapter deploy
 
 アダプターをビルドしてデプロイする方法について詳しくは、[こちら ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/) を参照してください。
 {: tip}
- 
-JavaHTTP アダプターのリソース・エンドポイントに、直前のセクションから取得したクラウドのホストおよびポートの詳細を指定します。 
+
+JavaHTTP アダプターのリソース・エンドポイントに、直前のセクションから取得したクラウドのホストおよびポートの詳細を指定します。
 
 ![AdapterConfiguration ](images/AdapterConfiguration.png)
 
 `cap-sg-prd-5.securegateway.appdomain.cloud` および `18946` は、それぞれ Secure Gateway のホストとポートです。
- 
+
 これで Mobile Foundation アダプターが構成され、Mobile Foundation サービスが Secure Gateway サービスを使用して企業内のオンプレミス・システムと連携できるようになりました。
 
 ### Mobile Foundation サンプル・アプリの作成および登録
@@ -152,4 +155,3 @@ Secure Gateway サービスに複数の宛先を構成し、対応するクラ�
 {: #summary_int_sec_gw}
 
 このチュートリアルを使用すると、IBM Cloud で実行される Mobile Foundation アダプターとオンプレミス HTTP エンドポイントとの間に Secure Gateway サービスを使用してセキュアな接続を確立できます。
-

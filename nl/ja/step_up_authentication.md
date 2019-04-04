@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, authentication, using challenge handlers
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ lastupdated: "2018-11-19"
 ## セキュリティー検査の参照
 {: #referencing-a-security-check}
 
-2 つのセキュリティー検査、`StepUpPinCode` と `StepUpUserLogin` を作成します。 
+2 つのセキュリティー検査、`StepUpPinCode` と `StepUpUserLogin` を作成します。
 
 この例の場合、`StepUpPinCode` は、`StepUpUserLogin` に依存します。 ユーザーは、`StepUpUserLogin` に正常ログインできた場合に限り、PIN コードの入力を求められます。 このような目的のため、`StepUpPinCode` は、`StepUpUserLogin` クラスを参照できなければなりません。
 

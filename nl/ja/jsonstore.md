@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-12"
 
+keywords: JSONStore, offline storage, jsonstore error codes
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -191,16 +194,16 @@ JSONStore がパスワードを使用してコレクションを初めて開く�
 localKeyGen 鍵が JSONStore API の JavaScript 実装環境にあり、true の値になっている場合、暗号的にセキュアなトークンがローカルに生成されます。 それ以外の場合、トークンはサーバーにアクセスすることによって生成されます。MobileFirst Server との接続が必要になります。 このトークンは、ストアが初回にパスワードを使用して開かれるときにのみ必要です。 ネイティブ実装環境 (Objective-C および Java) では暗号論的に安全なトークンがデフォルトでローカルに生成されます。生成されない場合は、secureRandom オプションを使用してトークンを渡すことができます。
 
 以下のようなトレードオフ関係があります。
-* ストアをオフラインで開くことと、クライアントを信頼してランダム・トークンを生成すること (安全性が低い)、または、 
+* ストアをオフラインで開くことと、クライアントを信頼してランダム・トークンを生成すること (安全性が低い)、または、
 * MobileFirst Server にアクセスしてストアを開くこと (接続が必要) と、サーバーを信頼すること (安全性が高い)
 
 ### セキュリティー・ユーティリティー
 {: #security-utilities }
 MobileFirst クライアント・サイド API は、ユーザーのデータを保護するのに役に立つセキュリティー・ユーティリティーをいくつか提供しています。 JSONStore などのフィーチャーは、JSON オブジェクトを保護する場合に優れた能力を発揮します。 ただし、JSONStore コレクションにバイナリー blob を保管することはお勧めできません。
 
-代わりに、バイナリー・データをファイル・システムに保管して、ファイル・パスやその他のメタデータを JSONStore コレクション内に保管します。 イメージなどのファイルを保護したい場合、それを base64 ストリングとしてエンコードし、暗号化して、ディスクに出力を書き込むことができます。 
+代わりに、バイナリー・データをファイル・システムに保管して、ファイル・パスやその他のメタデータを JSONStore コレクション内に保管します。 イメージなどのファイルを保護したい場合、それを base64 ストリングとしてエンコードし、暗号化して、ディスクに出力を書き込むことができます。
 
-データの暗号化を解除するには、JSONStore コレクション内のメタデータを検索し、暗号化されたデータをディスクから読み取り、保管されたメタデータを使用して暗号化を解除します。 
+データの暗号化を解除するには、JSONStore コレクション内のメタデータを検索し、暗号化されたデータをディスクから読み取り、保管されたメタデータを使用して暗号化を解除します。
 
 このメタデータには鍵、ソルト、初期設定ベクトル (IV)、ファイルのタイプ、ファイルへのパスなどを含めることができます。
 
@@ -332,7 +335,7 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 {: #objective-c-jsonstore }
 JSONStore 用のネイティブ iOS API を使用すると、すべての操作は同期ディスパッチ・キューに追加されます。 この動作により、メイン・スレッドではないスレッド上で、ストアに作用する操作が順番に実行されることが確実になります。 詳しくは、Apple 資料の [Grand Central Dispatch (GCD) ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window} を参照してください。
 
-### Java での並行性 
+### Java での並行性
 {: #java-jsonstore }
 JSONStore 用のネイティブ Android API を使用すると、すべての操作がメイン・スレッドで実行されます。 振る舞いを非同期にするには、スレッドを作成するか、スレッド・プールを使用する必要があります。 すべてのストア操作はスレッド・セーフです。
 
@@ -348,7 +351,7 @@ JSONStore に関する重要な分析情報を収集することができます�
 {: #performance-metrics }
 パフォーマンス・メトリックは、JSONStore API が操作の開始時刻と終了時刻に関する情報を使用して呼び出されるたびに収集されます。 この情報を使用して、さまざまな操作の所要時間 (ミリ秒) を知ることができます。
 
-### iOS 用の JSONStore 例
+### iOS 用の JSONStore の例
 {: #ios-example}
 ```objc
 JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
@@ -357,7 +360,7 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
 
-### Android 用の JSONStore 例
+### Android 用の JSONStore の例
 {: #android-example }
 ```java
 JSONStoreInitOptions initOptions = new JSONStoreInitOptions();
@@ -366,7 +369,7 @@ initOptions.setAnalytics(true);
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
 
-### JavaScript 用の JSONStore 例
+### JavaScript 用の JSONStore の例
 {: #java-script-example }
 ```javascript
 var options = {
@@ -389,11 +392,11 @@ WL.JSONStore.init(..., options);
 {: #external-data-source-pull }
 このソースとしては、データベースや REST API あるいは SOAP API などが考えられますが、他にも多くのものがあります。 要件は、MobileFirst Server からアクセス可能であるか、クライアント・アプリケーションから直接アクセス可能でなければならないということだけです。 このソースではデータが JSON 形式で返されることが理想です。
 
-#### プル用のトランスポート層
+#### プルでのトランスポート層
 {: #transport-layer-pull }
 このソースは、データが外部ソースから内部ソース (ストア内部の JSONStore コレクション) にどのように取得されるかを定義します。 代替方法の 1 つがアダプターです。
 
-#### プル用の内部データ・ソース API
+#### プルでの内部データ・ソース API
 {: #internal-data-source-api-pull }
 このソースは、コレクションに JSON データを追加するために使用できる JSONStore API です。
 
@@ -580,11 +583,11 @@ accessor.remove(doc, {markDirty: true})
 
 以下の 3 つの重要な要素があります。
 
-#### プッシュ用の内部データ・ソース API
+#### プッシュでの内部データ・ソース API
 {: #internal-data-source-api-push }
 このソースは、ローカルのみの変更 (ダーティー) を持つドキュメントを返す JSONStore API です。
 
-#### プッシュ用のトランスポート層
+#### プッシュでのトランスポート層
 {: #transport-layer-push }
 このソースは、変更を送信するためにどのように外部データ・ソースにアクセスするかを定義します。
 
@@ -794,7 +797,7 @@ $.when.apply(this, arrayOfPromises)
 4. JSONStore により生成された SQLite データベース・ファイルを調べます。 暗号化はオフにする必要があります。
 
    * Android エミュレーターの場合:
-   
+
    ```bash
    $ adb shell
    $ cd /data/data/com.<app-name>/databases/wljsonstore
@@ -861,7 +864,7 @@ $.when.apply(this, arrayOfPromises)
         var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
         : {};                                                                
         WL.Client.init(options);                                           
-    } 
+    }
     ```                                                                     
 
 これは、`mfpjsonjsloaded` イベントを (`wlCommonInit` の外部で) 待機します。これにより、スクリプトがロードされたことを確認してから、`wlCommonInit` をトリガーする `WL.Client.init` を呼び出します。それにより、`WL.JSONStore.init` が呼び出されます。
@@ -944,35 +947,35 @@ catch(JSONStoreException e) {
 
 |エラー・コード      | 説明 |
 |----------------|-------------|
-| -100 UNKNOWN_FAILURE | Unrecognized error. |
-| -75 OS\_SECURITY\_FAILURE | This error code is related to the requireOperatingSystemSecurity flag. It can occur if the destroy API fails to remove security metadata that is protected by operating system security (Touch ID with passcode fallback), or the init or open APIs are unable to locate the security metadata. It can also fail if the device does not support operating system security, but operating system security usage was requested. |
-| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore is closed. Try calling the open method in the JSONStore class class first to enable access to the store. |
-| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | There was a problem with rolling back the transaction. |
-| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION |Cannot call removeCollection while a transaction is in progress. |
-| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | Cannot call destroy while there are transactions in progress. |
-| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | Cannot call closeAll while there are transactions in place. |
-| -44 TRANSACTION\_FAILURE\_DURING\_INIT | Cannot initialize a store while there are transactions in progress. |
-| -43 TRANSACTION_FAILURE | There was a problem with transactions. |
-| -42 NO\_TRANSACTION\_IN\_PROGRESS | Cannot commit to rolled back a transaction when there is no transaction is progress |
-| -41 TRANSACTION\_IN\_POGRESS | Cannot start a new transaction while another transaction is in progress. |
-| -40 FIPS\_ENABLEMENT\_FAILURE |Something is wrong with FIPS. |
-| -24 JSON\_STORE\_FILE\_INFO\_ERROR | Problem getting the file information from the file system. |
-| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | Problem replacing documents from a collection. |
-| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | Problem removing documents from a collection. |
-| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | Problem storing the Data Protection Key (DPK). |
-| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | Problem indexing input data. |
-| -12 INVALID\_SEARCH\_FIELD\_TYPES | Check that the types that you are passing to the searchFields are stringinteger,number, orboolean. |
-| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | An operation on an array of documents, for example the replace method can fail while it works with a specific document. The document that failed is returned and the transaction is rolled back. On Android, this error also occurs when trying to use JSONStore on unsupported architectures. |
-| -10 ACCEPT\_CONDITION\_FAILED | The accept function that the user provided returned false. |
-| -9 OFFSET\_WITHOUT\_LIMIT | To use offset, you must also specify a limit. |
-| -8 INVALID\_LIMIT\_OR\_OFFSET | Validation error, must be a positive integer. |
-| -7 INVALID_USERNAME | Validation error (Must be [A-Z] or [a-z] or [0-9] only). |
-| -6 USERNAME\_MISMATCH\_DETECTED | To log out, a JSONStore user must call the closeAll method first. There can be only one user at a time. |
-| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED |A problem with the destroy method while it tried to delete the file that holds the contents of the store. |
-| -4 DESTROY\_REMOVE\_KEYS\_FAILED | Problem with the destroy method while it tried to clear the keychain (iOS) or shared user preferences (Android). |
-| -3 INVALID\_KEY\_ON\_PROVISION | Passed the wrong password to an encrypted store. |
-| -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | Search fields are not dynamic. It is not possible to change search fields without calling the destroy method or the removeCollection method before you call the init or openmethod with the new search fields. This error can occur if you change the name or type of the search field. For example: {key: 'string'} to {key: 'number'} or {myKey: 'string'} to {theKey: 'string'}. |
-| -1 PERSISTENT\_STORE\_FAILURE | Generic Error. A malfunction in native code, most likely calling the init method. |
+| -100 UNKNOWN_FAILURE | 認識できないエラー。|
+| -75 OS\_SECURITY\_FAILURE | このエラー・コードは requireOperatingSystemSecurity フラグに関連しています。このエラーは、destroy API が、オペレーティング・システムのセキュリティー (パスコード・フォールバックによるタッチ ID) によって保護されているセキュリティー・メタデータを削除できない場合や、init API または open API がセキュリティー・メタデータを見つけることができない場合に発生する可能性があります。 また、デバイスがオペレーティング・システムのセキュリティーをサポートしない場合に、オペレーティング・システムのセキュリティーの使用が要求された場合にも発生する可能性があります。 |
+| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore はクローズされています。 最初に JSONStore クラスで open メソッドの呼び出しを試行して、ストアへのアクセスを有効にしてください。|
+| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | トランザクションのロールバック中に問題が発生しました。|
+| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION |トランザクションの進行中に removeCollection を呼び出すことはできません。|
+| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | 進行中のトランザクションがある場合は destroy を呼び出すことはできません。|
+| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | 実行中トランザクションがある場合は closeAll を呼び出すことはできません。|
+| -44 TRANSACTION\_FAILURE\_DURING\_INIT | 進行中のトランザクションがある場合はストアを初期化できません。|
+| -43 TRANSACTION_FAILURE | トランザクションの問題が発生しました。|
+| -42 NO\_TRANSACTION\_IN\_PROGRESS | 進行中のトランザクションがない場合は、トランザクションのロールバックをコミットできません。|
+| -41 TRANSACTION\_IN\_POGRESS | 別のトランザクションの進行中には新規トランザクションを開始できません。|
+| -40 FIPS\_ENABLEMENT\_FAILURE |FIPS に何らかの問題があります。|
+| -24 JSON\_STORE\_FILE\_INFO\_ERROR | ファイル・システムからファイル情報の取得中に問題がありました。|
+| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | コレクションでドキュメントの置き換え中に問題がありました。|
+| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | コレクションでドキュメントの除去中に問題がありました。|
+| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | データ保護鍵 (DPK) の保管中に問題がありました。|
+| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | 入力データの索引付け中に問題がありました。|
+| -12 INVALID\_SEARCH\_FIELD\_TYPES | searchFields に渡しているタイプが string、integer、number、または boolean のいずれかであることを確認してください。|
+| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | 文書の配列に対する操作 (例えば、replace メソッド) は、特定の文書での動作時には失敗することがあります。 失敗した文書が返され、トランザクションはロールバックされます。 Android では、サポートされないアーキテクチャーで JSONStore の使用を試みた場合にも、このエラーが発生します。|
+| -10 ACCEPT\_CONDITION\_FAILED | ユーザーが指定した accept 関数が false を返しました。|
+| -9 OFFSET\_WITHOUT\_LIMIT | オフセットを使用するには、制限も指定する必要があります。|
+| -8 INVALID\_LIMIT\_OR\_OFFSET | 妥当性検査エラー。正整数でなければなりません。|
+| -7 INVALID_USERNAME | 妥当性検査エラー ([A から Z]、[a から z]、または [0 から 9] のみでなければなりません)。|
+| -6 USERNAME\_MISMATCH\_DETECTED | ログアウトするには、JSONStore ユーザーは最初に closeAll メソッドを呼び出す必要があります。同時に存在できるユーザーは 1 人だけです。|
+| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED |ストアのコンテンツを保持するファイルを削除しようとした destroy メソッドで問題が発生しました。|
+| -4 DESTROY\_REMOVE\_KEYS\_FAILED | キーチェーン (iOS) または共有ユーザー設定 (Android) をクリアしようとした destroy メソッドで問題が発生しました。|
+| -3 INVALID\_KEY\_ON\_PROVISION | 暗号化されたストアに誤ったパスワードが渡されました。|
+| -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | 検索フィールドは動的ではありません。新しい検索フィールドを使用して init メソッドまたは open メソッドを呼び出す前に、destroy メソッドまたは removeCollection メソッドを呼び出さずに検索フィールドを変更することはできません。 このエラーは、検索フィールドの名前またはタイプを変更した場合に発生する可能性があります。 例: {key: 'string'} から {key: 'number'} または {myKey: 'string'} から {theKey: 'string'}。 |
+| -1 PERSISTENT\_STORE\_FAILURE | 一般エラー。 ネイティブ・コード内で誤動作が発生しました。init メソッドが呼び出された可能性があります。|
 | 0 SUCCESS | 場合によっては、成功を示す 0 が JSONStore ネイティブ・コードから返されることがあります。 |
 | 1 BAD\_PARAMETER\_EXPECTED\_INT | 検証エラー。 |
 | 2 BAD\_PARAMETER\_EXPECTED\_STRING | 検証エラー。 |
@@ -1001,7 +1004,7 @@ catch(JSONStoreException e) {
 | 25 ERROR\_DURING\_DESTROY | 一般エラー。 ネイティブ・コードが destroy メソッドを呼び出したときにエラーが発生しました。 |
 | 26 ERROR\_CLEARING\_COLLECTION | 一般エラー。 ネイティブ・コードが removeCollection メソッドを呼び出したときにエラーが発生しました。|
 | 27 INVALID\_PARAMETER\_FOR\_FIND\_BY\_ID | 検証エラー。 |
-| 28 INVALID\_SORT\_OBJECT | ソートのために指定された配列は、JSON オブジェクトの 1 つが無効であるため、無効です。正しい構文は、各オブジェクトにプロパティーが 1 つだけ含まれる JSON オブジェクトの配列です。 このプロパティーは、ソート基準と、昇順で検索するのか降順で検索するのかを指定してフィールドを検索します。 例: {searchField1 : "ASC"}。 |
+| 28 INVALID\_SORT\_OBJECT | いずれかの JSON オブジェクトが無効であるため、ソートのために指定された配列が無効です。正しい構文は、各オブジェクトにプロパティーが 1 つだけ含まれる JSON オブジェクトの配列です。 このプロパティーは、ソート基準と、昇順で検索するのか降順で検索するのかを指定してフィールドを検索します。 例: {searchField1 : "ASC"}。 |
 | 29 INVALID\_FILTER\_ARRAY | 結果のフィルター処理に指定された配列が無効です。 この配列の正しい構文は、各ストリングが検索フィールドまたは内部 JSONStore フィールドのいずれかになっているストリングの配列です。 詳しくは、『ストア内部』を参照してください。 |
 | 30 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_OBJECTS | JSON オブジェクトのみで構成された配列でない場合に、検証エラーが発生します。 |
 | 31 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_CLEAN\_DOCUMENTS | 検証エラー。 |

@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, adapter security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -162,4 +165,3 @@ JavaScript アダプター・リソース (プロシージャー) の OAuth 保�
 {: #unprotected-resources}
 
 無保護リソースは、アクセス・トークンを必要としないリソースです。 MobileFirst セキュリティー・フレームワークは、無保護リソースへのアクセスを管理せず、また該当するリソースにアクセスするクライアントの ID を検証および検査しません。 そのため、無保護リソースでは、ダイレクト・アップデート、デバイス・アクセスのブロック、リモート側でのアプリケーションの無効化などの機能はサポートされません。
-

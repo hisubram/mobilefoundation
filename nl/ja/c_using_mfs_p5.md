@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation, mobile analytics, professional plan, configure database
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -25,7 +28,7 @@ lastupdated:  "2019-02-12"
 「{{site.data.keyword.mobilefoundation_short}}: デバイス当たりのプロフェッショナル」サービス・インスタンスを構成する前に、以下の項目を考慮してください。
 * 「{{site.data.keyword.mobilefoundation_short}}: デバイス当たりのプロフェッショナル」は、{{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} {{site.data.keyword.Bluemix_notm}} プランでのみサポートされます。
 
-* {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンス資格情報へのアクセスができなければ、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスの設定を構成できません。
+* {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスの設定を構成するには、その前に {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンス資格情報へのアクセス権限が必要になります。
 
 {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスは、{{site.data.keyword.Bluemix_notm}} `組織`内のどの`スペース`にも、また、アクセスできるどの`組織`にも存在できます。 {{site.data.keyword.Db2_on_Cloud_short}} または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスが存在する`スペース`へのアクセス権限があることを確認します。
 {: note}
@@ -55,12 +58,12 @@ lastupdated:  "2019-02-12"
 
 新規 {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが作成されます。これは、8 GB RAM、2 vCPU、および 500 GB のストレージを備えた専用の {{site.data.keyword.Db2_on_Cloud_short}} インスタンスを提供します。
 
-以下の手順に従って、既存の {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス、または先ほど作成した {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスに接続します。
+以下の手順に従って、既存の {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス、または作成した {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスに接続します。
 
 1. {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `組織`を選択します。
 
 + 選択した`組織`で使用可能なスペースのリストから、{{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `スペース`を選択します。   
-{{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する`組織` および`スペース` がリストされない場合、その`組織` および`スペース` のメンバーであるかどうかを確認してください。 {{site.data.keyword.mobilefoundation_short}} サービスは {{site.data.keyword.Db2_on_Cloud_short}} サービスから資格情報にアクセスするため、組織およびスペースに対して*開発者* 役割のアクセス権限を持っている必要があります。
+{{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する`組織`と`スペース`がリストされない場合、自分がその`組織`と`スペース`のメンバーであるかどうかを確認してください。{{site.data.keyword.mobilefoundation_short}} サービスは {{site.data.keyword.Db2_on_Cloud_short}} サービスから資格情報にアクセスするため、組織およびスペースに対して*開発者* 役割のアクセス権限を持っている必要があります。
 {: note}
 + 既存の {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスに接続するための {{site.data.keyword.Db2_on_Cloud_short}} `サービス名` および `資格情報` を選択します。
 
@@ -73,7 +76,7 @@ lastupdated:  "2019-02-12"
 {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスで使用するように構成された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスを変更することはできません。 ただし、同じ {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスを複数の {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスで使用することは可能です。これは、各 {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスが選択された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス内に独自のスキーマを作成するためです。
 {: note}
 
-## 「デバイス当たりのプロフェッショナル」プランを使用して作成した MobileFirst サーバーの始動
+## 「デバイス当たりのプロフェッショナル」プランを使用して作成した MobileFirst サーバーの開始
 {: #start_mobilefoundation_p5}
 
 * {{site.data.keyword.mfserver_short_notm}} をデフォルト設定で始動するには、**「基本サーバーの始動」**をクリックしてください。
@@ -96,7 +99,7 @@ lastupdated:  "2019-02-12"
 
 このコンソールを使用して、モバイル・アプリ、アダプター、およびモバイル・デバイスの管理、モバイル・バックエンドとしてのサーバーの使用、プッシュ通知の送信などを行うことができます。
 
-## 「デバイス当たりのプロフェッショナル」プランを使用した場合の MobileFirst サーバーの再作成
+## 「デバイス当たりのプロフェッショナル」プランを使用する際の MobileFirst サーバーの再作成
 {: #recreate_mobilefoundation_p5}
 
 *	**「再作成」**をクリックしてサーバーを再作成します。
@@ -106,7 +109,7 @@ lastupdated:  "2019-02-12"
 アプリおよびアダプターに関する情報など、前のサーバー・インスタンスのデータは、構成された {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンス内に保持されます。 このデータは、サーバーの再作成に使用されます。
 {: note}
 
-##	「デバイス当たりのプロフェッショナル」プランでの拡張構成のセットアップ
+##	「デバイス当たりのプロフェッショナル」プランでの拡張構成の設定
 {: #using_mfs_advanced_p5}
 
 拡張設定またはカスタム設定を使用してサーバーを作成するには、`「概要」` ページの**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**を使用します。 また、**「設定」**タブをクリックして、サーバー構成をカスタマイズするためにサーバー設定を更新することもできます。 {{site.data.keyword.mobilefoundation_short}} では、拡張設定にアクセスできます。
@@ -116,7 +119,7 @@ lastupdated:  "2019-02-12"
 
   - **「インスタンス」**は作成されたインスタンスの数を表示します。
 
-## Mobile Analytics: 「デバイス当たりのプロフェッショナル」プランの場合
+## 「デバイス当たりのプロフェッショナル」プランでの Mobile Analytics
 {: #mobile_analytics_p5}
 
 Mobile Analytics サーバーが含まれ、「Mobile Foundation: 開発者」プランのサービス・インスタンスで事前構成されています。

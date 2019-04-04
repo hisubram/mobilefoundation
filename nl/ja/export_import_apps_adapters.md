@@ -4,6 +4,9 @@ copyright:
   years: 2018
 lastupdated:  "2018-08-09"
 
+keywords: export apps, adapters export
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}

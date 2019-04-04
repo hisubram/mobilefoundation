@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-01-04"
 
+keywords: Mobile Foundation SDK, android sdk, iOS sdk, cordova sdk, react native sdk
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ lastupdated:  "2019-01-04"
 ### アプリへの Android SDK の追加
 {: android}
 
-Android Studio を開き、Android ビューを選択し、**「Gradle Scripts」**を選択し、`build.gradle (Module: app)` ファイルを選択してから、以下の手順に従って Android SDK を android アプリケーションに追加します。
+Android Studio を開き、Android ビューを選択し、**「Gradle Scripts」**を選択します。 `build.gradle (Module: app)` ファイルを選択してから、以下の手順に従って Android SDK を Android アプリケーションに追加します。
 {: android}
 
 1. 次の行を `dependencies` セクションに追加します。
@@ -52,7 +55,7 @@ Android Studio を開き、Android ビューを選択し、**「Gradle Scripts�
   ```
   {: codeblock}
   {: android}
-3. Android ビューで、**app → manifests → AndroidManifest.xml** ファイルを開きます。 次のアクセス権を `application` エレメントの上に追加します。
+3. Android ビューで、**app → manifests → AndroidManifest.xml** ファイルを開きます。 次のアクセス権を `application` エレメントの前に追加します。
    ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -70,7 +73,7 @@ Android Studio を開き、Android ビューを選択し、**「Gradle Scripts�
 ### アプリへの iOS SDK の追加
 {: ios}
 
-これが IBM Mobile Foundation のコアを成す SDK です。Mobile Foundation のセキュリティー、許可、ロギング、アダプター呼び出しなどの主要な機能を実装する API 群で構成されています。 iOS アプリケーションに iOS SDK を追加するには、以下の手順に従います。
+この SDK が IBM Mobile Foundation のコアを成す SDK です。Mobile Foundation のセキュリティー、許可、ロギング、アダプター呼び出しなどの主要な機能を実装する API 群で構成されています。 iOS アプリケーションに iOS SDK を追加するには、以下の手順を実行します。
 {: ios}
 
 1. iOS アプリのルート・フォルダーに移動し、次のコマンドを実行して Podfile を作成します。
@@ -113,7 +116,7 @@ Android Studio を開き、Android ビューを選択し、**「Gradle Scripts�
 ### アプリケーションへの Cordova SDK の追加
 {: cordova}
 
-これが IBM Mobile Foundation のコアを成す SDK です。Mobile Foundation のセキュリティー、許可、ロギング、アダプター呼び出しなどの主要な機能を実装する API 群で構成されています。 アプリケーションに Cordova SDK を追加するには、以下の手順に従います。
+この SDK が IBM Mobile Foundation のコアを成す SDK です。Mobile Foundation のセキュリティー、許可、ロギング、アダプター呼び出しなどの主要な機能を実装する API 群で構成されています。 アプリケーションに Cordova SDK を追加するには、以下の手順を実行します。
 {: cordova}
 
 1. Cordova プロジェクトを作成します。
@@ -156,7 +159,7 @@ Android Studio を開き、Android ビューを選択し、**「Gradle Scripts�
 ### アプリへの React Native SDK プラグインの追加
 {: reactnative}
 
-Mobile Foundation の機能を既存の React Native アプリに追加するには、`react-native-ibm-mobilefirst` プラグインをアプリに追加する必要があります。 `react-native-ibm-mobilefirst` プラグインには、Mobile Foundation SDK が含まれています。 React Native アプリケーションに React Native プラグインを追加するには、以下の手順に従います。
+Mobile Foundation の機能を既存の React Native アプリに追加するには、`react-native-ibm-mobilefirst` プラグインをアプリに追加する必要があります。 `react-native-ibm-mobilefirst` プラグインには、Mobile Foundation SDK が含まれています。 React Native アプリケーションに React Native プラグインを追加するには、以下の手順を実行します。
 {: reactnative}
 
 1. このプラグインを、他の `npm` プラグインを追加するときと同じ方法でアプリに追加します。
@@ -207,4 +210,3 @@ Mobile Foundation の機能を既存の React Native アプリに追加するに
    {: reactnative}
 7. iOS の場合は、XCode をプロジェクト・ナビゲーターで開き、`mfpclient.plist` を `ios` フォルダーからドラッグ・アンド・ドロップします。 この手順は iOS プラットフォームにのみ適用されます。
 {: reactnative}
-

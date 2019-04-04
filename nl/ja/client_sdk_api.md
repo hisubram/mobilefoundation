@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-11"
 
+keywords: mobile foundation, client sdk, sdk api, javascript api, java api, react native api, objective-c api, csharp api
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -34,7 +37,7 @@ lastupdated: "2019-02-11"
 {: javascript }
 Cordova / Web アプリケーション用の API。
 {: javascript }
-* **[クライアント・サイド API](/docs/services/mobilefoundation?topic=mobilefoundation-javascript_client_sdk_api#javascript_client_sdk_api)**  
+* **[クライアント・サイド API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン"](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/javascript/client/)**  
     JavaScript API を使用して、すべての環境用のアプリを開発できます。
     {: javascript }
 * **[クライアント・サイドのプッシュ API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-hybrid-cordova-js-apidoc/html/refjavascript-mfp-push-hybrid/html/index.html)**  
@@ -85,9 +88,9 @@ React Native アプリケーション用の API。
 {: csharp}
 ネイティブ Windows 10 UWP、Windows 8 Universal、Xamarin.iOS、および Xamarin.Android アプリケーション用の API。
 {: csharp}
-* **[Windows 10 Universal Windows Platform および Windows 8 Universal、Xamarin.iOS および Xamarin.Android アプリケーション用のクライアント・サイド API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_api.pdf)**  
+* **[Windows 10 Universal Windows Platform および Windows 8 Universal、Xamarin.iOS、および Xamarin.Android アプリケーション用のクライアント・サイド API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_api.pdf)**  
     C# API を使用して、Windows 10 Universal Windows Platform (UWP)、Windows 8 Universal、Xamarin.iOS、および Xamarin.Android 環境用のアプリケーションを開発できます。
     {: csharp}
-* **[Windows 10 Universal Windows Platform および Windows 8 Universal、Xamarin.iOS および Xamarin.Android アプリケーション用のクライアント・サイドのプッシュ API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_push_api.pdf)**  
+* **[Windows 10 Universal Windows Platform および Windows 8 Universal、Xamarin.iOS、および Xamarin.Android アプリケーション用のクライアント・サイドのプッシュ API ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://public.dhe.ibm.com/software/products/en/MobileFirstPlatform/docs/v800/mfpf_csharp_win8_native_client_push_api.pdf)**  
     C# プッシュ API を使用して、プッシュ通知を送信できる、Windows 10 Universal Windows Platform (UWP) および Windows 8 Universal、Xamarin.iOS および Xamarin.Android 環境用のアプリケーションを開発できます。
     {: csharp}

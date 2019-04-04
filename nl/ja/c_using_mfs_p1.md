@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation developer, mobile analytics
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -29,12 +32,11 @@ lastupdated:  "2019-02-12"
 
 これで、モバイル・アプリとモバイル・デバイスの管理、モバイル・バックエンドとしてのサーバーの使用、プッシュ通知の送信などを行うことができます。
 
-## Mobile Analytics: 「開発者」プランの場合
+## 「開発者」プランでの Mobile Analytics
 {: #mobile_analytics_p1}
 
 Mobile Analytics サーバーが含まれ、「Mobile Foundation: 開発者」プランのサービス・インスタンスで事前構成されています。
 
 * {{site.data.keyword.mfp_oc_short_notm}} から、Mobile Analytics コンソールを起動します。
 
-Mobile Analytics を使用したアプリケーションの装備について詳しくは、[ここ](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}を参照してください。
-
+Mobile Analytics を使用したアプリのインスツルメントについて詳しくは、[ここ](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}を参照してください。

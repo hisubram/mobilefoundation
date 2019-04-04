@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, offline storage, add jsonstore to cordova, add jsonstore to iOS, add jsonstore to android, jsonstore methods, jsonstore operations
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -39,7 +42,7 @@ Mobile Foundation JSONStore は、軽量なドキュメント指向のストレ�
 {: #configure_offline_storage_cordova}
 {: cordova}
 
-Mobile Foundation Cordova SDK がプロジェクトに追加されていることを確認します。 
+Mobile Foundation Cordova SDK がプロジェクトに追加されていることを確認します。
 {: cordova}
 
 [Cordova アプリケーションへの Mobile Foundation SDK の追加 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/cordova/) のチュートリアルに従ってください。
@@ -51,7 +54,7 @@ Mobile Foundation Cordova SDK がプロジェクトに追加されているこ�
 {: cordova}
 
 1. コマンド・ライン・ウィンドウを開き、Cordova プロジェクト・フォルダーにナビゲートします。
-2. 次のコマンドを実行します。 
+2. 次のコマンドを実行します。
    ```bash
    cordova plugin add cordova-plugin-mfp-jsonstore
    ```
@@ -82,7 +85,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 {: cordova}
 
 #### Cordova JSONStore コレクションへのアクセス機能の取得
-{: #get_jsonstore_cordova} 
+{: #get_jsonstore_cordova}
 {: cordova}
 
 コレクションへのアクセス機能を作成するには、`get` を使用します。 get を呼び出す前に `init` を呼び出す必要があります。このようにしないと、`get` の結果は*不明確な* ものになります。
@@ -98,7 +101,7 @@ var people = WL.JSONStore.get(collectionName);
 {: cordova}
 
 #### Cordova コレクションへのドキュメントの追加
-{: #add_jsonstore_cordova} 
+{: #add_jsonstore_cordova}
 {: cordova}
 
 コレクション内にデータをドキュメントとして保管するには、`add` を使用します。
@@ -119,7 +122,7 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 {: cordova}
 
 #### Cordova コレクション内のドキュメントの検索
-{: #find_jsonstore_cordova} 
+{: #find_jsonstore_cordova}
 {: cordova}
 
 * 照会を使用してコレクション内のドキュメントを見つけるには、`find` を使用します。
@@ -170,7 +173,7 @@ else {
 {: cordova}
 
 #### Cordova コレクション内のドキュメントの置換
-{: #replace_jsonstore_cordova} 
+{: #replace_jsonstore_cordova}
 {: cordova}
 
 コレクション内のドキュメントを変更するには、`replace` を使用します。 置換の実行に使用するフィールドは `_id` で、これはドキュメントの固有 ID です。
@@ -196,7 +199,7 @@ WL.JSONStore.get(collectionName).replace(document, options).then(function (numbe
 {: cordova}
 
 #### Cordova コレクションからのドキュメントの削除
-{: #remove_jsonstore_cordova} 
+{: #remove_jsonstore_cordova}
 {: cordova}
 
 ドキュメントをコレクションから削除するには、`remove` を使用します。
@@ -217,14 +220,14 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: cordova}
 
 #### Cordova コレクション全体の削除
-{: #remove_collection_jsonstore_cordova} 
+{: #remove_collection_jsonstore_cordova}
 {: cordova}
 
 コレクション内に保管されているすべてのドキュメントを削除するには、 `removeCollection` を使用します。 この操作は、データベース用語における、表のドロップと似ています。
 {: cordova}
 
 #### Cordova JSONStore の破棄
-{: #destroy_jsonstore_cordova} 
+{: #destroy_jsonstore_cordova}
 {: cordova}
 
 以下のデータを削除するには、`destroy` を使用します。
@@ -238,7 +241,7 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: #configure_offline_storage_ios}
 {: ios}
 
-Mobile Foundation ネイティブ SDK が Xcode プロジェクトに追加されていることを確認します。 
+Mobile Foundation ネイティブ SDK が Xcode プロジェクトに追加されていることを確認します。
 {: ios}
 
 [iOS アプリケーションへの Mobile Foundation SDK の追加 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/ios/) のチュートリアルに従ってください。
@@ -255,17 +258,17 @@ Mobile Foundation ネイティブ SDK が Xcode プロジェクトに追加さ�
    ```
    {: codeblock}
    {: ios}
-2. コマンド・ラインから Xcode プロジェクトのルートに移動し、次のコマンドを実行します。 
+2. コマンド・ラインから Xcode プロジェクトのルートに移動し、次のコマンドを実行します。
    ```bash
    pod install
-   ``` 
+   ```
    {: codeblock}
    {: ios}
 3. JSONStore を使用する場合はいつでも、必ず JSONStore ヘッダーをインポートするようにしてください。
    **Objective-C**:
    ```objectivec
    #import <IBMMobileFirstPlatformFoundationJSONStore/IBMMobileFirstPlatformFoundationJSONStore.h>
-   ``` 
+   ```
    {: codeblock}
    **Swift:**
    ```swift
@@ -274,8 +277,8 @@ Mobile Foundation ネイティブ SDK が Xcode プロジェクトに追加さ�
    {: codeblock}
    {: ios}
 
-#### iOS JSONStore コレクションを開く 
-{: #open_ios} 
+#### JSONStore コレクションを開く
+{: #open_ios}
 {: ios}
 
 1 つ以上の JSONStore コレクションを開くには、`openCollections` を使用します。
@@ -297,7 +300,7 @@ do {
 {: ios}
 
 #### iOS JSONStore コレクションへのアクセス機能の取得
-{: #get_jsonstore_ios} 
+{: #get_jsonstore_ios}
 {: ios}
 
 コレクションへのアクセス機能を作成するには、`getCollectionWithName` を使用します。 `getCollectionWithName` を呼び出す前に `openCollections` を呼び出す必要があります。
@@ -314,7 +317,7 @@ let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWit
 {: ios}
 
 #### iOS コレクションへのドキュメントの追加
-{: #add_jsonstore_ios} 
+{: #add_jsonstore_ios}
 {: ios}
 
 コレクション内にデータをドキュメントとして保管するには、`addData` を使用します。
@@ -336,7 +339,7 @@ do {
 {: ios}
 
 #### iOS コレクション内のドキュメントの検索
-{: #find_jsonstore_ios} 
+{: #find_jsonstore_ios}
 {: ios}
 
 照会を使用してコレクション内のドキュメントを見つけるには、`findWithQueryParts` を使用します。 コレクション内のすべてのドキュメントを取り出すには、`findAllWithOptions` を使用します。 ドキュメントの固有 ID で検索するには、`findWithIds` を使用します。
@@ -363,7 +366,7 @@ do {
 {: ios}
 
 #### iOS コレクション内のドキュメントの置換
-{: #replace_jsonstore_ios} 
+{: #replace_jsonstore_ios}
 {: ios}
 
 コレクション内のドキュメントを変更するには、`replaceDocuments` を使用します。 置換の実行に使用するフィールドは `_id` で、これはドキュメントの固有 ID です。
@@ -394,10 +397,10 @@ do {
 {: ios}
 
 #### iOS コレクションからのドキュメントの削除
-{: #remove_jsonstore_ios} 
+{: #remove_jsonstore_ios}
 {: ios}
 
-ドキュメントをコレクションから削除するには、`removeWithIds` を使用します。 `markDocumentClean` を呼び出すまで、ドキュメントはコレクションから消去されません。 
+ドキュメントをコレクションから削除するには、`removeWithIds` を使用します。 `markDocumentClean` を呼び出すまで、ドキュメントはコレクションから消去されません。
 {: ios}
 
 ```swift
@@ -414,7 +417,7 @@ do {
 {: ios}
 
 #### iOS コレクション全体の削除
-{: #remove_collection_jsonstore_ios} 
+{: #remove_collection_jsonstore_ios}
 {: ios}
 
 コレクション内に保管されているすべてのドキュメントを削除するには、 `removeCollection` を使用します。 この操作は、データベース用語における、表のドロップと似ています。
@@ -434,7 +437,7 @@ do {
 {: ios}
 
 #### iOS JSONStore の破棄
-{: #destroy_jsonstore_ios} 
+{: #destroy_jsonstore_ios}
 {: ios}
 
 以下のデータを削除するには、`destroyData` を使用します。
@@ -458,7 +461,7 @@ do {
 {: #configure_offline_storage_android}
 {: android}
 
-Mobile Foundation ネイティブ SDK が Android Studio プロジェクトに追加されていることを確認します。 
+Mobile Foundation ネイティブ SDK が Android Studio プロジェクトに追加されていることを確認します。
 {: android}
 
 [Android アプリケーションへの Mobile Foundation SDK の追加 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/android/) のチュートリアルに従ってください。
@@ -470,10 +473,10 @@ Mobile Foundation ネイティブ SDK が Android Studio プロジェクトに�
 {: android}
 
 1. **「Android」→「Gradle Scripts」**から、`build.gradle (Module: app)` ファイルを選択します。
-2. 既存の `dependencies` セクションに以下を追加します。 
+2. 既存の `dependencies` セクションに以下を追加します。
    ```bash
    compile 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundationjsonstore:8.0.+'
-   ``` 
+   ```
    {: codeblock}
    {: android}
 3. `build.gradle` ファイルの `DefaultConfig` セクションに以下を追加します。
@@ -481,7 +484,7 @@ Mobile Foundation ネイティブ SDK が Android Studio プロジェクトに�
    ndk {
      abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
       }
-   ``` 
+   ```
    {: codeblock}
    {: android}
    JSONStore が含まれるアプリケーションが、上で指定したいずれかのアーキテクチャーで確実に実行されるように `abiFilters` を追加します。 これが必要なのは、これらのアーキテクチャーのみをサポートするサード・パーティーのライブラリーに JSONStore が依存しているためです。
@@ -489,7 +492,7 @@ Mobile Foundation ネイティブ SDK が Android Studio プロジェクトに�
    {: android}
 
 #### Android JSONStore コレクションを開く
-{: #open_android} 
+{: #open_android}
 {: android}
 
 1 つ以上の JSONStore コレクションを開くには、`openCollections` を使用します。
@@ -513,7 +516,7 @@ Context  context = getContext();
 {: android}
 
 #### Android JSONStore コレクションへのアクセス機能の取得
-{: #get_jsonstore_android} 
+{: #get_jsonstore_android}
 {: android}
 
 コレクションへのアクセス機能を作成するには、`getCollectionByName` を使用します。 `getCollectionByName` を呼び出す前に `openCollections` を呼び出す必要があります。
@@ -536,7 +539,7 @@ Context  context = getContext();
 {: android}
 
 #### Android コレクションへのドキュメントの追加
-{: #add_jsonstore_android} 
+{: #add_jsonstore_android}
 {: android}
 
 コレクション内にデータをドキュメントとして保管するには、`addData` を使用します。
@@ -561,7 +564,7 @@ Context  context = getContext();
 {: android}
 
 #### Android コレクション内のドキュメントの検索
-{: #find_jsonstore_android} 
+{: #find_jsonstore_android}
 {: android}
 
 照会を使用してコレクション内のドキュメントを見つけるには、`findDocuments` を使用します。 コレクション内のすべてのドキュメントを取り出すには、`findAllDocuments` を使用します。 ドキュメントの固有 ID で検索するには、`findDocumentById` を使用します。
@@ -590,7 +593,7 @@ Context  context = getContext();
 {: android}
 
 #### Android コレクション内のドキュメントの置換
-{: #replace_jsonstore_android} 
+{: #replace_jsonstore_android}
 {: android}
 
 コレクション内のドキュメントを変更するには、`replaceDocuments` を使用します。 置換の実行に使用するフィールドは `_id` で、これはドキュメントの固有 ID です。
@@ -618,10 +621,10 @@ Context  context = getContext();
 {: android}
 
 #### Android コレクションからのドキュメントの削除
-{: #remove_jsonstore_android} 
+{: #remove_jsonstore_android}
 {: android}
 
-ドキュメントをコレクションから削除するには、`removeDocumentById` を使用します。 `markDocumentClean` を呼び出すまで、ドキュメントはコレクションから消去されません。 
+ドキュメントをコレクションから削除するには、`removeDocumentById` を使用します。 `markDocumentClean` を呼び出すまで、ドキュメントはコレクションから消去されません。
 {: android}
 
 ```java
@@ -642,7 +645,7 @@ Context  context = getContext();
 {: android}
 
 #### Android コレクション全体の削除
-{: #remove_collection_jsonstore_android} 
+{: #remove_collection_jsonstore_android}
 {: android}
 
 コレクション内に保管されているすべてのドキュメントを削除するには、 `removeCollection` を使用します。 この操作は、データベース用語における、表のドロップと似ています。
@@ -663,7 +666,7 @@ Context  context = getContext();
 {: android}
 
 #### Android JSONStore の破棄
-{: #destroy_jsonstore_android} 
+{: #destroy_jsonstore_android}
 {: android}
 
 以下のデータを削除するには、`destroy` を使用します。
@@ -684,4 +687,3 @@ Context  context = getContext();
 ```
 {: codeblock}
 {: android}
-

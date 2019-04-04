@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-29"
 
+keywords: app versions, disabling apps
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -21,7 +24,7 @@ Mobile Foundation サーバーのユーザーおよび管理者は、Mobile Foun
 
 Mobile Foundation サーバーは、モバイル・インフラストラクチャーにアクセスする試みをすべてトラッキングし、アプリケーション、ユーザー、アプリケーションがインストールされるデバイスに関する情報を保管します。 アプリケーション、ユーザー、およびデバイス間のマッピングは、サーバーのモバイル・アプリケーション管理機能の基礎を形成します。
 
-Mobile Foundation Operations Console を使用して、リソースへのアクセスをモニターおよび管理でき、特定のアプリケーション・バージョンを管理することもできます。
+Mobile Foundation Operations Console を使用して、リソースへのアクセスをモニターしたり管理したりできます。特定のアプリケーション・バージョンを管理することもできます。
 
 1.  Mobile Foundation Operations Console に移動し、**「アプリケーション」**をクリックし、管理するアプリケーションを選択し、表示された**「バージョン」**リストから対象の特定のアプリケーション・バージョンを選択します。 ![アプリケーション・バージョンの管理](images/app_version_management.png)
 
@@ -37,6 +40,6 @@ Mobile Foundation Operations Console を使用して、リソースへのアク�
    *  バージョンのエクスポート
 
 
-デバイスの管理については、[デバイスの管理](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices)を参照してください。 特定のバージョンのアプリケーションをリモート側で無効にする方法については、[アプリケーション・バージョンのリモートでの無効化](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version)を参照してください。
+デバイスの管理について詳しくは、[デバイスの管理](/docs/services/mobilefoundation?topic=mobilefoundation-manage_devices#manage_devices)を参照してください。
+特定のバージョンのアプリをリモート側で無効にする方法について詳しくは、[アプリケーション・バージョンのリモートでの無効化](/docs/services/mobilefoundation?topic=mobilefoundation-remotely_disable_an_app_version#remotely_disable_an_app_version)を参照してください。
 {: note}
-

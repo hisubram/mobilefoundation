@@ -2,8 +2,11 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated:  "2019-03-14"
 
+keywords: getting started, mobile foundation, plans, configure mobile foundation server, sample app, setup
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -16,12 +19,17 @@ lastupdated:  "2019-02-12"
 # 入門チュートリアル
 {: #getting-started-tutorial}
 
-{{site.data.keyword.mobilefoundation_long}} は、エンタープライズ・モバイル・アプリケーションの開発、テスト、および実行に使用できる {{site.data.keyword.mfp_full}} 環境のセットアップを迅速に行えるようにします。 {{site.data.keyword.mobilefoundation_short}} には、「開発者」、「デバイス当たりのプロフェッショナル」、「プロフェッショナル 1 アプリケーション」というサービス・プランが用意されています。
+{{site.data.keyword.mobilefoundation_long}} は、エンタープライズ・モバイル・アプリケーションの開発、テスト、および実行に使用できる {{site.data.keyword.mfp_full}} 環境のセットアップを迅速に行えるようにします。 {{site.data.keyword.mobilefoundation_short}} には、以下のようなさまざまなサービス・プランが用意されています。
+* **ライト**: メモリーと CPU の数に制限のある Foundation Server のホステッド・インスタンスを 1 つプロビジョンします。アプリケーションの数に制限はありませんが、接続デバイスの数については、すべてのアプリケーションでの累計が 10 個に制限されます。このプランは無料で、試用目的でのみ使用されます。
+* **開発者**: ユーザーのアカウント内の Foundation Server のインスタンスを 1 つプロビジョンします。アプリケーションの数に制限はありませんが、接続デバイスの数については、すべてのアプリケーションでの累計が 10 個に制限されます。このプランは無料で、開発とテストの目的でのみ使用します。
+* **デバイス当たりのプロフェッショナル**: ユーザーのアカウントに Foundation Server のインスタンスを 1 つプロビジョンします。アクティブに接続しているデバイスの数に基づいて課金されます
+* **プロフェッショナル 1 アプリケーション**: ユーザーのアカウントに Foundation Server のインスタンスを 1 つプロビジョンします。アプリケーションの数は 1 つに制限されますが、ユーザーとアクティブに接続するデバイスの数には制限がありません。    
 {: shortdesc}
 
-「プロフェッショナル 1 アプリケーション」プランを使用すると、サポートされる任意のオペレーティング・システム上にビルドされた単一アプリケーションを管理できます。 サポートされるオペレーティング・システムは、Android、iOS、Windows、またはモバイル Web です。 「開発者」プランは、開発とテストに最適です。 すべての使用可能なプランは [ここ](https://cloud.ibm.com/catalog/services/mobile-foundation) で確認できます。
+選択可能なすべてのプランについては、[ここ](https://cloud.ibm.com/catalog/services/mobile-foundation)で確認できます。
+{: note}
 
-この入門チュートリアルでは、サポートされるプランのいずれかを使用して {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを作成できます。 その後、アプリケーションを登録できます。 登録されたアプリケーションをダウンロードして編集し、アダプターをデプロイし、最後にアプリケーションをテストします。
+この入門チュートリアルに従って、サポートされるプランのいずれかを使用する {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを作成します。その後、アプリケーションを登録できます。 登録されたアプリケーションをダウンロードして編集し、アダプターをデプロイし、最後にアプリケーションをテストします。
 
 ## 始めに
 {: #prereqs-gs}
@@ -38,6 +46,19 @@ lastupdated:  "2019-02-12"
 
 ## ステップ 2: モバイル・チャネルの作成
 {: #buildmobilechannel}
+
+
+### {{site.data.keyword.mobilefoundation_short}}:「ライト」プランの場合
+{: #buildchannelliteplan}
+{{site.data.keyword.mobilefoundation_short}}:「ライト」のインスタンスを作成した後、以下のステップを実行することでモバイル・チャネルの作成を開始できます。
+
+* Mobile Foundation Server のホステッド・インスタンスに即座にアクセスして作業を行うことができます。
+
+  この選択により、以下の設定で {{site.data.keyword.mfserver_long_notm}} のホステッド・インスタンスが作成されます。
+  *	1 GB のメモリー。これは、{{site.data.keyword.mfserver_long_notm}} の機能を試すのに十分な量です。  
+
+  * CLI を使用して Mobile Foundation Server にアクセスするには、IBM Cloud コンソールの左側のナビゲーション・ペインで**「サービス資格情報」**をクリックして表示される、資格情報が必要です。
+
 
 ### {{site.data.keyword.mobilefoundation_short}}: 「開発者」プランの場合
 {: #buildchanneldevplan}
@@ -69,7 +90,7 @@ lastupdated:  "2019-02-12"
       + **「追加」**をクリックした後、選択した {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービスについて確認を求めるポップアップ・ウィンドウで**「続行」**をクリックします。 このアクションにより、構成された {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} データベース・サービス・インスタンスで必要な表が作成されます。
 
       {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} 接続を {{site.data.keyword.mobilefoundation_short}} インスタンスに追加した後は、それを変更することはできません。
-      {: note} 
+      {: note}
   2.  サーバーを作成して始動します。
 
       1. デフォルト構成を使用して {{site.data.keyword.mobilefirst_notm}} サーバー・インスタンスを作成します。**「基本サーバーの始動」**をクリックします。
@@ -133,7 +154,7 @@ lastupdated:  "2019-02-12"
 ## ステップ 3: アプリケーションの {{site.data.keyword.mobilefoundation_short}} への登録
 {: #registerapp}
 
-Mobile Foundation サーバー・インスタンスを作成して始動した後、次の手順を実行して Android アプリケーションを登録できます。
+Mobile Foundation サーバー・インスタンスを作成して始動した後、以下のステップを実行して Android アプリケーションを登録できます。
 
   1.  URL: `http://<your-server-host>:<server-port>/mfpconsole` をロードして、{{site.data.keyword.mfp_oc_short_notm}} を呼び出します。 プロビジョニング時に生成された`ユーザー名`と`パスワード`を使用します。
 
@@ -239,9 +260,9 @@ Mobile Foundation サーバー・インスタンスを作成して始動した�
    {: tip}
 
   2. Android Studio で、**「アプリの実行 (Run App)」**をクリックします。
-     * デバイス・エミュレーターにアプリが開始したことが示されます。
+     * アプリが開始したことがデバイス・エミュレーターに示されます。
      * アプリケーションの**「MobileFirst Server の ping (Ping MobileFirst Server)」**をクリックします。「`Connected to MobileFirst Server`」が表示されます。
-     * アプリケーションが MobileFirst Server に接続できた場合は、デプロイした Java アダプターを使用してリソース要求呼び出しが行われます。
+     * アプリケーションが MobileFirst Server に接続できた場合は、デプロイされている Java アダプターでリソース要求呼び出しが行われます。
      * その後、アダプターの応答は、Android Studio の LogCat ビューに出力されます。
 
 

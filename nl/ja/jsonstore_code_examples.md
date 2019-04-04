@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-13"
 
+keywords: jsonstore, code samples, offline storage
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -18,7 +21,7 @@ lastupdated:  "2019-02-13"
 #	JSONStore コード・サンプル
 {: #code_samples}
 
-### Cordova 用のサンプル
+### Cordova のサンプル
 {: #samples_cordova }
 {: cordova}
 
@@ -548,7 +551,7 @@ WL.JSONStore.fileInfo()
 {: codeblock}
 {: cordova}
 
-#### Cordova でのlike、rightLike、および leftLike を使用した検索
+#### Cordova での like、rightLike、および leftLike を使用した検索
 {: cordova}
 
 ```javascript
@@ -570,7 +573,7 @@ var arr2 = WL.JSONStore.QueryPart().leftLike('name', 'los');  // returns {name: 
 {: codeblock}
 {: cordova}
 
-### iOS 用のサンプル
+### iOS のサンプル
 {: #samples-ios }
 {: ios}
 
@@ -935,7 +938,7 @@ NSArray* results = [[JSONStore sharedInstance] fileInfoAndReturnError:&error];
 {: codeblock}
 {: ios}
 
-### Android 用のサンプル
+### Android のサンプル
 {: #samples_android }
 {: android}
 

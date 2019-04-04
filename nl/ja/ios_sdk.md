@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-11"
 
+keywords: ios sdk, ios sdk api
+
+subcollection:  mobilefoundation
 ---
 
 #	iOS SDK
@@ -15,4 +18,3 @@ CocoaPods から iOS SDK をダウンロードします。
 * [Push Notifications 用の SDK ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cocoapods.org/pods/IBMMobileFirstPlatformFoundationPush)
 * [JSONStore 用の SDK ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cocoapods.org/pods/IBMMobileFirstPlatformFoundationJSONStore)
 * [LiveUpdate 用の SDK ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://cocoapods.org/pods/IBMMobileFirstPlatformFoundationLiveUpdate)
-

@@ -2,8 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-27"
+lastupdated: "2019-03-26"
 
+keywords: mobile foundation release notes, cd updates, updates, continuous delivery updates
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -20,6 +23,16 @@ lastupdated: "2018-11-27"
 Mobile Foundation サービスに対する更新は、暫定修正 (iFix) および継続的デリバリー更新 (CD Update) を通じて配信されます。 iFix および CD Update は累積的です。 フィーチャーの更新は CD Update で配信されます。
 
 継続的デリバリー・サポート・モデルについて詳しくは、[Mobile Foundation v8.0 CD サポート発表 ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/897/ENUS217-390/index.html&request_locale=en) を参照してください。
+{: note}
+
+## CD Update 05 (2019 年 3 月 19 日)
+{: #cd_update_5}
+
+* CoreML モデルの配布。
+* WatchOS のアプリ認証性。
+* FCM の追加メッセージの機能と属性。
+
+[ここ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/blog/2019/03/22/8-0-cd-update-release) で CD Update 05 発表を参照してください。
 {: note}
 
 ## CD Update 04 (2018 年 12 月 19 日)
@@ -77,4 +90,3 @@ Mobile Foundation サービスに対する更新は、暫定修正 (iFix) およ
 
 [ここ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/blog/2017/11/27/8-0-cd-update-release/) で CD Update 01 発表を参照してください。
 {: note}
-

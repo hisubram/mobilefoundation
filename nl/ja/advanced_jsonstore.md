@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, advanced jsonstore, Cordova secure jsonstore, iOS secure jsonstore, android jsonstore, adapter integration
+
+subcollection:  mobilefoundation
 ---
 {:generic: .ph data-hd-programlang='generic'}
 {:java: .ph data-hd-programlang='java'}
@@ -27,7 +30,7 @@ lastupdated: "2019-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# 高度な JSONStore 
+# 拡張 JSONStore
 {: #advanced_jsonstore}
 
 ## JSONStore でのセキュリティー
@@ -50,7 +53,7 @@ lastupdated: "2019-02-12"
 暗号化は iOS でのみサポートされます。 デフォルトでは、Mobile Foundation Cordova SDK for iOS は、iOS 提供の API に暗号化を依存しています。 これを OpenSSL に置換したい場合は、以下のようにします。
 {: cordova}
 
-* `cordova-plugin-mfp-encrypt-utils` プラグインを追加します。 
+* `cordova-plugin-mfp-encrypt-utils` プラグインを追加します。
   ```bash
   cordova plugin add cordova-plugin-mfp-encrypt-utils
   ```
@@ -126,7 +129,7 @@ Context  context = getContext();
 {: android}
 
 ## JSONStore での複数ユーザー・サポート
-{: #multiple_user_jsonstore} 
+{: #multiple_user_jsonstore}
 
 <!--### Cordova
 {: #multiple_user_jsonstore_cordova} -->
@@ -266,7 +269,7 @@ WL.JSONStore.get(collectionName).getPushRequired().then(function (dirtyDocuments
    {: codeblock}
    {: cordova}
    JSONStore でドキュメントが「ダーティー」とマーキングされないようにするには、オプション `{markDirty:false}` を `add`、`replace`、および`remove` に渡します。
-   {: tip} 
+   {: tip}
    {: cordova}
 5. `getAllDirty` API を使用してダーティー・ドキュメントを取得することもできます。
    ```javascript
@@ -325,7 +328,7 @@ WL.JSONStore.get(collectionName).getValue(key).then(function (result) {
     // result contains an array of documents with the results from the find
 }).fail(function () {
         // handle failure
-    }); 
+    });
    ```
    {: codeblock}
    {: cordova}
@@ -378,7 +381,7 @@ WL.JSONStore.get(collectionName).getValue(key).then(function (result) {
    {: codeblock}
    {: ios}
    JSONStore でドキュメントが「ダーティー」とマーキングされないようにするには、オプション `{markDirty:false}` を `add`、`replace`、および`remove` に渡します。
-   {: tip} 
+   {: tip}
 5. 変更をアダプターにプッシュするには、`allDirty` を呼び出して変更が含まれるドキュメントのリストを取得し、その後 `WLResourceRequest` を使用します。 データが送信され、成功応答を受信した後、`markDocumentsClean` を呼び出す必要があります。
    ```swift
     // Start - PushToAdapter
@@ -464,7 +467,7 @@ WL.JSONStore.get(collectionName).getValue(key).then(function (result) {
    {: codeblock}
    {: android}
    JSONStore でドキュメントが「ダーティー」とマーキングされないようにするには、オプション `options.setMarkDirty(false)` を `add`、`replace`、および`remove` に渡します。
-   {: tip} 
+   {: tip}
    {: android}
 5. 変更をアダプターにプッシュするには、`findAllDirtyDocuments` を呼び出して変更が含まれるドキュメントのリストを取得し、その後 `WLResourceRequest` を使用します。 データが送信され、成功応答を受信した後、`markDocumentsClean` を呼び出す必要があります。
    ```java
@@ -498,5 +501,5 @@ WL.JSONStore.get(collectionName).getValue(key).then(function (result) {
    ```
    {: codeblock}
    {: android}
-6. **Samples** セクションから、ネイティブ Android アプリケーション・プロジェクトをダウンロードします。 プロジェクトには、JSONStore API セットを使用するネイティブ Android アプリケーションが含まれています。 JavaScript アダプター Maven プロジェクトは[ここ](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)からダウンロードできます。 
+6. **Samples** セクションから、ネイティブ Android アプリケーション・プロジェクトをダウンロードします。 プロジェクトには、JSONStore API セットを使用するネイティブ Android アプリケーションが含まれています。 JavaScript アダプター Maven プロジェクトは[ここ](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80)からダウンロードできます。
 {: android}

@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2018-11-19"
 
+keywords: security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -15,13 +18,13 @@ lastupdated:  "2018-11-19"
 #	セキュリティー・ユーティリティー
 {: #security_utilities}
 
-Mobile Foundation クライアント・サイド API は、ユーザーのデータを保護するのに役に立つセキュリティー・ユーティリティーをいくつか提供しています。 JSONStore などのフィーチャーは、JSON オブジェクトを保護する場合に優れた能力を発揮します。 ただし、JSONStore コレクションにバイナリー blob を保管することはお勧めできません。
+Mobile Foundation クライアント・サイド API は、ユーザーのデータを保護するのに役に立つセキュリティー・ユーティリティーをいくつか提供しています。 JSONStore などのフィーチャーは、JSON オブジェクトを保護する場合に優れた能力を発揮します。 JSONStore コレクションにバイナリー blob を保管することはお勧めできません。
 
 代わりに、バイナリー・データをファイル・システムに保管して、ファイル・パスやその他のメタデータを JSONStore コレクション内に保管します。 イメージなどのファイルを保護したい場合、それを base64 ストリングとしてエンコードし、暗号化して、ディスクに出力を書き込むことができます。 データの暗号化を解除するには、JSONStore コレクション内のメタデータを検索します。 暗号化されたデータをディスクから読み取り、保管されたメタデータを使用して暗号化を解除します。 このメタデータには鍵、ソルト、初期設定ベクトル (IV)、ファイルのタイプ、ファイルへのパスなどを含めることができます。
 
 高レベルでは、SecurityUtils API は以下の API を提供します。
 
-* 鍵生成 - パスワードを暗号化関数に直接渡す代わりに、この鍵生成機能では Password-Based Key Derivation Function v2 (PBKDF2) を使用して暗号化 API 用に強固な 256 ビット鍵を生成します。 これは、反復回数のパラメーターを使用します。 この数値が大きくなれば、それだけアタッカーによる鍵を破るための総当たり攻撃に時間がかかることになります。 少なくとも 10,000 の値を使用してください。 ソルトは固有である必要があります。これにより、アタッカーが既存のハッシュ情報を使用してパスワードを攻撃することがますます困難になります。 32 バイトの長さを使用してください。
+* 鍵生成 - パスワードを暗号化関数に直接渡す代わりに、この鍵生成機能では Password-Based Key Derivation Function v2 (PBKDF2) を使用して暗号化 API 用に強固な 256 ビット鍵を生成します。 これは、反復回数のパラメーターを使用します。 この数値が大きくなれば、それだけアタッカーによる鍵を破るための総当たり攻撃に時間がかかることになります。 少なくとも 10,000 の値を使用してください。 ソルトは固有である必要があります。固有のものを使用すれば、アタッカーが既存のハッシュ情報を使用してパスワードを攻撃することが困難になります。32 バイトの長さを使用してください。
 * 暗号化 - 入力は、Advanced Encryption Standard (AES) を使用して暗号化されます。 API は、鍵生成 API によって生成された鍵を使用します。 内部的に、この API は、最初のブロック暗号にランダム化を追加するために使用される Secure IV を生成します。 テキストは暗号化されます。 イメージまたはその他のバイナリー形式を暗号化したい場合、これらの API を使用してバイナリーを base64 テキストに変換します。 この暗号化関数は、以下の部分を持つオブジェクトを返します。
     * ct (暗号テキスト。暗号化テキストとも呼ばれます)
     * IV
@@ -50,7 +53,7 @@ import com.worklight.wlclient.api.SecurityUtils
 ### JavaScript のセットアップ
 セットアップは不要です。
 
-## iOS 用の例
+## iOS の例
 ### iOS での暗号化と暗号化解除
 
 ```objc
@@ -100,7 +103,7 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-### iOS でのリモート・ランダムの取得
+### iOS でのリモートでのランダム取得
 
 ```objc
 [WLSecurityUtils getRandomStringFromServerWithBytes:32 
@@ -115,7 +118,7 @@ NSString* decodedString = [[NSString alloc] initWithData:[WLSecurityUtils base64
 ```
 {: codeblock}
 
-## Android 用の例
+## Android の例
 ### Android での暗号化と暗号化解除
 
 ```java
@@ -151,7 +154,7 @@ String decodedText = new String(base64Decoded, "UTF-8");
 ```
 {: codeblock}
 
-### Android でのリモート・ランダムの取得
+### Android でのリモートでのランダム取得
 
 ```java
 Context context; // This is the current Activity's context.
@@ -174,7 +177,7 @@ SecurityUtils.getRandomStringFromServer(byteLength, context, listener);
 ```
 {: codeblock}
 
-### Android でのローカル・ランダムの取得
+### Android でのローカルでのランダム取得
 
 ```java
 int byteLength = 32;
@@ -182,7 +185,7 @@ String randomString = SecurityUtils.getRandomString(byteLength);
 ```
 {: codeblock}
 
-## JavaScript 用の例
+## JavaScript の例
 ### JavaScript での暗号化と暗号化解除
 
 ```javascript
@@ -247,7 +250,7 @@ WL.SecurityUtils.base64Encode('Hello World!')
 ```
 {: codeblock}
 
-### JavaScript でのリモート・ランダムの取得
+### JavaScript でのリモートでのランダム取得
 
 ```javascript
 WL.SecurityUtils.remoteRandomString(32)
@@ -260,7 +263,7 @@ WL.SecurityUtils.remoteRandomString(32)
 ```
 {: codeblock}
 
-### JavaScript でのローカル・ランダムの取得
+### JavaScript でのローカルでのランダム取得
 
 ```javascript
 WL.SecurityUtils.localRandomString(32)
