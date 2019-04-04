@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-01-04"
 
+keywords: Mobile Foundation SDK, android sdk, iOS sdk, cordova sdk, react native sdk
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ lastupdated:  "2019-01-04"
 ### Ajout du logiciel SDK Android à votre application
 {: android}
 
-Ouvrez Android Studio, choisissez la vue Android, puis choisissez **Gradle Scripts**, sélectionnez le fichier `build.gradle (Module: app)`, et suivez les étapes ci-dessous pour ajouter le logiciel SDK Android à votre application android.
+Ouvrez Android Studio, choisissez la vue Android, puis choisissez **Gradle Scripts**. Sélectionnez le fichier `build.gradle (Module: app)` et procédez comme suit pour ajouter le logiciel SDK Android à votre application Android.
 {: android}
 
 1. Ajoutez la ligne suivante à la section `dependencies` :
@@ -52,7 +55,7 @@ Ouvrez Android Studio, choisissez la vue Android, puis choisissez **Gradle Scrip
   ```
   {: codeblock}
   {: android}
-3. Dans la vue Android, ouvrez le fichier **app → manifests → AndroidManifest.xml**. Ajoutez les droits suivants au-dessus de l'élément `application` :
+3. Dans la vue Android, ouvrez le fichier **app → manifests → AndroidManifest.xml**. Ajoutez les droits suivants avant l'élément `application`.
    ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -70,7 +73,7 @@ Ouvrez Android Studio, choisissez la vue Android, puis choisissez **Gradle Scrip
 ### Ajout du logiciel SDK iOS à votre application
 {: ios}
 
-Il s'agit du logiciel SDK de base pour IBM Mobile Foundation, qui se compose d'API pour l'implémentation de la sécurité, de l'autorisation, de la journalisation, de l'appel d'adaptateurs et d'autres fonctions de base de Mobile Foundation. Suivez les étapes ci-dessous pour ajouter le logiciel SDK iOS à votre application iOS.
+Il s'agit du logiciel SDK de base pour IBM Mobile Foundation, qui se compose d'API pour l'implémentation de la sécurité, de l'autorisation, de la journalisation, de l'appel d'adaptateurs et d'autres fonctions de base de Mobile Foundation. Procédez comme suit pour ajouter le logiciel SDK iOS à votre application iOS.
 {: ios}
 
 1. Accédez au dossier racine de votre application iOS et exécutez la commande suivante pour créer un fichier Pod :
@@ -113,7 +116,7 @@ Il s'agit du logiciel SDK de base pour IBM Mobile Foundation, qui se compose d'A
 ### Ajout du logiciel SDK Cordova à votre application
 {: cordova}
 
-Il s'agit du logiciel SDK de base pour IBM Mobile Foundation, qui se compose d'API pour l'implémentation de la sécurité, de l'autorisation, de la journalisation, de l'appel d'adaptateurs et d'autres fonctions de base de Mobile Foundation. Suivez les étapes ci-dessous pour ajouter le logiciel SDK Cordova à votre application.
+Il s'agit du logiciel SDK de base pour IBM Mobile Foundation, qui se compose d'API pour l'implémentation de la sécurité, de l'autorisation, de la journalisation, de l'appel d'adaptateurs et d'autres fonctions de base de Mobile Foundation. Procédez comme suit pour ajouter le logiciel SDK Cordova à votre application.
 {: cordova}
 
 1. Créez un projet Cordova.
@@ -156,7 +159,7 @@ Il s'agit du logiciel SDK de base pour IBM Mobile Foundation, qui se compose d'A
 ### Ajout du plug-in de logiciel SDK de React Native à votre application
 {: reactnative}
 
-Pour pouvoir ajouter des fonctions Mobile Foundation à une application React Native existante, vous devez ajouter le plug-in `react-native-ibm-mobilefirst` à votre application. Le plug-in `react-native-ibm-mobilefirst` contient le logiciel SDK de Mobile Foundation. Suivez les étapes ci-dessous pour ajouter le plug-in React Native à votre application React Native.
+Pour pouvoir ajouter des fonctions Mobile Foundation à une application React Native existante, vous devez ajouter le plug-in `react-native-ibm-mobilefirst` à votre application. Le plug-in `react-native-ibm-mobilefirst` contient le logiciel SDK de Mobile Foundation. Procédez comme suit pour ajouter le plug-in React Native à votre application React Native.
 {: reactnative}
 
 1. Ajoutez ce plug-in de la même façon que n'importe quel autre plug-in `npm` à votre application.
@@ -207,4 +210,3 @@ Pour pouvoir ajouter des fonctions Mobile Foundation à une application React Na
    {: reactnative}
 7. Pour iOS, ouvrez XCode dans le navigateur de projets, puis faites glisser et déposez `mfpclient.plist` depuis le dossier `ios`. Cette étape est valable pour la plateforme iOS uniquement.
 {: reactnative}
-

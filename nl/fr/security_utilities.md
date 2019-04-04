@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2018-11-19"
 
+keywords: security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -16,7 +19,7 @@ lastupdated:  "2018-11-19"
 {: #security_utilities}
 
 L'API côté client de Mobile Foundation fournit des utilitaires de sécurité permettant de protéger les données de vos utilisateurs. Des fonctions telles que JSONStore sont idéales pour
-protéger les objets JSON. Cependant, il est déconseillé de stocker des objets blobs binaires dans une collection JSONStore.
+protéger les objets JSON. Il est conseillé de ne pas stocker des objets blobs binaires dans une collection JSONStore.
 
 A la place, stockez les données binaires dans le système de fichiers, et stockez les chemins d'accès aux fichiers et d'autres métadonnées dans une
 collection JSONStore. Si vous voulez protéger des fichiers tels que des images, vous pouvez les coder sous forme de chaînes base64, les chiffrer et écrire
@@ -26,7 +29,7 @@ Globalement, l'API SecurityUtils fournit les API suivantes :
 
 * Génération de clé - plutôt que de transmettre un mot de passe directement à la fonction de chiffrement, cette fonction de génération de clé utilise la fonction PBKDF2 (Password-Based Key Derivation Function 2) pour générer une clé forte de 256 bits pour l'API de chiffrement. Elle admet un paramètre spécifiant le nombre
 d'itérations. Plus le nombre est élevé, plus un agresseur informatique aura besoin de temps pour attaquer votre clé par force brute. Utilisez une valeur
-d'au moins 10 000. Le sel de cryptage doit être unique et complique le travail des agresseurs informatiques qui se servent d'informations de hachage
+d'au moins 10 000. Le sel de cryptage doit être unique, afin de compliquer le travail des agresseurs informatiques qui se servent d'informations de hachage
 existantes pour pirater votre mot de passe. Utilisez une longueur de 32 octets.
 * Chiffrement - l'entrée est chiffrée avec la norme AES (Advanced Encryption Standard). L'API admet une clé qui est générée avec l'API de génération de
 clé. En interne, elle génère un vecteur d'initialisation sécurisé qui est utilisé pour ajouter un ordre aléatoire au premier chiffrement par

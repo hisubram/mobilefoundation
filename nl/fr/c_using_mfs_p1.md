@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation developer, mobile analytics
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -16,7 +19,7 @@ lastupdated:  "2019-02-12"
 #	Configuration à l'aide du plan Développeur
 {: #using_mobilefoundation_p1}
 
-Après avoir créé l'instance de service {{site.data.keyword.mobilefoundation_short}} utilisant le
+Après avoir créé l'instance de service {{site.data.keyword.mobilefoundation_short}} en utilisant le
 plan Développeur, accédez à la page Présentation sur {{site.data.keyword.Bluemix_notm}}. Vous y trouverez des tutoriels et des vidéos pour vous aider à faire vos premiers pas avec le service.
 
 ## Utilisation du serveur MobileFirst
@@ -24,11 +27,10 @@ plan Développeur, accédez à la page Présentation sur {{site.data.keyword.Blu
 * Vous pouvez instantanément accéder et utiliser le serveur MobileFirst.
 
   Cette sélection crée une instance {{site.data.keyword.mfserver_long_notm}} avec les réglages suivants :
-  *	1 Go de mémoire. Cette taille
-suffit aux activités de développement et aux activités de test peu intensives, ainsi qu'aux charges
-de travail de production à petite échelle.
+  *	1 Go de mémoire. Cette taille suffit aux activités de développement et aux activités de test peu intensives, ainsi qu'aux charges
+de travail de production à petite échelle. 
 
-  * Pour accéder au serveur MobileFirst à l'aide de l'interface de ligne de commande, vous aurez besoin de vos données d'identification, qui sont disponibles lorsque vous cliquez sur **Données d'identification pour le service** dans le panneau de navigation gauche de la console IBM Cloud.
+  * Pour accéder au serveur MobileFirst à l'aide de l'interface de ligne de commande, vous avez besoin de vos données d'identification, qui sont disponibles lorsque vous cliquez sur **Données d'identification pour le service** dans le panneau de navigation gauche de la console IBM Cloud.
 
 Vous pouvez maintenant gérer vos applications et appareils mobiles, utiliser votre serveur en tant que serveur dorsal mobile, envoyer des notifications push, etc.
 
@@ -39,5 +41,5 @@ Le service Mobile Analytics est inclut et préconfiguré avec l'instance du plan
 
 * Lancez la console Mobile Analytics à partir de {{site.data.keyword.mfp_oc_short_notm}}.
 
-Pour plus d'informations sur l'instrumentation de votre application à l'aide de Mobile Analytics, vous pouvez vous reporter [ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}. 
-
+Pour plus d'informations sur l'instrumentation de votre application à l'aide de Mobile Analytics, reportez-vous
+[ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}. 

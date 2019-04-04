@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, restrict backend access, tampered apps
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -19,7 +22,7 @@ lastupdated: "2018-11-19"
 # Empêcher les applications falsifiées d'accéder au back end
 {: #prevent_tampered_apps_accessing_backend}
 
-L'authenticité de l'application permet de vérifier la validité de l'application avant d'activer un service, ce qui permet d'empêcher qu'une application falsifiée accède aux services de back end.
+L'authenticité de l'application aide à vérifier la validité de l'application avant d'activer un service, ce qui permet d'empêcher qu'une application falsifiée accède aux services de back end.
 {: shortdesc}
 
 Pour sécuriser correctement votre application, activez le contrôle de sécurité de l'authenticité de l'application MobileFirst prédéfini (``appAuthenticity``). Lorsqu'il est activé, ce contrôle valide l'authenticité

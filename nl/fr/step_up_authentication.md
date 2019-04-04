@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, authentication, using challenge handlers
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ Par exemple, ce tutoriel décrit une application qui possède deux ressources pr
 ## Référence à un contrôle de sécurité
 {: #referencing-a-security-check}
 
-Créez deux contrôles de sécurité : `StepUpPinCode` et `StepUpUserLogin`. 
+Créez deux contrôles de sécurité : `StepUpPinCode` et `StepUpUserLogin`.
 
 Dans cet exemple, `StepUpPinCode` dépend de `StepUpUserLogin`. L'utilisateur doit être invité à entrer un code PIN une fois qu'il s'est connecté à `StepUpUserLogin`. A cette fin, `StepUpPinCode` doit pouvoir référencer la classe `StepUpUserLogin`.
 

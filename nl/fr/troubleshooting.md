@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-02-12"
 
+keywords: troubleshooting techniques
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -74,8 +77,7 @@ l'objet de tests exhaustifs.
 
 ### Quand le problème se produit-il ?
 
-Etablissez une chronologie détaillée des événements qui ont conduit à une
-défaillance, surtout lorsqu'il s'agit d'un problème qui ne s'est produit qu'une fois. Il est plus facile de décrire le déroulement en commençant par la fin :
+Etablissez une chronologie détaillée des événements qui conduisent à un incident, surtout pour les cas qui ne se produisent qu'une seule fois. Il est plus facile de décrire le déroulement en commençant par la fin :
 commencez par le moment où l'erreur a été signalée (aussi précisément que
 possible, même à la milliseconde près) et remontez le cours des événements à l'aide des journaux
 et informations disponibles. Généralement, il n'est pas nécessaire de remonter plus loin que le premier événement suspect enregistré dans un
@@ -102,7 +104,7 @@ survienne ?
 - D'autres applications échouent-elles au même moment ?
 
 La réponse à ces types de questions peut vous aider à décrire l'environnement dans
-lequel le problème se produit et à faire le lien avec d'éventuelles dépendances. N'oubliez pas que si plusieurs problèmes se produisent à peu près au même moment, cela ne signifie pas pour autant qu'ils sont liés entre eux.
+lequel le problème se produit et à faire le lien avec d'éventuelles dépendances. Si plusieurs problèmes se produisent à peu près au même moment, cela ne signifie pas pour autant qu'ils sont liés entre eux.
 
 ### Le problème peut-il être reproduit ?
 
@@ -127,7 +129,7 @@ Ces problèmes présentent toutefois un inconvénient. S'ils ont un impact impor
 
 Si vous avez des problèmes ou des questions quand vous utilisez {{site.data.keyword.mobilefoundation_short}}, vous pouvez obtenir de l'aide en recherchant des informations précises ou en posant des questions via un forum. Vous pouvez aussi ouvrir un ticket de demande de service.
 
-Quand vous utilisez les forums pour poser une question, prenez soin d'étiqueter cette dernière de façon à ce qu'elle soit vue par les équipes de développement {{site.data.keyword.Bluemix_notm}}.
+Si vous utilisez les forums pour poser une question, libellez votre question de sorte qu'elle soit vue par les équipes de développement {{site.data.keyword.Bluemix_notm}}.
 
 En cas de questions d'ordre technique sur le développement et le déploiement d'une application avec {{site.data.keyword.mobilefoundation_short}}, postez votre question sur le forum [Stack Overflow ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window} en lui adjoignant les balises `bluemix` et `ibm-mobilefirst`.
 

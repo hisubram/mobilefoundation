@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-12"
 
+keywords: JSONStore, offline storage, jsonstore error codes
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -216,7 +219,7 @@ le magasin), il a besoin d'un jeton aléatoire. Ce jeton aléatoire peut être o
 Lorsque la clé localKeyGen se trouve dans l'implémentation JavaScript de l'API JSONStore et que sa valeur est true, un jeton sécurisé par chiffrement est généré localement. Sinon, le jeton est généré en contactant le serveur, ce qui nécessite une connectivité au serveur MobileFirst. Ce jeton n'est requis que lorsqu'un magasin est ouvert pour la première fois avec un mot de passe. Les implémentations natives (Objective-C et Java) génèrent un jeton sécurisé par chiffrement localement par défaut ou vous pouvez transmettre un jeton via l'option secureRandom.
 
 Les deux solutions suivantes sont possibles :
-* ouvrir un magasin hors ligne et faire confiance au client pour générer ce jeton aléatoire (moins sécurisé) ou 
+* ouvrir un magasin hors ligne et faire confiance au client pour générer ce jeton aléatoire (moins sécurisé) ou
 * ouvrir le magasin avec accès au serveur MobileFirst (nécessite une connectivité) et faire confiance au serveur (plus sécurisé)
 
 ### Utilitaires de sécurité
@@ -226,9 +229,9 @@ protéger les objets JSON. Cependant, il est déconseillé de stocker des objets
 
 A la place, stockez les données binaires dans le système de fichiers, et stockez les chemins d'accès aux fichiers et d'autres métadonnées dans une
 collection JSONStore. Si vous voulez protéger des fichiers tels que des images, vous pouvez les coder sous forme de chaînes base64, les chiffrer et écrire
-la sortie sur le disque. 
+la sortie sur le disque.
 
-Pour déchiffrer les données, vous pouvez rechercher les métadonnées dans une collection JSONStore, lire les données chiffrées à partir du disque et les déchiffrer à l'aide des métadonnées stockées. 
+Pour déchiffrer les données, vous pouvez rechercher les métadonnées dans une collection JSONStore, lire les données chiffrées à partir du disque et les déchiffrer à l'aide des métadonnées stockées.
 
 Ces métadonnées peuvent inclure la clé, le sel de cryptage, le vecteur d'initialisation, le type de fichier, le chemin d'accès au fichier, etc.
 
@@ -378,7 +381,7 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 Lorsque vous utilisez l'API iOS natif pour JSONStore, toutes les opérations sont ajoutées à une file d'attente de
 répartition synchrone. Ce comportement garantit que les opérations qui touchent le magasin sont exécutées dans l'ordre sur une unité d'exécution qui n'est pas l'unité d'exécution principale. Pour plus d'informations, voir la documentation Apple à l'adresse [Grand Central Dispatch (GCD) ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window}.
 
-### Accès concurrent dans Java 
+### Accès concurrent dans Java
 {: #java-jsonstore }
 Lorsque vous utilisez l'API Android natif pour JSONStore, toutes les opérations sont exécutées sur l'unité d'exécution principale. Vous devez créer des unités d'exécution ou utiliser des pools d'unités
 d'exécution pour obtenir un comportement asynchrone. Toutes les opérations de magasin autorisent les unités d'exécution multiples.
@@ -874,7 +877,7 @@ Procédez comme suit afin d'isoler le problème et de le signaler plus précisé
 4. Reportez-vous au fichier de base de données SQLite généré par JSONStore. Le chiffrement doit être désactivé.
 
    * Emulateur Android :
-   
+
    ```bash
    $ adb shell
    $ cd /data/data/com.<app-name>/databases/wljsonstore
@@ -942,7 +945,7 @@ Pour garantir l'ordre des événements `mfpjsonjsloaded` et `mfpjsloaded`, le d�
         var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
         : {};                                                                
         WL.Client.init(options);                                           
-    } 
+    }
     ```                                                                     
 
 Cela permet d'attendre l'événement `mfpjsonjsloaded` (en dehors de `wlCommonInit`), cela garantit le chargement du script et appelle ensuite `WL.Client.init` qui déclenchera `wlCommonInit`, lequel appellera ensuite `WL.JSONStore.init`.
@@ -1043,7 +1046,7 @@ Liste des codes d'erreur courants et leur description :
 | -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | Problème lors de la suppression de documents d'une collection. |
 | -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | Problème de stockage de la clé de protection des données (DPK). |
 | -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | Problème d'indexation des données d'entrée. |
-| -12 INVALID\_SEARCH\_FIELD\_TYPES | Vérifiez que les types que vous transmettez à searchFields sont stringinteger ,number ou boolean. |
+| -12 INVALID\_SEARCH\_FIELD\_TYPES | Vérifiez que les types que vous transmettez à searchFields sont string, integer, number ou boolean. |
 | -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | Une opération sur un tableau de documents, par exemple la méthode replace peut échouer si elle fonctionne avec un document spécifique. Le document à l'origine de l'échec est renvoyé et la transaction est annulée. Sur Android, cette erreur se produit également lorsque vous essayez d'utiliser JSONStore sur des architectures non prises en charge. |
 | -10 ACCEPT\_CONDITION\_FAILED | La fonction accept fournie par l'utilisateur a renvoyé la valeur false. |
 | -9 OFFSET\_WITHOUT\_LIMIT | Pour utiliser le décalage, vous devez également spécifier une limite. |

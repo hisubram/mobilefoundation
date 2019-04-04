@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, advanced jsonstore, Cordova secure jsonstore, iOS secure jsonstore, android jsonstore, adapter integration
+
+subcollection:  mobilefoundation
 ---
 {:generic: .ph data-hd-programlang='generic'}
 {:java: .ph data-hd-programlang='java'}
@@ -27,7 +30,7 @@ lastupdated: "2019-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# JSONStore avancé 
+# JSONStore avancé
 {: #advanced_jsonstore}
 
 ## Sécurité dans JSONStore
@@ -50,7 +53,7 @@ Utilisez `closeAll` pour verrouiller l'accès à toutes les collections jusqu'à
 Le chiffrement est pris en charge uniquement sur iOS. Par défaut, le SDK Mobile Foundation Cordova pour iOS s'appuie sur des API fournies par iOS pour le chiffrement. Si vous préférez remplacer ceci par OpenSSL :
 {: cordova}
 
-* Ajoutez le plug-in `cordova-plugin-mfp-encrypt-utils` : 
+* Ajoutez le plug-in `cordova-plugin-mfp-encrypt-utils` :
   ```bash
   cordova plugin add cordova-plugin-mfp-encrypt-utils.
   ```
@@ -126,7 +129,7 @@ Context  context = getContext();
 {: android}
 
 ## Prise en charge de plusieurs utilisateurs dans JSONStore
-{: #multiple_user_jsonstore} 
+{: #multiple_user_jsonstore}
 
 <!--### Cordova
 {: #multiple_user_jsonstore_cordova} -->
@@ -266,7 +269,7 @@ Vous pouvez atteindre ces objectifs à l'aide de `WLResourceRequest` ou `jQuery.
    {: codeblock}
    {: cordova}
    Pour empêcher JSONStore de marquer les documents comme "modifiés", transmettez l'option `{markDirty:false}` à `add`, `replace` et `remove`.
-   {: tip} 
+   {: tip}
    {: cordova}
 5. Vous pouvez également utiliser l'API `getAllDirty` pour extraire les documents modifiés.
    ```javascript
@@ -325,7 +328,7 @@ Vous pouvez atteindre ces objectifs à l'aide de `WLResourceRequest` ou `jQuery.
         // result contains an array of documents with the results from the find
     }).fail(function () {
         // handle failure
-    }); 
+    });
    ```
    {: codeblock}
    {: cordova}
@@ -378,7 +381,7 @@ Vous pouvez atteindre ces objectifs à l'aide de `WLResourceRequest`
    {: codeblock}
    {: ios}
    Pour empêcher JSONStore de marquer les documents comme "modifiés", transmettez l'option `{markDirty:false}` à `add`, `replace` et `remove`.
-   {: tip} 
+   {: tip}
 5. Pour transmettre les modifications à un adaptateur, appelez la fonction `allDirty` pour obtenir une liste des documents modifiés, puis utilisez `WLResourceRequest`. Une fois les données envoyées et la réponse reçue, veillez à appeler `markDocumentsClean`.
    ```swift
     // Start - PushToAdapter
@@ -464,7 +467,7 @@ Vous pouvez atteindre ces objectifs à l'aide de fonctions telles que `WLResourc
    {: codeblock}
    {: android}
    Pour empêcher JSONStore de marquer les documents comme "modifiés", transmettez l'option `options.setMarkDirty(false)` à `add`, `replace` et `remove`.
-   {: tip} 
+   {: tip}
    {: android}
 5. Pour transmettre les modifications à un adaptateur, appelez la fonction `findAllDirtyDocuments` pour obtenir une liste des documents modifiés, puis utilisez `WLResourceRequest`. Une fois les données envoyées et la réponse reçue, veillez à appeler `markDocumentsClean`.
    ```java
@@ -498,5 +501,5 @@ Vous pouvez atteindre ces objectifs à l'aide de fonctions telles que `WLResourc
    ```
    {: codeblock}
    {: android}
-6. Téléchargez le projet d'application Android natif à partir de la section **Exemples**. Le projet contient une application Android native qui utilise le jeu d'API JSONStore. Le projet Maven de l'adaptateur JavaScript peut être téléchargé [ici](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80). 
+6. Téléchargez le projet d'application Android natif à partir de la section **Exemples**. Le projet contient une application Android native qui utilise le jeu d'API JSONStore. Le projet Maven de l'adaptateur JavaScript peut être téléchargé [ici](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80).
 {: android}

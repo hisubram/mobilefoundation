@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation, mobile analytics, professional plan, configure database
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -55,12 +58,14 @@ Suivez ces étapes pour créer une nouvelle instance de service Db2 on Cloud :
 
 Une nouvelle instance de service {{site.data.keyword.Db2_on_Cloud_short}} est créée, qui fournit une instance {{site.data.keyword.Db2_on_Cloud_short}} dédiée avec 8 Go de RAM, 2 vCPU (UC virtuelles) et 500 Go d'espace de stockage.
 
-Suivez ces étapes pour vous connecter à une instance de service {{site.data.keyword.Db2_on_Cloud_short}} existante ou à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} que vous venez de créer :
+Suivez ces étapes pour vous connecter à une instance de service {{site.data.keyword.Db2_on_Cloud_short}} existante ou à
+l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} que vous avez créée : 
 
 1. Sélectionnez l'`organisation` {{site.data.keyword.Bluemix_notm}} dans laquelle se trouve l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
 
 + Depuis la liste des espaces disponibles dans `Organisation`, sélectionnez l'`espace` {{site.data.keyword.Bluemix_notm}} dans lequel se trouve l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.   
-Si l'`organisation` et l'`espace` dans lesquels réside votre instance de service {{site.data.keyword.Db2_on_Cloud_short}} ne figurent pas dans la liste, vérifiez que vous êtes membre de cette `organisation` et de cet `espace`. Vous devez être affecté au rôle *Développeur* dans l'organisation et l'espace vu que le service {{site.data.keyword.mobilefoundation_short}}accède aux données d'identification du service {{site.data.keyword.Db2_on_Cloud_short}}.
+Si l'`organisation` et l'`espace` dans lesquels réside votre instance de service {{site.data.keyword.Db2_on_Cloud_short}} ne figurent pas dans la liste, vérifiez que
+vous êtes membre de cette `organisation` et de cet `espace`. Vous devez être affecté au rôle *Développeur* dans l'organisation et l'espace vu que le service {{site.data.keyword.mobilefoundation_short}}accède aux données d'identification du service {{site.data.keyword.Db2_on_Cloud_short}}.
 {: note}
 + Sélectionnez également le `Nom du service` et les `Données d'identification` {{site.data.keyword.Db2_on_Cloud_short}} pour la connexion à l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} existante.
 
@@ -107,7 +112,8 @@ tant que serveur dorsal mobile, l'envoi de notifications push, etc.
 
 * Cette action arrête votre serveur existant et supprime les données. Une nouvelle instance de serveur est créée avec une version mise à jour, si elle est disponible. Cette action prend quelques minutes avant de s'achever.
 
-Les données de votre instance de serveur précédente, y compris les informations sur les applications et les adaptateurs, sont conservées dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée. Elles sont utilisées pour recréer le serveur.
+Les données de votre instance de serveur précédente, qui incluent des informations sur les applications et les adaptateurs,
+sont conservées dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée. Elles sont utilisées pour recréer le serveur.
 {: note}
 
 ##	Configuration avancée dans le plan Professionnel par appareil
@@ -128,4 +134,4 @@ Le service Mobile Analytics est inclut et préconfiguré avec l'instance du plan
 
 * Lancez la console Mobile Analytics à partir de {{site.data.keyword.mfp_oc_short_notm}}.
 
-Pour plus d'informations sur Mobile Analytics, vous pouvez vous reporter [ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}. 
+Pour plus d'informations sur Mobile Analytics, reportez-vous [ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}. 

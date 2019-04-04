@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-11"
 
+keywords: mobile foundation, client sdk, sdk api, javascript api, java api, react native api, objective-c api, csharp api
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -34,7 +37,7 @@ lastupdated: "2019-02-11"
 {: javascript }
 API pour applications Cordova / Web.
 {: javascript }
-* **[API côté client](/docs/services/mobilefoundation?topic=mobilefoundation-javascript_client_sdk_api#javascript_client_sdk_api)**  
+* **[API côté client ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe"](http://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/api/client-side-api/javascript/client/)**  
     Vous pouvez utiliser l'API JavaScript pour développer des applications pour tous les environnements.
     {: javascript }
 * **[API push côté client ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://mobilefirstplatform.ibmcloud.com/api-ref/push-hybrid-cordova-js-apidoc/html/refjavascript-mfp-push-hybrid/html/index.html)**  

@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, adapter security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -163,4 +166,3 @@ Le code suivant désactive la protection des ressources pour une procédure `use
 {: #unprotected-resources}
 
 Une ressource non protégée est une ressource qui ne requiert pas de jeton d'accès. L'infrastructure de sécurité MobileFirst ne gère pas les accès aux ressources non protégées et ne valide pas ni ne vérifie l'identité des clients qui accèdent à ces ressources. Par conséquent, les fonctions telles que la mise à jour directe, le blocage de l'accès d'un appareil ou la désactivation à distance d'une application ne sont pas prises en charge pour les ressources non protégées.
-

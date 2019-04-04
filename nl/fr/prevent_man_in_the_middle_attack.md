@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-10-16"
 
+keywords: mobile foundation security, MIM attack, certificate pinning
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -19,13 +22,13 @@ lastupdated: "2018-10-16"
 
 Lorsque vous communiquez sur des réseaux publics, il est essentiel d'envoyer et de recevoir les informations de façon sécurisée. Le protocole largement
 utilisé pour sécuriser ces communications est SSL/TLS. SSL/TLS
-utilise des certificats numériques pour assurer l'authentification et le chiffrement. Ces protocoles, qui s'appuient sur la vérification d'une chaîne de certificats, sont vulnérables et peuvent faire l'objet de nombreuses attaques dangereuses, notamment des attaques potentielles (MitM), qui ont lieu lorsqu'une partie prenante non autorisée peut afficher et modifier l'intégralité du trafic entre l'appareil mobile et les systèmes de back end.
+utilise des certificats numériques pour assurer l'authentification et le chiffrement. Ces protocoles s'appuient sur la vérification d'une chaîne de certificats et peuvent faire l'objet de nombreuses attaques dangereuses, notamment des attaques potentielles (MitM), qui ont lieu lorsqu'une partie prenante non autorisée peut afficher et modifier l'intégralité du trafic entre l'appareil mobile et les systèmes de back end.
 {: shortdesc}
 
 Limitez les attaques de sécurité par le biais de l'[épinglage de certificat](#cert_pinning) et empêchez les attaques potentielles (MitM).
 
-
->**Remarque** : facultatif et disponible uniquement pour les plans Professionnel.
+Cette fonctionnalité est facultative et disponible uniquement pour les plans Professionnel.
+{: note}
 
 Le processus d'épinglage de certificat comprend les étapes suivantes :
 
@@ -39,7 +42,7 @@ Au cours de l'établissement de liaison SSL (première demande envoyée au serve
 ## Epinglage de certificat
 {: #cert_pinning}
 
-Les protocoles qui s'appuient sur la vérification d'une chaîne de certificats sont vulnérables et peuvent faire l'objet de nombreuses attaques dangereuses, notamment des attaques potentielles (MitM), qui ont lieu lorsqu'une partie prenante non autorisée peut afficher et modifier l'intégralité du trafic entre l'appareil mobile et les systèmes de back end. Pour garantir qu'un certificat est authentique et valide, il est signé numériquement par un certificat racine appartenant à une autorité de certification digne de confiance. Les systèmes d'exploitation et les navigateurs gèrent des listes de certificats racine d'autorité de certification digne de confiance pour pouvoir facilement déterminer quels sont les certificats émis et signés par les autorités de certification.
+Les protocoles qui s'appuient sur la vérification d'une chaîne de certificats, comme SSL/TLS, sont vulnérables et peuvent faire l'objet de nombreuses attaques dangereuses, notamment des attaques potentielles (MitM), qui ont lieu lorsqu'une partie prenante non autorisée peut afficher et modifier l'intégralité du trafic entre l'appareil mobile et les systèmes de back end. Pour garantir qu'un certificat est authentique et valide, il est signé numériquement par un certificat racine qui appartient à une autorité de certification digne de confiance. Les systèmes d'exploitation et les navigateurs gèrent des listes de certificats racine d'autorité de certification digne de confiance pour pouvoir facilement déterminer quels sont les certificats émis et signés par les autorités de certification.
 
 IBM Mobile Foundation met à disposition une API permettant l'**épinglage de certificat**. Cette API est prise en charge dans les applications MobileFirst iOS natives, Android natives et Cordova multiplateformes.
 
@@ -48,11 +51,12 @@ IBM Mobile Foundation met à disposition une API permettant l'**épinglage de ce
 
 L'épinglage de certificat est le processus d'association d'un hôte à sa clé publique prévue. Vous pouvez configurer votre code client pour accepter uniquement un certificat spécifique pour votre nom de domaine, au lieu de n'importe quel certificat correspondant à un certificat racine d'autorité de certification digne de confiance reconnu par le système d'exploitation ou le navigateur. Une copie du certificat est placée dans votre application client. Au cours de l'établissement de liaison SSL (première demande envoyée au serveur), le logiciel SDK client de MobileFirst vérifie que la clé publique du certificat serveur correspond à la clé publique du certificat qui est stocké dans l'application.
 
->**Remarque** : vous pouvez aussi épingler plusieurs certificats avec votre application client. Une copie de tous les certificats doit être placée dans votre application client. Au cours de l'établissement de liaison SSL (première demande envoyée au serveur), le logiciel SDK client de MobileFirst vérifie que la clé publique du certificat serveur correspond à la clé publique de l'un des certificats qui sont stockés dans l'application.
+Vous pouvez aussi épingler plusieurs certificats avec votre application client. Placez une copie de tous les certificats dans votre application client. Au cours de l'établissement de liaison SSL (première demande envoyée au serveur), le logiciel SDK client de MobileFirst vérifie que la clé publique du certificat serveur correspond à la clé publique de l'un des certificats qui sont stockés dans l'application.
+{: note}
 
 **Important**
 
-* Certains systèmes d'exploitation mobiles peuvent mettre en cache le résultat du contrôle de validation de certificat. Par conséquent, votre code doit appeler la méthode API d'épinglage de certificat **avant** d'émettre une demande sécurisée. Sinon, toutes les demandes suivantes risquent d'ignorer le contrôle de validation de certificat et d'épinglage.
+* Certains systèmes d'exploitation mobiles peuvent mettre en cache le résultat du contrôle de validation de certificat. Par conséquent, votre code appelle la méthode API d'épinglage de certificat **avant** d'émettre une demande sécurisée. Sinon, toutes les demandes suivantes risquent d'ignorer le contrôle de validation de certificat et d'épinglage.
 * Assurez-vous de n'utiliser que des API Mobile Foundation pour toutes les communications avec l'hôte associé, même après l'épinglage de certificat. L'utilisation d'API de tiers pour interagir avec le même hôte peut entraîner un comportement inattendu, comme la mise en cache d'un certificat non vérifié par le système d'exploitation mobile.
 * Si vous appelez la méthode API d'épinglage de certificat une deuxième fois, l'opération d'épinglage précédente est écrasée.
 
@@ -63,13 +67,13 @@ Si le processus d'épinglage aboutit, la clé publique qui figure dans le certif
 
 Vous devez utiliser un certificat acheté auprès d'une autorité de certification. Les certificats autosignés **ne sont pas pris en charge**. En vue de la compatibilité avec les environnements pris en charge, veillez à utiliser un certificat codé au format **DER** (fichier de règles de codage distinctif, comme défini dans la norme International Telecommunications Union X.690).
 
-Le certificat doit être placé sur le serveur MobileFirst et dans votre application. Placez le certificat comme suit :
+Le certificat doit être placé sur le serveur MobileFirst et dans votre application. Placez le certificat comme suit. 
 
-* Sur le serveur MobileFirst (WebSphere Application Server, WebSphere Application Server Liberty ou Apache Tomcat) : consultez la documentation de votre serveur d'applications pour des informations sur la configuration du protocole SSL/TLS et des certificats.
-* Dans votre application :
-    * iOS native : ajoutez le certificat dans le **bundle** d'applications
-    * Android native : placez le certificat dans le dossier **assets**
-    * Cordova : placez le certificat dans le dossier **app-name\www\certificates** (si le dossier n'existe pas, créez-le)
+* Sur le serveur MobileFirst (WebSphere Application Server, WebSphere Application Server Liberty ou Apache Tomcat), consultez la documentation de votre serveur d'applications pour des informations sur la configuration du protocole SSL/TLS et des certificats.
+* Dans votre application,
+    * Pour iOS natif, ajoutez le certificat dans le **bundle** d'applications
+    * Pour Android natif, placez le certificat dans le dossier **assets**
+    * Pour Cordova, placez le certificat dans le dossier **app-name\www\certificates** (si le dossier n'existe pas, créez-le)
 
 ## API d'épinglage de certificat
 {: #certpinapi}
@@ -80,8 +84,8 @@ L'épinglage de certificat comprend la méthode API surchargée suivante, où un
 {: #certpinapiandroid}
 
 * Certificat unique :
- 
-    Syntaxe : pinTrustedCertificatePublicKeyFromFile(String certificateFilename); 
+
+    Syntaxe : pinTrustedCertificatePublicKeyFromFile(String certificateFilename);
 
     Exemple :
 
@@ -117,8 +121,8 @@ La méthode d'épinglage de certificat émet une exception dans deux cas :
     * Le fichier n'existe pas
     * Le format du fichier n'est pas correct
 
-* Epinglage de plusieurs certificats 
- 
+* Epinglage de plusieurs certificats
+
     Syntaxe : pinTrustedCertificatePublicKeyFromFiles:(NSArray*) certificateFilenames;
 
     La méthode d'épinglage de certificat émet une exception dans deux cas :
@@ -130,13 +134,13 @@ La méthode d'épinglage de certificat émet une exception dans deux cas :
 
 Exemple pour un certificat unique :
 
-```
+```objectc
 [[WLClient sharedInstance]pinTrustedCertificatePublicKeyFromFile:@"myCertificate.cer"];
 ```
 
 Exemple pour plusieurs certificats :
 
-```
+```objectc
 NSArray *arrayOfCerts = [NSArray arrayWithObjects:@“Cert1”,@“Cert2”,@“Cert3",nil];
 [[WLClient sharedInstance]pinTrustedCertificatePublicKeyFromFiles:arrayOfCerts];
 ```
@@ -145,13 +149,13 @@ NSArray *arrayOfCerts = [NSArray arrayWithObjects:@“Cert1”,@“Cert2”,@“
 
 Exemple pour un certificat unique :
 
-```
+```swift
 WLClient.sharedInstance().pinTrustedCertificatePublicKeyFromFile("myCertificate.cer")
 ```
 
 Exemple pour plusieurs certificats :
 
-```
+```swift
 let arrayOfCerts : [Any] = ["Cert1", "Cert2”, "Cert3”];
 WLClient.sharedInstance().pinTrustedCertificatePublicKey( fromFiles: arrayOfCerts)
 ```
@@ -178,11 +182,12 @@ La méthode d'épinglage de certificat émet une exception dans deux cas :
 
 La méthode d'épinglage de certificat renvoie une promesse :
 
-* La méthode d'épinglage de certificat appelle la méthode onSuccess si l'épinglage aboutit
-* La méthode d'épinglage de certificat déclenche le rappel onFailure dans deux cas :
-* Le fichier n'existe pas
-* Le format du fichier n'est pas correct
+* La méthode d'épinglage de certificat appelle la méthode `onSuccess` si l'épinglage aboutit.
+* La méthode d'épinglage de certificat déclenche le rappel `onFailure` dans les deux cas suivants : 
+  * Le fichier n'existe pas.
+  * Le format du fichier n'est pas correct.
 
-Ultérieurement, si une demande sécurisée est envoyée à un serveur dont le certificat n'est pas épinglé, le rappel ``onFailure`` de la demande spécifique (par exemple ``obtainAccessToken`` ou ``WLResourceRequest``) est appelé.
+Ultérieurement, si une demande sécurisée est envoyée à un serveur dont le certificat n'est pas épinglé, le rappel `onFailure` de la demande spécifique (par exemple `obtainAccessToken` ou `WLResourceRequest`) est appelé.
 
->Pour plus d'informations sur la méthode API d'épinglage de certificat, voir la [référence d'API](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks).
+Pour plus d'informations sur la méthode API d'épinglage de certificat, voir la [référence d'API](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks).
+{: note}

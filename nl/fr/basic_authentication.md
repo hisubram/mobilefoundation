@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: security, basic authentication, protecting resources, tokens, scopemapping
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -29,9 +32,9 @@ d'autorisations et du serveur de ressources sur lequel la ressource est héberg�
 du jeton.
 * Le serveur de ressources utilise le serveur d'autorisations pour valider le jeton d'accès fourni par le client et vérifier qu'il correspond à la portée de protection de la ressource demandée.
 
-L'infrastructure de sécurité est construite autour d'un serveur d'autorisations qui implémente le protocole OAuth et expose les noeuds finaux OAuth avec lesquels le client interagit pour obtenir les jetons d'accès. Elle fournit les blocs de construction permettant d'implémenter une logique d'autorisation personnalisée en plus du serveur d'autorisations et du protocole OAuth sous-jacent. Par défaut, le serveur MobileFirst fait également office de **serveur d'autorisations**. Toutefois, vous pouvez configurer un dispositif IBM WebSphere DataPower comme serveur d'autorisations interagissant avec le serveur MobileFirst.
+L'infrastructure de sécurité est construite autour d'un serveur d'autorisations qui implémente le protocole OAuth et expose les noeuds finaux OAuth avec lesquels le client interagit pour obtenir les jetons d'accès. Elle fournit les blocs de construction permettant d'implémenter une logique d'autorisation personnalisée au dessus du serveur d'autorisations et du protocole OAuth sous-jacent. Par défaut, le serveur MobileFirst fait également office de **serveur d'autorisations**. Toutefois, vous pouvez configurer un dispositif IBM WebSphere DataPower comme serveur d'autorisations interagissant avec le serveur MobileFirst.
 
-L'application client peut alors utiliser ces jetons pour accéder aux ressources d'un **serveur de ressources**, qui peut être le serveur MobileFirst lui-même ou un serveur externe. Le serveur de ressources vérifie la validité du jeton pour s'assurer que le client peut être autorisé à accéder à la ressource demandée. La séparation entre le serveur de ressources et le serveur d'autorisations permet d'appliquer la sécurité sur les ressources qui ne s'exécutent pas sur le serveur MobileFirst.
+L'application client peut alors utiliser ces jetons pour accéder aux ressources d'un **serveur de ressources**, qui peut être le serveur MobileFirst lui-même ou un serveur externe. Le serveur de ressources vérifie la validité du jeton pour s'assurer que le client peut être autorisé à accéder à la ressource demandée. La séparation entre le serveur de ressources et le serveur d'autorisations applique la sécurité sur les ressources qui ne s'exécutent pas sur le serveur MobileFirst.
 
 Les développeurs d'applications protègent l'accès à leurs ressources en définissant la portée requise pour chaque ressource protégée et en implémentant des contrôles de sécurité et des gestionnaires de demandes d'authentification. L'infrastructure de sécurité côté serveur et l'API côté client gèrent l'échange de messages OAuth et l'interaction avec le serveur d'autorisations de manière transparente, ce qui permet aux développeurs de se concentrer uniquement sur la logique d'autorisation.
 
@@ -67,8 +70,11 @@ par défaut** afin de restaurer la valeur par défaut.
 
 * Edition du fichier de configuration de l'application
 
-    1. Depuis une **fenêtre de ligne de commande**, accédez au dossier racine du projet et exécutez la commande ``mfpdev app pull``.
-    2. Ouvrez le fichier de configuration qui se trouve dans le dossier **[dossier_projet]\mobilefirst**.
+    1. Depuis une interface de ligne de commande, accédez au dossier racine du projet et exécutez la commande suivante :
+      ```bash
+      mfpdev app pull
+      ```
+    2. Ouvrez le fichier de configuration, qui se trouve dans le dossier `[dossier_projet]\mobilefirst`.
     3. Editez le fichier en définissant une propriété `maxTokenExpiration` ayant pour valeur le délai d'expiration de jeton d'accès maximal en secondes :
         ```java
         {
@@ -107,7 +113,7 @@ L'objet JSON d'une réponse comportant un jeton comporte les objets de propriét
 
 Les informations **expires_in** et **scope** se trouvent également dans le jeton lui-même (**access_token**).
 
->**Remarque** : la structure d'une réponse comportant un jeton d'accès valide est pertinente si vous utilisez la classe `WLAuthorizationManager` de niveau inférieure et gérez l'interaction OAuth entre le client et les serveurs d'autorisations et de ressources vous-même, ou si vous utilisez un client confidentiel. Si vous utilisez la classe
+>**Remarque** : la structure d'une réponse comportant un jeton d'accès valide est pertinente si vous utilisez la classe `WLAuthorizationManager` de niveau inférieur et gérez l'interaction OAuth entre le client et les serveurs d'autorisations et de ressources vous-même, ou si vous utilisez un client confidentiel. Si vous utilisez la classe
 `WLResourceRequest` de niveau supérieur qui encapsule le flux OAuth pour accéder à des ressources protégées, l'infrastructure de sécurité gère automatiquement le traitement des réponses comportant des jetons d'accès. Voir [API de sécurité du client](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_oauth_client_apis.html?view=kc#c_oauth_client_apis) et [Confidential clients](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/confidential-clients/).
 
 ### Jetons d'actualisation
@@ -115,7 +121,7 @@ Les informations **expires_in** et **scope** se trouvent également dans le jeto
 
 Un jeton d'actualisation est un type spécial de jeton que vous pouvez utiliser pour obtenir un nouveau jeton d'accès lorsque celui-ci arrive à expiration. Vous pouvez présenter un jeton d'actualisation valide pour demander un nouveau jeton d'accès. Les jetons d'actualisation sont des jetons dont la durée de vie est longue et qui restent valides plus longtemps que les jetons d'accès.
 
-Les applications doivent utiliser les jetons d'actualisation avec précaution car ceux-ci peuvent permettre à un utilisateur de rester authentifié indéfiniment. Les applications de médias sociaux, d'e-commerce, de consultation de catalogues de produit et d'utilitaires similaires, où le fournisseur d'application n'authentifie pas les utilisateurs régulièrement, peuvent utiliser des jetons d'actualisation. Les applications qui demandent fréquemment une authentification d'utilisateur doivent éviter d'utiliser des jetons d'actualisation.
+Les applications doivent utiliser les jetons d'actualisation avec précaution car ceux-ci peuvent permettre à un utilisateur de rester authentifié indéfiniment. Les applications de médias sociaux, d'e-commerce, de consultation de catalogues de produit et d'utilitaires similaires, où le fournisseur d'application n'authentifie pas les utilisateurs régulièrement, peuvent utiliser des jetons d'actualisation. Les applications qui demandent fréquemment une authentification d'utilisateur doivent éviter l'utilisation de jetons d'actualisation.
 Jeton d'actualisation MobileFirst
 
 Un jeton d'actualisation MobileFirst est une entité signée numériquement, comme un jeton d'accès, qui décrit les droits d'accès d'un client. Un jeton d'actualisation peut être utilisé pour obtenir un nouveau jeton d'accès d'une portée identique. Une fois que la demande d'autorisation du client pour une portée spécifique est satisfaite et que le client est authentifié, le noeud final de jeton du serveur d'autorisations envoie au client une réponse HTTP contenant le jeton d'accès et le jeton d'actualisation demandés. Lorsque le jeton d'accès expire, le client envoie le jeton d'actualisation au noeud final de jeton du serveur d'autorisations pour obtenir une nouvelle paire de jeton d'accès et de jeton d'actualisation.
@@ -130,12 +136,12 @@ A l'instar du jeton d'accès MobileFirst, le jeton d'actualisation MobileFirst c
 
 **Expiration du jeton**
 
-Le délai d'expiration du jeton d'actualisation est plus long que le délai d'expiration classique d'un jeton d'accès. Le jeton d'accès accordé reste valide jusqu'à la fin du délai d'expiration. Au cours de cette période de validité, un client peut utiliser le jeton d'actualisation pour obtenir une nouvelle paire de jeton d'accès et de jeton d'actualisation. Le délai d'expiration du jeton d'actualisation est un délai fixe de 30 jours. A chaque fois que le client reçoit une nouvelle paire de jeton d'accès et de jeton d'actualisation, le délai d'expiration du jeton d'actualisation est réinitialisé, ce qui donne au client l'impression que le jeton n'expire jamais. Les règles relatives à l'expiration du jeton d'accès restent les mêmes, comme expliqué dans la section **Jeton d'accès**.
+Le délai d'expiration du jeton d'actualisation est plus long que le délai d'expiration classique d'un jeton d'accès. Le jeton d'accès qui est accordé reste valide jusqu'à la fin du délai d'expiration. Au cours de cette période de validité, un client peut utiliser le jeton d'actualisation pour obtenir une nouvelle paire de jeton d'accès et de jeton d'actualisation. Le délai d'expiration du jeton d'actualisation est un délai fixe de 30 jours. A chaque fois que le client reçoit une nouvelle paire de jeton d'accès et de jeton d'actualisation, le délai d'expiration du jeton d'actualisation est réinitialisé, ce qui donne au client l'impression que le jeton n'expire jamais. Les règles relatives à l'expiration du jeton d'accès restent les mêmes, comme expliqué dans la section **Jeton d'accès**.
 
 **Activation de la fonction de jeton d'actualisation**
 {: #acs_enable-refresh-token}
 
-Vous pouvez activer la fonction de jeton d'actualisation avec les propriétés ci-dessous côté client et côté serveur respectivement.
+Vous pouvez activer la fonction de jeton d'actualisation en utilisant les propriétés ci-dessous côté client et côté serveur respectivement.
 
 **Propriété côté client (Android)**
 *Nom de fichier* : mfpclient.properties
@@ -183,7 +189,7 @@ Voici un exemple de réponse comportant un jeton d'actualisation valide du serve
 ```        
 {: codeblock}
 
-Une réponse comportant un jeton d'actualisation contient l'objet de propriété supplémentaire refresh_token en plus des autres objets de propriété présentés pour la structure d'une réponse comportant un jeton d'accès.
+Une réponse comportant un jeton d'actualisation contient un objet de propriété supplémentaire `refresh_token` en plus des autres objets de propriété qui sont présentés dans le cadre de la structure d'une réponse comportant un jeton d'accès.
 
 >**Remarque** : les jetons d'actualisation ont une durée de vie longue par rapport aux jetons d'accès. Par conséquent, la fonction de jeton d'actualisation doit être utilisée avec précaution. Elle est particulièrement adaptée pour les applications dans lesquelles il n'est pas nécessaire de procéder à l'authentification régulière des utilisateurs.
 
@@ -207,9 +213,9 @@ Les contrôles de sécurité prédéfinis suivants sont disponibles :
 #### Entité Gestionnaire de demandes d'authentification
 {: #challengehandler_entity}
 
-Lorsqu'il tente d'accéder à une ressource protégée, le client peut avoir à répondre à une demande d'authentification. Il s'agit d'une question, d'un test de sécurité ou d'une invite du serveur qui permet de garantir que le client est autorisé à accéder à la ressource. Le plus souvent, il s'agit d'une demande de données d'identification, comme un nom d'utilisateur et un mot de passe.
+Lorsque vous tentez d'accéder à une ressource protégée, le client peut avoir à répondre à une demande d'authentification. Il s'agit d'une question, d'un test de sécurité ou d'une invite du serveur qui permet de garantir que le client est autorisé à accéder à la ressource. Le plus souvent, il s'agit d'une demande de données d'identification, comme un nom d'utilisateur et un mot de passe.
 
-Un gestionnaire de demandes d'authentification est une entité côté client qui implémente la logique de sécurité côté client et l'interaction utilisateur associée. 
+Un gestionnaire de demandes d'authentification est une entité côté client qui implémente la logique de sécurité côté client et l'interaction utilisateur associée.
 
 >**Important** : si une demande d'authentification est reçue, elle ne peut pas être ignorée. Vous devez y répondre ou l'annuler. Le fait d'ignorer une demande d'authentification peut entraîner un comportement inattendu.
 
@@ -223,15 +229,15 @@ Une portée est définie sous forme de chaîne composée d'un ou de plusieurs é
 #### Eléments de portée
 {: #scopeelements}
 
-Un élément de portée peut être :
+Un élément de portée peut être : 
 
 * Le nom d'un contrôle de sécurité
-* Un mot clé arbitraire tel que `access-restricted` ou `deletePrivilege` qui définit le niveau de sécurité requis pour cette ressource. Ce mot clé est mappé ultérieurement à un contrôle de sécurité.
+* Un mot clé arbitraire tel que `access-restricted` ou `deletePrivilege`, qui définit le niveau de sécurité requis pour cette ressource. Ce mot clé est mappé ultérieurement à un contrôle de sécurité.
 
 #### Mappage de la portée
 {: #scopemapping}
 
-Par défaut, les **éléments de portée** que vous écrivez dans votre **portée** sont mappés à un **contrôle de sécurité du même nom**. Par exemple, si vous écrivez un contrôle de sécurité dont le nom est `PinCodeAttempts`, vous pouvez utiliser un élément de portée du même nom dans votre portée.
+Par défaut, les **éléments de portée** que vous écrivez dans votre **portée** sont mappés à un **contrôle de sécurité** du même nom. Par exemple, si vous écrivez un contrôle de sécurité dont le nom est `PinCodeAttempts`, vous pouvez utiliser un élément de portée du même nom dans votre portée.
 
 Le mappage de la portée permet de mapper des éléments de portée à des contrôles de sécurité. Lorsque le client demande un élément de portée, cette configuration définit quels sont les contrôles de sécurité qui doivent être appliqués. Par exemple, vous pouvez mapper l'élément de portée `access-restricted` à votre contrôle de sécurité `PinCodeAttempts`.
 
@@ -253,7 +259,7 @@ Exemple : scope = `access-restricted deletePrivilege`
 Vous pouvez aussi éditer manuellement le fichier JSON de configuration de l'application avec la configuration requise et envoyer les modifications à un serveur MobileFirst.
 
 1. Depuis une **fenêtre de ligne de commande**, accédez au dossier racine du projet et exécutez la commande `mfpdev app pull`.
-2. Ouvrez le fichier de configuration qui se trouve dans le dossier **[dossier_projet]\mobilefirst**.
+2. Ouvrez le fichier de configuration, qui se trouve dans le dossier `[dossier_projet]\mobilefirst`.
 3. Editez le fichier en définissant une propriété `scopeElementMapping`. Dans cette propriété, définissez des paires de données composées chacune du nom de l'élément de portée que vous avez sélectionné et d'une chaîne de zéro contrôle de sécurité ou plus, séparés par un espace, auxquels l'élément est mappé. Exemple :
 
 ```java
@@ -262,9 +268,13 @@ Vous pouvez aussi éditer manuellement le fichier JSON de configuration de l'app
          "SSOUserValidation": "LtpaBasedSSO CredentialsValidation"
      }
 ```
-4. Déployez le fichier JSON de configuration mis à jour en exécutant la commande `mfpdev app push`.
+4. Déployez le fichier JSON de configuration mis à jour en exécutant la commande suivante : 
+  ```bash
+  mfpdev app push
+  ```
 
->Vous pouvez également envoyer les configurations mises à jour à des serveurs distants. Voir le tutoriel Using MobileFirst CLI to Manage MobileFirst artifacts.
+Vous pouvez également envoyer les configurations mises à jour à des serveurs distants. Voir le tutoriel Using MobileFirst CLI to Manage MobileFirst artifacts.
+{: note}
 
 ### Protection des ressources
 {: #protecting-resources}
@@ -276,10 +286,10 @@ Vous pouvez protéger vos ressources de plusieurs façons :
 #### Portée d'application obligatoire
 {: #mandatoryappscope}
 
-Au niveau de l'application, vous pouvez définir une portée qui s'appliquera à toutes les ressources utilisées par l'application. L'infrastructure de sécurité exécute ces contrôles (le cas échéant) en plus des contrôles de sécurité de la portée de ressource demandée.
+Au niveau de l'application, vous pouvez définir une portée qui s'applique à toutes les ressources utilisées par l'application. L'infrastructure de sécurité exécute ces contrôles (le cas échéant) en plus des contrôles de sécurité de la portée de ressource demandée.
 
 >**Remarque** :
->* La portée d'application obligatoire n'est pas appliquée en cas d'accès à une ressource non protégée.
+>* La portée d'application obligatoire n'est pas appliquée lorsque vous accédez à une ressource non protégée.
 >* Le jeton d'accès qui est accordé à la portée de ressource ne contient pas la portée d'application obligatoire.
 
 Dans MobileFirst Operations Console, sélectionnez votre application dans la section **Applications** de la barre latérale de navigation, puis sélectionnez l'onglet **Sécurité**. Sous **Portée d'application obligatoire**, sélectionnez **Ajouter à la portée**.
@@ -289,7 +299,7 @@ Dans MobileFirst Operations Console, sélectionnez votre application dans la sec
 Vous pouvez aussi éditer manuellement le fichier JSON de configuration de l'application avec la configuration requise et envoyer les modifications à un serveur MobileFirst.
 
 1. Depuis une **fenêtre de ligne de commande**, accédez au dossier racine du projet et exécutez la commande `mfpdev app pull`.
-2. Ouvrez le fichier de configuration qui se trouve dans le dossier **dossier_projet\mobilefirst**.
+2. Ouvrez le fichier de configuration, qui se trouve dans le dossier **dossier_projet\mobilefirst**.
 3. Editez le fichier en définissant une propriété `mandatoryScope` et en définissant comme valeur de propriété une chaîne de portée contenant la liste des éléments de portée que vous avez sélectionnés, séparés par un espace. Exemple :
 
     ```java
@@ -302,7 +312,7 @@ Vous pouvez aussi éditer manuellement le fichier JSON de configuration de l'app
 #### Protection des ressources d'adaptateur
 {: #protectadapterres}
 
-Dans votre adaptateur, vous pouvez spécifier la portée de protection pour une méthode Java ou une procédure de ressource JavaScript, ou pour une classe de ressources Java entière. Une portée est définie sous forme de chaîne composée d'un ou de plusieurs éléments de portée séparés par un espace (“élémentPortée1 élémentPortée2 …”), ou comme valeur null pour appliquer la portée par défaut. Pour plus de détails sur la protection des ressources d'adaptateur, voir [Protection des adaptateurs](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
+Dans votre adaptateur, vous pouvez spécifier la portée de protection pour une méthode Java ou une procédure de ressource JavaScript, ou pour une classe de ressources Java entière. Une portée est définie sous forme de chaîne composée d'un ou de plusieurs éléments de portée séparés par un espace (“élémentPortée1 élémentPortée2 …”), ou comme valeur null pour appliquer la portée par défaut. Pour plus d'informations sur la protection des ressources d'adaptateur, voir [Protection des adaptateurs](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
 
 ### Désactivation de la protection des ressources
 {: #disablingresprotection}

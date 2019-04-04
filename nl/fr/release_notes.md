@@ -2,8 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-27"
+lastupdated: "2019-03-26"
 
+keywords: mobile foundation release notes, cd updates, updates, continuous delivery updates
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -20,6 +23,16 @@ lastupdated: "2018-11-27"
 Les mises à jour du service Mobile Foundation sont fournies via des correctifs temporaires (iFixes) et des mises à jour en continu (mise à jour de l'édition CD). Les correctifs temporaires (iFixes) et les mises à jour de l'édition CD sont cumulatifs. Les mises à jour des fonctionnalités sont fournies dans la mise à jour de l'édition CD.
 
 Pour en savoir plus sur le modèle de prise en charge de la distribution continue, consultez l'[annonce de prise en charge de l'édition CD de Mobile Foundation version 8.0 ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/897/ENUS217-390/index.html&request_locale=en).
+{: note}
+
+## Edition CD, mise à jour 05 (19 mars 2019)
+{: #cd_update_5}
+
+* Distribution de modèle CoreML.
+* Authenticité d'application pour WatchOS.
+* Attributs et fonctions de message supplémentaires pour FCM.
+
+Voir l'annonce de l'édition CD, mise à jour 05 [ici ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com/blog/2019/03/22/8-0-cd-update-release).
 {: note}
 
 ## Edition CD, mise à jour 04 (19 décembre 2018)
@@ -77,4 +90,3 @@ Voir l'annonce de l'édition CD, mise à jour 02 [ici ![Icône de lien externe](
 
 Voir l'annonce de l'édition CD, mise à jour 01 [ici ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com/blog/2017/11/27/8-0-cd-update-release/).
 {: note}
-

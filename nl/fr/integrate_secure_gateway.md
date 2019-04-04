@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-13"
 
+keywords: integration, mobile foundation, secure gateway
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -34,7 +37,7 @@ node app.js
 ```
 {: codeblock}
 
-## Scénario d'intégration avec le service Secure Gateway 
+## Scénario d'intégration avec le service Secure Gateway
 {: #secure_gateway}
 
 L'image ci-dessous représente l'architecture utilisée dans le scénario d'intégration expliqué dans ce tutoriel.
@@ -45,7 +48,7 @@ L'image ci-dessous représente l'architecture utilisée dans le scénario d'int�
 {: #implementing_sg_integration}
 
 ### Création d'une instance de service Secure Gateway
-Connectez-vous à IBM Cloud et créez une instance du [service Secure Gateway](https://cloud.ibm.com/catalog/services/secure-gateway/). 
+Connectez-vous à IBM Cloud et créez une instance du [service Secure Gateway](https://cloud.ibm.com/catalog/services/secure-gateway/).
 
 ![IBM Cloud](images/SecureGatewayInst.gif)
 
@@ -68,7 +71,7 @@ Depuis votre nouvelle passerelle, dans l'onglet **Clients**, cliquez sur **Conne
 
 Vous pouvez utiliser tout client de votre choix et exécuter le client Secure Gateway dans votre environnement sur site. Les étapes de configuration du client Secure Gateway sont disponibles dans la console Secure Gateway.
 
-Dans ce tutoriel, nous allons utiliser l'option de conteneur Docker pour exécuter le client Secure Gateway. 
+Dans ce tutoriel, nous allons utiliser l'option de conteneur Docker pour exécuter le client Secure Gateway.
 Suivez les étapes ci-dessous :
 *   Installez Docker sur votre machine sur site s'il n'est pas déjà installé.
 *   Lancez un terminal et exécutez le client Secure Gateway dans un conteneur avec la commande affichée dans la console du service.
@@ -127,13 +130,13 @@ mfpdev adapter deploy
 
 Vous trouverez plus d'informations sur la génération et le déploiement d'adaptateurs [ici ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/).
 {: tip}
- 
-Indiquez les détails d'hôte et de port du cloud pour le noeud final de la ressource dans l'adaptateur JavaHTTP obtenu dans la section précédente. 
+
+Indiquez les détails d'hôte et de port du cloud pour le noeud final de la ressource dans l'adaptateur JavaHTTP obtenu dans la section précédente.
 
 ![Configuration de l'adaptateur](images/AdapterConfiguration.png)
 
 où `cap-sg-prd-5.securegateway.appdomain.cloud` et `18946` sont l'hôte et le port de Secure Gateway respectivement.
- 
+
 A présent, l'adaptateur Mobile Foundation est configuré et le service Mobile Foundation peut fonctionner avec un système sur site dans l'entreprise, à l'aide du service Secure Gateway.
 
 ### Création et enregistrement d'un modèle d'application Mobile Foundation
@@ -152,4 +155,3 @@ Vous pouvez vous connecter à plusieurs noeuds finaux sur site en configurant pl
 {: #summary_int_sec_gw}
 
 En suivant ce tutoriel, vous établissez une connexion sécurisée entre les adaptateurs Mobile Foundation qui s'exécutent dans IBM Cloud et un noeud final HTTP sur site à l'aide du service Secure Gateway.
-

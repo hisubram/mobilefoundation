@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation, mobile analytics, professional plan, configure database
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -58,7 +61,7 @@ Une nouvelle instance de service {{site.data.keyword.Db2_on_Cloud_short}} est cr
 une instance {{site.data.keyword.Db2_on_Cloud_short}} dédiée avec 8 Go de RAM, 2 vCPU (UC virtuelles) et 500 Go d'espace de stockage.
 
 Suivez ces étapes pour vous connecter à une instance de service {{site.data.keyword.Db2_on_Cloud_short}} existante ou à
-l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} que vous venez de créer :
+l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} que vous avez créée : 
 
 1. Sélectionnez l'`organisation` {{site.data.keyword.Bluemix_notm}} dans laquelle se trouve
 l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
@@ -92,8 +95,7 @@ Vous ne pouvez pas changer l'instance de service {{site.data.keyword.Db2_on_Clou
 défaut, cliquez sur **Démarrer le serveur de base**.
 
 * Cette sélection crée une instance {{site.data.keyword.mfserver_long_notm}} avec les réglages suivants :
-    -  1 Go de mémoire. Cette taille
-suffit aux activités de développement et aux activités de test modérées, ainsi qu'aux charges
+    -  1 Go de mémoire. Cette taille suffit aux activités de développement et aux activités de test modérées, ainsi qu'aux charges
 de travail de production à petite échelle.
 
     -	Le `nom d'utilisateur` et le `mot de passe` sont générés automatiquement pour vous. Vous pouvez y accéder une fois que le
@@ -121,8 +123,7 @@ Elle vous permet de gérer vos applications, adaptateurs et appareils mobiles, a
 * Cette action arrête votre serveur existant et supprime les données. Une
 nouvelle instance de serveur est créée avec une version mise à jour, si elle est disponible. Cette action prend quelques minutes avant de s'achever.
 
-Les
-données de votre instance de serveur précédente, y compris les informations sur les applications et les adaptateurs,
+Les données de votre instance de serveur précédente, qui incluent des informations sur les applications et les adaptateurs,
 sont conservées dans l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} configurée. Elles sont utilisées pour recréer le serveur.
 {: note}
 
@@ -150,4 +151,4 @@ Le service Mobile Analytics est inclut et préconfiguré avec l'instance du plan
 
 * Lancez la console Mobile Analytics à partir de {{site.data.keyword.mfp_oc_short_notm}}.
 
-Pour plus d'informations sur Mobile Analytics, vous pouvez vous reporter [ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}. 
+Pour plus d'informations sur Mobile Analytics, reportez-vous [ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}. 
