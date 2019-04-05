@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-01-04"
 
+keywords: Mobile Foundation SDK, android sdk, iOS sdk, cordova sdk, react native sdk
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ lastupdated:  "2019-01-04"
 ### Incluindo o SDK do Android em seu app
 {: android}
 
-Abra o Android Studio, escolha a visualização Android e também **Scripts de Gradle**; selecione o arquivo `build.gradle (Module: app)` e, em seguida, siga as etapas abaixo para incluir o SDK do Android em seu aplicativo android.
+Abra o Android Studio, escolha a visualização Android e escolha **Scripts do Gradle**. Selecione o arquivo `build.gradle (Module: app)` e, em seguida, execute as etapas a seguir para incluir o SDK do Android em seu aplicativo Android.
 {: android}
 
 1. Inclua a linha a seguir na seção `dependencies`.
@@ -52,7 +55,7 @@ Abra o Android Studio, escolha a visualização Android e também **Scripts de G
   ```
   {: codeblock}
   {: android}
-3. Na visualização Android, abra o arquivo **app → manifests → AndroidManifest.xml**. Inclua as permissões a seguir acima do elemento `application`.
+3. Na visualização Android, abra o arquivo **app → manifests → AndroidManifest.xml**. Inclua as permissões a seguir antes do elemento `application`.
    ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -67,10 +70,10 @@ Abra o Android Studio, escolha a visualização Android e também **Scripts de G
    {: android}
 
 
-### Incluindo o SDK do iOS em seu app
+### Incluindo o SDK do iOS em seu aplicativo
 {: ios}
 
-Esse é o Core SDK for IBM Mobile Foundation, consistindo em APIs para implementar segurança, autorização, criação de log, adaptadores de chamada e outras funções principais do Mobile Foundation. Siga as etapas abaixo para incluir o SDK do iOS no aplicativo iOS.
+Esse SDK é o SDK principal para o IBM Mobile Foundation que consiste em APIs para implementar segurança, autorização, criação de log, adaptadores de chamada e outras funções principais do IBM Mobile Foundation. Execute as etapas a seguir para incluir o SDK do iOS em seu aplicativo iOS.
 {: ios}
 
 1. Acesse a pasta raiz de seu app iOS, execute o comando a seguir para criar um Arquivo pod.
@@ -113,7 +116,7 @@ Esse é o Core SDK for IBM Mobile Foundation, consistindo em APIs para implement
 ### Incluindo o SDK do Cordova em seu app
 {: cordova}
 
-Esse é o Core SDK for IBM Mobile Foundation, consistindo em APIs para implementar segurança, autorização, criação de log, adaptadores de chamada e outras funções principais do Mobile Foundation. Siga as etapas abaixo para incluir o SDK do Cordova em seu aplicativo.
+Esse SDK é o SDK principal para o IBM Mobile Foundation que consiste em APIs para implementar segurança, autorização, criação de log, adaptadores de chamada e outras funções principais do Mobile Foundation. Execute as etapas a seguir para incluir o SDK do Cordova em seu aplicativo.
 {: cordova}
 
 1. Crie um projeto Cordova.
@@ -156,7 +159,7 @@ Esse é o Core SDK for IBM Mobile Foundation, consistindo em APIs para implement
 ### Incluindo o plug-in SDK do React Native em seu app
 {: reactnative}
 
-Para incluir os recursos do Mobile Foundation em um app React Native existente, é necessário incluir o plug-in `react-native-ibm-mobilefirst` em seu app. O plug-in `react-native-ibm-mobilefirst` contém o SDK do Mobile Foundation. Siga as etapas abaixo para incluir o plug-in React Native em seu aplicativo React Native.
+Para incluir os recursos do Mobile Foundation em um app React Native existente, é necessário incluir o plug-in `react-native-ibm-mobilefirst` em seu app. O plug-in `react-native-ibm-mobilefirst` contém o SDK do Mobile Foundation. Execute as etapas a seguir para incluir o plug-in React Native em seu aplicativo React Native.
 {: reactnative}
 
 1. Inclua esse plug-in da mesma maneira que inclui qualquer outro plug-in `npm` em seu app.
@@ -207,4 +210,3 @@ Para incluir os recursos do Mobile Foundation em um app React Native existente, 
    {: reactnative}
 7. Para o iOS, abra o XCode. No navegador do projeto, arraste e solte `mfpclient.plist` da pasta `ios`. Essa etapa é aplicável somente para a plataforma iOS.
 {: reactnative}
-

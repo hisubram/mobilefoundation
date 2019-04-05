@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: security, basic authentication, protecting resources, tokens, scopemapping
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -29,7 +32,7 @@ O protocolo OAuth separa as funções do servidor de autorizações e do servido
 
 A estrutura de segurança é construída em torno de um servidor de autorizações que implementa o protocolo OAuth e expõe os terminais OAuth com os quais o cliente interage para obter tokens de acesso. A estrutura de segurança fornece os blocos de construção para implementar uma lógica de autorização customizada sobre o servidor de autorizações e o protocolo OAuth subjacente. Por padrão, o MobileFirst Server também funciona como o **servidor de autorizações**. No entanto, é possível configurar um dispositivo IBM WebSphere DataPower para agir como o servidor de autorizações e interagir com o MobileFirst Server.
 
-O aplicativo cliente pode então usar esses tokens para acessar recursos em um **servidor de recurso**, que pode ser o próprio MobileFirst Server ou um servidor externo. O servidor de recurso verifica a validade do token para se certificar de que o cliente pode receber acesso ao recurso solicitado. A separação entre o servidor de recurso e o servidor de autorizações permite aplicar segurança em recursos que estão em execução fora do MobileFirst Server.
+O aplicativo cliente pode então usar esses tokens para acessar recursos em um **servidor de recurso**, que pode ser o próprio MobileFirst Server ou um servidor externo. O servidor de recurso verifica a validade do token para se certificar de que o cliente pode receber acesso ao recurso solicitado. A separação entre o servidor de recurso e o servidor de autorizações cumpre a segurança nos recursos que estão em execução fora do MobileFirst Server.
 
 Os desenvolvedores de aplicativos protegem o acesso a seus recursos definindo o escopo necessário para cada recurso protegido e implementando verificações de segurança e manipuladores de desafios. A estrutura de segurança do lado do servidor e a API do lado do cliente manipulam a troca de mensagem de OAuth e a interação com o servidor de autorizações de forma transparente, permitindo que os desenvolvedores se concentrem apenas na lógica de autorização.
 
@@ -64,8 +67,11 @@ Configure o período máximo de expiração do token de acesso do aplicativo usa
 
 * Editando o arquivo de configuração do aplicativo
 
-    1. Em uma **janela de linha de comandos**, navegue para a pasta raiz do projeto e execute ``mfpdev app pull``.
-    2. Abra o arquivo de configuração, localizado na pasta **[project-folder]\mobilefirst**.
+    1. A partir de uma CLI, navegue até a pasta raiz do projeto e execute o comando a seguir.
+      ```bash
+      mfpdev app pull
+      ```
+    2. Abra o arquivo de configuração, que está localizado na pasta `[project-folder]\mobilefirst`.
     3. Edite o arquivo definindo uma propriedade `maxTokenExpiration` e configure seu valor com o período máximo de expiração do token de acesso, em segundos:
         ```java
         {
@@ -79,7 +85,7 @@ Configure o período máximo de expiração do token de acesso do aplicativo usa
 **Estrutura de resposta do token de acesso**
 {: #acs_access-tokens-structure}
 
-Uma resposta HTTP bem-sucedida para uma solicitação de token de acesso contém um objeto JSON com o token de acesso e dados adicionais. A seguir está um exemplo de uma resposta de token válido do servidor de autorizações:
+Uma resposta de HTTP bem-sucedida a uma solicitação de token de acesso contém um objeto JSON com o token de acesso e os dados extras. A seguir está um exemplo de uma resposta de token válido do servidor de autorizações:
 
 ```json
 HTTP/1.1 200 OK
@@ -104,14 +110,14 @@ O objeto JSON de resposta de token tem estes objetos de propriedade:
 
 As informações **expires_in** e **escopo** também estão contidas no próprio token (**access_token**).
 
->**Nota**: a estrutura de uma resposta de token de acesso válida será relevante se você usar a classe `WLAuthorizationManager` de baixo nível e gerenciar a interação de OAuth entre o cliente e os servidores de autorizações e de recurso você mesmo ou se usar um cliente confidencial. Se você estiver usando a classe `WLResourceRequest` de alto nível, que contém o fluxo de OAuth para acessar recursos protegidos, a estrutura de segurança manipulará o processamento de respostas do token de acesso para você. Consulte [APIs de segurança do cliente](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_oauth_client_apis.html?view=kc#c_oauth_client_apis) e [Clientes confidenciais](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/confidential-clients/).
+>**Nota**: A estrutura de uma resposta de token de acesso válida é relevante se você usar a classe `WLAuthorizationManager` de baixo nível e gerenciar a interação OAuth entre o cliente e a autorização e os próprios servidores de recursos, ou se você usar um cliente confidencial. Se você estiver usando a classe `WLResourceRequest` de alto nível, que encapsula o fluxo OAuth para acessar recursos protegidos, a estrutura de segurança manipulará o processamento de respostas do token de acesso para você. Consulte [APIs de segurança do cliente](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_oauth_client_apis.html?view=kc#c_oauth_client_apis) e [Clientes confidenciais](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/confidential-clients/).
 
 ### Tokens de Atualização
 {: #acs_refresh_tokens}
 
 Um token de atualização é um tipo especial de token, que pode ser usado para obter um novo token de acesso quando o token de acesso expira. Para solicitar um novo token de acesso, é possível apresentar um token de atualização válido. Os tokens de atualização são tokens de longa duração e permanecerão válidos por um período de tempo maior em comparação com os tokens de acesso.
 
-O token de atualização deve ser usado com cuidado por um aplicativo porque ele pode permitir que um usuário permaneça autenticado para sempre. Aplicativos de mídia social, aplicativos de e-commerce, navegação por catálogo do produto e aplicativos utilitários desse tipo, em que o provedor de aplicativos não autentica usuários regularmente, podem usar tokens de atualização. Os aplicativos que mandam autenticação do usuário com frequência devem evitar usar tokens de atualização.
+O token de atualização deve ser usado com cuidado por um aplicativo porque ele pode permitir que um usuário permaneça autenticado para sempre. Os aplicativos de mídia social, aplicativos de e-commerce, navegação do catálogo do produto e esses aplicativos utilitários, em que o provedor de aplicativos não autentica usuários regularmente, podem usar tokens de atualização. Os aplicativos que exigem autenticação do usuário frequentemente devem evitar o uso de tokens de atualização.
 Token de Atualização MobileFirst
 
 Um token de atualização do MobileFirst é uma entidade assinada digitalmente, como o token de acesso que descreve as permissões de autorização de um cliente. O token de atualização pode ser usado para obter um novo token de acesso do mesmo escopo. Depois que a solicitação de autorização do cliente para um escopo específico é concedida e o cliente é autenticado, o terminal de token do servidor de autorizações envia ao cliente uma resposta HTTP que contém o token de acesso e o token de atualização solicitados. Quando o token de acesso expira, o cliente envia o token de atualização para o terminal de token do servidor de autorizações para obter um novo conjunto de tokens de acesso e de atualização.
@@ -126,7 +132,7 @@ Semelhante ao token de acesso do MobileFirst, o token de atualização do Mobile
 
 ** Expiração do Token **
 
-O período de expiração para o token de atualização é maior que o período de expiração do token de acesso típico. O token de atualização uma vez concedido permanece válido até que seu prazo de expiração decorra. Dentro desse período de validade, um cliente pode usar o token de atualização para obter um novo conjunto de tokens de acesso e de atualização. O token de atualização tem um período de expiração fixo de 30 dias. Toda vez que o cliente recebe um novo conjunto de tokens de acesso e de atualização com sucesso, a expiração do token de atualização é reconfigurada, fornecendo assim ao cliente uma experiência de um token que nunca expira. As regras de expiração do token de acesso permanecem as mesmas conforme explicado na seção **Token de acesso**.
+O período de expiração para o token de atualização é maior que o período de expiração do token de acesso típico. O token de atualização que é concedido uma vez permanece válido até que seu prazo de expiração decorra. Dentro desse período de validade, um cliente pode usar o token de atualização para obter um novo conjunto de tokens de acesso e de atualização. O token de atualização tem um período de expiração fixo de 30 dias. Toda vez que o cliente recebe um novo conjunto de tokens de acesso e de atualização com sucesso, a expiração do token de atualização é reconfigurada, fornecendo assim ao cliente uma experiência de um token que nunca expira. As regras de expiração do token de acesso permanecem as mesmas conforme explicado na seção **Token de acesso**.
 
 **Ativando o recurso Token de atualização**
 {: #acs_enable-refresh-token}
@@ -150,7 +156,7 @@ Por exemplo,
 **Propriedade do lado do servidor**
 *Nome do arquivo*: server.xml
 *Nome da propriedade*: mfp.security.refreshtoken.enabled.apps
-*Valor da propriedade*: ID do pacote configurável do aplicativo separado por ‘;’
+*Valor da propriedade*: o ID do pacote configurável do aplicativo é separado por ‘;’
 
 Por exemplo,
 
@@ -179,7 +185,7 @@ A seguir está um exemplo de uma resposta de token de atualização válido do s
 ```        
 {: codeblock}
 
-A resposta do token de atualização tem o objeto de propriedade adicional refresh_token separado dos outros objetos de propriedade explicados como parte da estrutura de resposta do token de acesso.
+A resposta de token de atualização tem um objeto de propriedade adicional `refresh_token` além dos outros objetos de propriedade que são explicados como parte da estrutura de resposta de token de acesso.
 
 >**Nota**: os tokens de atualização são de longa duração em comparação com os tokens de acesso. Portanto, o recurso de token de atualização deve ser usado com cuidado. Os aplicativos nos quais a autenticação de usuário periódica não é necessária são candidatos ideais para usar o recurso de token de atualização.
 
@@ -203,9 +209,9 @@ As verificações de segurança predefinidas a seguir estão disponíveis:
 #### Entidade do Challenge Handler
 {: #challengehandler_entity}
 
-Ao tentar acessar um recurso protegido, o cliente pode ser confrontado com um desafio. Um desafio é uma pergunta, um teste de segurança, um prompt do servidor para se certificar de que o cliente tenha permissão para acessar esse recurso. Mais comumente, esse desafio é uma solicitação para credenciais, como um nome de usuário e uma senha.
+Quando você tenta acessar um recurso protegido, o cliente pode ser confrontado com um desafio. Um desafio é uma pergunta, um teste de segurança, um prompt do servidor para se certificar de que o cliente tenha permissão para acessar esse recurso. Mais comumente, esse desafio é uma solicitação para credenciais, como um nome de usuário e uma senha.
 
-Um manipulador de desafios é uma entidade do lado do cliente que implementa a lógica de segurança do lado do cliente e a interação com o usuário relacionada. 
+Um manipulador de desafios é uma entidade do lado do cliente que implementa a lógica de segurança do lado do cliente e a interação com o usuário relacionada.
 
 >**Importante**: depois que um desafio é recebido, ele não pode ser ignorado. Deve-se responder ou cancelá-lo. Ignorar um desafio pode levar a um comportamento inesperado.
 
@@ -219,17 +225,17 @@ Um escopo é definido como uma sequência de um ou mais elementos de escopo sepa
 #### Elementos do escopo
 {: #scopeelements}
 
-Um elemento de escopo pode ser um dos seguintes:
+Um elemento de escopo pode ser um dos seguintes,
 
 * O nome de uma verificação de segurança.
-* Uma palavra-chave arbitrária, como `access-restricted` ou `deletePrivilege`, que define o nível de segurança necessário para esse recurso. Essa palavra-chave é mapeada posteriormente para uma verificação de segurança.
+* Uma palavra-chave arbitrária, como `access-restricted` ou `deletePrivilege`, que define o nível de segurança que é necessário para esse recurso. Essa palavra-chave é mapeada posteriormente para uma verificação de segurança.
 
 #### Mapeamento de Escopo
 {: #scopemapping}
 
-Por padrão, os **elementos de escopo** gravados em seu **escopo** são mapeados para uma **verificação de segurança com o mesmo nome**. Por exemplo, se você gravar uma verificação de segurança chamada `PinCodeAttempts`, será possível usar um elemento de escopo com o mesmo nome dentro de seu escopo.
+Por padrão, os **elementos de escopo** que você grava em seu **escopo** são mapeados para uma **verificação de segurança** com o mesmo nome. Por exemplo, se você gravar uma verificação de segurança que é chamada `PinCodeAttempts`, será possível usar um elemento do escopo com o mesmo nome dentro de seu escopo.
 
-O Mapeamento de escopo permite mapear elementos de escopo para verificações de segurança. Quando o cliente solicita um elemento de escopo, essa configuração define quais verificações de segurança devem ser aplicadas. Por exemplo, é possível mapear o elemento do escopo `access-restricted` para a verificação de segurança `PinCodeAttempts`.
+O Mapeamento de escopo permite mapear os elementos do escopo para verificações de segurança. Quando o cliente solicita um elemento do escopo, essa configuração define quais verificações de segurança são necessárias para serem aplicadas. Por exemplo, é possível mapear o elemento do escopo `access-restricted` para a verificação de segurança `PinCodeAttempts`.
 
 O mapeamento de escopo será útil se você desejar proteger um recurso de forma diferente, dependendo de qual aplicativo está tentando acessá-lo. Também é possível mapear um escopo para uma lista de zero ou mais verificações de segurança.
 
@@ -249,7 +255,7 @@ Por exemplo: scope =  ` access-restricted deletePrivilege `
 Também é possível editar manualmente o arquivo JSON de configuração do aplicativo com a configuração necessária e enviar por push as mudanças de volta para um servidor MobileFirst.
 
 1. Em uma **janela de linha de comandos**, navegue até a pasta raiz do projeto e execute `mfpdev app pull`.
-2. Abra o arquivo de configuração, localizado na pasta **[project-folder]\mobilefirst**.
+2. Abra o arquivo de configuração, que está localizado na pasta `[project-folder]\mobilefirst`.
 3. Edite o arquivo definindo uma propriedade `scopeElementMapping`. Nessa propriedade, defina os pares de dados compostos cada um pelo nome de seu elemento de escopo selecionado e uma sequência de zero ou mais verificações de segurança separadas por espaço para as quais o elemento é mapeado. Por exemplo:
 
 ```java
@@ -258,9 +264,13 @@ Também é possível editar manualmente o arquivo JSON de configuração do apli
          "SSOUserValidation": "LtpaBasedSSO CredentialsValidation"
      }
 ```
-4. Implemente o arquivo JSON de configuração atualizado executando o comando: `mfpdev app push`.
+4. Implemente o arquivo JSON de configuração atualizado, executando o comando a seguir,
+  ```bash
+  Comando app mfpdev
+  ```
 
->Também é possível enviar por push configurações atualizadas para servidores remotos. Consulte o tutorial Usando a CLI do MobileFirst para gerenciar artefatos do MobileFirst.
+Também é possível enviar por push configurações atualizadas para servidores remotos. Consulte o tutorial Usando a CLI do MobileFirst para gerenciar artefatos do MobileFirst.
+{: note}
 
 ### Protegendo recursos
 {: #protecting-resources}
@@ -272,10 +282,10 @@ No modelo OAuth, um recurso protegido é aquele que requer um token de acesso. �
 #### Escopo do aplicativo obrigatório
 {: #mandatoryappscope}
 
-No nível do aplicativo, é possível definir um escopo que será aplicado a todos os recursos usados pelo aplicativo. A estrutura de segurança executará essas verificações (se existirem) além das verificações de segurança do escopo de recurso solicitado.
+No nível do aplicativo, é possível definir um escopo que se aplique a todos os recursos usados pelo aplicativo. A estrutura de segurança executará essas verificações (se existirem) além das verificações de segurança do escopo de recurso solicitado.
 
 >** Nota **:
->* O escopo de aplicativo obrigatório não é aplicado ao acessar um recurso não protegido.
+>* O escopo do aplicativo obrigatório não é aplicado quando você acessa um recurso desprotegido.
 >* O token de acesso concedido para o escopo de recurso não contém o escopo de aplicativo obrigatório.
 
 No MobileFirst Operations Console, selecione seu aplicativo na seção **Aplicativos** da barra lateral de navegação e, em seguida, selecione a guia **Segurança**. Em **Escopo do aplicativo obrigatório**, selecione **Incluir no escopo**.
@@ -285,8 +295,8 @@ No MobileFirst Operations Console, selecione seu aplicativo na seção **Aplicat
 Também é possível editar manualmente o arquivo JSON de configuração do aplicativo com a configuração necessária e enviar por push as mudanças de volta para um servidor MobileFirst.
 
 1. Em uma **janela de linha de comandos**, navegue até a pasta raiz do projeto e execute `mfpdev app pull`.
-2. Abra o arquivo de configuração localizado na pasta **project-folder\mobilefirst**.
-3. Edite o arquivo definindo uma propriedade `mandatoryScope` e configurando o valor da propriedade para uma sequência de escopo que contenha uma lista separada por espaço de seus elementos de escopo selecionados. Por exemplo:
+2. Abra o arquivo de configuração, que está localizado na pasta **project-folder\mobilefirst**.
+3. Edite o arquivo definindo uma propriedade `mandatoryScope` e configurando o valor da propriedade para uma sequência de escopo que contenha uma lista separada por espaço de seus elementos de escopo selecionados. Por exemplo,
 
     ```java
         "mandatoryScope": "appAuthenticity PincodeValidation"
@@ -298,7 +308,7 @@ Também é possível editar manualmente o arquivo JSON de configuração do apli
 #### Protegendo recursos do adaptador
 {: #protectadapterres}
 
-Em seu adaptador, é possível especificar o escopo de proteção para um método Java, um procedimento de recurso JavaScript ou para uma classe de recurso Java inteira. Um escopo é definido como uma sequência de um ou mais elementos de escopo separados por espaço (“scopeElement1 scopeElement2 …”) ou nulo para aplicar o escopo padrão. Para obter mais detalhes sobre como proteger recursos do adaptador, consulte [Protegendo adaptadores](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
+Em seu adaptador, é possível especificar o escopo de proteção para um método Java, um procedimento de recurso JavaScript ou para uma classe de recurso Java inteira. Um escopo é definido como uma sequência de um ou mais elementos de escopo separados por espaço (“scopeElement1 scopeElement2 …”) ou nulo para aplicar o escopo padrão. Para obter mais informações sobre como proteger os recursos do adaptador, consulte [Protegendo adaptadores](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
 
 ### Desativando a proteção de recurso
 {: #disablingresprotection}
@@ -363,4 +373,4 @@ Um recurso desprotegido é um recurso que não requer um token de acesso. A estr
 ### Protegendo recursos externos
 {: #protecextresources}
 
-Para proteger recursos externos, você inclui um filtro de recurso com um módulo de validação de token de acesso no servidor de recurso externo. O módulo de validação do token usa o terminal de introspecção do servidor de autorizações da estrutura de segurança para validar tokens de acesso do MobileFirst antes de conceder ao cliente OAuth acesso aos recursos. É possível usar a API de REST do MobileFirst para o tempo de execução do MobileFirst para criar seu próprio módulo de validação de token de acesso para qualquer servidor externo. Como alternativa, use uma das extensões fornecidas do MobileFirst para proteger recursos Java externos.
+Para proteger recursos externos, você inclui um filtro de recurso com um módulo de validação de token de acesso no servidor de recurso externo. O módulo de validação de token usa o terminal de introspecção do servidor de autorizações da estrutura de segurança para validar tokens de acesso do MobileFirst antes que o acesso do cliente OAuth seja concedido aos recursos. É possível usar a API de REST do MobileFirst para o tempo de execução do MobileFirst para criar seu próprio módulo de validação de token de acesso para qualquer servidor externo. Como alternativa, use uma das extensões fornecidas do MobileFirst para proteger recursos Java externos.

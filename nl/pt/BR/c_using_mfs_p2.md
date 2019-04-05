@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation, mobile analytics, professional plan, configure database
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -25,7 +28,7 @@ Depois de criar a instância de serviço {{site.data.keyword.mobilefoundation_sh
 Considere o seguinte antes de configurar a instância de serviço {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application.
 * O {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application é suportado somente com os planos do {{site.data.keyword.Db2_on_Cloud_short}} e {{site.data.keyword.composeForPostgreSQL}} {{site.data.keyword.Bluemix_notm}}.
 
-* É necessário ter acesso às credenciais de instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} ou {{site.data.keyword.composeForPostgreSQL}} antes de poder definir as configurações de sua instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
+* É necessário acesso às credenciais da instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} ou {{site.data.keyword.composeForPostgreSQL}} antes de poder definir as configurações de sua instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
 
 > **Nota**: a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} (qualquer plano diferente do plano **Lite**) ou {{site.data.keyword.composeForPostgreSQL}} pode existir em qualquer `Space` dentro de sua `Organization` do {{site.data.keyword.Bluemix_notm}} ou em qualquer outra `Organization` à qual você tem acesso. Assegure-se de que tenha as permissões para acessar o `Space` no qual a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} ou do {{site.data.keyword.composeForPostgreSQL}} existe.
 
@@ -41,7 +44,7 @@ Após criar a instância de serviço do {{site.data.keyword.mobilefoundation_sho
 ### Configurando a conexão com a instância de serviço do DB2 on Cloud
 {: #connect_dashdb_p2}
 
-Após a instância do serviço do {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application ser criada, você verá a página *Visão geral*. Aqui, será necessário especificar as informações de conexão para a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} (qualquer plano diferente do plano **Lite**) ou {{site.data.keyword.composeForPostgreSQL}} à qual a instância de serviço do {{site.data.keyword.mobilefoundation_short}} deve se conectar.
+Após a instância de serviço do {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application ser criada, você verá a página *Visão geral*. Aqui, é necessário especificar as informações de conexão para a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} (qualquer plano diferente do plano **Lite**) ou do {{site.data.keyword.composeForPostgreSQL}} à qual a instância de serviço do {{site.data.keyword.mobilefoundation_short}} precisa se conectar.
 
 Se você não tiver uma instância do Db2 on Cloud existente, será possível criar uma nova instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} (qualquer plano diferente do plano **Lite**) ou {{site.data.keyword.composeForPostgreSQL}}.
 
@@ -55,13 +58,13 @@ Siga estas etapas para criar uma nova instância de serviço do Db2:
 
 É criada uma nova instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}}, que fornece uma instância dedicada do {{site.data.keyword.Db2_on_Cloud_short}} com 8 GB de RAM e 2 vCPUs, além de 500 GB de armazenamento.
 
-Siga estas etapas para se conectar a uma instância de serviço existente do {{site.data.keyword.Db2_on_Cloud_short}} ou a uma instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} que você acabou de criar:
+Siga estas etapas para se conectar a uma instância de serviço existente do {{site.data.keyword.Db2_on_Cloud_short}} ou à instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} que você criou:
 
 1. Selecione a {{site.data.keyword.Bluemix_notm}} `Organização` na qual a instância do serviço {{site.data.keyword.Db2_on_Cloud_short}} existe.
 
 + Selecione {{site.data.keyword.Bluemix_notm}} `Space` em que a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, na lista de espaços disponíveis na
 `Organization` selecionada.   
-> **Nota:** se `Organization` e `Space` em que a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe não estiverem listados, verifique se você é um membro dessa `Organization` e `Space`. É necessário ter um acesso de função de *Desenvolvedor* para a organização e o espaço. O serviço {{site.data.keyword.mobilefoundation_short}} acessa as credenciais por meio do serviço {{site.data.keyword.Db2_on_Cloud_short}}.
+> **Nota:** se não vir listados a `Organization` e o `Space` nos quais a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, verifique se você é um membro dessa `Organization` e desse `Space`. É necessário ter um acesso de função de *Desenvolvedor* para a organização e o espaço. O serviço {{site.data.keyword.mobilefoundation_short}} acessa as credenciais por meio do serviço {{site.data.keyword.Db2_on_Cloud_short}}.
 
 + Selecione {{site.data.keyword.Db2_on_Cloud_short}} `Service name` e `Credentials` para se conectar à instância de serviço existente do {{site.data.keyword.Db2_on_Cloud_short}}.
 
@@ -74,14 +77,13 @@ Em alguns segundos, é possível acessar a página `Overview` que fornece tutori
 Não é possível mudar a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} que está configurada para ser usada por sua instância de serviço do {{site.data.keyword.mobilefoundation_short}}. No entanto, é possível usar a mesma instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} em múltiplas instâncias de serviço {{site.data.keyword.mobilefoundation_short}}, uma vez que cada instância de serviço {{site.data.keyword.mobilefoundation_short}} cria seu próprio esquema na instância de serviço {{site.data.keyword.Db2_on_Cloud_short}} selecionada.
 {: note}
 
-## Iniciando o servidor do MobileFirst criado usando o plano do Professional 1 Application
+## Iniciando o servidor MobileFirst criado usando o plano Professional 1 Application
 {: #start_mobilefoundation_p2}
 
 * Para iniciar o {{site.data.keyword.mfserver_short_notm}}, com as configurações padrão, clique em **Iniciar servidor básico**.
 
 * Essa seleção cria um {{site.data.keyword.mfserver_long_notm}} com as configurações a seguir:
-    -  1 GB de memória. Este tamanho é suficiente para desenvolvimento, atividades de teste
-moderado e cargas de trabalho de produção em pequena escala.
+    -  1 GB de memória. Esse tamanho é suficiente para desenvolvimento, atividades de teste moderado e cargas de trabalho de produção em pequena escala.
 
     -	O `username` e a `password` são gerados automaticamente para
 você. Você tem acesso a eles quando o servidor está funcionando.
@@ -104,7 +106,7 @@ Com o console, é possível
 gerenciar seus aplicativos móveis, adaptadores e dispositivos móveis, usar seu servidor como um
 backend móvel, enviar notificações push e muito mais.
 
-## Recriando o servidor do MobileFirst ao usar o plano do Professional 1 Application
+## Recriando o servidor MobileFirst quando você usa o plano do Professional 1 Application
 {: #recreate_mobilefoundation_p2}
 
 *	Clique em **Recriar** para recriar o servidor.
@@ -112,7 +114,7 @@ backend móvel, enviar notificações push e muito mais.
 * Esta ação para o servidor existente e exclui os dados. Uma nova instância do servidor é criada com uma versão atualizada, se disponível. Esta ação
 demora alguns minutos para ser concluída.
 
-Os dados de sua instância de servidor anterior, incluindo informações sobre os apps e os adaptadores, são persistidos na instância de serviço configurada do {{site.data.keyword.Db2_on_Cloud_short}}. Esses dados são usados para recriar seu servidor.
+Os dados de sua instância do servidor prévia que incluem informações sobre os apps e adaptadores são persistidos na instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} configurada. Esses dados são usados para recriar seu servidor.
 {: note}
 
 ##	Definindo a configuração avançada no plano do Professional 1 Application
@@ -135,4 +137,4 @@ O servidor Mobile Analytics está incluído e é pré-configurado com o Mobile F
 
 * Ativar o Mobile Analytics Console por meio do {{site.data.keyword.mfp_oc_short_notm}}.
 
-Para obter mais informações sobre o Mobile Analytics, é possível consultar [aqui](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.
+Para obter mais informações sobre o Mobile Analytics, veja [aqui](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.

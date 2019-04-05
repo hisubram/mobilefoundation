@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-02-12"
 
+keywords: troubleshooting techniques
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -36,7 +39,7 @@ As respostas a essas perguntas geralmente levam a uma boa descrição do problem
 
 ### Quais são os sintomas do problema?
 
-Ao começar a descrever um problema, a questão mais óbvia é "Qual é o problema?" Essa questão pode parecer direta; entretanto, é possível dividi-la em várias questões mais focadas que criam uma imagem mais descritiva do problema. Essas perguntas podem incluir:
+Ao iniciar a descrição de um problema, a pergunta mais óbvia é "Qual é o problema?". Essa questão pode parecer direta; entretanto, é possível dividi-la em várias questões mais focadas que criam uma imagem mais descritiva do problema. Essas perguntas podem incluir o seguinte,
 
 - Quem, ou o que, está relatando o problema?
 - Quais são os códigos de erro e as mensagens?
@@ -53,11 +56,11 @@ As perguntas a seguir ajudam você a focar em onde o problema ocorre para isolar
 - Todos os usuários têm o problema?
 - (Para instalações em múltiplos sites.) Todos os sites têm o problema?
 
-O fato de uma camada relatar o problema não significa que o problema tem origem nessa camada. Parte da identificação da origem de um problema é entender o ambiente no qual ele existe. Reserve algum tempo para descrever completamente o ambiente do problema, incluindo o sistema operacional e a versão, todos os softwares e versões correspondentes e informações de hardware. Confirme que você está executando em um ambiente que é uma configuração suportada; muitos problemas podem ser rastreados de volta para níveis incompatíveis de software que não são destinados a executar juntos ou não foram completamente testados juntos.
+O fato de uma camada relatar o problema não significa que o problema tem origem nessa camada. Parte da identificação da origem de um problema é entender o ambiente no qual ele existe. Reserve algum tempo para descrever completamente o ambiente do problema, incluindo o sistema operacional e a versão, todos os softwares e versões correspondentes e informações de hardware. Confirme se você está executando em um ambiente que é uma configuração suportada. Muitos problemas podem ser rastreados de volta para níveis incompatíveis de softwares que não se destinam a serem executados juntos ou que não são totalmente testados juntos.
 
 ### Quando o problema ocorre?
 
-Desenvolva uma linha de tempo detalhada de eventos que levam a uma falha, especialmente para aqueles casos que são ocorrências únicas. É possível desenvolver mais facilmente uma linha de tempo trabalhando de trás para a frente: comece com o momento em que um erro foi relatado (tão precisamente quanto possível, até mesmo o milissegundo) e trabalhe retroativamente por meio dos logs e informações disponíveis. Geralmente, é necessário observar apenas até o primeiro evento suspeito que você localizar em um log de diagnóstico.
+Desenvolva uma linha de tempo detalhada de eventos que leve a uma falha, principalmente para os casos que são ocorrências únicas. É possível desenvolver mais facilmente uma linha de tempo trabalhando de trás para a frente: comece com o momento em que um erro foi relatado (tão precisamente quanto possível, até mesmo o milissegundo) e trabalhe retroativamente por meio dos logs e informações disponíveis. Geralmente, é necessário observar apenas até o primeiro evento suspeito que você localizar em um log de diagnóstico.
 
 Para desenvolver uma linha de tempo detalhada de eventos, responda estas perguntas:
 
@@ -76,11 +79,11 @@ Saber quais sistemas e aplicativos estão em execução no momento em que um pro
 - Uma determinada sequência de eventos precisa acontecer para que o problema ocorra?
 - Algum outro aplicativo falha ao mesmo tempo?
 
-Responder a esses tipos de perguntas pode ajudá-lo a explicar o ambiente no qual o problema ocorre e correlacionar quaisquer dependências. Lembre-se de que apenas porque diversos problemas podem ter ocorrido ao mesmo tempo, os problemas não estão necessariamente relacionados.
+Responder a esses tipos de perguntas pode ajudá-lo a explicar o ambiente no qual o problema ocorre e correlacionar quaisquer dependências. Só porque múltiplos problemas ocorreram ao mesmo tempo, os problemas não estão necessariamente relacionados.
 
 ### O problema pode ser reproduzido?
 
-De um ponto de vista de resolução de problemas, o problema ideal é aquele que pode ser reproduzido. Geralmente, quando um problema pode ser reproduzido, você tem um conjunto maior de ferramentas ou procedimentos à sua disposição para ajudá-lo a investigar. Consequentemente, os problemas que podem ser reproduzidos são frequentemente mais fáceis de depurar e resolver.
+De um ponto de vista de resolução de problemas, o problema ideal é aquele que pode ser reproduzido. Geralmente, quando um problema pode ser reproduzido, você tem um conjunto maior de ferramentas ou procedimentos à sua disposição para ajudá-lo a investigar. Portanto, os problemas que podem ser reproduzidos são frequentemente mais fáceis de depurar e resolver.
 
 No entanto, os problemas que podem ser reproduzidos podem ter uma desvantagem: Se o problema for de impacto comercial significativo, você não deseja que ele ocorra novamente. Se possível, recrie o problema em um ambiente de teste ou de desenvolvimento, que geralmente oferece mais flexibilidade e controle durante sua investigação.
 
@@ -92,25 +95,17 @@ No entanto, os problemas que podem ser reproduzidos podem ter uma desvantagem: S
 ##  Limitações Conhecidas
 {: #knownlimitations_mfp}
 
-* A interface com o usuário de serviço do {{site.data.keyword.mobilefoundation_short}} não usa o padrão específico de código de idioma selecionado pelo usuário para exibir números.
+* A IU do serviço {{site.data.keyword.mobilefoundation_short}} não usa o padrão específico de código de idioma selecionado pelo usuário para exibir números.
 
 ## Obtendo ajuda e suporte para o Mobile Foundation
 {: #getting_help_mobilefoundation}
 
-Se você tiver problemas ou perguntas ao usar o
-{{site.data.keyword.mobilefoundation_short}}, poderá obter
-ajuda procurando por informações ou fazendo perguntas por meio de
-um fórum. Também é possível abrir um chamado de suporte.
+Se você tiver problemas ou perguntas ao usar o {{site.data.keyword.mobilefoundation_short}}, será possível obter ajuda procurando informações ou fazendo perguntas por meio de um fórum. Também é possível abrir um chamado de suporte.
 
-Ao usar os fóruns para fazer uma pergunta, marque a sua
-pergunta para que ela possa ser vista pelas equipes de
-desenvolvimento da IBM {{site.data.keyword.Bluemix_notm}}.
+Ao usar os fóruns para fazer uma pergunta, identifique-a para que ela possa ser vista pelas equipes de desenvolvimento do {{site.data.keyword.Bluemix_notm}}.
 
 Se você tiver questões técnicas sobre o desenvolvimento ou implementação de um app com o {{site.data.keyword.mobilefoundation_short}}, poste sua questão no [Stack Overflow ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window} e identifique-a com `bluemix` e `ibm-mobilefirst`.
 
 Para questões sobre o serviço e instruções de introdução, use o fórum [IBM developerWorks dW Answers ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window}. Inclua as marcações `bluemix` e `mobilefirst`.
 
-Para obter informações sobre como abrir um chamado de suporte
-IBM ou sobre os níveis de suporte e severidades de chamado, consulte
-[Entrando
-em contato com o suporte](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.
+Para obter mais informações sobre como abrir um chamado de suporte IBM ou sobre níveis de suporte e severidades de chamado, consulte [Contatando o suporte](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.

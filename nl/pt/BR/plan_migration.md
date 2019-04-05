@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2018-12-20"
 
+keywords: mobile foundation plans, migration of plans
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}

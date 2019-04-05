@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation developer, mobile analytics
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -16,16 +19,16 @@ lastupdated:  "2019-02-12"
 #	Configurar usando o plano do Desenvolvedor
 {: #using_mobilefoundation_p1}
 
-Após criar a instância de serviço do {{site.data.keyword.mobilefoundation_short}} usando o plano do Desenvolvedor, acesse a página Visão geral no {{site.data.keyword.Bluemix_notm}}. Aqui, tutoriais e vídeos são fornecidos para ajudá-lo a iniciar com o serviço.
+Depois de criar a instância de serviço do {{site.data.keyword.mobilefoundation_short}} usando o plano Developer, acesse a página Visão geral no {{site.data.keyword.Bluemix_notm}}. Aqui, tutoriais e vídeos são fornecidos para ajudá-lo a iniciar com o serviço.
 
 ## Trabalhando com o servidor MobileFirst
 {: #start_mobilefoundation_p1}
 * É possível acessar e trabalhar instantaneamente com o servidor MobileFirst.
 
   Essa seleção cria um {{site.data.keyword.mfserver_long_notm}} com as configurações a seguir:
-  *	1 GB de memória. Este tamanho é suficiente para desenvolvimento, atividades de teste leve e cargas de trabalho de produção em pequena escala.
+  *	1 GB de memória. Esse tamanho é suficiente para desenvolvimento, atividades de teste leve e cargas de trabalho de produção de pequena escala.
 
-  * Para acessar o MobileFirst Server usando a CLI, você precisará das credenciais, que estão disponíveis ao clicar em **Credenciais de serviço** na área de janela de navegação esquerda do console do IBM Cloud.
+  * Para acessar o MobileFirst Server usando a CLI, você precisa das credenciais, que estão disponíveis quando você clica em **Credenciais de serviço** na área de janela de navegação esquerda do console do IBM Cloud.
 
 Agora é possível gerenciar seus apps e dispositivos móveis, usar o servidor como um backend móvel, enviar notificações push e fazer muito mais.
 
@@ -36,5 +39,4 @@ O servidor Mobile Analytics está incluído e é pré-configurado com o Mobile F
 
 * Ativar o Mobile Analytics Console por meio do {{site.data.keyword.mfp_oc_short_notm}}.
 
-Para obter mais informações sobre como instrumentar o seu app usando o Mobile Analytics, é possível consultar [aqui](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.
-
+Para obter mais informações sobre como instrumentar seu app usando o Mobile Analytics, consulte [aqui](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.

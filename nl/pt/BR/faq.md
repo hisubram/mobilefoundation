@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2018-11-16"
 
+keywords: mobile foundation faq, updates to mobile foundation, custom domain
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -19,9 +22,9 @@ Esta Pergunta mais frequente fornece respostas às perguntas comuns sobre o serv
 {: #maintupdates_mf}
 {: faq}
 
-O {{site.data.keyword.mobilefoundation_short}} cria um {{site.data.keyword.mfserver_short_notm}}. As atualizações no servidor do {{site.data.keyword.mobilefoundation_short}} são notificadas aos usuários. Uma notificação será mostrada no painel da instância de serviço. O usuário pode escolher aplicar a atualização ao {{site.data.keyword.mobilefoundation_short}} durante uma janela de manutenção que é decidida pelo usuário. É possível escolher atualizar o servidor {{site.data.keyword.mobilefoundation_short}} quando for conveniente para você.
+O {{site.data.keyword.mobilefoundation_short}} cria um {{site.data.keyword.mfserver_short_notm}}. As atualizações no servidor do {{site.data.keyword.mobilefoundation_short}} são notificadas aos usuários. Uma notificação é mostrada no painel da instância de serviço. O usuário pode escolher aplicar a atualização ao {{site.data.keyword.mobilefoundation_short}} durante uma janela de manutenção que é decidida pelo usuário. É possível escolher atualizar o servidor {{site.data.keyword.mobilefoundation_short}} quando for conveniente para você.
 
-A atualização de serviço do {{site.data.keyword.mobilefoundation_short}} ficará disponível quando um dos componentes a seguir for atualizado.
+A atualização de serviço do {{site.data.keyword.mobilefoundation_short}} é disponibilizada quando um dos componentes a seguir é atualizado.
 
 * {{site.data.keyword.mfserver_short_notm}}.
 * Versão do Liberty subjacente.
@@ -32,10 +35,10 @@ A atualização de serviço do {{site.data.keyword.mobilefoundation_short}} fica
 {: faq}
 
 A atualização para o {{site.data.keyword.mobilefoundation_short}} pode ser aplicada ao clicar em **Recriar**.
-Ao aplicar esta atualização, a versão do servidor, conforme visto no {{site.data.keyword.mfp_oc_short_notm}}, será modificada para indicar a versão da atualização do servidor.
+Ao aplicar a atualização, a versão do servidor, conforme visto no {{site.data.keyword.mfp_oc_short_notm}}, é modificada para indicar a versão de atualização do servidor.
 
 > **Nota:**
->  * Os usuários não serão capazes de aplicar suas próprias correções e atualizações em sua instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
+>  * Os usuários não podem aplicar suas próprias correções e atualizações à sua instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
 >  * Consulte [Recriando o servidor no plano Professional Per Device](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#recreate_mobilefoundation_p5) e [Recriando o servidor no plano Professional 1 Application](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#recreate_mobilefoundation_p2) para entender a diferença no comportamento entre os planos quando **Recriar** é clicado.
 >
 
@@ -43,7 +46,7 @@ Ao aplicar esta atualização, a versão do servidor, conforme visto no {{site.d
 {: #configcustomdomain}
 {: faq}
 
-O {{site.data.keyword.mobilefoundation_short}} provisiona um {{site.data.keyword.mfserver_short_notm}}, que é acessível usando uma URL com os nomes de domínio baseados na **Região** do {{site.data.keyword.Bluemix_notm}}. Também é possível configurar seu próprio domínio customizado.
+{{site.data.keyword.mobilefoundation_short}} provisões um {{site.data.keyword.mfserver_short_notm}}, que é acessível usando uma URL com os nomes de domínio com base na {{site.data.keyword.Bluemix_notm}} **Região**. Também é possível configurar seu próprio domínio customizado.
 
 A URL ou rota é criada com os nomes de domínio padrão baseados na `Região` do {{site.data.keyword.Bluemix_notm}}.
 
@@ -55,7 +58,7 @@ A URL ou rota é criada com os nomes de domínio padrão baseados na `Região` d
   |`eu-de.mybluemix.net` | Frankfurt |   
   {: caption="Tabela 1. Nomes de domínio de aplicativo baseados na Região no {{site.data.keyword.Bluemix_notm}}" caption-side="top"}
 
-Para usar seu próprio domínio, será necessário configurar o domínio customizado executando as etapas a seguir:
+Para usar seu próprio domínio, é necessário configurar o domínio customizado executando as etapas a seguir:
 
 1.	Crie uma instância {{site.data.keyword.mfserver_short_notm}} criando a instância de serviço {{site.data.keyword.mobilefoundation_short}} escolhendo um dos planos suportados.
 
@@ -63,6 +66,6 @@ Para usar seu próprio domínio, será necessário configurar o domínio customi
 
 + Configure uma rota para o servidor usar seu domínio customizado.
 
-+ Acesse o provedor DNS de seu domínio e incluir uma entrada CNAME, que roteará o tráfego de seu domínio para a rota padrão do {{site.data.keyword.Bluemix_notm}}, em que o servidor está em execução.
++ Acesse o provedor DNS para seu domínio e inclua uma entrada CNAME, que roteia o tráfego de seu domínio para a rota padrão do {{site.data.keyword.Bluemix_notm}}, em que o servidor está em execução.
 
-+ Se quiser configurar `https` para seu domínio customizado, faça upload do certificado SSL para seu domínio no {{site.data.keyword.Bluemix_notm}}. Para fazer isso, acesse **Gerenciar organizações > DOMÍNIOS**, selecione o domínio customizado para o qual você deseja configurar o certificado SSL, clique em **Fazer upload de certificado** para fazer upload do certificado SSL para seu domínio. Consulte [este post ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window} para obter mais informações.
++ Se quiser configurar `https` para seu domínio customizado, faça upload do certificado SSL para seu domínio no {{site.data.keyword.Bluemix_notm}}. Para fazer upload do certificado SSL, acesse **Gerenciar organizações > DOMÍNIOS**, selecione o domínio customizado para o qual você deseja configurar o certificado SSL, clique em **Fazer upload do certificado** para fazer upload do certificado SSL para seu domínio. Para obter mais informações, consulte [este post ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window}.

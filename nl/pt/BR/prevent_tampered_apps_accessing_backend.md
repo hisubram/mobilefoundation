@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, restrict backend access, tampered apps
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -19,7 +22,7 @@ lastupdated: "2018-11-19"
 # Evitar apps corrompidos acessando backend
 {: #prevent_tampered_apps_accessing_backend}
 
-A autenticidade do aplicativo ajuda a verificar a validade do aplicativo antes de ativar quaisquer serviços, evitando assim que o aplicativo violado acesse os serviços de back-end.
+A autenticidade do aplicativo ajuda a verificar a validade do aplicativo antes de ativar quaisquer serviços, evitando que o aplicativo violado acesse os serviços de back-end.
 {: shortdesc}
 
 Para proteger corretamente seu aplicativo, ative a verificação de segurança de autenticidade de aplicativo predefinida do MobileFirst (``appAuthenticity``). Quando ativada, essa verificação valida a autenticidade do aplicativo antes de fornecê-la com quaisquer serviços. Os aplicativos no ambiente de produção devem ter esse recurso ativado.
@@ -52,7 +55,7 @@ Para que a autenticidade do aplicativo seja ativada em seu aplicativo:
 2. Selecione seu aplicativo na barra lateral de navegação e clique no item de menu **Autenticidade**.
 3. Alterne o botão **Ligar/Desligar** na caixa **Status**.
 
-![Enabling Application Authencity](/images/enable_application_authenticity.png)
+![Enabling Application Authenticity](/images/enable_application_authenticity.png)
 
 O MobileFirst Server valida a autenticidade do aplicativo na primeira tentativa de conexão com o servidor. Para aplicar essa validação também aos recursos protegidos, inclua a verificação de segurança appAuthenticity no escopo de proteção.
 

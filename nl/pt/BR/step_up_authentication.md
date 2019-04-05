@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, authentication, using challenge handlers
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ Por exemplo, este tutorial descreve um aplicativo que tem dois recursos protegid
 ## Referenciando uma Verificação de Segurança
 {: #referencing-a-security-check}
 
-Crie duas verificações de segurança: `StepUpPinCode` e `StepUpUserLogin`. 
+Crie duas verificações de segurança: `StepUpPinCode` e `StepUpUserLogin`.
 
 Neste exemplo, `StepUpPinCode` depende de `StepUpUserLogin`. É necessário solicitar ao usuário que insira um código PIN somente após um login bem-sucedido em `StepUpUserLogin`. Para esse propósito, `StepUpPinCode` deve ser capaz de referenciar a classe `StepUpUserLogin`.
 
@@ -102,7 +105,8 @@ Supondo que o recurso esteja protegido por **ambos**, `StepUpPinCode` e `StepUpU
 Como alternativa, se o recurso estiver protegido **somente** por `StepUpPinCode` (a estrutura ativará somente essa verificação de segurança), será possível mudar a implementação de `authorize` para acionar `StepUpUserLogin` manualmente:
 
 ```java
-@Override public void authorize(Set<String> scope, Map<String, Object> credentials, HttpServletRequest request, AuthorizationResponse response) {
+@Override
+public void authorize(Set<String> scope, Map<String, Object> credentials, HttpServletRequest request, AuthorizationResponse response) {
     if(userLogin.isLoggedIn()){
         //If StepUpUserLogin is successful, continue the normal processing of StepUpPinCode
         super.authorize(scope, credentials, request, response);

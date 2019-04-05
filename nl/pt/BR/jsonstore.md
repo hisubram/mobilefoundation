@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-12"
 
+keywords: JSONStore, offline storage, jsonstore error codes
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -189,16 +192,16 @@ Na primeira vez que o JSONStore abre uma coleção com uma senha, o que signific
 Quando a chave localKeyGen está presente na implementação de JavaScript da API JSONStore e ela tem um valor true, um token criptograficamente seguro é gerado localmente. Caso contrário, o token é gerado entrando em contato com o servidor, o que requer conectividade com o MobileFirst Server. Esse token será necessário somente na primeira vez em que o armazenamento for aberto com uma senha. As implementações nativas (Objective-C e Java) geram um token criptograficamente seguro localmente, por padrão, ou é possível passar um pela opção secureRandom.
 
 A troca é entre os seguintes:
-* abrir um armazenamento off-line e confiar no cliente para gerar esse token aleatório (menos seguro) ou 
+* abrir um armazenamento off-line e confiar no cliente para gerar esse token aleatório (menos seguro) ou
 * abrir o armazenamento com acesso ao MobileFirst Server (requer conectividade) e confiar no servidor (mais seguro)
 
 ### Utilitários de segurança
 {: #security-utilities }
 A API do lado do cliente do MobileFirst fornece alguns utilitários de segurança para ajudar a proteger os dados de seu usuário. Recursos como o JSONStore são ótimos se você deseja proteger objetos JSON. No entanto, não é sugerido armazenar blobs binários em uma coleção JSONStore.
 
-Em vez disso, armazene dados binários no sistema de arquivos e armazene os caminhos de arquivo e outros metadados dentro de uma coleção JSONStore. Se desejar proteger arquivos como imagens, será possível codificá-los como sequências base64, criptografá-los e gravar a saída no disco. 
+Em vez disso, armazene dados binários no sistema de arquivos e armazene os caminhos de arquivo e outros metadados dentro de uma coleção JSONStore. Se desejar proteger arquivos como imagens, será possível codificá-los como sequências base64, criptografá-los e gravar a saída no disco.
 
-Para decriptografar os dados, é possível consultar os metadados em uma coleção do JSONStore, ler os dados criptografados no disco e decriptografá-los usando os metadados que foram armazenados. 
+Para decriptografar os dados, é possível consultar os metadados em uma coleção do JSONStore, ler os dados criptografados no disco e decriptografá-los usando os metadados que foram armazenados.
 
 Esses metadados podem incluir a chave, o salt, o Vetor de inicialização (IV), o tipo de arquivo, o caminho para o arquivo e outros.
 
@@ -330,7 +333,7 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
 {: #objective-c-jsonstore }
 Quando você usa a API do iOS Nativo para JSONStore, todas as operações são incluídas em uma fila de envio síncrono. Esse comportamento assegura que as operações que tocam o armazenamento sejam executadas em ordem em um encadeamento que não seja o encadeamento principal. Para obter mais informações, veja a documentação da Apple em [Grand Central Dispatch (GCD) ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html#//apple_ref/c/func/dispatch_sync){: new_window}.
 
-### Simultaneidade em Java 
+### Simultaneidade em Java
 {: #java-jsonstore }
 Quando você usa a API do Android Nativo para JSONStore, todas as operações são executadas no encadeamento principal. Deve-se criar encadeamentos ou usar conjuntos de encadeamentos para ter um comportamento assíncrono. Todas as operações de armazenamento são thread-safe.
 
@@ -790,7 +793,7 @@ Siga estas etapas para isolar o problema para relatar um problema de maneira mai
 4. Examine o arquivo de banco de dados SQLite que é gerado pelo JSONStore. A criptografia deve estar desativada.
 
    * Emulador de Android:
-   
+
    ```bash
    $ adb shell
    $ cd /data/data/com.<app-name>/databases/wljsonstore
@@ -858,7 +861,7 @@ manualmente. Isso removerá a necessidade de ter um código específico da plata
         var options = typeof wlInitOptions !== 'undefined' ? wlInitOptions
         : {};                                                                
         WL.Client.init(options);                                           
-    } 
+    }
     ```                                                                     
 
 Isso esperará o evento `mfpjsonjsloaded` (fora de `wlCommonInit`), que assegurará que o script tenha sido carregado e, subsequentemente, chamará `WL.Client.init`, que acionará `wlCommonInit` que, então, chamará `WL.JSONStore.init`.
@@ -938,35 +941,35 @@ Lista de códigos de erro comuns e suas descrições:
 
 |Código de erro      | Descrição |
 |----------------|-------------|
-| -100 UNKNOWN_FAILURE | Unrecognized error. |
-| -75 OS\_SECURITY\_FAILURE | This error code is related to the requireOperatingSystemSecurity flag. It can occur if the destroy API fails to remove security metadata that is protected by operating system security (Touch ID with passcode fallback), or the init or open APIs are unable to locate the security metadata. It can also fail if the device does not support operating system security, but operating system security usage was requested. |
-| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore is closed. Try calling the open method in the JSONStore class class first to enable access to the store. |
-| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | There was a problem with rolling back the transaction. |
-| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION |Cannot call removeCollection while a transaction is in progress. |
-| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | Cannot call destroy while there are transactions in progress. |
-| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | Cannot call closeAll while there are transactions in place. |
-| -44 TRANSACTION\_FAILURE\_DURING\_INIT | Cannot initialize a store while there are transactions in progress. |
-| -43 TRANSACTION_FAILURE | There was a problem with transactions. |
-| -42 NO\_TRANSACTION\_IN\_PROGRESS | Cannot commit to rolled back a transaction when there is no transaction is progress |
-| -41 TRANSACTION\_IN\_POGRESS | Cannot start a new transaction while another transaction is in progress. |
-| -40 FIPS\_ENABLEMENT\_FAILURE |Something is wrong with FIPS. |
-| -24 JSON\_STORE\_FILE\_INFO\_ERROR | Problem getting the file information from the file system. |
-| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | Problem replacing documents from a collection. |
-| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | Problem removing documents from a collection. |
-| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | Problem storing the Data Protection Key (DPK). |
-| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | Problem indexing input data. |
-| -12 INVALID\_SEARCH\_FIELD\_TYPES | Check that the types that you are passing to the searchFields are stringinteger,number, orboolean. |
-| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | An operation on an array of documents, for example the replace method can fail while it works with a specific document. The document that failed is returned and the transaction is rolled back. On Android, this error also occurs when trying to use JSONStore on unsupported architectures. |
-| -10 ACCEPT\_CONDITION\_FAILED | The accept function that the user provided returned false. |
-| -9 OFFSET\_WITHOUT\_LIMIT | To use offset, you must also specify a limit. |
-| -8 INVALID\_LIMIT\_OR\_OFFSET | Validation error, must be a positive integer. |
-| -7 INVALID_USERNAME | Validation error (Must be [A-Z] or [a-z] or [0-9] only). |
-| -6 USERNAME\_MISMATCH\_DETECTED | To log out, a JSONStore user must call the closeAll method first. There can be only one user at a time. |
-| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED |A problem with the destroy method while it tried to delete the file that holds the contents of the store. |
-| -4 DESTROY\_REMOVE\_KEYS\_FAILED | Problem with the destroy method while it tried to clear the keychain (iOS) or shared user preferences (Android). |
-| -3 INVALID\_KEY\_ON\_PROVISION | Passed the wrong password to an encrypted store. |
-| -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | Search fields are not dynamic. It is not possible to change search fields without calling the destroy method or the removeCollection method before you call the init or openmethod with the new search fields. This error can occur if you change the name or type of the search field. For example: {key: 'string'} to {key: 'number'} or {myKey: 'string'} to {theKey: 'string'}. |
-| -1 PERSISTENT\_STORE\_FAILURE | Generic Error. A malfunction in native code, most likely calling the init method. |
+| -100 UNKNOWN_FAILURE | Erro não reconhecido. |
+| -75 OS\_SECURITY\_FAILURE | Esse código de erro está relacionado à sinalização requireOperatingSystemSecurity. Ele poderá ocorrer se a API de destruição falhar ao remover metadados de segurança que são protegidos pela segurança do sistema operacional (ID de toque com fallback de senha) ou se as APIs de inicialização ou abertas não conseguirem localizar os metadados de segurança. Ele também poderá falhar se o dispositivo não suportar a segurança do sistema operacional, mas o uso de segurança do sistema operacional foi solicitado. |
+| -50 PERSISTENT\_STORE\_NOT\_OPEN | O JSONStore foi encerrado. Tente chamar o método aberto na classe JSONStore primeiro para ativar o acesso ao armazenamento. |
+| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | Houve um problema ao retroceder a transação. |
+| -47 TRANSACTION \\_FAILURE\_DURING\_REMOVE\_COLLECTION |Não é possível chamar removeCollection enquanto uma transação está em andamento. |
+| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | Não é possível chamar a destruição enquanto há transações em andamento. |
+| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | Não é possível chamar closeAll enquanto há transações no local. |
+| -44 TRANSACTION\_FAILURE\_DURING\_INIT | Não é possível inicializar um armazenamento enquanto há transações em andamento. |
+| -43 TRANSACTION_FAILURE | Houve um problema com transações. |
+| -42 NO\_TRANSACTION\_IN\_PROGRESS | Não é possível confirmar o retrocesso de uma transação quando não há nenhuma transação em andamento |
+| -41 TRANSACTION\_IN\_POGRESS | Não é possível iniciar uma nova transação enquanto outra transação está em andamento. |
+| -40 FIPS\_ENABLEMENT\_FAILURE |Algo está errado com o FIPS. |
+| -24 JSON\_STORE\_FILE\_INFO\_ERROR | Problema ao obter as informações do arquivo do sistema de arquivos. |
+| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | Problema ao substituir documentos de uma coleção. |
+| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | Problema ao remover documentos de uma coleção. |
+| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | Problema ao armazenar o Data Protection Key (DPK). |
+| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | Problema ao indexar dados de entrada. |
+| -12 INVALID\_SEARCH\_FIELD\_TYPES | Verifique se os tipos que você está passando para searchFields são sequência, número inteiro, número ou booleano. |
+| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | Uma operação em uma matriz de documentos, por exemplo, o método de substituição pode falhar enquanto trabalha com um documento específico. O documento que falhou é retornado e a transação é retrocedida. No Android, esse erro também ocorre ao tentar usar o JSONStore em arquiteturas não suportadas. |
+| -10 ACCEPT\_CONDITION\_FAILED | A função de aceitação que o usuário forneceu retornou false. |
+| -9 OFFSET\_WITHOUT\_LIMIT | Para usar o deslocamento, deve-se também especificar um limite. |
+| -8 INVALID\_LIMIT\_OR\_OFFSET | Erro de validação, deve ser um número inteiro positivo. |
+| -7 INVALID_USERNAME | Erro de validação (Deve ser [ A-Z ] ou [ a-z ] ou [ 0-9 ] apenas). |
+| -6 USERNAME\_MISMATCH\_DETECTED | Para efetuar logout, um usuário JSONStore deve chamar o método closeAll primeiro. Pode haver somente um usuário por vez. |
+| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED |Um problema com o método de destruição enquanto ele tentava excluir o arquivo que contém o conteúdo do armazenamento. |
+| -4 DESTROY\_REMOVE\_KEYS\_FAILED | Problema com o método de destruição enquanto ele tentava limpar o keychain (iOS) ou as preferências compartilhadas do usuário (Android). |
+| -3 INVALID\_KEY\_ON\_PROVISION | Passou a senha errada para um armazenamento criptografado. |
+| 2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | Os campos de procura não são dinâmicos. Não é possível mudar campos de procura sem chamar o método de destruição ou o método removeCollection antes de chamar o método de inicialização ou openmethod com os novos campos de procura. Esse erro poderá ocorrer se você mudar o nome ou o tipo do campo de procura. Por exemplo: {key: 'string'} para {key: 'number'} ou {myKey: 'string'} para {theKey: 'string'}. |
+| -1 PERSISTENT\_STORE\_FAILURE | Erro genérico. Um mau funcionamento no código nativo, provavelmente chamando o método de inicialização. |
 | 0 SUCCESS | Em alguns casos, o código nativo JSONStore retorna 0 para indicar sucesso. |
 | 1 BAD\_PARAMETER\_EXPECTED\_INT | Erro de validação. |
 | 2 BAD\_PARAMETER\_EXPECTED\_STRING | Erro de validação. |

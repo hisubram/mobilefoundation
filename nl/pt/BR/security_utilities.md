@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2018-11-19"
 
+keywords: security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -15,13 +18,13 @@ lastupdated:  "2018-11-19"
 #	Utilitários de segurança
 {: #security_utilities}
 
-A API do lado do cliente do Mobile Foundation fornece alguns utilitários de segurança para ajudar a proteger os dados de seu usuário. Recursos como o JSONStore são ótimos se você deseja proteger objetos JSON. No entanto, não é sugerido armazenar blobs binários em uma coleção JSONStore.
+A API do lado do cliente do Mobile Foundation fornece alguns utilitários de segurança para ajudar a proteger os dados de seu usuário. Recursos como o JSONStore são ótimos se você deseja proteger objetos JSON. Sugerimos não armazenar blobs binários em uma coleção JSONStore.
 
 Em vez disso, armazene dados binários no sistema de arquivos e armazene os caminhos de arquivo e outros metadados dentro de uma coleção JSONStore. Se desejar proteger arquivos como imagens, será possível codificá-los como sequências base64, criptografá-los e gravar a saída no disco. Para decriptografar os dados, é possível consultar os metadados em uma coleção do JSONStore. Leia os dados criptografados no disco e decriptografe-os usando os metadados que foram armazenados. Esses metadados podem incluir a chave, o salt, o Vetor de inicialização (IV), o tipo de arquivo, o caminho para o arquivo e outros.
 
 Em um alto nível, a API SecurityUtils fornece as APIs a seguir:
 
-* Geração de chave - em vez de passar uma senha diretamente para a função de criptografia, essa função de geração de chave usa Password-Based Key Derivation Function v2 (PBKDF2) para gerar uma chave forte de 256 bits para a API de criptografia. Ela toma um parâmetro para o número de iterações. Quanto maior o número, mais tempo leva para um invasor forçar a chave. Use um valor de pelo menos 10.000. O salt deve ser exclusivo e ajuda a assegurar que os invasores tenham mais dificuldade em usar as informações de hash existentes para atacar a sua senha. Use um comprimento de 32 bytes.
+* Geração de chave - em vez de passar uma senha diretamente para a função de criptografia, essa função de geração de chave usa Password-Based Key Derivation Function v2 (PBKDF2) para gerar uma chave forte de 256 bits para a API de criptografia. Ela toma um parâmetro para o número de iterações. Quanto maior o número, mais tempo leva para um invasor forçar a chave. Use um valor de pelo menos 10.000. O salt deve ser exclusivo, o que assegura que os invasores que usam informações de hash existentes para atacar sua senha, tenham um tempo difícil. Use um comprimento de 32 bytes.
 * Criptografia - a entrada é criptografada usando o Padrão de Criptografia Avançado (AES). A API toma uma chave que é gerada com a API de geração de chave. Internamente, ela gera um IV seguro, que é usado para incluir a aleatorização para a primeira cifra de bloco. O texto é criptografado. Se você deseja criptografar uma imagem ou outro formato binário, transforme seu binário em texto base64 usando essas APIs. Essa função de criptografia retorna um objeto com as partes a seguir:
     * ct (texto cifrado, que também é chamado de texto criptografado)
     * IV

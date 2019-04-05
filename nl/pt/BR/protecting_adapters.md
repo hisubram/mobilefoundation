@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, adapter security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -117,10 +120,7 @@ O valor padrão do elemento `enabled` da anotação é `true`. Quando o elemento
 O código a seguir desativa a proteção de recurso para um método `helloUser`:
 
 ```java
-    @GET
-    @Path("/{username}")
-    @OAuthSecurity(enabled = "false")
-    public String helloUser(@PathParam("username") String name){
+    @GET @Path("/{username}") @OAuthSecurity(enabled = "false") public String helloUser(@PathParam("username") String name){
         ...
     }
 ```
@@ -129,9 +129,7 @@ O código a seguir desativa a proteção de recurso para um método `helloUser`:
 O código a seguir desativa a proteção de recurso para uma classe `MyUnprotectedResources`:
 
 ```java
-    @Path("/users")
-    @OAuthSecurity(enabled = "false")
-    public class MyUnprotectedResources {
+    @Path("/users") @OAuthSecurity(enabled = "false") public class MyUnprotectedResources {
         ...
     }
 ```
@@ -162,4 +160,3 @@ O código a seguir desativa a proteção de recurso de um procedimento `userName
 {: #unprotected-resources}
 
 Um recurso desprotegido é um recurso que não requer um token de acesso. A estrutura de segurança do MobileFirst não gerencia o acesso a recursos desprotegidos e não valida nem verifica a identidade de clientes que acessam esses recursos. Portanto, recursos, como Atualização direta, bloqueio de acesso ao dispositivo ou desativação remota de um aplicativo, não são suportados para recursos desprotegidos.
-

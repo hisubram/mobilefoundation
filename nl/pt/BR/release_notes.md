@@ -2,8 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-27"
+lastupdated: "2019-03-26"
 
+keywords: mobile foundation release notes, cd updates, updates, continuous delivery updates
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -22,7 +25,17 @@ As atualizações para o serviço Mobile Foundation são entregues por meio de c
 Para saber mais sobre o modelo de suporte de entrega contínua, consulte o [Anúncio de suporte do CD do Mobile Foundation v8.0 ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/897/ENUS217-390/index.html&request_locale=en).
 {: note}
 
-## CD Update 04 (19 de dezembro de 2018)
+## CD Atualização 05 (19 de março de 2019)
+{: #cd_update_5}
+
+* Distribuição de modelo CoreML.
+* Autenticidade do app para WatchOS.
+* Recursos e atributos de mensagem adicionais para FCM.
+
+Visualize o comunicado de Atualização de CD 05 [aqui ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://mobilefirstplatform.ibmcloud.com/blog/2019/03/22/8-0-cd-update-release).
+{: note}
+
+## Atualização de CD 04 (19 de dezembro de 2018)
 {: #cd_update_4}
 
 * Suporte de HTTP/2 para Notificações push de APNs.
@@ -64,7 +77,7 @@ Visualize o anúncio de Atualização de CD 02 [aqui ![Ícone de link externo](.
 * Suporte ao plug-in do MobileFirst Eclipse para o Eclipse Neon.
 * Android SDK modificado para usar uma versão mais recente do OkHttp (versão 3.4.1).
 * Suporte para o Cordova v7.
-* Suporte à fixação de múltiplos certificados.
+* Vários certificados pintando suporte.
 * Adaptadores para construir um aplicativo cognitivo.
 * Adaptador do Cloud Functions para construir um app sem servidor.
 * Suporte para fixar múltiplos certificados no SDK do Cordova.
@@ -77,4 +90,3 @@ Visualize o anúncio de Atualização de CD 02 [aqui ![Ícone de link externo](.
 
 Visualize o anúncio de Atualização de CD 01 [aqui ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](https://mobilefirstplatform.ibmcloud.com/blog/2017/11/27/8-0-cd-update-release/).
 {: note}
-

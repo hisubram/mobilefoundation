@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-22"
 
+keywords: mobile analytics, charts, app sessions, crashes, graph
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -19,25 +22,25 @@ lastupdated: "2018-11-22"
 # Construa gráficos customizados
 {: #build_custom_charts}
 
-A visualização Gráficos customizados no console do Mobile Analytics fornece a flexibilidade de construir as suas próprias visualizações ao redor dos dados de analítica capturados e armazenados. Isso ajuda a aprofundar os insights sobre o que é fornecido de imediato ou até mesmo estendê-lo, sem interrupções, ao Business Analytics, criado em torno de dados customizados.
+A visualização Gráficos customizados no console do Mobile Analytics fornece a flexibilidade para construir suas próprias visualizações ao redor dos dados de analítica que são capturados e armazenados. Os gráficos customizados ajudam a aprofundar os insights muito além do que é fornecido pronto para utilização ou até mesmo estendê-los de forma contínua no Business Analytics que é formulado em torno de dados customizados.
 
-Nesta visualização, é possível escolher qualquer um dos conjuntos de dados de analítica suportados e, em seguida, selecionar um dos tipos de gráficos suportados para plotar o conjunto de dados. É possível ainda remover a visualização definindo filtros a serem aplicados sobre os dados que estiverem sendo plotados.  
+Nessa visualização, é possível escolher qualquer um dos conjuntos de dados de analítica suportados e, em seguida, selecionar um dos tipos de gráficos suportados para plotar o conjunto de dados. É possível ainda remover ainda mais a visualização definindo os filtros a serem aplicados sobre os dados que estão sendo plotados.  
 
-Conjuntos de dados suportados:
+Os conjuntos de dados suportados são,
  * Logs do app
  * Sessões do app
  * Dados customizados
  * Transações de rede
- 
-Tipos de gráficos suportados:
+
+Os tipos de gráficos suportados são,
  * Gráfico de barras
  * Fluxograma
  * Gráfico de linhas
- * Grupo de métricas 
+ * Grupo de métricas
  * Gráfico de pizza
  * Tabela
- 
-A seleção do conjunto de dados, o tipo de gráfico a ser plotado, a definição das características do gráfico e os filtros de dados a serem aplicados podem ser puxados para uma Definição de gráfico customizado e salvos.  É possível criar e salvar quantas definições de Gráfico customizado forem necessárias. Gráficos customizados salvos aparecem na visualização Gráficos customizados com os dados de analítica relevantes plotados. 
+
+A seleção do conjunto de dados, o tipo de gráfico a ser plotado, a definição das características do gráfico e os filtros de dados a serem aplicados podem ser puxados para uma Definição de gráfico customizado e salvos.  Será possível criar e salvar quantas definições de Gráfico customizado forem necessárias. Gráficos customizados salvos aparecem na visualização Gráficos customizados com os dados de analítica relevantes plotados.
 
 ## Criando um gráfico customizado
 {: #creating_custom_chart}
@@ -48,7 +51,7 @@ Crie um gráfico customizado usando as etapas a seguir:
 2.  Na guia **Configurações gerais**, selecione **Título do gráfico**, **Tipo de evento** e o **Tipo de gráfico**.
 3.  Ao selecionar o *Tipo de evento* e o *Tipo de gráfico*, a guia **Definição de gráfico** aparecerá. Use a guia *Definição de gráfico* para definir o gráfico para o tipo de gráfico especificado que você selecionou anteriormente. Após você definir o gráfico, será possível configurar os filtros de gráfico e as propriedades do gráfico.
 4.  **Filtros de gráfico** são usados para ajustar com precisão o gráfico customizado. Mais de um filtro pode ser definido para um gráfico.
-    Por exemplo, após definir um gráfico para visualizar a duração média da sessão do app, se você desejar visualizar esse gráfico somente para um app específico, será possível criar um filtro conforme a seguir:
+    Por exemplo, depois de definir um gráfico para visualizar a duração média da sessão do app, se você desejar visualizar esse gráfico somente para um app específico, será possível criar um filtro como a seguir:
     * Selecione **Nome do aplicativo** para **Propriedade**.
     * Selecione **Equivale a** para **Operador**.
     * Selecione o nome de seu app para **Valor**.
@@ -61,11 +64,11 @@ Crie um gráfico customizado usando as etapas a seguir:
 ## Obtendo insights customizados por meio de logs de dados customizados
 {: #creating_custom_chart_for_client_logs}    
 
-Se você desejar obter insights customizados mais detalhados, como rastreio de usuários em todo o aplicativo, então, em primeiro lugar, será necessário capturar as informações relevantes da trilha do usuário, como página escolhida, opção selecionada ou botão clicado, como dados customizados e registrá-los. Consulte o tópico sobre [instrumentando o seu app](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app), sobre como registrar dados customizados.
+Se você desejar obter insights customizados mais profundos, como a trilha dos usuários no aplicativo, primeiro será necessário capturar as informações relevantes da trilha do usuário, como a página escolhida ou a opção selecionada ou o botão clicado, como dados customizados e registrá-las. Consulte o tópico sobre [instrumentando o seu app](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app), sobre como registrar dados customizados.
 
-Em seguida, crie uma definição de gráfico customizado com Dados customizados como o EventType e escolha um Tipo de gráfico. À medida que você continuar a definir **Propriedades do gráfico** ou **Filtros de gráfico**, você observará os tipos de Dados customizados e os valores que são mostrados nas caixas drop-down.  Faça as seleções relevantes para o tipo de insight que você está procurando.  
+Em seguida, crie uma definição de gráfico customizado com Dados customizados como o EventType e escolha um Tipo de gráfico. Conforme você continua a definir **Propriedades do Gráfico** ou **Filtros de Gráfico**, você observa os tipos de Dados Customizados e os valores aparecem nas caixas drop-down.  Faça as seleções relevantes para o tipo de insight que você está procurando.  
 
-A profundidade e a utilidade de insights customizados dependem inteiramente de quão eficientemente ou relevantemente você definiu e capturou dados customizados em seus aplicativos.
+A profundidade e a utilidade de insights customizados dependem inteiramente de quão eficientemente ou relevantemente os dados customizados em seus aplicativos são definidos e capturados.
 {: note}
 
 ## Tipos de gráficos
@@ -89,7 +92,7 @@ Após a definição dos eixos de gráfico, deve-se escolher um valor para Propri
 ### Gráfico de linhas
 {:  #line_graph}
 
-O gráfico de linhas permite a visualização de alguma métrica ao longo do tempo. Esse tipo de gráfico é valioso quando você deseja visualizar a tendência de dados ao longo do tempo. O primeiro valor a ser definido quando você cria um gráfico de linhas é **Measure**, que tem os valores possíveis a seguir.
+O gráfico de linhas permite a visualização de alguma métrica ao longo do tempo. Esse tipo de gráfico é valioso quando você deseja visualizar os dados que são tendência ao longo do tempo. O primeiro valor a ser definido quando você cria um gráfico de linhas é **Measure**, que tem os valores possíveis a seguir.
 
 * **Average** - calcula a média de uma propriedade numérica no tipo de evento fornecido.
 * **Total** - uma contagem total de uma propriedade no tipo de evento fornecido.
@@ -135,4 +138,3 @@ O gráfico de pizza resultante mostra o detalhamento das sessões do aplicativo 
 
 A tabela será útil quando você desejar ver os dados brutos. Construir uma tabela é tão simples quanto incluir colunas para os dados brutos que você deseja ver.
 Como nem todas as propriedades são necessárias para tipos de eventos específicos, valores nulos poderão aparecer em sua tabela. Se você desejar evitar que essas linhas apareçam em sua tabela, inclua um filtro *Existe* para uma propriedade específica na guia **Filtros de gráfico**
-

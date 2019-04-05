@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, advanced jsonstore, Cordova secure jsonstore, iOS secure jsonstore, android jsonstore, adapter integration
+
+subcollection:  mobilefoundation
 ---
 {:generic: .ph data-hd-programlang='generic'}
 {:java: .ph data-hd-programlang='java'}
@@ -27,7 +30,7 @@ lastupdated: "2019-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# JSONStore avançado 
+# JSONStore avançado
 {: #advanced_jsonstore}
 
 ## Segurança no JSONStore
@@ -50,7 +53,7 @@ Use `closeAll` para bloquear o acesso a todas as coleções até chamar `init` n
 A criptografia é suportada somente no iOS. Por padrão, o Mobile Foundation Cordova SDK para iOS depende de APIs fornecidas pelo iOS para criptografia. Se você preferir substituir isso por OpenSSL:
 {: cordova}
 
-* Inclua o plug-in `cordova-plugin-mfp-encrypt-utils`: 
+* Inclua o plug-in `cordova-plugin-mfp-encrypt-utils`:
   ```bash
   cordova plugin add cordova-plugin-mfp-encrypt-utils.
   ```
@@ -112,7 +115,7 @@ Context context = getContext(); try {
 {: android}
 
 ## Suporte a múltiplos usuários no JSONStore
-{: #multiple_user_jsonstore} 
+{: #multiple_user_jsonstore}
 
 <!--### Cordova
 {: #multiple_user_jsonstore_cordova} -->
@@ -210,7 +213,7 @@ Será possível atingir esses objetivos usando `WLResourceRequest` ou `jQuery.aj
    {: codeblock}
    {: cordova}
    Para evitar que o JSONStore marque os documentos como "modificados e não salvos", passe a opção `{markDirty:false}` para `add`, `replace` e `remove`.
-   {: tip} 
+   {: tip}
    {: cordova}
 5. Também é possível usar a API `getAllDirty` para recuperar os documentos modificados e não salvos.
    ```javascript
@@ -250,7 +253,7 @@ Será possível atingir esses objetivos usando `WLResourceRequest` ou `jQuery.aj
 
     //Usage: var key = 'myKey'; WL.JSONStore.get(collectionName).getValue(key).then(function (result) {
         // handle success // result contains an array of documents with the results from the find }).fail(function () {
-        // handle failure }); 
+        // handle failure });
    ```
    {: codeblock}
    {: cordova}
@@ -300,7 +303,7 @@ A integração do adaptador é opcional e fornece maneiras de enviar dados de um
    {: codeblock}
    {: ios}
    Para evitar que o JSONStore marque os documentos como "modificados e não salvos", passe a opção `{markDirty:false}` para `add`, `replace` e `remove`.
-   {: tip} 
+   {: tip}
 5. Para enviar por push as mudanças para um adaptador, chame o `allDirty` para obter uma lista de documentos com modificações e, em seguida, use `WLResourceRequest`. Depois que os dados são enviados e uma resposta bem-sucedida é recebida, certifique-se de chamar `markDocumentsClean`.
    ```swift
     // Start - PushToAdapter
@@ -371,7 +374,7 @@ Será possível atingir esses objetivos usando funções como `WLResourceRequest
    {: codeblock}
    {: android}
    Para evitar que o JSONStore marque os documentos como "modificados e não salvos", passe a opção `options.setMarkDirty(false)` para `add`, `replace` e `remove`.
-   {: tip} 
+   {: tip}
    {: android}
 5. Para enviar as mudanças por push para um adaptador, chame `findAllDirtyDocuments` para obter uma lista de documentos com modificações e, em seguida, use `WLResourceRequest`. Depois que os dados são enviados e uma resposta bem-sucedida é recebida, certifique-se de chamar `markDocumentsClean`.
    ```java
@@ -395,5 +398,5 @@ Será possível atingir esses objetivos usando funções como `WLResourceRequest
    ```
    {: codeblock}
    {: android}
-6. Faça download do projeto do aplicativo Android nativo na seção **Amostras**. O projeto contém um aplicativo Android nativo que usa o conjunto de APIs JSONStore. O projeto Maven do adaptador JavaScript pode ser transferido por download [daqui](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80). 
+6. Faça download do projeto do aplicativo Android nativo na seção **Amostras**. O projeto contém um aplicativo Android nativo que usa o conjunto de APIs JSONStore. O projeto Maven do adaptador JavaScript pode ser transferido por download [daqui](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80).
 {: android}

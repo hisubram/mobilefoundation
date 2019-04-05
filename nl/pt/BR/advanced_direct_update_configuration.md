@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-14"
 
+keywords: Direct Update, CDN support, secure direct update
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -36,7 +39,7 @@ Wl_DirectUpdateChallengeHandler.handleDirectUpdate = function (directUpdateData,
 
 Se os recursos da web forem mais novos no servidor Mobile Foundation que no aplicativo, os dados de desafio de Direct Update serão incluídos na resposta do servidor. Sempre que a estrutura do lado do cliente do Mobile Foundation detecta esse desafio de atualização direta, ela chama a função `wl_directUpdateChallengeHandler.handleDirectUpdate`.
 
-A função fornece um design da atualização direta padrão: um diálogo de mensagem padrão que é exibido quando uma atualização direta está disponível e uma tela de progresso padrão que é exibida quando o processo de atualização direta é iniciado. É possível implementar o comportamento da interface com o usuário da atualização direta customizada ou customizar a caixa de diálogo atualização direta substituindo essa função e implementando a sua própria lógica.
+A função fornece um design da atualização direta padrão: um diálogo de mensagem padrão que é exibido quando uma atualização direta está disponível e uma tela de progresso padrão que é exibida quando o processo de atualização direta é iniciado. É possível implementar o comportamento customizado da interface com o usuário do Direct Update ou customizar a caixa de diálogo Direct Update, substituindo essa função e implementando sua própria lógica.
 
 No código de exemplo abaixo, uma função `handleDirectUpdate` implementa uma mensagem personalizada na caixa de diálogo da atualização direta. Inclua esse código no arquivo `www/js/index.js` do projeto Cordova.
 Exemplos adicionais para uma UI customizada atualização direta:
