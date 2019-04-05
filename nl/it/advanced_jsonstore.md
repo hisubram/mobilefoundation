@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, advanced jsonstore, Cordova secure jsonstore, iOS secure jsonstore, android jsonstore, adapter integration
+
+subcollection:  mobilefoundation
 ---
 {:generic: .ph data-hd-programlang='generic'}
 {:java: .ph data-hd-programlang='java'}
@@ -27,7 +30,7 @@ lastupdated: "2019-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# JSONStore avanzato 
+# JSONStore avanzato
 {: #advanced_jsonstore}
 
 ## Sicurezza in JSONStore
@@ -50,7 +53,7 @@ Utilizza `closeAll` per bloccare l'accesso a tutte le raccolte finché non richi
 La crittografia è supportata solo in iOS. Per impostazione predefinita, l'SDK Mobile Foundation Cordova per iOS fa affidamento sulle API fornite da iOS per la crittografia. Se preferisci eseguirne la sostituzione con OpenSSL:
 {: cordova}
 
-* Aggiungi il plug-in `cordova-plugin-mfp-encrypt-utils`: 
+* Aggiungi il plug-in `cordova-plugin-mfp-encrypt-utils`:
   ```bash
   cordova plugin add cordova-plugin-mfp-encrypt-utils.
   ```
@@ -126,7 +129,7 @@ try {
 {: android}
 
 ## Supporto di più utenti in JSONStore
-{: #multiple_user_jsonstore} 
+{: #multiple_user_jsonstore}
 
 <!--### Cordova
 {: #multiple_user_jsonstore_cordova} -->
@@ -266,7 +269,7 @@ Puoi raggiungere questi obiettivi utilizzando `WLResourceRequest` o `jQuery.ajax
    {: codeblock}
    {: cordova}
    Per evitare che JSONStore contrassegni i documenti come "dirty", passa l'opzione `{markDirty:false}` a `add`, `replace` e `remove`.
-   {: tip} 
+   {: tip}
    {: cordova}
 5. Puoi anche utilizzare l'API `getAllDirty` per richiamare i documenti dirty.
    ```javascript
@@ -325,7 +328,7 @@ Puoi raggiungere questi obiettivi utilizzando `WLResourceRequest` o `jQuery.ajax
         // result contains an array of documents with the results from the find
     }).fail(function () {
         // handle failure
-    }); 
+   });
    ```
    {: codeblock}
    {: cordova}
@@ -378,7 +381,7 @@ Puoi raggiungere questi obiettivi utilizzando `WLResourceRequest`.
    {: codeblock}
    {: ios}
    Per evitare che JSONStore contrassegni i documenti come "dirty", passa l'opzione `{markDirty:false}` a `add`, `replace` e `remove`.
-   {: tip} 
+   {: tip}
 5. Per eseguire il push delle modifiche a un adattatore, richiama `allDirty` per ottenere un elenco dei documenti con le modifiche e usa quindi `WLResourceRequest`. Dopo che i dati sono stati inviati e che è stata ricevuta una risposta di esito positivo, assicurati di richiamare `markDocumentsClean`.
    ```swift
     // Start - PushToAdapter
@@ -464,7 +467,7 @@ Puoi raggiungere questi obiettivi utilizzando funzioni quali `WLResourceRequest`
    {: codeblock}
    {: android}
    Per evitare che JSONStore contrassegni i documenti come "dirty", passa l'opzione `options.setMarkDirty(false)` a `add`, `replace` e `remove`.
-   {: tip} 
+   {: tip}
    {: android}
 5. Per eseguire il push delle modifiche a un adattatore, richiama `findAllDirtyDocuments` per ottenere un elenco dei documenti con le modifiche e usa quindi `WLResourceRequest`. Dopo che i dati sono stati inviati e che è stata ricevuta una risposta di esito positivo, assicurati di richiamare `markDocumentsClean`.
    ```java
@@ -498,5 +501,5 @@ Puoi raggiungere questi obiettivi utilizzando funzioni quali `WLResourceRequest`
    ```
    {: codeblock}
    {: android}
-6. Scarica il progetto dell'applicazione Android nativa dalla sezione **Esempi**. Il progetto contiene un'applicazione Android nativa che utilizza il set di API JSONStore. Il progetto Maven dell'adattatore JavaScript può essere scaricato da [qui](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80). 
+6. Scarica il progetto dell'applicazione Android nativa dalla sezione **Esempi**. Il progetto contiene un'applicazione Android nativa che utilizza il set di API JSONStore. Il progetto Maven dell'adattatore JavaScript può essere scaricato da [qui](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80).
 {: android}

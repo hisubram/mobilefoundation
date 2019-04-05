@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation, mobile analytics, professional plan, configure database
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -25,15 +28,15 @@ Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_
 Tieni conto di quanto segue, prima di configurare l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application
 * {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application è supportato solo con i piani {{site.data.keyword.Db2_on_Cloud_short}} e {{site.data.keyword.composeForPostgreSQL}} {{site.data.keyword.Bluemix_notm}}.
 
-* Devi avere accesso alle credenziali dell'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} o {{site.data.keyword.composeForPostgreSQL}} prima di poter configurare le impostazioni della tua istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
+* Devi avere accesso alle credenziali dell'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} o {{site.data.keyword.composeForPostgreSQL}} prima di poter configurare le impostazioni della tua istanza del servizio {{site.data.keyword.mobilefoundation_short}}. 
 
 > **Nota**: l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} può esistere in qualsiasi `Spazio` all'interno della tua `Organizzazione` {{site.data.keyword.Bluemix_notm}} o in qualsiasi altra `Organizzazione` a cui hai accesso. Assicurati di disporre delle autorizzazioni per accedere allo `Spazio` in cui è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} o {{site.data.keyword.composeForPostgreSQL}}.
 
 
-## Configura la connessione al database 
+## Configura la connessione al database
 {: #configure_dashdb_p2}
 
-###  Prime operazioni nella configurazione 
+###  Prime operazioni nella configurazione
 {: #firststeps_p2}
 
 Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, completa la seguente procedura per iniziare a utilizzarla.
@@ -41,7 +44,7 @@ Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_
 ### Impostazione della connessione all'istanza del servizio Db2 on Cloud
 {: #connect_dashdb_p2}
 
-Una volta creata l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, vedrai la pagina *Panoramica*. Qui dovrai specificare le informazioni di connessione per l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} a cui deve connettersi l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
+Una volta creata l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application, vedrai la pagina *Panoramica*. Qui devi specificare le informazioni di connessione per l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} a cui deve connettersi l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}. 
 
 Se non hai un'istanza Db2 on Cloud esistente, puoi creare una nuova istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}}.
 
@@ -57,12 +60,12 @@ se desideri l'alta disponibilità per l'istanza del servizio {{site.data.keyword
 Viene creata una nuova istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} che fornisce un'istanza
 {{site.data.keyword.Db2_on_Cloud_short}} dedicata con 8 GB RAM e 2 vCPU e 500 GB di archiviazione.
 
-Utilizza la seguente procedura per stabilire una connessione a un'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} esistente o all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} che hai appena creato:
+Utilizza la seguente procedura per stabilire una connessione a un'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} esistente o all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} che hai creato:
 
 1. Seleziona l'`Organizzazione` {{site.data.keyword.Bluemix_notm}} dove è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}.
 
 + Seleziona lo `Spazio` {{site.data.keyword.Bluemix_notm}} in cui è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, dall'elenco di spazi disponibili nell'`Organizzazione` selezionata.   
-> **Nota:** se non vedi elencati l'`Organizzazione` e lo `Spazio` in cui è presente la tua istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, verifica di essere un membro di tale `Organizzazione` e `Spazio`. Devi avere un ruolo di *Sviluppatore* per l'accesso all'organizzazione e allo spazio. Il servizio {{site.data.keyword.mobilefoundation_short}} accede alle credenziali dal servizio {{site.data.keyword.Db2_on_Cloud_short}}.
+> **Nota:** se non vedi elencati l'`Organizzazione` e lo `Spazio`, in cui è presente la tua istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, verifica di essere un membro di tale `Organizzazione` e `Spazio`. Devi avere un ruolo di *Sviluppatore* per l'accesso all'organizzazione e allo spazio. Il servizio {{site.data.keyword.mobilefoundation_short}} accede alle credenziali dal servizio {{site.data.keyword.Db2_on_Cloud_short}}.
 
 + Seleziona il `Nome servizio` e le `Credenziali` {{site.data.keyword.Db2_on_Cloud_short}} per connetterti all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} esistente.
 
@@ -108,7 +111,7 @@ Con la console, puoi gestire le tue applicazioni mobili, gli adattatori e i tuoi
 * Questa azione arresta il tuo server esistente e elimina i dati. Viene creata una nuova istanza del server con una versione aggiornata, se disponibile. Il completamento di questa azione richiede
 alcuni minuti.
 
-I dati della tua istanza del server precedente, incluse le informazioni su applicazioni e adattatori, vengono mantenuti nell'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} configurata. Questi dati saranno utilizzati per ricreare il tuo server.
+I dati della tua istanza del server precedente che includono le informazioni su applicazioni e adattatori vengono mantenuti nell'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} configurata. Questi dati saranno utilizzati per ricreare il tuo server.
 {: note}
 
 ##	Impostazione della configurazione avanzata nel piano Professional 1 Application
@@ -130,4 +133,4 @@ Il server Mobile Analytics è incluso e preconfigurato con l'istanza del servizi
 
 * Avvia la console Mobile Analytics da {{site.data.keyword.mfp_oc_short_notm}}.
 
-Per ulteriori informazioni su Mobile Analytics, puoi fare riferimento [qui](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.
+Per ulteriori informazioni su Mobile Analytics, vedi [qui](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.

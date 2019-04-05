@@ -2,18 +2,22 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="mobilefoundation" service-name="Mobile Foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation/index.html" path="services/mobilefoundation"}
+{: .toc subcollection="mobilefoundation" service-name="Mobile Foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation?topic=mobilefoundation-getting-started-tutorial#getting-started-tutorial" path="services/mobilefoundation"}
 Mobile
 Foundation
 
     {: .navgroup id="learn"}
-    index.md
+    getting-started.md
 
     {: .topicgroup}
     Informazioni
         mdoverview.md
         pricing.md
         release_notes.md
+
+    {: .topicgroup}
+    Notifiche di push
+        about_push_notifications.md
 
     {: .topicgroup}
     Archiviazione offline
@@ -36,6 +40,14 @@ Foundation
         export_import_apps_adapters.md
 
 	{: .topicgroup}
+    Configura e invia le notifiche di push
+        configure_push_notifications.md
+        send_push_notifications.md
+	    handling_push_notifications_in_client_applications.md
+		silent_notifications.md
+		interactive_notifications.md
+
+	{: .topicgroup}
     Proteggi un'applicazione end-to-end
         prevent_man_in_the_middle_attack.md
         obfuscate_resources.md
@@ -48,6 +60,7 @@ Foundation
     Ottieni informazioni approfondite sulle applicazioni
         instrument_an_app.md
         visualize_insights_on_console.md
+        build_custom_charts.md
         alerts.md
     add_sdk_to_app.md
 
@@ -69,6 +82,8 @@ Foundation
     {: .topicgroup}
     Esegui l'integrazione con altri servizi IBM Cloud
         integrate_secure_gateway.md
+        delivering_mfp_apps_using_ibm_cloud_devops.md
+		integrating_cloud_object_storage.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -120,5 +135,5 @@ Foundation
     Community degli sviluppatori
         [StackOverflow](https://stackoverflow.com/questions/tagged/ibm-mobile-services)
         [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/bluemix-mobile-foundation/?smartspace=bluemix)
-        [MFP Dev Slack channel](https://slackin.mybluemix.net)
+        [Canale YouTube IBM Mobile Dev](https://www.youtube.com/channel/UCbacV2-Y2NVAOsUMfeitAdg)
     {: .navgroup-end}

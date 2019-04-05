@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, adapter security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -162,4 +165,3 @@ Il seguente codice disabilita la protezione delle risorse per una procedura `use
 {: #unprotected-resources}
 
 Una risorsa non protetta è una risorsa che non richiede un token di accesso. Il framework di sicurezza MobileFirst non gestisce l'accesso alle risorse non protette e non convalida o controlla l'identità dei client che accedono a tali risorse. Pertanto, funzioni quali Direct Update, il blocco dell'accesso ai dispositivi o la disabilitazione in remoto di un'applicazione non sono supportate per le risorse non protette.
-

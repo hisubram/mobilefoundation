@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation, mobile analytics, professional plan, configure database
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -16,7 +19,7 @@ lastupdated:  "2019-02-12"
 #	Configurazione con il piano Professional Per Device
 {: #using_mobilefoundation_p5}
 
-Con il piano Professional Per Device, gli utenti possono creare, testare ed eseguire applicazioni mobili in produzione, indipendentemente dal numero di utenti o dispositivi mobili. Gli addebiti si basano sul numero di dispositivi client giornalieri. Questo piano supporta ampie distribuzioni e alta disponibilità.
+Con il piano Professional Per Device, gli utenti possono creare, verificare ed eseguire applicazioni mobili in produzione, indipendentemente dal numero di utenti o dispositivi mobili. Gli addebiti si basano sul numero di dispositivi client giornalieri. Questo piano supporta ampie distribuzioni e alta disponibilità.
 Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device, leggi la seguente procedura introduttiva al servizio.
 
 ## Prerequisiti nel piano Professional Per Device
@@ -25,7 +28,7 @@ Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_
 Tieni conto di quanto segue, prima di configurare l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device
 * {{site.data.keyword.mobilefoundation_short}}: Professional Per Device è supportato solo con i piani di {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} {{site.data.keyword.Bluemix_notm}}.
 
-* Devi avere accesso alle credenziali dell'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} prima di poter configurare le impostazioni della tua istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
+* Devi avere accesso alle credenziali dell'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} prima di poter configurare le impostazioni della tua istanza del servizio {{site.data.keyword.mobilefoundation_short}}. 
 
 L'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} può esistere in qualsiasi `Spazio` all'intero della tua `Organizzazione` {{site.data.keyword.Bluemix_notm}} o in qualsiasi altra `Organizzazione` a cui hai accesso. Assicurati di disporre delle autorizzazioni per accedere allo `Spazio` in cui è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} o {{site.data.keyword.composeForPostgreSQL}}.
 {: note}
@@ -41,7 +44,7 @@ Dopo che hai creato l'istanza del servizio {{site.data.keyword.mobilefoundation_
 ### Configurazione della connessione al database
 {: #connect_dashdb_p5}
 
-Una volta creata l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device, vedrai la pagina *Panoramica* in cui puoi specificare le informazioni di connessione per l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}}, a cui deve connettersi l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
+Dopo che l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}: Professional Per Device è stata creata, vedrai la pagina *Panoramica* dove dovrai specificare le informazioni di connessione per l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}}, a cui deve connettersi l'istanza del servizio {{site.data.keyword.mobilefoundation_short}}. 
 
 Puoi anche creare una nuova istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}}, se non ne hai una già esistente.
 
@@ -57,12 +60,12 @@ se desideri l'alta disponibilità per l'istanza del servizio {{site.data.keyword
 Viene creata una nuova istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} che fornisce un'istanza
 {{site.data.keyword.Db2_on_Cloud_short}} dedicata con 8 GB RAM e 2 vCPU e 500 GB di archiviazione.
 
-Utilizza la seguente procedura per stabilire una connessione a un'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} esistente o all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} che hai appena creato:
+Utilizza la seguente procedura per stabilire una connessione a un'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} esistente o all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} che hai creato:
 
 1. Seleziona l'`Organizzazione` {{site.data.keyword.Bluemix_notm}} dove è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}.
 
 + Seleziona lo `Spazio` {{site.data.keyword.Bluemix_notm}} in cui è presente l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, dall'elenco di spazi disponibili nell'`Organizzazione` selezionata.   
-Se non vedi elencati l'`Organizzazione` e lo `Spazio` in cui è presente la tua istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, verifica di essere un membro di tale `Organizzazione` e `Spazio`. Devi avere un ruolo di *Sviluppatore* per l'accesso all'organizzazione e allo spazio, in quanto il servizio {{site.data.keyword.mobilefoundation_short}} accede alla credenziali dal servizio {{site.data.keyword.Db2_on_Cloud_short}}.
+Se non vedi elencati l'`Organizzazione` e lo `Spazio`, in cui è presente la tua istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}}, verifica di essere un membro di tale `Organizzazione` e `Spazio`. Devi avere un ruolo di *Sviluppatore* per l'accesso all'organizzazione e allo spazio, in quanto il servizio {{site.data.keyword.mobilefoundation_short}} accede alla credenziali dal servizio {{site.data.keyword.Db2_on_Cloud_short}}.
 {: note}
 + Seleziona il `Nome servizio` e le `Credenziali` {{site.data.keyword.Db2_on_Cloud_short}} per connetterti all'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} esistente.
 
@@ -81,7 +84,7 @@ Non puoi modificare l'istanza del servizio {{site.data.keyword.Db2_on_Cloud_shor
 * Per avviare {{site.data.keyword.mfserver_short_notm}}, con le impostazioni predefinite, fai clic su **Avvia server di base**.
 
 * Questa selezione crea un {{site.data.keyword.mfserver_long_notm}} con le seguenti impostazioni:
-    -  Due nodi con 1 GB di memoria ciascuno. Questa dimensione è buona per lo sviluppo, per delle attività moderate di test e i carichi di lavoro di produzione su piccola scala.
+    -  Due nodi con 1 GB di memoria ciascuno. Questa dimensione è buona per lo sviluppo, per delle attività moderate di test e i carichi di lavoro di produzione su piccola scala. 
 
     -	Il `nome utente` e la `password` ti vengono generati automaticamente. Disporrai dell'accesso ad essi quando il server è avviato e in esecuzione.
 
@@ -108,7 +111,7 @@ Con la console, puoi gestire le tue applicazioni mobili, gli adattatori e i tuoi
 * Questa azione arresta il tuo server esistente e elimina i dati. Viene creata una nuova istanza del server con una versione aggiornata, se disponibile. Il completamento di questa azione richiede
 alcuni minuti.
 
-I dati della tua istanza del server precedente, incluse le informazioni su applicazioni e adattatori, vengono mantenuti nell'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} configurata. Questi dati saranno utilizzati per ricreare il tuo server.
+I dati della tua istanza del server precedente che includono le informazioni su applicazioni e adattatori vengono mantenuti nell'istanza del servizio {{site.data.keyword.Db2_on_Cloud_short}} configurata. Questi dati saranno utilizzati per ricreare il tuo server.
 {: note}
 
 ##	Impostazione della configurazione avanzata nel piano Professional Per Device
@@ -129,4 +132,4 @@ Il server Mobile Analytics è incluso e preconfigurato con l'istanza del servizi
 
 * Avvia la console Mobile Analytics da {{site.data.keyword.mfp_oc_short_notm}}.
 
-Per ulteriori informazioni su Mobile Analytics, puoi fare riferimento [qui](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.
+Per ulteriori informazioni su Mobile Analytics, vedi [qui](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.

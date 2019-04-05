@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-13"
 
+keywords: integration, mobile foundation, secure gateway
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -45,7 +48,7 @@ La seguente immagine illustra l'architettura utilizzata nello scenario di integr
 {: #implementing_sg_integration}
 
 ### Crea un'istanza del servizio Secure Gateway
-Accedi a IBM Cloud e crea un'istanza del [servizio Secure Gateway](https://cloud.ibm.com/catalog/services/secure-gateway/). 
+Accedi a IBM Cloud e crea un'istanza del [servizio Secure Gateway](https://cloud.ibm.com/catalog/services/secure-gateway/).
 
 ![IBM Cloud](images/SecureGatewayInst.gif)
 
@@ -68,7 +71,7 @@ Dall'interno del tuo nuovo gateway dalla scheda **Clients**, fai clic su **Conne
 
 Puoi utilizzare uno qualsiasi dei client di tua scelta ed eseguire il client Secure Gateway nel tuo ambiente in loco. Questa procedura per configurare il client Secure Gateway è disponibile nella console Secure Gateway.
 
-In questa esercitazione, utilizzeremo l'opzione del contenitore Docker per eseguire il client Secure Gateway. 
+In questa esercitazione, utilizzeremo l'opzione del contenitore Docker per eseguire il client Secure Gateway.
 Attieniti alla procedura indicata di seguito:
 *   Installa Docker sulla tua macchina in loco, se non è già installato.
 *   Avvia un terminale ed esegui il client Secure Gateway su un contenitore utilizzando il comando mostrato nella console del servizio.
@@ -127,13 +130,13 @@ mfpdev adapter deploy
 
 Ulteriori informazioni sulla creazione e sulla distribuzione degli adattatori sono disponibili [qui ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/).
 {: tip}
- 
-Fornisci i dettagli di host e porta cloud per l'endpoint della risorsa nell'adattatore JavaHTTP, ottenuto dalla sezione precedente. 
+
+Fornisci i dettagli di host e porta cloud per l'endpoint della risorsa nell'adattatore JavaHTTP, ottenuto dalla sezione precedente.
 
 ![Configurazione dell'adattatore](images/AdapterConfiguration.png)
 
 dove `cap-sg-prd-5.securegateway.appdomain.cloud`e `18946` sono, rispettivamente, l'host e la porta di Secure Gateway.
- 
+
 L'adattatore Mobile Foundation è ora configurato e il servizio Mobile Foundation è ora abilitato a funzionare con un sistema in loco all'interno dell'azienda utilizzando il servizio Secure Gateway.
 
 ### Creazione e registrazione dell'applicazione di esempio Mobile Foundation
@@ -152,4 +155,3 @@ Puoi stabilire una connessione a più endpoint in loco configurando più destina
 {: #summary_int_sec_gw}
 
 Utilizzando questa esercitazione, dovresti essere in grado di stabilire una connessione protetta tra gli adattatori Mobile Foundation in esecuzione su IBM Cloud e un endpoint HTTP in loco utilizzando il servizio Secure Gateway.
-

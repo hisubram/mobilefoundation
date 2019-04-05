@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-02-13"
 
+keywords: jsonstore, code samples, offline storage
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -22,7 +25,7 @@ lastupdated:  "2019-02-13"
 {: #samples_cordova }
 {: cordova}
 
-#### Inizializza e apri connessioni, ottieni un accessor e aggiungi i dati in Cordova 
+#### Inizializza e apri connessioni, ottieni un accessor e aggiungi i dati in Cordova
 {: #initialize-and-open-connections-get-an-accessor-and-add-data-cordova }
 {: cordova}
 
@@ -129,7 +132,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Sostituisci - modifica i documenti già archiviati all'interno di una raccolta in Cordova 
+#### Sostituisci - modifica i documenti già archiviati all'interno di una raccolta in Cordova
 {: cordova}
 
 ```javascript
@@ -160,7 +163,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Rimuovi - elimina tutti i documenti che corrispondono alla query in Cordova 
+#### Rimuovi - elimina tutti i documenti che corrispondono alla query in Cordova
 {: cordova}
 
 ```javascript
@@ -193,7 +196,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Conta - ottieni il numero totale di documenti che corrispondono a una query in Cordova 
+#### Conta - ottieni il numero totale di documenti che corrispondono a una query in Cordova
 {: cordova}
 
 ```javascript
@@ -224,7 +227,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Elimina permanentemente - elimina i dati per tutti gli utenti, elimina permanentemente l'archiviazione interna e cancella le risorse utente di sicurezza in Cordova 
+#### Elimina permanentemente - elimina i dati per tutti gli utenti, elimina permanentemente l'archiviazione interna e cancella le risorse utente di sicurezza in Cordova
 {: cordova}
 
 ```javascript
@@ -241,7 +244,7 @@ WL.JSONStore.destroy()
 {: codeblock}
 {: cordova}
 
-#### Sicurezza - chiudi l'accesso a tutte le raccolte aperte per l'utente corrente in Cordova 
+#### Sicurezza - chiudi l'accesso a tutte le raccolte aperte per l'utente corrente in Cordova
 {: cordova}
 
 ```javascript
@@ -258,7 +261,7 @@ WL.JSONStore.closeAll()
 {: codeblock}
 {: cordova}
 
-#### Sicurezza - modifica la password utilizzata per accedere a un archivio in Cordova 
+#### Sicurezza - modifica la password utilizzata per accedere a un archivio in Cordova
 {: cordova}
 
 ```javascript
@@ -296,7 +299,7 @@ WL.JSONStore.changePassword(oldPassword, newPassword, username)
 {: codeblock}
 {: cordova}
 
-#### Esegui il push - ottieni tutti i documenti contrassegnati come dirty, inviali a un adattatore e contrassegnali come puliti in Cordova 
+#### Esegui il push - ottieni tutti i documenti contrassegnati come dirty, inviali a un adattatore e contrassegnali come puliti in Cordova
 {: cordova}
 
 ```javascript
@@ -339,7 +342,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Esegui il pull - ottieni nuovi dati da un adattatore in Cordova 
+#### Esegui il pull - ottieni nuovi dati da un adattatore in Cordova
 {: cordova}
 
 ```javascript
@@ -392,7 +395,7 @@ resource.send()
 {: codeblock}
 {: cordova}
 
-#### Controlla se un documento è dirty in Cordova 
+#### Controlla se un documento è dirty in Cordova
 {: cordova}
 
 ```javascript
@@ -416,7 +419,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Controlla il numero di documenti dirty in Cordova 
+#### Controlla il numero di documenti dirty in Cordova
 {: cordova}
 
 ```javascript
@@ -461,7 +464,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Cancella tutti i dati che si trovano all'interno di una raccolta in Cordova 
+#### Cancella tutti i dati che si trovano all'interno di una raccolta in Cordova
 {: cordova}
 
 ```javascript
@@ -485,7 +488,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Avvia una transazione, aggiungi dei dati, rimuovi un documento, esegui il commit della transazione ed esegui il rollback della transazione se si verifica un errore in Cordova 
+#### Avvia una transazione, aggiungi dei dati, rimuovi un documento, esegui il commit della transazione ed esegui il rollback della transazione se si verifica un errore in Cordova
 {: #cordova-transaction }
 {: cordova}
 
@@ -533,7 +536,7 @@ WL.JSONStore.startTransaction()
 {: codeblock}
 {: cordova}
 
-#### Ottieni le informazioni sul file in Cordova 
+#### Ottieni le informazioni sul file in Cordova
 
 ```javascript
 WL.JSONStore.fileInfo()
@@ -548,7 +551,7 @@ WL.JSONStore.fileInfo()
 {: codeblock}
 {: cordova}
 
-#### Cerca con like, rightLike e leftLike in Cordova 
+#### Cerca con like, rightLike e leftLike in Cordova
 {: cordova}
 
 ```javascript
@@ -574,7 +577,7 @@ var arr2 = WL.JSONStore.QueryPart().leftLike('name', 'los');  // returns {name: 
 {: #samples-ios }
 {: ios}
 
-#### Inizializza e apri connessioni, ottieni un accessor e aggiungi i dati in iOS 
+#### Inizializza e apri connessioni, ottieni un accessor e aggiungi i dati in iOS
 {: ios}
 
 ```objc
@@ -632,7 +635,7 @@ Initialize with a secure random token from the server
 {: codeblock}
 {: ios}
 
-#### Trova - individua i documenti all'interno dell'archivio in iOS 
+#### Trova - individua i documenti all'interno dell'archivio in iOS
 {: ios}
 
 ```objc
@@ -674,7 +677,7 @@ for (NSDictionary* result in results) {
 {: codeblock}
 {: ios}
 
-#### Sostituisci - modifica i documenti già archiviati all'interno di una raccolta in iOS 
+#### Sostituisci - modifica i documenti già archiviati all'interno di una raccolta in iOS
 {: ios}
 
 ```objc
@@ -694,7 +697,7 @@ int docsReplaced = [[people replaceDocuments:docs andMarkDirty:NO error:&error] 
 {: codeblock}
 {: ios}
 
-#### Rimuovi - elimina tutti i documenti che corrispondono alla query in iOS 
+#### Rimuovi - elimina tutti i documenti che corrispondono alla query in iOS
 {: ios}
 
 ```objc
@@ -710,7 +713,7 @@ int docsRemoved = [[people removeWithIds:@[@1] andMarkDirty:NO error:&error] int
 {: codeblock}
 {: ios}
 
-#### Conta - ottieni il numero totale di documenti che corrispondono a una query in iOS 
+#### Conta - ottieni il numero totale di documenti che corrispondono a una query in iOS
 {: ios}
 
 ```objc
@@ -732,7 +735,7 @@ int countResult = [[people countWithQueryParts:@[queryPart] error:&error] intVal
 {: codeblock}
 {: ios}
 
-#### Elimina permanentemente - elimina i dati per tutti gli utenti, elimina permanentemente l'archiviazione interna e cancella le risorse utente di sicurezza in iOS 
+#### Elimina permanentemente - elimina i dati per tutti gli utenti, elimina permanentemente l'archiviazione interna e cancella le risorse utente di sicurezza in iOS
 {: ios}
 
 ```objc
@@ -745,7 +748,7 @@ NSError* error = nil;
 {: codeblock}
 {: ios}
 
-#### Sicurezza - chiudi l'accesso a tutte le raccolte aperte per l'utente corrente in iOS 
+#### Sicurezza - chiudi l'accesso a tutte le raccolte aperte per l'utente corrente in iOS
 {: ios}
 
 ```objc
@@ -758,7 +761,7 @@ NSError* error = nil;
 {: codeblock}
 {: ios}
 
-#### Sicurezza - modifica la password utilizzata per accedere a un archivio in iOS 
+#### Sicurezza - modifica la password utilizzata per accedere a un archivio in iOS
 {: ios}
 
 ```objc
@@ -781,7 +784,7 @@ newPassword = nil;
 {: codeblock}
 {: ios}
 
-#### Esegui il push - ottieni tutti i documenti contrassegnati come dirty, inviali a un adattatore e contrassegnali come puliti in iOS 
+#### Esegui il push - ottieni tutti i documenti contrassegnati come dirty, inviali a un adattatore e contrassegnali come puliti in iOS
 {: ios}
 
 ```objc
@@ -803,7 +806,7 @@ int numCleaned = [[people markDocumentsClean:dirtyDocs error:&error] intValue];
 {: codeblock}
 {: ios}
 
-#### Esegui il pull - ottieni nuovi dati da un adattatore in iOS 
+#### Esegui il pull - ottieni nuovi dati da un adattatore in iOS
 {: ios}
 
 ```objc
@@ -824,7 +827,7 @@ int numChanged = [[people changeData:data withReplaceCriteria:@[@"id", @"ssn"] a
 {: codeblock}
 {: ios}
 
-#### Controlla se un documento è dirty in iOS 
+#### Controlla se un documento è dirty in iOS
 {: ios}
 
 ```objc
@@ -840,7 +843,7 @@ BOOL isDirtyResult = [people isDirtyWithDocumentId:1 error:&error];
 {: codeblock}
 {: ios}
 
-#### Controlla il numero di documenti dirty in iOS 
+#### Controlla il numero di documenti dirty in iOS
 {: ios}
 
 ```objc
@@ -872,7 +875,7 @@ NSError* error = nil;
 {: codeblock}
 {: ios}
 
-#### Cancella tutti i dati che si trovano all'interno di una raccolta in iOS 
+#### Cancella tutti i dati che si trovano all'interno di una raccolta in iOS
 {: ios}
 
 ```objc
@@ -888,7 +891,7 @@ NSError* error = nil;
 {: codeblock}
 {: ios}
 
-#### Avvia una transazione, aggiungi dei dati, rimuovi un documento, esegui il commit della transazione ed esegui il rollback della transazione se si verifica un errore in iOS 
+#### Avvia una transazione, aggiungi dei dati, rimuovi un documento, esegui il commit della transazione ed esegui il rollback della transazione se si verifica un errore in iOS
 {: #ios-transaction }
 {: ios}
 
@@ -921,7 +924,7 @@ if (addError != nil || removeError != nil) {
 {: codeblock}
 {: ios}
 
-#### Ottieni le informazioni sul file in iOS 
+#### Ottieni le informazioni sul file in iOS
 {: ios}
 
 ```objc
@@ -939,7 +942,7 @@ NSArray* results = [[JSONStore sharedInstance] fileInfoAndReturnError:&error];
 {: #samples_android }
 {: android}
 
-#### Inizializza e apri connessioni, ottieni un accessor e aggiungi i dati in Android 
+#### Inizializza e apri connessioni, ottieni un accessor e aggiungi i dati in Android
 {: android}
 
 ```java
@@ -982,7 +985,7 @@ throw ex;
 {: codeblock}
 {: android}
 
-#### Inizializza con un token casuale sicuro dal server in Android 
+#### Inizializza con un token casuale sicuro dal server in Android
 {: android}
 
 ```java
@@ -1046,7 +1049,7 @@ aTask.execute(ctx);
 {: codeblock}
 {: android}
 
-#### Trova - individua i documenti all'interno dell'archivio in Android 
+#### Trova - individua i documenti all'interno dell'archivio in Android
 {: android}
 
 ```java
@@ -1090,7 +1093,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Sostituisci - modifica i documenti già archiviati all'interno di una raccolta in Android 
+#### Sostituisci - modifica i documenti già archiviati all'interno di una raccolta in Android
 {: android}
 
 ```java
@@ -1120,7 +1123,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Rimuovi - elimina tutti i documenti che corrispondono alla query in Android 
+#### Rimuovi - elimina tutti i documenti che corrispondono alla query in Android
 {: android}
 
 ```java
@@ -1154,7 +1157,7 @@ catch (JSONException ex) {
 {: codeblock}
 {: android}
 
-#### Conta - ottieni il numero totale di documenti che corrispondono a una query in Android 
+#### Conta - ottieni il numero totale di documenti che corrispondono a una query in Android
 {: android}
 
 ```java
@@ -1185,7 +1188,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Elimina permanentemente - elimina i dati per tutti gli utenti, elimina permanentemente l'archiviazione interna e cancella le risorse utente di sicurezza in Android 
+#### Elimina permanentemente - elimina i dati per tutti gli utenti, elimina permanentemente l'archiviazione interna e cancella le risorse utente di sicurezza in Android
 {: android}
 
 ```java
@@ -1204,7 +1207,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Sicurezza - chiudi l'accesso a tutte le raccolte aperte per l'utente corrente in Android 
+#### Sicurezza - chiudi l'accesso a tutte le raccolte aperte per l'utente corrente in Android
 {: android}
 
 ```java
@@ -1223,7 +1226,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Sicurezza - modifica la password utilizzata per accedere a un archivio in Android 
+#### Sicurezza - modifica la password utilizzata per accedere a un archivio in Android
 {: android}
 
 ```java
@@ -1252,7 +1255,7 @@ finally {
 {: codeblock}
 {: android}
 
-#### Esegui il push - ottieni tutti i documenti contrassegnati come dirty, inviali a un adattatore e contrassegnali come puliti in Android 
+#### Esegui il push - ottieni tutti i documenti contrassegnati come dirty, inviali a un adattatore e contrassegnali come puliti in Android
 {: android}
 
 ```java
@@ -1277,7 +1280,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Esegui il pull - ottieni nuovi dati da un adattatore in Android 
+#### Esegui il pull - ottieni nuovi dati da un adattatore in Android
 {: android}
 
 ```java
@@ -1321,7 +1324,7 @@ catch (JSONException ex) {
 {: codeblock}
 {: android}
 
-#### Controlla se un documento è dirty in Android 
+#### Controlla se un documento è dirty in Android
 {: android}
 
 ```java
@@ -1343,7 +1346,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Controlla il numero di documenti dirty in Android 
+#### Controlla il numero di documenti dirty in Android
 {: android}
 
 ```java
@@ -1388,7 +1391,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Cancella tutti i dati che si trovano all'interno di una raccolta in Android 
+#### Cancella tutti i dati che si trovano all'interno di una raccolta in Android
 {: android}
 
 ```java
@@ -1410,7 +1413,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Avvia una transazione, aggiungi dei dati, rimuovi un documento, esegui il commit della transazione ed esegui il rollback della transazione se si verifica un errore in Android 
+#### Avvia una transazione, aggiungi dei dati, rimuovi un documento, esegui il commit della transazione ed esegui il rollback della transazione se si verifica un errore in Android
 {: #android-transaction }
 {: android}
 
@@ -1455,7 +1458,7 @@ catch (JSONException ex) {
 {: codeblock}
 {: android}
 
-#### Ottieni le informazioni sul file in Android 
+#### Ottieni le informazioni sul file in Android
 {: android}
 
 ```java

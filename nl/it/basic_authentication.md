@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: security, basic authentication, protecting resources, tokens, scopemapping
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -29,7 +32,7 @@ Il protocollo OAuth separa i ruoli del server di autorizzazione e del server di 
 
 Il framework di sicurezza è sviluppato intorno a un server di autorizzazione che implementa il protocollo OAuth ed espone gli endpoint OAuth con cui il client interagisce per ottenere i token di accesso. Il framework di sicurezza fornisce i blocchi di creazione per l'implementazione di una logica di autorizzazione personalizzata in aggiunta al server di autorizzazione e al sottostante protocollo OAuth. Per impostazione predefinita, MobileFirst Server funge anche da **server di autorizzazione**. Puoi tuttavia configurare un'applicazione IBM WebSphere DataPower perché funga da server di autorizzazione e interagisca con MobileFirst Server.
 
-L'applicazione client può quindi utilizzare questi token per accedere alle risorse su un **server di risorse**, che può essere MobileFirst Server stesso oppure un server esterno. Il server di risorse controlla la validità del token per accertarsi che al client possa essere concesso l'accesso alla risorsa richiesta. La separazione tra server di risorse e server di autorizzazione ti consente di implementare la sicurezza sulle risorse in esecuzione al di fuori di MobileFirst Server.
+L'applicazione client può quindi utilizzare questi token per accedere alle risorse su un **server di risorse**, che può essere MobileFirst Server stesso oppure un server esterno. Il server di risorse controlla la validità del token per accertarsi che al client possa essere concesso l'accesso alla risorsa richiesta. La separazione tra server di risorse e server di autorizzazione implementa la sicurezza sulle risorse in esecuzione al di fuori di MobileFirst Server.
 
 Gli sviluppatori di applicazioni proteggono l'accesso alle loro risorse definendo l'ambito richiesto per ogni risorsa protetta e implementando i controlli di sicurezza e i gestori delle verifiche. Il framework di sicurezza lato server e l'API lato client gestiscono lo scambio di messaggi OAuth e l'interazione con il server di autorizzazione in modo trasparente, consentendo agli sviluppatori di concentrarsi solo sulla logica di autorizzazione.
 
@@ -64,8 +67,11 @@ Configura il periodo di scadenza del token di accesso massimo dell'applicazione 
 
 * Modifica del file di configurazione dell'applicazione
 
-    1. Da una **finestra di riga di comando**, vai alla cartella root del progetto ed esegui il comando ``mfpdev app pull``.
-    2. Apri il file di configurazione, che si trova nella cartella **[cartella-progetto]\mobilefirst**.
+    1. Da una CLI, vai alla cartella root del progetto ed esegui il seguente comando.
+      ```bash
+      mfpdev app pull
+      ```
+    2. Apri il file di configurazione, che si trova nella cartella `[cartella-progetto]\mobilefirst`.
     3. Modifica il file definendo una proprietà `maxTokenExpiration` e impostane il valore sul periodo di scadenza del token di accesso massimo, in secondi:
         ```java
         {
@@ -79,7 +85,7 @@ Configura il periodo di scadenza del token di accesso massimo dell'applicazione 
 **Struttura della risposta del token di accesso**
 {: #acs_access-tokens-structure}
 
-Una risposta HTTP con esito positivo a una richiesta di token di accesso contiene un oggetto JSON con il token di accesso e i dati aggiuntivi. Il seguente è un esempio di una risposta del token di accesso valida dal server di autorizzazione:
+Una risposta HTTP con esito positivo a una richiesta di token di accesso contiene un oggetto JSON con il token di accesso e i dati supplementari. Il seguente è un esempio di una risposta del token di accesso valida dal server di autorizzazione:
 
 ```json
 HTTP/1.1 200 OK
@@ -111,7 +117,7 @@ Le informazioni **expires_in** e **scope** sono contenute anche nel token stesso
 
 Un token di aggiornamento è un tipo di token speciale che può essere utilizzato per ottenere un nuovo token di accesso quando il token di accesso scade. Per richiedere un nuovo token di accesso, può essere presentato un token di aggiornamento valido. I token di aggiornamento sono token a lunga durata e rimangono validi per un periodo di tempo più lungo rispetto ai token di accesso.
 
-Il token di aggiornamento deve essere utilizzato con cautela da un'applicazione perché può consentire a un utente di rimanere autenticato per sempre. Le applicazioni social media, le applicazioni di e-commerce, l'esplorazione del catalogo del prodotto e le applicazioni di programma di utilità di questo tipo, dove il provider dell'applicazione non autentica gli utenti regolarmente, possono utilizzare i token di aggiornamento. Le applicazioni che impongono frequentemente l'autenticazione degli utenti devono evitare di utilizzare i token di aggiornamento.
+Il token di aggiornamento deve essere utilizzato con cautela da un'applicazione perché può consentire a un utente di rimanere autenticato per sempre. Le applicazioni social media, le applicazioni di e-commerce, l'esplorazione del catalogo del prodotto e le applicazioni di programma di utilità di questo tipo, dove il provider dell'applicazione non autentica gli utenti regolarmente, possono utilizzare i token di aggiornamento. Le applicazioni che impongono frequentemente l'autenticazione degli utenti devono evitare l'uso di token di aggiornamento.
 Token di aggiornamento MobileFirst
 
 Un token di aggiornamento MobileFirst è un'entità firmata digitalmente come un token di accesso che descrive i permessi di autorizzazione di un client. Il token di aggiornamento può essere utilizzato per ottenere un nuovo token di accesso dello stesso ambito. Dopo che la richiesta di autorizzazione del client per un ambito specifico è stata concessa e il client è stato autenticato, l'endpoint del token del server di autorizzazione invia al client una risposta HTTP che contiene il token di accesso e quello di aggiornamento richiesti. Quando il token di accesso scade, il client invia il token di aggiornamento all'endpoint del token del server di autorizzazione per ottenere una nuova serie di token di accesso e token di aggiornamento.
@@ -131,7 +137,7 @@ Il periodo di scadenza del token per il token di aggiornamento è più lungo del
 **Abilitazione della funzione di token di aggiornamento**
 {: #acs_enable-refresh-token}
 
-La funzione di token di aggiornamento può essere abilitata utilizzando le seguenti proprietà rispettivamente sul lato client e sul lato server.
+La funzione di token di aggiornamento può essere abilitata utilizzando le seguenti proprietà rispettivamente sul lato client e sul lato server. 
 
 **Proprietà lato client (Android)**
 *Nome file*: mfpclient.properties
@@ -150,7 +156,7 @@ Ad esempio,
 **Proprietà lato server**
 *Nome file*: server.xml
 *Nome proprietà*: mfp.security.refreshtoken.enabled.apps
-*Valore proprietà*: id bundle dell'applicazione separato da ‘;’
+*Valore proprietà*: application bundle id separated by ‘;’
 
 Ad esempio,
 
@@ -179,7 +185,7 @@ Il seguente è un esempio di una risposta del token di aggiornamento valida dal 
 ```        
 {: codeblock}
 
-La risposta del token di aggiornamento ha l'oggetto di proprietà aggiuntivo refresh_token oltre agli altri oggetti di proprietà spiegati come parte della struttura della risposta del token di accesso.
+La risposta del token di aggiornamento ha un oggetto di proprietà aggiuntivo `refresh_token` oltre agli altri oggetti di proprietà spiegati come parte della struttura della risposta del token di accesso. 
 
 >**Nota**: i token di aggiornamento sono di lunga durata rispetto ai token di accesso. Pertanto, la funzione di token di aggiornamento deve essere utilizzata con cautela. Le applicazioni in cui l'autenticazione utente periodica non è necessaria sono i candidati ideali per l'utilizzo della funzione di token di aggiornamento.
 
@@ -200,12 +206,12 @@ Sono disponibili i seguenti controlli di sicurezza predefiniti:
 * SSO (single sign-on) basato su LTPA
 * Aggiornamento diretto
 
-#### Entità gestore delle verifiche 
+#### Entità gestore delle verifiche
 {: #challengehandler_entity}
 
-Quando prova ad accedere a una risorsa protetta, al client potrebbe essere presentata una verifica. Una verifica è una domanda, un test di sicurezza, una richiesta da parte del server per garantire che al client sia consentito l'accesso a questa risorsa. Più comunemente, questa verifica è una richiesta di credenziali, come ad esempio un nome utente e una password.
+Quando provi ad accedere a una risorsa protetta, al client potrebbe essere presentata una verifica. Una verifica è una domanda, un test di sicurezza, una richiesta da parte del server per garantire che al client sia consentito l'accesso a questa risorsa. Più comunemente, questa verifica è una richiesta di credenziali, come ad esempio un nome utente e una password.
 
-Un gestore delle verifiche è un'entità lato client che implementa la logica di sicurezza lato client e l'interazione utente correlata. 
+Un gestore delle verifiche è un'entità lato client che implementa la logica di sicurezza lato client e l'interazione utente correlata.
 
 >**Importante**: dopo essere stata ricevuta, una verifica non può essere ignorata. Devi rispondere o annullarla. Ignorare una verifica può causare una modalità di funzionamento imprevista.
 
@@ -227,11 +233,11 @@ Un elemento di ambito può essere uno dei seguenti:
 #### Associazione dell'ambito
 {: #scopemapping}
 
-Per impostazione predefinita, gli **elementi di ambito** che scrivi nel tuo **ambito** sono associati a un **controllo di sicurezza con lo stesso nome**. Ad esempio, se scrivi un controllo di sicurezza denominato `PinCodeAttempts`, puoi utilizzare un elemento di ambito con lo stesso nome all'interno del tuo ambito.
+Per impostazione predefinita, gli **elementi di ambito** che scrivi nel tuo **ambito** sono associati a un **controllo di sicurezza** con lo stesso nome. Ad esempio, se scrivi un controllo di sicurezza denominato `PinCodeAttempts`, puoi utilizzare un elemento di ambito con lo stesso nome all'interno del tuo ambito. 
 
-L'associazione di ambito consente di associare elementi di ambito ai controlli di sicurezza. Quando il client chiede un elemento di ambito, questa configurazione definisce quali controlli di sicurezza devono essere applicati. Ad esempio, puoi associare l'elemento di ambito `access-restricted` al tuo controllo di sicurezza `PinCodeAttempts`.
+L'associazione dell'ambito consente l'associazione di elementi di ambito ai controlli di sicurezza. Quando il client chiede un elemento di ambito, questa configurazione definisce quali controlli di sicurezza devono essere applicati. Ad esempio, puoi associare l'elemento di ambito `access-restricted` al tuo controllo di sicurezza `PinCodeAttempts`.
 
-L'associazione di ambito è utile quando desideri proteggere una risorsa differentemente, a seconda di quale sia l'applicazione che sta provando ad accedere a essa. Puoi anche associare un ambito a un elenco di zero o più controlli di sicurezza.
+L'associazione dell'ambito è utile quando desideri proteggere una risorsa differentemente, a seconda di quale sia l'applicazione che sta provando ad accedere a essa. Puoi anche associare un ambito a un elenco di zero o più controlli di sicurezza.
 
 Ad esempio: scope = `access-restricted deletePrivilege`
 
@@ -249,7 +255,7 @@ Ad esempio: scope = `access-restricted deletePrivilege`
 Puoi anche modificare manualmente il file JSON di configurazione dell'applicazione con la configurazione richiesta ed eseguire nuovamente il push delle modifiche a un MobileFirst Server.
 
 1. Da una **finestra di riga di comando**, vai alla cartella root del progetto ed esegui il comando `mfpdev app pull`.
-2. Apri il file di configurazione, che si trova nella cartella **[cartella-progetto]\mobilefirst**.
+2. Apri il file di configurazione, che si trova nella cartella `[cartella-progetto]\mobilefirst`.
 3. Modifica il file definendo una proprietà `scopeElementMapping`. In questa proprietà, definisci le coppie di dati, ciascuna delle quali è formata dal nome del tuo elemento di ambito selezionato e da una stringa di zero o più controlli di sicurezza separati da spazi a cui viene associato l'elemento. Ad esempio:
 
 ```java
@@ -258,9 +264,13 @@ Puoi anche modificare manualmente il file JSON di configurazione dell'applicazio
          "SSOUserValidation": "LtpaBasedSSO CredentialsValidation"
      }
 ```
-4. Distribuisci il file JSON di configurazione aggiornato eseguendo il comando: `mfpdev app push`.
+4. Distribuisci il file JSON di configurazione aggiornato eseguendo il seguente comando: 
+  ```bash
+  mfpdev app push
+  ```
 
->Puoi anche eseguire il push delle configurazioni aggiornate ai server remoti. Fai riferimento all'esercitazione Using MobileFirst CLI to Manage MobileFirst artifacts.
+Puoi anche eseguire il push delle configurazioni aggiornate ai server remoti. Fai riferimento all'esercitazione Using MobileFirst CLI to Manage MobileFirst artifacts.
+{: note}
 
 ### Protezione delle risorse
 {: #protecting-resources}
@@ -272,10 +282,10 @@ Puoi proteggere le tue risorse in vari modi:
 #### Ambito dell'applicazione obbligatorio
 {: #mandatoryappscope}
 
-A livello dell'applicazione, puoi definire un ambito che si applicherà a tutte le risorse utilizzate dall'applicazione. Il framework di sicurezza esegue questi controlli (se esistono) in aggiunta ai controlli di sicurezza dell'ambito di risorsa richiesto.
+A livello dell'applicazione, puoi definire un ambito che si applica a tutte le risorse utilizzate dall'applicazione.  Il framework di sicurezza esegue questi controlli (se esistono) in aggiunta ai controlli di sicurezza dell'ambito di risorsa richiesto.
 
 >**Nota**:
->* L'ambito dell'applicazione obbligatorio non viene applicato quando si accede a una risorsa non protetta.
+>* L'ambito dell'applicazione obbligatorio non viene applicato quando accedi a una risorsa non protetta. 
 >* Il token di accesso concesso per l'ambito della risorsa non contiene l'ambito dell'applicazione obbligatorio.
 
 Nella MobileFirst Operations Console, seleziona la tua applicazione dalla sezione **Applications** della barra laterale di navigazione e seleziona quindi la scheda **Security**. In **Mandatory Application Scope**, seleziona **Add to Scope**.
@@ -285,8 +295,8 @@ Nella MobileFirst Operations Console, seleziona la tua applicazione dalla sezion
 Puoi anche modificare manualmente il file JSON di configurazione dell'applicazione con la configurazione richiesta ed eseguire nuovamente il push delle modifiche a un MobileFirst Server.
 
 1. Da una **finestra di riga di comando**, vai alla cartella root del progetto ed esegui il comando `mfpdev app pull`.
-2. Apri il file di configurazione, che si trova nella cartella **cartella-progetto\mobilefirst**.
-3. Modifica il file definendo una proprietà `mandatoryScope` e impostando il valore della proprietà su una stringa di ambito che contiene un elenco separato da spazi dei tuoi elementi di ambito selezionati. Ad esempio:
+2. Apri il file di configurazione, che si trova nella cartella **project-folder\mobilefirst**.
+3. Modifica il file definendo una proprietà `mandatoryScope` e impostando il valore della proprietà su una stringa di ambito che contiene un elenco separato da spazi dei tuoi elementi di ambito selezionati. Ad esempio,
 
     ```java
         "mandatoryScope": "appAuthenticity PincodeValidation"
@@ -298,7 +308,7 @@ Puoi anche modificare manualmente il file JSON di configurazione dell'applicazio
 #### Protezione delle risorse dell'adattatore
 {: #protectadapterres}
 
-Nel tuo adattatore, puoi specificare l'ambito di protezione per un metodo Java o una procedura di risorsa JavaScript oppure per un'intera classe di risorse Java. Un ambito è definito come una stringa di uno o più elementi di ambito separati da spazi (“scopeElement1 scopeElement2 …”) oppure null per applicare l'ambito predefinito. Per ulteriori dettagli sulla protezione di risorse dell'adattatore, fai riferimento a [Protezione degli adattatori](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
+Nel tuo adattatore, puoi specificare l'ambito di protezione per un metodo Java o una procedura di risorsa JavaScript oppure per un'intera classe di risorse Java. Un ambito è definito come una stringa di uno o più elementi di ambito separati da spazi (“scopeElement1 scopeElement2 …”) oppure null per applicare l'ambito predefinito. Per ulteriori informazioni sulla protezione di risorse dell'adattatore, vedi [Protezione degli adattatori](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
 
 ### Disabilitazione della protezione delle risorse
 {: #disablingresprotection}
@@ -368,4 +378,4 @@ Una risorsa non protetta è una risorsa che non richiede un token di accesso. Il
 ### Protezione di risorse esterne
 {: #protecextresources}
 
-Per proteggere le risorse esterne, aggiungi un filtro risorsa con un modulo di convalida del token di accesso al server di risorse esterno. Il modulo di convalida del token utilizza l'endpoint di introspezione del server di autorizzazione del framework di sicurezza per convalidare il token di accesso MobileFirst prima di concedere al client OAuth l'accesso alle risorse. Puoi utilizzare l'API REST MobileFirst per il runtime MobileFirst per creare un tuo modulo di convalida del token di accesso per qualsiasi server esterno. In alternativa, utilizza una delle estensioni MobileFirst fornite per proteggere le risorse Java esterne.
+Per proteggere le risorse esterne, aggiungi un filtro risorsa con un modulo di convalida del token di accesso al server di risorse esterno. Il modulo di convalida del token utilizza l'endpoint di introspezione del server di autorizzazione del framework di sicurezza per convalidare i token di accesso MobileFirst prima di concedere al client OAuth l'accesso alle risorse. Puoi utilizzare l'API REST MobileFirst per il runtime MobileFirst per creare un tuo modulo di convalida del token di accesso per qualsiasi server esterno. In alternativa, utilizza una delle estensioni MobileFirst fornite per proteggere le risorse Java esterne.

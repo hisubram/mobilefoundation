@@ -2,8 +2,11 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated:  "2019-03-14"
 
+keywords: getting started, mobile foundation, plans, configure mobile foundation server, sample app, setup
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -16,28 +19,46 @@ lastupdated:  "2019-02-12"
 # Esercitazione introduttiva
 {: #getting-started-tutorial}
 
-{{site.data.keyword.mobilefoundation_long}} accelera la configurazione di un ambiente {{site.data.keyword.mfp_full}} che ti consente di sviluppare, testare ed eseguire applicazioni mobili aziendali. {{site.data.keyword.mobilefoundation_short}} offre i seguenti diversi piani di servizio: Developer, Professional Per Device e Professional 1 Application.
+{{site.data.keyword.mobilefoundation_long}} accelera la configurazione di un ambiente {{site.data.keyword.mfp_full}} che ti consente di sviluppare, testare ed eseguire applicazioni mobili aziendali. {{site.data.keyword.mobilefoundation_short}} offre i seguenti diversi piani di servizio:
+* **Lite**: fornisce un'istanza ospitata dal server Foundation Server limitata da memoria e CPU. Consente molte applicazioni con il numero totale dei dispositivi connessi tra tutte le applicazioni limitato a 10. Gratuito e da utilizzare solo a scopo di prova.
+* **Developer**: fornisce un'istanza del server Foundation nell'account dell'utente. Consente molte applicazioni con il numero totale dei dispositivi connessi tra tutte le applicazioni limitato a 10. Gratuito e da utilizzare solo a scopo di sviluppo e di test. 
+* **Professional Per Device**: fornisce un'istanza del server Foundation nell'account dell'utente e comporta un addebito in base al numero di dispositivi connessi attivamente
+* **Professional 1 Application**: fornisce un'istanza del server Foundation nell'account dell'utente e consente molti utenti e dispositivi connessi attivamente per una sola singola applicazione.    
 {: shortdesc}
 
-Utilizzando il piano Professional 1 Application è possibile gestire una singola applicazione basata su uno qualsiasi dei sistemi operativi supportati. I sistemi operativi supportati sono Android, iOS, Windows o web mobile. Il piano Developer è consigliato per lo sviluppo e le operazioni di test. Puoi rivedere tutti i piani disponibili [qui](https://cloud.ibm.com/catalog/services/mobile-foundation).
+Puoi rivedere tutti i piani disponibili [qui](https://cloud.ibm.com/catalog/services/mobile-foundation).
+{: note}
 
-Questa esercitazione introduttiva ti consente di creare un'istanza del servizio {{site.data.keyword.mobilefoundation_short}} con uno dei piani supportati. Quindi, puoi registrare un'applicazione. Scarica e modifica l'applicazione registrata, distribuisci un adattatore e infine verifica l'applicazione.
+Crea un'istanza del servizio {{site.data.keyword.mobilefoundation_short}} che utilizzi uno dei piani supportati seguendo questa esercitazione introduttiva. Quindi, puoi registrare un'applicazione. Scarica e modifica l'applicazione registrata, distribuisci un adattatore e infine verifica l'applicazione. 
 
 ## Prima di iniziare
 {: #prereqs-gs}
 
-Avrai bisogno di un account {{site.data.keyword.Bluemix}} e di un'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
+Hai bisogno di un account {{site.data.keyword.Bluemix}} e di un'istanza del servizio {{site.data.keyword.mobilefoundation_short}}.
 
 ## Passo 1: crea un'istanza del servizio {{site.data.keyword.mobilefoundation_short}}
 {: #step1create}
 
 1. Nel **catalogo** {{site.data.keyword.Bluemix_notm}}, seleziona [**{{site.data.keyword.mobilefoundation_short}}**](https://cloud.ibm.com/catalog/services/mobile-foundation). Viene aperta la schermata di configurazione del servizio.
 2. Fornisci un nome alla tua istanza del servizio o utilizza un nome preimpostato.
-3. Scegli la regione, l'organizzazione e lo spazio in cui desideri creare l'istanza del servizio.
+3. Scegli la regione, l'organizzazione e lo spazio in cui desideri creare l'istanza del servizio. 
 4. Seleziona il tuo **Piano dei prezzi** e fai clic su **Crea**.
 
 ## Passo 2: crea il tuo canale mobile
 {: #buildmobilechannel}
+
+
+### Per il piano {{site.data.keyword.mobilefoundation_short}}: Lite
+{: #buildchannelliteplan}
+Dopo che hai creato un'istanza di {{site.data.keyword.mobilefoundation_short}}: Lite, puoi iniziare a creare il tuo canale mobile completando la seguente procedura.
+
+* Puoi accedere e lavorare immediatamente con l'istanza ospitata del server Mobile Foundation.
+
+  Questa selezione crea un'istanza ospitata di {{site.data.keyword.mfserver_long_notm}} con le seguenti impostazioni: 
+  *	1 GB di memoria, sufficiente per provare le capacità di {{site.data.keyword.mfserver_long_notm}}.  
+
+  * Per accedere al server Mobile Foundation utilizzando la CLI hai bisogno delle credenziali, che sono disponibili quando fai clic su **Credenziali del servizio** dal pannello di navigazione di sinistra della console IBM Cloud. 
+
 
 ### Per il piano {{site.data.keyword.mobilefoundation_short}}: Developer
 {: #buildchanneldevplan}
@@ -49,7 +70,7 @@ Dopo che hai creato un'istanza di {{site.data.keyword.mobilefoundation_short}}: 
   Questa selezione crea un {{site.data.keyword.mfserver_long_notm}} con le seguenti impostazioni:
   *	1 GB di memoria. Questa dimensione è sufficiente per lo sviluppo, per delle attività leggere di test e i carichi di lavoro di produzione su piccola scala.
 
-  * Per accedere al server Mobile Foundation utilizzando la CLI ti serviranno le credenziali, che sono disponibili quando fai clic su **Credenziali del servizio** dal pannello di navigazione a sinistra della console IBM Cloud.
+  * Per accedere al server Mobile Foundation utilizzando la CLI hai bisogno delle credenziali, che sono disponibili quando fai clic su **Credenziali del servizio** dal pannello di navigazione di sinistra della console IBM Cloud. 
 
 ### Per il piano {{site.data.keyword.mobilefoundation_short}}: Professional Per Device
 {: #buildchannelprofdeviceplan}
@@ -69,7 +90,7 @@ Dopo che hai creato un'istanza del servizio {{site.data.keyword.mobilefoundation
       + Fai clic su **Aggiungi** e quindi su **Continua** nella finestra a comparsa che richiede conferma sul servizio {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} selezionato. Questa azione crea le tabelle richieste nell'istanza del servizio database {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} configurata.
 
       Dopo aver aggiunto una connessione {{site.data.keyword.Db2_on_Cloud_short}} (qualsiasi piano diverso dal piano **Lite**) o {{site.data.keyword.composeForPostgreSQL}} all'istanza {{site.data.keyword.mobilefoundation_short}}, non potrai modificarla.
-      {: note} 
+      {: note}
   2.  Crea e avvia il server.
 
       1. Crea un'istanza del server {{site.data.keyword.mobilefirst_notm}} con la configurazione predefinita, fai clic su **Avvia server di base**.
@@ -88,7 +109,7 @@ dove puoi vedere:
 
       +	Fai clic su **Avvia console** per aprire {{site.data.keyword.mfp_oc_short_notm}}.      
 
-      Per creare un'istanza del server {{site.data.keyword.mobilefirst_notm}} con la configurazione avanzata per topologia, sicurezza e altra configurazione del server, fai clic su **Avvia server con la configurazione avanzata**. Vedi [Impostazione della configurazione avanzata](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5) per ulteriori informazioni.
+      Per creare un'istanza del server {{site.data.keyword.mobilefirst_notm}} con la configurazione avanzata per topologia, sicurezza e altra configurazione del server, fai clic su **Avvia server con la configurazione avanzata**. Per ulteriori informazioni, vedi [Impostazione della configurazione avanzata](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5).
       {: tip}
 
 ### Per il piano {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application
@@ -129,7 +150,7 @@ dove puoi vedere:
 
       +  Fai clic su **Avvia console** per aprire {{site.data.keyword.mfp_oc_short_notm}}.  
 
-      Per creare un'istanza del server {{site.data.keyword.mobilefirst_notm}} con la configurazione avanzata per topologia, sicurezza e altra configurazione del server, fai clic su **Avvia server con la configurazione avanzata**. Vedi [Impostazione della configurazione avanzata](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2) per ulteriori informazioni.
+      Per creare un'istanza del server {{site.data.keyword.mobilefirst_notm}} con la configurazione avanzata per topologia, sicurezza e altra configurazione del server, fai clic su **Avvia server con la configurazione avanzata**. Per ulteriori informazioni, vedi [Impostazione della configurazione avanzata](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2).
       {: tip}
 
 Vai a [Using the Mobile Foundation service to set up MobileFirst Server ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window} per ulteriori informazioni introduttive a {{site.data.keyword.mobilefoundation_short}}.
@@ -138,7 +159,7 @@ Vai a [Using the Mobile Foundation service to set up MobileFirst Server ![Icona 
 ## Passo 3: registra la tua applicazione in {{site.data.keyword.mobilefoundation_short}}
 {: #registerapp}
 
-Dopo aver creato e avviato la tua istanza del server Mobile Foundation, puoi completare la seguente procedura per registrare un'applicazione Android.
+Dopo che hai creato e avviato la tua istanza del server Mobile Foundation, puoi completare la seguente procedura per registrare un'applicazione Android. 
 
   1.  Richiama {{site.data.keyword.mfp_oc_short_notm}} caricando l'URL: `http://<your-server-host>:<server-port>/mfpconsole`. Utilizza il `nomeutente` e la `password` generate durante il provisioning.
 
@@ -244,9 +265,9 @@ Dopo aver creato e avviato la tua istanza del server Mobile Foundation, puoi com
    {: tip}
 
   2. Fai clic su **Esegui applicazione** in Android Studio.
-     * Vedrai l'applicazione avviata su un emulatore di dispositivo.
-     * Fai clic su **Esegui ping del server MobileFirst** nella tua applicazione e verrà quindi visualizzato `Connected to MobileFirst Server`.
-     * Se l'applicazione è riuscita a collegarsi al server MobileFirst, avrà luogo una chiamata di richiesta della risorsa utilizzando l'adattatore Java distribuito.
+     * Vedrai che l'applicazione viene avviata su un emulatore di dispositivo. 
+     * Fai clic su **Esegui ping del server MobileFirst** nella tua applicazione, viene visualizzato `Connected to MobileFirst Server`.
+     * Se l'applicazione è riuscita a collegarsi al server MobileFirst, l'adattatore Java che viene distribuito effettuerà una chiamata di richiesta della risorsa. 
      * La risposta dell'adattatore viene quindi stampata nella vista LogCat di Android Studio.
 
 

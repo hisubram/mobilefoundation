@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-23"
 
+keywords: synchronization of data, sync with offline storage, jsonstore sync
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -46,7 +49,7 @@ Una raccolta JSONStore deve essere inizializzata con un campo relativo alla poli
   ```objc
   openOptions.syncPolicy = SYNC_DOWNSTREAM;
   ```
-  
+
   *Cordova*
   ```javascript
   collection.sync = {
@@ -67,7 +70,7 @@ Una raccolta JSONStore deve essere inizializzata con un campo relativo alla poli
   ```objc
   openOptions.syncPolicy = SYNC_UPSTREAM;
   ```
-  
+
   *Cordova*
   ```javascript
   collection.sync = {
@@ -97,7 +100,7 @@ Questa configurazione prende il nome dell'adattatore che viene distribuito.
  ```objc
   openOptions.syncAdapterPath = @"JSONStoreCloudantSync";
  ```
-  
+
 *Cordova o Ionic*
  ```javascript
   collection.sync = {
@@ -128,9 +131,8 @@ Questa API esegue una sincronizzazione downstream se la raccolta richiamante ha 
  ```objc
   collection.sync(); //Here collection is the JSONStore collection object that was initialized
  ```
-  
+
 *Cordova*
  ```javascript
   WL.JSONStore.get(collectionName).sync();
  ```
-

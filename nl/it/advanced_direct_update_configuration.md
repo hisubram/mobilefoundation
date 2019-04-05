@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-14"
 
+keywords: Direct Update, CDN support, secure direct update
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -36,7 +39,7 @@ wl_DirectUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
 
 Se le risorse web sono più recenti nel server Mobile Foundation che nell'applicazione, vengono aggiunti dati di verifica dell'aggiornamento diretto alla risposta del server. Quando il framework lato client di Mobile Foundation rileva questa verifica dell'aggiornamento diretto, richiama la funzione `wl_directUpdateChallengeHandler.handleDirectUpdate`.
 
-La funzione fornisce una progettazione dell'aggiornamento diretto predefinita: viene visualizzata una finestra di dialogo del messaggio predefinita quando un aggiornamento diretto è disponibile e viene visualizzata una schermata di avanzamento predefinita quando viene avviato il processo di aggiornamento diretto. Puoi implementare il comportamento dell'interfaccia utente dell'aggiornamento diretto personalizzato o personalizzare la casella di dialogo dell'aggiornamento diretto sovrascrivendo questa funzione e implementando la tua logica.
+La funzione fornisce una progettazione dell'aggiornamento diretto predefinita: viene visualizzata una finestra di dialogo del messaggio predefinita quando un aggiornamento diretto è disponibile e viene visualizzata una schermata di avanzamento predefinita quando viene avviato il processo di aggiornamento diretto. Puoi implementare il comportamento dell'interfaccia utente dell'aggiornamento diretto personalizzato o personalizzare la casella di dialogo dell'aggiornamento diretto sovrascrivendo questa funzione e implementando la tua logica. 
 
 Nel seguente codice di esempio, una funzione `handleDirectUpdate` implementa un messaggio personalizzato nella finestra di dialogo dell'aggiornamento diretto. Aggiungi questo codice al file `www/js/index.js` del progetto Cordova.
 Ulteriori esempi di una IU dell'aggiornamento diretto personalizzata:

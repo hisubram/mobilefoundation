@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, offline storage, add jsonstore to cordova, add jsonstore to iOS, add jsonstore to android, jsonstore methods, jsonstore operations
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -39,7 +42,7 @@ Per la configurazione avanzata dell'archiviazione offline, vedi [qui](/docs/serv
 {: #configure_offline_storage_cordova}
 {: cordova}
 
-Assicurati che l'SDK Mobile Foundation Cordova sia stato aggiunto al progetto. 
+Assicurati che l'SDK Mobile Foundation Cordova sia stato aggiunto al progetto.
 {: cordova}
 
 Attieniti all'esercitazione [Adding the Mobile Foundation SDK to Cordova applications ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/cordova/).
@@ -51,7 +54,7 @@ Attieniti all'esercitazione [Adding the Mobile Foundation SDK to Cordova applica
 {: cordova}
 
 1. Apri una finestra di riga di comando e vai alla tua cartella del progetto Cordova.
-2. Esegui il comando: 
+2. Esegui il comando:
    ```bash
    cordova plugin add cordova-plugin-mfp-jsonstore
    ```
@@ -82,7 +85,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 {: cordova}
 
 #### Ottieni un accessor alla tua raccolta Cordova JSONStore
-{: #get_jsonstore_cordova} 
+{: #get_jsonstore_cordova}
 {: cordova}
 
 Utilizza `get` per creare un accessor alla raccolta. Devi richiamare `init` prima di richiamare get, altrimenti il risultato di `get` sarà indefinito (*undefined*).
@@ -97,8 +100,8 @@ var people = WL.JSONStore.get(collectionName);
 La variabile *people* può ora essere utilizzata per eseguire operazioni sulla raccolta *people* quali `add`, `find` e `replace`.
 {: cordova}
 
-#### Aggiungi documenti a una raccolta Cordova 
-{: #add_jsonstore_cordova} 
+#### Aggiungi documenti a una raccolta Cordova
+{: #add_jsonstore_cordova}
 {: cordova}
 
 Utilizza `add` per archiviare i dati come documenti all'interno di una raccolta.
@@ -118,8 +121,8 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 {: codeblock}
 {: cordova}
 
-#### Trova documenti all'interno di una raccolta Cordova 
-{: #find_jsonstore_cordova} 
+#### Trova documenti all'interno di una raccolta Cordova
+{: #find_jsonstore_cordova}
 {: cordova}
 
 * Utilizza `find` per individuare un documento all'interno di una raccolta utilizzando una query.
@@ -169,8 +172,8 @@ else {
 {: codeblock}
 {: cordova}
 
-#### Sostituisci documenti all'interno di una raccolta Cordova 
-{: #replace_jsonstore_cordova} 
+#### Sostituisci documenti all'interno di una raccolta Cordova
+{: #replace_jsonstore_cordova}
 {: cordova}
 
 Utilizza `replace` per modificare i documenti all'interno di una raccolta. Il campo che usi per eseguire la sostituzione è `_id`, l'identificativo univoco del documento.
@@ -195,8 +198,8 @@ WL.JSONStore.get(collectionName).replace(document, options).then(function (numbe
 Questo esempio presume che il documento `{_id: 1, json: {name: 'yoel', age: 23} }` sia nella raccolta.
 {: cordova}
 
-#### Rimuovi documenti da una raccolta Cordova 
-{: #remove_jsonstore_cordova} 
+#### Rimuovi documenti da una raccolta Cordova
+{: #remove_jsonstore_cordova}
 {: cordova}
 
 Utilizza `remove` per eliminare un documento da una raccolta.
@@ -216,15 +219,15 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: codeblock}
 {: cordova}
 
-#### Rimuovi un'intera raccolta Cordova 
-{: #remove_collection_jsonstore_cordova} 
+#### Rimuovi un'intera raccolta Cordova
+{: #remove_collection_jsonstore_cordova}
 {: cordova}
 
 Utilizza `removeCollection` per eliminare tutti i documenti archiviati all'interno di una raccolta. Questa operazione è simile all'eliminazione di una tabella in termini del database.
 {: cordova}
 
 #### Elimina permanentemente Cordova JSONStore
-{: #destroy_jsonstore_cordova} 
+{: #destroy_jsonstore_cordova}
 {: cordova}
 
 Utilizza `destroy` per rimuovere i seguenti dati:
@@ -238,7 +241,7 @@ Utilizza `destroy` per rimuovere i seguenti dati:
 {: #configure_offline_storage_ios}
 {: ios}
 
-Assicurati che l'SDK nativo Mobile Foundation sia stato aggiunto al progetto Xcode. 
+Assicurati che l'SDK nativo Mobile Foundation sia stato aggiunto al progetto Xcode.
 {: ios}
 
 Attieniti all'esercitazione [Adding the Mobile Foundation SDK to iOS applications ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/ios/).
@@ -255,17 +258,17 @@ Attieniti all'esercitazione [Adding the Mobile Foundation SDK to iOS application
    ```
    {: codeblock}
    {: ios}
-2. Dalla riga di comando, vai alla root del progetto Xcode ed esegui il comando: 
+2. Dalla riga di comando, vai alla root del progetto Xcode ed esegui il comando:
    ```bash
    pod install
-   ``` 
+   ```
    {: codeblock}
    {: ios}
 3. Ogni volta che vuoi usare JSONStore, assicurati di importare l'intestazione JSONStore:
    **Objective-C**:
    ```objectivec
    #import <IBMMobileFirstPlatformFoundationJSONStore/IBMMobileFirstPlatformFoundationJSONStore.h>
-   ``` 
+   ```
    {: codeblock}
    **Swift:**
    ```swift
@@ -274,8 +277,8 @@ Attieniti all'esercitazione [Adding the Mobile Foundation SDK to iOS application
    {: codeblock}
    {: ios}
 
-#### Apri la raccolta iOS JSONStore 
-{: #open_ios} 
+#### Apri la raccolta iOS JSONStore
+{: #open_ios}
 {: ios}
 
 Utilizza `openCollections` per aprire una o più raccolte JSONStore.
@@ -297,7 +300,7 @@ do {
 {: ios}
 
 #### Ottieni un accessor alla tua raccolta iOS JSONStore
-{: #get_jsonstore_ios} 
+{: #get_jsonstore_ios}
 {: ios}
 
 Utilizza `getCollectionWithName` per creare un accessor alla raccolta. Devi richiamare `openCollections` prima di richiamare `getCollectionWithName`.
@@ -313,8 +316,8 @@ let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWit
 La variabile collection può ora essere utilizzata per eseguire operazioni sulla raccolta `people` quali `add`, `find` e `replace`.
 {: ios}
 
-#### Aggiungi documenti a una raccolta iOS 
-{: #add_jsonstore_ios} 
+#### Aggiungi documenti a una raccolta iOS
+{: #add_jsonstore_ios}
 {: ios}
 
 Utilizza `addData` per archiviare i dati come documenti all'interno di una raccolta.
@@ -326,7 +329,7 @@ let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWit
 
 let data = ["name" : "yoel", "age" : 23]
 
-do {
+do  {
   try collection.addData([data], andMarkDirty: true, withOptions: nil)
 } catch let error as NSError {
   // handle error
@@ -335,8 +338,8 @@ do {
 {: codeblock}
 {: ios}
 
-#### Trova documenti all'interno di una raccolta iOS 
-{: #find_jsonstore_ios} 
+#### Trova documenti all'interno di una raccolta iOS
+{: #find_jsonstore_ios}
 {: ios}
 
 Utilizza `findWithQueryParts` per individuare un documento all'interno di una raccolta utilizzando una query. Utilizza `findAllWithOptions` per richiamare tutti i documenti all'interno di una raccolta. Utilizza `findWithIds` per cercare in base all'identificativo univoco del documento.
@@ -362,8 +365,8 @@ do  {
 {: codeblock}
 {: ios}
 
-#### Sostituisci documenti all'interno di una raccolta iOS 
-{: #replace_jsonstore_ios} 
+#### Sostituisci documenti all'interno di una raccolta iOS
+{: #replace_jsonstore_ios}
 {: ios}
 
 Utilizza `replaceDocuments` per modificare i documenti all'interno di una raccolta. Il campo che usi per eseguire la sostituzione è `_id`, l'identificativo univoco del documento.
@@ -393,11 +396,11 @@ do {
 Questo esempio presume che il documento `{_id: 1, json: {name: 'yoel', age: 23} }` sia nella raccolta.
 {: ios}
 
-#### Rimuovi documenti da una raccolta iOS 
-{: #remove_jsonstore_ios} 
+#### Rimuovi documenti da una raccolta iOS
+{: #remove_jsonstore_ios}
 {: ios}
 
-Utilizza `removeWithIds` per eliminare un documento da una raccolta. I documenti non vengono cancellati dalla raccolta finché non richiami `markDocumentClean`. 
+Utilizza `removeWithIds` per eliminare un documento da una raccolta. I documenti non vengono cancellati dalla raccolta finché non richiami `markDocumentClean`.
 {: ios}
 
 ```swift
@@ -413,8 +416,8 @@ do {
 {: codeblock}
 {: ios}
 
-#### Rimuovi un'intera raccolta iOS 
-{: #remove_collection_jsonstore_ios} 
+#### Rimuovi un'intera raccolta iOS
+{: #remove_collection_jsonstore_ios}
 {: ios}
 
 Utilizza `removeCollection` per eliminare tutti i documenti archiviati all'interno di una raccolta. Questa operazione è simile all'eliminazione di una tabella in termini del database.
@@ -434,7 +437,7 @@ do {
 {: ios}
 
 #### Elimina permanentemente un iOS JSONStore
-{: #destroy_jsonstore_ios} 
+{: #destroy_jsonstore_ios}
 {: ios}
 
 Utilizza `destroyData` per rimuovere i seguenti dati:
@@ -458,7 +461,7 @@ do {
 {: #configure_offline_storage_android}
 {: android}
 
-Assicurati che l'SDK nativo Mobile Foundation sia stato aggiunto al progetto Android Studio. 
+Assicurati che l'SDK nativo Mobile Foundation sia stato aggiunto al progetto Android Studio.
 {: android}
 
 Attieniti all'esercitazione [Adding the Mobile Foundation SDK to Android applications ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/android/).
@@ -470,10 +473,10 @@ Attieniti all'esercitazione [Adding the Mobile Foundation SDK to Android applica
 {: android}
 
 1. Da **Android → Gradle Scripts**, seleziona il file `build.gradle (Module: app)`.
-2. Aggiungi quanto segue alla sezione `dependencies` esistente: 
+2. Aggiungi quanto segue alla sezione `dependencies` esistente:
    ```bash
    compile 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundationjsonstore:8.0.+'
-   ``` 
+   ```
    {: codeblock}
    {: android}
 3. Aggiungi quanto segue alla sezione `DefaultConfig` del tuo file `build.gradle`:
@@ -481,7 +484,7 @@ Attieniti all'esercitazione [Adding the Mobile Foundation SDK to Android applica
    ndk {
      abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
    }
-   ``` 
+   ```
    {: codeblock}
    {: android}
    Aggiungiamo abiFilters per garantire che le applicazioni con JSONStore verranno eseguite in una qualsiasi delle architetture sopra specificate. Ciò è obbligatorio poiché JSONStore dipende da una libreria di terze parti che supporta solo queste architetture.
@@ -489,7 +492,7 @@ Attieniti all'esercitazione [Adding the Mobile Foundation SDK to Android applica
    {: android}
 
 #### Apri una raccolta Android JSONStore
-{: #open_android} 
+{: #open_android}
 {: android}
 
 Utilizza `openCollections` per aprire una o più raccolte JSONStore.
@@ -513,7 +516,7 @@ try {
 {: android}
 
 #### Ottieni un accessor alla tua raccolta Android JSONStore
-{: #get_jsonstore_android} 
+{: #get_jsonstore_android}
 {: android}
 
 Utilizza `getCollectionByName` per creare un accessor alla raccolta. Devi richiamare `openCollections` prima di richiamare `getCollectionByName`.
@@ -535,8 +538,8 @@ try {
 La variabile collection può ora essere utilizzata per eseguire operazioni sulla raccolta `people` quali `add`, `find` e `replace`.
 {: android}
 
-#### Aggiungi documenti a una raccolta Android 
-{: #add_jsonstore_android} 
+#### Aggiungi documenti a una raccolta Android
+{: #add_jsonstore_android}
 {: android}
 
 Utilizza `addData` per archiviare i dati come documenti all'interno di una raccolta.
@@ -560,8 +563,8 @@ try {
 {: codeblock}
 {: android}
 
-#### Trova documenti all'interno di una raccolta Android 
-{: #find_jsonstore_android} 
+#### Trova documenti all'interno di una raccolta Android
+{: #find_jsonstore_android}
 {: android}
 
 Utilizza `findDocuments` per individuare un documento all'interno di una raccolta utilizzando una query. Utilizza `findAllDocuments` per richiamare tutti i documenti all'interno di una raccolta. Utilizza `findDocumentById` per cercare in base all'identificativo univoco del documento.
@@ -589,8 +592,8 @@ try {
 {: codeblock}
 {: android}
 
-#### Sostituisci documenti all'interno di una raccolta Android 
-{: #replace_jsonstore_android} 
+#### Sostituisci documenti all'interno di una raccolta Android
+{: #replace_jsonstore_android}
 {: android}
 
 Utilizza `replaceDocuments` per modificare i documenti all'interno di una raccolta. Il campo che usi per eseguire la sostituzione è `_id`, l'identificativo univoco del documento.
@@ -617,11 +620,11 @@ try {
 Questo esempio presume che il documento `{_id: 1, json: {name: 'yoel', age: 23} }` sia nella raccolta.
 {: android}
 
-#### Rimuovi documenti da una raccolta Android 
-{: #remove_jsonstore_android} 
+#### Rimuovi documenti da una raccolta Android
+{: #remove_jsonstore_android}
 {: android}
 
-Utilizza `removeDocumentById` per eliminare un documento da una raccolta. I documenti non vengono cancellati dalla raccolta finché non richiami `markDocumentClean`. 
+Utilizza `removeDocumentById` per eliminare un documento da una raccolta. I documenti non vengono cancellati dalla raccolta finché non richiami `markDocumentClean`.
 {: android}
 
 ```java
@@ -641,8 +644,8 @@ try {
 {: codeblock}
 {: android}
 
-#### Rimuovi un'intera raccolta Android 
-{: #remove_collection_jsonstore_android} 
+#### Rimuovi un'intera raccolta Android
+{: #remove_collection_jsonstore_android}
 {: android}
 
 Utilizza `removeCollection` per eliminare tutti i documenti archiviati all'interno di una raccolta. Questa operazione è simile all'eliminazione di una tabella in termini del database.
@@ -663,7 +666,7 @@ try {
 {: android}
 
 #### Elimina permanentemente un Android JSONStore
-{: #destroy_jsonstore_android} 
+{: #destroy_jsonstore_android}
 {: android}
 
 Utilizza `destroy` per rimuovere i seguenti dati:
@@ -684,4 +687,3 @@ try {
 ```
 {: codeblock}
 {: android}
-

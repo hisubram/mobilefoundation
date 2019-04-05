@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-10-16"
 
+keywords: mobile foundation security, MIM attack, certificate pinning
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -22,13 +25,13 @@ Quando si comunica su reti pubbliche, è essenziale inviare e ricevere informazi
 
 Riduci gli attacchi alla sicurezza tramite l'[associazione di certificati](#cert_pinning) ed evita attacchi MitM (man-in-the-middle).
 
-
->**Nota**: ciò è facoltativo ed è disponibile solo per i piani Professional.
+Questa funzione è facoltativa ed è disponibile solo per i piani Professional.
+{: note}
 
 Il processo di associazione di certificati consiste nei passi di seguito indicati:
 
 1. Esegui la [Configurazione del certificato](#certsetup).
-2. Configura il tuo codice client per richiamare il metodo [API di associazione di certificato](#certpinapi) corretto prima di effettuare una seconda richiesta protetta.
+2. Configura il tuo codice client per richiamare il metodo [API di associazione di certificato](#certpinapi) corretto prima di effettuare una richiesta protetta.
 
 Durante l'handshake SSL (prima richiesta al server), l'SDK client Mobile Foundation verifica che la chiave pubblica del certificato server corrisponda alla chiave pubblica del certificato archiviato nell'applicazione.
 
@@ -46,11 +49,12 @@ IBM Mobile Foundation fornisce una API per abilitare l'**associazione di certifi
 
 L'associazione di certificato è il processo di associazione di un host alla sua chiave pubblica prevista. Puoi configurare il tuo codice client per accettare solo uno specifico certificato per il tuo nome dominio invece di qualsiasi certificato che corrisponde a un certificato root di una CA attendibile riconosciuto dal sistema operativo o dal browser. Una copia del certificato viene inserita nella tua applicazione client Durante l'handshake SSL (prima richiesta al server), l'SDK client MobileFirst verifica che la chiave pubblica del certificato server corrisponda alla chiave pubblica del certificato archiviato nell'applicazione.
 
->**Nota**: puoi anche associare più certificati alla tua applicazione client. Una copia di tutti i certificati deve essere inserita nella tua applicazione client. Durante l'handshake SSL (prima richiesta al server), l'SDK client MobileFirst verifica che la chiave pubblica del certificato server corrisponda alla chiave pubblica di uno dei certificati archiviati nell'applicazione.
+Puoi anche associare più certificati alla tua applicazione client. Inserisci una copia di tutti i certificati nella tua applicazione client. Durante l'handshake SSL (prima richiesta al server), l'SDK client MobileFirst verifica che la chiave pubblica del certificato server corrisponda alla chiave pubblica di uno dei certificati archiviati nell'applicazione.
+{: note}
 
 **Importante**
 
-* Alcuni sistemi operativi mobili potrebbero memorizzare in cache il risultato del controllo della convalida del certificato. Pertanto, il tuo codice deve richiamare il metodo API di associazione del certificato **prima** che venga effettuata una richiesta protetta. In caso contrario, eventuali richieste successive potrebbero tralasciare il controllo della convalida e dell'associazione del certificato.
+* Alcuni sistemi operativi mobili potrebbero memorizzare in cache il risultato del controllo della convalida del certificato. Pertanto, il tuo codice richiama il metodo API di associazione del certificato **prima** che venga effettuata una richiesta protetta. In caso contrario, eventuali richieste successive potrebbero tralasciare il controllo della convalida e dell'associazione del certificato.
 * Assicurati di utilizzare solo le API Mobile Foundation per tutte le comunicazioni con l'host correlato, anche dopo l'associazione di certificato. L'utilizzo di API di terze parti per interagire con lo stesso host potrebbe portare a una modalità di funzionamento imprevista, come ad esempio la memorizzazione in cache di un certificato non verificato da parte del sistema operativo mobile.
 * Il richiamo del metodo API di associazione di certificato una seconda volta sovrascrive la precedente operazione di associazione.
 
@@ -61,13 +65,13 @@ Se il processo di associazione viene eseguito con esito positivo, la chiave pubb
 
 Devi utilizzare un certificato acquistato da un'autorità di certificazione (CA, Certificate Authority). I certificati autofirmati **non sono supportati**. Per compatibilità con gli ambienti supportati, assicurati di utilizzare un certificato codificato in formato **DER** (Distinguished Encoding Rules, come definito dallo standard International Telecommunications Union X.690).
 
-Il certificato deve essere inserito sia in MobileFirst Server sia nella tua applicazione Inserisci il certificato nel seguente modo:
+Il certificato deve essere inserito sia in MobileFirst Server sia nella tua applicazione Inserisci il certificato nel seguente modo: 
 
-* In MobileFirst Server (WebSphere Application Server, WebSphere Application Server Liberty o Apache Tomcat): consulta la documentazione per il tuo server delle applicazioni specifico per informazioni su come configurare SSL/TLS e i certificati.
-* Nella tua applicazione:
-    * iOS nativa: aggiungi il certificato al **bundle** dell'applicazione.
-    * Android nativa: inserisci il certificato nella cartella **assets**
-    * Cordova: inserisci il certificato nella cartella **app-name\www\certificates** (se la cartella non è già presente, procedi a crearla).
+* In MobileFirst Server (WebSphere Application Server, WebSphere Application Server Liberty o Apache Tomcat), consulta la documentazione per il tuo server delle applicazioni specifico per informazioni su come configurare SSL/TLS e i certificati. 
+* Nella tua applicazione: 
+    * Per iOS nativa, aggiungi il certificato al **bundle** dell'applicazione
+    * Per Android nativa, inserisci il certificato nella cartella **assets**
+    * Per Cordova, inserisci il certificato nella cartella **app-name\www\certificates** (se la cartella non è già presente, procedi a crearla). 
 
 ## API di associazione di certificato
 {: #certpinapi}
@@ -78,8 +82,8 @@ L'associazione di certificato consiste nel seguente metodo di API sovraccaricato
 {: #certpinapiandroid}
 
 * Singolo certificato:
- 
-    Sintassi: pinTrustedCertificatePublicKeyFromFile(String certificateFilename); 
+
+    Sintassi: pinTrustedCertificatePublicKeyFromFile(String certificateFilename);
 
     Esempio:
 
@@ -98,7 +102,7 @@ L'associazione di certificato consiste nel seguente metodo di API sovraccaricato
     WLClient.getInstance().pinTrustedCertificatePublicKey(certificates);
     ```
 
-Il metodo di associazione di certificato genererà un'eccezione in due casi:
+Il metodo di associazione di certificato genera un'eccezione in due casi:
 
 * Il file non esiste
 * Il file è nel formato errato
@@ -110,16 +114,16 @@ Il metodo di associazione di certificato genererà un'eccezione in due casi:
 
     Sintassi: pinTrustedCertificatePublicKeyFromFile:(NSString*) certificateFilename;
 
-    Il metodo di associazione di certificato genererà un'eccezione in due casi:
+    Il metodo di associazione di certificato genera un'eccezione in due casi:
 
     * Il file non esiste
     * Il file è nel formato errato
 
-* Associazione di più certificati 
- 
+* Associazione di più certificati
+
     Sintassi: pinTrustedCertificatePublicKeyFromFiles:(NSArray*) certificateFilenames;
 
-    Il metodo di associazione di certificato genererà un'eccezione in due casi:
+    Il metodo di associazione di certificato genera un'eccezione in due casi:
 
     * Non esiste alcun file di certificato
     * Nessuno del file di certificato è in un formato corretto
@@ -128,13 +132,13 @@ Il metodo di associazione di certificato genererà un'eccezione in due casi:
 
 Esempio; certificato singolo:
 
-```
+```objectc
 [[WLClient sharedInstance]pinTrustedCertificatePublicKeyFromFile:@"myCertificate.cer"];
 ```
 
 Esempio: più certificati:
 
-```
+```objectc
 NSArray *arrayOfCerts = [NSArray arrayWithObjects:@“Cert1”,@“Cert2”,@“Cert3",nil];
 [[WLClient sharedInstance]pinTrustedCertificatePublicKeyFromFiles:arrayOfCerts];
 ```
@@ -143,13 +147,13 @@ NSArray *arrayOfCerts = [NSArray arrayWithObjects:@“Cert1”,@“Cert2”,@“
 
 Esempio; certificato singolo:
 
-```
+```swift
 WLClient.sharedInstance().pinTrustedCertificatePublicKeyFromFile("myCertificate.cer")
 ```
 
 Esempio: più certificati:
 
-```
+```swift
 let arrayOfCerts : [Any] = ["Cert1", "Cert2”, "Cert3”];
 WLClient.sharedInstance().pinTrustedCertificatePublicKey( fromFiles: arrayOfCerts)
 ```
@@ -176,11 +180,12 @@ Il metodo di associazione di certificato genererà un'eccezione in due casi:
 
 Il metodo di associazione di certificato restituisce una promessa:
 
-* Il metodo di associazione di certificato richiamerà il metodo onSuccess in caso di associazione eseguita correttamente.
-* Il metodo di associazione di certificato attiverà il callback onFailure in due casi:
-* Il file non esiste
-* Il file è nel formato errato
+* Il metodo di associazione di certificato richiama il metodo `onSuccess` se l'associazione ha esito positivo. 
+* Il metodo di associazione di certificato attiva il callback `onFailure` nei seguenti due casi: 
+  * Il file non esiste. 
+  * Il file è nel formato errato. 
 
-Successivamente, se viene effettuata una richiesta protetta a un server il cui certificato non è associato, viene richiamato il callback ``onFailure`` della richiesta specifica (ad esempio ``obtainAccessToken`` o ``WLResourceRequest``).
+Successivamente, se viene effettuata una richiesta protetta a un server il cui certificato non è associato, viene richiamato il callback `onFailure` della richiesta specifica (ad esempio `obtainAccessToken` o `WLResourceRequest`).
 
->Ulteriori informazioni sul metodo API di associazione di certificato sono disponibili nella [Guida di riferimento per l'API](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks).
+Ulteriori informazioni sul metodo API di associazione di certificato sono disponibili nella [Guida di riferimento per l'API](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks).
+{: note}

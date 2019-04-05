@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-29"
 
+keywords: disable apps, remote disabling of apps
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -16,13 +19,13 @@ lastupdated: "2018-11-29"
 # Disabilita in remoto una versione dell'applicazione
 {: #remotely_disable_an_app_version}
 
-In questa sezione, discuteremo di come disabilitare l'accesso utente a una specifica versione di un'applicazione su uno specifico sistema operativo mobile e di come fornire un messaggio personalizzato all'utente.
+In questa sezione, discutiamo di come disabilitare l'accesso utente a una specifica versione di un'applicazione su uno specifico sistema operativo mobile e di come fornire un messaggio personalizzato all'utente. 
 
 Puoi utilizzare la Mobile Foundation Operations Console per gestire l'accesso all'applicazione.
 
 1. Seleziona la tua versione dell'applicazione dalla sezione **Applicazioni** nella barra laterale di navigazione della console e seleziona quindi la scheda **Gestisci** dell'applicazione.
 2. Modifica lo stato in **Accesso disabilitato**.
-3. Fornisci un URL per la nuova versione dell'applicazione (di norma, nell'appropriato app store pubblico o privato) nel campo **URL della versione più recente**. 
+3. Fornisci un URL per la nuova versione dell'applicazione (di norma, nell'appropriato app store pubblico o privato) nel campo **URL della versione più recente**.
    Per alcun ambienti, l'Application Center fornisce un URL per accedere alla vista dei dettagli di una versione dell'applicazione direttamente. Vedi [Application properties](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/appcenter/appcenter-console/#application-properties).
    {: tip}
 
@@ -33,5 +36,3 @@ Puoi utilizzare la Mobile Foundation Operations Console per gestire l'accesso al
 
 Quando un utente esegue un'applicazione che era stata disabilitata in remoto, viene visualizzata una finestra di dialogo con il messaggio personalizzato configurato. Il messaggio viene visualizzato a qualsiasi interazione dell'applicazione che richiede l'accesso a una risorsa protetta oppure quando l'applicazione prova ad ottenere un token di accesso. Se hai fornito un URL di upgrade della versione, la finestra di dialogo visualizza un pulsante **Ottieni nuova versione** per eseguire l'upgrade a una versione più recente, oltre al pulsante **Chiudi** predefinito. <br/>
 Se un utente chiude la finestra di dialogo senza eseguire l'upgrade della versione, può continuare a lavorare con le risorse dell'applicazione che non sono protette. Tuttavia, qualsiasi interazione dell'applicazione che richiede l'accesso a una risorsa protetta determina la rivisualizzazione della finestra di dialogo e all'applicazione o all'utente non viene concesso l'accesso alla risorsa.
-
-
