@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-04-01"
+lastupdated:  "2019-04-12"
 
 keywords: getting started, mobile foundation, plans, configure mobile foundation server, sample app, setup
 
@@ -55,7 +55,7 @@ After you create an instance of the {{site.data.keyword.mobilefoundation_short}}
 * You can instantly access and work with the Mobile Foundation Server.
 
   This selection creates an {{site.data.keyword.mfserver_long_notm}} with the following settings:
-  *	1 GB of memory. This size is enough for development, light testing activities, and small scale production workloads.
+  *	1 GB of memory. This size is enough for development and light testing activities.
 
   * To access the Mobile Foundation Server by using CLI you need the credentials, which are available when you click **Service credentials** from the left navigation pane of the IBM Cloud console.
 
