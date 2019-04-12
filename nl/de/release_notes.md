@@ -2,8 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-27"
+lastupdated: "2019-03-26"
 
+keywords: mobile foundation release notes, cd updates, updates, continuous delivery updates
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -20,6 +23,16 @@ lastupdated: "2018-11-27"
 Aktualisierungen für den Mobile Foundation-Service werden über vorläufige Fixes (iFixes) und Continuous Delivery Updates (CD Updates) bereitgestellt. iFixes und CD Updates sind kumulativ. Feature-Updates werden in dem CD Update bereitgestellt.
 
 Informationen zu dem Continuous Delivery-Unterstützungsmodell finden Sie im Dokument [Mobile Foundation v8.0 CD-Unterstützungsankündigung![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/0/897/ENUS217-390/index.html&request_locale=en).
+{: note}
+
+## CD-Update 05 (19. März 2019)
+{: #cd_update_5}
+
+* CoreML-Modellverteilung.
+* App-Authentizität für WatchOS.
+* Zusätzliche Nachrichtenfunktionen und Attribute für FCM.
+
+Sehen Sie sich die Ankündigung von CD Update 05 [hier ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/blog/2019/03/22/8-0-cd-update-release) an.
 {: note}
 
 ## CD Update 04 (19. Dezember 2018)
@@ -60,7 +73,7 @@ Die Ankündigung von CD Update 02 finden Sie [hier ![Symbol für externen Link](
 * Unterstützung für den Eclipse-UI-Editor.
 * Neue Adapter für die Erstellung kognitiver Apps.
 * Dynamische App-Authentizität.
-* Appcenter-Unterstützung (Client & Server) für Windows 10.
+* Appcenter-Unterstützung (Client und Server) für Windows 10.
 * MobileFirst Eclipse-Plug-in-Unterstützung für Eclipse Neon.
 * Android SDK wurde modifiziert und verwendet nun eine neuere Version von OkHttp (Version 3.4.1).
 * Unterstützung für Cordova v7.
@@ -77,4 +90,3 @@ Die Ankündigung von CD Update 02 finden Sie [hier ![Symbol für externen Link](
 
 Die Ankündigung von CD Update 01 finden Sie [hier ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/blog/2017/11/27/8-0-cd-update-release/).
 {: note}
-

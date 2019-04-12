@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-12"
 
+keywords: mobile foundation developer, mobile analytics
+
+subcollection:  mobilefoundation
 ---
 
 {:new_window: target="_blank"}
@@ -37,4 +40,3 @@ Mobile Analytics-Server ist in der Serviceinstanz des Mobile Foundation: Develop
 * Starten Sie die Mobile Analytics Console über {{site.data.keyword.mfp_oc_short_notm}}.
 
 Weitere Informationen zum Instrumentieren Ihrer App mit Mobile Analytics finden Sie [hier](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.
-

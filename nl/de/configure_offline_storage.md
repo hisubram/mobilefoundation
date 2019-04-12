@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, offline storage, add jsonstore to cordova, add jsonstore to iOS, add jsonstore to android, jsonstore methods, jsonstore operations
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -39,7 +42,7 @@ Informationen zur erweiterten Konfiguration von Offlinespeicher finden Sie [hier
 {: #configure_offline_storage_cordova}
 {: cordova}
 
-Stellen Sie sicher, dass das Mobile Foundation Cordova-SDK zum Projekt hinzugefügt wurde. 
+Stellen Sie sicher, dass das Mobile Foundation Cordova-SDK zum Projekt hinzugefügt wurde.
 {: cordova}
 
 Folgen Sie dem Lernprogramm [Mobile Foundation-SDK zu Cordova-Anwendungen hinzufügen![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/cordova/).
@@ -51,7 +54,7 @@ Folgen Sie dem Lernprogramm [Mobile Foundation-SDK zu Cordova-Anwendungen hinzuf
 {: cordova}
 
 1. Öffnen Sie ein Befehlszeilenfenster und navigieren Sie zu Ihrem Cordova-Projektordner.
-2. Führen Sie den Befehl aus: 
+2. Führen Sie den Befehl aus:
    ```bash
    cordova plugin add cordova-plugin-mfp-jsonstore
    ```
@@ -82,7 +85,7 @@ WL.JSONStore.init(collections).then(function (collections) {
 {: cordova}
 
 #### Zugriffsmechanismus für Ihre Cordova-JSONStore-Sammlung abrufen
-{: #get_jsonstore_cordova} 
+{: #get_jsonstore_cordova}
 {: cordova}
 
 Verwenden Sie `get`, um einen Zugriffsmechanismus für die Sammlung zu erstellen. Sie müssen `init` vor "get" aufrufen. Andernfalls bringt `get` das Ergebnis *undefined*.
@@ -98,7 +101,7 @@ Mit der Variablen *people* lassen sich nun Operationen für die Sammlung *people
 {: cordova}
 
 #### Dokumente zu einer Cordova-Sammlung hinzufügen
-{: #add_jsonstore_cordova} 
+{: #add_jsonstore_cordova}
 {: cordova}
 
 Verwenden Sie `add`, um Daten als Dokumente in einer Sammlung zu speichern.
@@ -119,7 +122,7 @@ WL.JSONStore.get(collectionName).add(data, options).then(function () {
 {: cordova}
 
 #### Dokumente in einer Cordova-Sammlung suchen
-{: #find_jsonstore_cordova} 
+{: #find_jsonstore_cordova}
 {: cordova}
 
 * Verwenden Sie `find`, um mithilfe einer Abfrage ein Dokument in einer Sammlung zu lokalisieren.
@@ -170,7 +173,7 @@ else {
 {: cordova}
 
 #### Dokumente in einer Cordova-Sammlung ersetzen
-{: #replace_jsonstore_cordova} 
+{: #replace_jsonstore_cordova}
 {: cordova}
 
 Verwenden Sie `replace`, um Dokumente in einer Sammlung zu ändern. Zum Ersetzen verwenden Sie das Feld `_id`, die eindeutige Dokumentkennung.
@@ -196,7 +199,7 @@ Bei diesem Beispiel wird davon ausgegangen, dass sich das Dokument `{_id: 1, jso
 {: cordova}
 
 #### Dokumente aus einer Cordova-Sammlung entfernen
-{: #remove_jsonstore_cordova} 
+{: #remove_jsonstore_cordova}
 {: cordova}
 
 Verwenden Sie `remove`, um ein Dokument aus einer Sammlung zu löschen.
@@ -217,14 +220,14 @@ WL.JSONStore.get(collectionName).remove(query, options).then(function (numberOfD
 {: cordova}
 
 #### Gesamte Cordova-Sammlung entfernen
-{: #remove_collection_jsonstore_cordova} 
+{: #remove_collection_jsonstore_cordova}
 {: cordova}
 
 Verwenden Sie `removeCollection`, um alle Dokumente zu löschen, die in einer Sammlung gespeichert sind. Diese Operation ähnelt dem Löschen einer Tabelle in einer Datenbank.
 {: cordova}
 
 #### Cordova-JSONStore löschen
-{: #destroy_jsonstore_cordova} 
+{: #destroy_jsonstore_cordova}
 {: cordova}
 
 Verwenden Sie `destroy`, um die folgenden Daten zu entfernen:
@@ -238,7 +241,7 @@ Verwenden Sie `destroy`, um die folgenden Daten zu entfernen:
 {: #configure_offline_storage_ios}
 {: ios}
 
-Stellen Sie sicher, dass das Mobile Foundation Native-SDK zum XCode-Projekt hinzugefügt wurde. 
+Stellen Sie sicher, dass das Mobile Foundation Native-SDK zum XCode-Projekt hinzugefügt wurde.
 {: ios}
 
 Folgen Sie dem Lernprogramm [Mobile Foundation-SDK zu iOS-Anwendungen hinzufügen![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/ios/).
@@ -255,17 +258,17 @@ Folgen Sie dem Lernprogramm [Mobile Foundation-SDK zu iOS-Anwendungen hinzufüge
    ```
    {: codeblock}
    {: ios}
-2. Navigieren Sie in einem Befehlszeilenfenster zum Stammverzeichnis des Xcode-Projekts und führen Sie den folgenden Befehl aus: 
+2. Navigieren Sie in einem Befehlszeilenfenster zum Stammverzeichnis des Xcode-Projekts und führen Sie den folgenden Befehl aus:
    ```bash
    pod install
-   ``` 
+   ```
    {: codeblock}
    {: ios}
 3. Wenn Sie JSONStore verwenden möchten, müssen Sie den JSONStore-Header importieren:
    **Objective-C**:
    ```objectivec
    #import <IBMMobileFirstPlatformFoundationJSONStore/IBMMobileFirstPlatformFoundationJSONStore.h>
-   ``` 
+   ```
    {: codeblock}
    **Swift:**
    ```swift
@@ -274,8 +277,8 @@ Folgen Sie dem Lernprogramm [Mobile Foundation-SDK zu iOS-Anwendungen hinzufüge
    {: codeblock}
    {: ios}
 
-#### iOS-JSONStore-Sammlung öffnen 
-{: #open_ios} 
+#### iOS-JSONStore-Sammlung öffnen
+{: #open_ios}
 {: ios}
 
 Verwenden Sie `openCollections`, um eine oder mehrere JSONStore-Sammlungen zu öffnen.
@@ -297,7 +300,7 @@ do {
 {: ios}
 
 #### Zugriffsmechanismus für Ihre iOS-JSONStore-Sammlung abrufen
-{: #get_jsonstore_ios} 
+{: #get_jsonstore_ios}
 {: ios}
 
 Verwenden Sie `getCollectionWithName`, um einen Zugriffsmechanismus für die Sammlung zu erstellen. Sie müssen `openCollections` vor dem Aufruf von `getCollectionWithName` aufrufen.
@@ -314,7 +317,7 @@ Mit der Variablen "collection" lassen sich nun Operationen für die Sammlung `pe
 {: ios}
 
 #### Dokumente zu einer iOS-Sammlung hinzufügen
-{: #add_jsonstore_ios} 
+{: #add_jsonstore_ios}
 {: ios}
 
 Verwenden Sie `addData`, um Daten als Dokumente in einer Sammlung zu speichern.
@@ -326,7 +329,7 @@ let collection:JSONStoreCollection = JSONStore.sharedInstance().getCollectionWit
 
 let data = ["name" : "yoel", "age" : 23]
 
-do {
+do  {
   try collection.addData([data], andMarkDirty: true, withOptions: nil)
 } catch let error as NSError {
   // Fehler behandeln
@@ -336,7 +339,7 @@ do {
 {: ios}
 
 #### Dokumente in einer iOS-Sammlung suchen
-{: #find_jsonstore_ios} 
+{: #find_jsonstore_ios}
 {: ios}
 
 Verwenden Sie `findWithQueryParts`, um mithilfe einer Abfrage ein Dokument in einer Sammlung zu lokalisieren. Verwenden Sie `findAllWithOptions`, um alle Dokumente in einer Sammlung abzurufen. Verwenden Sie `findWithIds`, um nach der eindeutigen Dokumentkennung zu suchen.
@@ -363,7 +366,7 @@ do  {
 {: ios}
 
 #### Dokumente in einer iOS-Sammlung ersetzen
-{: #replace_jsonstore_ios} 
+{: #replace_jsonstore_ios}
 {: ios}
 
 Verwenden Sie `replaceDocuments`, um Dokumente in einer Sammlung zu ändern. Zum Ersetzen verwenden Sie das Feld `_id`, die eindeutige Dokumentkennung.
@@ -394,10 +397,10 @@ Bei diesem Beispiel wird davon ausgegangen, dass sich das Dokument `{_id: 1, jso
 {: ios}
 
 #### Dokumente aus einer iOS-Sammlung entfernen
-{: #remove_jsonstore_ios} 
+{: #remove_jsonstore_ios}
 {: ios}
 
-Verwenden Sie `removeWithIds`, um ein Dokument aus einer Sammlung zu löschen. Dokumente werden erst aus der Sammlung entfernt, wenn Sie `markDocumentClean` aufrufen. 
+Verwenden Sie `removeWithIds`, um ein Dokument aus einer Sammlung zu löschen. Dokumente werden erst aus der Sammlung entfernt, wenn Sie `markDocumentClean` aufrufen.
 {: ios}
 
 ```swift
@@ -414,7 +417,7 @@ do {
 {: ios}
 
 #### Gesamte iOS-Sammlung entfernen
-{: #remove_collection_jsonstore_ios} 
+{: #remove_collection_jsonstore_ios}
 {: ios}
 
 Verwenden Sie `removeCollection`, um alle Dokumente zu löschen, die in einer Sammlung gespeichert sind. Diese Operation ähnelt dem Löschen einer Tabelle in einer Datenbank.
@@ -434,7 +437,7 @@ do {
 {: ios}
 
 #### iOS-JSONStore löschen
-{: #destroy_jsonstore_ios} 
+{: #destroy_jsonstore_ios}
 {: ios}
 
 Verwenden Sie `destroyData`, um die folgenden Daten zu entfernen:
@@ -458,7 +461,7 @@ do {
 {: #configure_offline_storage_android}
 {: android}
 
-Stellen Sie sicher, dass das Mobile Foundation Native-SDK zum Android Studio-Projekt hinzugefügt wurde. 
+Stellen Sie sicher, dass das Mobile Foundation Native-SDK zum Android Studio-Projekt hinzugefügt wurde.
 {: android}
 
 Folgen Sie dem Lernprogramm [Mobile Foundation-SDK zu Android-Anwendungen hinzufügen![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/application-development/sdk/android/).
@@ -470,10 +473,10 @@ Folgen Sie dem Lernprogramm [Mobile Foundation-SDK zu Android-Anwendungen hinzuf
 {: android}
 
 1. Wählen Sie unter **Android → Gradle-Scripts** die Datei `build.gradle (Module: app)` aus.
-2. Fügen Sie zum Bereich `dependencies` Folgendes hinzu: 
+2. Fügen Sie zum Bereich `dependencies` Folgendes hinzu:
    ```bash
    compile 'com.ibm.mobile.foundation:ibmmobilefirstplatformfoundationjsonstore:8.0.+'
-   ``` 
+   ```
    {: codeblock}
    {: android}
 3. Fügen Sie zum Bereich `DefaultConfig` Ihrer Datei `build.gradle` Folgendes hinzu:
@@ -481,7 +484,7 @@ Folgen Sie dem Lernprogramm [Mobile Foundation-SDK zu Android-Anwendungen hinzuf
    ndk {
      abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
    }
-   ``` 
+   ```
    {: codeblock}
    {: android}
    `abiFilters` wird hinzugefügt, um sicherzustellen, dass die Apps mit JSONStore in allen oben angegebenen Architekturen funktionieren. Dies ist erforderlich, da JSONStore von einer Bibliothek eines anderen Anbieters abhängig ist, die nur diese Architekturen unterstützt.
@@ -489,7 +492,7 @@ Folgen Sie dem Lernprogramm [Mobile Foundation-SDK zu Android-Anwendungen hinzuf
    {: android}
 
 #### Android-JSONStore-Sammlung öffnen
-{: #open_android} 
+{: #open_android}
 {: android}
 
 Verwenden Sie `openCollections`, um eine oder mehrere JSONStore-Sammlungen zu öffnen.
@@ -513,7 +516,7 @@ try {
 {: android}
 
 #### Zugriffsmechanismus für Ihre Android-JSONStore-Sammlung abrufen
-{: #get_jsonstore_android} 
+{: #get_jsonstore_android}
 {: android}
 
 Verwenden Sie `getCollectionByName`, um einen Zugriffsmechanismus für die Sammlung zu erstellen. Sie müssen `openCollections` vor dem Aufruf von `getCollectionByName` aufrufen.
@@ -536,7 +539,7 @@ Mit der Variablen "collection" lassen sich nun Operationen für die Sammlung `pe
 {: android}
 
 #### Dokumente zu einer Android-Sammlung hinzufügen
-{: #add_jsonstore_android} 
+{: #add_jsonstore_android}
 {: android}
 
 Verwenden Sie `addData`, um Daten als Dokumente in einer Sammlung zu speichern.
@@ -561,7 +564,7 @@ try {
 {: android}
 
 #### Dokumente in einer Android-Sammlung suchen
-{: #find_jsonstore_android} 
+{: #find_jsonstore_android}
 {: android}
 
 Verwenden Sie `findDocuments`, um mithilfe einer Abfrage ein Dokument in einer Sammlung zu lokalisieren. Verwenden Sie `findAllDocuments`, um alle Dokumente in einer Sammlung abzurufen. Verwenden Sie  ` findDocumentById ` , um nach der eindeutigen Dokumentkennung zu suchen.
@@ -590,7 +593,7 @@ try {
 {: android}
 
 #### Dokumente in einer Android-Sammlung ersetzen
-{: #replace_jsonstore_android} 
+{: #replace_jsonstore_android}
 {: android}
 
 Verwenden Sie `replaceDocuments`, um Dokumente in einer Sammlung zu ändern. Zum Ersetzen verwenden Sie das Feld `_id`, die eindeutige Dokumentkennung.
@@ -618,10 +621,10 @@ Bei diesem Beispiel wird davon ausgegangen, dass sich das Dokument `{_id: 1, jso
 {: android}
 
 #### Dokumente aus einer Android-Sammlung entfernen
-{: #remove_jsonstore_android} 
+{: #remove_jsonstore_android}
 {: android}
 
-Verwenden Sie `removeDocumentById`, um ein Dokument aus einer Sammlung zu löschen. Dokumente werden erst aus der Sammlung entfernt, wenn Sie `markDocumentClean` aufrufen. 
+Verwenden Sie `removeDocumentById`, um ein Dokument aus einer Sammlung zu löschen. Dokumente werden erst aus der Sammlung entfernt, wenn Sie `markDocumentClean` aufrufen.
 {: android}
 
 ```java
@@ -642,7 +645,7 @@ try {
 {: android}
 
 #### Gesamte Android-Sammlung entfernen
-{: #remove_collection_jsonstore_android} 
+{: #remove_collection_jsonstore_android}
 {: android}
 
 Verwenden Sie `removeCollection`, um alle Dokumente zu löschen, die in einer Sammlung gespeichert sind. Diese Operation ähnelt dem Löschen einer Tabelle in einer Datenbank.
@@ -663,7 +666,7 @@ try {
 {: android}
 
 #### Android-JSONStore löschen
-{: #destroy_jsonstore_android} 
+{: #destroy_jsonstore_android}
 {: android}
 
 Verwenden Sie `destroy`, um die folgenden Daten zu entfernen:
@@ -684,4 +687,3 @@ try {
 ```
 {: codeblock}
 {: android}
-

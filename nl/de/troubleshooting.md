@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-02-12"
 
+keywords: troubleshooting techniques
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -76,7 +79,7 @@ Ein wichtiger Teil der Fehlerbehebung besteht darin, festzustellen, welche Syste
 - Muss eine bestimmte Abfolge von Ereignissen stattfinden, damit das Problem auftritt?
 - Treten bei anderen Anwendungen zum selben Zeitpunkt Fehler auf?
 
-Die Antworten auf diese Art von Fragen unterstützen Sie bei der Beschreibung der Umgebung, in der das Problem auftritt, und bei der Korrelation möglicher Abhängigkeiten. Beachten Sie dabei, dass mehrere Probleme, die zu ungefähr demselben Zeitpunkt aufgetreten sind, nicht unbedingt zusammenhängen müssen.
+Die Antworten auf diese Art von Fragen unterstützen Sie bei der Beschreibung der Umgebung, in der das Problem auftritt, und bei der Korrelation möglicher Abhängigkeiten. Obwohl mehrere Probleme in der gleichen Zeit aufgetreten sind, muss das nicht bedeuten, dass die Probleme nicht unbedingt zusammenhängen.
 
 ### Kann das Problem reproduziert werden?
 
@@ -99,10 +102,10 @@ Reproduzierbare Probleme können jedoch auch einen Nachteil haben: Wenn das Prob
 
 Sollten bei der Verwendung von {{site.data.keyword.mobilefoundation_short}} Probleme auftreten oder Fragen entstehen, können Sie nach Informationen suchen oder Fragen in einem Forum stellen. Sie haben auch die Möglichkeit, ein Support-Ticket zu öffnen.
 
-Wenn Sie zum Stellen einer Frage die Foren nutzen, versehen Sie Ihre Frage mit entsprechenden Tags, damit die IBM {{site.data.keyword.Bluemix_notm}}-Entwicklerteams Ihre Frage auf Anhieb erkennen können.
+Wenn Sie zum Stellen einer Frage die Foren nutzen, versehen Sie Ihre Frage mit entsprechenden Tags, damit die {{site.data.keyword.Bluemix_notm}}-Entwicklerteams Ihre Frage auf Anhieb erkennen können.
 
 Bei technischen Fragen zur Entwicklung und zur Bereitstellung einer App mit {{site.data.keyword.mobilefoundation_short}} können Sie Ihre Frage an [Stack Overflow ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](http://stackoverflow.com/search?q=ibm-mobilefirst+bluemix){:new_window} richten. Versehen Sie Ihre Frage mit den Tags `bluemix` und `ibm-mobilefirst`.
 
 Bei Fragen zum Service sowie zu einführenden Anweisungen können Sie das Forum [IBM developerWorks dW Answers ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} verwenden. Verwenden Sie dabei die Tags `bluemix` und `mobilefirst`.
 
-Informationen zum Öffnen eines IBM Support-Tickets oder zu Supportebenen und zur Priorität von Tickets finden Sie im Abschnitt zum [Kontaktieren des Supports](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.
+Weitere Informationen zum Öffnen eines IBM Support-Tickets oder zu Supportebenen und zur Priorität von Tickets finden Sie im Abschnitt zum [Kontaktieren des Supports](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.

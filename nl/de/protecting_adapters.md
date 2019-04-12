@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, adapter security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -162,4 +165,3 @@ Mit dem folgenden Code wird der Ressourcenschutz für eine Prozedur `userName` i
 {: #unprotected-resources}
 
 Eine ungeschützte Ressource ist eine Ressource, für die kein Zugriffstoken erforderlich ist. Das Sicherheitsframework von MobileFirst verwaltet den Zugriff auf ungeschützte Ressourcen nicht und prüft auch nicht die Identität von Clients, die auf diese Ressourcen zugreifen. Daher werden Funktionen wie Direct Update, das Blockieren des Gerätezugriffs oder das Inaktivieren einer Anwendung über Fernzugriff für ungeschützte Ressourcen nicht unterstützt.
-

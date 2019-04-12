@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-02-12"
 
+keywords: JSONStore, advanced jsonstore, Cordova secure jsonstore, iOS secure jsonstore, android jsonstore, adapter integration
+
+subcollection:  mobilefoundation
 ---
 {:generic: .ph data-hd-programlang='generic'}
 {:java: .ph data-hd-programlang='java'}
@@ -27,7 +30,7 @@ lastupdated: "2019-02-12"
 {:codeblock: .codeblock}
 {:screen: .screen}
 
-# JSONStore - erweitert 
+# JSONStore - erweitert
 {: #advanced_jsonstore}
 
 ## Sicherheit in JSONStore
@@ -50,7 +53,7 @@ Sperren Sie mit `closeAll` den Zugriff auf alle Sammlungen, bis Sie `init` erneu
 Die Verschlüsselung wird nur in iOS unterstützt. Standardmäßig verwendet das Mobile Foundation Cordova-SDK für iOS zur Verschlüsselung APIs, die von iOS bereitgestellt werden. Gehen Sie wie folgt vor, wenn Sie diese lieber durch OpenSSL ersetzen möchten:
 {: cordova}
 
-* Fügen Sie das Plug-in `cordova-plugin-mfp-encrypt-utils` hinzu: 
+* Fügen Sie das Plug-in `cordova-plugin-mfp-encrypt-utils` hinzu:
   ```bash
   cordova plugin add cordova-plugin-mfp-encrypt-utils.
   ```
@@ -107,8 +110,8 @@ Sperren Sie mit `closeAllCollections` den Zugriff auf alle Sammlungen, bis Sie `
 {: android}
 
 ```java
-Context context = getContext();
-try {
+Context  context = getContext();
+    try {
   JSONStoreCollection people = new JSONStoreCollection("people");
   people.setSearchField("name", SearchFieldType.STRING);
   people.setSearchField("age", SearchFieldType.INTEGER);
@@ -120,13 +123,13 @@ try {
   // Erfolg behandeln
 } catch(JSONStoreException e) {
   // Fehler behandeln
-      }
+    }
 ```
 {: codeblock}
 {: android}
 
 ## Unterstützung mehrerer Benutzer in JSONStore
-{: #multiple_user_jsonstore} 
+{: #multiple_user_jsonstore}
 
 <!--### Cordova
 {: #multiple_user_jsonstore_cordova} -->
@@ -180,8 +183,8 @@ Sie können in einer einzigen Mobile Foundation-Anwendung mehrere Speicher erste
 {: android}
 
 ```java
-Context context = getContext();
-try {
+Context  context = getContext();
+    try {
   JSONStoreCollection people = new JSONStoreCollection("people");
   people.setSearchField("name", SearchFieldType.STRING);
   people.setSearchField("age", SearchFieldType.INTEGER);
@@ -193,7 +196,7 @@ try {
   // Erfolg behandeln
 } catch(JSONStoreException e) {
   // Fehler behandeln
-      }
+    }
 ```
 {: codeblock}
 {: android}
@@ -266,7 +269,7 @@ Sie können diese Ziele mithilfe von `WLResourceRequest` oder `jQuery.ajax` erre
    {: codeblock}
    {: cordova}
    Damit JSONStore die Dokumente nicht als "vorläufig" markiert, müssen Sie die Option `{markDirty:false}` an `add`, `replace` und `remove` übergeben.
-   {: tip} 
+   {: tip}
    {: cordova}
 5. Sie können die vorläufigen Dokumente auch mit der API `getAllDirty` abrufen.
    ```javascript
@@ -325,7 +328,7 @@ Sie können diese Ziele mithilfe von `WLResourceRequest` oder `jQuery.ajax` erre
         // Das Ergebnis ist ein Array mit Dokumenten mit den Ergebnissen der Suche.
     }).fail(function () {
         // Fehler behandeln
-    }); 
+});
    ```
    {: codeblock}
    {: cordova}
@@ -378,7 +381,7 @@ Sie können diese Ziele mithilfe von `WLResourceRequest` erreichen.
    {: codeblock}
    {: ios}
    Damit JSONStore die Dokumente nicht als "vorläufig" markiert, müssen Sie die Option `{markDirty:false}` an `add`, `replace` und `remove` übergeben.
-   {: tip} 
+   {: tip}
 5. Wenn Sie Änderungen per Push-Operation an einen Adapter übergeben wollen, müssen Sie `allDirty` aufrufen, um eine Liste der Dokumente mit Änderungen abzurufen, und danach `WLResourceRequest` verwenden. Nachdem die Daten gesendet wurden und eine erfolgreiche Antwort empfangen wurde, müssen Sie `markDocumentsClean` aufrufen.
    ```swift
     // Start - PushToAdapter
@@ -464,7 +467,7 @@ Sie können diese Ziele mithilfe von Funktionen wie `WLResourceRequest` oder mit
    {: codeblock}
    {: android}
    Damit JSONStore die Dokumente nicht als "vorläufig" markiert, müssen Sie die Option `options.setMarkDirty(false)` an `add`, `replace` und `remove` übergeben.
-   {: tip} 
+   {: tip}
    {: android}
 5. Wenn Sie Änderungen per Push-Operation an einen Adapter übergeben wollen, müssen Sie `findAllDirtyDocuments` aufrufen, um eine Liste der Dokumente mit Änderungen abzurufen, und danach `WLResourceRequest` verwenden. Nachdem die Daten gesendet wurden und eine erfolgreiche Antwort empfangen wurde, müssen Sie `markDocumentsClean` aufrufen.
    ```java
@@ -498,5 +501,5 @@ Sie können diese Ziele mithilfe von Funktionen wie `WLResourceRequest` oder mit
    ```
    {: codeblock}
    {: android}
-6. Laden Sie das native Android-Anwendungsprojekt aus dem Bereich **Beispiele** herunter. Das Projekt enthält eine native Android-Anwendung, die das JSONStore-API-Set verwendet. [Hier](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80) können Sie ein JavaScript-Adapter-Maven-Projekt herunterladen. 
+6. Laden Sie das native Android-Anwendungsprojekt aus dem Bereich **Beispiele** herunter. Das Projekt enthält eine native Android-Anwendung, die das JSONStore-API-Set verwendet. [Hier](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80) können Sie ein JavaScript-Adapter-Maven-Projekt herunterladen.
 {: android}

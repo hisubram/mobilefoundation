@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: security, basic authentication, protecting resources, tokens, scopemapping
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -27,9 +30,9 @@ Das OAuth-Protokoll trennt die Rolle des Autorisierungsservers von der Rolle des
 * Der Autorisierungsserver verwaltet die Clientberechtigungen und die Tokengenerierung.
 * Der Ressourcenserver verwendet den Autorisierungsserver, um das vom Client bereitgestellte Zugriffstoken zu validieren und um sicherzustellen, dass das Token zum Schutzbereich der angeforderten Ressource passt.
 
-Im Zentrum des Sicherheitsframeworks steht ein Autorisierungsserver, der das OAuth-Protokoll implementiert und die OAuth-Endpunkte, mit denen der Client beim Anfordern von Zugriffstoken interagiert, zugänglich macht. Das Sicherheitsframework enthält die logischen Bausteine für die Implementierung einer angepassten Autorisierungslogik unter Verwendung des Autorisierungsservers und des zugrunde liegenden OAuth-Protokolls. MobileFirst Server fungiert standardmäßig auch als **Autorisierungsserver**. Sie können aber auch eine IBM WebSphere DataPower-Appliance als Autorisierungsserver konfigurieren, der mit MobileFirst Server interagiert.
+Im Zentrum des Sicherheitsframeworks steht ein Autorisierungsserver, der das OAuth-Protokoll implementiert und die OAuth-Endpunkte, mit denen der Client beim Anfordern von Zugriffstoken interagiert, zugänglich macht. Das Sicherheitsframework enthält die logischen Bausteine für die Implementierung einer angepassten Autorisierungslogik für den Autorisierungsserver und das zugrunde liegende OAuth-Protokoll. MobileFirst Server fungiert standardmäßig auch als **Autorisierungsserver**. Sie können aber auch eine IBM WebSphere DataPower-Appliance als Autorisierungsserver konfigurieren, der mit MobileFirst Server interagiert.
 
-Die Clientanwendung kann diese Token dann für den Zugriff auf Ressourcen eines **Ressourcenservers** verwenden, bei dem es sich um MobileFirst Server oder um einen externen Server handeln kann. Der Ressourcenserver überprüft die Gültigkeit des Tokens, um sicherzustellen, dass dem Client der Zugriff auf die angeforderte Ressource gewährt werden kann. Durch die Trennung von Ressourcenserver und Autorisierungsserver können Sie die Sicherheit für Ressourcen durchsetzen, die außerhalb von MobileFirst Server ausgeführt werden.
+Die Clientanwendung kann diese Token dann für den Zugriff auf Ressourcen eines **Ressourcenservers** verwenden, bei dem es sich um MobileFirst Server oder um einen externen Server handeln kann. Der Ressourcenserver überprüft die Gültigkeit des Tokens, um sicherzustellen, dass dem Client der Zugriff auf die angeforderte Ressource gewährt werden kann. Durch die Trennung von Ressourcenserver und Autorisierungsserver wird die Sicherheit für Ressourcen durchgesetzt, die außerhalb von MobileFirst Server ausgeführt werden.
 
 Anwendungsentwickler schützen den Zugriff auf Ressourcen, indem sie für jede Ressource den erforderlichen Bereich definieren und die Sicherheitsprüfungen und Abfrage-Handler implementieren. Das serverseitige Sicherheitsframework und die clientseitige API kümmern sich transparent um den OAuth-Nachrichtenaustausch und die Interaktion mit dem Autorisierungsserver, sodass sich Entwickler vollständig auf die Autorisierungslogik konzentrieren können.
 
@@ -64,8 +67,11 @@ Wählen Sie eine der folgenden alternativen Methoden aus, um für die Anwendung 
 
 * Konfigurationsdatei der Anwendung bearbeiten
 
-    1. Navigieren Sie in einem **Befehlszeilenfenster** zum Stammordner des Projekts und führen Sie den Befehl ``mfpdev app pull`` aus.
-    2. Öffnen Sie die Konfigurationsdatei, die sich im Ordner **[Projektordner]\mobilefirst** befindet.
+    1. Navigieren Sie in einer Befehlszeilenschnittstelle zum Stammordner des Projekts und führen Sie den folgenden Befehl aus.
+      ```bash
+      mfpdev app pull
+      ```
+    2. Öffnen Sie die Konfigurationsdatei, die sich im Ordner `[Projektordner]\mobilefirst` befindet.
     3. Bearbeiten Sie die Datei. Definieren Sie dazu die Eigenschaft `maxTokenExpiration` und setzen Sie sie auf den Wert für den maximalen Ablaufzeitraum für Zugriffstoken (in Sekunden):
         ```java
         {
@@ -150,7 +156,7 @@ Beispiel:
 **Serverseitige Eigenschaft**
 *Dateiname*: server.xml
 *Eigenschaftsname*: mfp.security.refreshtoken.enabled.apps
-*Eigenschaftswert*: Anwendungsbundle-IDs, jeweils getrennt durch ‘;’
+*Eigenschaftswert*: application bundle id separated by ‘;’
 
 Beispiel:
 
@@ -179,7 +185,7 @@ Das folgende Beispiel zeigt eine gültige Aktualisierungstokenantwort vom Autori
 ```        
 {: codeblock}
 
-Das Aktualisierungstokenantwort verfügt neben den Eigenschaftsobjekten, die im Abschnitt zur Struktur der Zugriffstokenantwort erklärt sind, über das Eigenschaftsobjekt 'refresh_token'.
+Die Aktualisierungstokenantwort verfügt neben einem Eigenschaftsobjekten, die im Abschnitt zur Struktur der Zugriffstokenantwort erklärt sind, über das Eigenschaftsobjekt `refresh_token`.
 
 >**Hinweis**: Die Aktualisierungstokens sind im Vergleich zu Zugriffstokens langlebig. Daher sollten Sie Aktualisierungstokens mit Vorsicht verwenden. Anwendungen, bei denen eine regelmäßige Benutzerauthentifizierung nicht erforderlich ist, sind ideale Kandidaten für die Verwendung von Aktualisierungstokens.
 
@@ -203,9 +209,9 @@ Die folgenden vordefinierten Sicherheitsprüfungen sind verfügbar:
 #### Challenge-Handler-Entität
 {: #challengehandler_entity}
 
-Wenn der Client versucht, auf eine geschützte Ressource zuzugreifen, kann er eine Abfrage erhalten. Bei dieser Abfrage kann es sich um eine Frage, einen Sicherheitstest oder eine Eingabeaufforderung des Servers handeln. Mit der Abfrage soll sichergestellt werden, dass der Client berechtigt ist, auf diese Ressource zuzugreifen. In den meisten Fällen werden im Rahmen der Abfrage Berechtigungsnachweise angefordert, z. B. ein Benutzername und ein Kennwort.
+Wenn Sie versuchen, auf eine geschützte Ressource zuzugreifen, kann der Client eine Abfrage erhalten. Bei dieser Abfrage kann es sich um eine Frage, einen Sicherheitstest oder eine Eingabeaufforderung des Servers handeln. Mit der Abfrage soll sichergestellt werden, dass der Client berechtigt ist, auf diese Ressource zuzugreifen. In den meisten Fällen werden im Rahmen der Abfrage Berechtigungsnachweise angefordert, z. B. ein Benutzername und ein Kennwort.
 
-Ein Abfrage-Handler ist eine clientseitige Entität, die die clientseitige Sicherheitslogik und die zugehörige Benutzerinteraktion implementiert. 
+Ein Abfrage-Handler ist eine clientseitige Entität, die die clientseitige Sicherheitslogik und die zugehörige Benutzerinteraktion implementiert.
 
 >**Wichtig**: Nachdem eine Abfrage empfangen wurde, kann sie nicht ignoriert werden. Sie muss beantwortet werden oder der laufende Vorgang muss abgebrochen werden. Das Ignorieren einer Abfrage kann zu unerwartetem Verhalten führen.
 
@@ -222,12 +228,12 @@ Ein Bereich ist durch eine Zeichenfolge mit einem oder mehreren, jeweils durch e
 Ein Bereichselement kann Folgendes sein:
 
 * Der Name einer Sicherheitsprüfung.
-* Ein beliebiges Schlüsselwort wie `access-restricted` oder `deletePrivilege`, das die Sicherheitsstufe definiert, die für diese Ressource erforderlich ist. Dieses Schlüsselwort wird später einer Sicherheitsprüfung zugeordnet.
+* Ein beliebiges Schlüsselwort wie `access-restricted` oder `deletePrivilege`, das die Sicherheitsstufe definiert, die für diese Ressource benötigt wird. Dieses Schlüsselwort wird später einer Sicherheitsprüfung zugeordnet.
 
 #### Bereichszuordnung
 {: #scopemapping}
 
-Standardmäßig werden die **Bereichselemente**, die Sie in Ihren **Bereich** schreiben, einer **Sicherheitsprüfung mit demselben Namen** zugeordnet. Wenn Sie z. B. eine Sicherheitsprüfung mit dem Namen `PinCodeAttempts` schreiben, können Sie ein Bereichselement mit demselben Namen in Ihrem Bereich verwenden.
+Standardmäßig werden die **Bereichselemente**, die Sie in Ihren **Bereich** schreiben, einer **Sicherheitsprüfung** mit demselben Namen zugeordnet. Wenn Sie z. B. eine Sicherheitsprüfung mit dem Namen `PinCodeAttempts` schreiben, können Sie ein Bereichselement mit demselben Namen in Ihrem Bereich verwenden.
 
 Die Bereichszuordnung ermöglicht die Zuordnung von Bereichselementen zu Sicherheitsprüfungen. Wenn der Client nach einem Bereichselement fragt, definiert diese Konfiguration, welche Sicherheitsprüfungen angewendet werden sollen. Sie können beispielsweise das Bereichselement `access-restricted` Ihrer Sicherheitsprüfung `PinCodeAttempts` zuordnen.
 
@@ -249,7 +255,7 @@ Beispiel: scope = `access-restricted deletePrivilege`
 Sie können die JSON-Datei der Anwendung auch manuell mit der erforderlichen Konfiguration bearbeiten und die Änderungen mit Push-Operation zurück an einen MobileFirst-Server übertragen.
 
 1. Navigieren Sie in einem **Befehlszeilenfenster** zum Stammordner des Projekts und führen Sie den Befehl `mfpdev app pull` aus.
-2. Öffnen Sie die Konfigurationsdatei, die sich im Ordner **[Projektordner]\mobilefirst** befindet.
+2. Öffnen Sie die Konfigurationsdatei, die sich im Ordner `[Projektordner]\mobilefirst` befindet.
 3. Bearbeiten Sie die Datei, indem Sie eine Eigenschaft `scopeElementMapping` definieren. Definieren Sie in dieser Eigenschaft Datenpaare, die jeweils aus dem Namen des ausgewählten Bereichselements und einer Zeichenfolge mit null oder mehr durch Leerzeichen getrennten Sicherheitsprüfungen besteht, denen das Element zugeordnet wird. Beispiel:
 
 ```java
@@ -258,9 +264,13 @@ Sie können die JSON-Datei der Anwendung auch manuell mit der erforderlichen Kon
          "SSOUserValidation": "LtpaBasedSSO CredentialsValidation"
      }
 ```
-4. Implementieren Sie die aktualisierte JSON-Konfigurationsdatei. Führen Sie dazu den Befehl `mfpdev app push` aus.
+4. Implementieren Sie die aktualisierte JSON-Konfigurationsdatei, indem Sie den folgenden Befehl ausführen:
+  ```bash
+  mfpdev app push
+  ```
 
->Sie können aktualisierte Konfigurationen auch mit Push-Operation an ferne Server übertragen. Sehen Sie sich dazu das Lernprogramm 'MobileFirst-Artefakte über die MobileFirst-CLI verwalten' an.
+Sie können aktualisierte Konfigurationen auch mit Push-Operation an ferne Server übertragen. Sehen Sie sich dazu das Lernprogramm 'MobileFirst-Artefakte über die MobileFirst-CLI verwalten' an.
+{: note}
 
 ### Ressourcen schützen
 {: #protecting-resources}
@@ -275,7 +285,7 @@ Sie können Ihre Ressourcen auf verschiedene Arten schützen:
 Auf der Anwendungsebene können Sie einen Bereich definieren, der für alle Ressourcen gilt, die von der Anwendung verwendet werden. Das Sicherheitsframework führt diese Prüfungen (sofern vorhanden) zusätzlich zu den Sicherheitsprüfungen des angeforderten Ressourcenbereichs aus.
 
 >**Hinweis**:
->* Der obligatorische Anwendungsbereich wird beim Zugriff auf eine ungeschützte Ressource nicht angewendet.
+>* Der obligatorische Anwendungsbereich wird nicht angewendet, wenn Sie auf eine ungeschützte Ressource zugreifen.
 >* Das Zugriffstoken, das für den Ressourcenbereich gewährt wird, enthält nicht den obligatorischen Anwendungsbereich.
 
 Wählen Sie in der Navigationsseitenleiste der MobileFirst Operations Console im Abschnitt **Anwendungen** Ihre Anwendung und dann die Registerkarte **Sicherheit** aus. Wählen Sie unter **Obligatorischer Anwendungsbereich** die Option **Zum Bereich hinzufügen** aus.
@@ -298,7 +308,7 @@ Sie können die JSON-Datei der Anwendung auch manuell mit der erforderlichen Kon
 #### Adapterressourcen schützen
 {: #protectadapterres}
 
-In Ihrem Adapter können Sie einen Schutzbereich für die Prozedur einer Java-Methode oder einer JavaScript-Ressource oder für eine ganze Java-Ressourcenklasse angeben. Ein Bereich ist als eine Zeichenfolge aus einem oder mehreren durch Leerzeichen getrennten Bereichselementen (“scopeElement1 scopeElement2 …”) definiert, oder null, um den Standardbereich anzuwenden. Weitere Informationen zum Schützen von Adapterressourcen finden Sie in [Adapter schützen](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
+In Ihrem Adapter können Sie einen Schutzbereich für die Prozedur einer Java-Methode oder einer JavaScript-Ressource oder für eine ganze Java-Ressourcenklasse angeben. Ein Bereich ist als eine Zeichenfolge aus einem oder mehreren durch Leerzeichen getrennten Bereichselementen (“scopeElement1 scopeElement2 …”) definiert, oder null, um den Standardbereich anzuwenden. Weitere Informationen zum Schutz von Adapterressourcen finden Sie im Abschnitt [Adapter schützen](/docs/services/mobilefoundation?topic=mobilefoundation-protecting_adapters#protecting_adapters).
 
 ### Ressourcenschutz inaktivieren
 {: #disablingresprotection}

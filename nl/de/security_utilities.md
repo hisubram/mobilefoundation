@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2018-11-19"
 
+keywords: security
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -15,7 +18,7 @@ lastupdated:  "2018-11-19"
 #	Sicherheitsdienstprogramme
 {: #security_utilities}
 
-Die clientseitige Mobile Foundation-API stellt einige Sicherheitsdienstprogramme bereit, mit denen Sie die Daten Ihrer Benutzer schützen können. Funktionen wie JSONStore sind ausgezeichnet für den Schutz Ihrer JSON-Objekte geeignet. Es wird jedoch nicht empfohlen, binäre Blobs in einer JSONStore-Sammlung zu speichern.
+Die clientseitige Mobile Foundation-API stellt einige Sicherheitsdienstprogramme bereit, mit denen Sie die Daten Ihrer Benutzer schützen können. Funktionen wie JSONStore sind ausgezeichnet für den Schutz Ihrer JSON-Objekte geeignet. Es wird empfohlen, binäre Blobs nicht in einer JSONStore-Sammlung zu speichern.
 
 Speichern Sie Binärdaten stattdessen im Dateisystem und speichern Sie die Dateipfade und andere Metadaten in einer JSONStore-Sammlung. Wenn Sie Dateien wie Bilder schützen möchten, können Sie sie als Base64-Zeichenfolgen codieren, sie verschlüsseln und die Ausgabe auf Platte schreiben. Um die Daten zu entschlüsseln, können Sie die Metadaten in einer JSONStore-Sammlung suchen. Lesen Sie die verschlüsselten Daten von der Platte und entschlüsseln Sie sie mithilfe der gespeicherten Metadaten. Diese Metadaten können den Schlüssel, Initialisierungsvektor (IV), Dateityp, Dateipfad, das Salt und andere Attribute enthalten.
 

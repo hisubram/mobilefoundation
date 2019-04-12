@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-10-16"
 
+keywords: mobile foundation security, MIM attack, certificate pinning
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -22,8 +25,8 @@ Bei der Kommunikation über öffentliche Netze ist es wichtig, Informationen sic
 
 Reduzieren Sie mithilfe von [Certificate Pinning](#cert_pinning) Angriffe auf die Sicherheit und verhindern Sie Man-in-the-Middle-Angriffe (MitM).
 
-
->**Hinweis**: Diese Option ist optional und nur für Professional-Pläne verfügbar.
+Diese Option ist optional und nur für Professional-Pläne verfügbar.
+{: note}
 
 Der Prozess des Certificate Pinning setzt sich aus den folgenden Schritten zusammen:
 
@@ -32,7 +35,7 @@ Der Prozess des Certificate Pinning setzt sich aus den folgenden Schritten zusam
 
 Während des SSL-Handshake (erste Anforderung an den Server) überprüft das Mobile Foundation-Client-SDK, ob der öffentliche Schlüssel des Serverzertifikats mit dem öffentlichen Schlüssel des Zertifikats übereinstimmt, das in der App gespeichert ist.
 
->**Hinweis**: Sie müssen ein von einer Zertifizierungsstelle erworbenes Zertifikat verwenden. Selbst signierte Zertifikate werden **nicht unterstützt**.
+>**Hinweis**: Sie müssen ein Zertifikat verwenden, das von einer Zertifizierungsstelle erworben wurde. Selbst signierte Zertifikate werden **nicht unterstützt**.
 
 ## Certificate Pinning
 {: #cert_pinning}
@@ -46,11 +49,12 @@ IBM Mobile Foundation stellt eine API für das **Certificate Pinning** bereit. D
 
 Beim Certificate Pinning wird einem Host sein erwarteter öffentlicher Schlüssel zugeordnet. Sie können Ihren Client-Code so konfigurieren, dass er nur ein bestimmtes Zertifikat für Ihren Domänennamen akzeptiert und nicht jedes Zertifikat, das einem anerkannten CA-Stammzertifikat entspricht, das vom Betriebssystem oder vom Browser erkannt wird. Eine Kopie des Zertifikats wird in Ihre Clientanwendung eingefügt. Während des SSL-Handshake (erste Anforderung an den Server) überprüft das MobileFirst-Client-SDK, ob der öffentliche Schlüssel des Serverzertifikats mit dem öffentlichen Schlüssel des Zertifikats übereinstimmt, das in der App gespeichert ist.
 
->**Hinweis**: Sie können auch mehrere Zertifikate an Ihre Clientanwendung anheften. Eine Kopie aller Zertifikate sollte in die Clientanwendung eingefügt werden. Während des SSL-Handshake (erste Anforderung an den Server) überprüft das MobileFirst-Client-SDK, ob der öffentliche Schlüssel des Serverzertifikats mit dem öffentlichen Schlüssel eines der Zertifikate übereinstimmt, die in der App gespeichert sind.
+Sie können auch mehrere Zertifikate mit Ihrer Clientanwendung verknüpfen. Platzieren Sie eine Kopie aller Zertifikate in Ihrer Clientanwendung. Während des SSL-Handshake (erste Anforderung an den Server) überprüft das MobileFirst-Client-SDK, ob der öffentliche Schlüssel des Serverzertifikats mit dem öffentlichen Schlüssel eines der Zertifikate übereinstimmt, die in der App gespeichert sind.
+{: note}
 
 **Wichtig**
 
-* Einige Betriebssysteme für mobile Geräte stellen das Ergebnis der Gültigkeitsprüfung für das Zertifikat möglicherweise in den Cache. Daher sollte der Code die API-Methode für die Certificate Pinning **vor** dem Durchführen einer geschützten Anwendung aufrufen. Andernfalls kann es sein, dass nachfolgende Anforderungen die Zertifikatsprüfung und Certificate Pinning-Prüfung überspringen.
+* Einige Betriebssysteme für mobile Geräte stellen das Ergebnis der Gültigkeitsprüfung für das Zertifikat möglicherweise in den Cache. Daher ruft der Code die API-Methode für das Certificate Pinning **vor** dem Durchführen einer geschützten Anwendung auf. Andernfalls kann es sein, dass nachfolgende Anforderungen die Zertifikatsprüfung und Certificate Pinning-Prüfung überspringen.
 * Stellen Sie sicher, dass nur Mobile Foundation-APIs für die gesamte Kommunikation mit dem zugehörigen Host verwendet werden, selbst nach dem Certificate Spinning. Die Verwendung von APIs anderer Anbieter für die Interaktion mit demselben Host kann zu einem unerwarteten Verhalten führen, z. B. dem Caching eines nicht geprüften Zertifikats durch das Betriebssystem für mobile Geräte.
 * Bei einem weiteren Aufruf der API-Methode für das Certifiate Pinning wird die vorherige Pinning-Operation überschrieben.
 
@@ -59,9 +63,9 @@ Wenn der Pinning-Prozess erfolgreich ist, wird mit dem öffentlichen Schlüssel 
 ## Zertifikatskonfiguration
 {: #certsetup}
 
-Sie müssen ein Zertifikat verwenden, das Sie von einer Zertifizierungsstelle erworben haben. Selbst signierte Zertifikate werden **nicht unterstützt**. Aus Gründen der Kompatibilität mit den unterstützten Umgebungen müssen Sie sicherstellen, dass das verwendete Zertifikat im **DER**-Format (Distinguished Encoding Rules) gemäß Standard X.690 der International Telecommunications Union codiert ist.
+Sie müssen ein Zertifikat verwenden, das von einer Zertifizierungsstelle erworben wurde. Selbst signierte Zertifikate werden **nicht unterstützt**. Aus Gründen der Kompatibilität mit den unterstützten Umgebungen müssen Sie sicherstellen, dass das verwendete Zertifikat im **DER**-Format (Distinguished Encoding Rules) gemäß Standard X.690 der International Telecommunications Union codiert ist.
 
-Das Zertifikat muss sowohl in MobileFirst Server als auch in Ihre Anwendung eingefügt werden. Nehmen Sie das Zertifikat wie folgt auf:
+Das Zertifikat muss sowohl in MobileFirst Server als auch in Ihre Anwendung eingefügt werden. Fügen Sie das Zertifikat wie folgt ein:
 
 * In MobileFirst Server (WebSphere Application Server, WebSphere Application Server Liberty oder Apache Tomcat): Informationen zum Konfigurieren von SSL/TLS und Zertifikaten finden Sie in der Dokumentation zum Ihrem entsprechenden Anwendungsserver.
 * In Ihrer Anwendung:
@@ -78,8 +82,8 @@ Das Certificate Pinning besteht aus der folgenden überladenen API-Methode, wobe
 {: #certpinapiandroid}
 
 * Einzelnes Zertifikat:
- 
-    Syntax: pinTrustedCertificatePublicKeyFromFile(String certificateFilename); 
+
+    Syntax: pinTrustedCertificatePublicKeyFromFile(String certificateFilename);
 
     Beispiel:
 
@@ -115,8 +119,8 @@ Die Certificate Pinning-Methode löst in zwei Fällen eine Ausnahme aus:
     * Die Datei ist nicht vorhanden.
     * Die Datei liegt im falschen Format vor.
 
-* Certificate Pinning für mehrere Zertifikate 
- 
+* Certificate Pinning für mehrere Zertifikate
+
     Syntax: pinTrustedCertificatePublicKeyFromFiles:(NSArray*) certificateFilenames;
 
     Die Certificate Pinning-Methode löst in zwei Fällen eine Ausnahme aus:
@@ -128,13 +132,13 @@ Die Certificate Pinning-Methode löst in zwei Fällen eine Ausnahme aus:
 
 Beispiel: Einzelnes Zertifikat:
 
-```
+```objectc
 [[WLClient sharedInstance]pinTrustedCertificatePublicKeyFromFile:@"myCertificate.cer"];
 ```
 
 Beispiel: Mehrere Zertifikate:
 
-```
+```objectc
 NSArray *arrayOfCerts = [NSArray arrayWithObjects:@“Cert1”,@“Cert2”,@“Cert3",nil];
 [[WLClient sharedInstance]pinTrustedCertificatePublicKeyFromFiles:arrayOfCerts];
 ```
@@ -143,13 +147,13 @@ NSArray *arrayOfCerts = [NSArray arrayWithObjects:@“Cert1”,@“Cert2”,@“
 
 Beispiel: Einzelnes Zertifikat:
 
-```
+```swift
 WLClient.sharedInstance().pinTrustedCertificatePublicKeyFromFile("myCertificate.cer")
 ```
 
 Beispiel: Mehrere Zertifikate:
 
-```
+```swift
 let arrayOfCerts : [Any] = ["Cert1", "Cert2”, "Cert3”];
 WLClient.sharedInstance().pinTrustedCertificatePublicKey( fromFiles: arrayOfCerts)
 ```
@@ -176,11 +180,12 @@ Die Certificate Pinning-Methode löst in zwei Fällen eine Ausnahme aus:
 
 Die Certificate Pinning-Methode gibt eine Zusicherung (Promise) zurück:
 
-* Die Certificate Pinning-Methode bei erfolgreichem Pinning die Methode 'onSuccess' auf.
-* Die Certificate Pinning-Methode löst in zwei Fällen den Callback 'onFailure' aus:
-* Die Datei ist nicht vorhanden.
-* Die Datei liegt im falschen Format vor.
+* Die Certificate Pinning-Methode ruft die Methode `onSuccess` auf, wenn das Pinning erfolgreich war.
+* Die Certificate Pinning-Methode löst den Callback `onFailure` in den beiden folgenden Situationen aus:
+  * Die Datei ist nicht vorhanden.
+  * Die Datei hat das falsche Format.
 
-Wenn zu einem späteren Zeitpunkt eine geschützte Anforderung an einen Server gestellt wird, für dessen Zertifikat kein Certificate Pinning durchgeführt wurde, wird die Callback-Operation ``onFailure`` dieser Anforderung (z. B. ``obtainAccessToken`` oder ``WLResourceRequest``) aufgerufen.
+Wenn zu einem späteren Zeitpunkt eine geschützte Anforderung an einen Server gestellt wird, für dessen Zertifikat kein Certificate Pinning durchgeführt wurde, wird die Callback-Operation `onFailure` dieser Anforderung (z. B. `obtainAccessToken` oder `WLResourceRequest`) aufgerufen.
 
->Weitere Informationen zur API-Methode für das Certificate Pinning finden Sie in der [API-Referenz](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks).
+Weitere Informationen zur API-Methode für das Certificate Pinning finden Sie in der [API-Referenz](/docs/services/mobilefoundation?topic=mobilefoundation-client_sdks#client_sdks).
+{: note}

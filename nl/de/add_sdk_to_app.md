@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated:  "2019-01-04"
 
+keywords: Mobile Foundation SDK, android sdk, iOS sdk, cordova sdk, react native sdk
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ lastupdated:  "2019-01-04"
 ### Android SDK zur App hinzufügen
 {: android}
 
-Öffnen Sie Android Studio, wählen Sie die Android-Ansicht und **Gradle Scripts** aus. Wählen Sie anschließend die Datei `build.gradle (Module: app)` aus und führen Sie die folgenden Schritte aus, um das Android-SDK Ihrer Android-Anwendung hinzuzufügen.
+Öffnen Sie Android Studio, wählen Sie die Android-Ansicht aus und wählen Sie **Gradle-Scripts** aus. Wählen Sie die Datei `build.gradle (Module: app)` aus und führen Sie dann die folgenden Schritte aus, um das Android-SDK zu Ihrer Android-Anwendung hinzuzufügen.
 {: android}
 
 1. Fügen Sie die folgende Zeile zum Abschnitt `dependencies` hinzu.
@@ -52,7 +55,7 @@ lastupdated:  "2019-01-04"
   ```
   {: codeblock}
   {: android}
-3. Öffnen Sie in der Android-Ansicht die Datei **app → manifests → AndroidManifest.xml**. Fügen Sie die folgenden Berechtigungen oberhalb des Elements `application` hinzu.
+3. Öffnen Sie in der Android-Ansicht die Datei **app → manifests → AndroidManifest.xml**. Fügen Sie die folgenden Berechtigungen vor dem Element 'application' hinzu.
    ```xml
    <uses-permission android:name="android.permission.INTERNET"/>
    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -70,7 +73,7 @@ lastupdated:  "2019-01-04"
 ### iOS-SDK zur App hinzufügen
 {: ios}
 
-Dies ist das Core-SDK für IBM Mobile Foundation, das sich aus APIs für die Implementierung von Mobile Foundation-Funktionen für die Sicherheit, Autorisierung, Protokollierung, aufrufenden Adaptern und anderen Funktionen zusammensetzt. Führen Sie die folgenden Schritte aus, um das iOS-SDK zur iOS-Anwendung hinzuzufügen.
+Dieses SDK ist das Core-SDK für IBM Mobile Foundation, das sich aus APIs für die Implementierung von Mobile Foundation-Funktionen für die Sicherheit, Autorisierung, Protokollierung, aufrufenden Adaptern und anderen Funktionen zusammensetzt. Führen Sie die folgenden Schritte aus, um das iOS-SDK zur iOS-Anwendung hinzuzufügen.
 {: ios}
 
 1. Wechseln Sie in den Stammordner Ihrer iOS-App und führen Sie den folgenden Befehl aus, um eine Podfile zu erstellen.
@@ -95,7 +98,7 @@ Dies ist das Core-SDK für IBM Mobile Foundation, das sich aus APIs für die Imp
    ```
    {: codeblock}
    {: ios}
-4. Installieren Sie den Pod mit dem folgenden Befehl.
+4. Installieren Sie Pod mit dem folgenden Befehl.
    ```bash
    pod install
    ```
@@ -113,7 +116,7 @@ Dies ist das Core-SDK für IBM Mobile Foundation, das sich aus APIs für die Imp
 ### Cordova-SDK zur App hinzufügen
 {: cordova}
 
-Dies ist das Core-SDK für IBM Mobile Foundation, das sich aus APIs für die Implementierung von Mobile Foundation-Funktionen für die Sicherheit, Autorisierung, Protokollierung, aufrufenden Adaptern und anderen Funktionen zusammensetzt. Führen Sie die folgenden Schritte aus, um das Cordova-SDK zur Anwendung hinzuzufügen.
+Dieses SDK ist das Core-SDK für IBM Mobile Foundation, das sich aus APIs für die Implementierung von Mobile Foundation-Funktionen für die Sicherheit, Autorisierung, Protokollierung, aufrufenden Adaptern und anderen Funktionen zusammensetzt. Führen Sie die folgenden Schritte aus, um das Cordova-SDK zu Ihrer Anwendung hinzuzufügen.
 {: cordova}
 
 1. Erstellen Sie ein Cordova-Projekt.
@@ -207,4 +210,3 @@ Wenn Sie Mobile Foundation-Funktionen zu einer vorhandenen React Native-App hinz
    {: reactnative}
 7. Öffnen Sie für iOS Xcode und ziehen Sie `mfpclient.plist` per Drag-and-Drop aus dem Ordner `ios`. Dieser Schritt gilt nur für iOS-Plattformen.
 {: reactnative}
-

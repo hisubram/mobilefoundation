@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-22"
 
+keywords: mobile analytics, charts, app sessions, crashes, graph
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -19,30 +22,30 @@ lastupdated: "2018-11-22"
 # Angepasste Diagramme erstellen
 {: #build_custom_charts}
 
-Die Ansicht 'Angepasste Diagramme' der Mobile Analytics-Konsole stellt Ihnen die Flexibilität zur Erstellung Ihrer eigenen Visualisierungen im Hinblick auf die erfassten und gespeicherten Analysedaten bereit.  Diese Funktion unterstützt Sie beim weiteren Vertiefen der bereits bereitgestellten Informationen bzw. beim reibungslosen Integrieren dieser Insights mit Business Analytics und angepassten Daten.
+Die Ansicht 'Angepasste Diagramme' in der Mobile Analytics-Konsole bietet Ihnen die Flexibilität, um eigene Visualisierungen für die erfassten und gespeicherten Analysedaten zu erstellen. Die angepassten Diagramme unterstützen Sie beim weiteren Vertiefen der bereits bereitgestellten Informationen bzw. beim reibungslosen Integrieren dieser Insights mit Business Analytics und angepassten Daten.
 
-In dieser Ansicht können Sie eine beliebige Anzahl der unterstützten Analysedatasets und anschließend einen der unterstützten Diagrammtypen zur Abbildung des Datasets auswählen.  Sie können die Visualisierung sogar noch feiner differenzieren, indem Sie Filter definieren, die auf die abgebildeten Daten angewendet werden.  
+In dieser Ansicht können Sie eine beliebige Anzahl der unterstützten Analysedatasets und anschließend einen der unterstützten Diagrammtypen zur Abbildung des Datasets auswählen. Sie können die Visualisierung sogar noch feiner differenzieren, indem Sie Filter definieren, die auf die abgebildeten Daten angewendet werden.  
 
 Unterstützte Datasets:
  * App-Protokolle
  * App-Sitzungen
  * Angepasste Daten
  * Netztransaktionen
- 
+
 Unterstützte Diagrammtypen:
  * Balkendiagramm
  * Ablaufdiagramm
  * Kurvendiagramm
- * Messgrößengruppe 
+ * Messgrößengruppe
  * Kreisdiagramm
  * Tabelle
- 
-Die Auswahl von Dataset, abzubildendem Diagrammtyp, Definition der Diagrammmerkmale und der anzuwendenden Datenfilter kann in einer entsprechenden Definition konzentriert und gespeichert werden.  Sie können so viele Definitionen zu angepassten Diagrammen erstellen und speichern wie Sie benötigen. Die gespeicherten angepassten Diagramme werden in der entsprechenden Ansicht mit den abgebildeten relevanten Analysedaten gespeichert. 
+
+Die Auswahl von Dataset, abzubildendem Diagrammtyp, Definition der Diagrammmerkmale und der anzuwendenden Datenfilter kann in einer entsprechenden Definition konzentriert und gespeichert werden.  Sie können so viele Definitionen zu angepassten Diagrammen erstellen und speichern wie Sie benötigen. Die gespeicherten angepassten Diagramme werden in der entsprechenden Ansicht mit den abgebildeten relevanten Analysedaten gespeichert.
 
 ## Angepasstes Diagramm erstellen
 {: #creating_custom_chart}
 
-Erstellen Sie unter Ausführung der folgenden Schritte ein angepasstes Diagramm:
+Erstellen Sie ein angepasstes Diagramm, indem Sie die folgenden Schritte ausführen:
 
 1.  Klicken Sie im Mobile Analytics-Dashboard auf der Registerkarte **Angepasste Diagramme** auf die Schaltfläche **Diagramm erstellen**.
 2.  Wählen Sie auf der Registerkarte **Allgemeine Einstellungen** die Optionen **Diagrammtitel**, **Ereignistyp** sowie **Diagrammtyp** aus.
@@ -61,9 +64,9 @@ Erstellen Sie unter Ausführung der folgenden Schritte ein angepasstes Diagramm:
 ## Angepasste Insights aus angepassten Datenprotokollen abrufen
 {: #creating_custom_chart_for_client_logs}    
 
-Wünschen Sie differenzierte angepasste Insights wie z. B. Informationen zu Benutzern, die sich in der Anwendung bewegen, müssen Sie zunächst die relevanten Informationen zur Benutzerverfolgung als angepasste Daten erfassen und diese protokollieren; dazu gehören z. B. ausgewählte Seiten, ausgewählte Optionen oder angeklickte Schaltflächen.  Informationen zur Vorgehensweise beim Protokollieren von angepassten Daten finden Sie im Thema zur [Instrumentierung Ihrer App](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app).
+Wünschen Sie differenzierte angepasste Insights wie z. B. Informationen zu Benutzern, die sich in der Anwendung bewegen, müssen Sie zunächst die relevanten Informationen zur Benutzerverfolgung als angepasste Daten erfassen und diese protokollieren; dazu gehören z. B. ausgewählte Seiten, ausgewählte Optionen oder angeklickte Schaltflächen. Informationen zur Vorgehensweise beim Protokollieren von angepassten Daten finden Sie im Thema zur [Instrumentierung Ihrer App](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app).
 
-Erstellen Sie als Nächstes eine Definition für angepasste Diagramme mit 'Angepasste Daten' als Ereignistyp und wählen Sie einen Diagrammtyp aus. Wenn Sie mit der Definition von **Diagrammeigenschaften** oder **Diagrammfilter** fortfahren, werden die Typen und Werte zu den angepassten Daten in den Dropdown-Feldern angezeigt.  Nehmen Sie eine relevante Auswahl für die Art von Insights vor, nach denen Sie suchen.  
+Erstellen Sie als Nächstes eine Definition für angepasste Diagramme mit 'Angepasste Daten' als Ereignistyp und wählen Sie einen Diagrammtyp aus. Wenn Sie mit der Definition von **Diagrammeigenschaften** oder **Diagrammfilter** fortfahren, werden die Typen und Werte zu den angepassten Daten in den Dropdown-Feldern angezeigt. Nehmen Sie eine relevante Auswahl für die Art von Insights vor, nach denen Sie suchen.  
 
 Tiefe und Nutzen angepasster Insights sind gänzlich davon abhängig, wie effektiv oder relevant die Definition und Erfassung angepasster Daten in Ihren Anwendungen ist.
 {: note}
@@ -135,4 +138,3 @@ Das daraus resultierende Kreisdiagramm zeigt die Analyse zu App-Sitzungen, die v
 
 Die Tabelle ist nützlich, wenn die Rohdaten angezeigt werden sollen. Das Erstellen einer Tabelle ist so einfach wie das Hinzufügen von Spalten für die Rohdaten, die angezeigt werden sollen.
 Da nicht alle Eigenschaften für bestimmte Ereignistypen erforderlich sind, ist die Anzeige von Nullwerten in Ihrer Tabelle möglich. Wenn diese Zeilen nicht in Ihrer Tabelle zu sehen sein sollen, müssen Sie für eine bestimmte Eigenschaft auf der Registerkarte **Diagrammfilter** einen Filter des Typs *Ist vorhanden* hinzufügen.
-

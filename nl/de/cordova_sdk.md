@@ -4,6 +4,9 @@ copyright:
   years: 2016, 2019
 lastupdated:  "2019-02-11"
 
+keywords: mobile foundation, cordova sdk, ionic sdk
+
+subcollection:  mobilefoundation
 ---
 
 #	Cordova- und Ionic-SDK
@@ -16,4 +19,3 @@ Laden Sie die Cordova-SDKs von npm herunter.
 * [SDK für Mobile Analytics ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.npmjs.com/package/cordova-plugin-mfp-analytics)
 * [SDK für JSONStore ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.npmjs.com/package/cordova-plugin-mfp-jsonstore)
 * [SDK für LiveUpdate ![Symbol für externen Link](../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.npmjs.com/package/cordova-plugin-mfp-liveupdate)
-

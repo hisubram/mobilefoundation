@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-23"
 
+keywords: mobile analytics, set up alerts, alert definitions
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -17,7 +20,7 @@ lastupdated: "2018-11-23"
 # Alerts einrichten
 {: #set_up_alerts}
 
-Im Lieferumfang von Mobile Analytics ist das Feature 'Alerts' enthalten; dieses ermöglicht Ihnen die Definition von Alerts für die Überwachung Ihrer Anwendungen. Sie können Schwellenwerte so konfigurieren, dass bei ihrem Überschreiten Alerts ausgelöst werden, über die die Mobile Analytics-Konsolenüberwachung benachrichtigt wird. Die ausgelösten Alerts können in der Konsole visualisiert oder sie können so konfiguriert werden, dass sie für eine entsprechende Verarbeitung an einen angepassten Webhook weitergeleitet werden.
+Im Lieferumfang von Mobile Analytics ist das Feature 'Alerts' enthalten; dieses ermöglicht die Definition von Alerts für die Überwachung von Anwendungen. Sie können Schwellenwerte so konfigurieren, dass bei ihrem Überschreiten Alerts ausgelöst werden, über die die Mobile Analytics-Konsolenüberwachung benachrichtigt wird. Die ausgelösten Alerts können in der Konsole visualisiert oder sie können so konfiguriert werden, dass sie für eine entsprechende Verarbeitung an einen angepassten Webhook weitergeleitet werden.
 
 Dieses Feature ist eine Möglichkeit, um Schwellenwertüberschreitungen zu ermitteln und darüber Alerts auszugeben, die mittels Anwendungsfehlerprotokollen, Anwendungsabstürzen und Netztransaktionen festgestellt werden. Durch reaktive Schwellenwerte und Alerts werden die Antworten auf Anwendungsleistungsbedingungen flexibel gestaltet ohne dass die entsprechenden Ansichten/Diagramme ununterbrochen überwacht werden müssen.
 
@@ -43,16 +46,16 @@ Sie können eine Alertdefinition erstellen, die auf Anwendungsprotokollen basier
             * **Schwellenwert**: *Gesamt für Anwendungsinstanz*<br/>
               Wenn Sie die Option für den Anwendungsdurchschnitt auswählen, wird aus den App-Protokollen und der Anzahl der Geräte ein Durchschnittswert berechnet. Beispiel: Wenn Sie über zwei Geräte verfügen und von einem Gerät sechs App-Protokolle gesendet werden, vom anderen Gerät dagegen nur drei Protokolle, beträgt der Durchschnitt 4,5 Protokolle.
               {: note}
-            * **Operator**: *Größer gleich* 
+            * **Operator**: *Größer gleich*
             * Schwellenwert: *3*
 4.  Klicken Sie auf **Weiter** und geben Sie den folgenden Wert an:
     * **Methode**: *Nur Analytics Console*<br/>
-      Wählen Sie die Option für Analytics Console und Network Post aus, wenn Sie zusätzlich eine POST-Nachricht mit einer JSON-Nutzlast an die angepasste URL senden wollen. Wenn Sie diese Option auswählen, sind die folgenden Felder verfügbar.
+      Wählen Sie außerdem die Option für *Analytics Console und Network Post* aus, wenn Sie zusätzlich eine POST-Nachricht mit einer JSON-Nutzlast an die angepasste URL senden wollen. Wenn Sie diese Option auswählen, sind die folgenden Felder verfügbar.
       * **Network Post-URL**
       * **Header**
       * **Authentifizierungstyp**
       * **Anforderungshauptteil POST**
-5. Klicken Sie auf **Speichern**.   
+5. Klicken Sie auf **Speichern**.  
 
 Sie haben nun eine Alertdefinition für einen Alert erstellt, der nach Ablauf eines Intervalls von fünf Minuten ausgelöst wird, wenn die Anzahl der App-Protokolle den Schwellenwert von 3 Fehlerprotokollen erreicht oder überschreitet.
 
@@ -62,7 +65,7 @@ Dieser Alert bleibt so lange aktiv und führt die Überwachung mit der eingerich
 ## Alertdefinition für Anwendungsabstürze erstellen
 {: #creating_alert_crashes}
 
-Im Folgenden finden Sie ein Beispiel für das Einrichten von Alerts für Anwendungsabstürze.  Dabei findet die Überwachung alle zwei Minuten statt und es werden alle Anwendungsabstürze festgestellt; anschließend wird ein Alert ausgelöst, wenn die Anzahl der festgestellten Abstürze über 5 liegt.
+Im Folgenden finden Sie ein Beispiel für das Einrichten von Alerts für Anwendungsabstürze. Dabei findet die Überwachung alle zwei Minuten statt und es werden alle Anwendungsabstürze festgestellt; anschließend wird ein Alert ausgelöst, wenn die Anzahl der festgestellten Abstürze über 5 liegt.
 
 1.  Klicken Sie in der Mobile Analytics-Konsole auf **Definitionen**, um zur Seite mit den Alertdefinitionen zu wechseln.
 2.  Klicken Sie auf **Alert erstellen**.
@@ -74,16 +77,16 @@ Im Folgenden finden Sie ein Beispiel für das Einrichten von Alerts für Anwendu
         * **Anwendungsname**: *Beliebige Anwendung*
         * **Beliebige Anwendung**: *Beliebige Version*
     * **Schwellenwert**: *Absturzanzahl*
-    * **Operator**: *Größer gleich* 
+    * **Operator**: *Größer gleich*
     * Schwellenwert: *5*
 4.  Klicken Sie auf **Verteilungsmethode** oder auf **Weiter** und geben Sie den folgenden Wert an:
     * **Methode**: *Nur Analytics Console*<br/>
-      Wählen Sie die Option für Analytics Console und Network Post aus, wenn Sie zusätzlich eine POST-Nachricht mit einer JSON-Nutzlast an die angepasste URL senden wollen. Wenn Sie diese Option auswählen, sind die folgenden Felder verfügbar.
+      Wählen Sie außerdem die Option für *Analytics Console und Network Post* aus, wenn Sie zusätzlich eine POST-Nachricht mit einer JSON-Nutzlast an die angepasste URL senden wollen. Wenn Sie diese Option auswählen, sind die folgenden Felder verfügbar.
       * **Network Post-URL**
       * **Header**
       * **Authentifizierungstyp**
       * **Anforderungshauptteil POST**
-5. Klicken Sie auf **Speichern**.   
+5. Klicken Sie auf **Speichern**.  
 
 Dieser Alert bleibt so lange aktiv und führt die Überwachung mit der eingerichteten Häufigkeit durch, bis die Alertdefinition inaktiviert oder gelöscht wird.
 {: note}
@@ -109,4 +112,3 @@ Sie können die ausgelösten Alerts über die Seite **Protokolle** für die Aler
     Wurde die entsprechende Alertdefinition nicht gelöscht oder modifiziert, können Sie die Alertdefinition durch Klicken auf **Alert bearbeiten** bearbeiten. Sonst steht die Schaltfläche **Alert bearbeiten** nicht zur Verfügung und die folgende Nachricht wird angezeigt:
     `This alert definition has since been modified or deleted.`
 3.  Sie können optional einen Alert auswählen und auf das Papierkorbsymbol klicken, um den Alert zu löschen.
-

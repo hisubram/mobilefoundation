@@ -4,6 +4,9 @@ copyright:
   years: 2018, 2019
 lastupdated: "2018-11-19"
 
+keywords: mobile foundation security, authentication, using challenge handlers
+
+subcollection:  mobilefoundation
 ---
 
 {:shortdesc: .shortdesc}
@@ -33,7 +36,7 @@ In diesem Lernprogramm ist beispielsweise eine Anwendung beschrieben, deren beid
 ## Sicherheitsprüfung referenzieren
 {: #referencing-a-security-check}
 
-Erstellen Sie zwei Sicherheitsprüfungen: `StepUpPinCode` und `StepUpUserLogin`. 
+Erstellen Sie zwei Sicherheitsprüfungen: `StepUpPinCode` und `StepUpUserLogin`.
 
 In diesem Beispiel hängt `StepUpPinCode` von `StepUpUserLogin` ab. Der Benutzer sollte erst nach einer erfolgreichen Anmeldung bei `StepUpUserLogin` aufgefordert werden, einen PIN-Code einzugeben. Zu diesem Zweck muss `StepUpPinCode`  in der Lage sein, die Klasse `StepUpUserLogin` zu referenzieren.
 
