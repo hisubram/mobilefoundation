@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-10"
 
 keywords: push notifications, notifications, sending notification, HTTP/2
 
@@ -76,7 +76,7 @@ Following is an example URL,
 https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
 ```
 
-> To review all Push Notifications REST APIs, see the [REST API Runtime Services topic](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/c_restapi_runtime.html) in the user documentation.
+To review all Push Notifications REST APIs, see the [REST API Runtime Services topic](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/c_restapi_runtime.html) in the user documentation.
 
 ### Notification payload
 {: #notification-payload }
@@ -85,15 +85,16 @@ The request can contain the following payload properties:
 
 |Payload Properties| Definition
 |--- | ---
-|message | The alert message to be sent
-|settings | The settings are the different attributes of the notification.
-|target | Set of targets can be consumer Ids, devices, platforms, or tags. Only one of the targets can be set.
-|deviceIds | An array of the devices represented by the device identifiers. Devices with these ids receive the notification. This is a unicast notification.
-|notificationType | Integer value to indicate the channel (Push or SMS) used to send message. Allowed values are 1 (for Push only), 2 (for SMS only) and 3 (for both Push and SMS)
-|platforms | An array of device platforms. Devices running on these platforms receive the notification. Supported values are A (Apple/iOS), G (Google/Android) and M (Microsoft/Windows).
-|tagNames | An array of tags that are specified as tagNames. Devices that are subscribed to these tags receive the notification. Use this type of target for tag-based notifications.
-|userIds | An array of users represented by their userIds to send the notification. This is a unicast notification.
-|phoneNumber | The phone number that is used for registering the device and receiving notifications. This is a unicast notification.
+|message | The alert message to be sent |
+|settings | The settings are the different attributes of the notification. |
+|target | Set of targets can be consumer Ids, devices, platforms, or tags. Only one of the targets can be set. |
+|deviceIds | An array of the devices represented by the device identifiers. Devices with these ids receive the notification. This is a unicast notification. |
+|notificationType | Integer value to indicate the channel (Push or SMS) used to send message. Allowed values are 1 (for Push only), 2 (for SMS only) and 3 (for both Push and SMS) |
+|platforms | An array of device platforms. Devices running on these platforms receive the notification. Supported values are A (Apple/iOS), G (Google/Android) and M (Microsoft/Windows). |
+|tagNames | An array of tags that are specified as tagNames. Devices that are subscribed to these tags receive the notification. Use this type of target for tag-based notifications. |
+|userIds | An array of users represented by their userIds to send the notification. This is a unicast notification. |
+|phoneNumber | The phone number that is used for registering the device and receiving notifications. This is a unicast notification. |
+{: caption="Table 1. Payload properties" caption-side="top"}
 
 **Push Notifications Payload JSON Example**
 
@@ -118,7 +119,7 @@ The request can contain the following payload properties:
     },
   },
   "target" : {
-    // The list below is for demonstration purposes only - per the documentation only 1 target is allowed to be used at a time.
+    // The following list is for demonstration purposes only - per the documentation only 1 target is allowed to be used at a time.
     "deviceIds" : [ "MyDeviceId1", ... ],
     "platforms" : [ "A,G", ... ],
     "tagNames" : [ "Gold", ... ],
@@ -156,7 +157,7 @@ The notification can be sent by using different tools. For testing purposes, **P
 4. Set a Header:
     - `**Authorization**: Bearer eyJhbGciOiJSUzI1NiIsImp ...`
     - Replace the value after **Bearer** with the value of your access token from step (1).
-    ![Authorization header](images/postman_authorization_header.png)
+    ![Authorization header](images/postman_authorization_header.png "Authorization header")
 5. Set a Body:
   - Update its properties as described in [Notification payload](#notification-payload).
   - For example, by adding the **target** property with the **userIds** attribute, you can send a notification to specific registered users.
@@ -168,11 +169,11 @@ The notification can be sent by using different tools. For testing purposes, **P
     }
     ```
 
-    ![Authorization header](images/postman_json.png)
+    ![Authorization body](images/postman_json.png "Authorization body")
 
     After you click the **Send** button, the device receives a notification:
 
-    ![Image of the sample application](images/notifications-app.png)
+    ![Image of the sample application](images/notifications-app.png "Push notification on a mobile device")
 
 ## Customizing Notifications
 {: #customizing-notifications }
@@ -192,7 +193,7 @@ In the {{ site.data.keyword.mfp_oc_short_notm }} → **[your application] → Pu
 
 * Notification sound, custom payload, action key title, notification type, and badge number.
 
-  ![Customizing push notifications](images/customizing-push-notifications.png)
+  ![Customizing push notifications](images/customizing-push-notifications.png "Mobile First Operations Console Push page with the Send Push tab selected")
 
 ## HTTP/2 Support for APNs Push Notifications
 {: #http2-support-for-apns-push-notifications}
@@ -212,6 +213,7 @@ HTTP/2 based notifications can be enabled by using a JNDI Property.
 ```xml
 <jndiEntry jndiName="imfpush/mfp.push.apns.http2.enabled" value= "true"/>
 ```
+{: codeblock}
 
 If the JNDI property is added, legacy TCP Socket based notifications is not used and only the HTTP/2 based notifications are enabled.
 {: note}

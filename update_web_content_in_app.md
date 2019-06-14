@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-14"
+lastupdated: "2019-06-06"
 
 keywords: update web content, update apps
 
@@ -29,7 +29,7 @@ Direct Update is supported in the Cordova iOS and Cordova Android platforms.
 
 For the live production or pre-production testing phase, it is recommended to implement secure Direct Update before you publish your application to the app store. Secure Direct Update requires an RSA key pair that is extracted from a real CA signed server certificate.
 
-1. Take care that you do not modify the keystore configuration after the application is published. Updates downloaded cannot be authenticated before reconfiguring the application with a new public key and republishing the application. If you do not perform the two steps above, Direct Update would fail on the client.
+1. Take care that you do not modify the keystore configuration after the application is published. Updates downloaded cannot be authenticated before reconfiguring the application with a new public key and republishing the application. If you do not perform the two previous steps, Direct Update would fail on the client.
 2. Direct Update updates only the application’s web resources. To update native resources a new application version must be submitted to the respective app store.
 3. When you use the Direct Update feature and the web resources checksum feature is enabled, a new checksum base is established with each Direct Update.
 4. If the Mobile Foundation server was upgraded, it continues to serve direct updates properly. However, if a recently built Direct Update archive (.zip file) is uploaded, it can halt updates to older clients. The reason is that the archive contains the version of the `cordova-plugin-mfp` plug-in. Before it serves that archive to a mobile client, the server compares the client version with the plug-in version. If both versions are close enough (meaning that the three most significant digits are identical), Direct Update occurs normally. Otherwise, Mobile Foundation server silently skips the update. One solution for the version mismatch is to download the `cordova-plugin-mfp` with the same version as the one in your original Cordova project and regenerate the Direct Update archive.

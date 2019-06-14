@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation, integration, cloud object storage, COS, ibm cloud
 
@@ -43,7 +43,7 @@ subcollection:  mobilefoundation
 
 1. Install the [mfpdev-cli](https://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_wl_cli_description.html) by running `npm install -g mfpdev-cli`. This cli is used to register the ionic app and deploy the adapter to the MF server. Alternatively these activities can be performed from the MF server dashboard.
 
-2. Install [{{ site.data.keyword.cloud_notm}} CLI](https://console.bluemix.net/docs/cli/index.html#overview) on your machine.
+2. Install [{{ site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud-cli) on your machine.
 
 3. Install ionic cli by executing `npm install -g ionic`
 
@@ -55,7 +55,7 @@ subcollection:  mobilefoundation
 
 The {{ site.data.keyword.mobilefoundation_short}} server is set on {{ site.data.keyword.cloud_notm}}. Set up an {{ site.data.keyword.cloud_notm}} instance of the {{ site.data.keyword.mobilefoundation_short}} server as follows,
 
-* In the {{ site.data.keyword.cloud_notm}} Catalog, search for "{{ site.data.keyword.mobilefoundation_short}}". Click on the **{{ site.data.keyword.mobilefoundation_short}}** tile.
+* In the {{ site.data.keyword.cloud_notm}} Catalog, search for *{{ site.data.keyword.mobilefoundation_short}}*. Click on the **{{ site.data.keyword.mobilefoundation_short}}** tile.
 
     ![MFPCatalog](images/mfp_catalog.png)
 
@@ -67,7 +67,7 @@ The {{ site.data.keyword.mobilefoundation_short}} server is set on {{ site.data.
 
     ![MFPLogin](images/mfp_login.png)
 
-* The credentials to log in to the MF server can be found in the **Credentials** tab in the left side menu.
+* The credentials to log in to the MF server can be found in the **Credentials** tab in the menu.
 
     ![MFPcredentials](images/mfp_credentials.png)
 
@@ -79,7 +79,7 @@ The {{ site.data.keyword.mobilefoundation_short}} server is set on {{ site.data.
 ## Cloud Object Storage Setup
 {: #cloud-object-storage-setup}
 
-* In the {{ site.data.keyword.cloud_notm}} Catalog, search for "Cloud Object Storage". Click on the **Object Storage** tile.
+* In the {{ site.data.keyword.cloud_notm}} Catalog, search for *Cloud Object Storage*. Click on the **Object Storage** tile.
 
     ![Catalog](images/catalog.png)
 
@@ -87,7 +87,7 @@ The {{ site.data.keyword.mobilefoundation_short}} server is set on {{ site.data.
 
     ![Create COS](images/cos_create.png)
 
-* Next, click on **Buckets** in the left pane menu options. Provide a suitable name (in this sample we chose to name the bucket `sharedgallery`) for your bucket and click on **Create**.
+* Next, click on **Buckets** in the menu options. Provide a suitable name (in this sample we chose to name the bucket `sharedgallery`) for your bucket and click on **Create**.
 
     ![Create Bucket](images/bucketcreate.png)
 
@@ -166,7 +166,7 @@ Server profile 'mfpserver' added successfully.
 
 To connect to your COS instance, some details of your COS instance need to be provided in the `adapter.xml` file. Furnish values for the following fields:
 
-1. **endpointURL**: This field is the public endpoint url for your COS object. This URL can be found on your COS's dashboard, under **Buckets (on the left menu options) -> <your-bucket-name> (`sharedgallery` in this sample) -> Configuration -> Endpoints -> Public**
+1. **endpointURL**: This field is the public endpoint url for your COS object. This URL can be found on your COS's dashboard, under **Buckets (on the menu options) -> <your-bucket-name> (`sharedgallery` in this sample) -> Configuration -> Endpoints -> Public**
 2. **AuthToken**: In this tutorial, we are using the IAM authentication.
 
 For the java adapter to connect to your instance of COS, authentication that uses IAM or HMAC is needed. Following are the steps to get the IAM token. For further details on IAM and HMAC authentication processes, click [here](https://cloud.ibm.com/docs/services/cloud-object-storage/api-reference/api-reference-buckets.html#bucket-operations#AuthenticationOptions).
@@ -265,7 +265,7 @@ mfpdev adapter deploy
 
 The adapter is deployed to the MF instance.
 
-Alternatively, the adapter can be deployed on the MF server dashboard. Open the MF server dashboard, on the left side menu, click **Adapters -> New** to open the page as shown in the following image.
+Alternatively, the adapter can be deployed on the MF server dashboard. Open the MF server dashboard, on the menu, click **Adapters -> New** to open the page as shown in the following image.
 
 ![MFPNewAdapterRegister](images/mfp_new_adapter_register.png)
 
@@ -302,7 +302,7 @@ In the app perform the following steps,
 	mfpdev app register
 	```
 
-	Alternatively, the app can be registered on the MF server dashboard. Open the MF server dashboard and on the left side menu click on **Applications -> New**.
+	Alternatively, the app can be registered on the MF server dashboard. Open the MF server dashboard and on the menu click on **Applications -> New**.
 
 	The page as shown in the following image gets loaded.
 
@@ -344,7 +344,7 @@ The initial COS objects list looks like the following image.
 
 ![COS before](images/cos_before.png)
 
-The home page of the application provides an option to either "Get all stories" or "Add story"
+The home page of the application provides an option to either *Get all stories* or *Add story*
 
 ![App home screen](images/app-home-screen.png)
 

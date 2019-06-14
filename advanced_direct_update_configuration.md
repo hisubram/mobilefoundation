@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-14"
+lastupdated: "2019-06-06"
 
 keywords: Direct Update, CDN support, secure direct update
 
@@ -41,7 +41,7 @@ If the web resources are newer on the Mobile Foundation server than in the appli
 
 The function provides a default Direct Update design: A default message dialog that is displayed when a Direct Update is available and a default progress screen that is displayed when the direct update process is initiated. You can implement custom Direct Update user interface behavior or customize the Direct Update dialog box by overriding this function and implementing your own logic.
 
-In the example code below, a `handleDirectUpdate` function implements a custom message in the Direct Update dialog. Add this code into the `www/js/index.js` file of the Cordova project.
+In the following example code, a `handleDirectUpdate` function implements a custom message in the Direct Update dialog. Add this code into the `www/js/index.js` file of the Cordova project.
 Additional examples for a customized Direct Update UI:
 * A dialog that is created by using a third-party JavaScript framework (such as Dojo or jQuery Mobile, Ionic, …)
 * Fully native UI by executing a Cordova plug-in
@@ -94,6 +94,7 @@ The listener methods are started during the direct update process according to f
 | `FAILURE_ALREADY_IN_PROGRESS` | The start method was called while direct update was already running. |
 | `FAILURE_INTEGRITY` | Authenticity of update file cannot be verified. |
 | `FAILURE_UNKNOWN` | Unexpected internal error. |
+{: caption="Table 1. Status codes" caption-side="top"}
 
 If you implement a custom direct update listener, you must ensure that the app is reloaded when the direct update process is complete and the `onFinish()` method has been called. You must also call `wl_directUpdateChalengeHandler.submitFailure()` if the direct update process fails to complete successfully.
 
@@ -294,42 +295,44 @@ Set the new `cdn.yourcompany.com` domain as the Mobile Foundation sever URL for 
 {: #akamai-administrator }
 1. Open the Akamai property manager and set the property **host name** to the value of the new domain.
 
-    ![Set the property host name to the value of the new domain](images/direct_update_cdn_3.jpg)
+    ![Set the property host name to the value of the new domain](images/direct_update_cdn_3.jpg "Set the property host name to the value of the new domain")
 
 2. On the Default Rule tab, configure the original Mobile Foundation server host and port, and set the **Custom Forward Host Header** value to the newly created domain.
 
-    ![Set the Custom Forward Host Header value to the newly created domain](images/direct_update_cdn_4.jpg)
+    ![Set the Custom Forward Host Header value to the newly created domain](images/direct_update_cdn_4.jpg "Set the Custom Forward Host Header value to the newly created domain")
 
 3. From the **Caching Option** list, select **No Store**.
 
-    ![From the Caching Option list, select No Store](images/direct_update_cdn_5.jpg)
+    ![From the Caching Option list, select No Store](images/direct_update_cdn_5.jpg "From the Caching Option list, select No Store")
 
 4. From the **Static Content configuration** tab, configure the matching criteria according to the Direct Update URL of the application. For example, create a condition that states `If Path matches one of direct_update_URL`.
 
-    ![Configure the matching criteria according to the Direct Update URL of the application](images/direct_update_cdn_6.jpg)
+    ![Configure the matching criteria according to the Direct Update URL of the application](images/direct_update_cdn_6.jpg "Configure the matching criteria according to the Direct Update URL of the application")
 
 5. Configure the cache key behavior to use all request parameters in the cache key (you must do so to cache different Direct Update archives for different applications or versions). For example, from the **Behavior** list, select `Include all parameters (preserve order from request)`.
 
-    ![Configure the cache key behavior to use all request parameters in the cache key](images/direct_update_cdn_8.jpg)
+    ![Configure the cache key behavior to use all request parameters in the cache key](images/direct_update_cdn_8.jpg "Configure the cache key behavior to use all request parameters in the cache key")
 
 6. Set values similar to the following values to configure the caching behavior to make cache the Direct Update URL and to set TTL.
 
-      ![Set values to configure the caching behavior](images/direct_update_cdn_7.jpg)
+      ![Set values to configure the caching behavior](images/direct_update_cdn_7.jpg "Set values to configure the caching behavior")
 
 | Field | Value |
 |:------|:------|
 | Caching Option | Cache |
 | Force Revaluation of Stale Objects | Serve stale if unable to validate |
 | Max-Age | 3 minutes |
+{: caption="Table 2. Fields and values for configuring caching behavior" caption-side="top"}
 
 ## Secure Direct Update
 {: #secure-dc }
 
 Disabled by default, Secure Direct Update prevents a 3rd-party attacker from altering the web resources that are transmitted from the Mobile Foundation server (or from a Content Delivery Network (CDN)) to the client application.
 
-**To enable Direct Update authenticity:**  
+### Enabling Direct Update authenticity
+{: #enable-direct-update-authenticity}
 Using a preferred tool, extract the public key from the Mobile Foundation server keystore and convert it to base64.  
-The produced value should then be used as instructed below:
+The produced value should then be used as instructed in the following steps:
 
 1. Open a **Command-line** window and navigate to the root of the Cordova project.
 2. Run the command: `mfpdev app config` and select the **Direct Update Authenticity public key** option.

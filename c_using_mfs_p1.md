@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation developer, mobile analytics
 
@@ -28,7 +28,7 @@ After you create the {{site.data.keyword.mobilefoundation_short}} service instan
   This selection creates an {{site.data.keyword.mfserver_long_notm}} with the following settings:
   *	1 GB of memory. This size is enough for development, light testing activities, and small scale production workloads.
 
-  * To access the MobileFirst Server by using CLI you need the credentials, which are available when you click **Service credentials** from the left navigation pane of the IBM Cloud console.
+  * To access the MobileFirst Server by using CLI you need the credentials, which are available when you click **Service credentials** from the navigation pane of the IBM Cloud console.
 
 You can now manage your mobile apps and mobile devices, use your server as a mobile backend, send push notifications, and do more.
 

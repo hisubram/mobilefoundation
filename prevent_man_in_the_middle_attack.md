@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-10-16"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation security, MIM attack, certificate pinning
 
@@ -35,7 +35,8 @@ Certificate pinning process consists of the following steps:
 
 During the SSL handshake (first request to the server), the Mobile Foundation client SDK verifies that the public key of the server certificate matches the public key of the certificate that is stored in the app.
 
->**Note**: You must use a certificate that is purchased from a certificate authority. Self-signed certificates are **not supported**.
+You must use a certificate that is purchased from a certificate authority. Self-signed certificates are **not supported**.
+{: note}
 
 ## Certificate Pinning
 {: #cert_pinning}
@@ -52,11 +53,10 @@ Certificate pinning is the process of associating a host with its expected publi
 You can also pin multiple certificates with your client application. Place a copy of all the certificates in your client application. During the SSL handshake (first request to the server), the MobileFirst client SDK verifies that the public key of the server certificate matches to the public key of one of the certificates that is stored in the app.
 {: note}
 
-**Important**
-
-* Some mobile operating systems might cache the certificate validation check result. Therefore, your code calls the certificate pinning API method **before** making a secured request. Otherwise, any subsequent request might skip the certificate validation and pinning check.
-* Make sure to use only Mobile Foundation APIs for all communications with the related host, even after the certificate pinning. Using third-party APIs to interact with the same host might lead to unexpected behavior, such as caching of a non-verified certificate by the mobile operating system.
-* Calling the certificate pinning API method a second time overrides the previous pinning operation.
+* **Important**
+    * Some mobile operating systems might cache the certificate validation check result. Therefore, your code calls the certificate pinning API method **before** making a secured request. Otherwise, any subsequent request might skip the certificate validation and pinning check.
+    * Make sure to use only Mobile Foundation APIs for all communications with the related host, even after the certificate pinning. Using third-party APIs to interact with the same host might lead to unexpected behavior, such as caching of a non-verified certificate by the mobile operating system.
+    * Calling the certificate pinning API method a second time overrides the previous pinning operation.
 
 If the pinning process is successful, the public key inside the provided certificate is used to verify the integrity of the MobileFirst Server certificate during the secured request SSL/TLS handshake. If the pinning process fails, all SSL/TLS requests to the server are rejected by the client application.
 

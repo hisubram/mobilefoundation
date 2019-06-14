@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-30"
+lastupdated: "2019-06-10"
 
 keywords: mobile analytics, instrumenting cordova app, instrumenting iOS app, instrumenting android app
 
@@ -241,7 +241,7 @@ The Mobile Analytics Client SDK is distributed with Gradle, a dependency manager
     {: codeblock}
     {: android}
 
-9.  To define Custom Analytics and define your own analytics data over and above what is supported inherently in the Client SDK, you could use the custom logging API
+9.  To define Custom Analytics and define your own analytics data over what is supported inherently in the Client SDK, you could use the custom logging API
     ```java
         //create a JSON to capture the custom data
         JSONObject jsonObject = new JSONObject();
@@ -406,7 +406,7 @@ The Swift SDK is available for iOS and watchOS.
     {: codeblock}
     {: ios}
 
-9.  To define Custom Analytics and define your own analytics data over and above what is supported inherently in the Client SDK, you could use the custom logging API
+9.  To define Custom Analytics and define your own analytics data over what is supported inherently in the Client SDK, you could use the custom logging API
     ```Swift
         //create an array object with key value pair as custom data
         let eventObject = ["FromPage": "LoginPage"]
@@ -490,7 +490,7 @@ The Mobile Analytics Cordova plug-in enables you to instrument your mobile appli
 
 1. In Cordova applications, no setup is required and initialization is built in.
 
-   Before calling any of the below analytic methods, you must ensure that your application embeds the required code to authenticate and authorize the device with the MobileFoundation service.  This step is a common step that is required of all Mobile Foundation services applications and is not specific to Analytics data capture. <!--  Refer <need to link doc that talks about auth> -->
+   Before calling any of the following analytic methods, you must ensure that your application embeds the required code to authenticate and authorize the device with the MobileFoundation service.  This step is a common step that is required of all Mobile Foundation services applications and is not specific to Analytics data capture. <!--  Refer <need to link doc that talks about auth> -->
    {: cordova}
 
    With initialization, complete your application is now enabled to capture device information and Mobile Analytics SDK logs with no further code added.  Any further APIs and code that is discussed in the following sections is optional and can be added based on what sort of analytics data you want to capture.
@@ -609,7 +609,7 @@ The Mobile Analytics Cordova plug-in enables you to instrument your mobile appli
     {: codeblock}
     {: cordova}
 
-7. To define Custom Analytics and define your own analytics data over and above what is supported inherently in the Client SDK, you could use the custom logging API
+7. To define Custom Analytics and define your own analytics data over what is supported inherently in the Client SDK, you could use the custom logging API
     ```Javascript
         //create custom data as key value pair
         WL.Analytics.log({"FromPage" : 'LoginPage'});
@@ -687,7 +687,7 @@ The Mobile Analytics SDK enables you to instrument your web application.
     {: codeblock}
     {: web}
 
-   Before calling any of the below analytic method, you must ensure that your application embeds the required code to authenticate and authorize the device with the MobileFoundation service.  This step is a common step that is required of all Mobile Foundation services applications and is not specific to Analytics data capture. <!--  Refer <need to link doc that talks about auth> -->
+   Before calling any of the following analytic method, you must ensure that your application embeds the required code to authenticate and authorize the device with the MobileFoundation service.  This step is a common step that is required of all Mobile Foundation services applications and is not specific to Analytics data capture. <!--  Refer <need to link doc that talks about auth> -->
    {: web}
 
    With initialization complete your application is now enabled to capture device information and Mobile Analytics SDK logs with no further code added.  Any further APIs and code that is discussed in the following sections is optional and can be added based on what sort of analytics data you want to capture.
@@ -767,7 +767,7 @@ The Mobile Analytics SDK enables you to instrument your web application.
     {: codeblock}
     {: web}
 
-8.  To define Custom Analytics and define your own analytics data over and above what is supported inherently in the Client SDK, you could use the custom logging API:
+8.  To define Custom Analytics and define your own analytics data over what is supported inherently in the Client SDK, you could use the custom logging API:
 
     ```Javascript
         //custom data is sent with the addEvent method
@@ -789,4 +789,4 @@ Try a simple sample from [here](https://github.com/MobileFirst-Platform-Develope
 
 Mobile Foundation Analytics Service provides REST APIs to help developers with importing (POST) and exporting (GET) analytics data.
 
-Try out the analytics REST API on Swagger Docs from [here](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/).
+Try out the analytics REST API on Swagger Docs from [here](https://ma-server.us-south.mobile-analytics-prod.cloud.ibm.com/analytics-service/).

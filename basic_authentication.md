@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-10"
 
 keywords: security, basic authentication, protecting resources, tokens, scopemapping
 
@@ -53,10 +53,11 @@ The MobileFirst access token contains the following information:
 * **Token-expiration time**: the time at which the token becomes invalid (expires), in seconds.
 
 #### Token expiration
+{: #token-expiration}
 
 The granted access token remains valid until its expiration time elapses. The access token’s expiration time is set to the shortest expiration time from among the expiration times of all the security checks in the scope. But if the period until the shortest expiration time is longer than the application’s maximum token-expiration period, the token’s expiration time is set to the current time plus the maximum expiration period. The default maximum token-expiration period (validity duration) is 3,600 seconds (1 hour), but it can be configured by setting the value of the ``maxTokenExpiration`` property.
 
-**Configuring the maximum access-token expiration period**
+##### Configuring the maximum access-token expiration period
 {: #acs_config-max-access-tokens}
 
 Configure the application’s maximum access-token expiration period by using one of the following alternative methods:
@@ -82,7 +83,7 @@ Configure the application’s maximum access-token expiration period by using on
         {: codeblock}
     4. Deploy the updated configuration JSON file by running the command: ``mfpdev app push``.
 
-**Access-token response structure**
+##### Access-token response structure
 {: #acs_access-tokens-structure}
 
 A successful HTTP response to an access-token request contains a JSON object with the access token and extra data. Following is an example of a valid-token response from the authorization server:
@@ -110,7 +111,7 @@ The token-response JSON object has these property objects:
 
 The **expires_in** and **scope** information is also contained within the token itself (**access_token**).
 
->**Note**: The structure of a valid access-token response is relevant if you use the low level `WLAuthorizationManager` class and manage the OAuth interaction between the client and the authorization and resource servers yourself, or if you use a confidential client. If you are using the high level `WLResourceRequest` class, which encapsulates the OAuth flow for accessing protected resources, the security framework handles the processing of access-token responses for you. See [Client security APIs](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_oauth_client_apis.html?view=kc#c_oauth_client_apis) and [Confidential clients](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/confidential-clients/).
+**Note**: The structure of a valid access-token response is relevant if you use the low level `WLAuthorizationManager` class and manage the OAuth interaction between the client and the authorization and resource servers yourself, or if you use a confidential client. If you are using the high level `WLResourceRequest` class, which encapsulates the OAuth flow for accessing protected resources, the security framework handles the processing of access-token responses for you. See [Client security APIs](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_oauth_client_apis.html?view=kc#c_oauth_client_apis) and [Confidential clients](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/confidential-clients/).
 
 ### Refresh Tokens
 {: #acs_refresh_tokens}
@@ -123,6 +124,7 @@ MobileFirst Refresh Token
 A MobileFirst refresh token is a digitally signed entity like access token that describes the authorization permissions of a client. Refresh token can be used to get new access token of the same scope. After the client’s authorization request for a specific scope is granted and the client is authenticated, the authorization server’s token endpoint sends the client an HTTP response that contains the requested access token and refresh token. When the access token expires, the client sends refresh token to authorization server’s token endpoint to get a new set of access token and refresh token.
 
 #### Structure of refresh token
+{: #structure_refresh_tokens}
 
 Similar to the MobileFirst access token, the MobileFirst refresh token contains the following information:
 
@@ -130,30 +132,31 @@ Similar to the MobileFirst access token, the MobileFirst refresh token contains 
 * **Scope**: the scope for which the token was granted (see OAuth scopes). This scope does not include the mandatory application scope.
 * **Token-expiration time**: the time at which the token becomes invalid (expires), in seconds.
 
-**Token Expiration**
+##### Token Expiration
+{: #str-token-expiration}
 
 The token expiration period for refresh token is longer than the typical access token expiry period. The refresh token that is once granted remains valid until its expiration time elapses. Within this validity period, a client can use the refresh token to get a new set of access token and refresh token. The refresh token has a fixed expiry period of 30 days. Every time the client receives a new set of access token and refresh token successfully, the refresh token expiry is reset thus giving the client an experience of a never expiring token. The access token expiry rules remain same as explained in section **Access Token**.
 
-**Enabling Refresh Token feature**
+##### Enabling Refresh Token feature
 {: #acs_enable-refresh-token}
 
 Refresh token feature can be enabled by using the following properties on client side and server side respectively.
 
-**Client-side property (Android)**
+Client-side property (Android):
 *File name*: mfpclient.properties
 *Property name*: wlEnableRefreshToken
 *Property value*: true
 For example,
 *wlEnableRefreshToken*=true
 
-**Client-side property (iOS)**
+Client-side property (iOS): 
 *File name*: mfpclient.plist
 *Property name*: wlEnableRefreshToken
 *Property value*: true
 For example,
 *wlEnableRefreshToken*=true
 
-**Server-side property**
+Server-side property:
 *File name*: server.xml
 *Property name*: mfp.security.refreshtoken.enabled.apps
 *Property value*: application bundle id separated by ‘;’
@@ -166,7 +169,8 @@ For example,
 {: codeblock}
 Use different bundle ids for different platforms.
 
-**Refresh token response structure**
+##### Refresh token response structure
+{: #refresh-token-response-structure}
 
 Following is an example of a valid refresh token response from the authorization server:
 
@@ -187,9 +191,9 @@ Following is an example of a valid refresh token response from the authorization
 
 The refresh token response has an additional property object `refresh_token` apart from the other property objects that is explained as part of the access token response structure.
 
->**Note**: The refresh tokens are long-lived compared to access tokens. Hence the refresh token feature must be used with caution. Applications where periodic user authentication is not necessary are ideal candidates for using the refresh token feature.
+**Note**: The refresh tokens are long-lived compared to access tokens. Hence the refresh token feature must be used with caution. Applications where periodic user authentication is not necessary are ideal candidates for using the refresh token feature.
 
->MobileFirst supports refresh token feature on iOS starting CD Update 3.
+MobileFirst supports refresh token feature on iOS starting CD Update 3.
 
 #### Security Checks
 {: #acs_securitychecks}
@@ -198,7 +202,8 @@ A security check is a server-side entity that implements the security logic for 
 
 A security check typically issues security challenges that require the client to respond in a specific way to pass the check. This handshake occurs as part of the OAuth access-token-acquisition flow. The client uses **challenge handlers** to handle challenges from security checks.
 
-**Built-in Security Checks**
+##### Built-in Security Checks
+{: #builtin-sec-checks}
 
 The following predefined security checks are available:
 
@@ -213,7 +218,7 @@ When you try to access a protected resource, the client might be faced with a ch
 
 A challenge handler is a client-side entity that implements the client-side security logic and the related user interaction.
 
->**Important**: After a challenge is received, it cannot be ignored. You must answer or cancel it. Ignoring a challenge might lead to unexpected behavior.
+**Important**: After a challenge is received, it cannot be ignored. You must answer or cancel it. Ignoring a challenge might lead to unexpected behavior.
 
 ### Scopes
 {: #scopes}
@@ -248,9 +253,9 @@ For example: scope = `access-restricted deletePrivilege`
     * `access-restricted` is mapped to `PinCodeAttempts`.
     * `deletePrivilege` is mapped to `UserLogin`.
 
->To map your scope element to an empty string, do not select any security check in the **Add New Scope Element Mapping** pop-up menu.
+To map your scope element to an empty string, do not select any security check in the **Add New Scope Element Mapping** pop-up menu.
 
-![Scope Mapping](/images/scope_mapping.png)
+![Scope Mapping](/images/scope_mapping.png "Add new scope element mapping screen")
 
 You can also manually edit the application’s configuration JSON file with the required configuration and push the changes back to a MobileFirst Server.
 
@@ -284,13 +289,13 @@ You can protect your resources in various ways:
 
 At the application level, you can define a scope that applies to all the resources used by the application. The security framework runs these checks (if exist) in addition to the security checks of the requested resource scope.
 
->**Note**:
->* The mandatory application scope is not applied when you access an unprotected resource.
->* The access token that is granted for the resource scope does not contain the mandatory application scope.
+**Note**:
+   * The mandatory application scope is not applied when you access an unprotected resource.
+   * The access token that is granted for the resource scope does not contain the mandatory application scope.
 
 In the MobileFirst Operations Console, select your application from the **Applications** section of the navigation sidebar, and then select the **Security** tab. Under **Mandatory Application Scope**, select **Add to Scope**.
 
-![Mandatory Application Scope](/images/mandatory-application-scope.png)
+![Mandatory Application Scope](/images/mandatory-application-scope.png "Configure mandatory application scope screen")
 
 You can also manually edit the application’s configuration JSON file with the required configuration and push the changes back to a MobileFirst Server.
 
@@ -303,7 +308,7 @@ You can also manually edit the application’s configuration JSON file with the 
     ```
 4. Deploy the updated configuration JSON file by running the command: mfpdev app push.
 
->You can also push updated configurations to remote servers.
+You can also push updated configurations to remote servers.
 
 #### Protecting adapter resources
 {: #protectadapterres}
@@ -326,9 +331,9 @@ To entirely disable OAuth protection for a Java resource method or class, add th
 
 The default value of the annotation’s `enabled` element is `true`. When the `enabled` element is set to `false`, the `scope` element is ignored and the resource or resource class is unprotected.
 
->**Note**: When you assign a scope to a method of an unprotected class, the method is protected despite the class annotation, unless you set the `enabled` element of the resource annotation to `false`.
+**Note**: When you assign a scope to a method of an unprotected class, the method is protected despite the class annotation, unless you set the `enabled` element of the resource annotation to `false`.
 
-**Examples**
+Review the following examples:
 
 The following code disables resource protection for a `helloUser` method:
 
@@ -362,7 +367,7 @@ To entirely disable OAuth protection for a JavaScript adapter resource (procedur
 
 When the `secured` attribute is set to `false`, the `scope` attribute is ignored and the resource is unprotected.
 
-**Example**
+Review the following example:
 
 The following code disables resource protection for a `userName` procedure:
 

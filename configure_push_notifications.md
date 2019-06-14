@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-06"
 
 keywords: push notifications, notifications, FCM, GCM, APNS, WNS, authenticate notification
 
@@ -123,7 +123,7 @@ To set up WNS:
 1. Follow the [instructions provided by Microsoft](https://msdn.microsoft.com/en-in/library/windows/apps/hh465407.aspx) to generate the **Package Security Identifier (SID)** and **Client secret** values.
 2. In the {{ site.data.keyword.mfp_oc_short_notm }} → **[your application] → Push → Push Settings**, add these values and click **Save**.
 
-> You can also set up WNS by using either the [REST API for the {{ site.data.keyword.mobilefirst_notm }} Push service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_wns_settings_put.html?view=kc) or the [REST API for the {{ site.data.keyword.mobilefirst_notm }} administration service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_wns_settings_put.html?view=kc)
+You can also set up WNS by using either the [REST API for the {{ site.data.keyword.mobilefirst_notm }} Push service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_wns_settings_put.html?view=kc) or the [REST API for the {{ site.data.keyword.mobilefirst_notm }} administration service](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_wns_settings_put.html?view=kc)
 
 <img class="gifplayer" alt="Image of adding the WNS credentials" src="images/wns-setup.png"/>
 
@@ -135,27 +135,28 @@ Map the **push.mobileclient** scope element to the application.
 1. Load the {{ site.data.keyword.mfp_oc_short_notm }} and navigate to **[your application] → Security → Scope-Elements Mapping**, click on **New**.
 2. Write "push.mobileclient" in the **Scope element** field. Then, click **Add**.
 
-**List of more available scopes**
+List of more available scopes:
 
-**Scopes** | **Description**
----|---
-apps.read | Permission to read application resource.
-apps.write | Permission to create, update, delete application resource.
-gcmConf.read | Permission to read GCM configuration settings (API Key and SenderId).
-gcmConf.write | Permission to update, delete GCM configuration settings.
-apnsConf.read | Permission to read APNs configuration settings.
-apnsConf.write | Permission to update, delete APNs configuration settings.
-devices.read | Permission to read device.
-devices.write | Permission to create, update delete device.
-subscriptions.read | Permission to read subscriptions.
-subscriptions.write | Permission to create, update, delete subscriptions.
-messages.write | Permission to send push notifications.
-webhooks.read | Permission to read event-notifications.
-webhooks.write | Permission to send event-notifications.
-smsConf.read | Permission to read SMS configuration settings.
-smsConf.write | Permission to update, delete SMS configuration settings.
-wnsConf.read | Permission to read WNS configuration settings.
-wnsConf.write | Permission to update, delete WNS configuration settings.
+|**Scopes** | **Description**|
+|---|---|
+|apps.read | Permission to read application resource. |
+|apps.write | Permission to create, update, delete application resource. |
+|gcmConf.read | Permission to read GCM configuration settings (API Key and SenderId). |
+|gcmConf.write | Permission to update, delete GCM configuration settings. |
+|apnsConf.read | Permission to read APNs configuration settings. |
+|apnsConf.write | Permission to update, delete APNs configuration settings. |
+|devices.read | Permission to read device. |
+|devices.write | Permission to create, update delete device. |
+|subscriptions.read | Permission to read subscriptions. |
+|subscriptions.write | Permission to create, update, delete subscriptions. |
+|messages.write | Permission to send push notifications. |
+|webhooks.read | Permission to read event-notifications. |
+|webhooks.write | Permission to send event-notifications.|
+|smsConf.read | Permission to read SMS configuration settings.|
+|smsConf.write | Permission to update, delete SMS configuration settings.|
+|wnsConf.read | Permission to read WNS configuration settings.|
+|wnsConf.write | Permission to update, delete WNS configuration settings.|
+{: caption="Table 1. Scope descriptions" caption-side="top"}
 
 <img class="gifplayer" alt="Scope mapping" src="images/scope-mapping.png"/>
 
