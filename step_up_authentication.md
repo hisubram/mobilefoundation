@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation security, authentication, using challenge handlers
 
@@ -50,7 +50,7 @@ private transient StepUpUserLogin userLogin;
 ```
 {: codeblock}
 
->**Important**: Both security check implementations need to be bundled inside the same adapter.
+**Important**: Both security check implementations need to be bundled inside the same adapter.
 {.important}
 
 To resolve this reference, the framework looks up for a security check with the appropriate class, and injects its reference into the dependent security check.

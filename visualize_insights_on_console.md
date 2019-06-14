@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-01"
+lastupdated: "2019-06-10"
 
 keywords: mobile analytics, charts, visualize data, analytics console
 
@@ -20,7 +20,7 @@ subcollection:  mobilefoundation
 # Visualize insights on the console
 {: #visualize_insights_on_console}
 
-To visualize insights from the analytics data that is captured and sent from your application, you must launch the Mobile Analytics console by clicking the **Analytics Console** option from the left navigation of the Mobile Foundation Operations console.
+To visualize insights from the analytics data that is captured and sent from your application, you must launch the Mobile Analytics console by clicking the **Analytics Console** option from the navigation of the Mobile Foundation Operations console.
 
 The Mobile Analytics Console can be run in two modes:
   - **Demo Mode ON**, which is purely for demonstration purposes and shows the different analytics views (charts and tables) by using simulated data feeds.
@@ -31,19 +31,19 @@ All analytics views can be pruned by applying filters around *application name*,
 To visualize insights for your application, ensure the following.
   - Your application is instrumented to capture and send the relevant analytics data to Mobile Analytics service.
   - You turned OFF the Demo mode in the Analytics console
-  - You apply the right filters. For example, ensure that you select a time period when your application is deployed in the field and is active with users.
+  - You apply the correct filters. For example, ensure that you select a time period when your application is deployed in the field and is active with users.
 
-The Mobile Analytics console provides different types of analysis of your mobile application usage and performance as categorized in the left navigation pane of the Analytics console.  The following sections detail the different analytics views:
+The Mobile Analytics console provides different types of analysis of your mobile application usage and performance as categorized in the navigation pane of the Analytics console.  The following sections detail the different analytics views:
 
 
 ## Users
 {: #reports_visualized_users}
-This view helps you get insights into 'User Onboarding Patterns' such as the number of active users who used the app within a specified date range and a comparison of the number of new users versus existing users who return to use your app.
+This view helps you get insights into *User Onboarding Patterns* such as the number of active users who used the app within a specified date range and a comparison of the number of new users versus existing users who return to use your app.
 The charts in this view can be filtered on *app name*, *operating system* or *operating system version*.
 
 ## Sessions
 {: #reports_visualized_sessions}
-This view helps you get insights into your application's 'Usage Patterns' in terms of *App Sessions* for the specified date range. A session is recorded when an app is brought to the foreground of a device.  You get insights to what times of the day your application is most and least used and this information can lead to useful business insights. The charts in this view can be filtered on *app name*, *operating system* or *operating system version*.
+This view helps you get insights into your application's *Usage Patterns* in terms of *App Sessions* for the specified date range. A session is recorded when an app is brought to the foreground of a device.  You get insights to what times of the day your application is most and least used and this information can lead to useful business insights. The charts in this view can be filtered on *app name*, *operating system* or *operating system version*.
 
 ## Network Requests
 {: #reports_visualized_network_requests}

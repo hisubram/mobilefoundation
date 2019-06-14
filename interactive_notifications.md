@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-10"
 
 keywords: push notifications, sending interactive notification
 
@@ -117,7 +117,7 @@ To receive interactive notifications, follow these steps:
 
 Follow these steps to receive interactive notifications:
 
-1. Enable the application capability to perform background tasks on receiving the remote notifications. This step is required if some of the actions are background-enabled.
+1. Enable the application capability to perform background tasks on receiving the remote notifications. This step is required if some of the actions are enabled at the background.
 2. Define registered categories for interactive notifications and pass them as options to `MFPPush.registerDevice`.
 
    ```swift

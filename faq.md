@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-16"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation faq, updates to mobile foundation, custom domain
 
@@ -12,8 +12,10 @@ subcollection:  mobilefoundation
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:faq: data-hd-content-type='faq'}
+{:note: .note}
 
 # FAQs
+{: #mfp-faq}
 
 This FAQ provides answers to common questions about the {{site.data.keyword.mobilefoundation_long}} service.
 {: shortdesc}
@@ -37,10 +39,9 @@ This FAQ provides answers to common questions about the {{site.data.keyword.mobi
 The update to {{site.data.keyword.mobilefoundation_short}} can be applied by clicking **Recreate**.
 On applying the update, the version of the server, as seen in the {{site.data.keyword.mfp_oc_short_notm}}, is modified to indicate the server update version.
 
-> **Note:**
->  * Users cannot apply their own fixes and updates to their {{site.data.keyword.mobilefoundation_short}} service instance.
->  * See [Re-creating server in Professional Per Device plan](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#recreate_mobilefoundation_p5) and [Re-creating server in Professional 1 Application plan](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#recreate_mobilefoundation_p2) to understand the difference in behavior across the plans  when **Recreate** is clicked.
->
+* Users cannot apply their own fixes and updates to their {{site.data.keyword.mobilefoundation_short}} service instance.
+* See [Re-creating server in Professional Per Device plan](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p5#recreate_mobilefoundation_p5) and [Re-creating server in Professional 1 Application plan](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p2#recreate_mobilefoundation_p2) to understand the difference in behavior across the plans  when **Recreate** is clicked.
+{: note}
 
 ## How do I configure custom domain for my {{site.data.keyword.mobilefoundation_short}} server instance?
 {: #configcustomdomain}

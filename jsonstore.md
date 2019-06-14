@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-14"
 
 keywords: JSONStore, offline storage, jsonstore error codes
 
@@ -18,8 +18,9 @@ subcollection:  mobilefoundation
 
 
 # JSONStore
-{: #jsonstore }
+{: #jsonstore}
 The {{site.data.keyword.mobilefoundation_short}} **JSONStore** is an optional client-side API that provides a lightweight, document-oriented storage system. JSONStore enables persistent storage of **JSON documents**. Documents in an application are available in JSONStore even when the device that is running the application is offline. This persistent, always-available storage can be useful to give users access to documents when, for example, there's no network connection available in the device.
+{: shortdesc}
 
 Because it’s familiar to developers, relational database terminology is used in this documentation at times to help explain JSONStore. There are many differences between a relational database and JSONStore however. For example, the strict schema that is used to store data in relational databases is different from JSONStore's approach. With JSONStore, you can store any JSON content, and index the content that you need to search.
 
@@ -46,14 +47,14 @@ A document is the basic building block of JSONStore.
 
 A JSONStore document is a JSON object with an automatically generated identifier (`_id`) and JSON data. It’s similar to a record or a row in database terminology. The value of `_id` is always a unique integer inside a specific collection. Some functions like `add`, `replace`, and `remove` in the `JSONStoreInstance` class take an Array of Documents or Objects. These methods are useful to perform operations on various Documents or Objects at a time.
 
-**Single document**  
+Single document:
 
 ```javascript
 var doc = { _id: 1, json: {name: 'carlos', age: 99} };
 ```
 {: codeblock}
 
-**Array of documents**
+Array of documents:
 
 ```javascript
 var docs = [
@@ -90,7 +91,7 @@ Extra search fields are keys that are indexed but that aren’t part of the JSON
 
 Valid data types are: String, Boolean, Number, and Integer. These types are only type hints, there’s no type validation. Furthermore, these types determine how indexable fields are stored. For example, `{age: 'number'}` will index 1 as 1.0 and `{age: 'integer'}` will index 1 as 1.
 
-**Search fields and extra search fields**
+Search fields and extra search fields:
 
 ```javascript
 var searchField = {name: 'string', age: 'integer'};
@@ -100,7 +101,7 @@ var additionalSearchField = {key: 'string'};
 
 It’s only possible to index keys inside an object, not the object itself. Arrays are handled in a pass-through fashion, which means that you can’t index an array or a specific index of the array (arr[n]), but you can index objects inside an array.
 
-**Indexing values inside an array**
+Indexing values inside an array:
 
 ```javascript
 
@@ -123,14 +124,14 @@ var myObject = {
 Queries are objects that use search fields or extra search fields to look for documents.  
 These examples presume that the name search field is of type string and the age search field is of type integer.
 
-**Find documents with `name` that matches `carlos`**
+Find documents with `name` that matches `carlos`:
 
 ```javascript
 var query1 = {name: 'carlos'};
 ```
 {: codeblock}
 
-**Find documents with `name` that matches ``carlos`` and `age` matches `99`**
+Find documents with `name` that matches ``carlos`` and `age` matches `99`:
 
 ```javascript
 var query2 = {name: 'carlos', age: 99};
@@ -141,7 +142,7 @@ var query2 = {name: 'carlos', age: 99};
 {: #query-parts }
 Query parts are used to build more advanced searches. Some JSONStore operations, such as some versions of `find` or `count` take query parts. Everything within a query part is joined by `AND` statements, while query parts themselves are joined by `OR` statements. The search criteria returns a match only if everything within a query part is **true**. You can use more than one query part to search for matches that satisfy one or more of the query parts.
 
-Find with query parts operate only on top-level search fields. For example: `name`, and not `name.first`. Use multiple collections where all search fields are top level to get around this behavior. The query parts operations that work with non top-level search fields are: `equal`, `notEqual`, `like`, `notLike`, `rightLike`, `notRightLike`, `leftLike`, and `notLeftLike`. The behavior is undetermined if you use non-top-level search fields.
+Find with query parts operate only on top-level search fields. For example: `name`, and not `name.first`. Use multiple collections where all search fields are top-level to get around this behavior. The query parts operations that work with non top-level search fields are: `equal`, `notEqual`, `like`, `notLike`, `rightLike`, `notRightLike`, `leftLike`, and `notLeftLike`. The behavior is undetermined if you use non-top-level search fields.
 
 ## Features table
 {: #features-table }
@@ -163,6 +164,7 @@ JSONStore is similar to technologies such as LocalStorage, Indexed DB, Cordova S
 | Multi-user support                                 |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
 | Indexing	                                         |	     ✔ 	      |      -	    |     ✔	     |        ✔	           |         -	      |
 | Type of Storage	                                 | JSON documents | Key-value pairs | JSON documents | Relational (SQL) | Strings     |
+{: caption="Table 1. Feature comparison" caption-side="top"}
 
 Reliable Storage means that your data isn’t deleted unless one of the following events occurs:
 * The application is removed from the device.
@@ -227,17 +229,17 @@ If you don’t need encryption, the JSONStore is fully functional (minus encrypt
 1. Run the SQLCipher for Windows Runtime 8.1/10 extension that comes with the SQLCipher for Windows Runtime Commercial Edition.
 2. After the extension finishes installing, locate the SQLCipher version of the **sqlite3.dll** file that was just created. There’s one for x86, one for x64, and one for ARM.
 
-   ```bash
-   C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLCipher.WinRT81\3.0.1\Redist\Retail\<platform>
-   ```
-   {: codeblock}
+    ```bash
+    C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLCipher.WinRT81\3.0.1\Redist\Retail\<platform>
+    ```
+    {: codeblock}
 
 3. Copy and replace this file to your MobileFirst application.
 
-   ```bash
-   <Worklight project name>\apps\<application name>\windows8\native\buildtarget\<platform>
-   ```
-   {: codeblock}
+    ```bash
+    <Worklight project name>\apps\<application name>\windows8\native\buildtarget\<platform>
+    ```
+    {: codeblock}
 
 ## Performance
 {: #performance-jsonstore }
@@ -276,7 +278,7 @@ A jQuery Deferred is a promise that can be resolved or rejected. The following e
 
 Instead of promises and callbacks, you can also listen to JSONStore `success` and `failure` events. Perform actions that are based on the arguments that are passed to the event listener.
 
-**Example promise definition**
+Example promise definition:
 
 ```javascript
 var asyncOperation = function () {
@@ -290,8 +292,9 @@ var asyncOperation = function () {
   return deferred.promise();
 };
 ```
+{: codeblock}
 
-**Example promise usage**
+Example promise usage:
 
 ```javascript
 // The function that is passed to .then is executed after 1000 ms.
@@ -299,8 +302,9 @@ asyncOperation.then(function (response) {
   // response = 'Hello'
 });
 ```
+{: codeblock}
 
-**Example callback definition**
+Example callback definition:
 
 ```javascript
 var asyncOperation = function (callback) {
@@ -309,8 +313,9 @@ var asyncOperation = function (callback) {
   }, 1000);
 };
 ```
+{: codeblock}
 
-**Example callback usage**
+Example callback usage:
 
 ```javascript
 // The function that is passed to asyncOperation is executed after 1000 ms.
@@ -318,8 +323,9 @@ asyncOperation(function (response) {
   // response = 'Hello'
 });
 ```
+{: codeblock}
 
-**Example events**
+Example events:
 
 ```javascript
 $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collectionName) {
@@ -330,6 +336,7 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
   // collectionName - Name of the collection
 });
 ```
+{: codeblock}
 
 ### Concurrency in Objective-C
 {: #objective-c-jsonstore }
@@ -359,6 +366,7 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
+{: codeblock}
 
 ### JSONStore example for Android
 {: #android-example }
@@ -368,6 +376,7 @@ initOptions.setAnalytics(true);
 
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
+{: codeblock}
 
 ### JSONStore example for JavaScript
 {: #java-script-example }
@@ -378,6 +387,7 @@ var options = {
 
 WL.JSONStore.init(..., options);
 ```
+{: codeblock}
 
 ## Working With External Data
 {: #working-with-external-data }
@@ -407,7 +417,8 @@ All of the following code examples are written in pseudocode that looks similar 
 
 Use  adapters for the Transport Layer. Some of the advantages of using adapters are XML to JSON, security, filtering, and decoupling of server-side code and client-side code.
 {: note}
-**External data source: Backend REST endpoint**  
+##### External data source: Backend REST endpoint
+{: #external-data-source-backend-rest-endpoint-head}
 Imagine that you have a REST endpoint that read data from a database and returns it as an array of JSON objects.
 
 ```javascript
@@ -429,7 +440,8 @@ The data that is returned can look like the following example:
 ```
 {: codeblock}
 
-**Transport Layer: adapter**  
+##### Transport Layer: adapter
+{: #transport-layer-adapter}
 Imagine that you created an adapter that is called people and you defined a procedure that is called getPeople. The procedure calls the REST endpoint and returns the array of JSON objects to the client. You might want to do more work here, for example, return only a subset of the data to the client.
 
 ```javascript
@@ -475,13 +487,16 @@ $.ajax({
 ```
 {: codeblock}
 
-**Internal data source API: JSONStore**
+##### Internal data source API: JSONStore
+{: #internal-data-source-api-jsonstore}
 After you get the response from the backend, work with that data by using JSONStore.
 JSONStore provides a way to track local changes. It enables some APIs to mark documents as dirty. The API records the last operation that was performed on the document, and when the document was marked as dirty. You can then use this information to implement features like data synchronization.
 
 The change API takes the data and some options:
 
-**replaceCriteria**  
+###### replaceCriteria
+{: #replacecriteria}
+  
 These search fields are part of the input data. They're used to locate documents that are already inside a collection. For example, if you select:
 
 ```javascript
@@ -519,10 +534,14 @@ Then, the `change` operation performs a replacement with the input data and the 
 
 The name was changed from `Carlitos` to `Carlos`. If more than one document matches the replace criteria, then all documents that match are replaced with the respective input data.
 
-**addNew**  
+###### addNew 
+{: #addnew}
+ 
 When no documents match the replace criteria, the change API looks at the value of this flag. If the flag is set to **true**, the change API creates a new document and adds it to the store. Otherwise, no further action is taken.
 
-**markDirty**  
+###### markDirty 
+{: #markdirty}
+ 
 Determines whether the change API marks documents that are replaced or added as dirty.
 
 An array of data is returned from the adapter:
@@ -600,7 +619,8 @@ All of the following code examples are written in pseudocode that looks similar 
 Use adapters for the Transport Layer. Some of the advantages of using adapters are XML to JSON, security, filtering, and decoupling of server-side code and client-side code.
 {: note}
 
-**Internal data source API: JSONStore**  
+##### Internal data source API: JSONStore  
+{: #internal-data-source-api-jsonstore-head}
 After you get an accessor to the collection, call the `getAllDirty` API to get all documents that are marked as dirty. These documents have local-only changes that you want to send to the external data source through a transport layer.
 
 ```javascript
@@ -630,7 +650,8 @@ The fields are:
 * `_operation`: The last operation that was performed on the document. Possible values are add, store, replace, and remove.
 * `_dirty`: A time stamp that is stored as a number to signify when the document was marked dirty.
 
-**Transport Layer: MobileFirst adapter**  
+##### Transport Layer: MobileFirst adapter  
+{: #transport-layr-mobilefirst-adapter }
 You can choose to send dirty documents to an adapter. Assume that you have a `people` adapter that is defined with an `updatePeople` procedure.
 
 ```javascript
@@ -748,7 +769,8 @@ Optionally, you can skip the adapter and contact the REST endpoint directly.
 ```
 {: codeblock}
 
-**External data source: Backend REST endpoint**  
+##### External data source: Backend REST endpoint
+{: #external-data-source-backend-rest-endpoint }
 The backend accepts or rejects changes, and then relays a response back to the client. After the client looks at the response, it can pass documents that were updated to the markClean API.
 
 ```javascript
@@ -818,7 +840,8 @@ Follow these steps to isolate the issue to more accurately report a problem.
    $ sqlite3 jsonstore.sqlite
    ```
 
-   * **Note:** JavaScript only implementation that runs on a web browser (Firefox, Chrome, Safari, Internet Explorer) does not use an SQLite database. The file is stores in HTML5 LocalStorage.
+    JavaScript only implementation that runs on a web browser (Firefox, Chrome, Safari, Internet Explorer) does not use an SQLite database. The file is stores in HTML5 LocalStorage.
+    {: note}
    * Look at the `searchFields` with `.schema` and select data with `SELECT * FROM <collection-name>;`. To exit sqlite3, type `.exit`. If you pass a user name to the init method, the file is called **the-username.sqlite**. If you do not pass a user name, the file is called **jsonstore.sqlite** by default.
 5. (Android only) Enable verbose JSONStore.
 
@@ -826,6 +849,7 @@ Follow these steps to isolate the issue to more accurately report a problem.
    adb shell setprop log.tag.jsonstore-core VERBOSE
    adb shell getprop log.tag.jsonstore-core
    ```
+    {: codeblock}
 
 6. Use the debugger.
 
@@ -848,7 +872,7 @@ Understanding the following JSONStore characteristics can help resolve some of t
 To ensure the ordering of `mfpjsonjsloaded` and `mfpjsloaded` events, the developer has the option of calling `WL.CLient.init`
 manually. This will remove the need for having platform specific code.
 
-  Follow the steps below to configure calling of `WL.CLient.init` manually:                             
+  Use the following steps to configure calling of `WL.CLient.init` manually:                             
 
   1. In `config.xml`, change the `clientCustomInit` property to **true**.
 
@@ -885,6 +909,7 @@ The key elements in this simplified example:
 |-----|-----|------|-----|------|
 | 1   | c   | carlos | 99 | {name: 'carlos', age: 99} |
 | 2   | t   | tim   | 100 | {name: 'tim', age: 100} |
+{: caption="Table 2. JSONStore data key elements example" caption-side="top"}
 
 When you search by using one of the following queries or a combination of them: `{_id : 1}, {name: 'carlos'}`, `{age: 99}, {key: 'c'}`, the returned document is `{_id: 1, json: {name: 'carlos', age: 99} }`.
 
@@ -1010,3 +1035,4 @@ List of common error codes and their description:
 | 30 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_OBJECTS | Validation error when the array is not an array of only JSON objects. |
 | 31 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_CLEAN\_DOCUMENTS | Validation error. |
 | 32 BAD\_PARAMETER\_WRONG\_SEARCH\_CRITERIA | Validation error. |
+{: caption="Table 3. Common error codes" caption-side="top"}

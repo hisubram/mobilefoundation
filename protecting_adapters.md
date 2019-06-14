@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation security, adapter security
 
@@ -31,10 +31,10 @@ In your adapter, you can specify the protecting scope for a Java method or JavaS
 
 The default MobileFirst scope is `RegisteredClient`, which require an access token for accessing the resource and verifies that the resource request is from an application that is registered with MobileFirst Server. This protection is always applied, unless you [disable resource protection](#disabling-resource-protection). Therefore, even if you do not set a scope for your resource, it is still protected.
 
->**Note**: `RegisteredClient` is a reserved MobileFirst keyword. Do not define custom scope elements or security checks by this name.
-{.note}
+`RegisteredClient` is a reserved MobileFirst keyword. Do not define custom scope elements or security checks by this name.
+{: note}
 
-### Protecting Java adapter resources
+## Protecting Java adapter resources
 {: #protect-java-adapter-resources}
 
 To assign a protecting scope to a JAX-RS method or class, add the `@OAuthSecurity` annotation to the method or class declaration, and set the `scope` element of the annotation to your preferred scope. Replace `YOUR_SCOPE` with a string of one or more scope elements (“scopeElement1 scopeElement2 …”):
@@ -46,10 +46,11 @@ To assign a protecting scope to a JAX-RS method or class, add the `@OAuthSecurit
 
 A class scope applies to all of the methods in the class, except for methods that have their own `@OAuthSecurity` annotation.
 
->**Note**: When the enabled element of the `@OAuthSecurity` annotation is set to `false`, the scope element is ignored. See [Disabling Java resource protection](#disabling-java-resource-protection).
+When the enabled element of the `@OAuthSecurity` annotation is set to `false`, the scope element is ignored. See [Disabling Java resource protection](#disabling-java-resource-protection).
+{: note}
 
-**Examples**
-
+### Examples
+{: #protect-java-adap-res-example}
 The following code protects a `helloUser` method with a scope that contains `UserAuthentication` and `Pincode` scope elements:
 
 ```java
@@ -73,7 +74,7 @@ public class WebSphereResources {
 ```
 {: codeblock}
 
-### Protecting JavaScript adapter resources
+## Protecting JavaScript adapter resources
 {: #protect-javascript-adapter-resources}
 
 To assign a protecting scope to a JavaScript procedure, in the **adapter.xml** file, set the scope attribute of the <procedure> element to your preferred scope. Replace `PROCEDURE_NANE` with the name of your procedure, and `YOUR SCOPE` with a string of one or more scope elements (“scopeElement1 scopeElement2 …”):
@@ -83,10 +84,11 @@ To assign a protecting scope to a JavaScript procedure, in the **adapter.xml** f
 ```
 {: codeblock}
 
->**Note**: When the `secured` attribute of the <procedure> element is set to false, the `scope` attribute is ignored. See [Disabling JavaScript resource protection](#disabling-javascript-resource-protection).
-{.note}
+When the `secured` attribute of the <procedure> element is set to false, the `scope` attribute is ignored. See [Disabling JavaScript resource protection](#disabling-javascript-resource-protection).
+{: note}
 
-**Example**
+### Example
+{: #protect-javascript-adap-res-example}
 
 The following code protects a `userName` procedure with a scope that contains `UserAuthentication` and `Pincode` scope elements:
 
@@ -112,10 +114,11 @@ To entirely disable OAuth protection for a Java resource method or class, add th
 
 The default value of the annotation’s `enabled` element is `true`. When the `enabled` element is set to `false`, the `scope` element is ignored and the resource or resource class is unprotected.
 
->**Note**: When you assign a scope to a method of an unprotected class, the method is protected despite the class annotation, unless you set the `enabled` element of the resource annotation to `false`.
-{.note}
+When you assign a scope to a method of an unprotected class, the method is protected despite the class annotation, unless you set the `enabled` element of the resource annotation to `false`.
+{: note}
 
-**Examples**
+#### Examples
+{: #disble-java-adap-res-example}
 
 The following code disables resource protection for a `helloUser` method:
 
@@ -152,7 +155,8 @@ To entirely disable OAuth protection for a JavaScript adapter resource (procedur
 
 When the `secured` attribute is set to `false`, the `scope` attribute is ignored and the resource is unprotected.
 
-**Example**
+#### Example
+{: #disable-javascript-res-prot-example}
 
 The following code disables resource protection for a `userName` procedure:
 

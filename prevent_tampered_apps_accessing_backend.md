@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation security, restrict backend access, tampered apps
 
@@ -27,15 +27,14 @@ Application authenticity helps to check the application validity before enabling
 
 To properly secure your application, enable the predefined MobileFirst application-authenticity security check (``appAuthenticity``). When enabled, this check validates the authenticity of the application before providing it with any services. Applications in production environment should have this feature enabled.
 
-To enable application authenticity, you can either follow the on-screen instructions in the **MobileFirst Operations Console → [your-application] → Authenticity**, or review the information below.
+To enable application authenticity, you can either follow the on-screen instructions in the **MobileFirst Operations Console → [your-application] → Authenticity**, or review the following information.
 
-* **Availability**
-
-    Application authenticity is available in all supported platforms (iOS, Android, Windows 8.1 Universal, Windows 10 UWP) in both Cordova and native applications.
-
-* **Limitations**
-
-    Application authenticity does not support **Bitcode** in iOS. Therefore, before using application authenticity, disable Bitcode in the Xcode project properties.
+<dl>
+  <dt>Availability</dt>
+  <dd>Application authenticity is available in all supported platforms (iOS, Android, Windows 8.1 Universal, Windows 10 UWP) in both Cordova and native applications.</dd>
+  <dt>Limitations</dt>
+  <dd>Application authenticity does not support **Bitcode** in iOS. Therefore, before using application authenticity, disable Bitcode in the Xcode project properties.</dd>
+</dl>
 
 ## Application Authenticity Flow
 {: #appauthenticityflow}
@@ -96,7 +95,7 @@ To use the BTS tool in Xcode:
 
 1. Under the **Build Phases** tab click the **+** button and create new **Run Script Phase**.
 2. Copy the path of BTS Tool and paste in the new “Run Script Phase” you have created.
-3. Drag the run script phase above the **Compile sources phase**.
+3. Drag the run script phase from before the **Compile sources phase**.
 
 The tool should be used when building a production version of the application.
 

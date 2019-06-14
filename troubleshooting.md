@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-02-12"
+lastupdated: "2019-06-10"
 
 keywords: troubleshooting techniques
 
@@ -39,7 +39,7 @@ The answers to these questions typically lead to a good description of the probl
 
 ### What are the symptoms of the problem?
 
-When you start to describe a problem, the most obvious question is "What is the problem?" This question might seem straightforward; however, you can break it down into several more-focused questions that create a more descriptive picture of the problem. These questions can include the following,
+When you start to describe a problem, the most obvious question is **What is the problem?** This question might seem straightforward; however, you can break it down into several more-focused questions that create a more descriptive picture of the problem. These questions can include the following,
 
 - Who, or what, is reporting the problem?
 - What are the error codes and messages?
@@ -108,4 +108,4 @@ If you have technical questions about developing or deploying an app with {{site
 
 For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} forum. Include the `bluemix` and  `mobilefirst` tags.
 
-For more information on opening an IBM support ticket, or on support levels and ticket severities, see [Contacting support](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.
+For more information on opening an IBM support ticket, or on support levels and ticket severities, see [Contacting support](https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support){: new_window}.
