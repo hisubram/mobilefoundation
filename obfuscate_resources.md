@@ -73,14 +73,14 @@ If you run one of the listed commands after you encrypt the web resources, you m
 
 1. Open a terminal window and navigate to the root directory of the Cordova app that you want to encrypt.
 2. Prepare the app by entering one of the following commands:
-    * ```bash
-      cordova prepare
-      ```
-      {: codeblock}
-    * ```bash
-      mfpdev app webupdate
-      ```
-      {: codeblock}
+    ```bash
+    cordova prepare
+    ```
+    {: codeblock}
+    ```bash
+    mfpdev app webupdate
+    ```
+    {: codeblock}
 3. Complete one of the following procedures to encrypt the content,
     * Enter the following command:
       ```bash
@@ -96,7 +96,7 @@ If you run one of the listed commands after you encrypt the web resources, you m
       {: tip}
 
     * You can also encrypt the web resources of your Cordova packages by adding the `mfpwebencrypt` flag to the `cordova compile` or to the `cordova build` command when you build your packages.
-       * ```bash
+        ```bash
          cordova compile -- --mfpwebencrypt
          ```
          {: codeblock}
@@ -110,13 +110,13 @@ If you run one of the listed commands after you encrypt the web resources, you m
 4. Test the application with the encrypted resources by using the emulator that is provided with the platform-specific tools. For example, you can use the emulator in Android Studio for Android, or Xcode for iOS.
 
 Do not use the following Cordova commands to test the application after you encrypt it,
-* ```bash
-  cordova run
-  ```
-  {: codeblock}
-* ```bash
-  cordova emulate
-  ```
-  {: codeblock}
+```bash
+cordova run
+```
+{: codeblock}
+```bash
+cordova emulate
+```
+{: codeblock}
 These commands refresh the content that was encrypted in the www folder, and saves it again as decrypted content. If you use these commands, remember to complete the procedure again to encrypt it before you publish the app.
 {: note}
