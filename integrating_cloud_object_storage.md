@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-24"
 
 keywords: mobile foundation, integration, cloud object storage, COS, ibm cloud
 
@@ -191,7 +191,7 @@ For the java adapter to connect to your instance of COS, authentication that use
 
 	Targeted resource group default
 
-	API endpoint:     https://api.ng.bluemix.net (API version: 	2.75.0)
+	API endpoint:     https://api.us-south.cf.cloud.ibm.com (API version: 	2.128.0)
 	Region:           us-south
 	User:             <email-address>
 	Account:          <account-name> (<account-id>)
