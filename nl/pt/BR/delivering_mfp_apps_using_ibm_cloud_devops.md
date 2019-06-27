@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation, integration, devops, ibmcloud, pipeline
 
@@ -40,7 +40,7 @@ Este tutorial ajuda você a automatizar a entrega de apps e adaptadores para o I
 
 A imagem a seguir fornece uma visão geral do pipeline.
 
-![overview_of_pipeline](images/p00_overview_of_pipeline.png)
+![overview_of_pipeline](images/p00_overview_of_pipeline.png "Seis estágios do pipeline do DevOps")
 
 
 ## Pré-requisitos
@@ -50,7 +50,7 @@ A imagem a seguir fornece uma visão geral do pipeline.
 * [ mfpdev-cli ](https://www.npmjs.com/package/mfpdev-cli)
 * Um Aplicativo de amostra e [Adaptador MFP](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/)
 * Conta [ GitHub ](http://github.com/)
-* **Opcional:** a instância do [Bitbar](https://bitbar.com/testing/) e a chave de API do Bitbar (é possível usar qualquer serviço conforme seus requisitos).
+* *Opcional:* a instância do [Bitbar](https://bitbar.com/testing/) e a chave de API do Bitbar (é possível usar qualquer serviço de acordo com seus requisitos).
 
 
 ## Criando o Continuous Delivery Service e a cadeia de ferramentas
@@ -59,14 +59,13 @@ A imagem a seguir fornece uma visão geral do pipeline.
 * Procure "Continuous Delivery" no Catálogo do {{ site.data.keyword.cloud_notm }} (ou [clique aqui](https://cloud.ibm.com/catalog/services/continuous-delivery)).
 * Crie o serviço fornecendo o nome do serviço, a região e assim por diante.
 
-    No exemplo a seguir, usamos o nome do serviço como "Teste de entrega do app/adaptador MFP", região/local como "Londres" e grupo de recursos como "Padrão".
+    No exemplo a seguir, usamos o nome do serviço como *Teste de entrega de app/adaptador MFP*, região/local como *Londres* e o grupo de recursos como *Padrão*.
 
-    ![configuring_continuous_delivery_service](images/p01_configuring_continuous_delivery_service.png)
+    ![configuring_continuous_delivery_service](images/p01_configuring_continuous_delivery_service.png "Página de criação de catálogo para a instância de serviço do Mobile Foundation")
 
-* Na seção {{ site.data.keyword.jazzhub_title }}
-no menu hambúrguer à esquerda, crie uma cadeia de ferramentas e procure “Construa sua própria cadeia de ferramentas” para criar uma cadeia de ferramentas do zero.
+* No menu de Navegação, selecione **DevOps** e, em seguida, clique em **Criar uma cadeia de ferramentas** e procure “Construir sua própria cadeia de ferramentas” para criar uma cadeia de ferramentas do zero.
 
-    ![search_build_your_own_toolchain](images/p02_search_build_your_own_toolchain.png)
+    ![search_build_your_own_toolchain](images/p02_search_build_your_own_toolchain.png "Página para criar sua própria cadeia de ferramentas com o resultado da procura por construir própria cadeia de ferramentas")
 
 * Forneça o nome da cadeia de ferramentas, a região e assim por diante para configurar.
 
@@ -74,13 +73,13 @@ no menu hambúrguer à esquerda, crie uma cadeia de ferramentas e procure “Con
 ## Integrando o GitHub à cadeia de ferramentas para controle de versão e acionador de pipeline
 {: #integrating-github-with-the-toolchain}
 
-* Na visão geral da cadeia de ferramentas no menu esquerdo. Clique em **Incluir uma ferramenta** e procure GitHub.
+* Na página **Visão geral** na navegação, clique em **Incluir uma ferramenta** e procure GitHub.
 * Configure a ferramenta GitHub para o **Endereço do servidor GitHub**, **tipo de repositório** e **URL do repositório**.
 * É possível criar um novo repositório, bifurcar, clonar ou usar um repositório existente.
 
-    No exemplo a seguir, usamos o servidor GitHub como "[https://github.com](http://github.com/)", o tipo de repositório como "Existente" e a URL do repositório como "https://github.com/sagar20896/mfp-devops-20181210030116092".
+    No exemplo a seguir, usamos o servidor do GitHub como "[https://github.com](http://github.com/)", o tipo de repositório como *Existente* e a URL do repositório como *https://github.com/sagar20896/mfp-devops-20181210030116092*.
 
-    ![configuring_toolchain](images/p03_configuring_toolchain.png)
+    ![configuring_toolchain](images/p03_configuring_toolchain.png "Tela Configurar a integração mostrando os campos Servidor do GitHub, Tipo de repositório e URL do repositório")
 
 ### Incluindo o Pipeline de Entrega para a Cadeia
 {: #adding-the-delivery-pipeline-to-the-toolchain}
@@ -98,7 +97,7 @@ Nesse estágio, nós estaríamos acelerando uma instância do {{ site.data.keywo
 
 No exemplo a seguir, nós configuramos o Tipo de entrada como *Repositório Git*, o repositório Git como *mfp-devops-20181210030116092* e a URL do Git como *https://github.com/sagar20896/mfp-devops-20181210030116092* e ramificação como *master*.
 
-![first_stage_git_input](images/p4_first_stage_git_input.png)
+![first_stage_git_input](images/p4_first_stage_git_input.png "Tela Configurar o Mobile Foundation com a guia Entrada selecionada")
 
 - Clique em **Incluir estágio** e configure a guia **Entrada** para apontar para o repositório GitHub, conforme mostrado na imagem.
 - Na guia **Tarefas**, clique em **INCLUIR TAREFA** e selecione *Implementar* como o tipo de tarefa. Selecione **Deployer type** como *Cloud Foundry*.
@@ -134,13 +133,13 @@ Selecione / preencha os outros campos, conforme necessário. Inclua as linhas a 
 ```
 {: codeblock}
 
-No script acima, utilizamos a CLI do Cloud Foundry para criar uma instância de serviço do {{ site.data.keyword.mobilefoundation_short }}.
+No script anterior, usamos a CLI do Cloud Foundry para criar uma instância de serviço do {{ site.data.keyword.mobilefoundation_short }}.
 
-![stage1_jobs_tab_config](images/p05_stage1_jobs_tab_config.png)
+![stage1_jobs_tab_config](images/p05_stage1_jobs_tab_config.png "Tela Configurar o Mobile Foundation com a guia Tarefas selecionada")
 
 Na guia **Propriedades do ambiente**, inclua a propriedade *INSTANCE\_NAME* (como a propriedade de texto) tal como você deseja que o nome da instância do MobileFoundation seja. Ele seria usado como um identificador em vários estágios.
 
-![stage1_environment_properties](images/p06_stage1_environment_properties.png)
+![stage1_environment_properties](images/p06_stage1_environment_properties.png "Tela Configurar o Mobile Foundation com a guia Propriedades do ambiente selecionada")
 
 #### Estágio 2-Construindo um Adaptador
 {: #stage2-building-an-adapter}
@@ -166,11 +165,11 @@ Nesse estágio, nós fazemos pull do código-fonte do adaptador e o construímos
 ```
 {: codeblock}
 
-No script acima, nós instalamos o [mfpdev-cli](https://www.npmjs.com/package/mfpdev-cli) para construir adaptadores usando o comando do adaptador no `adapters/JavaAdapter` de nosso repositório.
+No script anterior, instalamos [mfpdev-cli](https://www.npmjs.com/package/mfpdev-cli) para construir adaptadores usando o comando do adaptador em `adapters/JavaAdapter` do nosso repositório.
 
 No exemplo a seguir, usamos o **Tipo de construtor** como *npm* e usamos o script que é fornecido no script de construção. Deixamos os parâmetros **Diretório ativo** e **Diretório de archive de compilação** vazios.
 
-![build_adapter_stage_jobs_config](images/p07_build_adapter_stage_jobs_config.png)
+![build_adapter_stage_jobs_config](images/p07_build_adapter_stage_jobs_config.png "Tela BuildAdapter com a guia Tarefas selecionada")
 
 #### Estágio 3-Implementando um adaptador
 {: #stage3-deploying-an-adapter}
@@ -186,7 +185,7 @@ Nesse estágio, implementamos o adaptador na instância do {{ site.data.keyword.
 
 No exemplo a seguir, usamos o **Tipo de implementador** como *Cloud Foundry*, **Região do {{ site.data.keyword.cloud_notm }}** como *Dallas*, a chave de API como a mesma que criamos no primeiro estágio.
 
-![deploy_adapter](images/p08_deploy_adapter.png)
+![deploy_adapter](images/p08_deploy_adapter.png "Tela Implementar com a guia Tarefas selecionada")
 
 
 Use abaixo  ** Implementar script **:
@@ -368,8 +367,7 @@ Use o script a seguir para construir o app:
 ```
 {: codeblock}
 
-No script acima, usamos `mfpdev-cli` para registrar o app no {{ site.data.keyword.mobilefoundation_short }}
-[Fastlane](https://fastlane.tools/) para construir e liberar o app.
+No script anterior, usamos `mfpdev-cli` para registrar o app no {{ site.data.keyword.mobilefoundation_short }} [Fastlane](https://fastlane.tools/) para construir e liberar o app.
 
 As variáveis de ambiente que são usadas no script são definidas na próxima guia **Propriedades do ambiente**.
 
@@ -402,7 +400,7 @@ Use um script de construção semelhante ao script a seguir,
 ```
 {: codeblock}
 
-Para o script acima, você precisa de algumas variáveis de ambiente.
+Para o script anterior, seriam necessárias algumas variáveis de ambiente.
 
 - * screenshot\_dir *  como  ** /home/pipeline/home/pipeline/ $BUILD\_ID/target **
 - *applicationPath* como o **Caminho do GitHub** para o aplicativo que você pretende testar

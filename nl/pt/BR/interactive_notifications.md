@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-10"
 
 keywords: push notifications, sending interactive notification
 
@@ -117,8 +117,7 @@ Para receber notificações interativas, siga estas etapas:
 
 Siga estas etapas para receber notificações interativas:
 
-1. Ative o recurso do aplicativo para executar tarefas em segundo plano no recebimento de notificações remotas. Esta etapa será necessária se
-algumas das ações forem ativadas para segundo plano.
+1. Ative o recurso do aplicativo para executar tarefas em segundo plano no recebimento de notificações remotas. Esta etapa será necessária se algumas das ações forem ativadas no segundo plano.
 2. Defina categorias registradas para notificações interativas e passe-as como opções para `MFPPush.registerDevice`.
 
    ```swift

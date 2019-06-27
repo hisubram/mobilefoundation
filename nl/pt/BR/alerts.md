@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-23"
+lastupdated: "2019-06-06"
 
 keywords: mobile analytics, set up alerts, alert definitions
 
@@ -43,14 +43,14 @@ As seções a seguir detalham a criação, o gerenciamento de alertas e a sua vi
     * **Event Type**: *App Logs*
         * **Property**: *Log Level*
             * **Value**: *Error*
-            * **Threshold**: *Total for Application Instance*<br/>
-              Se você escolher a opção *Média para aplicativo*, os logs do app serão calculados pelo número de dispositivos. Por exemplo, se você tem dois dispositivos e um envia seis logs de app enquanto o outro envia três, a média é de 4,5 logs de app.
+            * **Limite**: *Total para instância do aplicativo*<br/>
+              Se você escolher a opção *Média para aplicativo*, os logs do app terão a média calculada pelo número de dispositivos. Por exemplo, se você tem dois dispositivos e um envia seis logs de app enquanto o outro envia três, a média é de 4,5 logs de app.
               {: note}
             * **Operator**: *is greater than or equals*
             * Threshold value: *3*
 4.  Clique em **Avançar** e forneça o valor a seguir:
-    * **Method**: *Analytics Console Only*<br/>
-      Além disso, escolha a opção *Console de analítica e Postagem de rede*, se desejar enviar uma mensagem POST com uma carga útil de JSON para a sua URL customizada. Os campos a seguir estarão disponíveis se você escolher essa opção.
+    * **Método**: *Somente Analytics Console*<br/>
+      Além disso, escolha a opção *Analytics Console e autoteste inicial de rede* se você desejar enviar uma mensagem POST com uma carga útil JSON para sua URL customizada. Os campos a seguir estarão disponíveis se você escolher essa opção.
       * **URL para autoteste inicial da rede**
       * **Cabeçalhos**
       * **Tipo de Autenticação**
@@ -65,7 +65,7 @@ Esse alerta permanece ativo, monitorando pela frequência de configuração até
 ## Criando uma definição de alerta para travamentos de aplicativo
 {: #creating_alert_crashes}
 
-A seguir está um exemplo de configuração de alertas em torno de travamentos de aplicativo. Esse alerta monitora, a cada 2 minutos, todos os travamentos de aplicativo e aciona um alerta se o número de travamentos observados ultrapassa uma contagem de 5.
+A seguir está um exemplo de configuração de alertas em torno de travamentos de aplicativo.  Esse alerta monitora, a cada 2 minutos, todos os travamentos de aplicativo e aciona um alerta se o número de travamentos observados ultrapassa uma contagem de 5.
 
 1.  No console do Mobile Analytics, clique em **Definições** para acessar a página de definições de alerta.
 2.  Clique em **Criar alerta**.
@@ -80,8 +80,8 @@ A seguir está um exemplo de configuração de alertas em torno de travamentos d
     * **Operator**: *is greater than or equals*
     * Threshold value: *5*
 4.  Clique em **Método de distribuição** ou em **Avançar** e forneça o valor a seguir:
-    * **Method**: *Analytics Console Only*<br/>
-      Além disso, escolha a opção *Console de analítica e Postagem de rede*, se desejar enviar uma mensagem POST com uma carga útil de JSON para a sua URL customizada. Os campos a seguir estarão disponíveis se você escolher essa opção.
+    * **Método**: *Somente Analytics Console*<br/>
+      Além disso, escolha a opção *Analytics Console e autoteste inicial de rede* se você desejar enviar uma mensagem POST com uma carga útil JSON para sua URL customizada. Os campos a seguir estarão disponíveis se você escolher essa opção.
       * **URL para autoteste inicial da rede**
       * **Cabeçalhos**
       * **Tipo de Autenticação**

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-30"
+lastupdated: "2019-06-10"
 
 keywords: mobile analytics, instrumenting cordova app, instrumenting iOS app, instrumenting android app
 
@@ -89,7 +89,7 @@ e a segunda é permitir que o feedback do usuário no app interaja com o usuári
 4. Sincronize seu projeto com Gradle clicando em **Ferramentas &gt; Android &gt; Projeto de sincronização com arquivos Gradle**.
 {: android}
 
-5. Abra o arquivo `AndroidManifest.xml` para seu projeto Android. É possível localizar esse arquivo em **app > manifests**. Inclua permissão de acesso à Internet e acesso local sob o elemento `<manifest>` :
+5. Abra o arquivo `AndroidManifest.xml` para seu projeto Android. É possível localizar esse arquivo em **app > manifests**. Inclua a permissão de acesso à Internet e de acesso ao local sob o elemento `<manifest>`:
 {: android}
 
   ```xml
@@ -97,7 +97,7 @@ e a segunda é permitir que o feedback do usuário no app interaja com o usuári
 
   ```
   {: codeblock}
-  Se você estiver usando a versão do SDK maior que >= 1.2, será necessário colocar as linhas a seguir dentro do elemento `<application>`  do arquivo  ` AndroidManifest.xml ` .
+  Se você estiver usando a versão do SDK maior que >= 1,2, será necessário colocar as linhas a seguir dentro do elemento `<application>` do arquivo `AndroidManifest.xml`.
   {: android}
 
   ```
@@ -141,7 +141,7 @@ e a segunda é permitir que o feedback do usuário no app interaja com o usuári
    Antes de chamar o método de inicialização, deve-se assegurar que o seu aplicativo incorpore o código necessário para autenticar e autorizar o dispositivo com o serviço do MobileFoundation.  Essa etapa é uma etapa comum que é necessária a todos os aplicativos de serviços do Mobile Foundation e não é específica para a captura de dados do Analytics. <!--  Refer <need to link doc that talks about auth> -->
    {: android}
 
-   Com a inicialização concluída, seu aplicativo está agora ativado para capturar informações sobre o dispositivo e os logs do SDK do Mobile Analytics sem nenhum código adicional incluído. Qualquer API e código adicional que for discutido nas seções a seguir é opcional e pode ser incluído com base em qual tipo de dados de analítica você deseja capturar.
+   Com a inicialização concluída, seu aplicativo está agora ativado para capturar informações sobre o dispositivo e os logs do SDK do Mobile Analytics sem nenhum código adicional incluído.  Qualquer API e código adicional que for discutido nas seções a seguir é opcional e pode ser incluído com base em qual tipo de dados de analítica você deseja capturar.
    {: android}
 
 2. Para capturar eventos de ciclo de vida do aplicativo, tais como sessão de aplicativo e informações de travamento, configure seu aplicativo incluindo a linha de código a seguir:
@@ -212,7 +212,7 @@ e a segunda é permitir que o feedback do usuário no app interaja com o usuári
     Todos os dados de analítica capturados e armazenados localmente são enviados para o serviço Mobile Analytics somente quando a API WLAnalytics.send() é chamada.
     {: android}
 
-7.  Para obter insights sobre os padrões de interação de rede HTTP de seus aplicativos, como APIs HTTP chamadas, número de solicitações e tempos médios de resposta, deve-se usar a classe WLResourceRequest do SDK cliente do Mobile Foundation Service para fazer as chamadas HTTP.  Embora você tenha inicializado o Analytics para a captura de eventos de Rede, o uso de `WLResourceRequest` permite que o Mobile Analytics conecte as chamadas de rede e capture os dados relevantes. Faça as suas chamadas de HTTP como no código a seguir.
+7.  Para obter insights sobre os padrões de interação de rede HTTP de seus aplicativos, como APIs HTTP chamadas, número de solicitações e tempos médios de resposta, deve-se usar a classe WLResourceRequest do SDK cliente do Mobile Foundation Service para fazer as chamadas HTTP.  Embora você tenha inicializado o Analytics para a captura de eventos de Rede, o uso de `WLResourceRequest` permite que o Mobile Analytics conecte as chamadas de rede e capture os dados relevantes.  Faça as suas chamadas de HTTP como no código a seguir.
     ```java
       WLResourceRequest request = new WLResourceRequest(new URI(url), WLResourceRequest.GET);
             request.send(new WLResponseListener() {
@@ -241,7 +241,7 @@ e a segunda é permitir que o feedback do usuário no app interaja com o usuári
     {: codeblock}
     {: android}
 
-9.  Para definir a Analítica customizada e definir os seus próprios dados de analítica e acima do que é suportado inerentemente no SDK cliente, seria possível usar a API de criação de log customizada
+9.  Para definir a Analítica customizada e definir seus próprios dados de analítica sobre o que é suportado inerentemente no SDK do cliente, seria possível usar a API de criação de log customizada
     ```java
         //create a JSON to capture the custom data 
         JSONObject jsonObject = new JSONObject();
@@ -259,7 +259,7 @@ e a segunda é permitir que o feedback do usuário no app interaja com o usuári
     Os dados customizados registrados podem ser plotados sobre gráficos customizados que podem ser definidos no console Mobile Analytics para derivar insights customizados.
     {: android}
 
-10. Use o Feedback do usuário no app para aprofundar a análise de desempenho do seu aplicativo. É possível ativar os **usuários e testadores** do aplicativo para fornecer feedback contextual rico aos proprietários de app. **Proprietários de app** obtêm feedback em tempo real de seus usuários sobre a experiência de uso do aplicativo na qual os **Proprietários de app** e **Desenvolvedores** podem atuar posteriormente.  Esse recurso traz uma agilidade significativa para a manutenção do aplicativo. Use a API a seguir para alternar o seu aplicativo para o Modo de feedback interativo em qualquer manipulador de ações em seu aplicativo, por exemplo, quando você manipular o clique de um botão ou a seleção de um item de menu.
+10. Use o Feedback do usuário no app para aprofundar a análise de desempenho do seu aplicativo. É possível ativar os **usuários e testadores** do aplicativo para fornecer feedback contextual rico aos proprietários de app. **Proprietários de app** obtêm feedback em tempo real de seus usuários sobre a experiência de uso do aplicativo na qual os **Proprietários de app** e **Desenvolvedores** podem atuar posteriormente.  Esse recurso traz uma agilidade significativa para a manutenção do aplicativo.  Use a API a seguir para alternar o seu aplicativo para o Modo de feedback interativo em qualquer manipulador de ações em seu aplicativo, por exemplo, quando você manipular o clique de um botão ou a seleção de um item de menu.
     ```java
         WLAnalytics.triggerFeedbackMode();
     ```
@@ -354,7 +354,8 @@ projeto `AppDelegate.swift`:
    {: codeblock}
    {: ios}
 
-    Você é livre para decidir quando chamar essa API em seu fluxo de aplicativo para enviar os dados de analítica capturados para o serviço Mobile Analytics.  Até isso, envie todos os dados de analítica capturados que estão armazenados localmente no dispositivo.     {: ios}
+    Você é livre para decidir quando chamar essa API em seu fluxo de aplicativo para enviar os dados de analítica capturados para o serviço Mobile Analytics.  Até isso, envie todos os dados de analítica capturados que estão armazenados localmente no dispositivo.
+    {: ios}
 
 5. Para capturar e enviar logs do aplicativo para o serviço do Mobile Analytics, use as APIs do criador de logs do SDK do Mobile Analytics Client.
    A estrutura de criação de log do SDK cliente do Mobile Analytics suporta os níveis de log a seguir, que estão listados do menos para o mais detalhado, com as diretrizes de uso recomendadas:
@@ -406,7 +407,7 @@ projeto `AppDelegate.swift`:
     {: codeblock}
     {: ios}
 
-9.  Para definir a Analítica customizada e definir os seus próprios dados de analítica e acima do que é suportado inerentemente no SDK cliente, seria possível usar a API de criação de log customizada
+9.  Para definir a Analítica customizada e definir seus próprios dados de analítica sobre o que é suportado inerentemente no SDK do cliente, seria possível usar a API de criação de log customizada
     ```Swift
         //create an array object with key value pair as custom data
         let eventObject = ["FromPage": "LoginPage"]
@@ -423,7 +424,7 @@ projeto `AppDelegate.swift`:
     Os dados customizados registrados podem ser plotados sobre gráficos customizados que podem ser definidos no console Mobile Analytics para derivar insights customizados.
     {: ios}
 
-10. Use o Feedback do usuário no app para aprofundar a análise de desempenho do seu aplicativo.   É possível ativar os **usuários e testadores** do aplicativo para fornecer feedback contextual rico aos proprietários de app. **Proprietários de app** obtêm feedback em tempo real de seus usuários sobre a experiência de uso do aplicativo na qual os **Proprietários de app** e **Desenvolvedores** podem atuar posteriormente.  Esse recurso traz uma agilidade significativa para a manutenção do aplicativo. Use a API a seguir para alternar o seu aplicativo para o Modo de feedback interativo em qualquer manipulador de ações em seu aplicativo, por exemplo, quando você manipular o clique de um botão ou a seleção de um item de menu.
+10. Use o Feedback do usuário no app para aprofundar a análise de desempenho do seu aplicativo.   É possível ativar os **usuários e testadores** do aplicativo para fornecer feedback contextual rico aos proprietários de app. **Proprietários de app** obtêm feedback em tempo real de seus usuários sobre a experiência de uso do aplicativo na qual os **Proprietários de app** e **Desenvolvedores** podem atuar posteriormente.  Esse recurso traz uma agilidade significativa para a manutenção do aplicativo.  Use a API a seguir para alternar o seu aplicativo para o Modo de feedback interativo em qualquer manipulador de ações em seu aplicativo, por exemplo, quando você manipular o clique de um botão ou a seleção de um item de menu.
     ```Swift
         WLAnalytics.sharedInstance().triggerFeedbackMode();
     ```
@@ -448,7 +449,7 @@ O plug-in do Mobile Analytics Cordova permite instrumentar seu aplicativo móvel
 1. Crie um projeto [Cordova ![Ícone de link externo](../../icons/launch-glyph.svg "Ícone de link externo")](http://cordova.apache.org/#getstarted){: new_window} ou abra um projeto existente.
     {: cordova}
 
-2. Inclua as plataformas Android ou iOS de sua preferência no aplicativo Cordova. Execute um ou ambos os comandos a seguir da linha de comandos.<br/>
+2. Inclua as plataformas Android ou iOS de sua preferência no aplicativo Cordova. Execute um ou ambos os comandos a seguir por meio da linha de comandos.<br/>
     **Android**:
     ```
     cordova platform add android
@@ -490,7 +491,7 @@ O plug-in do Mobile Analytics Cordova permite instrumentar seu aplicativo móvel
 
 1. Em aplicativos Cordova, nenhuma configuração é necessária e a inicialização está integrada.
 
-   Antes de chamar qualquer um dos métodos analíticos abaixo, deve-se assegurar que seu aplicativo integre o código necessário para autenticar e autorizar o dispositivo com o serviço MobileFoundation. Essa etapa é uma etapa comum que é necessária a todos os aplicativos de serviços do Mobile Foundation e não é específica para a captura de dados do Analytics. <!--  Refer <need to link doc that talks about auth> -->
+   Antes de chamar qualquer um dos métodos analíticos a seguir, deve-se assegurar que seu aplicativo integre o código necessário para autenticar e autorizar o dispositivo com o serviço do MobileFoundation. Essa etapa é uma etapa comum que é necessária a todos os aplicativos de serviços do Mobile Foundation e não é específica para a captura de dados do Analytics. <!--  Refer <need to link doc that talks about auth> -->
    {: cordova}
 
    Com a inicialização, conclua que o seu aplicativo agora está ativado para capturar informações do dispositivo e os logs do SDK do Mobile Analytics sem nenhum código adicional incluído.  Qualquer API e código adicional que for discutido nas seções a seguir é opcional e pode ser incluído com base em qual tipo de dados de analítica você deseja capturar.
@@ -609,7 +610,7 @@ O plug-in do Mobile Analytics Cordova permite instrumentar seu aplicativo móvel
     {: codeblock}
     {: cordova}
 
-7. Para definir a Analítica customizada e definir os seus próprios dados de analítica e acima do que é suportado inerentemente no SDK cliente, seria possível usar a API de criação de log customizada
+7. Para definir a Analítica customizada e definir seus próprios dados de analítica sobre o que é suportado inerentemente no SDK do cliente, seria possível usar a API de criação de log customizada
     ```Javascript
         //create custom data as key value pair
         WL.Analytics.log({"FromPage" : 'LoginPage'});
@@ -623,7 +624,7 @@ O plug-in do Mobile Analytics Cordova permite instrumentar seu aplicativo móvel
     Os dados customizados registrados podem ser plotados sobre gráficos customizados que podem ser definidos no console Mobile Analytics para derivar insights customizados.
     {: cordova}
 
-8. Use o Feedback do usuário no app para aprofundar a análise de desempenho do seu aplicativo.   É possível ativar os **usuários e testadores** do aplicativo para fornecer feedback contextual rico aos proprietários de app. **Proprietários de app** obtêm feedback em tempo real de seus usuários sobre a experiência de uso do aplicativo na qual os **Proprietários de app** e **Desenvolvedores** podem atuar posteriormente.  Essa etapa traz uma agilidade significativa para a manutenção do aplicativo. Use a API a seguir para alternar o seu aplicativo para o Modo de feedback interativo em qualquer manipulador de ações em seu aplicativo, por exemplo, quando você manipular o clique de um botão ou a seleção de um item de menu.
+8. Use o Feedback do usuário no app para aprofundar a análise de desempenho do seu aplicativo.   É possível ativar os **usuários e testadores** do aplicativo para fornecer feedback contextual rico aos proprietários de app. **Proprietários de app** obtêm feedback em tempo real de seus usuários sobre a experiência de uso do aplicativo na qual os **Proprietários de app** e **Desenvolvedores** podem atuar posteriormente.  Essa etapa traz uma agilidade significativa para a manutenção do aplicativo.  Use a API a seguir para alternar o seu aplicativo para o Modo de feedback interativo em qualquer manipulador de ações em seu aplicativo, por exemplo, quando você manipular o clique de um botão ou a seleção de um item de menu.
     ```Javascript
         WL.Analytics.triggerFeedbackMode();
     ```
@@ -687,7 +688,7 @@ O SDK do Mobile Analytics permite que você instrumente seu aplicativo da web.
     {: codeblock}
     {: web}
 
-   Antes de chamar qualquer um dos métodos analíticos abaixo, deve-se assegurar que seu aplicativo integre o código necessário para autenticar e autorizar o dispositivo com o serviço MobileFoundation. Essa etapa é uma etapa comum que é necessária a todos os aplicativos de serviços do Mobile Foundation e não é específica para a captura de dados do Analytics. <!--  Refer <need to link doc that talks about auth> -->
+   Antes de chamar qualquer um dos métodos analíticos a seguir, deve-se assegurar que seu aplicativo integre o código necessário para autenticar e autorizar o dispositivo com o serviço do MobileFoundation. Essa etapa é uma etapa comum que é necessária a todos os aplicativos de serviços do Mobile Foundation e não é específica para a captura de dados do Analytics. <!--  Refer <need to link doc that talks about auth> -->
    {: web}
 
    Com a inicialização completa, agora seu aplicativo está ativado para capturar informações do dispositivo e logs de SDK do Mobile Analytics sem código adicional incluído.  Qualquer API e código adicional que for discutido nas seções a seguir é opcional e pode ser incluído com base em qual tipo de dados de analítica você deseja capturar.
@@ -767,7 +768,7 @@ O SDK do Mobile Analytics permite que você instrumente seu aplicativo da web.
     {: codeblock}
     {: web}
 
-8.  Para definir a Analítica customizada e definir seus próprios dados de analítica além do que é suportado inerentemente no SDK do cliente, é possível usar a API de criação de log customizado:
+8.  Para definir a Analítica customizada e definir seus próprios dados de analítica sobre o que é suportado inerentemente no SDK do cliente, seria possível usar a API de criação de log customizada:
 
     ```Javascript
         //custom data is sent with the addEvent method
@@ -789,4 +790,4 @@ Tente uma amostra simples de [aqui](https://github.com/MobileFirst-Platform-Deve
 
 O Mobile Foundation Analytics Service fornece APIs de REST para ajudar os desenvolvedores a importarem (POST) e exportarem (GET) dados de analítica.
 
-Experimente a API REST de analítica no Swagger Docs [aqui](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/).
+Experimente a API REST de analítica no Swagger Docs [aqui](https://ma-server.us-south.mobile-analytics-prod.cloud.ibm.com/analytics-service/).

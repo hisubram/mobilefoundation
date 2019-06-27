@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2019-01-04"
+lastupdated: "2019-06-06"
 
 keywords: Mobile Foundation SDK, android sdk, iOS sdk, cordova sdk, react native sdk
 
@@ -187,7 +187,7 @@ Para incluir os recursos do Mobile Foundation em um app React Native existente, 
    ```
    {: codeblock}
    {: reactnative}
-5. Para o Android, faça as mudanças a seguir em `AndroidManifest.xml` (`<PROJECT_ROOT>/android/app/src/main/ `).
+5. Para o Android, faça as mudanças a seguir em `AndroidManifest.xml` (`<PROJECT_ROOT>/android/app/src/main/`).
    ```xml
    <manifest 
           xmlns:android="http://schemas.android.com/apk/res/android" 

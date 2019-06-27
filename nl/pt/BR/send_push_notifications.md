@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-10"
 
 keywords: push notifications, notifications, sending notification, HTTP/2
 
@@ -70,14 +70,14 @@ No {{ site.data.keyword.mfp_oc_short_notm }} → **[seu aplicativo] → Push →
 
 Quando você usa as APIs REST para enviar notificações, todas as formas de notificações podem ser enviadas: tags e notificações de transmissão e notificações autenticadas.
 
-Para enviar uma notificação, uma solicitação é feita usando o POST para o terminal REST: `imfpush/v1/apps/<application-identifier>/messages `.  
+Para enviar uma notificação, uma solicitação é feita usando POST para o terminal REST: `imfpush/v1/apps/<application-identifier>/messages`.  
 A seguir está uma URL de exemplo,
 
 ```
 https://myserver.com: 443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
 ```
 
-> Para revisar todas as APIs de REST do Push Notifications, consulte o [tópico Serviços de tempo de execução da API de REST](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/c_restapi_runtime.html) na documentação do usuário.
+Para revisar todas as APIs de REST do Push Notifications, consulte o [tópico Serviços de tempo de execução da API de REST](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/c_restapi_runtime.html) na documentação do usuário.
 
 ### Carga útil da notificação
 {: #notification-payload }
@@ -86,15 +86,16 @@ A solicitação pode conter as propriedades de carga útil a seguir:
 
 |Propriedades da Carga Ú| Definição
 |--- | ---
-|mensagem | A mensagem de alerta a ser enviada
-|configurações |As configurações são os diferentes atributos da notificação.
-|alvo |O conjunto de destinos pode ser IDs de consumidor, dispositivos, plataformas ou tags. Somente um dos destinos pode ser configurado.
-|deviceIds |Uma matriz dos dispositivos representada pelos identificadores de dispositivo. Os dispositivos com esses IDs recebem a notificação. Esta é uma notificação unicast.
-|notificationType | O valor de número inteiro para indicar o canal (Push ou SMS) usado para enviar mensagem. Os valores permitidos são 1 (somente para Push), 2 (somente para SMS) e 3 (para Push e SMS)
-|plataformas | Uma matriz de plataformas de dispositivo. Os dispositivos em execução nessas plataformas recebem a notificação. Os valores suportados são A (Apple/iOS), G (Google/Android) e M (Microsoft/Windows).
-|TagNames | Uma matriz de tags que são especificadas como tagNames. Os dispositivos que estão inscritos nessas tags recebem a notificação. Use esse tipo de destino para notificações baseadas em tag.
-|userIds |Uma matriz de usuários representada por seus userIds para enviar a notificação. Esta é uma notificação unicast.
-|phoneNumber | O número do telefone que é usado para registrar o dispositivo e receber notificações. Esta é uma notificação unicast.
+|mensagem | A mensagem de alerta a ser enviada |
+|configurações | As configurações são os diferentes atributos da notificação. |
+|alvo | O conjunto de destinos pode ser IDs de consumidor, dispositivos, plataformas ou tags. Somente um dos destinos pode ser configurado. |
+|deviceIds | Uma matriz dos dispositivos representada pelos identificadores de dispositivo. Os dispositivos com esses IDs recebem a notificação. Esta é uma notificação unicast. |
+|notificationType | O valor de número inteiro para indicar o canal (Push ou SMS) usado para enviar mensagem. Os valores permitidos são 1 (somente para Push), 2 (somente para SMS) e 3 (para Push e SMS) |
+|plataformas | Uma matriz de plataformas de dispositivo. Os dispositivos em execução nessas plataformas recebem a notificação. Os valores suportados são A (Apple/iOS), G (Google/Android) e M (Microsoft/Windows). |
+|TagNames | Uma matriz de tags que são especificadas como tagNames. Os dispositivos que estão inscritos nessas tags recebem a notificação. Use esse tipo de destino para notificações baseadas em tag. |
+|userIds | Uma matriz de usuários representada por seus userIds para enviar a notificação. Esta é uma notificação unicast. |
+|phoneNumber | O número do telefone que é usado para registrar o dispositivo e receber notificações. Esta é uma notificação unicast. |
+{: caption="Tabela 1. Propriedades de carga útil" caption-side="top"}
 
 ** Exemplo de Push Notifications Payload JSON **
 
@@ -119,7 +120,7 @@ A solicitação pode conter as propriedades de carga útil a seguir:
     },
   },
   "target" : {
-    // The list below is for demonstration purposes only - per the documentation only 1 target is allowed to be used at a time.
+    // The following list is for demonstration purposes only - per the documentation only 1 target is allowed to be used at a time.
     "deviceIds": [ "MyDeviceId1",... ],
     "platforms" : [ "A,G", ... ],
     "tagNames" : [ "Gold", ... ],
@@ -148,7 +149,7 @@ A solicitação pode conter as propriedades de carga útil a seguir:
 A notificação pode ser enviada usando diferentes ferramentas. Para propósitos de teste, **Postman** é usado, as etapas a seguir descrevem a configuração,
 
 1. [ Configurar um Cliente Confidencial ](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/confidential-clients/).
-  O envio de uma Notificação push por meio da API de REST usa os elementos do escopo separados por espaço `messages.write` e `push.application.<applicationId>.`
+  O envio de uma Notificação push por meio da API de REST usa elementos de escopo separados por espaço `messages.write` e `push.application.<applicationId>.`
   <img class="gifplayer" alt="Configure a confidential client" src="images/push-confidential-client.png"/>
 2. [ Crie um token de acesso ](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/confidential-clients#obtaining-an-access-token).  
 3. Faça uma solicitação  ** POST **  para  ** http://localhost: 9080/imfpush/v1/apps/com.sample.PushNotificationsAndroid/messages **
@@ -156,8 +157,7 @@ A notificação pode ser enviada usando diferentes ferramentas. Para propósitos
   - Atualize o valor do identificador do aplicativo com o seu próprio.
 4. Configure um Cabeçalho:
     - ` ** Autorização**: Bearer eyJhbGciOiJSUzI1NiIsImp ... `
-    - Substitua o valor após **Portador** pelo valor de seu token de acesso da etapa (1).
-    ![Cabeçalho de autorização](images/postman_authorization_header.png)
+    - Substitua o valor após **Portador** pelo valor do seu token de acesso da etapa (1). ![Cabeçalho de autorização](images/postman_authorization_header.png "Cabeçalho de autorização")
 5. Configure um Corpo:
   - Atualize suas propriedades conforme descrito em [Carga útil de notificação](#notification-payload).
   - Por exemplo, ao incluir a propriedade **target** com o atributo **userIds**, é possível enviar uma notificação para usuários registrados específicos.
@@ -168,11 +168,11 @@ A notificação pode ser enviada usando diferentes ferramentas. Para propósitos
     }
     ```
 
-    ![Authorization header](images/postman_json.png)
+    ![Corpo de autorização](images/postman_json.png "Corpo de autorização")
 
     Depois que você clica no botão **Enviar**, o dispositivo recebe uma notificação:
 
-    ![Imagem do aplicativo de amostra](images/notifications-app.png)
+    ![Imagem do aplicativo de amostra](images/notifications-app.png "Notificação push em um dispositivo móvel")
 
 ## Customizando Notificações
 {: #customizing-notifications }
@@ -192,7 +192,7 @@ No {{ site.data.keyword.mfp_oc_short_notm }} → **[seu aplicativo] → Push →
 
 * Som de notificação, carga útil customizada, título da tecla de ação, tipo de notificação e número do badge.
 
-  ![Customizing push notifications](images/customizing-push-notifications.png)
+  ![Customizando notificações push](images/customizing-push-notifications.png "Página de push do Operations Console do Mobile First com a guia Enviar push selecionada")
 
 ## Suporte HTTP/2 para Notificações de Push de APNs
 {: #http2-support-for-apns-push-notifications}
@@ -212,6 +212,7 @@ As notificações baseadas em HTTP/2 podem ser ativadas usando uma Propriedade J
 ```xml
 < jndiEntry jndiName="imfpush/mfp.push.apns.http2.enabled "value=" true " />
 ```
+{: codeblock}
 
 Se a propriedade JNDI for incluída, as notificações baseadas em Soquete TCP anteriores não serão usadas e somente as notificações baseadas em HTTP/2 serão ativadas.
 {: note}

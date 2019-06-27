@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-29"
+lastupdated: "2019-06-06"
 
 keywords: disable apps, remote disabling of apps
 
@@ -34,5 +34,5 @@ Nesta seção, discutiremos como desativar o acesso de usuário a uma versão es
 5. Na seção **Códigos de idioma suportados**, é possível, opcionalmente, fornecer a mensagem de notificação em outros idiomas.
 6. Selecione **Salvar** para aplicar suas mudanças.
 
-Quando um usuário executa um aplicativo que foi desativado remotamente, uma janela de diálogo com a mensagem customizada configurada é exibida. A mensagem é exibida em qualquer interação de aplicativo que requeira acesso a um recurso protegido ou quando o aplicativo tentar obter um token de acesso. Se você forneceu uma URL de upgrade de versão, o diálogo exibirá um botão **Obter nova versão** para fazer upgrade para uma versão mais recente, além do botão **Fechar** padrão. <br/>
+Quando um usuário executa um aplicativo que foi desativado remotamente, uma janela de diálogo com a mensagem customizada configurada é exibida. A mensagem é exibida em qualquer interação de aplicativo que requeira acesso a um recurso protegido ou quando o aplicativo tentar obter um token de acesso. Se você forneceu uma URL de upgrade de versão, o diálogo exibirá um botão **Obter nova versão** para fazer upgrade para uma versão mais nova, além do botão padrão **Fechar**. <br/>
 Se o usuário fechar a janela de diálogo sem fazer upgrade da versão, eles poderão continuar a trabalhar com os recursos do aplicativo que não estão protegidos. No entanto, qualquer interação de aplicativo que requeira acesso a um recurso protegido faz com que a janela de diálogo seja exibida novamente e que o aplicativo ou usuário não tenha acesso concedido ao recurso.

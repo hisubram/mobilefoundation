@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation security, restrict backend access, tampered apps
 
@@ -27,15 +27,14 @@ A autenticidade do aplicativo ajuda a verificar a validade do aplicativo antes d
 
 Para proteger corretamente seu aplicativo, ative a verificação de segurança de autenticidade de aplicativo predefinida do MobileFirst (``appAuthenticity``). Quando ativada, essa verificação valida a autenticidade do aplicativo antes de fornecê-la com quaisquer serviços. Os aplicativos no ambiente de produção devem ter esse recurso ativado.
 
-Para ativar a autenticidade do aplicativo, é possível seguir as instruções na tela no **MobileFirst Operations Console → [seu aplicativo] → Autenticidade** ou revisar as informações abaixo.
+Para ativar a autenticidade do aplicativo, é possível seguir as instruções na tela no **MobileFirst Operations Console → [seu aplicativo] → Autenticidade** ou revisar as informações a seguir.
 
-* ** Disponibilidade **
-
-    A autenticidade do aplicativo está disponível em todas as plataformas suportadas (iOS, Android, Windows 8.1 Universal, Windows 10 UWP) nos aplicativos Cordova e nativo.
-
-* ** Limitações **
-
-    A autenticidade do aplicativo não suporta **Bitcode** no iOS. Portanto, antes de usar a autenticidade do aplicativo, desative o Bitcode nas propriedades do projeto Xcode.
+<dl>
+  <dt>Disponibilidade</dt>
+  <dd>A autenticidade do aplicativo está disponível em todas as plataformas suportadas (iOS, Android, Windows 8.1 Universal, Windows 10 UWP) nos aplicativos Cordova e nativo.</dd>
+  <dt>Limitações</dt>
+  <dd>A autenticidade do aplicativo não suporta **Bitcode** no iOS. Portanto, antes de usar a autenticidade do aplicativo, desative o Bitcode nas propriedades do projeto Xcode.</dd>
+</dl>
 
 ## Fluxo de autenticidade do aplicativo
 {: #appauthenticityflow}
@@ -96,7 +95,7 @@ Para usar a ferramenta BTS no Xcode:
 
 1. Na guia **Fases de construção**, clique no botão **+** e crie uma nova **Fase de execução do script**.
 2. Copie o caminho da Ferramenta BTS e cole na nova "Fase de execução do script" que você criou.
-3. Arraste a fase de execução do script acima da **Fase de compilação de origens**.
+3. Arraste a fase de execução do script antes da **Fase de compilação de origens**.
 
 A ferramenta deve ser usada ao construir uma versão de produção do aplicativo.
 

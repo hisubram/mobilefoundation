@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-16"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation faq, updates to mobile foundation, custom domain
 
@@ -12,8 +12,10 @@ subcollection:  mobilefoundation
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:faq: data-hd-content-type='faq'}
+{:note: .note}
 
 # Perguntas Mais Freqüentes
+{: #mfp-faq}
 
 Esta Pergunta mais frequente fornece respostas às perguntas comuns sobre o serviço {{site.data.keyword.mobilefoundation_long}}.
 {: shortdesc}
@@ -37,10 +39,9 @@ A atualização de serviço do {{site.data.keyword.mobilefoundation_short}} é d
 A atualização para o {{site.data.keyword.mobilefoundation_short}} pode ser aplicada ao clicar em **Recriar**.
 Ao aplicar a atualização, a versão do servidor, conforme visto no {{site.data.keyword.mfp_oc_short_notm}}, é modificada para indicar a versão de atualização do servidor.
 
-> **Nota:**
->  * Os usuários não podem aplicar suas próprias correções e atualizações à sua instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
->  * Consulte [Recriando o servidor no plano Professional Per Device](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#recreate_mobilefoundation_p5) e [Recriando o servidor no plano Professional 1 Application](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#recreate_mobilefoundation_p2) para entender a diferença no comportamento entre os planos quando **Recriar** é clicado.
->
+* Os usuários não podem aplicar suas próprias correções e atualizações à sua instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
+* Consulte [Recriando o servidor no plano Professional Per Device](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p5#recreate_mobilefoundation_p5) e [Recriando o servidor no plano Professional 1 Application](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p2#recreate_mobilefoundation_p2) para entender a diferença no comportamento entre os planos quando se clica em **Recriar**.
+{: note}
 
 ## Como eu configuro o domínio customizado para a minha instância de servidor do {{site.data.keyword.mobilefoundation_short}}?
 {: #configcustomdomain}

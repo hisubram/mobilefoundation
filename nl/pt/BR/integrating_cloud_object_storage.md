@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-24"
 
 keywords: mobile foundation, integration, cloud object storage, COS, ibm cloud
 
@@ -43,7 +43,7 @@ O {{ site.data.keyword.IBM_notm}} {{ site.data.keyword.mobilefoundation_short}} 
 
 1. Instale o [mfpdev-cli](https://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_wl_cli_description.html) executando `npm install -g mfpdev-cli`. Essa CLI é usada para registrar o app Ionic e implementar o adaptador no servidor MF. Como alternativa, essas atividades podem ser executadas no painel do servidor MF.
 
-2. Instale o [{{ site.data.keyword.cloud_notm}} CLI](https://console.bluemix.net/docs/cli/index.html#overview) em sua máquina.
+2. Instale o [{{ site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud-cli) em sua máquina.
 
 3. Instale a cli do Ionic executando `npm install -g ionic`
 
@@ -55,7 +55,7 @@ O {{ site.data.keyword.IBM_notm}} {{ site.data.keyword.mobilefoundation_short}} 
 
 O servidor {{ site.data.keyword.mobilefoundation_short}} é configurado no {{ site.data.keyword.cloud_notm}}. Configure uma instância do {{ site.data.keyword.cloud_notm}} do servidor {{ site.data.keyword.mobilefoundation_short}} conforme a seguir,
 
-* No catálogo {{ site.data.keyword.cloud_notm}}, procure "{{ site.data.keyword.mobilefoundation_short}}". Clique no quadro **{{ site.data.keyword.mobilefoundation_short}}**.
+* No Catálogo do {{ site.data.keyword.cloud_notm}}, procure por *{{ site.data.keyword.mobilefoundation_short}}*. Clique no quadro **{{ site.data.keyword.mobilefoundation_short}}**.
 
     ![MFPCatalog](images/mfp_catalog.png)
 
@@ -67,7 +67,7 @@ O servidor {{ site.data.keyword.mobilefoundation_short}} é configurado no {{ si
 
     ![MFPLogin](images/mfp_login.png)
 
-* As credenciais para efetuar login no servidor MF podem ser localizadas na guia **Credenciais** no menu à esquerda.
+* As credenciais para efetuar login no servidor MF podem ser localizadas na guia **Credenciais** no menu.
 
     ![MFPcredentials](images/mfp_credentials.png)
 
@@ -79,7 +79,7 @@ O servidor {{ site.data.keyword.mobilefoundation_short}} é configurado no {{ si
 ## Configuração do armazenamento de objeto de nuvem
 {: #cloud-object-storage-setup}
 
-* No Catálogo do {{ site.data.keyword.cloud_notm}}, procure "Cloud Object Storage". Clique no quadro **Armazenamento de Objeto**.
+* No Catálogo do {{ site.data.keyword.cloud_notm}}, procure por *Cloud Object Storage*. Clique no quadro **Armazenamento de Objeto**.
 
     ![Catalog](images/catalog.png)
 
@@ -87,7 +87,7 @@ O servidor {{ site.data.keyword.mobilefoundation_short}} é configurado no {{ si
 
     ![Create COS](images/cos_create.png)
 
-* Em seguida, clique em **Depósitos** nas opções de menu da área de janela esquerda. Forneça um nome adequado (nesta amostra, escolhemos nomear o depósito `sharedgallery`) para seu depósito e clique em **Criar**.
+* Em seguida, clique em **Depósitos** nas opções de menu. Forneça um nome adequado (nesta amostra, escolhemos nomear o depósito `sharedgallery`) para seu depósito e clique em **Criar**.
 
     ![Create Bucket](images/bucketcreate.png)
 
@@ -166,12 +166,12 @@ Server profile 'mfpserver' added successfully.
 
 Para se conectar a sua instância do COS, alguns detalhes de sua instância do COS precisam ser fornecidos no arquivo `adapter.xml`. Fornece valores para os campos a seguir:
 
-1. **endpointURL**: esse campo é a URL do terminal público para seu objeto COS. Essa URL pode ser localizada no painel de seu COS, sob **Depósitos (nas opções de menu à esquerda) -> <your-bucket-name> (`sharedgallery` nesta amostra) -> Configuração -> Terminais -> Públicos**
+1. **endpointURL**: esse campo é a URL do terminal público para seu objeto COS. Essa URL pode ser localizada no seu painel do COS, em **Depósitos (nas opções de menu) -> <nome-do-depósito> (`sharedgallery` nesta amostra) -> Configuração -> Terminais -> Público**
 2. **AuthToken**: neste tutorial, estamos usando a autenticação do IAM.
 
 Para que o adaptador java se conecte à sua instância do COS, a autenticação que usa o IAM ou HMAC é necessária. A seguir estão as etapas para obter o token do IAM. Para obter detalhes adicionais sobre os processos de autenticação do IAM e HMAC, clique [aqui](https://cloud.ibm.com/docs/services/cloud-object-storage/api-reference/api-reference-buckets.html#bucket-operations#AuthenticationOptions).
 
-#### Obtendo o token Oauth do IAM usando a CLI do {{ site.data.keyword.cloud_notm}} 
+#### Obtendo o token Oauth do IAM usando a CLI do {{ site.data.keyword.cloud_notm}}
 {: #obtaining-iam-oath-token-using-ibm-cloud-cli}
 
 1. Primeiro, certifique-se de que tenha uma chave de API. Obtenha a chave de API do [{{ site.data.keyword.cloud_notm}} Identity and Access Management](https://cloud.ibm.com/iam/#/users).
@@ -191,7 +191,7 @@ Para que o adaptador java se conecte à sua instância do COS, a autenticação 
 
 	Padrão do grupo de recursos direcionados
 
-	API endpoint:     https://api.ng.bluemix.net (API version: 	2.75.0)
+	Terminal da API:     https://api.us-south.cf.cloud.ibm.com (versão da API: 	2.128.0)
 	Region:           us-south
 	User:             <email-address>
 	Account:          <account-name> (<account-id>)
@@ -265,8 +265,7 @@ mfpdev adapter deploy
 
 O adaptador é implementado na instância do MF.
 
-Como alternativa, o adaptador pode ser implementado no painel do servidor MF. Abra o painel do servidor MF, no menu à esquerda, clique em **Adaptadores -> Novo** para abrir a página, conforme mostrado na imagem a seguir.
-
+Como alternativa, o adaptador pode ser implementado no painel do servidor MF. Abra o painel do servidor MF, no menu, clique em **Adaptadores -> Novo** para abrir a página conforme mostrado na imagem a seguir.
 ![MFPNewAdapterRegister](images/mfp_new_adapter_register.png)
 
 Em seguida, clique em **Implementar o adaptador** e faça upload do arquivo `.adapter` na pasta **target**.
@@ -302,7 +301,7 @@ No app, execute as etapas a seguir,
 	Registro do aplicativo mfpdev
 	```
 
-	Como alternativa, o app pode ser registrado no painel do servidor MF. Abra o painel do servidor MF e, no menu à esquerda, clique em **Aplicativos -> Novo**.
+	Como alternativa, o app pode ser registrado no painel do servidor MF. Abra o painel do servidor MF e, no menu, clique em **Aplicativos -> Novo**.
 
 	A página é carregada, conforme o que é mostrado na imagem a seguir.
 
@@ -344,7 +343,7 @@ A lista de objetos COS iniciais é semelhante à imagem a seguir.
 
 ![COS before](images/cos_before.png)
 
-A página inicial do aplicativo fornece uma opção para "Obter todas as histórias" ou "Incluir história"
+A página inicial do aplicativo fornece uma opção para *Obter todas as histórias* ou *Incluir história*
 
 ![App home screen](images/app-home-screen.png)
 

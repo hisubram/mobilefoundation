@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-10-16"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation security, MIM attack, certificate pinning
 
@@ -35,7 +35,8 @@ O processo de fixação de certificado consiste nas etapas a seguir:
 
 Durante o handshake SSL (primeira solicitação para o servidor), o SDK do cliente Mobile Foundation verifica se a chave pública do certificado do servidor corresponde à chave pública do certificado armazenado no app.
 
->**Nota**: Você deve usar um certificado que é adquirido a partir de uma autoridade de certificação. Certificados auto-assinados  ** não são suportados **.
+Deve-se usar um certificado que é comprado de uma autoridade de certificação. Certificados auto-assinados  ** não são suportados **.
+{: note}
 
 ## Fixação de Certificado
 {: #cert_pinning}
@@ -52,11 +53,10 @@ Fixação de certificado é o processo de associação de um host à sua chave p
 Também é possível fixar múltiplos certificados com seu aplicativo cliente. Coloque uma cópia de todos os certificados em seu aplicativo cliente. Durante o handshake SSL (primeira solicitação para o servidor), o SDK do cliente MobileFirst verifica se a chave pública do certificado do servidor corresponde à chave pública de um dos certificados que estão armazenados no app.
 {: note}
 
-** Importante **
-
-* Alguns sistemas operacionais móveis podem armazenar em cache o resultado da verificação de validação de certificado. Portanto, seu código chama o método de API de fixação de certificado **antes** de fazer uma solicitação segura. Caso contrário, qualquer solicitação subsequente poderá ignorar a validação de certificado e a verificação de fixação.
-* Certifique-se de usar apenas as APIs do Mobile Foundation para todas as comunicações com o host relacionado, mesmo após a fixação de certificado. O uso de APIs de terceiros para interagir com o mesmo host pode levar a um comportamento inesperado, como o armazenamento em cache de um certificado não verificado pelo sistema operacional móvel.
-* Chamar o método de API de fixação de certificado uma segunda vez substitui a operação de fixação anterior.
+* ** Importante **
+    * Alguns sistemas operacionais móveis podem armazenar em cache o resultado da verificação de validação de certificado. Portanto, seu código chama o método de API de fixação de certificado **antes** de fazer uma solicitação segura. Caso contrário, qualquer solicitação subsequente poderá ignorar a validação de certificado e a verificação de fixação.
+    * Certifique-se de usar apenas as APIs do Mobile Foundation para todas as comunicações com o host relacionado, mesmo após a fixação de certificado. O uso de APIs de terceiros para interagir com o mesmo host pode levar a um comportamento inesperado, como o armazenamento em cache de um certificado não verificado pelo sistema operacional móvel.
+    * Chamar o método de API de fixação de certificado uma segunda vez substitui a operação de fixação anterior.
 
 Se o processo de fixação for bem-sucedido, a chave pública dentro do certificado fornecido será usada para verificar a integridade do certificado do MobileFirst Server durante o handshake de SSL/TLS de solicitação segura. Se o processo de fixação falhar, todas as solicitações SSL/TLS para o servidor serão rejeitadas pelo aplicativo cliente.
 

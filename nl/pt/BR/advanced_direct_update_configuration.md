@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-14"
+lastupdated: "2019-06-06"
 
 keywords: Direct Update, CDN support, secure direct update
 
@@ -41,7 +41,7 @@ Se os recursos da web forem mais novos no servidor Mobile Foundation que no apli
 
 A função fornece um design da atualização direta padrão: um diálogo de mensagem padrão que é exibido quando uma atualização direta está disponível e uma tela de progresso padrão que é exibida quando o processo de atualização direta é iniciado. É possível implementar o comportamento customizado da interface com o usuário do Direct Update ou customizar a caixa de diálogo Direct Update, substituindo essa função e implementando sua própria lógica.
 
-No código de exemplo abaixo, uma função `handleDirectUpdate` implementa uma mensagem personalizada na caixa de diálogo da atualização direta. Inclua esse código no arquivo `www/js/index.js` do projeto Cordova.
+No código de exemplo a seguir, uma função `handleDirectUpdate` implementa uma mensagem customizada no diálogo do Direct Update. Inclua esse código no arquivo `www/js/index.js` do projeto Cordova.
 Exemplos adicionais para uma UI customizada atualização direta:
 * Um diálogo que é criado usando uma estrutura de JavaScript de terceiros (como Dojo ou jQuery Mobile, Ionic,...)
 * UI completamente nativa ao executar um plug-in Cordova
@@ -93,6 +93,7 @@ Os métodos do listener são iniciados durante o processo de atualização diret
 | `FAILURE_ALREADY_IN_PROGRESS` | O método de início foi chamado enquanto a atualização direta já estava em execução. |
 | `FAILURE_INTEGRITY` | A autenticidade do arquivo de atualização não pode ser verificada. |
 | `FAILURE_UNKNOWN` | Erro interno inesperado. |
+{: caption="Tabela 1. Códigos de status" caption-side="top"}
 
 Se você implementar um listener de atualização direta customizada, deverá assegurar que o aplicativo seja recarregado quando o processo de atualização direta for concluído e o método `onFinish()` tiver sido chamado. Também deve-se chamar `wl_directUpdateChalengeHandler.submitFailure()` se o processo de atualização direta falhar ao concluir com sucesso.
 
@@ -300,43 +301,44 @@ Configure o novo domínio `cdn.yourcompany.com` como a URL do servidor Mobile Fo
 1. Abra o gerente de propriedade do Akamai e configure a propriedade **host name** para o valor do novo
 domínio.
 
-    ![Configure o nome de host da propriedade para o valor do novo domínio](images/direct_update_cdn_3.jpg)
+    ![Configurar o nome do host da propriedade como o valor do novo domínio](images/direct_update_cdn_3.jpg "Configurar o nome do host da propriedade como o valor do novo domínio")
 
 2. Na guia Regra padrão, configure o host e a porta do servidor Mobile Foundation original e configure o valor **Cabeçalho do host de encaminhamento customizado** para o domínio recém-criado.
 
-    ![Configure o valor de Cabeçalho do host de encaminhamentocustomizado para o domínio recém-criado](images/direct_update_cdn_4.jpg)
-
+    ![Configurar o valor do Cabeçalho do host de encaminhamento customizado como o domínio recém-criado](images/direct_update_cdn_4.jpg "Configurar o valor do Cabeçalho do host de encaminhamento customizado como o domínio recém-criado")
 
 3. Na lista **Opção de armazenamento em cache**, selecione **Sem armazenamento**.
 
-    ![Na lista Opção de armazenamento em cache, selecione Sem armazenamento](images/direct_update_cdn_5.jpg)
+    ![Na lista Opção de armazenamento em cache, selecione Sem armazenamento](images/direct_update_cdn_5.jpg "Na lista Opção de armazenamento em cache, selecione Sem armazenamento")
 
 4. Na guia **Configuração do conteúdo estático**, configure os critérios de correspondência de acordo com a URL de atualização direta do aplicativo. Por exemplo, crie uma condição que declare `If Path matches one of direct_update_URL`.
 
-    ![Configure os critérios de correspondência de acordo com a URL atualização direta do aplicativo](images/direct_update_cdn_6.jpg)
+    ![Configurar os critérios de correspondência de acordo com a URL do Direct Update do aplicativo](images/direct_update_cdn_6.jpg "Configurar os critérios de correspondência de acordo com a URL do Direct Update do aplicativo")
 
 5. Configure o comportamento de chave de cache para usar todos os parâmetros de solicitação na chave de cache (deve-se fazer isso para armazenar em cache diferentes archives da atualização direta para diferentes aplicativos ou versões). Por exemplo, na lista **Comportamento**, selecione `Include all parameters (preserve order from request)`.
 
-    ![Configure o comportamento de chave de cache para usar todos os parâmetros de solicitação na chave de cache](images/direct_update_cdn_8.jpg)
+    ![Configurar o comportamento da chave do cache para usar todos os parâmetros de solicitação na chave do cache](images/direct_update_cdn_8.jpg "Configurar o comportamento da chave do cache para usar todos os parâmetros de solicitação na chave do cache")
 
 6. Configure valores semelhantes aos seguintes para configurar o comportamento de armazenamento em cache para armazenar em cache a URL da atualização direta e para configurar o TTL.
 
-      ![Defina valores para configurar o comportamento do armazenamento em cache](images/direct_update_cdn_7.jpg)
+      ![Configurar valores para definir o comportamento do armazenamento em cache](images/direct_update_cdn_7.jpg "Configurar valores para definir o comportamento do armazenamento em cache")
 
 | Campos | Valor |
 |:------|:------|
 | Opção de Armazenamento em Cache | Cache |
 | Forçar Revalorização de Objetos Antigos | Atender o antigo se for impossível validar |
 | Max-Age | 3 minutes |
+{: caption="Tabela 2. Campos e valores para configurar o comportamento do armazenamento em cache" caption-side="top"}
 
 ## Seguro Direct Update
 {: #secure-dc }
 
 Desativado por padrão, o Direct Update seguro evita que um invasor de terceiros mude os recursos da Web que são transmitidos do servidor Mobile Foundation (ou de uma Content Delivery Network (CDN)) para o aplicativo cliente.
 
-**Para ativar a autenticidade Atualização Direta:**  
+### Ativando a autenticidade do Direct Update
+{: #enable-direct-update-authenticity}
 Usando uma ferramenta preferencial, extraia a chave pública do keystore do servidor Mobile Foundation e converta-a em base64.  
-O valor produzido deve então ser usado como instruído abaixo:
+O valor produzido deve ser usado conforme instruído nas etapas a seguir:
 
 1. Abra uma janela de **Linha de comandos** e navegue até a raiz do projeto Cordova.
 2. Execute o comando: `mfpdev app config` e selecione a opção **Chave pública de autenticidade da atualização direta**.
@@ -411,9 +413,8 @@ procedimentos com o utilitário keytool JDK e o openSSL.
 2. Execute um dos seguintes procedimentos:
     * Copie o texto resultante, sem os marcadores `BEGIN PUBLIC KEY` e `END PUBLIC KEY`
 no arquivo de propriedade mfpclient do aplicativo, imediatamente após `wlSecureDirectUpdatePublicKey`.
-    * No prompt de comandos, emita o seguinte comando: `mfpdev app config direct_update_authenticity_public_key <public_key>`
+    * No prompt de comandos, emita o comando a seguir: `mfpdev app config direct_update_authenticity_public_key <public_key>`
 
-    Para `<public_key>`, cole o texto que resulta da Etapa 1, sem os marcadores `BEGIN PUBLIC
-KEY` e `END PUBLIC KEY`.
+    Para `<public_key>`, cole o texto que resulta da Etapa 1, sem os marcadores `BEGIN PUBLIC KEY` e `END PUBLIC KEY`.
 
 3. Execute o comando de construção cordova para salvar a chave pública no aplicativo.

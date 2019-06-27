@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-22"
+lastupdated: "2019-06-06"
 
 keywords: mobile analytics, charts, app sessions, crashes, graph
 
@@ -22,9 +22,9 @@ subcollection:  mobilefoundation
 # Construa gráficos customizados
 {: #build_custom_charts}
 
-A visualização Gráficos customizados no console do Mobile Analytics fornece a flexibilidade para construir suas próprias visualizações ao redor dos dados de analítica que são capturados e armazenados. Os gráficos customizados ajudam a aprofundar os insights muito além do que é fornecido pronto para utilização ou até mesmo estendê-los de forma contínua no Business Analytics que é formulado em torno de dados customizados.
+A visualização Gráficos customizados no console do Mobile Analytics fornece a flexibilidade para construir suas próprias visualizações ao redor dos dados de analítica que são capturados e armazenados.  Os gráficos customizados ajudam a aprofundar os insights muito além do que é fornecido pronto para utilização ou até mesmo estendê-los de forma contínua no Business Analytics que é formulado em torno de dados customizados.
 
-Nessa visualização, é possível escolher qualquer um dos conjuntos de dados de analítica suportados e, em seguida, selecionar um dos tipos de gráficos suportados para plotar o conjunto de dados. É possível ainda remover ainda mais a visualização definindo os filtros a serem aplicados sobre os dados que estão sendo plotados.  
+Nessa visualização, é possível escolher qualquer um dos conjuntos de dados de analítica suportados e, em seguida, selecionar um dos tipos de gráficos suportados para plotar o conjunto de dados.  É possível ainda remover ainda mais a visualização definindo os filtros a serem aplicados sobre os dados que estão sendo plotados.  
 
 Os conjuntos de dados suportados são,
  * Logs do app
@@ -64,7 +64,7 @@ Crie um gráfico customizado usando as etapas a seguir:
 ## Obtendo insights customizados por meio de logs de dados customizados
 {: #creating_custom_chart_for_client_logs}    
 
-Se você desejar obter insights customizados mais profundos, como a trilha dos usuários no aplicativo, primeiro será necessário capturar as informações relevantes da trilha do usuário, como a página escolhida ou a opção selecionada ou o botão clicado, como dados customizados e registrá-las. Consulte o tópico sobre [instrumentando o seu app](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app), sobre como registrar dados customizados.
+Se você desejar obter insights customizados mais profundos, como a trilha dos usuários no aplicativo, primeiro será necessário capturar as informações relevantes da trilha do usuário, como a página escolhida ou a opção selecionada ou o botão clicado, como dados customizados e registrá-las.  Consulte o tópico sobre [instrumentando o seu app](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app), sobre como registrar dados customizados.
 
 Em seguida, crie uma definição de gráfico customizado com Dados customizados como o EventType e escolha um Tipo de gráfico. Conforme você continua a definir **Propriedades do Gráfico** ou **Filtros de Gráfico**, você observa os tipos de Dados Customizados e os valores aparecem nas caixas drop-down.  Faça as seleções relevantes para o tipo de insight que você está procurando.  
 

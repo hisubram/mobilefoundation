@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-06-06"
 
 keywords: obfuscating resources, security
 
@@ -73,14 +73,14 @@ Caso você execute um dos comandos listados depois de criptografar os recursos d
 
 1. Abra uma janela do terminal e navegue para o diretório raiz do app Cordova que você deseja criptografar.
 2. Prepare o app inserindo um dos comandos a seguir:
-    * ```bash
+    ```bash
       cordova prepare
-      ```
-      {: codeblock}
-    * ```bash
+    ```
+    {: codeblock}
+    ```bash
       mfpdev app webupdate
-      ```
-      {: codeblock}
+    ```
+    {: codeblock}
 3. Conclua um dos procedimentos a seguir para criptografar o conteúdo,
     * Insira o seguinte comando:
       ```bash
@@ -88,7 +88,7 @@ Caso você execute um dos comandos listados depois de criptografar os recursos d
       ```
       {: codeblock}
 
-      É possível visualizar informações sobre o comando `mfpdev app webencrypt` inserindo
+      É possível visualizar informações sobre o comando `mfpdev app webencrypt` inserindo 
       ```bash
       mfpdev help app webencrypt
       ```
@@ -96,7 +96,7 @@ Caso você execute um dos comandos listados depois de criptografar os recursos d
       {: tip}
 
     * Também é possível criptografar os recursos da web de seus pacotes Cordova incluindo a sinalização `mfpwebencrypt` no comando `cordova compile` ou `cordova build` ao construir seus pacotes.
-       * ```bash
+        ```bash
          cordova compile -- --mfpwebencrypt
          ```
          {: codeblock}
@@ -110,13 +110,13 @@ Caso você execute um dos comandos listados depois de criptografar os recursos d
 4. Teste o aplicativo com os recursos criptografados usando o emulador fornecido com as ferramentas específicas da plataforma. Por exemplo, é possível usar o emulador no Android Studio for Android ou no Xcode for iOS.
 
 Não use os comandos Cordova a seguir para testar o aplicativo depois de criptografá-lo,
-* ```bash
-  cordova run
-  ```
-  {: codeblock}
-* ```bash
-  cordova emulate
-  ```
-  {: codeblock}
-Esses comandos atualizam o conteúdo que foi criptografado na pasta www e salva-o novamente como conteúdo decriptografado. Se você usar esses comandos, lembre-se de concluir o procedimento novamente para criptografá-lo antes de publicar o app.
+```bash
+cordova run
+```
+{: codeblock}
+```bash
+cordova emulate
+```
+{: codeblock}
+Esses comandos atualizam o conteúdo que foi criptografado na pasta www e salvam-no novamente como conteúdo decriptografado. Se você usar esses comandos, lembre-se de concluir o procedimento novamente para criptografá-lo antes de publicar o app.
 {: note}
