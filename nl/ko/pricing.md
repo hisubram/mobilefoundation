@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-27"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation pricing, plan pricing
 
@@ -28,7 +28,7 @@ IBM Cloud의 Mobile Foundation 서비스는 세 가지 다른 플랜 옵션을 �
 ## Developer
 {: #developer_plan}
 
-Developer 플랜은 무료 플랜입니다. 이 플랜은 Mobile Foundation 서버를 *Liberty for Java* 런타임의 Cloud Foundry 애플리케이션으로 작성합니다. *Liberty for Java* 비용은 별도로 청구되며 이 플랜에 포함되지 않습니다. Mobile Analytics는 추가 비용 없이 6개월 동안 유지되는 이벤트로 제공됩니다. 이 플랜은 외부 데이터베이스의 사용을 지원하지 않으며 개발 및 테스트로 제한됩니다. Mobile Foundation 서버 Developer 플랜 인스턴스를 사용하면 임의 수의 개발 및 테스트용 모바일 애플리케이션을 등록할 수 있지만 이 플랜은 연결된 디바이스 수를 일일 10개로 제한합니다.
+Developer 플랜은 무료 플랜입니다. 이 플랜은 Mobile Foundation 서버를 *Liberty for Java* 런타임의 Cloud Foundry 애플리케이션으로 작성합니다. *Liberty for Java* 비용은 별도로 청구되며 이 플랜에 포함되지 않습니다. Mobile Analytics는 추가 비용 없이 6개월 동안 유지되는 이벤트로 제공됩니다. 이 플랜은 외부 데이터베이스의 사용을 지원하지 않으며 개발 및 테스트로 제한됩니다. Mobile Foundation 서버 Developer 플랜 인스턴스를 사용하면 임의의 수의 개발 및 테스트용 모바일 애플리케이션을 등록할 수 있지만 이 플랜은 연결된 디바이스 수를 일일 10개로 제한합니다.
 
 ## Professional 1 Application
 {: #prof_1_app}

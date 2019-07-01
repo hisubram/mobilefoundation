@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation, mobile analytics, professional plan, configure database
 
@@ -22,7 +22,7 @@ subcollection:  mobilefoundation
 Professional 1 Application 플랜을 사용하면 다양한 모바일 운영 체제에서 1개의 모바일 애플리케이션을 작성할 수 있습니다.
 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 서비스 인스턴스를 작성한 후에 다음 프로시저를 읽고 서비스를 시작하십시오.
 
-## Professional 1 Application 플랜의 필수 소프트웨어
+## Professional 1 Application 플랜의 전제조건
 {: #prerequisites_p2}
 
 {{site.data.keyword.mobilefoundation_short}}: Professional 1 Application 서비스 인스턴스를 구성하기 전에 다음을 고려하십시오.
@@ -30,7 +30,8 @@ Professional 1 Application 플랜을 사용하면 다양한 모바일 운영 체
 
 * {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스의 설정을 구성할 수 있으려면 {{site.data.keyword.Db2_on_Cloud_short}} 또는 {{site.data.keyword.composeForPostgreSQL}} 서비스 인스턴스 인증 정보에 액세스해야 합니다.
 
-> **참고**: {{site.data.keyword.Db2_on_Cloud_short}}(**Lite** 플랜 이외의 모든 플랜) 또는 {{site.data.keyword.composeForPostgreSQL}} 서비스 인스턴스는 {{site.data.keyword.Bluemix_notm}} `Organization` 또는 액세스 권한이 있는 기타 `Organization`의 모든 `Space`에 존재할 수 있습니다. {{site.data.keyword.Db2_on_Cloud_short}} 또는 {{site.data.keyword.composeForPostgreSQL}} 서비스 인스턴스가 있는 `Space`에 액세스할 수 있는 권한이 있는지 확인하십시오.
+{{site.data.keyword.Db2_on_Cloud_short}}(**Lite** 플랜 이외의 모든 플랜) 또는 {{site.data.keyword.composeForPostgreSQL}} 서비스 인스턴스는 {{site.data.keyword.Bluemix_notm}} `Organization` 또는 액세스 권한이 있는 기타 `Organization`의 모든 `Space`에 존재할 수 있습니다. {{site.data.keyword.Db2_on_Cloud_short}} 또는 {{site.data.keyword.composeForPostgreSQL}} 서비스 인스턴스가 있는 `Space`에 액세스할 수 있는 권한이 있는지 확인하십시오.
+{: note}
 
 
 ## 데이터베이스 연결 구성
@@ -63,7 +64,8 @@ Professional 1 Application 플랜을 사용하면 다양한 모바일 운영 체
 1. {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 있는 {{site.data.keyword.Bluemix_notm}} `Organization`을 선택하십시오.
 
 + 선택된 `Organization`에 사용 가능한 영역 목록에서 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 존재하는 {{site.data.keyword.Bluemix_notm}} `Space`를 선택하십시오.   
-> **참고:** {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 있는 `Organization` 및 `Space`가 나열되지 않는 경우에는 해당 `Organization` 및 `Space`의 구성원인지 여부를 확인하십시오. 조직 및 영역에 대한 *Developer* 역할 액세스 권한을 가져야 합니다. {{site.data.keyword.mobilefoundation_short}} 서비스가 {{site.data.keyword.Db2_on_Cloud_short}} 서비스의 인증 정보에 액세스합니다.
+{{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스가 있는 `Organization` 및 `Space`가 나열되지 않는 경우에는 해당 `Organization` 및 `Space`의 구성원인지 여부를 확인하십시오. 조직 및 영역에 대한 *Developer* 역할 액세스 권한을 가져야 합니다. {{site.data.keyword.mobilefoundation_short}} 서비스가 {{site.data.keyword.Db2_on_Cloud_short}} 서비스의 인증 정보에 액세스합니다.
+{: note}
 
 + {{site.data.keyword.Db2_on_Cloud_short}} `Service Name` 및 `Credentials`를 선택하여 기존 {{site.data.keyword.Db2_on_Cloud_short}} 서비스 인스턴스에 연결하십시오.
 

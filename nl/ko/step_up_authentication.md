@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation security, authentication, using challenge handlers
 
@@ -50,7 +50,7 @@ private transient StepUpUserLogin userLogin;
 ```
 {: codeblock}
 
->**중요**: 같은 어댑터에서 두 보안 검사 구현을 모두 번들해야 합니다.
+**중요**: 같은 어댑터에서 두 보안 검사 구현을 모두 번들해야 합니다.
 {: important}
 
 이 참조를 해결하기 위해 프레임워크에서는 적절한 클래스가 있는 보안 검사를 검색하고 종속적 보안 검사에 참조를 삽입합니다.

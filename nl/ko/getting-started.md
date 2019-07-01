@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: getting started, mobile foundation, plans, configure mobile foundation server, sample app, setup
 
@@ -17,14 +17,12 @@ subcollection:  mobilefoundation
 {:note: .note}
 
 # 시작하기 튜토리얼
-{: #getting-started-tutorial}
+{: #getting-started}
 
 {{site.data.keyword.mobilefoundation_long}}는 엔터프라이즈 모바일 앱을 개발, 테스트 및 실행할 수 있는 {{site.data.keyword.mfp_full}} 환경의 설정을 신속히 처리합니다. {{site.data.keyword.mobilefoundation_short}}은 다음과 같은 여러 서비스 플랜을 제공합니다.
-* **Lite**: 메모리 및 CPU로 제한되는 Foundation 서버의 호스팅된 인스턴스를 프로비저닝합니다. 모든 애플리케이션에서 연결된 디바이스의 총 수가 10개로 제한되는 임의 수의 애플리케이션을 허용합니다. 무료이며 시험용으로만 사용됩니다.
-* **Developer**: 사용자의 계정에 Foundation 서버의 인스턴스를 프로비저닝합니다. 모든 애플리케이션에서 연결된 디바이스의 총 수가 10개로 제한되는 임의 수의 애플리케이션을 허용합니다. 무료이며 개발 및 테스트용으로만 사용됩니다.
+* **Developer**: 사용자의 계정에 Foundation 서버의 인스턴스를 프로비저닝합니다. 모든 애플리케이션에서 연결된 디바이스의 총 수가 10개로 제한되는 임의의 수의 애플리케이션을 허용합니다. 무료이며 개발 및 테스트용으로만 사용됩니다.
 * **Professional Per Device**: 사용자의 계정에 Foundation 서버의 인스턴스를 프로비저닝하며 활성 상태로 연결된 디바이스의 수에 따라  비용이 청구됩니다.
-* **Professional 1 Application**: 사용자의 계정에 Foundation 서버의 인스턴스를 프로비저닝하며 임의 수의 사용자 및 디바이스가 단일 애플리케이션에 대해서만 활성 상태로 연결되도록 허용합니다.
-    
+* **Professional 1 Application**: 사용자의 계정에 Foundation 서버의 인스턴스를 프로비저닝하며 임의의 수의 사용자 및 디바이스가 단일 애플리케이션에 대해서만 활성 상태로 연결되도록 허용합니다.    
 {: shortdesc}
 
 [여기](https://cloud.ibm.com/catalog/services/mobile-foundation)에서 사용 가능한 모든 플랜을 검토할 수 있습니다.
@@ -49,18 +47,6 @@ subcollection:  mobilefoundation
 {: #buildmobilechannel}
 
 
-### {{site.data.keyword.mobilefoundation_short}}의 경우: Lite 플랜
-{: #buildchannelliteplan}
-{{site.data.keyword.mobilefoundation_short}}: Lite의 인스턴스를 작성한 후에는 다음 단계를 완료하여 모바일 채널 빌드를 시작할 수 있습니다.
-
-* Mobile Foundation 서버의 호스팅된 인스턴스에 즉시 액세스하여 작업할 수 있습니다.
-
-  이 선택사항은 다음 설정으로 {{site.data.keyword.mfserver_long_notm}}의 호스팅된 인스턴스를 작성합니다.
-  *	1GB의 메모리. {{site.data.keyword.mfserver_long_notm}}의 기능을 시험 사용하는 데 충분합니다.  
-
-  * CLI를 사용하여 Mobile Foundation 서버에 액세스하려면 IBM Cloud 콘솔의 왼쪽 탐색 분할창에서 **서비스 인증 정보**를 클릭할 때 사용 가능한 인증 정보가 필요합니다.
-
-
 ### {{site.data.keyword.mobilefoundation_short}}의 경우: Developer 플랜
 {: #buildchanneldevplan}
 
@@ -69,9 +55,9 @@ subcollection:  mobilefoundation
 * Mobile Foundation 서버에 즉시 액세스하여 작업할 수 있습니다.
 
   이 선택사항은 다음 설정으로 {{site.data.keyword.mfserver_long_notm}}를 작성합니다.
-  *	1GB의 메모리. 이 크기는 개발, 간단한 테스트 활동 및 소규모 프로덕션 워크로드에 적합합니다.
+  *	1GB의 메모리. 이 크기는 개발 및 간단한 테스트 활동에 충분합니다.
 
-  * CLI를 사용하여 Mobile Foundation 서버에 액세스하려면 IBM Cloud 콘솔의 왼쪽 탐색 분할창에서 **서비스 인증 정보**를 클릭할 때 사용 가능한 인증 정보가 필요합니다.
+  * CLI를 사용하여 Mobile Foundation 서버에 액세스하려면 IBM Cloud 콘솔의 탐색 분할창에서 **서비스 인증 정보**를 클릭할 때 사용 가능한 인증 정보가 필요합니다.
 
 ### {{site.data.keyword.mobilefoundation_short}}의 경우: Professional Per Device 플랜
 {: #buildchannelprofdeviceplan}
@@ -108,7 +94,7 @@ subcollection:  mobilefoundation
 
       +	**콘솔 실행**을 클릭하여 {{site.data.keyword.mfp_oc_short_notm}}을 여십시오.      
 
-      토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5)을 참조하십시오.
+      토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p5#using_mfs_advanced_p5)을 참조하십시오.
       {: tip}
 
 ### {{site.data.keyword.mobilefoundation_short}}의 경우: Professional 1 Application 플랜
@@ -146,10 +132,10 @@ subcollection:  mobilefoundation
 
       +  **콘솔 실행**을 클릭하여 {{site.data.keyword.mfp_oc_short_notm}}을 여십시오.  
 
-      토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2)을 참조하십시오.
+      토폴로지, 보안 및 기타 서버 구성에 대해 고급 구성으로 {{site.data.keyword.mobilefirst_notm}} 서버 인스턴스를 작성하려면 **고급 구성으로 서버 시작**을 클릭하십시오. 자세한 정보는 [고급 구성 설정](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p2#using_mfs_advanced_p2)을 참조하십시오.
       {: tip}
 
-[Using the Mobile Foundation service to set up MobileFirst Server![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window}로 이동하여 {{site.data.keyword.mobilefoundation_short}}을 시작하는 방법에 대해 자세히 알아보십시오.
+[Using the Mobile Foundation service to set up MobileFirst Server![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/ibmcloud/using-mobile-foundation/){: new_window}로 이동하여 {{site.data.keyword.mobilefoundation_short}}을 시작하는 방법에 대해 자세히 알아보십시오.
 {: note}
 
 ## 3단계: {{site.data.keyword.mobilefoundation_short}}에 사용자의 애플리케이션 등록
@@ -157,7 +143,7 @@ subcollection:  mobilefoundation
 
 Mobile Foundation 서버 인스턴스를 작성하고 시작한 후에 다음 단계를 수행하여 Android 애플리케이션을 등록할 수 있습니다.
 
-  1.  URL(`http://<your-server-host>:<server-port>/mfpconsole`)을 로드하여 {{site.data.keyword.mfp_oc_short_notm}}을 시작하십시오. 프로비저닝할 때 생성된 `username` 및 `password`를 사용하십시오.
+  1.  다음 URL을 로드하여 {{site.data.keyword.mfp_oc_short_notm}}을 호출하십시오. `http://<your-server-host>:<server-port>/mfpconsole`. 프로비저닝할 때 생성된 `username` 및 `password`를 사용하십시오.
 
   + {{site.data.keyword.mfp_oc_short_notm}} **대시보드**에서 **애플리케이션** 옆의 **새로 작성**을 클릭하십시오.
 
@@ -270,6 +256,6 @@ Mobile Foundation 서버 인스턴스를 작성하고 시작한 후에 다음 �
 ## 다음 단계
 {: #nextsteps-gs}
 
-[Quick Start tutorials ![외부 링크 아이콘](../../icons/launch-glyph.svg "Quick Start tutorials")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window}에 따라 더 많은 샘플 애플리케이션에 대해 작업하고 {{site.data.keyword.mobilefoundation_short}}의 작업을 탐색할 수 있습니다.
+[빠른 시작 튜토리얼 ![외부 링크 아이콘](../../icons/launch-glyph.svg "빠른 시작 튜토리얼")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/quick-start/){: new_window}에 따라 더 많은 샘플 애플리케이션에 대해 작업하고 {{site.data.keyword.mobilefoundation_short}}의 작업을 탐색할 수 있습니다.
 
-Quick Start에는 iOS, Android, 웹, Cordova, Windows, React Native, Ionic 및 Xamarin 앱에 대한 {{site.data.keyword.mobilefoundation_short}}의 작업을 설명하는 튜토리얼이 있습니다.
+빠른 시작에는 iOS, Android, 웹, Cordova, Windows, React Native, Ionic 및 Xamarin 앱에 대한 {{site.data.keyword.mobilefoundation_short}}의 작업을 설명하는 튜토리얼이 있습니다.

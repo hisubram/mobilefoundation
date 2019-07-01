@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-02-12"
+lastupdated: "2019-06-10"
 
 keywords: troubleshooting techniques
 
@@ -39,7 +39,7 @@ subcollection:  mobilefoundation
 
 ### 문제점의 증상은 무엇입니까?
 
-문제점 설명을 시작할 때 가장 명확한 질문은 "문제점이 무엇입니까?"입니다. 이 질문은 다소 직설적으로 보이긴 하지만, 문제점을 보다 세부적으로 서술할 수 있는 몇 가지의 좀더 구체적인 질문으로 이 질문을 나눌 수 있습니다. 이러한 질문에는 다음 내용이 포함될 수 있습니다.
+문제점을 설명하기 시작할 때 가장 명백한 질문은 **무엇이 문제입니까?**입니다. 이 질문은 다소 직설적으로 보이긴 하지만, 문제점을 보다 세부적으로 서술할 수 있는 몇 가지의 좀더 구체적인 질문으로 이 질문을 나눌 수 있습니다. 이러한 질문에는 다음 내용이 포함될 수 있습니다.
 
 - 누가 또는 어떤 상황에서 문제점이 보고되었습니까?
 - 오류 코드 및 메시지는 무엇입니까?
@@ -108,4 +108,4 @@ subcollection:  mobilefoundation
 
 서비스 및 시작하기 지시사항에 대한 질문은 [IBM developerWorks dW Answers ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window} 포럼을 사용하십시오. `bluemix` 및 `mobilefirst` 태그를 포함시키십시오.
 
-IBM 지원 티켓을 여는 방법이나 지원 레벨 및 티켓 심각도에 대한 자세한 정보는 [지원 문의](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}를 참조하십시오.
+IBM 지원 티켓을 여는 방법이나 지원 레벨 및 티켓 심각도에 대한 자세한 정보는 [지원 문의](https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support){: new_window}를 참조하십시오.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-06"
 
 keywords: push notifications, notifications, FCM, GCM, APNS, WNS, authenticate notification
 
@@ -123,7 +123,7 @@ WNS를 설정하려면 다음을 수행하십시오.
 1. [Microsoft에서 제공된 지시사항](https://msdn.microsoft.com/en-in/library/windows/apps/hh465407.aspx)에 따라 **패키지 보안 ID(SID)** 및 **클라이언트 시크릿** 값을 생성하십시오.
 2. {{ site.data.keyword.mfp_oc_short_notm }} → **[사용자 애플리케이션] → 푸시 → 푸시 설정**에서 이러한 값을 추가한 후 **저장**을 클릭하십시오.
 
-> [{{ site.data.keyword.mobilefirst_notm }} 푸시 서비스용 REST API](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_wns_settings_put.html?view=kc) 또한 [{{ site.data.keyword.mobilefirst_notm }} 관리 서비스용 REST API](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_wns_settings_put.html?view=kc)를 사용하여 WNS를 설정할 수도 있습니다.
+[{{ site.data.keyword.mobilefirst_notm }} 푸시 서비스용 REST API](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_wns_settings_put.html?view=kc) 또한 [{{ site.data.keyword.mobilefirst_notm }} 관리 서비스용 REST API](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_wns_settings_put.html?view=kc)를 사용하여 WNS를 설정할 수도 있습니다.
 
 <img class="gifplayer" alt="WNS 인증 정보 추가 이미지" src="images/wns-setup.png"/>
 
@@ -135,27 +135,28 @@ WNS를 설정하려면 다음을 수행하십시오.
 1. {{ site.data.keyword.mfp_oc_short_notm }}을 로드하고 **[사용자의 애플리케이션] → 보안 → 범위-요소 맵핑**으로 이동하여 **새로 작성**을 클릭하십시오.
 2. **범위 요소** 필드에 "push.mobileclient"를 쓰십시오. 그런 다음 **추가**를 클릭하십시오.
 
-**추가적으로 사용 가능한 범위 목록**
+추가적으로 사용 가능한 범위 목록:
 
-**범위** | **설명**
----|---
-apps.read |애플리케이션 리소스를 읽을 수 있는 권한입니다.
-apps.write |애플리케이션 리소스를 작성, 업데이트 및 삭제할 수 있는 권한입니다.
-gcmConf.read |GCM 구성 설정(API 키 및 SenderId)을 읽을 수 있는 권한입니다.
-gcmConf.write |GCM 구성 설정을 업데이트 및 삭제할 수 있는 권한입니다.
-apnsConf.read |APN 구성 설정을 읽을 수 있는 권한입니다.
-apnsConf.write |APN 구성 설정을 업데이트 및 삭제할 수 있는 권한입니다.
-devices.read |디바이스를 읽을 수 있는 권한입니다.
-devices.write |디바이스를 작성, 업데이트 및 삭제할 수 있는 권한입니다.
-subscriptions.read |구독을 읽을 수 있는 권한입니다.
-subscriptions.write |구독을 작성, 업데이트 및 삭제할 수 있는 권한입니다.
-messages.write |푸시 알림을 전송할 수 있는 권한입니다.
-webhooks.read |이벤트 알림을 읽을 수 있는 권한입니다. 
-webhooks.write |이벤트 알림을 전송할 수 있는 권한입니다.
-smsConf.read |SMS 구성 설정을 읽을 수 있는 권한입니다. 
-smsConf.write |SMS 구성 설정을 업데이트 및 삭제할 수 있는 권한입니다.
-wnsConf.read |WNS 구성 설정을 읽을 수 있는 권한입니다.
-wnsConf.write |WNS 구성 설정을 업데이트 및 삭제할 수 있는 권한입니다.
+|**범위** | **설명**|
+|---|---|
+|apps.read |애플리케이션 리소스를 읽을 수 있는 권한입니다. |
+|apps.write |애플리케이션 리소스를 작성, 업데이트 및 삭제할 수 있는 권한입니다. |
+|gcmConf.read |GCM 구성 설정(API 키 및 SenderId)을 읽을 수 있는 권한입니다. |
+|gcmConf.write |GCM 구성 설정을 업데이트 및 삭제할 수 있는 권한입니다. |
+|apnsConf.read |APN 구성 설정을 읽을 수 있는 권한입니다. |
+|apnsConf.write |APN 구성 설정을 업데이트 및 삭제할 수 있는 권한입니다. |
+|devices.read |디바이스를 읽을 수 있는 권한입니다. |
+|devices.write |디바이스를 작성, 업데이트 및 삭제할 수 있는 권한입니다. |
+|subscriptions.read |구독을 읽을 수 있는 권한입니다. |
+|subscriptions.write |구독을 작성, 업데이트 및 삭제할 수 있는 권한입니다. |
+|messages.write |푸시 알림을 전송할 수 있는 권한입니다. |
+|webhooks.read |이벤트 알림을 읽을 수 있는 권한입니다. |
+|webhooks.write |이벤트 알림을 전송할 수 있는 권한입니다.|
+|smsConf.read |SMS 구성 설정을 읽을 수 있는 권한입니다.|
+|smsConf.write |SMS 구성 설정을 업데이트 및 삭제할 수 있는 권한입니다.|
+|wnsConf.read |WNS 구성 설정을 읽을 수 있는 권한입니다.|
+|wnsConf.write |WNS 구성 설정을 업데이트 및 삭제할 수 있는 권한입니다.|
+{: caption="표 1. 범위 설명" caption-side="top"}
 
 <img class="gifplayer" alt="범위 맵핑" src="images/scope-mapping.png"/>
 

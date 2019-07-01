@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-16"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation faq, updates to mobile foundation, custom domain
 
@@ -12,8 +12,10 @@ subcollection:  mobilefoundation
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:faq: data-hd-content-type='faq'}
+{:note: .note}
 
 # 자주 묻는 질문(FAQ)
+{: #mfp-faq}
 
 이 FAQ에서는 {{site.data.keyword.mobilefoundation_long}} 서비스에 대한 일반적인 질문에 대한 답을 제공합니다.
 {: shortdesc}
@@ -37,10 +39,9 @@ subcollection:  mobilefoundation
 **재작성**을 클릭하여 {{site.data.keyword.mobilefoundation_short}}에 대한 업데이트를 적용할 수 있습니다.
 업데이트 적용 시 {{site.data.keyword.mfp_oc_short_notm}}에 표시된 대로 서버 업데이트 버전을 표시하도록 서버 버전이 수정됩니다.
 
-> **참고:**
->  * 사용자는 고유 수정사항 및 업데이트를 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에 적용할 수 없습니다.
->  * **재작성**을 클릭하는 경우 플랜에서 발생하는 동작의 차이점을 파악하려면 [Professional Per Device 플랜에서 서버 재작성](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#recreate_mobilefoundation_p5) 및 [Professional 1 Application 플랜에서 서버 재작성](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#recreate_mobilefoundation_p2)을 참조하십시오.
->
+* 사용자는 고유 수정사항 및 업데이트를 {{site.data.keyword.mobilefoundation_short}} 서비스 인스턴스에 적용할 수 없습니다.
+* **재작성**을 클릭하는 경우 플랜에서 발생하는 동작의 차이점을 파악하려면 [Professional Per Device 플랜에서 서버 재작성](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p5#recreate_mobilefoundation_p5) 및 [Professional 1 Application 플랜에서 서버 재작성](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p2#recreate_mobilefoundation_p2)을 참조하십시오.
+{: note}
 
 ## 내 {{site.data.keyword.mobilefoundation_short}} 서버 인스턴스에 대해 어떻게 사용자 정의 도메인을 구성합니까?
 {: #configcustomdomain}

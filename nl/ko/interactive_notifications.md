@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-10"
 
 keywords: push notifications, sending interactive notification
 
@@ -117,7 +117,7 @@ var options = {
 
 대화식 알림을 수신하려면 다음 단계를 수행하십시오.
 
-1. 원격 알림 수신 시 백그라운드 태스크를 수행하는 애플리케이션 기능을 사용으로 설정하십시오. 이 단계는 일부 조치가 백그라운드 가능 조치인 경우에 필요합니다.
+1. 원격 알림 수신 시 백그라운드 태스크를 수행하는 애플리케이션 기능을 사용으로 설정하십시오. 이 단계는 일부 조치가 백그라운드에서 사용 가능한 경우에 필요합니다.
 2. 대화식 알림에 대해 등록된 카테고리를 정의하여 `MFPPush.registerDevice`에 옵션으로 전달하십시오.
 
    ```swift

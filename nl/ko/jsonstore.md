@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-14"
 
 keywords: JSONStore, offline storage, jsonstore error codes
 
@@ -18,8 +18,9 @@ subcollection:  mobilefoundation
 
 
 # JSONStore
-{: #jsonstore }
+{: #jsonstore}
 {{site.data.keyword.mobilefoundation_short}} **JSONStore**는 경량의 문서 중심 스토리지 시스템을 제공하는 선택적 클라이언트 측 API입니다. JSONStore는 **JSON 문서**의 지속적 스토리지를 사용으로 설정합니다. 애플리케이션에서 실행 중인 디바이스가 오프라인 상태인 경우에도 애플리케이션에 포함된 문서를 JSONStore에서 사용할 수 있습니다. 항상 사용 가능한 이 지속적 스토리지는 예를 들어 디바이스에 사용 가능한 네트워크 연결이 없는 경우 사용자에게 문서에 대한 액세스를 부여하는 데 유용할 수 있습니다.
+{: shortdesc}
 
 이 문서에서는 때때로 JSONStore를 설명하는 데 도움을 주기 위해 개발자에게 익숙한 관계형 데이터베이스 용어가 사용됩니다. 그러나 관계형 데이터베이스와 JSONStore 간에는 여러 차이점이 있습니다. 예를 들어, 관계형 데이터베이스에서 데이터를 저장하는 데 사용되는 엄격한 스키마는 JSONStore의 접근 방식과 다릅니다. JSONStore에서는 JSON 컨텐츠를 저장하고 검색해야 하는 컨텐츠의 색인을 작성할 수 있습니다.
 
@@ -46,14 +47,14 @@ subcollection:  mobilefoundation
 
 JSONStore 문서는 자동으로 생성된 ID(`_id`) 및 JSON 데이터가 있는 JSON 오브젝트입니다. 이는 데이터베이스 용어의 레코드 또는 행과 유사합니다. `_id`의 값은 항상 특정 콜렉션 내부의 고유 정수입니다. `JSONStoreInstance` 클래스의 `add`, `replace` 및 `remove`와 같은 일부 함수는 문서 또는 오브젝트의 배열을 사용합니다. 이러한 메소드는 한 번에 여러 문서 또는 오브젝트에 대한 오퍼레이션을 수행하는데 유용합니다.
 
-**단일 문서**  
+단일 문서:
 
 ```javascript
 var doc = { _id: 1, json: {name: 'carlos', age: 99} };
 ```
 {: codeblock}
 
-**문서 배열**
+문서 배열:
 
 ```javascript
 var docs = [
@@ -90,7 +91,7 @@ JSONStore 콜렉션은 데이터베이스 용어의 테이블과 유사합니다
 
 올바른 데이터 유형은 문자열, 부울, 숫자 및 정수입니다. 이러한 유형은 유형 힌트일 뿐이며 유형 유효성 검증이 없습니다. 또한 이러한 유형은 색인 작성 가능 필드가 저장되는 방법을 판별합니다. 예를 들어, `{age: 'number'}`는 1을 1.0으로 색인화하고 `{age: 'integer'}`는 1을 1로 색인화합니다.
 
-**검색 필드 및 추가 검색 필드**
+검색 필드 및 추가 검색 필드:
 
 ```javascript
 var searchField = {name: 'string', age: 'integer'};
@@ -100,7 +101,7 @@ var additionalSearchField = {key: 'string'};
 
 오브젝트 자체가 아니라 오브젝트 내부의 키만 색인화할 수 있습니다. 배열은 패스 스루 방식으로 처리됩니다. 즉, 배열 또는 배열의 특정 색인(arr[n])을 색인화할 수 없지만 배열 내부의 오브젝트를 색인화할 수는 있습니다.
 
-**배열 내부의 값 색인화**
+배열 내부의 값 색인화:
 
 ```javascript
 
@@ -123,14 +124,14 @@ var myObject = {
 조회는 검색 필드 또는 추가 검색 필드를 사용하여 문서를 찾는 오브젝트입니다.  
 다음 예제에서는 이름 검색 필드가 문자열 유형이고 연령 검색 필드가 정수 유형이라고 가정합니다.
 
-**`name`이 `carlos`와 일치하는 문서 찾기**
+`name`이 `carlos`와 일치하는 문서 찾기:
 
 ```javascript
 var query1 = {name: 'carlos'};
 ```
 {: codeblock}
 
-**`name`이 `carlos`와 일치하고 `age`가 `99`인 문서 찾기**
+`name`이 `carlos`와 일치하고 `age`가 `99`인 문서 찾기:
 
 ```javascript
 var query2 = {name: 'carlos', age: 99};
@@ -163,6 +164,7 @@ JSONStore는 LocalStorage, 색인화된 DB, Cordova 스토리지 API 및 Cordova
 |다중 사용자 지원                                 |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
 |색인 작성	                                         |	     ✔ 	      |      -	    |        ✔	     |         ✔	           |         -	      |
 |스토리지 유형	                                 |JSON 문서 |키-값 쌍 |JSON 문서 |관계형(SQL) |문자열     |
+{: caption="표 1. 기능 비교" caption-side="top"}
 
 신뢰할 수 있는 스토리지는 다음 이벤트 중 하나가 발생하는 경우를 제외하고 데이터가 삭제되지 않음을 의미합니다.
 * 애플리케이션이 디바이스에서 제거됩니다.
@@ -227,17 +229,17 @@ JSONStore는 모든 플랫폼에서 SQLCipher를 사용합니다. Android 및 iO
 1. Windows Runtime Commercial Edition용 SQLCipher과 함께 제공되는 Windows Runtime 8.1/10용 SQLCipher 확장기능을 실행하십시오.
 2. 확장기능 설치가 완료되면 방금 작성된 **sqlite3.dll** 파일의 SQLCipher 버전을 찾으십시오. x86, x64, ARM에 대한 버전이 하나씩 존재합니다.
 
-   ```bash
-   C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLCipher.WinRT81\3.0.1\Redist\Retail\<platform>
-   ```
-   {: codeblock}
+    ```bash
+    C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLCipher.WinRT81\3.0.1\Redist\Retail\<platform>
+    ```
+    {: codeblock}
 
 3. MobileFirst 애플리케이션에 이 파일을 복사하고 대체하십시오.
 
-   ```bash
-   <Worklight project name>\apps\<application name>\windows8\native\buildtarget\<platform>
-   ```
-   {: codeblock}
+    ```bash
+    <Worklight project name>\apps\<application name>\windows8\native\buildtarget\<platform>
+    ```
+    {: codeblock}
 
 ## 성능
 {: #performance-jsonstore }
@@ -276,7 +278,7 @@ jQuery Deferred는 해결되거나 거부될 수 있는 프라미스입니다. �
 
 프라미스 및 콜백 대신 JSONStore `success` 및 `failure` 이벤트를 청취할 수도 있습니다. 이벤트 리스너에 전달되는 인수에 따라 조치를 수행하십시오.
 
-**프라미스 정의 예제**
+프라미스 정의 예제:
 
 ```javascript
 var asyncOperation = function () {
@@ -290,8 +292,9 @@ var asyncOperation = function () {
   return deferred.promise();
 };
 ```
+{: codeblock}
 
-**프라미스 사용법 예제**
+프라미스 사용법 예제:
 
 ```javascript
 // The function that is passed to .then is executed after 1000 ms.
@@ -299,8 +302,9 @@ asyncOperation.then(function (response) {
   // response = 'Hello'
 });
 ```
+{: codeblock}
 
-**콜백 정의 예제**
+콜백 정의 예제:
 
 ```javascript
 var asyncOperation = function (callback) {
@@ -309,8 +313,9 @@ var asyncOperation = function (callback) {
   }, 1000);
 };
 ```
+{: codeblock}
 
-**콜백 사용법 예제**
+콜백 사용법 예제:
 
 ```javascript
 // The function that is passed to asyncOperation is executed after 1000 ms.
@@ -318,8 +323,9 @@ asyncOperation(function (response) {
   // response = 'Hello'
 });
 ```
+{: codeblock}
 
-**이벤트 예제**
+이벤트 예제:
 
 ```javascript
 $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collectionName) {
@@ -330,6 +336,7 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
   // collectionName - Name of the collection
 });
 ```
+{: codeblock}
 
 ### Objective-C의 동시성
 {: #objective-c-jsonstore }
@@ -359,6 +366,7 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
+{: codeblock}
 
 ### Android의 JSONStore 예
 {: #android-example }
@@ -368,6 +376,7 @@ initOptions.setAnalytics(true);
 
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
+{: codeblock}
 
 ### JavaScript의 JSONStore 예
 {: #java-script-example }
@@ -378,6 +387,7 @@ var options = {
 
 WL.JSONStore.init(..., options);
 ```
+{: codeblock}
 
 ## 외부 데이터에 대한 작업
 {: #working-with-external-data }
@@ -407,7 +417,8 @@ WL.JSONStore.init(..., options);
 
 전송 계층에 어댑터를 사용하십시오. 어댑터를 사용하는 경우의 일부 장점에는 XML에서 JSON으로 변환, 보안, 필터링 및 서버 측 코드와 클라이언트 측 코드의 분리가 포함됩니다.
 {: note}
-**외부 데이터 소스: 백엔드 REST 엔드포인트**  
+##### 외부 데이터 소스: 백엔드 REST 엔드포인트
+{: #external-data-source-backend-rest-endpoint-head}
 데이터베이스에서 데이터를 읽고 JSON 오브젝트 배열로 리턴하는 REST 엔드포인트가 있다고 가정하십시오.
 
 ```javascript
@@ -429,7 +440,8 @@ app.get('/people', function (req, res) {
 ```
 {: codeblock}
 
-**전송 계층: 어댑터**  
+##### 전송 계층: 어댑터
+{: #transport-layer-adapter}
 people이라는 어댑터를 작성했으며 getPeople이라는 프로시저를 정의했다고 가정하십시오. 이 프로시저는 REST 엔드포인트를 호출하고 JSON 오브젝트 배열을 클라이언트에 리턴합니다. 여기서 추가 작업(예: 데이터 서브세트만 클라이언트에 리턴)을 수행할 수 있습니다.
 
 ```javascript
@@ -475,13 +487,16 @@ $.ajax({
 ```
 {: codeblock}
 
-**내부 데이터 소스 API: JSONStore**
+##### 내부 데이터 소스 API: JSONStore
+{: #internal-data-source-api-jsonstore}
 백엔드에서 응답을 얻은 후에 JSONStore를 사용하여 해당 데이터에 대해 작업할 수 있습니다.
 JSONStore는 로컬 변경사항을 추적하는 방법을 제공합니다. 이를 통해 일부 API가 문서를 더티 상태로 표시할 수 있습니다. API는 문서에 대해 수행된 마지막 오퍼레이션 및 문서가 더티로 표시된 시간을 기록합니다. 그런 다음 이 정보를 사용하여 데이터 동기화와 같은 기능을 구현할 수 있습니다.
 
 change API는 데이터 및 일부 옵션을 사용합니다.
 
-**replaceCriteria**  
+###### replaceCriteria
+{: #replacecriteria}
+  
 이러한 검색 필드는 입력 데이터의 일부입니다. 이는 이미 콜렉션 내부에 있는 문서를 찾는 데 사용됩니다. 예를 들어, 다음과 같습니다.
 
 ```javascript
@@ -519,10 +534,14 @@ change API는 데이터 및 일부 옵션을 사용합니다.
 
 이름이 `Carlitos`에서 `Carlos`로 변경되었습니다. 둘 이상의 문서가 대체 기준과 일치하면 일치하는 모든 문서가 각 입력 데이터로 대체됩니다.
 
-**addNew**  
+###### addNew 
+{: #addnew}
+ 
 대체 기준과 일치하는 문서가 없는 경우 change API에서 이 플래그의 값을 확인합니다. 이 플래그가 **true**로 설정된 경우 change API가 새 문서를 작성하여 저장소에 추가합니다. 그렇지 않으면 추가 조치가 수행되지 않습니다.
 
-**markDirty**  
+###### markDirty 
+{: #markdirty}
+ 
 change API에서 대체되거나 추가된 문서를 더티로 표시할지 여부를 판별합니다.
 
 어댑터에서 데이터 배열이 리턴됩니다.
@@ -600,7 +619,8 @@ accessor.remove(doc, {markDirty: true})
 전송 계층에 어댑터를 사용하십시오. 어댑터를 사용하는 경우의 일부 장점에는 XML에서 JSON으로 변환, 보안, 필터링 및 서버 측 코드와 클라이언트 측 코드의 분리가 포함됩니다.
 {: note}
 
-**내부 데이터 소스 API: JSONStore**  
+##### 내부 데이터 소스 API: JSONStore  
+{: #internal-data-source-api-jsonstore-head}
 콜렉션에 대한 액세서를 가져온 후 `getAllDirty` API를 호출하여 더티로 표시된 모든 문서를 가져오십시오. 이러한 문서에는 전송 계층을 통해 외부 데이터 소스에 전송하려는 로컬 전용 변경사항이 포함되어 있습니다.
 
 ```javascript
@@ -630,7 +650,8 @@ accessor.getAllDirty()
 * `_operation`: 문서에 대해 마지막으로 수행된 오퍼레이션. 가능한 값은 add, store, replace 및 remove입니다.
 * `_dirty`: 문서가 더티로 표시된 시간을 나타내기 위해 숫자로 저장된 시간소인
 
-**전송 계층: MobileFirst 어댑터**  
+##### 전송 계층: MobileFirst 어댑터  
+{: #transport-layr-mobilefirst-adapter }
 더티 문서를 어댑터에 전송하도록 선택할 수 있습니다. `updatePeople` 프로시저로 정의되는 `people` 어댑터가 있다고 가정하십시오.
 
 ```javascript
@@ -748,7 +769,8 @@ $.when.apply(this, arrayOfPromises)
 ```
 {: codeblock}
 
-**외부 데이터 소스: 백엔드 REST 엔드포인트**  
+##### 외부 데이터 소스: 백엔드 REST 엔드포인트
+{: #external-data-source-backend-rest-endpoint }
 백엔드는 변경사항을 승인하거나 거부한 후 클라이언트로 응답을 다시 릴레이합니다. 클라이언트가 응답을 확인한 후에 업데이트된 문서를 markClean API로 전달할 수 있습니다.
 
 ```javascript
@@ -818,14 +840,16 @@ $.when.apply(this, arrayOfPromises)
    $ sqlite3 jsonstore.sqlite
    ```
 
-   * **참고:** 웹 브라우저(Firefox, Chrome, Safari, Internet Explorer)에서 실행되는 JavaScript 전용 구현은 SQLite 데이터베이스를 사용하지 않습니다. 파일은 HTML5 LocalStorage에 저장됩니다.
-   * `.schema`를 포함하는 `searchFields`를 살펴보고 `SELECT * FROM <collection-name>;`. sqlite3를 종료하려면 `.exit`를 입력하십시오. init 메소드에 사용자 이름을 전달하는 경우 이 파일은 **the-username.sqlite**입니다. 사용자 이름을 전달하지 않는 경우 이 파일은 기본적으로 **jsonstore.sqlite**입니다.
+웹 브라우저(Firefox, Chrome, Safari, Internet Explorer)에서 실행되는 JavaScript 전용 구현에서는 SQLite 데이터베이스를 사용하지 않습니다. 파일은 HTML5 LocalStorage에 저장됩니다.
+    {: note}
+   * `.schema`를 포함하는 `searchFields`를 살펴보고 `SELECT * FROM <collection-name>;`으로 데이터를 선택하십시오. sqlite3를 종료하려면 `.exit`를 입력하십시오. init 메소드에 사용자 이름을 전달하는 경우 이 파일은 **the-username.sqlite**입니다. 사용자 이름을 전달하지 않는 경우 이 파일은 기본적으로 **jsonstore.sqlite**입니다.
 5. (Android만 해당) 상세 JSONStore를 사용으로 설정하십시오.
 
    ```bash
    adb shell setprop log.tag.jsonstore-core VERBOSE
    adb shell getprop log.tag.jsonstore-core
    ```
+    {: codeblock}
 
 6. 디버거를 사용하십시오.
 
@@ -847,7 +871,7 @@ $.when.apply(this, arrayOfPromises)
 * 일부 경우(또는 환경)에는 JSONStore 플러그인이 초기화되기 전에 플로우가 `wlCommonInit()`로 들어갑니다. 이로 인해 JSONStore 관련 API 호출이 실패합니다. `cordova-plugin-mfp` 부트스트랩은 완료 시 `wlCommonInit` 함수를 트리거하는 `WL.Client.init`를 자동으로 호출합니다. 이 초기화 프로세스는 JSONStore 플러그인의 경우 다릅니다. JSONStore 플러그인에는 `WL.Client.init` 호출을 _정지_할 방법이 없습니다. 여러 환경에서 `mfpjsonjslloaded`가 완료되기 전에 플로우가 `wlCommonInit()`로 들어가는 경우가 발생할 수 있습니다.
 개발자는 `mfpjsonjsloaded` 및 `mfpjsloaded` 이벤트의 순서를 지정하기 위해 `WL.CLient.init`를 수동으로 호출할 수 있습니다. 이렇게 하면 플랫폼 특정 코드가 있을 필요가 없습니다.
 
-  수동으로 `WL.CLient.init`의 호출을 구성하려면 아래 단계를 따르십시오.                             
+  수동으로 `WL.CLient.init`의 호출을 구성하려면 다음 단계를 따르십시오.                             
 
   1. `config.xml`에서 `clientCustomInit` 특성을 **true**로 변경하십시오.
 
@@ -884,6 +908,7 @@ JSONStore 데이터가 저장되는 방법의 예를 볼 수 있습니다.
 |-----|-----|------|-----|------|
 |1   | c   | carlos | 99 | {name: 'carlos', age: 99} |
 |2   | t   | tim   | 100 | {name: 'tim', age: 100} |
+{: caption="표 2. JSONStore 데이터 키 요소 예제" caption-side="top"}
 
 `{_id : 1}, {name: 'carlos'}`, `{age: 99}, {key: 'c'}` 조회 중 하나 또는 조합을 사용하여 검색하는 경우 리턴되는 문서는 `{_id: 1, json: {name: 'carlos', age: 99} }`입니다.
 
@@ -951,7 +976,7 @@ catch(JSONStoreException e) {
 | -75 OS\_SECURITY\_FAILURE | 이 오류 코드는 requireOperatingSystemSecurity 플래그와 관련되어 있습니다. 이는 destroy API가 운영 체제 보안(패스코드 대체가 있는 Touch ID)으로 보호되는 보안 메타데이터를 제거하는 데 실패하거나 init 또는 open API가 보안 메타데이터를 찾을 수 없는 경우 발생할 수 있습니다. 또한 디바이스가 운영 체제 보안을 지원하지 않지만 운영 체제 보안 사용이 요청된 경우에도 실패할 수 있습니다. |
 | -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore가 닫혀 있습니다. 먼저 JSONStore class 클래스에서 open 메소드를 호출하여 저장소에 대한 액세스를 사용으로 설정하십시오. |
 | -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | 트랜잭션 롤백 중에 문제점이 발생했습니다. |
-| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION | 트랜잭션이 진행되는 동안 removeCollection을 호출할 수 없습니다.|
+| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION | 트랜잭션이 진행되는 동안 removeCollection을 호출할 수 없습니다. |
 | -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | 트랜잭션이 진행되는 동안 destroy를 호출할 수 없습니다. |
 | -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | 트랜잭션이 제 위치에 있는 동안 closeAll을 호출할 수 없습니다. |
 | -44 TRANSACTION\_FAILURE\_DURING\_INIT | 트랜잭션이 진행되는 동안 저장소를 초기화할 수 없습니다. |
@@ -962,7 +987,7 @@ catch(JSONStoreException e) {
 | -24 JSON\_STORE\_FILE\_INFO\_ERROR | 파일 시스템에서 파일 정보를 가져오는 중에 문제점이 발생했습니다. |
 | -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | 콜렉션에서 문서를 바꾸는 중에 문제점이 발생했습니다. |
 | -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | 콜렉션에서 문서를 제거하는 중에 문제점이 발생했습니다. |
-| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | 데이터 보호 키(DPK)를 저장하는 중에 문제점이 발생했습니다.|
+| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | 데이터 보호 키(DPK)를 저장하는 중에 문제점이 발생했습니다. |
 | -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | 입력 데이터의 색인을 작성하는 중에 문제점이 발생했습니다. |
 | -12 INVALID\_SEARCH\_FIELD\_TYPES | searchFields에 전달 중인 유형이 문자열, 정수, 숫자 또는 부울인지 확인하십시오. |
 | -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | 문서 배열에 대한 오퍼레이션(예: replace 메소드)이 특정 문서에 대해 작업하는 동안 실패할 수 있습니다. 실패한 문서가 리턴되고 트랜잭션이 롤백됩니다. Android에서는 지원되지 않는 아키텍처에서 JSONStore를 사용하려고 시도할 때에도 이 오류가 발생합니다. |
@@ -974,8 +999,8 @@ catch(JSONStoreException e) {
 | -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED | 저장소의 컨텐츠를 보유하는 파일을 삭제하려고 할 때 destroy 메소드에 문제점이 발생했습니다. |
 | -4 DESTROY\_REMOVE\_KEYS\_FAILED | 키 체인(iOS)또는 공유 사용자 환경 설정(Android)을 지우려고 할 때 destroy 메소드에 문제점이 발생했습니다. |
 |-3 INVALID\_KEY\_ON\_PROVISION | 암호화된 저장소에 잘못된 비밀번호를 전달했습니다. |
-|-2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | 검색 필드가 동적이 아닙니다. 새 검색 필드로 init 또는 open 메소드를 호출하기 전에 destroy 메소드 또는 removeCollection 메소드를 호출하지 않고 검색 필드를 변경할 수 없습니다. 이 오류는 검색 필드의 이름이나 유형을 변경하는 경우에 발생할 수 있습니다(예: {key: 'string'}을 {key: 'number'}로 또는 {myKey: 'string'}을 {theKey: 'string'}으로). |
-| -1 PERSISTENT\_STORE\_FAILURE | 일반 오류입니다. 대부분 init 메소드를 호출하는 원시 코드에서의 잘못된 기능입니다. |
+|-2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | 검색 필드가 동적이 아닙니다. 새 검색 필드로 init 또는 open 메소드를 호출하기 전에 destroy 메소드 또는 removeCollection 메소드를 호출하지 않고 검색 필드를 변경할 수 없습니다. 이 오류는 검색 필드의 이름이나 유형을 변경하는 경우에 발생할 수 있습니다 (예: {key: 'string'}을 {key: 'number'}로 또는 {myKey: 'string'}을 {theKey: 'string'}으로). |
+| -1 PERSISTENT\_STORE\_FAILURE | 일반 오류입니다. 대부분 init 메소드를 호출하는 네이티브 코드에서의 잘못된 기능입니다. |
 | 0 SUCCESS |어떤 경우에, JSONStore 네이티브 코드는 성공을 표시하기 위해 0을 리턴합니다. |
 | 1 BAD\_PARAMETER\_EXPECTED\_INT | 유효성 검증 오류입니다. |
 | 2 BAD\_PARAMETER\_EXPECTED\_STRING | 유효성 검증 오류입니다. |
@@ -1009,3 +1034,4 @@ catch(JSONStoreException e) {
 | 30 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_OBJECTS | 배열이 유일한 JSON 오브젝트의 배열이 아닌 경우 유효성 검증 오류가 발생합니다. |
 | 31 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_CLEAN\_DOCUMENTS | 유효성 검증 오류입니다. |
 | 32 BAD\_PARAMETER\_WRONG\_SEARCH\_CRITERIA | 유효성 검증 오류입니다. |
+{: caption="표 3. 공통 오류 코드" caption-side="top"}

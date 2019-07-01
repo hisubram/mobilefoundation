@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-10"
 
 keywords: push notifications, notifications, sending notification, HTTP/2
 
@@ -69,31 +69,32 @@ In the {{ site.data.keyword.mfp_oc_short_notm }} → **[사용자 애플리케�
 
 REST API를 사용하여 알림을 전송하는 경우 모든 양식의 알림(태그, 브로드캐스트 및 인증된 알림)을 전송할 수 있습니다.
 
-알림을 전송하기 위해 REST 엔드포인트에 대한 POST를 사용하여 요청이 작성됩니다. `imfpush/v1/apps/<application-identifier>/messages`  
+알림을 전송하기 위해 REST 엔드포인트에 대한 POST를 사용하여 요청이 작성됩니다. `imfpush/v1/apps/<application-identifier>/messages`.  
 다음은 예제 URL입니다.
 
 ```
 https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
 ```
 
-> 모든 푸시 알림 REST API를 검토하려면 사용자 문서에서 [REST API 런타임 서비스 주제](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/c_restapi_runtime.html)를 참조하십시오.
+모든 푸시 알림 REST API를 검토하려면 사용자 문서에서 [REST API 런타임 서비스 주제](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/c_restapi_runtime.html)를 참조하십시오.
 
 ### 알림 페이로드
 {: #notification-payload }
 
 요청에는 다음과 같은 페이로드 특성이 포함될 수 있습니다.
 
-|페이로드 특성 |정의
+|페이로드 특성|정의
 |--- | ---
-|message |전송할 경보 메시지입니다.
-|settings |설정은 알림의 다양한 속성입니다.
-|target |대상 세트는 이용자 ID, 디바이스, 플랫폼 또는 태그일 수 있습니다. 대상 중 하나만 설정할 수 있습니다.
-|deviceIds |디바이스 ID로 표시되는 디바이스의 배열입니다. 이러한 ID를 보유한 디바이스가 알림을 수신합니다. 이는 유니캐스트 알림입니다.
-|notificationType |메시지를 전송하는 데 사용되는 채널(푸시 또는 SMS)을 표시하는 정수 값입니다. 허용되는 값은 1(푸시만), 2(SMS만) 및 3(푸시 및 SMS 모두)입니다.
-|platforms |디바이스 플랫폼의 배열입니다. 이러한 플랫폼에서 실행 중인 디바이스가 알림을 수신합니다. 원되는 값은 A(Apple/iOS), G(Google/Android) 및 M(Microsoft/Windows)입니다.
-|tagNames |태그 이름으로 지정되는 태그의 배열입니다. 이러한 태그를 구독하는 디바이스가 알림을 수신합니다. 태그 기반 알림의 경우 이 유형의 대상을 사용하십시오.
-|userIds |알림을 전송할 사용자 ID로 표시되는 사용자의 배열입니다. 이는 유니캐스트 알림입니다.
-|phoneNumber |디바이스를 등록하고 알림을 수신하는 데 사용되는 전화번호입니다. 이는 유니캐스트 알림입니다.
+|message |전송할 경보 메시지입니다. |
+|settings |설정은 알림의 다양한 속성입니다. |
+|target |대상 세트는 이용자 ID, 디바이스, 플랫폼 또는 태그일 수 있습니다. 대상 중 하나만 설정할 수 있습니다. |
+|deviceIds |디바이스 ID로 표시되는 디바이스의 배열입니다. 이러한 ID를 보유한 디바이스가 알림을 수신합니다. 이는 유니캐스트 알림입니다. |
+|notificationType |메시지를 전송하는 데 사용되는 채널(푸시 또는 SMS)을 표시하는 정수 값입니다. 허용되는 값은 1(푸시만), 2(SMS만) 및 3(푸시 및 SMS 모두)입니다. |
+|platforms |디바이스 플랫폼의 배열입니다. 이러한 플랫폼에서 실행 중인 디바이스가 알림을 수신합니다. 원되는 값은 A(Apple/iOS), G(Google/Android) 및 M(Microsoft/Windows)입니다. |
+|tagNames |태그 이름으로 지정되는 태그의 배열입니다. 이러한 태그를 구독하는 디바이스가 알림을 수신합니다. 태그 기반 알림의 경우 이 유형의 대상을 사용하십시오. |
+|userIds |알림을 전송할 사용자 ID로 표시되는 사용자의 배열입니다. 이는 유니캐스트 알림입니다. |
+|phoneNumber |디바이스를 등록하고 알림을 수신하는 데 사용되는 전화번호입니다. 이는 유니캐스트 알림입니다. |
+{: caption="표 1. 페이로드 특성" caption-side="top"}
 
 **푸시 알림 페이로드 JSON 예제**
 
@@ -118,7 +119,7 @@ https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
     },
   },
   "target" : {
-    // The list below is for demonstration purposes only - per the documentation only 1 target is allowed to be used at a time.
+    // The following list is for demonstration purposes only - per the documentation only 1 target is allowed to be used at a time.
     "deviceIds" : [ "MyDeviceId1", ... ],
     "platforms" : [ "A,G", ... ],
     "tagNames" : [ "Gold", ... ],
@@ -147,7 +148,7 @@ https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
 다양한 도구를 사용하여 알림을 전송할 수 있습니다. 테스트를 위해 **Postman**이 사용됩니다. 다음 단계는 설정하는 방법을 설명합니다.
 
 1. [기밀 클라이언트를 구성하십시오](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/confidential-clients/).
-  REST API를 통한 푸시 알림 전송에는 공백으로 구분된 범위 요소 `messages.write` 및 `push.application.<applicationId>`가 사용됩니다.
+  REST API를 통한 푸시 알림 전송에서는 공백으로 구분된 범위 요소 `messages.write` 및 `push.application.<applicationId>`를 사용합니다. 
   <img class="gifplayer" alt="기밀 클라이언트 구성" src="images/push-confidential-client.png"/>
 2. [액세스 토큰을 작성하십시오](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/authentication-and-security/confidential-clients#obtaining-an-access-token).  
 3. **http://localhost:9080/imfpush/v1/apps/com.sample.PushNotificationsAndroid/messages**에 대한 **POST** 요청을 작성하십시오.
@@ -155,8 +156,8 @@ https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
   - 애플리케이션 ID 값을 사용자 고유의 값으로 업데이트하십시오.
 4. 헤더를 설정하십시오.
     - `**Authorization**: Bearer eyJhbGciOiJSUzI1NiIsImp ...`
-    - **Bearer** 뒤의 값을 (1)단계의 액세스 토큰 값으로 대체하십시오.
-    ![권한 헤더](images/postman_authorization_header.png)
+    - **Bearer** 뒤의 값을 2단계의 액세스 토큰 값으로 대체하십시오.
+    ![권한 헤더](images/postman_authorization_header.png "권한 헤더")
 5. 본문을 설정하십시오.
   - [알림 페이로드](#notification-payload) 헤더에 설명된 대로 해당 특성을 업데이트하십시오.
   - 예를 들어, **userIds** 속성이 있는 **target** 특성을 추가하여 등록된 특정 사용자에게 알림을 전송할 수 있습니다.
@@ -168,11 +169,11 @@ https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
     }
     ```
 
-    ![권한 헤더](images/postman_json.png)
+    ![권한 본문](images/postman_json.png "권한 본문")
 
     **전송** 단추를 클릭하면 디바이스에 알림이 수신됩니다.
 
-    ![샘플 애플리케이션의 이미지](images/notifications-app.png)
+    ![샘플 애플리케이션의 이미지](images/notifications-app.png "모바일 디바이스의 푸시 알림")
 
 ## 알림 사용자 정의
 {: #customizing-notifications }
@@ -192,7 +193,7 @@ https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
 
 * 알림 사운드, 사용자 정의 페이로드, 조치 키 제목, 알림 유형 및 배지 번호
 
-  ![푸시 알림 사용자 정의](images/customizing-push-notifications.png)
+  ![푸시 알림 사용자 정의](images/customizing-push-notifications.png "푸시 전송 탭이 선택된 MobileFirst Operations Console 푸시 페이지")
 
 ## APN 푸시 알림에 대한 HTTP/2 지원
 {: #http2-support-for-apns-push-notifications}
@@ -212,6 +213,7 @@ JNDI 특성을 사용하여 HTTP/2 기반 알림을 사용으로 설정할 수 �
 ```xml
 <jndiEntry jndiName="imfpush/mfp.push.apns.http2.enabled" value= "true"/>
 ```
+{: codeblock}
 
 JNDI 특성이 추가되면 레거시 TCP 소켓 기반 알림이 사용되지 않고 HTTP/2 기반 알림만 사용으로 설정됩니다.
 {: note}
