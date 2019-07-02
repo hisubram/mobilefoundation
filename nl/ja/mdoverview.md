@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-27"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation, features, overview
 
@@ -12,7 +12,7 @@ subcollection:  mobilefoundation
 #	概説
 {: #overview_mobilefoundation}
 
-{{site.data.keyword.mobilefoundation_short}} は、モバイル・アプリ、Web アプリ、および Progressive Web Apps (PWA) 用の統合されたバックエンド機能セットを提供します。 開発者は、選択したフロントエンドのツールまたはフレームワークを使用できますし、{{site.data.keyword.mobilefoundation_short}} サービスが提供する豊富なバックエンドのセットを活用することもできます。{{site.data.keyword.mobilefoundation_short}} SDK は、Cordova、iOS、Android、Xamarin、Windows 10、React Native、および Mobile Web で使用可能です。
+{{site.data.keyword.mobilefoundation_short}} は、モバイル・アプリ、Web アプリ、および Progressive Web Apps (PWA) 用の統合されたバックエンド機能セットを提供します。 開発者は、選択したフロントエンドのツールまたはフレームワークを使用できますし、{{site.data.keyword.mobilefoundation_short}} サービスが提供する豊富なバックエンドのセットを活用することもできます。 {{site.data.keyword.mobilefoundation_short}} SDK は、Cordova、iOS、Android、Xamarin、Windows 10、React Native、および Mobile Web で使用可能です。
 
 ## {{site.data.keyword.mobilefoundation_short}} が提供する主な機能
 
@@ -25,10 +25,10 @@ subcollection:  mobilefoundation
 {: #app_insights}
 
 アクティブで有効なユーザー・エンゲージメントを維持するためには、ユーザーに対するアプリケーションの振る舞いについての洞察を得る必要があります。   Mobile Foundation の Mobile Analytics 機能では、標準装備の視覚化機能 (グラフと表) によってこの洞察を得ることができます。  アプリケーションのインスツルメンテーションを最小限に抑えながらも、次の対処可能な洞察を Mobile Analytics コンソールですぐに視覚化することができます。
-- **ユーザーのオンボーディング・パターン**: オンボードする新規ユーザーがいますか。既存のユーザーはアプリケーションを使い続けていますか。
+- **ユーザーのオンボーディング・パターン**: オンボードする新規ユーザーがいますか。 既存のユーザーはアプリケーションを使い続けていますか。
 - **使用パターン**: アプリケーションの利用が最も多い時間、最も少ない時間はいつですか。それはビジネスと関連性がありますか。
 - **バックエンドのパフォーマンス**: 最も多く使用されているバックエンド・システムの機能は何ですか。その機能の応答時間と安定性はどうですか。バックエンドのバランスを調整する必要はありますか。
-- **アプリケーションの安定性**: アプリケーションは常に安定していますか。異常終了した場合、その原因は何ですか (クラッシュ・ログ)。アプリケーションの設計や実装を修正する必要はありますか。
+- **アプリケーションの安定性**: アプリケーションは常に安定していますか。異常終了した場合、その原因は何ですか (クラッシュ・ログ)。 アプリケーションの設計や実装を修正する必要はありますか。
 - **アプリ内のユーザー・エクスペリエンス**: ユーザーがアプリを使用するときの実際のインタラクティブ・エクスペリエンスはどのようなものですか。ユーザーはどう感じているでしょうか。ユーザー調査を再訪する必要はありますか。
 - **カスタム・トレール**: アプリケーション固有のトレールやフローの一部としてログに記録されたカスタム・データを使用して定義およびプロットされるカスタム・グラフ。ビジネス上の決定に役立つ独自の洞察を、柔軟に拡張して定義することもできます。
 

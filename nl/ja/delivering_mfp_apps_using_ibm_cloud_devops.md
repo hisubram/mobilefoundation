@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation, integration, devops, ibmcloud, pipeline
 
@@ -37,10 +37,9 @@ subcollection:  mobilefoundation
 
 このチュートリアルは、{{ site.data.keyword.cloud_notm }} 上で {{ site.data.keyword.jazzhub_title }} を使用して、IBM {{ site.data.keyword.mobilefoundation_short }} へのアプリおよびアダプターのデリバリーを自動化するために役立ちます。
 
-
 以下の図は、パイプラインの概要を示しています。
 
-![overview_of_pipeline](images/p00_overview_of_pipeline.png)
+![パイプラインの概要](images/p00_overview_of_pipeline.png "DevOps パイプラインの 6 つのステージ")
 
 
 ## 前提条件
@@ -50,7 +49,7 @@ subcollection:  mobilefoundation
 * [mfpdev-cli](https://www.npmjs.com/package/mfpdev-cli)
 * アプリと [MFP アダプター](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/)のサンプル
 * [GitHub](http://github.com/) アカウント
-* **オプション:** [Bitbar](https://bitbar.com/testing/) インスタンスと Bitbar API キー (必要に応じて任意のサービスを使用できます)。
+* *オプション:* [Bitbar](https://bitbar.com/testing/) インスタンスと Bitbar API キー (必要に応じて任意のサービスを使用できます)。
 
 
 ## 継続的デリバリー・サービスとツールチェーンの作成
@@ -59,14 +58,13 @@ subcollection:  mobilefoundation
 * {{ site.data.keyword.cloud_notm }} カタログで「Continuous Delivery」を検索します (または[ここをクリック](https://cloud.ibm.com/catalog/services/continuous-delivery)します)。
 * サービス名、地域、その他を指定して、サービスを作成します。
 
-    以下の例では、サービス名に「MFP App/Adapter delivery Test」、地域/場所に「ロンドン」、リソース・グループに「デフォルト」を使用します。
+    以下の例では、サービス名に *「MFP App/Adapter delivery Test」*、地域/場所に*「ロンドン」*、リソース・グループに*「デフォルト」*を使用します。
 
-    ![configuring_continuous_delivery_service](images/p01_configuring_continuous_delivery_service.png)
+    ![継続的デリバリー・サービスの構成](images/p01_configuring_continuous_delivery_service.png "Mobile Foundation サービス・インスタンスのカタログ作成ページ")
 
-* 左側のハンバーガー・メニュー内の {{ site.data.keyword.jazzhub_title }} セクションで、ツールチェーンを作成し、「Build your own ツールチェーン」を検索してツールチェーンを最初から作成します。
+* ナビゲーション・メニューから、**「DevOps」**を選択してから、**「ツールチェーンの作成」**をクリックし、「Build your own ツールチェーン」を検索してツールチェーンを最初から作成します。
 
-
-    ![search_build_your_own_toolchain](images/p02_search_build_your_own_toolchain.png)
+    ![「Build your own ツールチェーン」の検索](images/p02_search_build_your_own_toolchain.png "「Build your own ツールチェーン」の検索結果を使用して独自のツールチェーンを作成するページ")
 
 * ツールチェーン名、地域、その他を指定して構成します。
 
@@ -74,18 +72,18 @@ subcollection:  mobilefoundation
 ## バージョン管理およびパイプライン・トリガーのための GitHub とツールチェーンの統合
 {: #integrating-github-with-the-toolchain}
 
-* 左側メニューにあるツールチェーンの概要で、**「ツールの追加」**をクリックして、GitHub を検索します。
+* ナビゲーション内の**「概要」**ページから、**「ツールの追加」**をクリックして、GitHub を検索します。
 * GitHub ツールの **GitHub サーバー・アドレス**、**リポジトリー・タイプ**、および**リポジトリー URL** を構成します。
 * 新しいリポジトリーを作成したり、既存のリポジトリーをフォーク、複製、または使用したりすることができます。
 
-    以下の例では、GitHub サーバーに「[https://github.com](http://github.com/)」、リポジトリー・タイプに「Existing」、リポジトリー URL に「https://github.com/sagar20896/mfp-devops-20181210030116092」を使用します。
+    以下の例では、GitHub サーバーに[「https://github.com」](http://github.com/)、リポジトリー・タイプに*「Existing」*、リポジトリー URL に*「https://github.com/sagar20896/mfp-devops-20181210030116092」*を使用します。
 
-    ![configuring_toolchain](images/p03_configuring_toolchain.png)
+    ![ツールチェーンの構成](images/p03_configuring_toolchain.png "「GitHub サーバー」、「リポジトリー・タイプ」、「リポジトリー URL」フィールドが表示されている「統合の構成」画面")
 
 ### ツールチェーンへのデリバリー・パイプラインの追加
 {: #adding-the-delivery-pipeline-to-the-toolchain}
 
-**「ツールの追加」**を使用して、*Delivery Pipeline* を検索します。パイプラインを構成して、**「統合の作成」**をクリックします。
+**「ツールの追加」**を使用して、*Delivery Pipeline* を検索します。 パイプラインを構成して、**「統合の作成」**をクリックします。
 
 ### パイプラインへのステージの追加
 {: #adding-stages-to-the-pipeline}
@@ -94,17 +92,17 @@ subcollection:  mobilefoundation
 
 {: #stage1-setting-up-mobile-foundation}
 
-このステージでは、{{ site.data.keyword.mobilefoundation_short }} のインスタンスをスピンアップします。パイプラインへの GitHub の追加はこのステージで行われ、変更内容が Git リポジトリーにプッシュされるときには常にパイプラインがトリガーされます。以下のステップは、GitHub 構成を示しています。必要に応じてステージ・トリガーを設定できます。手動または自動にすることができます。
+このステージでは、{{ site.data.keyword.mobilefoundation_short }} のインスタンスをスピンアップします。 パイプラインへの GitHub の追加はこのステージで行われ、変更内容が Git リポジトリーにプッシュされるときには常にパイプラインがトリガーされます。 以下のステップは、GitHub 構成を示しています。 必要に応じてステージ・トリガーを設定できます。 手動または自動にすることができます。
 
 以下の例では、入力タイプを *Git repository*、Git リポジトリーを *mfp-devops-20181210030116092*、Git URL を *https://github.com/sagar20896/mfp-devops-20181210030116092*、ブランチを *master* に設定します。
 
-![first_stage_git_input](images/p4_first_stage_git_input.png)
+![ステージ 1 の git 入力](images/p4_first_stage_git_input.png "「入力」タブが選択された「Mobile Foundation のセットアップ (Set up Mobile Foundation)」画面")
 
 - **「ステージの追加」**をクリックして、図に示されているように、GitHub リポジトリーを指すように**「入力」**タブを構成します。
-- **「ジョブ」**タブで**「ジョブの追加」**をクリックして、ジョブ・タイプに*「デプロイ」*を選択します。**「デプロイヤー・タイプ」**に*「Cloud Foundry」*を選択します。
+- **「ジョブ」**タブで**「ジョブの追加」**をクリックして、ジョブ・タイプに*「デプロイ」*を選択します。 **「デプロイヤー・タイプ」**に*「Cloud Foundry」*を選択します。
 - API キーがない場合は、{{ site.data.keyword.cloud_notm }} アカウント用に[ここで](https://cloud.ibm.com/iam/#/apikeys)作成できます。
 
-必要に応じて、他のフィールドを選択するか、そこに値を入力します。以下の行を**デプロイ・スクリプト**に追加します。
+必要に応じて、他のフィールドを選択するか、そこに値を入力します。 以下の行を**デプロイ・スクリプト**に追加します。
 
 ```
 	#!/bin/bash
@@ -136,20 +134,20 @@ subcollection:  mobilefoundation
 
 上記のスクリプトでは、Cloud Foundry CLI を使用して {{ site.data.keyword.mobilefoundation_short }} サービス・インスタンスを作成します。
 
-![stage1_jobs_tab_config](images/p05_stage1_jobs_tab_config.png)
+![ステージ 1 の「ジョブ」タブの構成](images/p05_stage1_jobs_tab_config.png "「ジョブ」タブが選択された「Mobile Foundation のセットアップ (Set up Mobile Foundation)」画面")
 
-**「環境プロパティー」**タブで、プロパティー *INSTANCE\_NAME* を MobileFoundation インスタンスに付ける名前で (テキスト・プロパティーとして) 追加します。これは多くのステージで ID として使用されます。
+**「環境プロパティー」**タブで、プロパティー *INSTANCE\_NAME* を MobileFoundation インスタンスに付ける名前で (テキスト・プロパティーとして) 追加します。 これは多くのステージで ID として使用されます。
 
-![stage1_environment_properties](images/p06_stage1_environment_properties.png)
+![ステージ 1 の環境プロパティー](images/p06_stage1_environment_properties.png "「環境プロパティー」タブが選択された「Mobile Foundation のセットアップ (Set up Mobile Foundation)」画面")
 
 #### ステージ 2 - アダプターの構築
 {: #stage2-building-an-adapter}
 
 このステージでは、アダプター・ソース・コードをプルして、それを構築します。
 
-- **「ステージの追加」**をクリックして、GitHub リポジトリーを入力として追加するためのステージを、各自の好みに合わせて構成します。**「ステージ・トリガー」**は*「前のステージが完了したらジョブを実行」*に設定する必要があります。
+- **「ステージの追加」**をクリックして、GitHub リポジトリーを入力として追加するためのステージを、各自の好みに合わせて構成します。 **「ステージ・トリガー」**は*「前のステージが完了したらジョブを実行」*に設定する必要があります。
 
-- **「ジョブ」**タブに切り替えて、構築ジョブを追加します。ビルダー・タイプに *Maven* を選択し、ビルド・スクリプトに以下の行を追加します。
+- **「ジョブ」**タブに切り替えて、構築ジョブを追加します。 ビルダー・タイプに *Maven* を選択し、ビルド・スクリプトに以下の行を追加します。
 
 ```
 	#!/bin/bash
@@ -168,9 +166,9 @@ subcollection:  mobilefoundation
 
 上記のスクリプトでは、[mfpdev-cli](https://www.npmjs.com/package/mfpdev-cli) をインストールして、リポジトリーの `adapters/JavaAdapter` でアダプター・コマンドを使用することにより、アダプターを構築します。
 
-以下の例では、**ビルダー・タイプ**に *npm* を使用し、ビルド・スクリプトで提供されるスクリプトを使用します。**「作業ディレクトリー」**パラメーターと**「ビルド・アーカイブ・ディレクトリー」**パラメーターは空のままにします。
+以下の例では、**ビルダー・タイプ**に *npm* を使用し、ビルド・スクリプトで提供されるスクリプトを使用します。 **「作業ディレクトリー」**パラメーターと**「ビルド・アーカイブ・ディレクトリー」**パラメーターは空のままにします。
 
-![build_adapter_stage_jobs_config](images/p07_build_adapter_stage_jobs_config.png)
+![アダプター構築ステージのジョブの構成](images/p07_build_adapter_stage_jobs_config.png "「ジョブ」タブが選択された「BuildAdapter」画面")
 
 #### ステージ 3 - アダプターのデプロイ
 {: #stage3-deploying-an-adapter}
@@ -186,7 +184,7 @@ subcollection:  mobilefoundation
 
 以下の例では、**「デプロイヤー・タイプ」**に*「Cloud Foundry」*、**「{{ site.data.keyword.cloud_notm }} 地域」**に*「ダラス」*、API キーに最初のステージで作成されたものと同じ値を使用します。
 
-![deploy_adapter](images/p08_deploy_adapter.png)
+![アダプターのデプロイ](images/p08_deploy_adapter.png "「ジョブ」タブが選択された「デプロイ」画面")
 
 
 以下の**「デプロイ・スクリプト」**を使用します。
@@ -225,17 +223,17 @@ subcollection:  mobilefoundation
 
 このスクリプトは、mfpdev-cli のアダプター・デプロイ・コマンドを使用して、アダプターを MFP インスタンスにデプロイします。
 
-- **「環境プロパティー」**タブの*「INSTANCE_NAME」*に、{{ site.data.keyword.mobilefoundation_short }} インスタンスの作成時に最初のステージで設定したものと同じ値を設定します。最初のステージで作成したインスタンスにアダプターがデプロイされるように、同じインスタンス名を使用します。
+- **「環境プロパティー」**タブの*「INSTANCE_NAME」*に、{{ site.data.keyword.mobilefoundation_short }} インスタンスの作成時に最初のステージで設定したものと同じ値を設定します。 最初のステージで作成したインスタンスにアダプターがデプロイされるように、同じインスタンス名を使用します。
 
 
 #### ステージ 4 - アダプターのテスト
 {: #stage4-test-adapter}
 
-このステージでは、以前のステージで構築されてデプロイされたアダプターをテストします。サンプル・アダプター・リポジトリーでは、アダプターのエンドポイントをテストするスクリプトが「adapters/JavaAdapter/tests」にあります。
+このステージでは、以前のステージで構築されてデプロイされたアダプターをテストします。 サンプル・アダプター・リポジトリーでは、アダプターのエンドポイントをテストするスクリプトが「adapters/JavaAdapter/tests」にあります。
 
 - **「入力」**を、構築されたアダプターの構成と同じ*「GitHub リポジトリー」*に設定します。
 
-- **「ジョブ」**タブに*「デプロイ・ジョブ」*を追加します。**「デプロイヤー・タイプ」**に*「Cloud Foundry」*を選択します。デプロイには cloud foundry と簡単に統合するためのオプションがあるので、テスト・ジョブではなくデプロイ・ジョブを使用します。
+- **「ジョブ」**タブに*「デプロイ・ジョブ」*を追加します。 **「デプロイヤー・タイプ」**に*「Cloud Foundry」*を選択します。 デプロイには cloud foundry と簡単に統合するためのオプションがあるので、テスト・ジョブではなくデプロイ・ジョブを使用します。
 
 以下のスクリプトを使用して、アダプターをテストします。
 
@@ -280,15 +278,15 @@ subcollection:  mobilefoundation
 
 - 環境プロパティーに *INSTANCE_NAME* を追加します。値は以前のステージで追加したものと同じ値にします。
 
-アダプターをテストするために API テスト・フレームワークを使用できます。この例では、アダプターを呼び出して正確性をテストするシェル・スクリプトがあります。
+アダプターをテストするために API テスト・フレームワークを使用できます。 この例では、アダプターを呼び出して正確性をテストするシェル・スクリプトがあります。
 
 
 #### ステージ 5 - Fastlane によるアプリの構築
 {: #stage5-building-apps-with-fastlane}
 
-このステージでの入力は、以前のステージで使用した GitHub リポジトリーとなります。このステージは、直前のステージ (アダプターのテスト) を過ぎた後にトリガーする必要があります。
+このステージでの入力は、以前のステージで使用した GitHub リポジトリーとなります。 このステージは、直前のステージ (アダプターのテスト) を過ぎた後にトリガーする必要があります。
 
-アプリを構築するために、**「ジョブ」**タブのデプロイ・ジョブ・テンプレートを使用します。**「デプロイヤー・タイプ」**に*「Cloud Foundry」*を使用します。
+アプリを構築するために、**「ジョブ」**タブのデプロイ・ジョブ・テンプレートを使用します。 **「デプロイヤー・タイプ」**に*「Cloud Foundry」*を使用します。
 
 以下のスクリプトを使用して、アプリを構築します。
 
@@ -370,7 +368,6 @@ subcollection:  mobilefoundation
 
 上記のスクリプトでは、アプリを構築してリリースするために、`mfpdev-cli` を使用してアプリを {{ site.data.keyword.mobilefoundation_short }} [Fastlane](https://fastlane.tools/) に登録します。
 
-
 スクリプトで使用される環境変数は、次の**「環境プロパティー」**タブで定義されます。
 
 環境プロパティーで、以下のプロパティーを追加します。
@@ -387,7 +384,7 @@ subcollection:  mobilefoundation
 #### ステージ 6 - Bitbar を使用したアプリのテスト
 {: #stage6-test-the-app-using-bitbar}
 
-このステージも制約がありません。必要に応じて任意のテスト・フレームワークを使用できます。この例では、[Bitbar](https://bitbar.com/testing/) を使用します。
+このステージも制約がありません。 必要に応じて任意のテスト・フレームワークを使用できます。 この例では、[Bitbar](https://bitbar.com/testing/) を使用します。
 
 - 使用するテスト・プロジェクトについての GitHub リポジトリーの詳細を追加します (このプロジェクトは、テストのサポートに使用されるすべてのテスト・スクリプトと成果物で構成されます)。
 

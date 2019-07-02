@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-02-12"
+lastupdated: "2019-06-10"
 
 keywords: troubleshooting techniques
 
@@ -39,7 +39,7 @@ subcollection:  mobilefoundation
 
 ### どのような症状の問題か
 
-問題を記述する上で最も重要なことは「どのような問題か」という質問に答えることです。 これは一見簡単な質問のようですが、問題の全体像を明確化する複数の具体的な質問に細分化できます。 こうした質問には、次のようなものが含まれます。
+問題の記述を始める時点で最も明確な質問は、**「問題は何か」**ということです。これは一見簡単な質問のようですが、問題の全体像を明確化する複数の具体的な質問に細分化できます。 こうした質問には、次のようなものが含まれます。
 
 - 誰、または何が問題を報告しているか
 - どのようなエラー・コードやエラー・メッセージが出ているか
@@ -108,4 +108,4 @@ subcollection:  mobilefoundation
 
 サービスや開始の手順に関する質問については、[IBM developerWorks dW Answers ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window}フォーラムを使用してください。 `bluemix` と `mobilefirst` のタグを含めてください。
 
-IBM サポート・チケットのオープンや、サポート・レベルおよびチケットの重大度について詳しくは、[サポートへのお問い合わせ](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}を参照してください。
+IBM サポート・チケットのオープンや、サポート・レベルおよびチケットの重大度について詳しくは、[サポートへのお問い合わせ](https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support){: new_window}を参照してください。

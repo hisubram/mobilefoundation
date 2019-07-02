@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation, mobile analytics, professional plan, configure database
 
@@ -30,7 +30,8 @@ subcollection:  mobilefoundation
 
 * {{site.data.keyword.Db2_on_Cloud_short}} または {{site.data.keyword.composeForPostgreSQL}} のサービス・インスタンス資格情報へのアクセス権限がないと、{{site.data.keyword.mobilefoundation_short}} サービス・インスタンスの設定を構成することはできません。
 
-> **注**: {{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスは、{{site.data.keyword.Bluemix_notm}} `組織`内のどの`スペース`にも、また、アクセスできるどの`組織`にも存在できます。 {{site.data.keyword.Db2_on_Cloud_short}} または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスが存在する`スペース`へのアクセス権限があることを確認します。
+{{site.data.keyword.Db2_on_Cloud_short}} (**ライト**・プラン以外のプラン) または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスは、{{site.data.keyword.Bluemix_notm}} `組織`内のどの`スペース`にも、また、アクセスできるどの`組織`にも存在できます。 {{site.data.keyword.Db2_on_Cloud_short}} または {{site.data.keyword.composeForPostgreSQL}} サービス・インスタンスが存在する`スペース`へのアクセス権限があることを確認します。
+{: note}
 
 
 ## データベース接続の構成
@@ -63,7 +64,8 @@ subcollection:  mobilefoundation
 1. {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `組織`を選択します。
 
 + 選択した`組織`で使用可能なスペースのリストから、{{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する {{site.data.keyword.Bluemix_notm}} `スペース`を選択します。   
-> **注:** {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する`組織`と`スペース`がリストされない場合、自分がその`組織`と`スペース`のメンバーであるかどうかを確認してください。組織およびスペースに対して*開発者* 役割のアクセス権限を持っている必要があります。 {{site.data.keyword.mobilefoundation_short}} サービスは {{site.data.keyword.Db2_on_Cloud_short}} サービスから資格情報にアクセスします。
+{{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスが存在する`組織`と`スペース`がリストされない場合、自分がその`組織`と`スペース`のメンバーであるかどうかを確認してください。 組織およびスペースに対して*開発者* 役割のアクセス権限を持っている必要があります。 {{site.data.keyword.mobilefoundation_short}} サービスは {{site.data.keyword.Db2_on_Cloud_short}} サービスから資格情報にアクセスします。
+{: note}
 
 + 既存の {{site.data.keyword.Db2_on_Cloud_short}} サービス・インスタンスに接続するための {{site.data.keyword.Db2_on_Cloud_short}} `サービス名` および `資格情報` を選択します。
 

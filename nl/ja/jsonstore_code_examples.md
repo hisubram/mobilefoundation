@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2019-02-13"
+lastupdated: "2019-06-10"
 
 keywords: jsonstore, code samples, offline storage
 
@@ -18,14 +18,14 @@ subcollection:  mobilefoundation
 {:android: .ph data-hd-programlang='Android'}
 {:cordova: .ph data-hd-programlang='Cordova'}
 
-#	JSONStore コード・サンプル
+# JSONStore コード・サンプル
 {: #code_samples}
 
-### Cordova のサンプル
+## Cordova のサンプル
 {: #samples_cordova }
 {: cordova}
 
-#### Cordova での接続の初期化とオープン、アクセサーの取得、およびデータの追加
+### Cordova での接続の初期化とオープン、アクセサーの取得、およびデータの追加
 {: #initialize-and-open-connections-get-an-accessor-and-add-data-cordova }
 {: cordova}
 
@@ -86,7 +86,7 @@ WL.JSONStore.init(collections, options)
 {: codeblock}
 {: cordova}
 
-#### Find - ストア内部でのドキュメントの検出
+### Find - ストア内部でのドキュメントの検出
 {: #find-locate-documents-inside-the-store }
 {: cordova}
 
@@ -132,7 +132,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Replace - Cordova での既にコレクション内に保管されているドキュメントの変更
+### Replace - Cordova での既にコレクション内に保管されているドキュメントの変更
 {: cordova}
 
 ```javascript
@@ -163,7 +163,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Remove - Cordova での照会と一致するすべてのドキュメントの削除
+### Remove - Cordova での照会と一致するすべてのドキュメントの削除
 {: cordova}
 
 ```javascript
@@ -196,7 +196,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Count - Cordova での照会と一致するドキュメントの合計数の取得
+### Count - Cordova での照会と一致するドキュメントの合計数の取得
 {: cordova}
 
 ```javascript
@@ -227,7 +227,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Destroy - Cordova でのすべてのユーザーのデータのワイプ、内部ストレージの廃棄、およびセキュリティー成果物のクリア
+### Destroy - Cordova でのすべてのユーザーのデータのワイプ、内部ストレージの廃棄、およびセキュリティー成果物のクリア
 {: cordova}
 
 ```javascript
@@ -244,7 +244,7 @@ WL.JSONStore.destroy()
 {: codeblock}
 {: cordova}
 
-#### Security - Cordova での現行ユーザーに開かれているすべてのコレクションへのアクセスの終了
+### Security - Cordova での現行ユーザーに開かれているすべてのコレクションへのアクセスの終了
 {: cordova}
 
 ```javascript
@@ -261,7 +261,7 @@ WL.JSONStore.closeAll()
 {: codeblock}
 {: cordova}
 
-#### Security - Cordova でのストアへのアクセスに使用されるパスワードの変更
+### Security - Cordova でのストアへのアクセスに使用されるパスワードの変更
 {: cordova}
 
 ```javascript
@@ -299,7 +299,7 @@ WL.JSONStore.changePassword(oldPassword, newPassword, username)
 {: codeblock}
 {: cordova}
 
-#### Push - Cordova でのダーティーとしてマークされているすべてのドキュメントの取得、アダプターへのその送信、およびその消去
+### Push - Cordova でのダーティーとしてマークされているすべてのドキュメントの取得、アダプターへのその送信、およびその消去
 {: cordova}
 
 ```javascript
@@ -342,7 +342,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Pull - Cordova でのアダプターからの新規データの取得
+### Pull - Cordova でのアダプターからの新規データの取得
 {: cordova}
 
 ```javascript
@@ -395,7 +395,7 @@ resource.send()
 {: codeblock}
 {: cordova}
 
-#### Cordova でのドキュメントがダーティーであるかどうかの確認
+### Cordova でのドキュメントがダーティーであるかどうかの確認
 {: cordova}
 
 ```javascript
@@ -419,7 +419,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Cordova でのダーティー・ドキュメントの数の確認
+### Cordova でのダーティー・ドキュメントの数の確認
 {: cordova}
 
 ```javascript
@@ -440,7 +440,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Cordova でのコレクションの除去
+### Cordova でのコレクションの除去
 {: cordova}
 
 ```javascript
@@ -464,7 +464,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Cordova でのコレクション内のすべてのデータのクリア
+### Cordova でのコレクション内のすべてのデータのクリア
 {: cordova}
 
 ```javascript
@@ -488,7 +488,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Cordova でのトランザクションの開始、一部のデータの追加、ドキュメントの除去、障害があった場合のトランザクションのコミットおよびロールバック
+### Cordova でのトランザクションの開始、一部のデータの追加、ドキュメントの除去、障害があった場合のトランザクションのコミットおよびロールバック
 {: #cordova-transaction }
 {: cordova}
 
@@ -536,7 +536,7 @@ WL.JSONStore.startTransaction()
 {: codeblock}
 {: cordova}
 
-#### Cordova でのファイル情報の取得
+### Cordova でのファイル情報の取得
 
 ```javascript
 WL.JSONStore.fileInfo()
@@ -551,7 +551,7 @@ WL.JSONStore.fileInfo()
 {: codeblock}
 {: cordova}
 
-#### Cordova での like、rightLike、および leftLike を使用した検索
+### Cordova での like、rightLike、および leftLike を使用した検索
 {: cordova}
 
 ```javascript
@@ -560,12 +560,12 @@ WL.JSONStore.fileInfo()
 var arr1 = WL.JSONStore.QueryPart().like('name', 'ca');  // returns {name: 'carlos', age: 10}
 var arr2 = WL.JSONStore.QueryPart().like('name', 'los');  // returns {name: 'carlos', age: 10}
 
-// Match all records that contain the search string on the left side and anything on the right side.
+// Match all records that contain the search string on the left hand side and anything on the right hand side.
 // searchString%
 var arr1 = WL.JSONStore.QueryPart().rightLike('name', 'ca');  // returns {name: 'carlos', age: 10}
 var arr2 = WL.JSONStore.QueryPart().rightLike('name', 'los');  // returns nothing
 
-// Match all records that contain the search string on the right side and anything on the left side.
+// Match all records that contain the search string on the right hand side and anything on the left hand side.
 // %searchString
 var arr = WL.JSONStore.QueryPart().leftLike('name', 'ca');  // returns nothing
 var arr2 = WL.JSONStore.QueryPart().leftLike('name', 'los');  // returns {name: 'carlos', age: 10}
@@ -573,11 +573,11 @@ var arr2 = WL.JSONStore.QueryPart().leftLike('name', 'los');  // returns {name: 
 {: codeblock}
 {: cordova}
 
-### iOS のサンプル
+## iOS のサンプル
 {: #samples-ios }
 {: ios}
 
-#### iOS での接続の初期化とオープン、アクセサーの取得、およびデータの追加
+### iOS での接続の初期化とオープン、アクセサーの取得、およびデータの追加
 {: ios}
 
 ```objc
@@ -635,7 +635,7 @@ Initialize with a secure random token from the server
 {: codeblock}
 {: ios}
 
-#### Find - iOS でのストア内部でのドキュメントの検出
+### Find - iOS でのストア内部でのドキュメントの検出
 {: ios}
 
 ```objc
@@ -677,7 +677,7 @@ for (NSDictionary* result in results) {
 {: codeblock}
 {: ios}
 
-#### Replace - iOS での既にコレクション内に保管されているドキュメントの変更
+### Replace - iOS での既にコレクション内に保管されているドキュメントの変更
 {: ios}
 
 ```objc
@@ -697,7 +697,7 @@ int docsReplaced = [[people replaceDocuments:docs andMarkDirty:NO error:&error] 
 {: codeblock}
 {: ios}
 
-#### Remove - iOS での照会と一致するすべてのドキュメントの削除
+### Remove - iOS での照会と一致するすべてのドキュメントの削除
 {: ios}
 
 ```objc
@@ -713,7 +713,7 @@ int docsRemoved = [[people removeWithIds:@[@1] andMarkDirty:NO error:&error] int
 {: codeblock}
 {: ios}
 
-#### Count - iOS での照会と一致するドキュメントの合計数の取得
+### Count - iOS での照会と一致するドキュメントの合計数の取得
 {: ios}
 
 ```objc
@@ -735,7 +735,7 @@ int countResult = [[people countWithQueryParts:@[queryPart] error:&error] intVal
 {: codeblock}
 {: ios}
 
-#### Destroy - iOS でのすべてのユーザーのデータのワイプ、内部ストレージの廃棄、およびセキュリティー成果物のクリア
+### Destroy - iOS でのすべてのユーザーのデータのワイプ、内部ストレージの廃棄、およびセキュリティー成果物のクリア
 {: ios}
 
 ```objc
@@ -748,7 +748,7 @@ NSError* error = nil;
 {: codeblock}
 {: ios}
 
-#### Security - iOS での現行ユーザーに開かれているすべてのコレクションへのアクセスの終了
+### Security - iOS での現行ユーザーに開かれているすべてのコレクションへのアクセスの終了
 {: ios}
 
 ```objc
@@ -761,7 +761,7 @@ NSError* error = nil;
 {: codeblock}
 {: ios}
 
-#### Security - iOS でのストアへのアクセスに使用されるパスワードの変更
+### Security - iOS でのストアへのアクセスに使用されるパスワードの変更
 {: ios}
 
 ```objc
@@ -784,7 +784,7 @@ newPassword = nil;
 {: codeblock}
 {: ios}
 
-#### Push - iOS でのダーティーとしてマークされているすべてのドキュメントの取得、アダプターへのその送信、およびその消去
+### Push - iOS でのダーティーとしてマークされているすべてのドキュメントの取得、アダプターへのその送信、およびその消去
 {: ios}
 
 ```objc
@@ -806,7 +806,7 @@ int numCleaned = [[people markDocumentsClean:dirtyDocs error:&error] intValue];
 {: codeblock}
 {: ios}
 
-#### Pull - iOS でのアダプターからの新規データの取得
+### Pull - iOS でのアダプターからの新規データの取得
 {: ios}
 
 ```objc
@@ -827,7 +827,7 @@ int numChanged = [[people changeData:data withReplaceCriteria:@[@"id", @"ssn"] a
 {: codeblock}
 {: ios}
 
-#### iOS でのドキュメントがダーティーであるかどうかの確認
+### iOS でのドキュメントがダーティーであるかどうかの確認
 {: ios}
 
 ```objc
@@ -843,7 +843,7 @@ BOOL isDirtyResult = [people isDirtyWithDocumentId:1 error:&error];
 {: codeblock}
 {: ios}
 
-#### iOS でのダーティー・ドキュメントの数の確認
+### iOS でのダーティー・ドキュメントの数の確認
 {: ios}
 
 ```objc
@@ -859,7 +859,7 @@ int dirtyDocsCount = [[people countAllDirtyDocumentsWithError:&error] intValue];
 {: codeblock}
 {: ios}
 
-#### iOS でのコレクションの除去
+### iOS でのコレクションの除去
 {: ios}
 
 ```objc
@@ -875,7 +875,7 @@ NSError* error = nil;
 {: codeblock}
 {: ios}
 
-#### iOS でのコレクション内のすべてのデータのクリア
+### iOS でのコレクション内のすべてのデータのクリア
 {: ios}
 
 ```objc
@@ -924,7 +924,7 @@ if (addError != nil || removeError != nil) {
 {: codeblock}
 {: ios}
 
-#### iOS でのファイル情報の取得
+### iOS でのファイル情報の取得
 {: ios}
 
 ```objc
@@ -938,11 +938,11 @@ NSArray* results = [[JSONStore sharedInstance] fileInfoAndReturnError:&error];
 {: codeblock}
 {: ios}
 
-### Android のサンプル
+## Android のサンプル
 {: #samples_android }
 {: android}
 
-#### Android での接続の初期化とオープン、アクセサーの取得、およびデータの追加
+### Android での接続の初期化とオープン、アクセサーの取得、およびデータの追加
 {: android}
 
 ```java
@@ -985,7 +985,7 @@ throw ex;
 {: codeblock}
 {: android}
 
-#### Android でのサーバーからのセキュア・ランダム・トークンを使用した初期化
+### Android でのサーバーからのセキュア・ランダム・トークンを使用した初期化
 {: android}
 
 ```java
@@ -1049,7 +1049,7 @@ aTask.execute(ctx);
 {: codeblock}
 {: android}
 
-#### Find - Android でのストア内部でのドキュメントの検出
+### Find - Android でのストア内部でのドキュメントの検出
 {: android}
 
 ```java
@@ -1093,7 +1093,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Replace - Android での既にコレクション内に保管されているドキュメントの変更
+### Replace - Android での既にコレクション内に保管されているドキュメントの変更
 {: android}
 
 ```java
@@ -1123,7 +1123,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Remove - Android での照会と一致するすべてのドキュメントの削除
+### Remove - Android での照会と一致するすべてのドキュメントの削除
 {: android}
 
 ```java
@@ -1157,7 +1157,7 @@ catch (JSONException ex) {
 {: codeblock}
 {: android}
 
-#### Count - Android での照会と一致するドキュメントの合計数の取得
+### Count - Android での照会と一致するドキュメントの合計数の取得
 {: android}
 
 ```java
@@ -1188,7 +1188,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Destroy - Android でのすべてのユーザーのデータのワイプ、内部ストレージの廃棄、およびセキュリティー成果物のクリア
+### Destroy - Android でのすべてのユーザーのデータのワイプ、内部ストレージの廃棄、およびセキュリティー成果物のクリア
 {: android}
 
 ```java
@@ -1207,7 +1207,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Security - Android での現行ユーザーに開かれているすべてのコレクションへのアクセスの終了
+### Security - Android での現行ユーザーに開かれているすべてのコレクションへのアクセスの終了
 {: android}
 
 ```java
@@ -1226,7 +1226,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Security - Android でのストアへのアクセスに使用されるパスワードの変更
+### Security - Android でのストアへのアクセスに使用されるパスワードの変更
 {: android}
 
 ```java
@@ -1255,7 +1255,7 @@ finally {
 {: codeblock}
 {: android}
 
-#### Push - Android でのダーティーとしてマークされているすべてのドキュメントの取得、アダプターへのその送信、およびその消去
+### Push - Android でのダーティーとしてマークされているすべてのドキュメントの取得、アダプターへのその送信、およびその消去
 {: android}
 
 ```java
@@ -1280,7 +1280,7 @@ try {
 {: codeblock}
 {: android}
 
-#### Pull - Android でのアダプターからの新規データの取得
+### Pull - Android でのアダプターからの新規データの取得
 {: android}
 
 ```java
@@ -1324,7 +1324,7 @@ catch (JSONException ex) {
 {: codeblock}
 {: android}
 
-#### Android でのドキュメントがダーティーであるかどうかの確認
+### Android でのドキュメントがダーティーであるかどうかの確認
 {: android}
 
 ```java
@@ -1346,7 +1346,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Android でのダーティー・ドキュメントの数の確認
+### Android でのダーティー・ドキュメントの数の確認
 {: android}
 
 ```java
@@ -1368,7 +1368,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Android でのコレクションの除去
+### Android でのコレクションの除去
 {: android}
 
 ```java
@@ -1391,7 +1391,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Android でのコレクション内のすべてのデータのクリア
+### Android でのコレクション内のすべてのデータのクリア
 {: android}
 
 ```java
@@ -1413,7 +1413,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Android でのトランザクションの開始、一部のデータの追加、ドキュメントの除去、障害があった場合のトランザクションのコミットおよびロールバック
+### Android でのトランザクションの開始、一部のデータの追加、ドキュメントの除去、障害があった場合のトランザクションのコミットおよびロールバック
 {: #android-transaction }
 {: android}
 
@@ -1458,7 +1458,7 @@ catch (JSONException ex) {
 {: codeblock}
 {: android}
 
-#### Android でのファイル情報の取得
+### Android でのファイル情報の取得
 {: android}
 
 ```java

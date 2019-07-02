@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-14"
+lastupdated: "2019-06-06"
 
 keywords: Direct Update, CDN support, secure direct update
 
@@ -41,7 +41,7 @@ wl_DirectUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, 
 
 この関数は、ダイレクト・アップデートのデフォルトのデザインとして、ダイレクト・アップデートが利用可能であるときに表示されるデフォルトのメッセージ・ダイアログと、ダイレクト・アップデート・プロセスが開始されたときに表示されるデフォルトの進行状況画面を提供します。 この関数をオーバーライドして独自のロジックを実装することにより、カスタム・ダイレクト・アップデート・ユーザー・インターフェース動作を実装したり、ダイレクト・アップデート・ダイアログ・ボックスをカスタマイズしたりすることができます。
 
-下記のコード例では、`handleDirectUpdate` 関数でダイレクト・アップデート・ダイアログにカスタム・メッセージを実装します。 Cordova プロジェクトの  `www/js/index.js` ファイルにこのコードを追加します。
+下記のコード例では、`handleDirectUpdate` 関数でダイレクト・アップデート・ダイアログにカスタム・メッセージを実装します。Cordova プロジェクトの  `www/js/index.js` ファイルにこのコードを追加します。
 カスタマイズされたダイレクト・アップデート UI のその他の例:
 * サード・パーティーの JavaScript フレームワーク (Dojo や jQuery Mobile、Ionic など) を使用して作成したダイアログ
 * Cordova プラグインを実行することによる完全にネイティブな UI
@@ -93,6 +93,7 @@ var  directUpdateCustomListener  = {
 | `FAILURE_ALREADY_IN_PROGRESS` | ダイレクト・アップデートが既に実行しているときに start メソッドが呼び出されました。 |
 | `FAILURE_INTEGRITY` | 更新ファイルの認証性を検証できません。 |
 | `FAILURE_UNKNOWN` | 予期しない内部エラー。 |
+{: caption="表 1. 状況コード" caption-side="top"}
 
 カスタム・ダイレクト・アップデート・リスナーを実装する場合は、ダイレクト・アップデート・プロセスが完了して `onFinish()` メソッドが呼び出されたときにアプリケーションが再ロードされるようにする必要があります。 また、ダイレクト・アップデート・プロセスが正常に完了できなかった場合には `wl_directUpdateChalengeHandler.submitFailure()` を呼び出す必要があります。
 
@@ -293,42 +294,44 @@ DNS 内で、新しい `cdn.yourcompany.com` ドメインに対して、`CNAME` 
 {: #akamai-administrator }
 1. Akamai プロパティー・マネージャーを開き、**ホスト名**プロパティーを新しいドメインの値に設定します。
 
-    ![ホスト名のプロパティーを新しいドメインの値に設定](images/direct_update_cdn_3.jpg)
+    ![プロパティー・ホスト名を新規ドメインの値に設定](images/direct_update_cdn_3.jpg "プロパティー・ホスト名を新規ドメインの値に設定")
 
 2. 「デフォルト・ルール」タブで、元の Mobile Foundation サーバーのホストおよびポートを構成し、**「カスタム・フォワード・ホスト・ヘッダー」**値を新しく作成されたドメインに設定します。
 
-    ![「カスタム・フォワード・ホスト・ヘッダー」の値を新しく作成されたドメインに設定](images/direct_update_cdn_4.jpg)
+    ![「カスタム・フォワード・ホスト・ヘッダー」値を新しく作成されたドメインに設定](images/direct_update_cdn_4.jpg "「カスタム・フォワード・ホスト・ヘッダー」値を新しく作成されたドメインに設定")
 
 3. **「キャッシュ・オプション」**リストから、**「保管しない」**を選択します。
 
-    ![「キャッシュ・オプション」リストから「保管しない」を選択](images/direct_update_cdn_5.jpg)
+    ![「キャッシュ・オプション」リストから「保管しない」を選択](images/direct_update_cdn_5.jpg "「キャッシュ・オプション」リストから「保管しない」を選択")
 
 4. **「静的コンテンツ構成 (Static Content configuration)」**タブから、アプリケーションのダイレクト・アップデート URL に従って一致基準を構成します。 例えば、`If Path matches one of direct_update_URL` を明示する条件を作成します。
 
-    ![アプリケーションのダイレクト・アップデート URL に従って一致基準を構成](images/direct_update_cdn_6.jpg)
+    ![アプリケーションのダイレクト・アップデート URL に従って一致基準を構成](images/direct_update_cdn_6.jpg "アプリケーションのダイレクト・アップデート URL に従って一致基準を構成")
 
 5. キャッシュ・キー内のすべての要求パラメーターを使用するようにキャッシュ・キー動作を構成します (異なるアプリケーションまたはバージョンごとに異なるダイレクト・アップデート・アーカイブをキャッシュに入れるためには、このようにする必要があります)。 例えば、**「動作」**リストから、`「すべてのパラメーターを組み込む (要求からの順序を保持する)(Include all parameters (preserve order from request))」`を選択します。
 
-    ![キャッシュ・キー内のすべての要求パラメーターを使用するようにキャッシュ・キー動作を構成](images/direct_update_cdn_8.jpg)
+    ![キャッシュ・キー内のすべての要求パラメーターを使用するようにキャッシュ・キー動作を構成](images/direct_update_cdn_8.jpg "キャッシュ・キー内のすべての要求パラメーターを使用するようにキャッシュ・キー動作を構成")
 
 6. 以下のような値を設定して、ダイレクト・アップデート URL をキャッシュに入れ、TTL を設定するようにキャッシング動作を構成します。
 
-      ![キャッシング動作の構成値を設定](images/direct_update_cdn_7.jpg)
+      ![キャッシング動作を構成するための値の設定](images/direct_update_cdn_7.jpg "キャッシング動作を構成するための値の設定")
 
 | フィールド | 値 |
 |:------|:------|
 | キャッシュ・オプション | キャッシュ |
 | 古いオブジェクトの再評価を強制 | 検証できない場合古いオブジェクトとして提供 |
 | Max-Age | 3 minutes |
+{: caption="表 2. キャッシング動作を構成するためのフィールドと値" caption-side="top"}
 
 ## セキュアなダイレクト・アップデート
 {: #secure-dc }
 
 セキュアなダイレクト・アップデートは、デフォルトでは無効になっていますが、Mobile Foundation サーバーから (またはコンテンツ配信ネットワーク (CDN) から) クライアント・アプリケーションに送信される Web リソースが第三者のアタッカーによって変更されるのを防止します。
 
-**ダイレクト・アップデートの認証性を有効にするには、以下のようにします。**  
+### ダイレクト・アップデートの認証性の有効化
+{: #enable-direct-update-authenticity}
 お好きなツールを使用して、Mobile Foundation サーバーの鍵ストアから公開鍵を取り出し、それを base64 に変換します。  
-その後、生成された値を以下に示すように使用してください。
+その後、生成された値を以下のステップに示すように使用してください。
 
 1. **コマンド・ライン**・ウィンドウを開き、Cordova プロジェクトのルートに移動します。
 2. コマンド `mfpdev app config` を実行し、**「ダイレクト・アップデートの認証性公開鍵 (Direct update authenticity public key)」**のオプションを選択します。
@@ -401,7 +404,7 @@ pdGIdLtkrhzbqHFwXE0v3dt+lnLf21wRPIqYHaEu+EB/A4dLO6hm+IjBeu/No7H7TBFm
 
 2. 以下の手順のいずれかを実行します。
     * 結果のテキスト (`BEGIN PUBLIC KEY` マーカーおよび `END PUBLIC KEY` マーカーを除いた部分) をアプリケーションの mfpclient プロパティー・ファイル内の `wlSecureDirectUpdatePublicKey` の直後にコピーします。
-    * コマンド・プロンプトから、次のコマンドを実行します。`mfpdev app config direct_update_authenticity_public_key <public_key>`
+    * コマンド・プロンプトから次のコマンドを実行します。`mfpdev app config direct_update_authenticity_public_key <public_key>`
 
     `<public_key>` には、手順 1 の結果として得られたテキスト (`BEGIN PUBLIC KEY` マーカーおよび `END PUBLIC KEY` マーカーを除いた部分) を貼り付けます。
 

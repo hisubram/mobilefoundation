@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-14"
 
 keywords: JSONStore, offline storage, jsonstore error codes
 
@@ -18,8 +18,9 @@ subcollection:  mobilefoundation
 
 
 # JSONStore
-{: #jsonstore }
+{: #jsonstore}
 {{site.data.keyword.mobilefoundation_short}} **JSONStore** は、軽量なドキュメント指向のストレージ・システムを提供する、オプションのクライアント・サイド API です。 JSONStore を使用すると、**JSON ドキュメント**を永続的に保管できます。 JSONStore では、アプリケーションを実行しているデバイスがオフラインの時でも、アプリケーションのドキュメントを使用できます。 この永続的に常時使用できるストレージにより、例えば、使用可能なネットワーク接続がデバイスにないときでも、ドキュメントにアクセスできるため便利です。
+{: shortdesc}
 
 リレーショナル・データベース用語は開発者にとって馴染み深いため、この資料では、JSONStore の説明においてリレーショナル・データベース用語を使用しています。 ただし、リレーショナル・データベースと JSONStore との間には多くの違いがあります。 例えば、リレーショナル・データベースでのデータの保管に使用される厳格なスキーマは、JSONStore のアプローチとは異なります。 JSONStore では、どのような JSON コンテンツも保管可能で、検索の必要があるコンテンツは索引付けすることができます。
 
@@ -46,14 +47,14 @@ subcollection:  mobilefoundation
 
 JSONStore ドキュメントは、自動的に生成される ID (`_id`) と JSON データを持つ JSON オブジェクトです。 これは、データベース用語のレコードや行に似ています。 `_id` の値は常に、特定のコレクション内の固有の整数です。 `JSONStoreInstance` クラスの `add`、`replace`、`remove` などの一部の関数では、ドキュメントまたはオブジェクトの配列を取ります。 これらのメソッドは、さまざまなドキュメントまたはオブジェクトに対して一度に操作を実行する際に役立ちます。
 
-**単一のドキュメント**  
+単一ドキュメント:
 
 ```javascript
 var doc = { _id: 1, json: {name: 'carlos', age: 99} };
 ```
 {: codeblock}
 
-**ドキュメント配列**
+ドキュメント配列:
 
 ```javascript
 var docs = [
@@ -90,7 +91,7 @@ JSONStore コレクションは、データベース用語の表に似ていま�
 
 有効なデータ型は、String、Boolean、Number、および Integer です。 これらは単に型のヒントであり、型の妥当性検査はありません。 また、これらの型によって、索引付け可能なフィールドの保管方法が決定されます。 例えば、`{age: 'number'}` は 1 を 1.0 として索引付けし、`{age: 'integer'}` は 1 を 1 として索引付けします。
 
-**検索フィールドおよび追加の検索フィールド**
+検索フィールドと追加の検索フィールドを以下に示します。
 
 ```javascript
 var searchField = {name: 'string', age: 'integer'};
@@ -100,7 +101,7 @@ var additionalSearchField = {key: 'string'};
 
 索引付けが可能なのはオブジェクト内のキーのみです。オブジェクトそのものではありません。 配列はパススルー方式で処理されます。つまり、配列を索引付けることも、配列の特定の索引を索引付けることもできません (arr[n]) が、配列内部のオブジェクトを索引付けることはできます。
 
-**配列内の値の索引付け**
+配列内の値の索引付けは以下のとおりです。
 
 ```javascript
 
@@ -123,14 +124,14 @@ var myObject = {
 照会は、検索フィールドまたは追加の検索フィールドを使用してドキュメントを検索するオブジェクトです。  
 これらの例では、name 検索フィールドは型 string であり、age 検索フィールドは型 integer であることを前提としています。
 
-**`carlos` と一致する `name` のドキュメントを検索**
+以下のようにして、`carlos` と一致する `name` のドキュメントを検索します。
 
 ```javascript
 var query1 = {name: 'carlos'};
 ```
 {: codeblock}
 
-**`carlos` と一致する `name` で、`99` と一致する `age` のドキュメントを検索**
+以下のようにして、`carlos` と一致する `name` で、`99` と一致する `age` のドキュメントを検索します。
 
 ```javascript
 var query2 = {name: 'carlos', age: 99};
@@ -141,7 +142,7 @@ var query2 = {name: 'carlos', age: 99};
 {: #query-parts }
 照会部分は、より高度な検索をビルドするために使用されます。 一部のバージョンの `find` や `count` など、一部の JSONStore 操作は照会部分を使用します。 照会部分内のすべてのものは `AND` ステートメントで結合されますが、照会部分自体は `OR` ステートメントで結合されます。 照会部分のすべてのものが **true** である場合にのみ、検索基準が一致を返します。 複数の照会部分を使用して、1 つ以上の照会部分を満たす一致を検索することができます。
 
-照会部分による検索は、最上位検索フィールドにのみ機能します。 例えば、`name.first` ではなく `name` を検索します。 この振る舞いを回避するには、すべての検索フィールドが最上位である複数のコレクションを使用します。 最上位でない検索フィールドで機能する照会部分操作は `equal`、`notEqual`、`like`、`notLike`、`rightLike`、`notRightLike`、`leftLike`、および `notLeftLike` です。 最上位でない検索フィールドを使用した場合、振る舞いは不確定になります。
+照会部分による検索は、最上位検索フィールドにのみ機能します。 例えば、`name.first` ではなく `name` を検索します。 この動作を回避するには、すべての検索フィールドが最上位である複数のコレクションを使用します。最上位でない検索フィールドで機能する照会部分操作は `equal`、`notEqual`、`like`、`notLike`、`rightLike`、`notRightLike`、`leftLike`、および `notLeftLike` です。 最上位でない検索フィールドを使用した場合、振る舞いは不確定になります。
 
 ## フィーチャー表
 {: #features-table }
@@ -163,6 +164,7 @@ JSONStore は、LocalStorage、Indexed DB、Cordova Storage API、Cordova File A
 | マルチユーザーのサポート                                 |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
 | 索引付け	                                         |	     ✔ 	      |      -	    |     ✔	     |        ✔	           |         -	      |
 | ストレージのタイプ	                                 | JSON ドキュメント | 鍵と値のペア | JSON ドキュメント | リレーショナル (SQL) | ストリング     |
+{: caption="表 1. 機能の比較" caption-side="top"}
 
 信頼性の高いストレージ は、以下のイベントのいずれかが発生しない限り、データが削除されないことを意味します。
 * アプリケーションがデバイスから除去された。
@@ -227,17 +229,17 @@ JSONStore は、すべてのプラットフォームで SQLCipher を使用し�
 1. SQLCipher for Windows Runtime Commercial Edition に同梱されている SQLCipher for Windows Runtime 8.1/10 拡張を実行します。
 2. 拡張のインストールが終了したら、作成されたばかりの **sqlite3.dll** ファイルの SQLCipher バージョンを見つけ出します。 x86 用、x64 用、および ARM 用のファイルがそれぞれ 1 つずつ存在します。
 
-   ```bash
-   C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLCipher.WinRT81\3.0.1\Redist\Retail\<platform>
-   ```
-   {: codeblock}
+    ```bash
+    C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLCipher.WinRT81\3.0.1\Redist\Retail\<platform>
+    ```
+    {: codeblock}
 
 3. このファイルをご使用の MobileFirst アプリケーションにコピーして置換します。
 
-   ```bash
-   <Worklight project name>\apps\<application name>\windows8\native\buildtarget\<platform>
-   ```
-   {: codeblock}
+    ```bash
+    <Worklight project name>\apps\<application name>\windows8\native\buildtarget\<platform>
+    ```
+    {: codeblock}
 
 ## パフォーマンス
 {: #performance-jsonstore }
@@ -276,7 +278,7 @@ jQuery Deferred は、解決されるか拒否される promise です。 以下
 
 promise やコールバックの代わりに、JSONStore `success` イベントと `failure` イベントを listen することもできます。 イベント・リスナーに渡された引数に基づくアクションを実行します。
 
-**promise の定義例**
+promise の定義例:
 
 ```javascript
 var asyncOperation = function () {
@@ -290,8 +292,9 @@ var asyncOperation = function () {
   return deferred.promise();
 };
 ```
+{: codeblock}
 
-**promise の使用例**
+promise の使用例:
 
 ```javascript
 // The function that is passed to .then is executed after 1000 ms.
@@ -299,8 +302,9 @@ asyncOperation.then(function (response) {
   // response = 'Hello'
 });
 ```
+{: codeblock}
 
-**コールバックの定義例**
+コールバックの定義例:
 
 ```javascript
 var asyncOperation = function (callback) {
@@ -309,8 +313,9 @@ var asyncOperation = function (callback) {
   }, 1000);
 };
 ```
+{: codeblock}
 
-**コールバックの使用例**
+コールバックの使用例:
 
 ```javascript
 // The function that is passed to asyncOperation is executed after 1000 ms.
@@ -318,8 +323,9 @@ asyncOperation(function (response) {
   // response = 'Hello'
 });
 ```
+{: codeblock}
 
-**イベントの例**
+イベントの例:
 
 ```javascript
 $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collectionName) {
@@ -330,6 +336,7 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
   // collectionName - Name of the collection
 });
 ```
+{: codeblock}
 
 ### Objective-C での並行性
 {: #objective-c-jsonstore }
@@ -359,6 +366,7 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
+{: codeblock}
 
 ### Android 用の JSONStore の例
 {: #android-example }
@@ -368,6 +376,7 @@ initOptions.setAnalytics(true);
 
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
+{: codeblock}
 
 ### JavaScript 用の JSONStore の例
 {: #java-script-example }
@@ -378,6 +387,7 @@ var options = {
 
 WL.JSONStore.init(..., options);
 ```
+{: codeblock}
 
 ## 外部データを使用した作業
 {: #working-with-external-data }
@@ -407,7 +417,8 @@ WL.JSONStore.init(..., options);
 
 トランスポート層の場合、アダプターを使用します。 アダプターを使用することの利点として、XML から JSONへの変換、セキュリティー、フィルタリング、サーバー・サイド・コードとクライアント・サイド・コードの分離などが挙げられます。
 {: note}
-**外部データ・ソース: バックエンド REST エンドポイント**  
+##### 外部データ・ソース: バックエンド REST エンドポイント
+{: #external-data-source-backend-rest-endpoint-head}
 データベースからデータを読み取り、それを JSON オブジェクトの配列として返す REST エンドポイントがあると想定してください。
 
 ```javascript
@@ -429,7 +440,8 @@ app.get('/people', function (req, res) {
 ```
 {: codeblock}
 
-**トランスポート層: アダプター**  
+##### トランスポート層: アダプター
+{: #transport-layer-adapter}
 people と呼ばれるアダプターを作成し、getPeople と呼ばれるプロシージャーを定義していると想定してください。 このプロシージャーは、REST エンドポイントを呼び出し、JSON オブジェクトの配列をクライアントに返します。 ここでさらに操作を行うことができます。例えば、データのサブセットのみをクライアントに返すことができます。
 
 ```javascript
@@ -475,13 +487,16 @@ $.ajax({
 ```
 {: codeblock}
 
-**内部データ・ソース API: JSONStore**
-バックエンドから応答を取得したら、JSONStore を使用してそのデータを処理できます。
+##### 内部データ・ソース API: JSONStore
+{: #internal-data-source-api-jsonstore}
+バックエンドから応答を取得したら、JSONStore を使用してそのデータを処理します。
 JSONStore は、ローカルでの変更をトラッキングする手段を提供しています。 これにより、一部の API でドキュメントをダーティーとしてマーク付けできるようになります。 API は、ドキュメントに対して最後に実行された操作、およびドキュメントがダーティーとしてマーク付けされた時点を記録します。 そうすると、この情報を使用して、データ同期などのフィーチャーを実装できます。
 
 change API がデータといくつかのオプションを取ります。
 
-**replaceCriteria**  
+###### replaceCriteria
+{: #replacecriteria}
+  
 これらの検索フィールドは、入力データの一部です。 既にコレクション内部にあるドキュメントを見つけるのに使用されます。 例えば、置き換え基準として以下を選択したとします。
 
 ```javascript
@@ -519,10 +534,14 @@ change API がデータといくつかのオプションを取ります。
 
 名前が `Carlitos` から `Carlos` に変更されました。 複数のドキュメントが置き換え基準に一致した場合、一致するすべてのドキュメントが対応する入力データに置き換えられます。
 
-**addNew**  
+###### addNew 
+{: #addnew}
+ 
 置き換え基準に一致するドキュメントがない場合、change API は、このフラグの値を調べます。 このフラグが **true** に設定されている場合、change API は新しいドキュメントを作成して、ストアに追加します。 そうでなれば、さらなるアクションは実行されません。
 
-**markDirty**  
+###### markDirty 
+{: #markdirty}
+ 
 change API が置き換えまたは追加されるドキュメントをダーティーとしてマーク付けするかどうかを決定します。
 
 アダプターからデータの配列が返されます。
@@ -600,7 +619,8 @@ accessor.remove(doc, {markDirty: true})
 トランスポート層の場合、アダプターを使用します。 アダプターを使用することの利点として、XML から JSONへの変換、セキュリティー、フィルタリング、サーバー・サイド・コードとクライアント・サイド・コードの分離などが挙げられます。
 {: note}
 
-**内部データ・ソース API: JSONStore**  
+##### 内部データ・ソース API: JSONStore  
+{: #internal-data-source-api-jsonstore-head}
 コレクションへのアクセサーを取得したら、`getAllDirty` API を呼び出して、ダーティーとマークされたすべてのドキュメントを取得します。 これらのドキュメントは、トランスポート層を通じて外部データ・ソースに送りたいローカルのみの変更を含むものです。
 
 ```javascript
@@ -630,7 +650,8 @@ accessor.getAllDirty()
 * `_operation`: ドキュメントに対して最後に実行された操作。 可能な値は add、store、replace、および remove です。
 * `_dirty`: ドキュメントがダーティーとマークされた時点を示す数値として保管されているタイム・スタンプ。
 
-**トランスポート層: MobileFirst アダプター**  
+##### トランスポート層: MobileFirst アダプター  
+{: #transport-layr-mobilefirst-adapter }
 ダーティー・ドキュメントを  アダプターに送ることを選択できます。 `updatePeople` プロシージャーによって定義された `people` アダプターがあるものと想定してください。
 
 ```javascript
@@ -748,7 +769,8 @@ $.when.apply(this, arrayOfPromises)
 ```
 {: codeblock}
 
-**外部データ・ソース: バックエンド REST エンドポイント**  
+##### 外部データ・ソース: バックエンド REST エンドポイント
+{: #external-data-source-backend-rest-endpoint }
 バックエンドは、変更を受け入れるか、拒否して、応答を中継してクライアントに戻します。 クライアントは、応答を調べてから、更新されたドキュメントを markClean API に渡すことができます。
 
 ```javascript
@@ -818,7 +840,8 @@ $.when.apply(this, arrayOfPromises)
    $ sqlite3 jsonstore.sqlite
    ```
 
-   * **注:** Web ブラウザー (Firefox、Chrome、Safari、Internet Explorer) で稼働する JavaScript 専用実装環境では、SQLite データベースは使用されません。 ファイルは HTML5 LocalStorage に保管されます。
+    Web ブラウザー (Firefox、Chrome、Safari、Internet Explorer) で稼働する JavaScript 専用実装環境では、SQLite データベースは使用されません。ファイルは HTML5 LocalStorage に保管されます。
+    {: note}
    * `.schema` がある `searchFields` を調べて、`SELECT * FROM <collection-name>;` を使用してデータを選択します。 sqlite3 を終了するには、`.exit` と入力します。 ユーザー名を init メソッドに渡す場合、ファイルは **the-username.sqlite** という名前になります。 ユーザー名を渡さない場合、ファイルはデフォルトで **jsonstore.sqlite** という名前になります。
 5. (Android のみ) JSONStore の詳細出力を有効にします。
 
@@ -826,6 +849,7 @@ $.when.apply(this, arrayOfPromises)
    adb shell setprop log.tag.jsonstore-core VERBOSE
    adb shell getprop log.tag.jsonstore-core
    ```
+    {: codeblock}
 
 6. デバッガーを使用します。
 
@@ -847,7 +871,7 @@ $.when.apply(this, arrayOfPromises)
 * 場合 (または環境) によっては、JSONStore プラグインが初期化される前にフローが `wlCommonInit()` に入ります。 これが原因で JSONStore 関連の API 呼び出しは失敗します。 `cordova-plugin-mfp` ブートストラップは、完了時に `wlCommonInit` 関数をトリガーする `WL.Client.init` を自動的に呼び出します。 この初期化プロセスは JSONStore プラグインでは異なります。 JSONStore プラグインには、`WL.Client.init` 呼び出しを_停止_ する方法はありません。 さまざまな環境で、`mfpjsonjslloaded` が完了する前にフローが `wlCommonInit()` に入ることがあります。
 `mfpjsonjsloaded` イベントと `mfpjsloaded` イベントの順序を確認するために、開発者はオプションで `WL.CLient.init` を手動で呼び出すことができます。 これによって、プラットフォーム固有のコードを使用する必要はなくなります。
 
-  `WL.CLient.init` の呼び出しを手動で構成するには、以下のステップを実行します。                             
+  `WL.CLient.init` の呼び出しを手動で構成するには、以下のステップを使用します。                             
 
   1. `config.xml` で、`clientCustomInit` プロパティーを **true** に変更します。
 
@@ -884,6 +908,7 @@ JSONStore データの保管方法の例を確認します。
 |-----|-----|------|-----|------|
 | 1   | c   | carlos | 99 | {name: 'carlos', age: 99} |
 | 2   | t   | tim   | 100 | {name: 'tim', age: 100} |
+{: caption="表 2. JSONStore データの主要な要素の例" caption-side="top"}
 
 `{_id : 1}、{name: 'carlos'}`、`{age: 99}、{key: 'c'}` のいずれかの照会またはこれらの照会の組み合わせを使用して検索を行った場合に返される文書は `{_id: 1, json: {name: 'carlos', age: 99} }` です。
 
@@ -947,35 +972,35 @@ catch(JSONStoreException e) {
 
 |エラー・コード      | 説明 |
 |----------------|-------------|
-| -100 UNKNOWN_FAILURE | 認識できないエラー。|
-| -75 OS\_SECURITY\_FAILURE | このエラー・コードは requireOperatingSystemSecurity フラグに関連しています。このエラーは、destroy API が、オペレーティング・システムのセキュリティー (パスコード・フォールバックによるタッチ ID) によって保護されているセキュリティー・メタデータを削除できない場合や、init API または open API がセキュリティー・メタデータを見つけることができない場合に発生する可能性があります。 また、デバイスがオペレーティング・システムのセキュリティーをサポートしない場合に、オペレーティング・システムのセキュリティーの使用が要求された場合にも発生する可能性があります。 |
-| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore はクローズされています。 最初に JSONStore クラスで open メソッドの呼び出しを試行して、ストアへのアクセスを有効にしてください。|
-| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | トランザクションのロールバック中に問題が発生しました。|
-| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION |トランザクションの進行中に removeCollection を呼び出すことはできません。|
-| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | 進行中のトランザクションがある場合は destroy を呼び出すことはできません。|
-| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | 実行中トランザクションがある場合は closeAll を呼び出すことはできません。|
-| -44 TRANSACTION\_FAILURE\_DURING\_INIT | 進行中のトランザクションがある場合はストアを初期化できません。|
-| -43 TRANSACTION_FAILURE | トランザクションの問題が発生しました。|
-| -42 NO\_TRANSACTION\_IN\_PROGRESS | 進行中のトランザクションがない場合は、トランザクションのロールバックをコミットできません。|
-| -41 TRANSACTION\_IN\_POGRESS | 別のトランザクションの進行中には新規トランザクションを開始できません。|
-| -40 FIPS\_ENABLEMENT\_FAILURE |FIPS に何らかの問題があります。|
-| -24 JSON\_STORE\_FILE\_INFO\_ERROR | ファイル・システムからファイル情報の取得中に問題がありました。|
-| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | コレクションでドキュメントの置き換え中に問題がありました。|
-| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | コレクションでドキュメントの除去中に問題がありました。|
-| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | データ保護鍵 (DPK) の保管中に問題がありました。|
-| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | 入力データの索引付け中に問題がありました。|
-| -12 INVALID\_SEARCH\_FIELD\_TYPES | searchFields に渡しているタイプが string、integer、number、または boolean のいずれかであることを確認してください。|
-| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | 文書の配列に対する操作 (例えば、replace メソッド) は、特定の文書での動作時には失敗することがあります。 失敗した文書が返され、トランザクションはロールバックされます。 Android では、サポートされないアーキテクチャーで JSONStore の使用を試みた場合にも、このエラーが発生します。|
-| -10 ACCEPT\_CONDITION\_FAILED | ユーザーが指定した accept 関数が false を返しました。|
-| -9 OFFSET\_WITHOUT\_LIMIT | オフセットを使用するには、制限も指定する必要があります。|
-| -8 INVALID\_LIMIT\_OR\_OFFSET | 妥当性検査エラー。正整数でなければなりません。|
-| -7 INVALID_USERNAME | 妥当性検査エラー ([A から Z]、[a から z]、または [0 から 9] のみでなければなりません)。|
-| -6 USERNAME\_MISMATCH\_DETECTED | ログアウトするには、JSONStore ユーザーは最初に closeAll メソッドを呼び出す必要があります。同時に存在できるユーザーは 1 人だけです。|
-| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED |ストアのコンテンツを保持するファイルを削除しようとした destroy メソッドで問題が発生しました。|
-| -4 DESTROY\_REMOVE\_KEYS\_FAILED | キーチェーン (iOS) または共有ユーザー設定 (Android) をクリアしようとした destroy メソッドで問題が発生しました。|
-| -3 INVALID\_KEY\_ON\_PROVISION | 暗号化されたストアに誤ったパスワードが渡されました。|
-| -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | 検索フィールドは動的ではありません。新しい検索フィールドを使用して init メソッドまたは open メソッドを呼び出す前に、destroy メソッドまたは removeCollection メソッドを呼び出さずに検索フィールドを変更することはできません。 このエラーは、検索フィールドの名前またはタイプを変更した場合に発生する可能性があります。 例: {key: 'string'} から {key: 'number'} または {myKey: 'string'} から {theKey: 'string'}。 |
-| -1 PERSISTENT\_STORE\_FAILURE | 一般エラー。 ネイティブ・コード内で誤動作が発生しました。init メソッドが呼び出された可能性があります。|
+| -100 UNKNOWN_FAILURE | 認識できないエラー。 |
+| -75 OS\_SECURITY\_FAILURE | このエラー・コードは requireOperatingSystemSecurity フラグに関連しています。 このエラーは、destroy API が、オペレーティング・システムのセキュリティー (パスコード・フォールバックによるタッチ ID) によって保護されているセキュリティー・メタデータを削除できない場合や、init API または open API がセキュリティー・メタデータを見つけることができない場合に発生する可能性があります。 また、デバイスがオペレーティング・システムのセキュリティーをサポートしない場合に、オペレーティング・システムのセキュリティーの使用が要求された場合にも発生する可能性があります。 |
+| -50 PERSISTENT\_STORE\_NOT\_OPEN | JSONStore はクローズされています。 最初に JSONStore クラスで open メソッドの呼び出しを試行して、ストアへのアクセスを有効にしてください。 |
+| -48 TRANSACTION\_FAILURE\_DURING\_ROLLBACK | トランザクションのロールバック中に問題が発生しました。 |
+| -47 TRANSACTION\\_FAILURE\_DURING\_REMOVE\_COLLECTION |トランザクションの進行中に removeCollection を呼び出すことはできません。 |
+| -46 TRANSACTION\_FAILURE\_DURING\_DESTROY | 進行中のトランザクションがある場合は destroy を呼び出すことはできません。 |
+| -45 TRANSACTION\_FAILURE\_DURING\_CLOSE\_ALL | 実行中トランザクションがある場合は closeAll を呼び出すことはできません。 |
+| -44 TRANSACTION\_FAILURE\_DURING\_INIT | 進行中のトランザクションがある場合はストアを初期化できません。 |
+| -43 TRANSACTION_FAILURE | トランザクションの問題が発生しました。 |
+| -42 NO\_TRANSACTION\_IN\_PROGRESS | 進行中のトランザクションがない場合は、トランザクションのロールバックをコミットできません。 |
+| -41 TRANSACTION\_IN\_POGRESS | 別のトランザクションの進行中には新規トランザクションを開始できません。 |
+| -40 FIPS\_ENABLEMENT\_FAILURE |FIPS に何らかの問題があります。 |
+| -24 JSON\_STORE\_FILE\_INFO\_ERROR | ファイル・システムからファイル情報の取得中に問題がありました。 |
+| -23 JSON\_STORE\_REPLACE\_DOCUMENTS\_FAILURE | コレクションでドキュメントの置き換え中に問題がありました。 |
+| -22 JSON\_STORE\_REMOVE\_WITH\_QUERIES\_FAILURE | コレクションでドキュメントの除去中に問題がありました。 |
+| -21 JSON\_STORE\_STORE\_DATA\_PROTECTION\_KEY\_FAILURE | データ保護鍵 (DPK) の保管中に問題がありました。 |
+| -20 JSON\_STORE\_INVALID\_JSON\_STRUCTURE | 入力データの索引付け中に問題がありました。 |
+| -12 INVALID\_SEARCH\_FIELD\_TYPES | searchFields に渡しているタイプが string、integer、number、または boolean のいずれかであることを確認してください。 |
+| -11 OPERATION\_FAILED\_ON\_SPECIFIC\_DOCUMENT | 文書の配列に対する操作 (例えば、replace メソッド) は、特定の文書での動作時には失敗することがあります。 失敗した文書が返され、トランザクションはロールバックされます。 Android では、サポートされないアーキテクチャーで JSONStore の使用を試みた場合にも、このエラーが発生します。 |
+| -10 ACCEPT\_CONDITION\_FAILED | ユーザーが指定した accept 関数が false を返しました。 |
+| -9 OFFSET\_WITHOUT\_LIMIT | オフセットを使用するには、制限も指定する必要があります。 |
+| -8 INVALID\_LIMIT\_OR\_OFFSET | 妥当性検査エラー。正整数でなければなりません。 |
+| -7 INVALID_USERNAME | 妥当性検査エラー ([A から Z]、[a から z]、または [0 から 9] のみでなければなりません)。 |
+| -6 USERNAME\_MISMATCH\_DETECTED | ログアウトするには、JSONStore ユーザーは最初に closeAll メソッドを呼び出す必要があります。 同時に存在できるユーザーは 1 人だけです。 |
+| -5 DESTROY\_REMOVE\_PERSISTENT\_STORE\_FAILED |ストアのコンテンツを保持するファイルを削除しようとした destroy メソッドで問題が発生しました。 |
+| -4 DESTROY\_REMOVE\_KEYS\_FAILED | キーチェーン (iOS) または共有ユーザー設定 (Android) をクリアしようとした destroy メソッドで問題が発生しました。 |
+| -3 INVALID\_KEY\_ON\_PROVISION | 暗号化されたストアに誤ったパスワードが渡されました。 |
+| -2 PROVISION\_TABLE\_SEARCH\_FIELDS\_MISMATCH | 検索フィールドは動的ではありません。 新しい検索フィールドを使用して init メソッドまたは open メソッドを呼び出す前に、destroy メソッドまたは removeCollection メソッドを呼び出さずに検索フィールドを変更することはできません。 このエラーは、検索フィールドの名前またはタイプを変更した場合に発生する可能性があります。 例: {key: 'string'} から {key: 'number'} または {myKey: 'string'} から {theKey: 'string'}。 |
+| -1 PERSISTENT\_STORE\_FAILURE | 一般エラー。 ネイティブ・コード内で誤動作が発生しました。init メソッドが呼び出された可能性があります。 |
 | 0 SUCCESS | 場合によっては、成功を示す 0 が JSONStore ネイティブ・コードから返されることがあります。 |
 | 1 BAD\_PARAMETER\_EXPECTED\_INT | 検証エラー。 |
 | 2 BAD\_PARAMETER\_EXPECTED\_STRING | 検証エラー。 |
@@ -1002,10 +1027,11 @@ catch(JSONStoreException e) {
 | 23 ERROR\_CLOSING\_ALL | 一般エラー。 ネイティブ・コードが closeAll メソッドを呼び出したときにエラーが発生しました。 |
 | 24 ERROR\_CHANGING\_PASSWORD | パスワードを変更できません。 例えば、渡された古いパスワードが誤っていました。 |
 | 25 ERROR\_DURING\_DESTROY | 一般エラー。 ネイティブ・コードが destroy メソッドを呼び出したときにエラーが発生しました。 |
-| 26 ERROR\_CLEARING\_COLLECTION | 一般エラー。 ネイティブ・コードが removeCollection メソッドを呼び出したときにエラーが発生しました。|
+| 26 ERROR\_CLEARING\_COLLECTION | 一般エラー。 ネイティブ・コードが removeCollection メソッドを呼び出したときにエラーが発生しました。 |
 | 27 INVALID\_PARAMETER\_FOR\_FIND\_BY\_ID | 検証エラー。 |
-| 28 INVALID\_SORT\_OBJECT | いずれかの JSON オブジェクトが無効であるため、ソートのために指定された配列が無効です。正しい構文は、各オブジェクトにプロパティーが 1 つだけ含まれる JSON オブジェクトの配列です。 このプロパティーは、ソート基準と、昇順で検索するのか降順で検索するのかを指定してフィールドを検索します。 例: {searchField1 : "ASC"}。 |
+| 28 INVALID\_SORT\_OBJECT | いずれかの JSON オブジェクトが無効であるため、ソートのために指定された配列が無効です。 正しい構文は、各オブジェクトにプロパティーが 1 つだけ含まれる JSON オブジェクトの配列です。 このプロパティーは、ソート基準と、昇順で検索するのか降順で検索するのかを指定してフィールドを検索します。 例: {searchField1 : "ASC"}。 |
 | 29 INVALID\_FILTER\_ARRAY | 結果のフィルター処理に指定された配列が無効です。 この配列の正しい構文は、各ストリングが検索フィールドまたは内部 JSONStore フィールドのいずれかになっているストリングの配列です。 詳しくは、『ストア内部』を参照してください。 |
 | 30 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_OBJECTS | JSON オブジェクトのみで構成された配列でない場合に、検証エラーが発生します。 |
 | 31 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_CLEAN\_DOCUMENTS | 検証エラー。 |
 | 32 BAD\_PARAMETER\_WRONG\_SEARCH\_CRITERIA | 検証エラー。 |
+{: caption="表 3. 一般的なエラー・コード" caption-side="top"}

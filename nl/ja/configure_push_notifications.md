@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-06"
 
 keywords: push notifications, notifications, FCM, GCM, APNS, WNS, authenticate notification
 
@@ -58,7 +58,7 @@ subcollection:  mobilefoundation
 ### Firebase Cloud Messaging
 {: #firebase-cloud-messaging }
 
-Google は [GCM を非推奨](https://developers.google.com/cloud-messaging/faq)とし、Cloud Messaging を Firebase に統合しました。GCM プロジェクトを使用する場合は、必ず [Android 上の GCM クライアント・アプリケーションを FCM にマイグレーション](https://developers.google.com/cloud-messaging/android/android-migrate-fcm)してください。
+Google は [GCM を非推奨](https://developers.google.com/cloud-messaging/faq)とし、Cloud Messaging を Firebase に統合しました。 GCM プロジェクトを使用する場合は、必ず [Android 上の GCM クライアント・アプリケーションを FCM にマイグレーション](https://developers.google.com/cloud-messaging/android/android-migrate-fcm)してください。
 {: note}
 
 Android デバイスは、プッシュ通知に Firebase Cloud Messaging (FCM) サービスを使用します。
@@ -123,7 +123,7 @@ WNS をセットアップするには、次のようにします。
 1. [Microsoft が提供する指示](https://msdn.microsoft.com/en-in/library/windows/apps/hh465407.aspx)に従って、**「パッケージ セキュリティ ID (SID)」**と**「クライアント シークレット」**の値を生成します。
 2. {{ site.data.keyword.mfp_oc_short_notm }} →**「 [ご使用のアプリケーション] 」→「プッシュ」→「プッシュ設定」**で、これらの値を追加し、**「保存」**をクリックします。
 
-> [{{ site.data.keyword.mobilefirst_notm }} プッシュ・サービス用 REST API](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_wns_settings_put.html?view=kc) または [{{ site.data.keyword.mobilefirst_notm }} 管理サービス用 REST API](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_wns_settings_put.html?view=kc) のいずれかを使用して WNS をセットアップすることもできます。
+[{{ site.data.keyword.mobilefirst_notm }} プッシュ・サービス用 REST API](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_wns_settings_put.html?view=kc) または [{{ site.data.keyword.mobilefirst_notm }} 管理サービス用 REST API](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_wns_settings_put.html?view=kc) のいずれかを使用して WNS をセットアップすることもできます。
 
 <img class="gifplayer" alt="WNS 資格情報を追加するイメージ" src="images/wns-setup.png"/>
 
@@ -135,27 +135,28 @@ WNS をセットアップするには、次のようにします。
 1. {{ site.data.keyword.mfp_oc_short_notm }} をロードし、**「 [ご使用のアプリケーション] 」→「セキュリティー」→「スコープ・エレメントのマッピング」**にナビゲートし、**「新規」**をクリックします。
 2. **「スコープ・エレメント」**フィールドに「push.mobileclient」と入力します。 次に、**「追加」**をクリックします。
 
-**その他の使用可能なスコープのリスト**
+その他の使用可能なスコープのリストを以下に示します。
 
-**スコープ** | **説明**
----|---
-apps.read | アプリケーション・リソースの読み取りの許可
-apps.write | アプリケーション・リソースの作成、更新、削除の許可
-gcmConf.read | GCM 構成設定の読み取りの許可 (API キーおよび SenderId)
-gcmConf.write | GCM 構成設定の更新、削除の許可
-apnsConf.read | APNs 構成設定の読み取りの許可
-apnsConf.write | APNs 構成設定の更新、削除の許可
-devices.read | デバイスの読み取りの許可
-devices.write | デバイスの作成、更新、削除の許可
-subscriptions.read | サブスクリプションの読み取りの許可
-subscriptions.write | サブスクリプションの作成、更新、削除の許可
-messages.write | プッシュ通知の送信の許可
-webhooks.read | イベント通知の読み取りの許可
-webhooks.write | イベント通知の送信の許可
-smsConf.read | SMS 構成設定の読み取りの許可
-smsConf.write | SMS 構成設定の更新、削除の許可
-wnsConf.read | WNS 構成設定の読み取りの許可
-wnsConf.write | WNS 構成設定の更新、削除の許可
+|**スコープ** | **説明**|
+|---|---|
+|apps.read | アプリケーション・リソースの読み取りの許可 |
+|apps.write | アプリケーション・リソースの作成、更新、削除の許可 |
+|gcmConf.read | GCM 構成設定の読み取りの許可 (API キーおよび SenderId) |
+|gcmConf.write | GCM 構成設定の更新、削除の許可 |
+|apnsConf.read | APNs 構成設定の読み取りの許可 |
+|apnsConf.write | APNs 構成設定の更新、削除の許可 |
+|devices.read | デバイスの読み取りの許可 |
+|devices.write | デバイスの作成、更新、削除の許可 |
+|subscriptions.read | サブスクリプションの読み取りの許可 |
+|subscriptions.write | サブスクリプションの作成、更新、削除の許可 |
+|messages.write | プッシュ通知の送信の許可 |
+|webhooks.read | イベント通知の読み取りの許可 |
+|webhooks.write | イベント通知の送信の許可|
+|smsConf.read | SMS 構成設定の読み取りの許可|
+|smsConf.write | SMS 構成設定の更新、削除の許可|
+|wnsConf.read | WNS 構成設定の読み取りの許可|
+|wnsConf.write | WNS 構成設定の更新、削除の許可|
+{: caption="表 1. スコープの説明" caption-side="top"}
 
 <img class="gifplayer" alt="スコープのマッピング" src="images/scope-mapping.png"/>
 
@@ -178,7 +179,7 @@ wnsConf.write | WNS 構成設定の更新、削除の許可
 
 <img class="gifplayer" alt="タグの追加" src="images/adding-tags.png"/>
 
-サブスクリプションにより、デバイス登録とタグが結び付けられます。 デバイスがタグから登録解除されると、関連付けられたすべてのサブスクリプションが、デバイス自体から自動的にアンサブスクライブされます。 デバイスのユーザーが複数存在するシナリオでは、ユーザー・ログイン基準に基づいて、モバイル・アプリケーションにサブスクリプションを実装する必要があります。例えば、ユーザーがアプリケーションに正常にログインした後にサブスクライブ呼び出しを行い、ログアウト・アクション処理の一部としてアンサブスクライブ呼び出しを明示的に行います。
+サブスクリプションにより、デバイス登録とタグが結び付けられます。 デバイスがタグから登録解除されると、関連付けられたすべてのサブスクリプションが、デバイス自体から自動的にアンサブスクライブされます。 デバイスのユーザーが複数存在するシナリオでは、ユーザー・ログイン基準に基づいて、モバイル・アプリケーションにサブスクリプションを実装する必要があります。 例えば、ユーザーがアプリケーションに正常にログインした後にサブスクライブ呼び出しを行い、ログアウト・アクション処理の一部としてアンサブスクライブ呼び出しを明示的に行います。
 
 ## 次に使用するチュートリアル
 {: #tutorials-to-follow-next }

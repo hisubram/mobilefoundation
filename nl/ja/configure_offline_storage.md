@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: JSONStore, offline storage, add jsonstore to cordova, add jsonstore to iOS, add jsonstore to android, jsonstore methods, jsonstore operations
 
@@ -487,7 +487,7 @@ Mobile Foundation ネイティブ SDK が Android Studio プロジェクトに�
    ```
    {: codeblock}
    {: android}
-   JSONStore が含まれるアプリケーションが、上で指定したいずれかのアーキテクチャーで確実に実行されるように `abiFilters` を追加します。 これが必要なのは、これらのアーキテクチャーのみをサポートするサード・パーティーのライブラリーに JSONStore が依存しているためです。
+   JSONStore が含まれるアプリケーションが、前に指定したいずれかのアーキテクチャーで確実に実行されるように `abiFilters` を追加します。これが必要なのは、これらのアーキテクチャーのみをサポートするサード・パーティーのライブラリーに JSONStore が依存しているためです。
    {: note}
    {: android}
 

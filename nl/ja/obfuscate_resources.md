@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-06-06"
 
 keywords: obfuscating resources, security
 
@@ -52,11 +52,11 @@ subcollection:  mobilefoundation
 mfpdev app webencrypt
 ```
 {: codeblock}
-または `mfpwebencrypt` フラグを使用して情報を暗号化することができます。この手順は、破ることが不可能な暗号化を提供するわけではありませんが、基本レベルの難読化を提供します。
+または `mfpwebencrypt` フラグを使用して情報を暗号化することができます。 この手順は、破ることが不可能な暗号化を提供するわけではありませんが、基本レベルの難読化を提供します。
 
 ### 前提条件
 
-* Cordova 開発ツールをインストールする必要があります。この例では、Apache Cordova CLI を使用します。 他の Cordova 開発ツールを使用する場合は、手順が一部異なります。手順については、ご使用の Cordova ツールの資料を参照してください。
+* Cordova 開発ツールをインストールする必要があります。 この例では、Apache Cordova CLI を使用します。 他の Cordova 開発ツールを使用する場合は、手順が一部異なります。 手順については、ご使用の Cordova ツールの資料を参照してください。
 * MobileFirst CLI をインストールする必要があります。
 * MobileFirst Cordova プラグインをインストールする必要があります。
 
@@ -73,14 +73,14 @@ Web リソースを暗号化した後に上にリストされているコマン�
 
 1. ターミナル・ウィンドウを開き、暗号化する Cordova アプリケーションのルート・ディレクトリーにナビゲートします。
 2. 以下のいずれかのコマンドを入力して、アプリケーションを準備します。
-    * ```bash
+    ```bash
       cordova prepare
-      ```
-      {: codeblock}
-    * ```bash
+    ```
+    {: codeblock}
+    ```bash
       mfpdev app webupdate
-      ```
-      {: codeblock}
+    ```
+    {: codeblock}
 3. 以下のいずれかの手順を実行して、コンテンツを暗号化します。
     * 次のコマンドを入力します。
       ```bash
@@ -88,7 +88,7 @@ Web リソースを暗号化した後に上にリストされているコマン�
       ```
       {: codeblock}
 
-      次のように入力することで、`mfpdev app webencrypt` コマンドに関する情報を表示できます
+      次のように入力することで、`mfpdev app webencrypt` コマンドに関する情報を表示できます 
       ```bash
       mfpdev help app webencrypt
       ```
@@ -96,7 +96,7 @@ Web リソースを暗号化した後に上にリストされているコマン�
       {: tip}
 
     * Cordova パッケージのビルド時に `mfpwebencrypt` フラグを `cordova compile` コマンドまたは `cordova build` コマンドに追加することで、Cordova パッケージの Web リソースを暗号化することもできます。
-       * ```bash
+        ```bash
          cordova compile -- --mfpwebencrypt
          ```
          {: codeblock}
@@ -110,13 +110,13 @@ Web リソースを暗号化した後に上にリストされているコマン�
 4. プラットフォーム固有のツールで提供されているエミュレーターによって、暗号化リソースを持つアプリケーションをテストします。 例えば、Android の場合は Android Studio、iOS の場合は Xcode のエミュレーターを使用できます。
 
 暗号化後にアプリケーションをテストするために、以下の Cordova コマンドは使用しないでください。
-* ```bash
-  cordova run
-  ```
-  {: codeblock}
-* ```bash
-  cordova emulate
-  ```
-  {: codeblock}
+```bash
+cordova run
+```
+{: codeblock}
+```bash
+cordova emulate
+```
+{: codeblock}
 上記のコマンドを使用すると、www フォルダーで暗号化されたコンテンツが更新され、暗号化が解除されたコンテンツとして再度保存されてしまいます。 上記コマンドを使用した場合には、アプリケーションを公開する前に、必ず、前述の手順を再度実行して暗号化してください。
 {: note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-14"
+lastupdated: "2019-06-06"
 
 keywords: update web content in apps, update apps
 
@@ -20,7 +20,7 @@ subcollection:  mobilefoundation
 # アプリ内の Web コンテンツを更新するための代替手順
 {: #alternate_steps_to_update_app_web_content_in_app}
 
-以下に、アプリ内の Web コンテンツを更新する代替方法をいくつか示します。
+以下のリストで、アプリ内の Web コンテンツを更新する代替方法を確認してください。
 
 * `.zip` ファイルを作成し、コマンド `mfpdev app webupdate [server-name] [runtime-name]` を使用して別の Mobile Foundation サーバーにアップロードします。
   例えば、次のようにします。
@@ -42,7 +42,7 @@ subcollection:  mobilefoundation
       {: pre}
   2. Mobile Foundation Operations Console をロードし、そのアプリケーション項目をクリックします。
   3. **「Web リソース・ファイルのアップロード (Upload Web Resources File)」**をクリックして、パッケージした Webリソースをアップロードします。    
-      ![ダイレクト・アップデートの .zip ファイルをコンソールからアップロード](images/upload-direct-update-package.png)
+      ![コンソールからのダイレクト・アップデート .zip ファイルのアップロード](images/upload-direct-update-package.png "「Web リソース・ファイルのアップロード (Upload Web Resources File)」ボタンが強調表示されているコンソールからのダイレクト・アップデート .zip ファイルのアップロード")
 
 詳細については、コマンド `mfpdev help app webupdate` を実行してください。
 {: tip}
