@@ -42,7 +42,7 @@ As notificações interativas são suportadas em dispositivos com o iOS versão 
 ## Enviando notificação push interativa
 {: #sending-interactive-push-notification }
 
-Prepare a notificação e envie a notificação. Para obter mais informações, consulte [Enviando notificações de push](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications).
+Prepare a notificação e envie a notificação. Para obter mais informações, consulte [Enviando notificações push](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications).
 
 É possível configurar uma sequência para indicar a categoria da notificação com o objeto de notificação, em **{{ site.data.keyword.mfp_oc_short_notm }} → [seu aplicativo] → Push → Enviar notificações → Configurações customizadas do iOS**. Com base no valor da categoria, os botões de ação de notificação são exibidos. Por exemplo,
 

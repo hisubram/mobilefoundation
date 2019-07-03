@@ -39,7 +39,7 @@ Mobile Foundation
         export_import_apps_adapters.md
 
 	{: .topicgroup}
-    Configurar e Enviar Notificações de Push
+    Configurar e Enviar Notificações push
         configure_push_notifications.md
         send_push_notifications.md
 	    handling_push_notifications_in_client_applications.md

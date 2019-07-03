@@ -275,8 +275,8 @@ Para gerar certificado, escolha qualquer uma das opções a seguir:
 
 Siga a configuração necessária do lado do servidor e do lado do cliente para enviar e receber notificações push:
 
-* [Configurar Notificações de Push](/docs/services/mobilefoundation?topic=mobilefoundation-configure_push_notifications#configure_push_notifications)
-* [ Enviar Notificações de Push ](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications)
+* [Configurar Notificações push](/docs/services/mobilefoundation?topic=mobilefoundation-configure_push_notifications#configure_push_notifications)
+* [ Enviar Notificações push ](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications)
 * [ Manipulando notificações push em aplicativos clientes ](/docs/services/mobilefoundation?topic=mobilefoundation-handling_push_notifications_in_client_applications#handling_push_notifications_in_client_applications)
 * [Notificações Silenciosas](/docs/services/mobilefoundation?topic=mobilefoundation-silent_notifications#silent_notifications)
 * [Notificações interativas](/docs/services/mobilefoundation?topic=mobilefoundation-interactive_notifications#interactive_notifications)

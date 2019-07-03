@@ -14,7 +14,7 @@ subcollection:  mobilefoundation
 {:faq: data-hd-content-type='faq'}
 {:note: .note}
 
-# Perguntas Mais Freqüentes
+# Perguntas mais frequentes
 {: #mfp-faq}
 
 Esta Pergunta mais frequente fornece respostas às perguntas comuns sobre o serviço {{site.data.keyword.mobilefoundation_long}}.

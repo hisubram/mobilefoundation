@@ -33,7 +33,7 @@ subcollection:  mobilefoundation
 {:windows: .ph data-hd-programlang='Windows'}
 
 
-# Manipulando Notificações de Push em Aplicativos Clientes
+# Manipulando Notificações push em Aplicativos Clientes
 {: #handling_push_notifications_in_client_applications}
 
 Antes dos aplicativos iOS, Android e Native-based ou baseados em Cordova serem capazes de receber e exibir notificações push de entrada, o aplicativo deve primeiro ser configurado e as APIs devem ser implementadas.
@@ -41,7 +41,7 @@ Antes dos aplicativos iOS, Android e Native-based ou baseados em Cordova serem c
 
 Consulte as seções a seguir para saber como manipular notificações push recebidas em aplicativos clientes:
 
-### Manipulando Notificações de Push no Android
+### Manipulando Notificações push no Android
 {: #handling_push_notifications_in_android}
 {: android}
 Antes que os aplicativos Android sejam capazes de manipular quaisquer notificações push recebidas, o suporte para o Google Play Services precisa ser configurado. Depois que um aplicativo tiver sido configurado, a API de Notificações fornecida pelo, {{ site.data.keyword.mobilefirst_notm }} poderá ser usada para registrar e cancelar o registro de dispositivos e assinar e cancelar a assinatura de tags. Neste tutorial, você aprenderá como manipular a notificação push em aplicativos Android.
@@ -198,12 +198,12 @@ Saiba mais sobre manipuladores de desafios no tutorial [Validação de credencia
 |-----------------------------------------------------------------------------------|-------------------------------------------------------------------------|
 | [`initialize(Context context);`](#initialization) | Inicializa o MFPPush para o contexto fornecido. |
 | [`isPushSupported();`](#is-push-supported) | O dispositivo suporta notificações push. |
-| [`registerDevice(JSONObject, MFPPushResponseListener);`](#register-device) | Registra o dispositivo com o Serviço de notificações de push. |
+| [`registerDevice(JSONObject, MFPPushResponseListener);`](#register-device) | Registra o dispositivo com o Serviço de notificações push. |
 | [`getTags(MFPPushResponseListener)`](#get-tags) | Recupera a(s) tag(s) disponível(eis) em uma instância de serviço de notificação de push. |
 | [`subscribe(String[] tagNames, MFPPushResponseListener)`](#subscribe) | Assina o dispositivo para a(s) tag(s) especificada(s). |
 | [`getSubscriptions(MFPPushResponseListener)`](#get-subscriptions) | Recupera todas as tags nas quais o dispositivo está atualmente inscrito. |
 | [`unsubscribe(String[] tagNames, MFPPushResponseListener)`](#unsubscribe) | Cancela a assinatura de uma tag (s) específica. |
-| [`unregisterDevice(MFPPushResponseListener)`](#unregister) | Cancela o registro do dispositivo por meio do Serviço de notificações de push |
+| [`unregisterDevice(MFPPushResponseListener)`](#unregister) | Cancela o registro do dispositivo por meio do Serviço de notificações push |
 {: caption="Tabela 1. Métodos Java" caption-side="top"}
 {: android}
 
@@ -215,7 +215,7 @@ Necessário para o aplicativo cliente se conectar ao serviço do MFPPush com o c
 {: android}
 
 * O método de API deve ser chamado primeiro antes de usar quaisquer outras APIs de MFPPush.
-* Registra a função de retorno de chamada para manipular notificações de push recebidas.
+* Registra a função de retorno de chamada para manipular notificações push recebidas.
 {: android}
 
 ```java
@@ -228,7 +228,7 @@ MFPPush.getInstance().initialize(this);
 {: #is-push-supported }
 {: android}
 
-Verifica se o dispositivo suporta notificações de push.
+Verifica se o dispositivo suporta notificações push.
 {: android}
 
 ```java
@@ -247,7 +247,7 @@ if (isSupported ) {
 {: #register-device }
 {: android}
 
-Registre o dispositivo para o serviço de notificações de push.
+Registre o dispositivo para o serviço de notificações push.
 {: android}
 
 ```java
@@ -653,13 +653,13 @@ Saiba mais sobre manipuladores de desafios no tutorial [Validação de credencia
 |---------------|--------------|
 | [`initialize()`](#initialization) | Inicializa o MFPPush para o contexto fornecido. |
 | [`isPushSupported()`](#is-push-supported) | O dispositivo suporta notificações push. |
-| [`registerDevice(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#register-device--send-device-token) | Registra o dispositivo com o Serviço de notificações de push.|
+| [`registerDevice(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#register-device--send-device-token) | Registra o dispositivo com o Serviço de notificações push.|
 | [`sendDeviceToken(deviceToken: NSData!)`](#register-device--send-device-token) | Envia o token do dispositivo para o servidor |
 | [`getTags(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#get-tags) | Recupera a(s) tag(s) disponível(eis) em uma instância de serviço de notificação de push. |
 | [`subscribe(tagsArray: [AnyObject], completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#subscribe) | Assina o dispositivo para a(s) tag(s) especificada(s). |
 | [`getSubscriptions(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#get-subscriptions)  | Recupera todas as tags nas quais o dispositivo está atualmente inscrito. |
 | [`unsubscribe(tagsArray: [AnyObject], completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#unsubscribe) | Cancela a assinatura de uma tag (s) específica. |
-| [`unregisterDevice(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#unregister) | Cancela o registro do dispositivo por meio do Serviço de notificações de push              |
+| [`unregisterDevice(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#unregister) | Cancela o registro do dispositivo por meio do Serviço de notificações push              |
 {: caption="Tabela 2. Métodos Swift" caption-side="top"}
 {: ios}
 
@@ -671,7 +671,7 @@ A inicialização é necessária para o aplicativo cliente se conectar ao servi�
 {: ios}
 
 * O método `initialize` deve ser chamado primeiro antes de usar qualquer outra API MFPPush.
-* Ele registra a função de retorno de chamada para manipular notificações de push recebidas.
+* Ele registra a função de retorno de chamada para manipular notificações push recebidas.
 {: ios}
 
 ```swift
@@ -684,7 +684,7 @@ MFPPush.sharedInstance ().initialize ();
 {: #is-push-supported-ios}
 {: ios}
 
-Verifica se o dispositivo suporta notificações de push.
+Verifica se o dispositivo suporta notificações push.
 {: ios}
 
 ```swift
@@ -703,7 +703,7 @@ if isPushSupported {
 {: #register-device--send-device-token-ios}
 {: ios}
 
-Registre o dispositivo para o serviço de notificações de push.
+Registre o dispositivo para o serviço de notificações push.
 {: ios}
 
 ```swift
@@ -989,12 +989,12 @@ No Android Studio, inclua a `atividade` a seguir na tag `application`:
 | --- | --- |
 | [`MFPPush.initialize(success, failure)`](#initialization-cordova) | Inicialize a instância MFPPush. |
 | [`MFPPush.isPushSupported(success, failure)`](#is-push-supported-cordova) | O dispositivo suporta notificações push. |
-| [`MFPPush.registerDevice(options, success, failure)`](#register-device-cordova) | Registra o dispositivo com o Serviço de notificações de push. |
+| [`MFPPush.registerDevice(options, success, failure)`](#register-device-cordova) | Registra o dispositivo com o Serviço de notificações push. |
 | [`MFPPush.getTags(success, failure)`](#get-tags-cordova) | Recupera todas as tags disponíveis em uma instância de serviço de notificação push. |
 | [`MFPPush.subscribe(tag, success, failure)`](#subscribe-cordova) | Assinar uma tag específica. |
 | [`MFPPush.getSubsciptions (sucesso, falha)`](#get-subscriptions-cordova) | Recupera as tags nas quais dispositivo está atualmente inscrito |
 | [`MFPPush.unsubscribe(tag, success, failure)`](#unsubscribe-cordova) | Cancela a assinatura de uma tag específica. |
-| [`MFPPush.unregisterDevice(success, failure)`](#unregister-cordova) | Cancela o registro do dispositivo por meio do Serviço de notificações de push |
+| [`MFPPush.unregisterDevice(success, failure)`](#unregister-cordova) | Cancela o registro do dispositivo por meio do Serviço de notificações push |
 {: caption="Tabela 3. Funções do JavaScript" caption-side="top"}
 {: cordova}
 
@@ -1011,7 +1011,7 @@ Inicialize a instância  ** MFPPush ** .
 
 - Necessário para o aplicativo cliente se conectar ao serviço do MFPPush com o contexto de aplicativo correto.  
 - O método de API deve ser chamado primeiro antes de usar quaisquer outras APIs de MFPPush.
-- Registra a função de retorno de chamada para manipular notificações de push recebidas.
+- Registra a função de retorno de chamada para manipular notificações push recebidas.
 {: cordova}
 
 ```javascript
@@ -1052,7 +1052,7 @@ MFPPush.isPushSupported (
 {: #register-device-cordova}
 {: cordova}
 
-Registre o dispositivo para o serviço de notificações de push. Se nenhuma opção for necessária, as opções poderão ser configuradas como `null`.
+Registre o dispositivo para o serviço de notificações push. Se nenhuma opção for necessária, as opções poderão ser configuradas como `null`.
 {: cordova}
 
 ```javascript
@@ -1267,12 +1267,12 @@ Saiba mais sobre manipuladores de desafios no tutorial [Validação de credencia
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
 | [`Initialize()`](#initialization-windows)                                                                            | Inicializa o MFPPush para o contexto fornecido.                               |
 | [`IsPushSupported()`](#is-push-supported-windows)                                                                    | O dispositivo suporta notificações push.                             |
-| [`RegisterDevice(JObject options)`](#register-device--send-device-token-windows)                  | Registra o dispositivo com o Serviço de notificações de push.               |
+| [`RegisterDevice(JObject options)`](#register-device--send-device-token-windows)                  | Registra o dispositivo com o Serviço de notificações push.               |
 | [`GetTags ()`](#get-tags-windows)                                | Recupera a(s) tag(s) disponível(eis) em uma instância de serviço de notificação de push. |
 | [`Subscribe(String[] Tags)`](#subscribe-windows)     | Assina o dispositivo para a(s) tag(s) especificada(s).                          |
 | [`GetSubscriptions()`](#get-subscriptions-windows)              | Recupera todas as tags nas quais o dispositivo está atualmente inscrito.               |
 | [`Unsubscribe(String[] Tags)`](#unsubscribe-windows) | Cancela a assinatura de uma tag (s) específica.                                  |
-| [`UnregisterDevice()`](#unregister-windows)                     | Cancela o registro do dispositivo por meio do Serviço de notificações de push              |
+| [`UnregisterDevice()`](#unregister-windows)                     | Cancela o registro do dispositivo por meio do Serviço de notificações push              |
 {: caption="Tabela 4. Métodos C Sharp" caption-side="top"}
 {: windows}
 
@@ -1284,7 +1284,7 @@ A inicialização é necessária para o aplicativo cliente se conectar ao servi�
 {: windows}
 
 * O método `Initialize` deve ser chamado primeiro antes de usar quaisquer outras APIs MFPPush.
-* Ele registra a função de retorno de chamada para manipular notificações de push recebidas.
+* Ele registra a função de retorno de chamada para manipular notificações push recebidas.
 {: windows}
 
 ```csharp
@@ -1297,7 +1297,7 @@ MFPPush.GetInstance().Initialize();
 {: #is-push-supported-windows}
 {: windows}
 
-Verifica se o dispositivo suporta notificações de push.
+Verifica se o dispositivo suporta notificações push.
 {: windows}
 
 ```csharp
@@ -1316,7 +1316,7 @@ if (isSupported ) {
 {: #register-device--send-device-token-windows}
 {: windows}
 
-Registre o dispositivo para o serviço de notificações de push.
+Registre o dispositivo para o serviço de notificações push.
 {: windows}
 
 ```csharp
@@ -1463,7 +1463,7 @@ Para manipular uma notificação de push, será necessário configurar um `MFPPu
 3. No método onReceive, você receberá a notificação push e poderá manipular a notificação para o comportamento desejado.
 {: windows}
 
-#### Serviço de Notificações de Push do Windows Universal
+#### Serviço de Notificações push do Windows Universal
 {: #windows-universal-push-notifications-service }
 {: windows}
 

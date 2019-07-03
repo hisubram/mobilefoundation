@@ -40,7 +40,7 @@ Notificações silenciosas são notificações que não exibem alertas ou que, d
 ## Enviando notificações push silenciosas
 {: #sending-silent-push-notifications }
 
-Prepare a notificação e envie a notificação. Para obter mais informações, consulte [Enviando notificações de push](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications).
+Prepare a notificação e envie a notificação. Para obter mais informações, consulte [Enviando notificações push](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications).
 
 Os três tipos de notificações que são suportados para iOS são representados por constantes `DEFAULT`, `SILENT` e `MIXED`. Quando o tipo não é especificado explicitamente, o tipo `DEFAULT` é assumido.
 

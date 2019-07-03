@@ -194,7 +194,7 @@ No {{ site.data.keyword.mfp_oc_short_notm }} → **[seu aplicativo] → Push →
 
   ![Customizando notificações push](images/customizing-push-notifications.png "Página de push do Operations Console do Mobile First com a guia Enviar push selecionada")
 
-## Suporte HTTP/2 para Notificações de Push de APNs
+## Suporte HTTP/2 para Notificações push de APNs
 {: #http2-support-for-apns-push-notifications}
 
 O Apple Push Notification service (APNs) suporta uma nova API baseada no protocolo de rede HTTP/2. O suporte para HTTP/2 fornece muitos benefícios, incluindo os seguintes,
