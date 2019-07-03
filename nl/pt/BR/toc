@@ -2,7 +2,7 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="mobilefoundation" category="mobile"audience="service" arm="3663370" href="/docs/services/mobilefoundation?topic=mobilefoundation-getting-started#getting-started" path="services/mobilefoundation"}
+{: .toc subcollection="mobilefoundation" category="mobile" audience="service" arm="3663370" href="/docs/services/mobilefoundation?topic=mobilefoundation-getting-started#getting-started" path="services/mobilefoundation"}
 Mobile Foundation
 
     {: .navgroup id="learn"}
@@ -128,7 +128,7 @@ Mobile Foundation
     {: .navgroup id="help"}
     faq.md
     troubleshooting.md
-    [Entrando em contato com o suporte](/docs/get-support?topic=get-support-howtogetsupport#getting-customer-support)
+    [Entrando em contato com o suporte](https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support)
 
     {: .topicgroup}
     Comunidade do desenvolvedor
