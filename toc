@@ -101,6 +101,8 @@ Mobile Foundation
         windows_sdk.md
         web_sdk.md
     using_cli.md
+    mfp-compliance.md
+    mfp-logging-and-tracing.md
 
     {: .topicgroup}
     Samples
