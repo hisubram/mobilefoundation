@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: JSONStore, advanced jsonstore, Cordova secure jsonstore, iOS secure jsonstore, android jsonstore, adapter integration
 
@@ -310,7 +310,7 @@ Vous pouvez atteindre ces objectifs à l'aide de `WLResourceRequest` ou `jQuery.
    ```
    {: codeblock}
    {: cordova}
-7. Utilisez `enhance` pour étendre l'API principale à vos besoins en ajoutant des fonctions à un prototype de collection. Cet exemple (extrait de code ci-dessous) montre comment utiliser `enhance` pour ajouter la fonction `getValue` qui fonctionne sur la collection `keyvalue`. Cet exemple utilise une clé (chaîne) comme seul paramètre et renvoie un résultat unique.
+7. Utilisez `enhance` pour étendre l'API principale à vos besoins en ajoutant des fonctions à un prototype de collection. Cet exemple (extrait de code suivant) montre comment utiliser `enhance` pour ajouter la fonction `getValue` qui fonctionne sur la collection `keyvalue`. Cet exemple utilise une clé (chaîne) comme seul paramètre et renvoie un résultat unique.
    ```javascript
    var collectionName = 'keyvalue';
     WL.JSONStore.get(collectionName).enhance('getValue', function (key) {

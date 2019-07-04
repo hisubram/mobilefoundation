@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-22"
+lastupdated: "2019-06-06"
 
 keywords: mobile analytics, charts, app sessions, crashes, graph
 
@@ -22,17 +22,17 @@ subcollection:  mobilefoundation
 # Génération de graphiques personnalisés
 {: #build_custom_charts}
 
-La vue Graphiques personnalisés de la console Mobile Analytics vous permet de générer vos propres visualisations à partir des données d'analyse capturées et stockées. Les graphiques personnalisés vous aident à mieux identifier les informations prêtes à l'emploi ou même à les étendre en toute transparence à l'analyse métier qui est formulée à partir de données personnalisées. 
+La vue Graphiques personnalisés de la console Mobile Analytics vous permet de générer vos propres visualisations à partir des données d'analyse capturées et stockées.  Les graphiques personnalisés vous aident à mieux identifier les informations prêtes à l'emploi ou même à les étendre en toute transparence à l'analyse métier qui est formulée à partir de données personnalisées.
 
-Cette vue vous permet de choisir l'un des ensembles de données d'analyse pris en charge, puis de sélectionner l'un des types de graphiques pris en charge pour tracer l'ensemble de données. Vous pouvez même élaguer la visualisation en définissant des filtres à appliquer sur les données tracées.   
+Cette vue vous permet de choisir l'un des ensembles de données d'analyse pris en charge, puis de sélectionner l'un des types de graphiques pris en charge pour tracer l'ensemble de données.  Vous pouvez même élaguer la visualisation en définissant des filtres à appliquer sur les données tracées.  
 
-Les ensembles de données pris en charge sont les suivants : 
+Les ensembles de données pris en charge sont les suivants :
  * Journaux d'application
  * Sessions d'application
  * Données personnalisées
  * Transactions de réseau
 
-Les types de graphiques pris en charge sont les suivants : 
+Les types de graphiques pris en charge sont les suivants :
  * Diagramme à barres
  * Organigramme
  * Diagramme linéaire
@@ -45,13 +45,13 @@ La sélection de l'ensemble de données, le type de graphique à tracer, la déf
 ## Création d'un graphique personnalisé
 {: #creating_custom_chart}
 
-Pour créer un graphique personnalisé, procédez comme suit : 
+Pour créer un graphique personnalisé, procédez comme suit :
 
 1.  Cliquez sur le bouton **Créer un graphique** de l'onglet **Graphiques personnalisés** dans le tableau de bord Mobile Analytics.
-2.  Sur l'onglet **Paramètres généraux**, sélectionnez **Titre du graphique**, **Type d'événement** et le **Type de graphique**. 
+2.  Sur l'onglet **Paramètres généraux**, sélectionnez **Titre du graphique**, **Type d'événement** et le **Type de graphique**.
 3.  Lorsque vous sélectionnez le *Type d'événement* et le *Type de graphique*, l'onglet **Définition du graphique** s'affiche. Utilisez l'onglet *Définition du graphique* pour définir le graphique pour le type de graphique que vous avez sélectionné auparavant. Après avoir défini le graphique, vous pouvez définir les filtres et les propriétés du graphique.
 4.  Les **Filtres du graphique** sont utilisés pour affiner le graphique personnalisé. Vous pouvez définir plusieurs filtres pour un graphique.
-    Par exemple, après avoir défini un graphique pour visualiser la durée moyenne d'une session d'application si vous souhaitez visualiser ce graphique uniquement pour une application spécifique, vous pouvez créer un filtre comme suit : 
+    Par exemple, après avoir défini un graphique pour visualiser la durée moyenne d'une session d'application si vous souhaitez visualiser ce graphique uniquement pour une application spécifique, vous pouvez créer un filtre comme suit :
     * Sélectionnez **Nom de l'application** pour **Propriété**.
     * Sélectionnez **Est égal à** pour **Opérateur**.
     * Sélectionnez le nom de votre application pour **Valeur**.
@@ -64,9 +64,9 @@ Pour créer un graphique personnalisé, procédez comme suit :
 ## Obtention d'informations personnalisées à partir de journaux de données personnalisées
 {: #creating_custom_chart_for_client_logs}    
 
-Si vous souhaitez obtenir plus d'informations personnalisées comme la trace des utilisateurs sur l'application, vous devez d'abord capturer les informations de trace des utilisateurs pertinentes telles que la page choisie, l'option sélectionnée ou le bouton activé comme données personnalisées, puis les consigner. Consultez la rubrique sur l'[instrumentation de votre application](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app) pour savoir comment consigner les données personnalisées.
+Si vous souhaitez obtenir plus d'informations personnalisées comme la trace des utilisateurs sur l'application, vous devez d'abord capturer les informations de trace des utilisateurs pertinentes telles que la page choisie, l'option sélectionnée ou le bouton activé comme données personnalisées, puis les consigner.  Consultez la rubrique sur l'[instrumentation de votre application](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app) pour savoir comment consigner les données personnalisées.
 
-Créez ensuite une définition de graphique personnalisé avec des données personnalisées comme type d'événement et choisissez un type de graphique. Lorsque vous poursuivez la définition des **Propriétés du graphique** ou des **Filtres du graphique**, vous remarquez que les types et les valeurs des données personnalisées s'affichent dans les boîtes de liste déroulante. Effectuez les sélections appropriées pour le type d'informations que vous recherchez.  
+Créez ensuite une définition de graphique personnalisé avec des données personnalisées comme type d'événement et choisissez un type de graphique. Lorsque vous poursuivez la définition des **Propriétés du graphique** ou des **Filtres du graphique**, vous remarquez que les types et les valeurs des données personnalisées s'affichent dans les boîtes de liste déroulante.  Effectuez les sélections appropriées pour le type d'informations que vous recherchez.  
 
 Le niveau de détail et l'utilité des informations personnalisées dépendent complètement de l'efficacité ou de la pertinence des données personnalisées définies et capturées dans vos applications.
 {: note}

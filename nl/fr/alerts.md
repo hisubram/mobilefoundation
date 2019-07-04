@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-23"
+lastupdated: "2019-06-06"
 
 keywords: mobile analytics, set up alerts, alert definitions
 
@@ -32,7 +32,7 @@ Les sections suivantes détaillent la création, la gestion des alertes et leur 
 ## Création d'une définition d'alerte pour les journaux d'application
 {: #creating_alert_def}
 
-Vous pouvez créer une définition d'alerte basée sur les journaux d'application.  Par exemple, si vous souhaitez surveiller vos journaux d'application toutes les 5 minutes pour vérifier si une version spécifique de votre application a consigné des erreurs plus de trois fois, voici comment vous pouvez configurer cette opération. 
+Vous pouvez créer une définition d'alerte basée sur les journaux d'application.  Par exemple, si vous souhaitez surveiller vos journaux d'application toutes les 5 minutes pour vérifier si une version spécifique de votre application a consigné des erreurs plus de trois fois, voici comment vous pouvez configurer cette opération.
 
 1.  Dans la console Mobile Analytics, cliquez sur **Définitions** pour accéder à la page des définitions d'alerte.
 2.  Cliquez sur **Créer une alerte**.
@@ -57,7 +57,7 @@ Vous pouvez créer une définition d'alerte basée sur les journaux d'applicatio
       * **Corps de la demande de publication**
 5. Cliquez sur **Sauvegarder**.  
 
-Vous avez maintenant créé une définition d'alerte pour déclencher une alerte à la fin de chaque intervalle de 5 minutes lorsque le nombre de journaux d'application a atteint le seuil de 3 journaux d'erreur au minimum. 
+Vous avez maintenant créé une définition d'alerte pour déclencher une alerte à la fin de chaque intervalle de 5 minutes lorsque le nombre de journaux d'application a atteint le seuil de 3 journaux d'erreur au minimum.
 
 Cette alerte reste opérationnelle et active, en surveillant la fréquence de configuration jusqu'à ce que la définition d'alerte soit désactivée ou supprimée.
 {: note}
@@ -65,7 +65,7 @@ Cette alerte reste opérationnelle et active, en surveillant la fréquence de co
 ## Création d'une définition d'alerte pour les pannes d'application
 {: #creating_alert_crashes}
 
-Voici un exemple de configuration d'alertes liées aux pannes d'application. Cette alerte surveille l'ensemble des pannes d'application toutes les 2 minutes et déclenche une alerte si le nombre de pannes observées dépasse 5. 
+Voici un exemple de configuration d'alertes liées aux pannes d'application.  Cette alerte surveille l'ensemble des pannes d'application toutes les 2 minutes et déclenche une alerte si le nombre de pannes observées dépasse 5.
 
 1.  Dans la console Mobile Analytics, cliquez sur **Définitions** pour accéder à la page des définitions d'alerte.
 2.  Cliquez sur **Créer une alerte**.
@@ -96,7 +96,7 @@ Cette alerte reste opérationnelle et active, en surveillant la fréquence de co
 
 La page **Définitions** d'une alerte vous permet de gérer vos définitions d'alerte.
 
-Pour chaque définition d'alerte, vous pouvez effectuer les opérations suivantes : 
+Pour chaque définition d'alerte, vous pouvez effectuer les opérations suivantes :
 * Cochez ou non la case située sous la colonne **Activé** pour activer ou désactiver une définition d'alerte spécifique.
 * Si vous souhaitez créer une copie d'une définition d'alerte et modifier certaines valeurs, cliquez sur l'icône de duplication.
 * Cliquez sur l'icône du crayon, si vous souhaitez modifier une définition d'alerte.

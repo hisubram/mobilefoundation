@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-23"
+lastupdated: "2019-06-06"
 
 keywords: synchronization of data, sync with offline storage, jsonstore sync
 
@@ -36,49 +36,54 @@ Pour configurer la synchronisation automatique entre JSONStore et Cloudant, proc
 La méthode de synchronisation entre une collection JSONStore et une base de données Cloudant est définie par la **stratégie de synchronisation**. Spécifiez la **stratégie de synchronisation** dans votre application pour chaque collection.
 Une collection JSONStore doit être initialisée avec une zone de **stratégie de synchronisation**. La **stratégie de synchronisation** peut être l'une des trois stratégies suivantes :
 
-* `SYNC_DOWNSTREAM`
+1. `SYNC_DOWNSTREAM`
   Utilisez la stratégie `SYNC_DOWNSTREAM` lorsque vous souhaitez télécharger des données de Cloudant vers la collection JSONStore. Cette stratégie est généralement utilisée pour les données statiques requises pour le stockage hors connexion. Par exemple, la liste de prix des articles d'un catalogue. Chaque fois que la collection est initialisée sur l'appareil, les données sont actualisées à partir de la base de données Cloudant distante. Bien que la base de données entière soit téléchargée pour la première fois, les actualisations suivantes ne téléchargent que le delta, comprenant les modifications apportées à la base de données distante.
-  **Syntaxe :**
+  
+Examinez l'utilisation suivante :
 
-  *Android*
-  ```java
-  initOptions.setSyncPolicy(JSONStoreSyncPolicy.SYNC_DOWNSTREAM);
-  ```
+   * Android :
+  
+   ```java
+   initOptions.setSyncPolicy(JSONStoreSyncPolicy.SYNC_DOWNSTREAM);
+   ```
 
-  *iOS*
-  ```objc
-  openOptions.syncPolicy = SYNC_DOWNSTREAM;
-  ```
+   * iOS : 
+  
+   ```objc
+   openOptions.syncPolicy = SYNC_DOWNSTREAM;
+   ```
 
-  *Cordova*
-  ```javascript
-  collection.sync = {
-    syncPolicy:WL.JSONStore.syncOptions.SYNC_DOWNSTREAM
+   * Cordova : 
+  
+   ```javascript
+   collection.sync = {
+     syncPolicy:WL.JSONStore.syncOptions.SYNC_DOWNSTREAM
   }
-  ```
+   ```
 
-* `SYNC_UPSTREAM`
+2. `SYNC_UPSTREAM`
   Utilisez cette stratégie lorsque vous souhaitez transférer (push) des données locales vers une base de données Cloudant. Par exemple, le téléchargement de données de vente capturées hors ligne dans une base de données Cloudant. Lorsqu'une collection est définie avec la stratégie `SYNC_UPSTREAM`, tout nouvel enregistrement ajouté à la collection crée un enregistrement dans Cloudant. De même, tout document modifié dans la collection sur l'appareil modifie le document sur Cloudant et les documents supprimés dans la collection sont également supprimés de la base de données Cloudant.
-  **Syntaxe :**
 
-  *Android*
-  ```java
-  initOptions.setSyncPolicy(JSONStoreSyncPolicy.SYNC_UPSTREAM);
-  ```
+Examinez l'utilisation suivante :
 
-  *iOS*
-  ```objc
-  openOptions.syncPolicy = SYNC_UPSTREAM;
-  ```
+   * Android :
+   ```java
+   initOptions.setSyncPolicy(JSONStoreSyncPolicy.SYNC_UPSTREAM);
+   ```
 
-  *Cordova*
-  ```javascript
-  collection.sync = {
-    syncPolicy:WL.JSONStore.syncOptions.SYNC_UPSTREAM
+   * iOS :
+   ```objc
+   openOptions.syncPolicy = SYNC_UPSTREAM;
+   ```
+
+   * Cordova :
+   ```javascript
+   collection.sync = {
+     syncPolicy:WL.JSONStore.syncOptions.SYNC_UPSTREAM
   }
-  ```
+   ```
 
-* `SYNC_NONE`
+3. `SYNC_NONE`
   `SYNC_NONE` est la stratégie par défaut. Choisissez cette stratégie pour que la synchronisation n'ait pas lieu.
 
 La **stratégie de synchronisation** est attribuée à une collection JSONStore. Si une collection est initialisée avec une **stratégie de synchronisation**, elle ne doit pas être modifiée. La modification de la **stratégie de synchronisation** peut entraîner des résultats indésirables.
@@ -89,27 +94,28 @@ La **stratégie de synchronisation** est attribuée à une collection JSONStore.
 `syncAdapterPath`
 Cette configuration prend le nom de l'adaptateur déployé.
 
-**Syntaxe :**
+Examinez l'utilisation suivante :
 
-*Android*
- ```java
- initOptions.syncAdapterPath = "JSONStoreCloudantSync"; //Here "JSONStoreCloudantSync" is the name of the adapter.
- ```
+   * Android :
+   ```java
+   initOptions.syncAdapterPath = "JSONStoreCloudantSync"; //Here "JSONStoreCloudantSync" is the name of the adapter.
+   ```
 
-*iOS*
- ```objc
-  openOptions.syncAdapterPath = @"JSONStoreCloudantSync";
- ```
+   * iOS :
+   ```objc
+    openOptions.syncAdapterPath = @"JSONStoreCloudantSync";
+   ```
 
-*Cordova ou Ionic*
- ```javascript
-  collection.sync = {
-  syncAdapterPath:"JSONStoreCloudantSync"
+   * Cordova ou Ionic :
+   ```javascript
+    collection.sync = {
+    syncAdapterPath:"JSONStoreCloudantSync"
   }
- ```
+   ```
 
-* Téléchargez l'adaptateur `JSONStoreSync` à partir d'[ici](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCloudantSync/), configurez les données d'identification Cloudant dans le chemin `src/main/adapter-resources/adapter.xml` et déployez-les sur votre serveur Mobile Foundation.
-* Configurez les données d'identification pour la base de données Cloudant de back end dans la console Mobile Foundation Operations.
+Téléchargez l'adaptateur `JSONStoreSync` à partir d'[ici](https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreCloudantSync/), configurez les données d'identification Cloudant dans le chemin `src/main/adapter-resources/adapter.xml` et déployez-les sur votre serveur Mobile Foundation.
+
+Configurez les données d'identification pour la base de données Cloudant de back end dans la console Mobile Foundation Operations.
 
 ### Exécution manuelle de l'opération de synchronisation
 {: #performing_sync_manual}
@@ -120,19 +126,19 @@ Si une synchronisation en amont ou en aval doit être effectuée explicitement �
 
 Cette API effectue une synchronisation en aval si la collection appelante comporte une stratégie de synchronisation définie sur `SYNC_DOWNSTREAM`. Si la stratégie de synchronisation est définie sur `SYNC_UPSTREAM`, une synchronisation en amont de la base de données JSONStore vers Cloudant est effectuée. La synchronisation est effectuée pour les documents ajoutés, supprimés ou remplacés.
 
-**Syntaxe :**
+Examinez l'utilisation suivante : 
 
-*Android*
+  * Android :
  ```java
  WLJSONStore.getInstance(context).getCollectionByName(collection_name).sync();
  ```
 
-*iOS*
+  * iOS :
  ```objc
   collection.sync(); //Here collection is the JSONStore collection object that was initialized
  ```
 
-*Cordova*
+  * Cordova :
  ```javascript
   WL.JSONStore.get(collectionName).sync();
  ```

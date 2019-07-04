@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-27"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation pricing, plan pricing
 
@@ -38,4 +38,4 @@ Le plan Professionnel, 1 application permet aux utilisateurs de créer, tester e
 ## Professionnel par appareil
 {: #prof_per_device}
 
-Le plan Professionnel par appareil permet aux utilisateurs de créer, tester et exécuter jusqu'à cinq applications mobiles sur Mobile Foundation en production. Mobile Analytics est offert sans frais additionnels avec la conservation des événements pendant 6 mois. Vous êtes facturé en fonction du nombre d'appareils client qui sont connectés par jour. Ce plan prend en charge les déploiements étendus et la haute disponibilité. Ce plan requiert une instance d'IBM Db2 (tout plan autre que **Lite**) ou le service Compose for PostgreSQL, créé et facturé séparément. Ce plan crée un serveur Mobile Foundation sur *Liberty for Java*, en commençant par au moins deux noeuds de 1 Go. *Liberty for Java* est facturé séparément et n'est pas inclus dans le cadre de ce plan. 
+Le plan Professionnel par appareil permet aux utilisateurs de créer, tester et exécuter jusqu'à cinq applications mobiles sur Mobile Foundation en production. Mobile Analytics est offert sans frais additionnels avec la conservation des événements pendant 6 mois. Vous êtes facturé en fonction du nombre d'appareils client qui sont connectés par jour. Ce plan prend en charge les déploiements étendus et la haute disponibilité. Ce plan requiert une instance d'IBM Db2 (tout plan autre que **Lite**) ou le service Compose for PostgreSQL, créé et facturé séparément. Ce plan crée un serveur Mobile Foundation sur *Liberty for Java*, en commençant par au moins deux noeuds de 1 Go. *Liberty for Java* est facturé séparément et n'est pas inclus dans le cadre de ce plan.

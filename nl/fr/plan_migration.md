@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-12-20"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation plans, migration of plans
 
@@ -24,13 +24,13 @@ Les instances Mobile Foundation créées à l'aide des plans obsolètes doivent 
 ## Exemple de scénario : migration du plan Professionnel par appareil vers le plan Professionnel, 1 application
 
 1. Dans le tableau de bord IBM Cloud, sélectionnez l'instance IBM Mobile Foundation que vous souhaitez migrer.
-2. Sélectionnez **Plan** dans le panneau de navigation de gauche.
+2. Sélectionnez **Plan** dans le panneau de navigation.
    ![Plan Mobile Foundation existant](images/existing-plan.png)
 3. Dans les plans de tarification répertoriés, sélectionnez Professionnel, 1 application.
    ![Nouveau plan Mobile Foundation](images/new-plan.png)
 4. Cliquez sur le bouton **Sauvegarder**.
      La migration vers le plan Professionnel, 1 application est maintenant terminée et toutes les données existantes sont conservées. La facturation est modifiée et il n'y a pas de temps d'indisponibilité.
-5. Après la migration du plan, l'instance de Mobile Foundation doit être recréée à partir du tableau de bord de service pour que la configuration appropriée soit prise en compte. Cette mise à jour nécessite un temps d'indisponibilité court. Vous devrez planifier le temps d'indisponibilité. Sélectionnez **Gérer** dans le panneau de navigation de gauche, puis cliquez sur **Recréer**.
+5. Après la migration du plan, l'instance de Mobile Foundation doit être recréée à partir du tableau de bord de service pour que la configuration appropriée soit prise en compte. Cette mise à jour nécessite un temps d'indisponibilité court. Vous devrez planifier le temps d'indisponibilité. Sélectionnez **Gérer** dans le panneau de navigation, puis cliquez sur **Recréer**.
 
 Si vous utilisez l'un des plans obsolètes, vous devez migrer vers un nouveau plan.
 {: note}

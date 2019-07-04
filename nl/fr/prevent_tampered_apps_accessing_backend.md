@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation security, restrict backend access, tampered apps
 
@@ -28,15 +28,14 @@ L'authenticité de l'application aide à vérifier la validité de l'application
 Pour sécuriser correctement votre application, activez le contrôle de sécurité de l'authenticité de l'application MobileFirst prédéfini (``appAuthenticity``). Lorsqu'il est activé, ce contrôle valide l'authenticité
 de l'application avant de mettre des services à sa disposition. Cette fonction doit être activée pour les applications qui se trouvent dans un environnement de production.
 
-Pour activer l'authenticité de l'application, vous pouvez suivre les instructions à l'écran dans **MobileFirst Operations Console → [votre_application] → Authenticité**, ou vous reporter aux informations ci-dessous.
+Pour activer l'authenticité de l'application, vous pouvez suivre les instructions à l'écran dans **console MobileFirst Operations Console → [votre-application] → Authenticité** ou vous reporter aux informations suivantes.
 
-* **Disponibilité**
-
-    L'authenticité de l'application est disponibles sur toutes les plateformes prises en charge (iOS, Android, Windows 8.1 Universal, Windows 10 UWP) dans les applications Cordova et natives.
-
-* **Limitations**
-
-    L'authenticité de l'application ne prend pas en charge le **Bitcode** sous iOS. Par conséquent, avant d'utiliser l'authenticité de l'application, désactivez le Bitcode dans les propriétés de projet Xcode.
+<dl>
+  <dt>Disponibilité</dt>
+  <dd>L'authenticité de l'application est disponibles sur toutes les plateformes prises en charge (iOS, Android, Windows 8.1 Universal, Windows 10 UWP) dans les applications Cordova et natives.</dd>
+  <dt>Limitations</dt>
+  <dd>L'authenticité de l'application ne prend pas en charge le **Bitcode** sous iOS. Par conséquent, avant d'utiliser l'authenticité de l'application, désactivez le Bitcode dans les propriétés de projet Xcode.</dd>
+</dl>
 
 ## Flux d'authenticité de l'application
 {: #appauthenticityflow}

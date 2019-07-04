@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-02-12"
+lastupdated: "2019-06-10"
 
 keywords: troubleshooting techniques
 
@@ -43,8 +43,7 @@ Les réponses à ces questions donnent généralement une bonne description du p
 
 ### Quels sont les symptômes du problème ?
 
-Lorsque vous commencez à décrire un problème, la question la plus évidente est
-"Quel est le problème ?" Cette question, qui semble simple, peut cependant être décomposée en plusieurs questions plus ciblées qui permettront de mieux décrire le problème. Ces questions peuvent être :
+Lorsque vous commencez à décrire un problème, la question la plus évidente est **Quel est le problème ?** Cette question, qui semble simple, peut cependant être décomposée en plusieurs questions plus ciblées qui permettront de mieux décrire le problème. Ces questions peuvent être :
 
 - Par qui ou par quoi le problème est-il signalé ?
 - Quels sont les codes d'erreur et les messages ?
@@ -135,4 +134,4 @@ En cas de questions d'ordre technique sur le développement et le déploiement d
 
 Pour des questions relatives au service et aux instructions de mise en route, utilisez le forum [IBM developerWorks dW Answers ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://developer.ibm.com/answers/topics/mobilefirst/?smartspace=bluemix){:new_window}. Incluez les étiquettes `bluemix` et `mobilefirst`.
 
-Pour obtenir des informations sur l'ouverture d'un ticket de demande de service auprès d'IBM ou sur les niveaux de service et les gravités des tickets, voir [Contacter le service de support](/docs/get-support?topic=get-support-getstarttssup#typesofsupport){: new_window}.
+Pour obtenir des informations sur l'ouverture d'un ticket de demande de service auprès d'IBM ou sur les niveaux de service et les gravités des tickets, voir [Contacter le service de support](https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support){: new_window}.

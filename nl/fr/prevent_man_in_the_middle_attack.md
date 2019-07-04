@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-10-16"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation security, MIM attack, certificate pinning
 
@@ -37,7 +37,8 @@ Le processus d'épinglage de certificat comprend les étapes suivantes :
 
 Au cours de l'établissement de liaison SSL (première demande envoyée au serveur), le logiciel SDK client de Mobile Foundation vérifie que la clé publique du certificat serveur correspond à la clé publique du certificat qui est stocké dans l'application.
 
->**Remarque** : vous devez utiliser un certificat acheté auprès d'une autorité de certification. Les certificats autosignés **ne sont pas pris en charge**.
+Vous devez utiliser un certificat acheté auprès d'une autorité de certification. Les certificats autosignés **ne sont pas pris en charge**.
+{: note}
 
 ## Epinglage de certificat
 {: #cert_pinning}
@@ -54,11 +55,10 @@ L'épinglage de certificat est le processus d'association d'un hôte à sa clé 
 Vous pouvez aussi épingler plusieurs certificats avec votre application client. Placez une copie de tous les certificats dans votre application client. Au cours de l'établissement de liaison SSL (première demande envoyée au serveur), le logiciel SDK client de MobileFirst vérifie que la clé publique du certificat serveur correspond à la clé publique de l'un des certificats qui sont stockés dans l'application.
 {: note}
 
-**Important**
-
-* Certains systèmes d'exploitation mobiles peuvent mettre en cache le résultat du contrôle de validation de certificat. Par conséquent, votre code appelle la méthode API d'épinglage de certificat **avant** d'émettre une demande sécurisée. Sinon, toutes les demandes suivantes risquent d'ignorer le contrôle de validation de certificat et d'épinglage.
-* Assurez-vous de n'utiliser que des API Mobile Foundation pour toutes les communications avec l'hôte associé, même après l'épinglage de certificat. L'utilisation d'API de tiers pour interagir avec le même hôte peut entraîner un comportement inattendu, comme la mise en cache d'un certificat non vérifié par le système d'exploitation mobile.
-* Si vous appelez la méthode API d'épinglage de certificat une deuxième fois, l'opération d'épinglage précédente est écrasée.
+* **Important**
+    * Certains systèmes d'exploitation mobiles peuvent mettre en cache le résultat du contrôle de validation de certificat. Par conséquent, votre code appelle la méthode API d'épinglage de certificat **avant** d'émettre une demande sécurisée. Sinon, toutes les demandes suivantes risquent d'ignorer le contrôle de validation de certificat et d'épinglage.
+    * Assurez-vous de n'utiliser que des API Mobile Foundation pour toutes les communications avec l'hôte associé, même après l'épinglage de certificat. L'utilisation d'API de tiers pour interagir avec le même hôte peut entraîner un comportement inattendu, comme la mise en cache d'un certificat non vérifié par le système d'exploitation mobile.
+    * Si vous appelez la méthode API d'épinglage de certificat une deuxième fois, l'opération d'épinglage précédente est écrasée.
 
 Si le processus d'épinglage aboutit, la clé publique qui figure dans le certificat fourni est utilisée pour vérifier l'intégrité du certificat du serveur MobileFirst au cours de l'établissement de liaison SSL/TLS pour la demande sécurisée. S'il échoue, toutes les demandes SSL/TLS envoyées au serveur sont rejetées par l'application client.
 
@@ -67,7 +67,7 @@ Si le processus d'épinglage aboutit, la clé publique qui figure dans le certif
 
 Vous devez utiliser un certificat acheté auprès d'une autorité de certification. Les certificats autosignés **ne sont pas pris en charge**. En vue de la compatibilité avec les environnements pris en charge, veillez à utiliser un certificat codé au format **DER** (fichier de règles de codage distinctif, comme défini dans la norme International Telecommunications Union X.690).
 
-Le certificat doit être placé sur le serveur MobileFirst et dans votre application. Placez le certificat comme suit. 
+Le certificat doit être placé sur le serveur MobileFirst et dans votre application. Placez le certificat comme suit.
 
 * Sur le serveur MobileFirst (WebSphere Application Server, WebSphere Application Server Liberty ou Apache Tomcat), consultez la documentation de votre serveur d'applications pour des informations sur la configuration du protocole SSL/TLS et des certificats.
 * Dans votre application,
@@ -183,7 +183,7 @@ La méthode d'épinglage de certificat émet une exception dans deux cas :
 La méthode d'épinglage de certificat renvoie une promesse :
 
 * La méthode d'épinglage de certificat appelle la méthode `onSuccess` si l'épinglage aboutit.
-* La méthode d'épinglage de certificat déclenche le rappel `onFailure` dans les deux cas suivants : 
+* La méthode d'épinglage de certificat déclenche le rappel `onFailure` dans les deux cas suivants :
   * Le fichier n'existe pas.
   * Le format du fichier n'est pas correct.
 

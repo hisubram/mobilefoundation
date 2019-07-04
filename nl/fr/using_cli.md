@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-19"
+lastupdated: "2019-06-10"
 
 keywords: command line, cli, mfpdev-cli, cli commands
 
@@ -14,8 +14,9 @@ subcollection:  mobilefoundation
 {:screen: .screen}
 {:tip: .tip}
 {:pre: .pre}
+{:note: .note}
 
-#	Interface de ligne de commande Mobile Foundation
+# Interface de ligne de commande Mobile Foundation
 {: #mobile_foundation_cli}
 
 {{ site.data.keyword.mobilefoundation_short }} fournit un outil d'interface de ligne de commande (CLI) pour le développeur **mfpdev** afin de faciliter la gestion du client {{site.data.keyword.mobilefoundation_short}} et des artefacts du serveur.
@@ -34,27 +35,28 @@ node -v
 ```
 {: codeblock}
 
-> **Remarque :** la version node.js minimale prise en charge est la version **4.2.3**. De plus, avec les packages de noeud et npm en constante évolution, l'interface de ligne de commande {{site.data.keyword.mobilefoundation_short}} peut ne pas être totalement fonctionnelle avec toutes les versions de packages de noeud et npm disponibles, y compris les versions les plus récentes. Assurez-vous que le noeud est en version **6.11.1** et que npm est en version **3.10.10**, pour un fonctionnement correct de l'interface de ligne de commande.
+La version node.js minimale prise en charge est la version **4.2.3**. De plus, avec les packages de noeud et npm en constante évolution, l'interface de ligne de commande {{site.data.keyword.mobilefoundation_short}} peut ne pas être totalement fonctionnelle avec toutes les versions de packages de noeud et npm disponibles, y compris les versions les plus récentes. Assurez-vous que le noeud est en version **6.11.1** et que npm est en version **3.10.10**, pour un fonctionnement correct de l'interface de ligne de commande.
+{: note}
 
-> Pour les versions de correctif temporaire de l'interface CLI MobileFirst *8.0.2018100112* et versions ultérieures, vous pouvez utiliser les versions de noeud 8.x ou 10.x.
+Pour les versions de correctif temporaire de l'interface CLI MobileFirst *8.0.2018100112* et versions ultérieures, vous pouvez utiliser les versions de noeud 8.x ou 10.x.
 
-Pour installer l'interface de ligne de commande {{site.data.keyword.mobilefoundation_short}}, exécutez la commande suivante :
-```bash
-npm install -g mfpdev-cli
-```
-{: codeblock}
+* Pour installer l'interface de ligne de commande {{site.data.keyword.mobilefoundation_short}}, exécutez la commande suivante :
+    ```bash
+    npm install -g mfpdev-cli
+    ```
+    {: codeblock}
 
-Si le fichier compressé d'interface CLI (*.zip*) a été téléchargé depuis le centre de téléchargement de MobileFirst Operations Console, utilisez la commande suivante :
-```bash
-npm install -g <path-to-mfpdev-cli.tgz>
-```
-{: codeblock}
+* Si le fichier compressé d'interface CLI (*.zip*) a été téléchargé depuis le centre de téléchargement de MobileFirst Operations Console, utilisez la commande suivante :
+    ```bash
+    npm install -g <path-to-mfpdev-cli.tgz>
+    ```
+    {: codeblock}
 
-Pour installer l'interface CLI sans les dépendances facultatives, ajoutez l'indicateur `--no-optional` :
-```bash
-npm install -g --no-optional path-to-mfpdev-cli.tgz
-```
-{: codeblock}
+* Pour installer l'interface CLI sans les dépendances facultatives, ajoutez l'indicateur `--no-optional` :
+    ```bash
+    npm install -g --no-optional path-to-mfpdev-cli.tgz
+    ```
+    {: codeblock}
 
 Lors de l'installation de l'interface CLI MobileFirst qui utilise le noeud 8, vous pouvez voir quelques-unes des erreurs suivantes dans la fenêtre du terminal :
 ```text
@@ -84,35 +86,36 @@ gyp ERR! not ok
 > fsevents@1.2.4 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/fsevents
 > node install
 ```
+{: codeblock}
 
 Cette erreur est due à un [bogue connu dans node-gyp![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://github.com/nodejs/node-gyp/issues/1547){: new_window}. Ces erreurs peuvent être ignorées car elles n'affectent pas le fonctionnement de l'interface CLI de MobileFirst. Ce problème concerne le niveau de correctif temporaire `mfpdev-cli` *8.0.2018100112* et les versions ultérieures. Pour surmonter cette erreur, utilisez l'indicateur `--no-optional` pendant l'installation.
 
-Pour confirmer que l'interface de ligne de commande est installée correctement, exécutez la commande suivante :
-```bash
-mfpdev
-```
-{: codeblock}
+* Pour confirmer que l'interface de ligne de commande est installée correctement, exécutez la commande suivante :
+    ```bash
+    mfpdev
+    ```
+    {: codeblock}
 
-L'aide de l'interface de ligne de commande est imprimée en sortie.
+* L'aide de l'interface de ligne de commande est imprimée en sortie.
 
-```
- NAME
+    ```
+     NAME
      IBM MobileFirst Foundation Command Line Interface (CLI).
 
- SYNOPSIS
+     SYNOPSIS
      mfpdev <command> [options]
 
- DESCRIPTION
+     DESCRIPTION
      The IBM MobileFirst Foundation Command Line Interface (CLI) is a command-line
      for developing MobileFirst applications. The command-line can be used by itself, or in conjunction  with the IBM MobileFirst Foundation Operations Console. Some functions are available from  the command-line only and not the console.
 
-     For more information and a step-by-step example of using the CLI, see the IBM Knowledge Center for your version of IBM MobileFirst Foundation at
+         For more information and a step-by-step example of using the CLI, see the IBM Knowledge Center for your version of IBM MobileFirst Foundation at
      https://www.ibm.com/support/knowledgecenter.
-     ...
-     ...
-     ...
-```
-{: screen}
+         ...
+         ...
+         ...
+    ```
+    {: screen}
 
 ## Liste des commandes d'interface de ligne de commande {{site.data.keyword.mobilefoundation_short}}
 {: #list_cli_commands}
@@ -200,7 +203,7 @@ mfpdev app register
 ```
 {: codeblock}
 
-Pour enregistrer une application sur un serveur et un environnement d'exécution qui ne sont pas ceux par défaut, utilisez la commande suivante : 
+Pour enregistrer une application sur un serveur et un environnement d'exécution qui ne sont pas ceux par défaut, utilisez la commande suivante :
 
 ```bash
 mfpdev app register <server> <runtime>
@@ -302,7 +305,7 @@ mfpdev server edit
 ```
 {: codeblock}
 
-Pour définir un serveur en tant que serveur par défaut, utilisez la commande suivante : 
+Pour définir un serveur en tant que serveur par défaut, utilisez la commande suivante :
 
 ```bash
 mfpdev server edit <server_name> --setdefault
@@ -368,7 +371,7 @@ mfpdev adapter deploy
 ```
 {: codeblock}
 
-Pour déployer sur un serveur différent, utilisez la commande suivante : 
+Pour déployer sur un serveur différent, utilisez la commande suivante :
 ```bash
 mfpdev adapter deploy <server_name>
 ```

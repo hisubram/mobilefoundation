@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation developer, mobile analytics
 
@@ -28,9 +28,9 @@ plan Développeur, accédez à la page Présentation sur {{site.data.keyword.Blu
 
   Cette sélection crée une instance {{site.data.keyword.mfserver_long_notm}} avec les réglages suivants :
   *	1 Go de mémoire. Cette taille suffit aux activités de développement et aux activités de test peu intensives, ainsi qu'aux charges
-de travail de production à petite échelle. 
+de travail de production à petite échelle.
 
-  * Pour accéder au serveur MobileFirst à l'aide de l'interface de ligne de commande, vous avez besoin de vos données d'identification, qui sont disponibles lorsque vous cliquez sur **Données d'identification pour le service** dans le panneau de navigation gauche de la console IBM Cloud.
+  * Pour accéder au serveur MobileFirst à l'aide de l'interface de ligne de commande, vous avez besoin de vos données d'identification, qui sont disponibles lorsque vous cliquez sur **Données d'identification pour le service** dans le panneau de navigation de la console IBM Cloud.
 
 Vous pouvez maintenant gérer vos applications et appareils mobiles, utiliser votre serveur en tant que serveur dorsal mobile, envoyer des notifications push, etc.
 
@@ -42,4 +42,4 @@ Le service Mobile Analytics est inclut et préconfiguré avec l'instance du plan
 * Lancez la console Mobile Analytics à partir de {{site.data.keyword.mfp_oc_short_notm}}.
 
 Pour plus d'informations sur l'instrumentation de votre application à l'aide de Mobile Analytics, reportez-vous
-[ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}. 
+[ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.

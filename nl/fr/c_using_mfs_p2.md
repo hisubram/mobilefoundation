@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation, mobile analytics, professional plan, configure database
 
@@ -30,7 +30,8 @@ Prenez connaissance des éléments suivants avant de configurer l'instance de se
 
 * Vous devez avoir accès aux données d'identification de l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} ou {{site.data.keyword.composeForPostgreSQL}} avant de pouvoir configurer les paramètres de votre instance de service {{site.data.keyword.mobilefoundation_short}}.
 
-> **Remarque** : L'instance de service {{site.data.keyword.Db2_on_Cloud_short}} (tout plan autre que le plan **Lite**) ou {{site.data.keyword.composeForPostgreSQL}} peut exister dans n'importe quel `espace` de votre {{site.data.keyword.Bluemix_notm}} `organisation` ou de n'importe quelle autre `organisation` à laquelle vous avez accès. Assurez-vous que vous disposez des droits nécessaires pour accéder à l'`espace` dans lequel l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} ou {{site.data.keyword.composeForPostgreSQL}} existe.
+L'instance de service {{site.data.keyword.Db2_on_Cloud_short}} (tout plan autre que le plan **Lite**) ou {{site.data.keyword.composeForPostgreSQL}} peut exister dans n'importe quel `espace` de votre {{site.data.keyword.Bluemix_notm}} `organisation` ou de n'importe quelle autre `organisation` à laquelle vous avez accès. Assurez-vous que vous disposez des droits nécessaires pour accéder à l'`espace` dans lequel l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} ou {{site.data.keyword.composeForPostgreSQL}} existe.
+{: note}
 
 
 ## Configuration de la connexion à la base de données
@@ -61,16 +62,16 @@ Une nouvelle instance de service {{site.data.keyword.Db2_on_Cloud_short}} est cr
 une instance {{site.data.keyword.Db2_on_Cloud_short}} dédiée avec 8 Go de RAM, 2 vCPU (UC virtuelles) et 500 Go d'espace de stockage.
 
 Suivez ces étapes pour vous connecter à une instance de service {{site.data.keyword.Db2_on_Cloud_short}} existante ou à
-l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} que vous avez créée : 
+l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} que vous avez créée :
 
 1. Sélectionnez l'`organisation` {{site.data.keyword.Bluemix_notm}} dans laquelle se trouve
 l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
 
 + Depuis la liste des espaces disponibles dans `Organisation`, sélectionnez l'`espace` {{site.data.keyword.Bluemix_notm}}
 dans lequel se trouve l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.   
-> **Remarque :** Si l'`organisation` et l'`espace` dans lesquels
-réside votre instance de service {{site.data.keyword.Db2_on_Cloud_short}} ne figurent pas dans la liste, vérifiez que
+Si l'`organisation` et l'`espace` dans lesquels réside votre instance de service {{site.data.keyword.Db2_on_Cloud_short}} ne figurent pas dans la liste, vérifiez que
 vous êtes membre de cette `organisation` et de cet `espace`. Vous devez disposer d'un rôle *Développeur* pour accéder à l'organisation et à l'espace. Le service {{site.data.keyword.mobilefoundation_short}} accède aux données d'identification à partir du service {{site.data.keyword.Db2_on_Cloud_short}}.
+{: note}
 
 + Sélectionnez également le `Nom du service` et les
 `Données d'identification` {{site.data.keyword.Db2_on_Cloud_short}}
@@ -151,4 +152,4 @@ Le service Mobile Analytics est inclut et préconfiguré avec l'instance du plan
 
 * Lancez la console Mobile Analytics à partir de {{site.data.keyword.mfp_oc_short_notm}}.
 
-Pour plus d'informations sur Mobile Analytics, reportez-vous [ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}. 
+Pour plus d'informations sur Mobile Analytics, reportez-vous [ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.

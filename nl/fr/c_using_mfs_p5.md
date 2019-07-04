@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation, mobile analytics, professional plan, configure database
 
@@ -59,7 +59,7 @@ Suivez ces étapes pour créer une nouvelle instance de service Db2 on Cloud :
 Une nouvelle instance de service {{site.data.keyword.Db2_on_Cloud_short}} est créée, qui fournit une instance {{site.data.keyword.Db2_on_Cloud_short}} dédiée avec 8 Go de RAM, 2 vCPU (UC virtuelles) et 500 Go d'espace de stockage.
 
 Suivez ces étapes pour vous connecter à une instance de service {{site.data.keyword.Db2_on_Cloud_short}} existante ou à
-l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} que vous avez créée : 
+l'instance de service {{site.data.keyword.Db2_on_Cloud_short}} que vous avez créée :
 
 1. Sélectionnez l'`organisation` {{site.data.keyword.Bluemix_notm}} dans laquelle se trouve l'instance de service {{site.data.keyword.Db2_on_Cloud_short}}.
 
@@ -134,4 +134,4 @@ Le service Mobile Analytics est inclut et préconfiguré avec l'instance du plan
 
 * Lancez la console Mobile Analytics à partir de {{site.data.keyword.mfp_oc_short_notm}}.
 
-Pour plus d'informations sur Mobile Analytics, reportez-vous [ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}. 
+Pour plus d'informations sur Mobile Analytics, reportez-vous [ici](/docs/services/mobilefoundation?topic=mobilefoundation-instrument_your_app#instrument_your_app){: new_window}.
