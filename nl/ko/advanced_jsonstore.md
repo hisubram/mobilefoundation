@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: JSONStore, advanced jsonstore, Cordova secure jsonstore, iOS secure jsonstore, android jsonstore, adapter integration
 
@@ -310,7 +310,7 @@ try {
    ```
    {: codeblock}
    {: cordova}
-7. `enhance`를 통해 콜렉션 프로토타입에 함수를 추가하여 요구사항을 맞게 코어 API를 확장하십시오. 다음 예제(아래의 코드 스니펫)는 `enhance`를 사용하여 `keyvalue` 콜렉션에서 작동하는 `getValue` 함수를 추가하는 방법을 보여줍니다. 이는 키((문자열)를 유일한 매개변수로 사용하고 하나의 결과를 리턴합니다.
+7. `enhance`를 통해 콜렉션 프로토타입에 함수를 추가하여 요구사항을 맞게 코어 API를 확장하십시오. 다음 예제(다음 코드 스니펫)는 `enhance`를 사용하여 `keyvalue` 콜렉션에서 작동하는 `getValue` 함수를 추가하는 방법을 보여줍니다. 이는 키((문자열)를 유일한 매개변수로 사용하고 하나의 결과를 리턴합니다.
    ```javascript
    var collectionName = 'keyvalue';
     WL.JSONStore.get(collectionName).enhance('getValue', function (key) {

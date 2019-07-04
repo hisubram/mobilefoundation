@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-14"
+lastupdated: "2019-06-06"
 
 keywords: update web content in apps, update apps
 
@@ -20,7 +20,7 @@ subcollection:  mobilefoundation
 # Autres étapes pour mettre à jour le contenu Web dans une application
 {: #alternate_steps_to_update_app_web_content_in_app}
 
-La liste ci-dessous répertorie certaines des méthodes alternatives pour mettre à jour le contenu Web de votre application.
+Passez en revue la liste suivante qui répertorie certaines des méthodes alternatives de mise à jour du contenu Web de votre application.
 
 * Générez le fichier `.zip` et téléchargez-le sur un autre serveur Mobile Foundation : `mfpdev app webupdate [server-name] [runtime-name]`.
   Exemple :
@@ -42,7 +42,7 @@ La liste ci-dessous répertorie certaines des méthodes alternatives pour mettre
       {: pre}
   2. Chargez la console Mobile Foundation Operations et cliquez sur l'entrée d'application.
   3. Cliquez sur **Télécharger une archive de ressources Web** pour télécharger le package de ressources web.    
-      ![Téléchargement du fichier .zip de mise à jour directe depuis la console](images/upload-direct-update-package.png)
+      ![Téléchargement du fichier .zip de mise à jour directe depuis la console](images/upload-direct-update-package.png "Téléchargement du fichier .zip de mise à jour directe depuis la console avec le bouton Télécharger une archive de ressources Web mis en évidence")
 
 Exécutez la commande `mfpdev help app webupdate` pour en savoir plus.
 {: tip}

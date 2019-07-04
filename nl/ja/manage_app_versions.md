@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-29"
+lastupdated: "2019-06-06"
 
 keywords: app versions, disabling apps
 
@@ -24,7 +24,7 @@ Mobile Foundation サーバーのユーザーおよび管理者は、Mobile Foun
 
 Mobile Foundation サーバーは、モバイル・インフラストラクチャーにアクセスする試みをすべてトラッキングし、アプリケーション、ユーザー、アプリケーションがインストールされるデバイスに関する情報を保管します。 アプリケーション、ユーザー、およびデバイス間のマッピングは、サーバーのモバイル・アプリケーション管理機能の基礎を形成します。
 
-Mobile Foundation Operations Console を使用して、リソースへのアクセスをモニターしたり管理したりできます。特定のアプリケーション・バージョンを管理することもできます。
+Mobile Foundation Operations Console を使用して、リソースへのアクセスをモニターしたり管理したりできます。 特定のアプリケーション・バージョンを管理することもできます。
 
 1.  Mobile Foundation Operations Console に移動し、**「アプリケーション」**をクリックし、管理するアプリケーションを選択し、表示された**「バージョン」**リストから対象の特定のアプリケーション・バージョンを選択します。 ![アプリケーション・バージョンの管理](images/app_version_management.png)
 

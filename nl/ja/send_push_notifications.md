@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-10"
 
 keywords: push notifications, notifications, sending notification, HTTP/2
 
@@ -76,7 +76,7 @@ REST API を使用する場合は、タグ通知、ブロードキャスト通�
 https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
 ```
 
-> すべてのプッシュ通知 REST API を確認するには、ユーザー資料の [REST API ランタイム・サービス](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/c_restapi_runtime.html)のトピックを参照してください。
+すべてのプッシュ通知 REST API を確認するには、ユーザー資料の [REST API ランタイム・サービス](https://www.ibm.com/support/knowledgecenter/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/c_restapi_runtime.html)のトピックを参照してください。
 
 ### 通知ペイロード
 {: #notification-payload }
@@ -85,15 +85,16 @@ https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
 
 |ペイロード・プロパティー| 定義
 |--- | ---
-|message | 送信されるアラート・メッセージ
-|settings | 通知のさまざまな属性の設定。
-|target | ターゲットのセットで使用できるのは、コンシューマー ID、デバイス、プラットフォーム、またはタグです。 ターゲットのうちの 1 つのみを設定できます。
-|deviceIds | デバイス ID によって表されるデバイスの配列。 これらの ID を持つデバイスが通知を受け取ります。 これはユニキャスト通知です。
-|notificationType | メッセージの送信に使用されるチャネル (プッシュまたは SMS) を示す整数値。 許可される値は 1 (プッシュのみの場合)、2 (SMS のみの場合)、および 3 (プッシュと SMS 両方の場合) です
-|platforms | デバイス・プラットフォームの配列。 これらのプラットフォームを実行しているデバイスが通知を受け取ります。 サポートされる値は、A (Apple/iOS)、G (Google/Android)、および M (Microsoft/Windows) です。
-|tagNames | tagNames として指定されたタグの配列。 これらのタグにサブスクライブされているデバイスが通知を受け取ります。 タグ・ベース通知にはこのタイプのターゲットを使用します。
-|userIds | 通知の送信先とする、ユーザー ID によって表されるユーザーの配列。 これはユニキャスト通知です。
-|phoneNumber | デバイスを登録し、通知を受け取るために使用される電話番号。 これはユニキャスト通知です。
+|message | 送信されるアラート・メッセージ |
+|settings | 通知のさまざまな属性の設定。|
+|target | ターゲットのセットで使用できるのは、コンシューマー ID、デバイス、プラットフォーム、またはタグです。 ターゲットのうちの 1 つのみを設定できます。|
+|deviceIds | デバイス ID によって表されるデバイスの配列。 これらの ID を持つデバイスが通知を受け取ります。 これはユニキャスト通知です。|
+|notificationType | メッセージの送信に使用されるチャネル (プッシュまたは SMS) を示す整数値。 許可される値は 1 (プッシュのみの場合)、2 (SMS のみの場合)、3 (プッシュと SMS 両方の場合) です |
+|platforms | デバイス・プラットフォームの配列。 これらのプラットフォームを実行しているデバイスが通知を受け取ります。 サポートされる値は、A (Apple/iOS)、G (Google/Android)、M (Microsoft/Windows) です。|
+|tagNames | tagNames として指定されたタグの配列。 これらのタグにサブスクライブされているデバイスが通知を受け取ります。 タグ・ベース通知にはこのタイプのターゲットを使用します。|
+|userIds | 通知の送信先とする、ユーザー ID によって表されるユーザーの配列。 これはユニキャスト通知です。|
+|phoneNumber | デバイスを登録し、通知を受け取るために使用される電話番号。 これはユニキャスト通知です。|
+{: caption="表 1. ペイロード・プロパティー" caption-side="top"}
 
 **プッシュ通知ペイロード JSON サンプル**
 
@@ -118,7 +119,7 @@ https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
     },
   },
   "target" : {
-    // The list below is for demonstration purposes only - per the documentation only 1 target is allowed to be used at a time.
+    // The following list is for demonstration purposes only - per the documentation only 1 target is allowed to be used at a time.
     "deviceIds" : [ "MyDeviceId1", ... ],
     "platforms" : [ "A,G", ... ],
     "tagNames" : [ "Gold", ... ],
@@ -155,8 +156,8 @@ https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
   - アプリケーション ID 値を実際の値で更新します。
 4. ヘッダーを設定します。
     - `**Authorization**: Bearer eyJhbGciOiJSUzI1NiIsImp ...`
-    - **「Bearer」**の後に続く値をステップ (1) で入手したアクセス・トークンの値で置き換えます。![許可ヘッダー](images/postman_authorization_header.png)
-
+    - **「Bearer」**の後に続く値をステップ (1) で入手したアクセス・トークンの値で置き換えます。
+    ![Authorization ヘッダー](images/postman_authorization_header.png "Authorization ヘッダー")
 5. 本体を設定します。
   - [通知ペイロード](#notification-payload)の説明に従ってプロパティーを更新します。
   - 例えば、**userIds** 属性が指定された **target** プロパティーを追加すると、特定の登録済みユーザーに通知を送信できます。
@@ -168,11 +169,11 @@ https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
     }
     ```
 
-    ![許可ヘッダー](images/postman_json.png)
+    ![Authorization 本体](images/postman_json.png "Authorization 本体")
 
     **「送信」**ボタンをクリックした後、デバイスは通知を受け取ります。
 
-    ![サンプル・アプリケーションのイメージ](images/notifications-app.png)
+    ![サンプル・アプリケーションのイメージ](images/notifications-app.png "モバイル・デバイス上のプッシュ通知")
 
 ## 通知のカスタマイズ
 {: #customizing-notifications }
@@ -192,7 +193,7 @@ https://myserver.com:443/imfpush/v1/apps/com.sample.PinCodeSwift/messages
 
 * 通知音、カスタム・ペイロード、アクション・キーのタイトル、通知タイプ、バッジの数値。
 
-  ![プッシュ通知のカスタマイズ](images/customizing-push-notifications.png)
+  ![プッシュ通知のカスタマイズ](images/customizing-push-notifications.png "「プッシュの送信」タブが選択された MobileFirst Operations Console の「プッシュ (Push)」ページ")
 
 ## APNs プッシュ通知の HTTP/2 サポート
 {: #http2-support-for-apns-push-notifications}
@@ -212,6 +213,7 @@ HTTP/2 ベースの通知は、JNDI プロパティーを使用して有効に�
 ```xml
 <jndiEntry jndiName="imfpush/mfp.push.apns.http2.enabled" value= "true"/>
 ```
+{: codeblock}
 
 JNDI プロパティーを追加すると、TCP ソケット・ベースの既存の通知は使用されず、HTTP/2 ベースの通知のみが有効になります。
 {: note}

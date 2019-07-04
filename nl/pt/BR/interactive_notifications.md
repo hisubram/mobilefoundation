@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-10"
 
 keywords: push notifications, sending interactive notification
 
@@ -42,7 +42,7 @@ As notificações interativas são suportadas em dispositivos com o iOS versão 
 ## Enviando notificação push interativa
 {: #sending-interactive-push-notification }
 
-Prepare a notificação e envie a notificação. Para obter mais informações, consulte [Enviando notificações de push](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications).
+Prepare a notificação e envie a notificação. Para obter mais informações, consulte [Enviando notificações push](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications).
 
 É possível configurar uma sequência para indicar a categoria da notificação com o objeto de notificação, em **{{ site.data.keyword.mfp_oc_short_notm }} → [seu aplicativo] → Push → Enviar notificações → Configurações customizadas do iOS**. Com base no valor da categoria, os botões de ação de notificação são exibidos. Por exemplo,
 
@@ -117,8 +117,7 @@ Para receber notificações interativas, siga estas etapas:
 
 Siga estas etapas para receber notificações interativas:
 
-1. Ative o recurso do aplicativo para executar tarefas em segundo plano no recebimento de notificações remotas. Esta etapa será necessária se
-algumas das ações forem ativadas para segundo plano.
+1. Ative o recurso do aplicativo para executar tarefas em segundo plano no recebimento de notificações remotas. Esta etapa será necessária se algumas das ações forem ativadas no segundo plano.
 2. Defina categorias registradas para notificações interativas e passe-as como opções para `MFPPush.registerDevice`.
 
    ```swift

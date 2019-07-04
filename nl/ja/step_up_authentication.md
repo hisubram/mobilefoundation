@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation security, authentication, using challenge handlers
 
@@ -50,7 +50,7 @@ private transient StepUpUserLogin userLogin;
 ```
 {: codeblock}
 
->**重要**: 両方のセキュリティー検査の実装が、同じアダプター内にバンドルされている必要があります。
+**重要**: 両方のセキュリティー検査の実装が、同じアダプター内にバンドルされている必要があります。
 {.important}
 
 この参照を解決するために、フレームワークは該当クラスのセキュリティー検査を検索し、その参照を従属セキュリティー検査に注入します。

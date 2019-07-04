@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-13"
+lastupdated: "2019-06-06"
 
 keywords: integration, mobile foundation, secure gateway
 
@@ -42,7 +42,7 @@ node app.js
 
 다음 이미지에서는 이 튜토리얼에서 설명하는 통합 시나리오에 사용된 아키텍처를 보여줍니다.
 
-![아키텍처 다이어그램](images/SecureGatewayArchi.png)
+![아키텍처 다이어그램](images/SecureGatewayArchi.png "디바이스, 클라우드 서비스 및 온프레미스 네트워크의 아키텍처 다이어그램")
 
 ## Secure Gateway 통합 구현
 {: #implementing_sg_integration}
@@ -50,41 +50,41 @@ node app.js
 ### Secure Gateway 서비스 인스턴스 작성
 IBM Cloud에 로그인하여 [ Secure Gateway 서비스](https://cloud.ibm.com/catalog/services/secure-gateway/)의 인스턴스를 작성하십시오.
 
-![IBM Cloud](images/SecureGatewayInst.gif)
+![IBM Cloud](images/SecureGatewayInst.gif "IBM Cloud 카탈로그에서 Secure Gateway 인스턴스 작성")
 
-Secure Gateway 서비스 인스턴스를 작성한 다음 아래 단계를 따라 IBM Cloud와 온프레미스 환경 사이의 Secure Gateway 서비스를 구성하십시오.
+Secure Gateway 서비스 인스턴스를 작성한 후 다음 단계에 따라 IBM Cloud와 온프레미스 환경 사이의 Secure Gateway 서비스를 구성하십시오.
 
 ### 게이트웨이 추가
 {: #add_gateway}
 
 Secure Gateway 서비스 대시보드에서 **게이트웨이 추가**를 클릭하고 필요한 게이트웨이 이름을 제공하여 새 게이트웨이를 작성하십시오.
 
-![게이트웨이 추가](images/AcmeAddGateway.gif)
+![게이트웨이 추가](images/AcmeAddGateway.gif "게이트웨이 UI 추가 단계")
 
 
 ### Secure Gateway 클라이언트 추가
 {: #add_sg_client}
 
-![Client2 추가](images/AcmeAddClient.gif)
+![클라이언트2 추가](images/AcmeAddClient.gif "클라이언트 UI 추가 단계")
 
 **클라이언트** 탭의 새 게이트웨이에서 **클라이언트 연결**을 클릭하십시오.
 
 선택한 클라이언트를 사용하고 온프레미스 환경에서 Secure Gateway 클라이언트를 실행할 수 있습니다. Secure Gateway 클라이언트를 설정하는 단계는 Secure Gateway 콘솔에서 사용할 수 있습니다.
 
 이 튜토리얼에서는 Docker 컨테이너 옵션을 사용하여 Secure Gateway 클라이언트를 실행합니다.
-아래의 단계를 따르십시오.
+다음 단계를 사용하십시오.
 *   이미 설치되어 있지 않은 경우 온프레미스 시스템에 Docker를 설치하십시오.
 *   터미널을 시작하고 서비스 콘솔에 표시된 명령을 사용하여 컨테이너에서 Secure Gateway 클라이언트를 실행하십시오.
     ```bash
     docker run –it ibmcom/secure-gateway-client <gatewayId>
     ```
     {: codeblock}
-    `gatewayId`는 위의 이미지에 표시된 대로 콘솔에서 찾을 수 있습니다.
+    `gatewayId`는 앞의 이미지에 표시된 대로 콘솔에서 찾을 수 있습니다.
 
 ### 대상 추가
 {: #add_destination}
 
-![대상 추가](images/AcmeAddDest.gif)
+![목적지 추가](images/AcmeAddDest.gif "목적지 UI 추가 단계")
 
 **대상** 탭의 새 게이트웨이에서 **대상 추가**를 클릭하십시오.
 
@@ -101,7 +101,7 @@ acl allow <resourceHost>:<resourcePort>
 
 이제 대상이 구성되었습니다. Secure Gateway 서비스에서는 클라우드 환경에서 온프레미스 리소스에 액세스하는 데 사용할 수 있는 클라우드 호스트와 포트 세부사항을 채웁니다.
 
-![대상 탭](images/AcmeCloudPopulate.gif)
+![목적지 탭](images/AcmeCloudPopulate.gif "호스트 및 포트 세부사항 화면")
 
 ### Mobile Foundation 및 Mobile Foundation 어댑터를 사용하여 Secure Gateway 서비스 구성
 {: #configuration_sg_mfp}
@@ -113,7 +113,7 @@ acl allow <resourceHost>:<resourcePort>
 
 IBM Cloud 콘솔에서 [Mobile Foundation 서비스](https://cloud.ibm.com/catalog/services/mobile-foundation)의 인스턴스를 작성하십시오.
 
-Mobile Foundation 서비스 콘솔에서 [Mobile Foundation 서버 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/)를 작성하십시오.
+Mobile Foundation 서비스 콘솔에서 [Mobile Foundation 서버 ![외부 링크 아이콘](../../icons/launch-glyph.svg "외부 링크 아이콘")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/ibmcloud/using-mobile-foundation/)를 작성하십시오.
 
 
 ### Mobile Foundation 어댑터 빌드 및 배치
@@ -133,7 +133,7 @@ mfpdev adapter deploy
 
 이전 섹션에서 가져온 JavaHTTP 어댑터의 리소스 엔드포인트에 관한 클라우드 호스트와 포트 세부사항을 제공하십시오.
 
-![AdapterConfiguration ](images/AdapterConfiguration.png)
+![AdapterConfiguration ](images/AdapterConfiguration.png "Java HTTP 구성 페이지")
 
 여기서 `cap-sg-prd-5.securegateway.appdomain.cloud`와 `18946`은 각각 Secure Gateway 호스트와 포트입니다.
 
@@ -146,7 +146,7 @@ mfpdev adapter deploy
 
 앱을 실행하고 로그인할 인증 정보를 제공하며 *로그인* 단추를 클릭하십시오. *Acme 기록기 페치* 단추를 클릭하여 Mobile Foundation Operations 콘솔에 배치된 JavaHTTP 어댑터를 사용하여 Secure Gateway를 통해 온프레미스 엔드포인트를 호출하십시오. 온프레미스 환경에서 원하는 데이터를 수신하십시오.
 
-![앱에서 온프레미스 데이터 수신](images/AcmePublishersApp.gif)
+![앱에서 온프레미스 데이터 수신](images/AcmePublishersApp.gif "샘플 앱에서 데이터 수신")
 
 Secure Gateway 서비스에 여러 대상을 구성하고 엔드포인트의 각 클라우드 호스트에 연결하도록 Mobile Foundation 어댑터를 배치하여 여러 온프레미스 엔드포인트에 연결할 수 있습니다. HTTPS와 애플리케이션 측 보안을 통해 엔드포인트와 통신하도록 추가 보안을 사용하여 Secure Gateway 서비스도 구성할 수 있습니다. [여기에서 세부사항](/docs/services/SecureGateway?topic=securegateway-getting-started-with-sg#getting-started-with-sg)을 찾을 수 있습니다.
 

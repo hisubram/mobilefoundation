@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: JSONStore, advanced jsonstore, Cordova secure jsonstore, iOS secure jsonstore, android jsonstore, adapter integration
 
@@ -310,7 +310,7 @@ WL.JSONStore.get(collectionName).getPushRequired().then(function (dirtyDocuments
    ```
    {: codeblock}
    {: cordova}
-7. コア API をニーズに合うように拡張するには、`enhance` を使用します。それには、関数をコレクションのプロトタイプに追加します。 この例 (下記のコード・スニペット) は、`enhance` を使用して、`keyvalue` コレクションで動作する関数 `getValue` を追加する方法を示しています。 この関数は、唯一のパラメーターとして key (ストリング) を受け取り、単一の結果を返します。
+7. コア API をニーズに合うように拡張するには、`enhance` を使用します。それには、関数をコレクションのプロトタイプに追加します。 この例 (下記のコード・スニペット) は、`enhance` を使用して、`keyvalue` コレクションで動作する関数 `getValue` を追加する方法を示しています。この関数は、唯一のパラメーターとして key (ストリング) を受け取り、単一の結果を返します。
    ```javascript
    var collectionName = 'keyvalue';
 WL.JSONStore.get(collectionName).enhance('getValue', function (key) {

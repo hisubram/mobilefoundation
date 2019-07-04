@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation security, adapter security
 
@@ -31,10 +31,10 @@ Dans votre adaptateur, vous pouvez spécifier la portée de protection pour une 
 
 La portée MobileFirst par défaut est `RegisteredClient` ; elle requiert un jeton d'accès pour l'accès à la ressource et vérifie que la demande de ressource provient d'une application qui est enregistrée sur le serveur MobileFirst. Cette protection est toujours appliquée, sauf si vous [désactivez la protection des ressources](#disabling-resource-protection). Par conséquent, même si vous ne définissez pas de portée pour votre ressource, celle-ci sera protégée.
 
->**Remarque** : `RegisteredClient` est un mot clé MobileFirst réservé. Ne définissez pas d'élément de portée ni de contrôle de sécurité personnalisé de ce nom.
-{.note}
+`RegisteredClient` est un mot clé MobileFirst réservé. Ne définissez pas d'élément de portée ni de contrôle de sécurité personnalisé de ce nom.
+{: note}
 
-### Protection des ressources d'adaptateur Java
+## Protection des ressources d'adaptateur Java
 {: #protect-java-adapter-resources}
 
 Pour affecter une portée de protection à une méthode JAX-RS ou à une classe, ajoutez l'annotation `@OAuthSecurity` à la déclaration de méthode ou de classe et associez l'élément `scope` de l'annotation à la portée de votre choix. Remplacez `YOUR_SCOPE` par une chaîne d'un ou de plusieurs éléments (“élémentPortée1 élémentPortée2 …”) :
@@ -46,10 +46,11 @@ Pour affecter une portée de protection à une méthode JAX-RS ou à une classe,
 
 Une portée de classe s'applique à toutes les méthodes de la classe, sauf aux méthodes possédant leur propre annotation `@OAuthSecurity`.
 
->**Remarque** : lorsque l'élément enabled de l'annotation `@OAuthSecurity` a pour valeur `false`, l'élément de portée est ignoré. Voir [Désactivation de la protection des ressources Java](#disabling-java-resource-protection).
+Lorsque l'élément enabled de l'annotation `@OAuthSecurity` a pour valeur `false`, l'élément de portée est ignoré. Voir [Désactivation de la protection des ressources Java](#disabling-java-resource-protection).
+{: note}
 
-**Exemples**
-
+### Exemples
+{: #protect-java-adap-res-example}
 Le code suivant protège une méthode `helloUser` avec une portée contenant les éléments de portée `UserAuthentication` et `Pincode` :
 
 ```java
@@ -73,7 +74,7 @@ public class WebSphereResources {
 ```
 {: codeblock}
 
-### Protection des ressources d'adaptateur JavaScript
+## Protection des ressources d'adaptateur JavaScript
 {: #protect-javascript-adapter-resources}
 
 Pour affecter une portée de protection à une procédure JavaScript, dans le fichier **adapter.xml**, associez l'attribut de portée de l'élément <procedure> à la portée de votre choix. Remplacez `PROCEDURE_NAME` par le nom de votre procédure et `YOUR SCOPE` par une chaîne d'un ou de plusieurs éléments (“élémentPortée1 élémentPortée2 …”) :
@@ -83,10 +84,11 @@ Pour affecter une portée de protection à une procédure JavaScript, dans le fi
 ```
 {: codeblock}
 
->**Remarque** : lorsque l'attribut `secured` de l'élément <procedure> a pour valeur false, l'attribut `scope` est ignoré. Voir [Désactivation de la protection des ressources JavaScript](#disabling-javascript-resource-protection).
-{.note}
+Lorsque l'attribut `secured` de l'élément <procedure> a pour valeur false, l'attribut `scope` est ignoré. Voir [Désactivation de la protection des ressources JavaScript](#disabling-javascript-resource-protection).
+{: note}
 
-**Exemple**
+### Exemple
+{: #protect-javascript-adap-res-example}
 
 Le code suivant protège une procédure `userName` avec une portée qui contient les éléments de portée
 `UserAuthentication` et `Pincode` :
@@ -113,10 +115,11 @@ Afin de désactiver entièrement la protection OAuth pour une classe ou une mét
 
 La valeur par défaut de l'élément `enabled` de l'annotation est `true`. Lorsque l'élément `enabled` a pour valeur `false`, l'élément `scope` est ignoré et la ressource ou la classe de ressources n'est pas protégée.
 
->**Remarque** : lorsque vous affectez une portée à une méthode d'une classe non protégée, la méthode est protégée malgré l'annotation de classe, sauf si vous avez défini la valeur `false` pour l'élément `enabled` de l'annotation de ressource.
-{.note}
+Lorsque vous affectez une portée à une méthode d'une classe non protégée, la méthode est protégée malgré l'annotation de classe, sauf si vous avez défini la valeur `false` pour l'élément `enabled` de l'annotation de ressource.
+{: note}
 
-**Exemples**
+#### Exemples
+{: #disble-java-adap-res-example}
 
 Le code suivant désactive la protection des ressources pour une méthode `helloUser` :
 
@@ -153,7 +156,8 @@ Afin de désactiver entièrement la protection OAuth pour une ressource d'adapta
 
 Lorsque l'attribut `secured` a pour valeur `false`, l'attribut `scope` est ignoré et la ressource n'est pas protégée.
 
-**Exemple**
+#### Exemple
+{: #disable-javascript-res-prot-example}
 
 Le code suivant désactive la protection des ressources pour une procédure `userName` :
 

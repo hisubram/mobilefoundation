@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-06-06"
 
 keywords: obfuscating resources, security
 
@@ -35,18 +35,19 @@ Le brouillage du code compte de nombreuses techniques différentes, notamment de
 * Insertion de code factice
 * Anti-piratage, etc.
 
-Le brouillage complique la révision du code et l'analyse de l'application pour les agresseurs informatiques. Pour le brouillage, divers outils tiers sont disponibles. 
+Le brouillage complique la révision du code et l'analyse de l'application pour les agresseurs informatiques. Pour le brouillage, divers outils tiers sont disponibles.
 
 * Pour le brouillage d'une application android, consultez ce [blogue](https://mobilefirstplatform.ibmcloud.com/blog/2016/09/19/mfp-80-obfuscating-android-code-with-proguard/).
 
-  Vous devez créer le fichier de configuration (proguard-project.txt) pour le brouillage Android ProGuard avec une application MobileFirst Android.{: note}
+  Vous devez créer le fichier de configuration (proguard-project.txt) pour le brouillage Android ProGuard avec une application MobileFirst Android.
+  {: note}
 
 * Pour le brouillage de base d'une application Cordova, voir [Chiffrement des ressources Web de vos packages Cordova](#encryptingcordovapackage).
 
 ## Chiffrement des ressources Web de vos packages Cordova
 {: #encryptingcordovapackage}
 
-Afin de limiter le risque d'affichage et de modification de vos ressources Web par un tiers alors qu'elles se trouvent dans le package `.apk` ou `.ipa`, vous pouvez utiliser la commande de l'interface de ligne de commande de MobileFirst suivante : 
+Afin de limiter le risque d'affichage et de modification de vos ressources Web par un tiers alors qu'elles se trouvent dans le package `.apk` ou `.ipa`, vous pouvez utiliser la commande de l'interface de ligne de commande de MobileFirst suivante :
 ```bash
 mfpdev app webencrypt
 ```
@@ -56,10 +57,10 @@ ou l'indicateur `mfpwebencrypt` pour chiffrer les informations. Cette procédure
 ### Prérequis
 
 * Vous devez installer les outils de développement Cordova. Cet exemple utilise l'interface de ligne de commande d'Apache Cordova. Si vous utilisez d'autres outils de développement Cordova, certaines des étapes sont différentes. Reportez-vous à la documentation de l'outil Cordova pour des instructions.
-* Vous devez installer l'interface de ligne de commande de MobileFirst. 
-* Vous devez installer le plug-in MobileFirst Cordova. 
+* Vous devez installer l'interface de ligne de commande de MobileFirst.
+* Vous devez installer le plug-in MobileFirst Cordova.
 
-Il est préférable de suivre cette procédure une fois le développement de votre application terminé, et lorsque vous êtes prêt à la déployer. Si vous exécutez l'une des commandes suivantes une fois la procédure de chiffrement des ressources Web appliquée, le contenu qui était chiffré est déchiffré. 
+Il est préférable de suivre cette procédure une fois le développement de votre application terminé, et lorsque vous êtes prêt à la déployer. Si vous exécutez l'une des commandes suivantes une fois la procédure de chiffrement des ressources Web appliquée, le contenu qui était chiffré est déchiffré.
 
 * `cordova prepare`
 * `cordova build`
@@ -72,22 +73,22 @@ Si vous exécutez l'une des commandes répertoriées après avoir chiffré les r
 
 1. Ouvrez une fenêtre de terminal et accédez au répertoire racine de l'application Cordova à chiffrer.
 2. Préparez l'application en entrant l'une des commandes suivantes :
-    * ```bash
+    ```bash
       cordova prepare
-      ```
-      {: codeblock}
-    * ```bash
+    ```
+    {: codeblock}
+    ```bash
       mfpdev app webupdate
-      ```
-      {: codeblock}
-3. Suivez l'une des procédures ci-dessous pour chiffrer le contenu. 
+    ```
+    {: codeblock}
+3. Suivez l'une des procédures ci-dessous pour chiffrer le contenu.
     * Entrez la commande suivante :
       ```bash
       mfpdev app webencrypt
       ```
       {: codeblock}
 
-      Vous pouvez afficher les informations sur la commande `mfpdev app webencrypt` en entrant
+      Vous pouvez afficher les informations sur la commande `mfpdev app webencrypt` en entrant 
       ```bash
       mfpdev help app webencrypt
       ```
@@ -96,7 +97,7 @@ Si vous exécutez l'une des commandes répertoriées après avoir chiffré les r
 
     * Vous pouvez aussi chiffrer les ressources Web de vos packages Cordova en ajoutant l'indicateur `mfpwebencrypt` à la commande
 `cordova compile` ou `cordova build` lorsque vous générez vos packages.
-       * ```bash
+        ```bash
          cordova compile -- --mfpwebencrypt
          ```
          {: codeblock}
@@ -105,17 +106,18 @@ Si vous exécutez l'une des commandes répertoriées après avoir chiffré les r
          cordova build -- --mfpwebencrypt
          ```
          {: codeblock}
-           Les informations de système d'exploitation dans le dossier **www** sont remplacées par un fichier **resources.zip** comportant le contenu chiffré. Si votre application a été conçue pour le système d'exploitation Android et que la taille du fichier **resources.zip** est supérieure à 1 Mo, le fichier **resources.zip** est divisé en fichiers plus petits de 768 ko nommés **resources.zip.nnn**. La variable nnn est un nombre compris entre 001 et 999.
+         Les informations de système d'exploitation dans le dossier **www** sont remplacées par un fichier **resources.zip** comportant le contenu chiffré.
+         Si votre application a été conçue pour le système d'exploitation Android et que la taille du fichier **resources.zip** est supérieure à 1 Mo, le fichier **resources.zip** est divisé en fichiers plus petits de 768 ko nommés **resources.zip.nnn**. La variable nnn est un nombre compris entre 001 et 999.
 4. Testez l'application avec les ressources chiffrées en utilisant l'émulateur fourni avec les outils propres à la plateforme. Par exemple, vous pouvez utiliser l'émulateur dans Android Studio pour Android, ou Xcode pour iOS.
 
-N'utilisez pas les commandes Cordova suivantes pour tester l'application après l'avoir chiffrée. 
-* ```bash
-  cordova run
-  ```
-  {: codeblock}
-* ```bash
-  cordova emulate
-  ```
-  {: codeblock}
+N'utilisez pas les commandes Cordova suivantes pour tester l'application après l'avoir chiffrée.
+```bash
+cordova run
+```
+{: codeblock}
+```bash
+cordova emulate
+```
+{: codeblock}
 Ces commandes actualisent le contenu qui a été chiffré dans le dossier www et les sauvegarde à nouveau sous forme de contenu non chiffré. Si vous les utilisez, pensez à suivre à nouveau la procédure de chiffrement du contenu avant de publier l'application.
 {: note}

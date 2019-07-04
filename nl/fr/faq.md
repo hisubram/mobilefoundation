@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-16"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation faq, updates to mobile foundation, custom domain
 
@@ -12,8 +12,10 @@ subcollection:  mobilefoundation
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:faq: data-hd-content-type='faq'}
+{:note: .note}
 
 # Foires aux questions
+{: #mfp-faq}
 
 Cette FAQ fournit les réponses aux questions courantes sur le service {{site.data.keyword.mobilefoundation_long}}.
 {: shortdesc}
@@ -37,10 +39,9 @@ La mise à jour du service {{site.data.keyword.mobilefoundation_short}} est mise
 La mise à jour dans {{site.data.keyword.mobilefoundation_short}} peut être appliquée en cliquant sur la commande **Recréer**.
 Lors de l'application de la mise à jour, la version du serveur, comme affichée dans {{site.data.keyword.mfp_oc_short_notm}}, est modifiée pour indiquer la version de mise à jour du serveur.
 
-> **Remarque :**
->  * Les utilisateurs ne peuvent pas appliquer leurs propres correctifs et mises à jour à leur instance de service {{site.data.keyword.mobilefoundation_short}}.
->  * Voir [Utilisation du plan Professionnel par capacité](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#recreate_mobilefoundation_p5) et [Utilisation du plan Professionnel, 1 application](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#recreate_mobilefoundation_p2) pour comprendre la différence de comportement d'un plan à un autre quand vous cliquez sur **Recréer*.
->
+* Les utilisateurs ne peuvent pas appliquer leurs propres correctifs et mises à jour à leur instance de service {{site.data.keyword.mobilefoundation_short}}.
+* Voir [Utilisation du plan Professionnel par appareil](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p5#recreate_mobilefoundation_p5) et [Utilisation du plan Professionnel, 1 application](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p2#recreate_mobilefoundation_p2) pour comprendre la différence de comportement d'un plan à un autre quand vous cliquez sur **Recréer**.
+{: note}
 
 ## Comment configurer un domaine personnalisé pour mon instance de serveur {{site.data.keyword.mobilefoundation_short}} ?
 {: #configcustomdomain}
@@ -68,4 +69,4 @@ Pour utiliser votre propre domaine, vous devez configurer un domaine personnalis
 
 + Accédez au fournisseur DNS de votre domaine et ajoutez une entrée CNAME, qui achemine le trafic de votre domaine vers la route {{site.data.keyword.Bluemix_notm}} par défaut, dans laquelle le serveur s'exécute.
 
-+ Si vous voulez configurer `https` pour votre domaine personnalisé, transférez le certificat SSL de votre domaine dans {{site.data.keyword.Bluemix_notm}}. Pour télécharger le certificat SSL, accédez à **Gérer les organisations > Domaines**, sélectionnez le domaine personnalisé pour lequel le certificat SSL doit être configuré et cliquez sur **Télécharger le certificat** pour transférer le certificat SSL de votre domaine. Pour plus d'informations, consultez [cet article ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window}. 
++ Si vous voulez configurer `https` pour votre domaine personnalisé, transférez le certificat SSL de votre domaine dans {{site.data.keyword.Bluemix_notm}}. Pour télécharger le certificat SSL, accédez à **Gérer les organisations > Domaines**, sélectionnez le domaine personnalisé pour lequel le certificat SSL doit être configuré et cliquez sur **Télécharger le certificat** pour transférer le certificat SSL de votre domaine. Pour plus d'informations, consultez [cet article ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://developer.ibm.com/bluemix/2014/09/28/ssl-certificates-bluemix-custom-domains/){: new_window}.

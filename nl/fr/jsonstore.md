@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-14"
 
 keywords: JSONStore, offline storage, jsonstore error codes
 
@@ -18,8 +18,9 @@ subcollection:  mobilefoundation
 
 
 # JSONStore
-{: #jsonstore }
+{: #jsonstore}
 **JSONStore** {{site.data.keyword.mobilefoundation_short}} est une API facultative côté client qui fournit un système de stockage léger, orienté document. JSONStore active le stockage persistant de **documents JSON**. Les documents dans une application sont disponibles dans JSONStore même si l'appareil qui exécute l'application est déconnecté. Ce stockage permanent et toujours disponible peut être utile pour donner aux utilisateurs un accès aux documents lorsque, par exemple, aucune connexion réseau n'est disponible sur l'appareil.
+{: shortdesc}
 
 Dans la mesure où elle est familière aux développeurs, la terminologie des bases de données relationnelles est parfois utilisée dans cette documentation pour expliquer JSONStore. Cependant, il existe de nombreuses différences entre une base de données relationnelle et JSONStore. Par exemple, le schéma strict qui est utilisé pour
 stocker des données dans les bases de données relationnelles est différent de l'approche suivie dans JSONStore. Avec JSONStore, vous pouvez stocker n'importe quel contenu JSON, et indexer le contenu dans lequel vous devez effectuer une recherche.
@@ -49,14 +50,14 @@ Un document constitue le bloc de construction de base de JSONStore.
 
 Un document JSONStore est un objet JSON comportant un identifiant généré automatiquement (`_id`) et des données JSON. Dans la terminologie des bases de données, il est similaire à un enregistrement ou une ligne. La valeur `_id` est toujours un entier unique dans une collection spécifique. Certaines fonctions telles que `add`, `replace` et `remove` de la classe `JSONStoreInstance` prennent un tableau de documents ou d'objets. Ces méthodes sont utiles pour effectuer des opérations sur différents documents ou objets à la fois.
 
-**Document unique**  
+Document unique :
 
 ```javascript
 var doc = { _id: 1, json: {name: 'carlos', age: 99} };
 ```
 {: codeblock}
 
-**Tableau de documents**
+Tableau de documents :
 
 ```javascript
 var docs = [
@@ -96,7 +97,7 @@ Les zones de recherche supplémentaires sont des clés indexées mais ne faisant
 Les types de données valides sont : String (chaîne), Boolean (booléen), Number (nombre) et Integer (entier). Ces types ne sont que des indications de type, il n'y a pas de validation de type. De plus, ces types déterminent le mode de stockage des zones pouvant être indexées. Par exemple, `{age: 'number'}` indexe 1 en tant que 1.0
 et `{age: 'integer'}` indexe 1 en tant que 1.
 
-**Zones de recherche et zones de recherche supplémentaires**
+Zones de recherche et zones de recherche supplémentaires :
 
 ```javascript
 var searchField = {name: 'string', age: 'integer'};
@@ -106,7 +107,7 @@ var additionalSearchField = {key: 'string'};
 
 Il est uniquement possible d'indexer des clés dans un objet, pas l'objet lui-même. Les tableaux sont gérés de manière transparente, ce qui signifie que vous ne pouvez pas indexer un tableau ni un index spécifique du tableau (arr[n]), mais vous pouvez indexer des objets dans un tableau.
 
-**Indexation des valeurs dans un tableau**
+Indexation de valeurs dans un tableau :
 
 ```javascript
 
@@ -130,14 +131,14 @@ Les requêtes sont des objets qui utilisent des zones de recherche ou des zones 
 supplémentaires pour rechercher des documents.  
 Ces exemples supposent que la zone de recherche name est de type chaîne et que la zone de recherche age est de type entier.
 
-**Recherche de documents avec `name` correspondant à `carlos`**
+Recherchez les documents dont la zone `name` correspond à `carlos`:
 
 ```javascript
 var query1 = {name: 'carlos'};
 ```
 {: codeblock}
 
-**Recherche de documents avec `name` correspondant à `carlos` et `age` correspondant à `99`**
+Recherchez les documents dont la zone `name` correspond à `carlos` et la zone `age` à `99`:
 
 ```javascript
 var query2 = {name: 'carlos', age: 99};
@@ -178,6 +179,7 @@ JSONStore est similaire aux technologies telles que LocalStorage, Indexed DB, l'
 | Prise en charge multiutilisateur                                 |	     ✔ 	      |      -	    |     -	     |        -	           |         -	      |
 | Indexation	                                         |	     ✔ 	      |      -	    |     ✔	     |        ✔	           |         -	      |
 | Type de stockage	                                 | Documents JSON | Paires clé-valeur | Documents JSON | Relationnel (SQL) | Chaînes     |
+{: caption="Tableau 1. Comparaison des fonctions" caption-side="top"}
 
 Si le stockage est fiable, cela signifie que vos données ne sont supprimées que si l'un des événements suivants se produit :
 * L'application est supprimée de l'appareil.
@@ -256,17 +258,17 @@ Si vous n'avez pas besoin de chiffrement, JSONStore est entièrement fonctionnel
 2. Une fois l'installation de l'extension terminée, localisez la version de SQLCipher
 dans le fichier **sqlite3.dll** qui vient d'être créé. Il y en existe une pour x86, une pour x64 et une pour ARM.
 
-   ```bash
-   C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLCipher.WinRT81\3.0.1\Redist\Retail\<platform>
-   ```
-   {: codeblock}
+    ```bash
+    C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLCipher.WinRT81\3.0.1\Redist\Retail\<platform>
+    ```
+    {: codeblock}
 
 3. Copiez et remplacez ce fichier dans votre application MobileFirst.
 
-   ```bash
-   <Worklight project name>\apps\<application name>\windows8\native\buildtarget\<platform>
-   ```
-   {: codeblock}
+    ```bash
+    <Worklight project name>\apps\<application name>\windows8\native\buildtarget\<platform>
+    ```
+    {: codeblock}
 
 ## Performances
 {: #performance-jsonstore }
@@ -321,7 +323,7 @@ Une promesse jQuery Deferred peut être résolue ou rejetée. Les exemples suiva
 
 Au lieu des promesses et des rappels, vous pouvez également écouter les événements JSONStore `success` et `failure`. Effectuez des actions en fonction des arguments transmis à l'écouteur d'événements.
 
-**Exemple de définition de promesse**
+Exemple de définition de promesse :
 
 ```javascript
 var asyncOperation = function () {
@@ -335,8 +337,9 @@ var asyncOperation = function () {
   return deferred.promise();
 };
 ```
+{: codeblock}
 
-**Exemple d'utilisation de promesse**
+Exemple d'utilisation de promesse :
 
 ```javascript
 // The function that is passed to .then is executed after 1000 ms.
@@ -344,8 +347,9 @@ asyncOperation.then(function (response) {
   // response = 'Hello'
 });
 ```
+{: codeblock}
 
-**Exemple de définition de rappel**
+Exemple de définition de rappel :
 
 ```javascript
 var asyncOperation = function (callback) {
@@ -354,8 +358,9 @@ var asyncOperation = function (callback) {
   }, 1000);
 };
 ```
+{: codeblock}
 
-**Exemple d'utilisation de rappel**
+Exemple d'utilisation de rappel :
 
 ```javascript
 // The function that is passed to asyncOperation is executed after 1000 ms.
@@ -363,8 +368,9 @@ asyncOperation(function (response) {
   // response = 'Hello'
 });
 ```
+{: codeblock}
 
-**Exemple d'événements**
+Exemple d'événements :
 
 ```javascript
 $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collectionName) {
@@ -375,6 +381,7 @@ $(document.body).on('WL/JSONSTORE/SUCCESS', function (evt, data, src, collection
   // collectionName - Name of the collection
 });
 ```
+{: codeblock}
 
 ### Accès concurrent dans Objective-C
 {: #objective-c-jsonstore }
@@ -408,6 +415,7 @@ JSONStoreOpenOptions* options = [JSONStoreOpenOptions new];
 
 [[JSONStore sharedInstance] openCollections:@[...] withOptions:options error:nil];
 ```
+{: codeblock}
 
 ### Exemple JSONStore pour Android
 {: #android-example }
@@ -417,6 +425,7 @@ initOptions.setAnalytics(true);
 
 WLJSONStore.getInstance(...).openCollections(..., initOptions);
 ```
+{: codeblock}
 
 ### Exemple JSONStore pour JavaScript
 {: #java-script-example }
@@ -427,6 +436,7 @@ var options = {
 
 WL.JSONStore.init(..., options);
 ```
+{: codeblock}
 
 ## Utilisation de données externes
 {: #working-with-external-data }
@@ -463,7 +473,8 @@ JavaScript.
 
 Utilisez des adaptateurs pour la couche transport. L'utilisation d'adaptateurs présente certains avantages, notamment le passage de XML à JSON, la sécurité, le filtrage et le découplage du code côté serveur et du code côté client.
 {: note}
-**Source de données externe : noeud final REST de back end**  
+##### Source de données externe : noeud final REST de back end
+{: #external-data-source-backend-rest-endpoint-head}
 Supposez que vous disposez d'un noeud final REST qui lit des données depuis une base de données et les renvoie sous forme de tableau d'objets
 JSON.
 
@@ -486,7 +497,8 @@ Les données qui sont renvoyées peuvent être similaires aux suivantes :
 ```
 {: codeblock}
 
-**Couche transport : adaptateur**  
+##### Couche transport : adaptateur
+{: #transport-layer-adapter}
 Supposez que vous avez créé un adaptateur appelé people et défini une procédure appelée getPeople. La procédure appelle le noeud final REST et renvoie le tableau d'objets JSON au client. Ici, vous pouvez décider de ne renvoyer qu'un sous-ensemble de données au
 client.
 
@@ -535,7 +547,8 @@ $.ajax({
 ```
 {: codeblock}
 
-**API de source de données interne : JSONStore**
+##### API de source de données interne : JSONStore
+{: #internal-data-source-api-jsonstore}
 Après avoir reçu la réponse du serveur de back end, utilisez ces données à l'aide de JSONStore.
 JSONStore permet d'effectuer le suivi des modifications locales. Il permet à certaines API de signaler des documents comme modifiés. L'API
 enregistre la dernière opération qui a été effectuée sur le document, et à quel moment le document a été signalé comme modifié. Ensuite, vous pouvez vous servir de ces informations pour implémenter des fonctions telles que la synchronisation de données.
@@ -543,7 +556,9 @@ enregistre la dernière opération qui a été effectuée sur le document, et à
 L'API change
 admet les données et quelques options :
 
-**replaceCriteria**  
+###### replaceCriteria
+{: #replacecriteria}
+  
 Ces zones de recherche font partie des données d'entrée. Elles sont utilisées pour localiser des documents qui se trouvent déjà dans une collection. Par
 exemple, si vous sélectionnez :
 
@@ -584,12 +599,16 @@ Ensuite, l'opération `change` effectue un remplacement avec les données d'entr
 Le nom `Carlitos` a
 été remplacé par `Carlos`. Si plusieurs documents correspondent aux critères de remplacement, tous les documents correspondants sont remplacés par les données d'entrée respectives.
 
-**addNew**  
+###### addNew 
+{: #addnew}
+ 
 Lorsqu'aucun document ne correspond aux critères de remplacement, l'API change tient compte de la valeur de cet
 indicateur. Si l'indicateur a pour valeur **true**, l'API change crée un document et l'ajoute au
 magasin. Sinon, aucune autre action n'est effectuée.
 
-**markDirty**  
+###### markDirty 
+{: #markdirty}
+ 
 Détermine si l'API change signale les documents qui sont remplacés ou ajoutés comme modifiés.
 
 Un tableau de données est renvoyé par l'adaptateur :
@@ -676,7 +695,8 @@ JavaScript.
 Utilisez des adaptateurs pour la couche transport. L'utilisation d'adaptateurs présente certains avantages, notamment le passage de XML à JSON, la sécurité, le filtrage et le découplage du code côté serveur et du code côté client.
 {: note}
 
-**API de source de données interne : JSONStore**  
+##### API de source de données interne : JSONStore  
+{: #internal-data-source-api-jsonstore-head}
 Une fois que vous avez obtenu un accesseur à la collection, appelez l'API `getAllDirty` pour obtenir tous les documents marqués comme modifiés. Ces documents comportent des modifications locales seulement que vous voulez envoyer à la source de données
 externe par le biais d'une couche transport.
 
@@ -707,7 +727,8 @@ Les zones sont les suivantes :
 * `_operation` : Dernière opération effectuée sur le document. Les valeurs possibles sont add, store, replace et remove.
 * `_dirty` : Horodatage stocké au format numérique pour indiquer quand le document a été marqué comme modifié.
 
-**Couche transport : adaptateur MobileFirst**  
+##### Couche transport : adaptateur MobileFirst  
+{: #transport-layr-mobilefirst-adapter }
 Vous pouvez choisir d'envoyer des documents modifiés à un adaptateur. Supposons que vous disposez d'un adaptateur `people` défini avec une procédure`updatePeople`.
 
 ```javascript
@@ -827,7 +848,8 @@ Vous pouvez éventuellement ignorer l'adaptateur et contacter directement le noe
 ```
 {: codeblock}
 
-**Source de données externe : noeud final REST de back end**  
+##### Source de données externe : noeud final REST de back end
+{: #external-data-source-backend-rest-endpoint }
 Le système de back end accepte ou rejette les modifications, puis relaie une réponse au client. Une fois que le client a consulté la réponse, il peut transmettre des documents qui ont été mis à jour à l'API markClean.
 
 ```javascript
@@ -898,7 +920,8 @@ Procédez comme suit afin d'isoler le problème et de le signaler plus précisé
    $ sqlite3 jsonstore.sqlite
    ```
 
-   * **Remarque :** L'unique implémentation de JavaScript qui s'exécute sur un navigateur Web (Firefox, Chrome, Safari, Internet Explorer) n'utilise pas de base de données SQLite. Le fichier est stocké dans HTML5 LocalStorage.
+    L'unique implémentation de JavaScript qui s'exécute sur un navigateur Web (Firefox, Chrome, Safari, Internet Explorer) n'utilise pas de base de données SQLite. Le fichier est stocké dans HTML5 LocalStorage.
+    {: note}
    * Consultez `searchFields` avec `.schema` et sélectionnez des données à l'aide de `SELECT * FROM <collection-name>;`. Pour quitter sqlite3, entrez `.exit`. Si vous transmettez un nom d'utilisateur à la méthode init, le fichier est nommé **the-username.sqlite**. Si vous ne transmettez pas de nom d'utilisateur, le fichier est appelé **jsonstore.sqlite** par défaut.
 5. (Android seulement) Activez le journal prolixe de JSONStore.
 
@@ -906,6 +929,7 @@ Procédez comme suit afin d'isoler le problème et de le signaler plus précisé
    adb shell setprop log.tag.jsonstore-core VERBOSE
    adb shell getprop log.tag.jsonstore-core
    ```
+    {: codeblock}
 
 6. Utilisez le débogueur.
 
@@ -928,7 +952,7 @@ stockées sous la forme `1.0` et `2.0` lorsque le type est `number`. Elles sont 
 * Dans certains cas (ou environnements), le flux entre `wlCommonInit()` avant l'initialisation du plug-in JSONStore. Cela entraîne l'échec des appels d'API liés à JSONStore. L'amorçage de `cordova-plugin-mfp` appelle automatiquement `WL.Client.init`, qui, une fois terminé, déclenche la fonction `wlCommonInit`. Ce processus d'initialisation est différent pour le plug-in JSONStore. En effet, ce dernier ne dispose d'aucun moyen d'arrêter (_halt_) l'appel de `WL.Client.init`. Dans certains environnements, il peut arriver que le flux indique `wlCommonInit()` avant la fin de `mfpjsonjslloaded`.
 Pour garantir l'ordre des événements `mfpjsonjsloaded` et `mfpjsloaded`, le développeur a la possibilité d'appeler manuellement `WL.CLient.init`. Il n'est alors plus nécessaire de disposer d'un code spécifique à la plateforme.
 
-  Pour configurer l'appel de `WL.CLient.init` manuellement, suivez les étapes ci-après :                             
+  Pour configurer l'appel de `WL.CLient.init` manuellement, procédez comme suit :                             
 
   1. Dans `config.xml`, modifiez la propriété `clientCustomInit` et définissez-la sur **true**.
 
@@ -965,6 +989,7 @@ Les éléments clés de cet exemple simplifié sont les suivants :
 |-----|-----|------|-----|------|
 | 1   | c   | carlos | 99 | {name: 'carlos', age: 99} |
 | 2   | t   | tim   | 100 | {name: 'tim', age: 100} |
+{: caption="Tableau 2. Exemple d'éléments de clé de données JSONStore" caption-side="top"}
 
 Lorsque vous effectuez une recherche à l'aide de l'une ou d'une combinaison des requêtes suivantes : ``{_id : 1}, {name: 'carlos'}`, `{age: 99}, {key: 'c'}`, le document renvoyé est `{_id: 1, json: {name: 'carlos', age: 99} }`.
 
@@ -1091,3 +1116,4 @@ Liste des codes d'erreur courants et leur description :
 | 30 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_OBJECTS | Erreur de validation lorsque le tableau n'est pas un tableau composé uniquement d'objets JSON. |
 | 31 BAD\_PARAMETER\_EXPECTED\_ARRAY\_OF\_CLEAN\_DOCUMENTS | Erreur de validation. |
 | 32 BAD\_PARAMETER\_WRONG\_SEARCH\_CRITERIA | Erreur de validation. |
+{: caption="Tableau 3. Codes d'erreur courants" caption-side="top"}

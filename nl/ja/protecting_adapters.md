@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation security, adapter security
 
@@ -31,10 +31,10 @@ subcollection:  mobilefoundation
 
 デフォルトの MobileFirst スコープは `RegisteredClient` です。これは、リソースにアクセスするためにアクセス・トークンを必要とし、そのリソース要求が MobileFirst Server に登録されたアプリケーションから出されたものであることを検証します。 この保護は、[リソース保護を無効](#disabling-resource-protection)にした場合を除き常に適用されます。 そのため、リソースのスコープを設定しない場合でも、リソースは引き続き保護されます。
 
->**注**: `RegisteredClient` は、予約済みの MobileFirst キーワードです。 カスタム・スコープ・エレメントやセキュリティー検査をこの名前で定義することはしないでください。
-{.note}
+`RegisteredClient` は、予約済みの MobileFirst キーワードです。カスタム・スコープ・エレメントやセキュリティー検査をこの名前で定義することはしないでください。
+{: note}
 
-### Java アダプター・リソースの保護
+## Java アダプター・リソースの保護
 {: #protect-java-adapter-resources}
 
 保護スコープを JAX-RS メソッドまたはクラスに割り当てるには、`@OAuthSecurity` アノテーションをこのメソッドまたはクラスの宣言に追加し、このアノテーションの `scope` エレメントを希望のスコープに設定します。 以下の `YOUR_SCOPE` は、1 つ以上のスコープ・エレメントからなるストリング (「scopeElement1 scopeElement2 …」) で置き換えてください。
@@ -46,10 +46,11 @@ subcollection:  mobilefoundation
 
 クラス・スコープは、独自の `@OAuthSecurity` アノテーションが設定されているメソッドを除き、クラス内のすべてのメソッドに適用されます。
 
->**注**: `@OAuthSecurity` アノテーションの enabled エレメントが `false` に設定されている場合、scope エレメントは無視されます。 [Java リソース保護の無効化](#disabling-java-resource-protection)を参照してください。
+`@OAuthSecurity` アノテーションの enabled エレメントが `false` に設定されている場合、scope エレメントは無視されます。[Java リソース保護の無効化](#disabling-java-resource-protection)を参照してください。
+{: note}
 
-**例**
-
+### 例
+{: #protect-java-adap-res-example}
 以下のコードは、スコープ・エレメントとして `UserAuthentication` および `Pincode` が含まれているスコープを使用して `helloUser` メソッドを保護します。
 
 ```java
@@ -73,7 +74,7 @@ public class WebSphereResources {
 ```
 {: codeblock}
 
-### JavaScript アダプター・リソースの保護
+## JavaScript アダプター・リソースの保護
 {: #protect-javascript-adapter-resources}
 
 保護スコープを JavaScript プロシージャーに割り当てるには、**adapter.xml** ファイルで、<procedure> エレメントの scope 属性を希望のスコープに設定します。 以下の `PROCEDURE_NANE` はプロシージャーの名前で、`YOUR SCOPE` は 1 つ以上のスコープ・エレメントからなるストリング (「scopeElement1 scopeElement2 …」) で置き換えてください。
@@ -83,10 +84,11 @@ public class WebSphereResources {
 ```
 {: codeblock}
 
->**注**: <procedure> エレメントの `secured` 属性が false に設定されている場合、`scope` 属性は無視されます。 [JavaScript リソース保護の無効化](#disabling-javascript-resource-protection)を参照してください。
-{.note}
+<procedure> エレメントの `secured` 属性が false に設定されている場合、`scope` 属性は無視されます。[JavaScript リソース保護の無効化](#disabling-javascript-resource-protection)を参照してください。
+{: note}
 
-**例**
+### 例
+{: #protect-javascript-adap-res-example}
 
 以下のコードは、スコープ・エレメントとして `UserAuthentication` および `Pincode` が含まれているスコープを使用して `userName` プロシージャーを保護します。
 
@@ -112,10 +114,11 @@ Java リソース・メソッドまたはクラスの OAuth 保護を完全に�
 
 アノテーションの `enabled` エレメントのデフォルト値は `true` です。 `enabled` エレメントが `false` に設定されている場合、`scope` エレメントは無視され、リソースまたはリソース・クラスは保護されません。
 
->**注**: 無保護クラスのメソッドにスコープを割り当てた場合、リソースのアノテーションの `enabled` エレメントを `false` に設定しない限り、クラスのアノテーションに関係なくそのメソッドは保護されます。
-{.note}
+無保護クラスのメソッドにスコープを割り当てた場合、リソースのアノテーションの `enabled` エレメントを `false` に設定しない限り、クラスのアノテーションに関係なくそのメソッドは保護されます。
+{: note}
 
-**例**
+#### 例
+{: #disble-java-adap-res-example}
 
 以下のコードは、`helloUser` メソッドのリソース保護を無効にします。
 
@@ -152,7 +155,8 @@ JavaScript アダプター・リソース (プロシージャー) の OAuth 保�
 
 `secured` 属性が `false` に設定されている場合、`scope` 属性は無視され、リソースは保護されません。
 
-**例**
+#### 例
+{: #disable-javascript-res-prot-example}
 
 以下のコードは、`userName` プロシージャーのリソース保護を無効にします。
 

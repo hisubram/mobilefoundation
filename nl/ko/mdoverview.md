@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2018-11-27"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation, features, overview
 
@@ -35,7 +35,7 @@ subcollection:  mobilefoundation
 ###  보안 프레임워크
 {: #security_framework}
 
-광범위한 모바일 채널 특정 보안입니다. 디바이스의 데이터, API 및 사용자 브랜드를 해커와 취약성으로부터 보호합니다. 오프라인 데이터 암호화, 메시지 중간자공격(man-in-the-middle) 방지, 유실되거나 도난된 디바이스에 대한 액세스 거부, 권한 있는 오퍼레이션에 대한 추가 보안 설정, 기존 ID 관리 솔루션과의 통합, 리버스 엔지니어링 앱 코드로부터의 보호 등을 수행합니다.
+광범위한 모바일 채널 특정 보안입니다. 디바이스의 데이터, API 및 사용자 브랜드를 해커와 취약성으로부터 보호합니다. 오프라인 데이터 암호화, 메시지 중간자 공격(Man-in-the-middle attack) 방지, 유실되거나 도난된 디바이스에 대한 액세스 거부, 권한 있는 오퍼레이션에 대한 추가 보안 설정, 기존 ID 관리 솔루션과의 통합, 리버스 엔지니어링 앱 코드로부터의 보호 등을 수행합니다.
 
 ###  비즈니스 로직
 {: #business_logic}

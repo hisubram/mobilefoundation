@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2019-02-13"
+lastupdated: "2019-06-10"
 
 keywords: jsonstore, code samples, offline storage
 
@@ -18,14 +18,14 @@ subcollection:  mobilefoundation
 {:android: .ph data-hd-programlang='Android'}
 {:cordova: .ph data-hd-programlang='Cordova'}
 
-#	JSONStore 코드 샘플
+# JSONStore 코드 샘플
 {: #code_samples}
 
-### Cordova의 샘플
+## Cordova의 샘플
 {: #samples_cordova }
 {: cordova}
 
-#### Cordova에서 연결 초기화 및 열기, 액세서 가져오기 및 데이터 추가
+### Cordova에서 연결 초기화 및 열기, 액세서 가져오기 및 데이터 추가
 {: #initialize-and-open-connections-get-an-accessor-and-add-data-cordova }
 {: cordova}
 
@@ -86,7 +86,7 @@ WL.JSONStore.init(collections, options)
 {: codeblock}
 {: cordova}
 
-#### 찾기 - 저장소 내부에서 문서 찾기
+### 찾기 - 저장소 내부에서 문서 찾기
 {: #find-locate-documents-inside-the-store }
 {: cordova}
 
@@ -132,7 +132,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### 대체 - Cordova에서 이미 콜렉션 내부에 저장된 문서 변경
+### 대체 - Cordova에서 이미 콜렉션 내부에 저장된 문서 변경
 {: cordova}
 
 ```javascript
@@ -163,7 +163,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### 제거 - Cordova에서 조회와 일치하는 모든 문서 삭제
+### 제거 - Cordova에서 조회와 일치하는 모든 문서 삭제
 {: cordova}
 
 ```javascript
@@ -196,7 +196,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### 계수 - Cordova에서 조회와 일치하는 총 문서 수 가져오기
+### 계수 - Cordova에서 조회와 일치하는 총 문서 수 가져오기
 {: cordova}
 
 ```javascript
@@ -227,7 +227,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### 영구 삭제 - Cordova에서 모든 사용자의 데이터 삭제, 내부 스토리지 영구 삭제 및 보안 아티팩트 지우기
+### 영구 삭제 - Cordova에서 모든 사용자의 데이터 삭제, 내부 스토리지 영구 삭제 및 보안 아티팩트 지우기
 {: cordova}
 
 ```javascript
@@ -244,7 +244,7 @@ WL.JSONStore.destroy()
 {: codeblock}
 {: cordova}
 
-#### 보안 - Cordova에서 현재 사용자의 열려 있는 모든 콜렉션에 대한 액세스 닫기
+### 보안 - Cordova에서 현재 사용자의 열려 있는 모든 콜렉션에 대한 액세스 닫기
 {: cordova}
 
 ```javascript
@@ -261,7 +261,7 @@ WL.JSONStore.closeAll()
 {: codeblock}
 {: cordova}
 
-#### 보안 - Cordova에서 저장소에 액세스하는 데 사용되는 비밀번호 변경
+### 보안 - Cordova에서 저장소에 액세스하는 데 사용되는 비밀번호 변경
 {: cordova}
 
 ```javascript
@@ -299,7 +299,7 @@ WL.JSONStore.changePassword(oldPassword, newPassword, username)
 {: codeblock}
 {: cordova}
 
-#### 푸시 - Cordova에서 더티로 표시되는 모든 문서를 가져와서 어댑터에 전송하고 정리된 것으로 표시
+### 푸시 - Cordova에서 더티로 표시되는 모든 문서를 가져와서 어댑터에 전송하고 정리된 것으로 표시
 {: cordova}
 
 ```javascript
@@ -342,7 +342,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### 가져오기 - Cordova의 어댑터에서 새 데이터 가져오기
+### 가져오기 - Cordova의 어댑터에서 새 데이터 가져오기
 {: cordova}
 
 ```javascript
@@ -395,7 +395,7 @@ resource.send()
 {: codeblock}
 {: cordova}
 
-#### Cordova에서 문서의 더티 여부 확인
+### Cordova에서 문서의 더티 여부 확인
 {: cordova}
 
 ```javascript
@@ -419,7 +419,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Cordova에서 더티 문서 수 확인
+### Cordova에서 더티 문서 수 확인
 {: cordova}
 
 ```javascript
@@ -440,7 +440,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Cordova에서 콜렉션 제거
+### Cordova에서 콜렉션 제거
 {: cordova}
 
 ```javascript
@@ -464,7 +464,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Cordova에서 콜렉션 내부에 있는 모든 데이터 지우기
+### Cordova에서 콜렉션 내부에 있는 모든 데이터 지우기
 {: cordova}
 
 ```javascript
@@ -488,7 +488,7 @@ WL.JSONStore.get(collectionName)
 {: codeblock}
 {: cordova}
 
-#### Cordova에서 트랜잭션 시작, 일부 데이터 추가, 문서 제거, 트랜잭션 커미트 및 실패한 경우 트랜잭션 롤백
+### Cordova에서 트랜잭션 시작, 일부 데이터 추가, 문서 제거, 트랜잭션 커미트 및 실패한 경우 트랜잭션 롤백
 {: #cordova-transaction }
 {: cordova}
 
@@ -536,7 +536,7 @@ WL.JSONStore.startTransaction()
 {: codeblock}
 {: cordova}
 
-#### Cordova에서 파일 정보 가져오기
+### Cordova에서 파일 정보 가져오기
 
 ```javascript
 WL.JSONStore.fileInfo()
@@ -551,7 +551,7 @@ WL.JSONStore.fileInfo()
 {: codeblock}
 {: cordova}
 
-#### Cordova에서 like, rightLike, leftLike를 사용한 검색
+### Cordova에서 like, rightLike, leftLike를 사용한 검색
 {: cordova}
 
 ```javascript
@@ -560,12 +560,12 @@ WL.JSONStore.fileInfo()
 var arr1 = WL.JSONStore.QueryPart().like('name', 'ca');  // returns {name: 'carlos', age: 10}
 var arr2 = WL.JSONStore.QueryPart().like('name', 'los');  // returns {name: 'carlos', age: 10}
 
-// Match all records that contain the search string on the left side and anything on the right side.
+// Match all records that contain the search string on the left hand side and anything on the right hand side.
 // searchString%
 var arr1 = WL.JSONStore.QueryPart().rightLike('name', 'ca');  // returns {name: 'carlos', age: 10}
 var arr2 = WL.JSONStore.QueryPart().rightLike('name', 'los');  // returns nothing
 
-// Match all records that contain the search string on the right side and anything on the left side.
+// Match all records that contain the search string on the right hand side and anything on the left hand side.
 // %searchString
 var arr = WL.JSONStore.QueryPart().leftLike('name', 'ca');  // returns nothing
 var arr2 = WL.JSONStore.QueryPart().leftLike('name', 'los');  // returns {name: 'carlos', age: 10}
@@ -573,11 +573,11 @@ var arr2 = WL.JSONStore.QueryPart().leftLike('name', 'los');  // returns {name: 
 {: codeblock}
 {: cordova}
 
-### iOS의 샘플
+## iOS의 샘플
 {: #samples-ios }
 {: ios}
 
-#### iOS에서 연결 초기화 및 열기, 액세서 가져오기 및 데이터 추가
+### iOS에서 연결 초기화 및 열기, 액세서 가져오기 및 데이터 추가
 {: ios}
 
 ```objc
@@ -635,7 +635,7 @@ Initialize with a secure random token from the server
 {: codeblock}
 {: ios}
 
-#### 찾기 - Cordova의 저장소 내부에서 문서 찾기
+### 찾기 - Cordova의 저장소 내부에서 문서 찾기
 {: ios}
 
 ```objc
@@ -677,7 +677,7 @@ for (NSDictionary* result in results) {
 {: codeblock}
 {: ios}
 
-#### 대체 - iOS에서 이미 콜렉션 내부에 저장된 문서 변경
+### 대체 - iOS에서 이미 콜렉션 내부에 저장된 문서 변경
 {: ios}
 
 ```objc
@@ -697,7 +697,7 @@ int docsReplaced = [[people replaceDocuments:docs andMarkDirty:NO error:&error] 
 {: codeblock}
 {: ios}
 
-#### 제거 - iOS에서 조회와 일치하는 모든 문서 삭제
+### 제거 - iOS에서 조회와 일치하는 모든 문서 삭제
 {: ios}
 
 ```objc
@@ -713,7 +713,7 @@ int docsRemoved = [[people removeWithIds:@[@1] andMarkDirty:NO error:&error] int
 {: codeblock}
 {: ios}
 
-#### 계수 - iOS에서 조회와 일치하는 총 문서 수 가져오기
+### 계수 - iOS에서 조회와 일치하는 총 문서 수 가져오기
 {: ios}
 
 ```objc
@@ -735,7 +735,7 @@ int countResult = [[people countWithQueryParts:@[queryPart] error:&error] intVal
 {: codeblock}
 {: ios}
 
-#### 영구 삭제 - iOS에서 모든 사용자의 데이터 삭제, 내부 스토리지 영구 삭제 및 보안 아티팩트 지우기
+### 영구 삭제 - iOS에서 모든 사용자의 데이터 삭제, 내부 스토리지 영구 삭제 및 보안 아티팩트 지우기
 {: ios}
 
 ```objc
@@ -748,7 +748,7 @@ NSError* error = nil;
 {: codeblock}
 {: ios}
 
-#### 보안 - iOS에서 현재 사용자의 열려 있는 모든 콜렉션에 대한 액세스 닫기
+### 보안 - iOS에서 현재 사용자의 열려 있는 모든 콜렉션에 대한 액세스 닫기
 {: ios}
 
 ```objc
@@ -761,7 +761,7 @@ NSError* error = nil;
 {: codeblock}
 {: ios}
 
-#### 보안 - iOS에서 저장소에 액세스하는 데 사용되는 비밀번호 변경
+### 보안 - iOS에서 저장소에 액세스하는 데 사용되는 비밀번호 변경
 {: ios}
 
 ```objc
@@ -784,7 +784,7 @@ newPassword = nil;
 {: codeblock}
 {: ios}
 
-#### 푸시 - iOS에서 더티로 표시되는 모든 문서를 가져와서 어댑터에 전송하고 정리된 것으로 표시
+### 푸시 - iOS에서 더티로 표시되는 모든 문서를 가져와서 어댑터에 전송하고 정리된 것으로 표시
 {: ios}
 
 ```objc
@@ -806,7 +806,7 @@ int numCleaned = [[people markDocumentsClean:dirtyDocs error:&error] intValue];
 {: codeblock}
 {: ios}
 
-#### 가져오기 - iOS의 어댑터에서 새 데이터 가져오기
+### 가져오기 - iOS의 어댑터에서 새 데이터 가져오기
 {: ios}
 
 ```objc
@@ -827,7 +827,7 @@ int numChanged = [[people changeData:data withReplaceCriteria:@[@"id", @"ssn"] a
 {: codeblock}
 {: ios}
 
-#### iOS에서 문서의 더티 여부 확인
+### iOS에서 문서의 더티 여부 확인
 {: ios}
 
 ```objc
@@ -843,7 +843,7 @@ BOOL isDirtyResult = [people isDirtyWithDocumentId:1 error:&error];
 {: codeblock}
 {: ios}
 
-#### iOS에서 더티 문서 수 확인
+### iOS에서 더티 문서 수 확인
 {: ios}
 
 ```objc
@@ -859,7 +859,7 @@ int dirtyDocsCount = [[people countAllDirtyDocumentsWithError:&error] intValue];
 {: codeblock}
 {: ios}
 
-#### iOS에서 콜렉션 제거
+### iOS에서 콜렉션 제거
 {: ios}
 
 ```objc
@@ -875,7 +875,7 @@ NSError* error = nil;
 {: codeblock}
 {: ios}
 
-#### iOS에서 콜렉션 내부에 있는 모든 데이터 지우기
+### iOS에서 콜렉션 내부에 있는 모든 데이터 지우기
 {: ios}
 
 ```objc
@@ -924,7 +924,7 @@ if (addError != nil || removeError != nil) {
 {: codeblock}
 {: ios}
 
-#### iOS에서 파일 정보 가져오기
+### iOS에서 파일 정보 가져오기
 {: ios}
 
 ```objc
@@ -938,11 +938,11 @@ NSArray* results = [[JSONStore sharedInstance] fileInfoAndReturnError:&error];
 {: codeblock}
 {: ios}
 
-### Android의 샘플
+## Android의 샘플
 {: #samples_android }
 {: android}
 
-#### Android에서 연결 초기화 및 열기, 액세서 가져오기 및 데이터 추가
+### Android에서 연결 초기화 및 열기, 액세서 가져오기 및 데이터 추가
 {: android}
 
 ```java
@@ -985,7 +985,7 @@ throw ex;
 {: codeblock}
 {: android}
 
-#### Android에서 서버의 보안 랜덤 토큰으로 초기화
+### Android에서 서버의 보안 랜덤 토큰으로 초기화
 {: android}
 
 ```java
@@ -1049,7 +1049,7 @@ aTask.execute(ctx);
 {: codeblock}
 {: android}
 
-#### 찾기 - Android의 저장소 내부에서 문서 찾기
+### 찾기 - Android의 저장소 내부에서 문서 찾기
 {: android}
 
 ```java
@@ -1093,7 +1093,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### 대체 - Android에서 이미 콜렉션 내부에 저장된 문서 변경
+### 대체 - Android에서 이미 콜렉션 내부에 저장된 문서 변경
 {: android}
 
 ```java
@@ -1123,7 +1123,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### 제거 - Android에서 조회와 일치하는 모든 문서 삭제
+### 제거 - Android에서 조회와 일치하는 모든 문서 삭제
 {: android}
 
 ```java
@@ -1157,7 +1157,7 @@ catch (JSONException ex) {
 {: codeblock}
 {: android}
 
-#### 계수 - Android에서 조회와 일치하는 총 문서 수 가져오기
+### 계수 - Android에서 조회와 일치하는 총 문서 수 가져오기
 {: android}
 
 ```java
@@ -1188,7 +1188,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### 영구 삭제 - Android에서 모든 사용자의 데이터 삭제, 내부 스토리지 영구 삭제 및 보안 아티팩트 지우기
+### 영구 삭제 - Android에서 모든 사용자의 데이터 삭제, 내부 스토리지 영구 삭제 및 보안 아티팩트 지우기
 {: android}
 
 ```java
@@ -1207,7 +1207,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### 보안 - Android에서 현재 사용자의 열려 있는 모든 콜렉션에 대한 액세스 닫기
+### 보안 - Android에서 현재 사용자의 열려 있는 모든 콜렉션에 대한 액세스 닫기
 {: android}
 
 ```java
@@ -1226,7 +1226,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### 보안 - Android에서 저장소에 액세스하는 데 사용되는 비밀번호 변경
+### 보안 - Android에서 저장소에 액세스하는 데 사용되는 비밀번호 변경
 {: android}
 
 ```java
@@ -1255,7 +1255,7 @@ finally {
 {: codeblock}
 {: android}
 
-#### 푸시 - Android에서 더티로 표시되는 모든 문서를 가져와서 어댑터에 전송하고 정리된 것으로 표시
+### 푸시 - Android에서 더티로 표시되는 모든 문서를 가져와서 어댑터에 전송하고 정리된 것으로 표시
 {: android}
 
 ```java
@@ -1280,7 +1280,7 @@ try {
 {: codeblock}
 {: android}
 
-#### 가져오기 - Android의 어댑터에서 새 데이터 가져오기
+### 가져오기 - Android의 어댑터에서 새 데이터 가져오기
 {: android}
 
 ```java
@@ -1324,7 +1324,7 @@ catch (JSONException ex) {
 {: codeblock}
 {: android}
 
-#### Android에서 문서의 더티 여부 확인
+### Android에서 문서의 더티 여부 확인
 {: android}
 
 ```java
@@ -1346,7 +1346,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Android에서 더티 문서 수 확인
+### Android에서 더티 문서 수 확인
 {: android}
 
 ```java
@@ -1368,7 +1368,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Android에서 콜렉션 제거
+### Android에서 콜렉션 제거
 {: android}
 
 ```java
@@ -1391,7 +1391,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Android에서 콜렉션 내부에 있는 모든 데이터 지우기
+### Android에서 콜렉션 내부에 있는 모든 데이터 지우기
 {: android}
 
 ```java
@@ -1413,7 +1413,7 @@ catch (JSONStoreException ex) {
 {: codeblock}
 {: android}
 
-#### Android에서 트랜잭션 시작, 일부 데이터 추가, 문서 제거, 트랜잭션 커미트 및 실패한 경우 트랜잭션 롤백
+### Android에서 트랜잭션 시작, 일부 데이터 추가, 문서 제거, 트랜잭션 커미트 및 실패한 경우 트랜잭션 롤백
 {: #android-transaction }
 {: android}
 
@@ -1458,7 +1458,7 @@ catch (JSONException ex) {
 {: codeblock}
 {: android}
 
-#### Android에서 파일 정보 가져오기
+### Android에서 파일 정보 가져오기
 {: android}
 
 ```java

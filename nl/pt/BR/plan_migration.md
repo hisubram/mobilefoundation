@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-12-20"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation plans, migration of plans
 
@@ -24,13 +24,13 @@ As instâncias do Mobile Foundation criadas usando os planos descontinuados prec
 ## Cenário de amostra: migrar do Plano Professional Per Device para o plano Professional 1 Application
 
 1. No painel do IBM Cloud, selecione a instância do IBM Mobile Foundation que você deseja migrar.
-2. Selecione **Plano** na navegação esquerda.
+2. Selecione **Plano** na navegação.
    ![Plano do Mobile Foundation existente](images/existing-plan.png)
 3. Nos planos de precificação listados, selecione Professional 1 Application.
    ![Novo plano do Mobile Foundation](images/new-plan.png)
 4. Clique no botão **Salvar** e confirme a migração do plano.
      A migração para o Professional 1 Application está agora concluída e todos os dados existentes são retidos. O faturamento foi mudado e não há tempo de inatividade.
-5. Após a migração do plano, a instância do Mobile Foundation precisa ser recriada por meio do painel de serviço para que a configuração correta entre em vigor. Essa atualização requer um tempo de inatividade curto. Você precisará planejar-se para o tempo de inatividade. Selecione **Gerenciar** na navegação esquerda e clique em **Recriar**.
+5. Após a migração do plano, a instância do Mobile Foundation precisa ser recriada por meio do painel do serviço para que a configuração correta entre em vigor. Essa atualização requer um tempo de inatividade curto. Você precisará planejar-se para o tempo de inatividade. Selecione **Gerenciar** na navegação e clique em **Recriar**.
 
 Se você está em um dos planos descontinuados, deve-se migrar para um novo plano.
 {: note}

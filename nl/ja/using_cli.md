@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-19"
+lastupdated: "2019-06-10"
 
 keywords: command line, cli, mfpdev-cli, cli commands
 
@@ -14,8 +14,9 @@ subcollection:  mobilefoundation
 {:screen: .screen}
 {:tip: .tip}
 {:pre: .pre}
+{:note: .note}
 
-#	Mobile Foundation CLI
+# Mobile Foundation CLI
 {: #mobile_foundation_cli}
 
 {{ site.data.keyword.mobilefoundation_short }} には、{{site.data.keyword.mobilefoundation_short}} クライアント成果物およびサーバー成果物を簡単に管理するための、開発者向けのコマンド・ライン・インターフェース (CLI) ツール **mfpdev** が用意されています。
@@ -34,27 +35,28 @@ node -v
 ```
 {: codeblock}
 
-> **注:** サポートされている node.js の最小バージョンは **4.2.3** です。 また、急速に進化している node と npm のパッケージでは、{{site.data.keyword.mobilefoundation_short}} CLI は、最新バージョンも含めて、node と npm のすべての利用可能なバージョンで完全には機能しない可能性があります。CLI が適切に機能するように、node がバージョン **6.11.1** であり、npm のバージョンが **3.10.10** であるようにしてください。
+サポートされている node.js の最小バージョンは **4.2.3** です。また、急速に進化している node と npm のパッケージでは、{{site.data.keyword.mobilefoundation_short}} CLI は、最新バージョンも含めて、node と npm のすべての利用可能なバージョンで完全には機能しない可能性があります。 CLI が適切に機能するように、node がバージョン **6.11.1** であり、npm のバージョンが **3.10.10** であるようにしてください。
+{: note}
 
-> MobileFirst CLI 暫定修正バージョン *8.0.2018100112* 以上では、Node バージョン 8.x または 10.x を使用できます。
+MobileFirst CLI 暫定修正バージョン *8.0.2018100112* 以上では、Node バージョン 8.x または 10.x を使用できます。
 
-{{site.data.keyword.mobilefoundation_short}} CLI をインストールするには、以下のコマンドを実行します。
-```bash
-npm install -g mfpdev-cli
-```
-{: codeblock}
+* {{site.data.keyword.mobilefoundation_short}} CLI をインストールするには、以下のコマンドを実行します。
+    ```bash
+    npm install -g mfpdev-cli
+    ```
+    {: codeblock}
 
-CLI の圧縮ファイル (*.zip*) を MobileFirst Operations Console のダウンロード・センターからダウンロードした場合は、次のコマンドを使用します。
-```bash
-npm install -g <path-to-mfpdev-cli.tgz>
-```
-{: codeblock}
+* CLI の圧縮ファイル (*.zip*) を MobileFirst Operations Console のダウンロード・センターからダウンロードした場合は、次のコマンドを使用します。
+    ```bash
+    npm install -g <path-to-mfpdev-cli.tgz>
+    ```
+    {: codeblock}
 
-オプションの従属関係を含めずに CLI をインストールするには、`--no-optional` フラグを追加して、次のようにします。
-```bash
-npm install -g --no-optional path-to-mfpdev-cli.tgz
-```
-{: codeblock}
+* オプションの従属関係を含めずに CLI をインストールするには、`--no-optional` フラグを追加して、次のようにします。
+    ```bash
+    npm install -g --no-optional path-to-mfpdev-cli.tgz
+    ```
+    {: codeblock}
 
 Node 8 を使用して MobileFirst CLI をインストールしているときに、端末ウィンドウに以下のエラーのいくつかが表示されることがあります。
 ```text
@@ -84,35 +86,36 @@ gyp ERR! not ok
 > fsevents@1.2.4 install /usr/local/lib/node_modules/mfpdev-cli/node_modules/fsevents
 > node install
 ```
+{: codeblock}
 
 このエラーの原因は、[node-gyp の既知のバグ ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/nodejs/node-gyp/issues/1547){: new_window} です。 これらのエラーは、MobileFirst CLI の機能に影響を与えないため無視できます。 この問題は `mfpdev-cli` 暫定修正レベル *8.0.2018100112* 以降に適用されます。 このエラーに対処するには、インストール時に `--no-optional` フラグを使用します。
 
-CLI が正しくインストールされていることを確認するには、以下のコマンドを実行します。
-```bash
-mfpdev
-```
-{: codeblock}
+* CLI が正しくインストールされていることを確認するには、以下のコマンドを実行します。
+    ```bash
+    mfpdev
+    ```
+    {: codeblock}
 
-CLI のヘルプが出力として表示されます。
+* CLI のヘルプが出力として表示されます。
 
-```
- NAME
-     IBM MobileFirst Foundation Command Line Interface (CLI).
+    ```
+     NAME
+         IBM MobileFirst Foundation Command Line Interface (CLI).
 
- SYNOPSIS
-     mfpdev <command> [options]
+     SYNOPSIS
+         mfpdev <command> [options]
 
- DESCRIPTION
+     DESCRIPTION
      The IBM MobileFirst Foundation Command Line Interface (CLI) is a command-line
      for developing MobileFirst applications. The command-line can be used by itself, or in conjunction  with the IBM MobileFirst Foundation Operations Console. Some functions are available from  the command-line only and not the console.
 
-     For more information and a step-by-step example of using the CLI, see the IBM Knowledge Center for your version of IBM MobileFirst Foundation at
+         For more information and a step-by-step example of using the CLI, see the IBM Knowledge Center for your version of IBM MobileFirst Foundation at
      https://www.ibm.com/support/knowledgecenter.
-     ...
-     ...
-     ...
-```
-{: screen}
+         ...
+         ...
+         ...
+    ```
+    {: screen}
 
 ## {{site.data.keyword.mobilefoundation_short}} CLI コマンドのリスト
 {: #list_cli_commands}
@@ -212,7 +215,7 @@ mfpdev app register -w windows8
 ```
 {: codeblock}
 
-アプリで使用するバックエンド・サーバーおよびランタイムを指定できます。Cordova アプリの場合、このコマンドを使用すると、システム・メッセージのデフォルト言語やチェックサム・セキュリティー検査を実行するかどうかなど、さらにいくつかの側面を構成できます。Cordova アプリケーションでは、その他の構成パラメーターが含まれます。
+アプリで使用するバックエンド・サーバーおよびランタイムを指定できます。 Cordova アプリの場合、このコマンドを使用すると、システム・メッセージのデフォルト言語やチェックサム・セキュリティー検査を実行するかどうかなど、さらにいくつかの側面を構成できます。 Cordova アプリケーションでは、その他の構成パラメーターが含まれます。
 
 ```bash
 mfpdev app config
@@ -233,7 +236,7 @@ mfpdev app push
 ```
 {: codeblock}
 
-Cordova アプリをプレビューします。ターゲット・プラットフォーム・タイプの実際のデバイスがなくてもかまいません。モバイル・ブラウザー・シミュレーターか Web ブラウザーのいずれかでプレビューを表示できます。
+Cordova アプリをプレビューします。ターゲット・プラットフォーム・タイプの実際のデバイスがなくてもかまいません。 モバイル・ブラウザー・シミュレーターか Web ブラウザーのいずれかでプレビューを表示できます。
 
 ```bash
 mfpdev app preview

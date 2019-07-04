@@ -2,7 +2,7 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="mobilefoundation" category="mobile"audience="service" arm="3663370" href="/docs/services/mobilefoundation?topic=mobilefoundation-getting-started#getting-started" path="services/mobilefoundation"}
+{: .toc subcollection="mobilefoundation" category="mobile" audience="service" arm="3663370" href="/docs/services/mobilefoundation?topic=mobilefoundation-getting-started#getting-started" path="services/mobilefoundation"}
 Mobile Foundation
 
     {: .navgroup id="learn"}
@@ -101,6 +101,8 @@ Mobile Foundation
         windows_sdk.md
         web_sdk.md
     using_cli.md
+    mfp-compliance.md
+    mfp-logging-and-tracing.md
 
     {: .topicgroup}
     Samples
@@ -128,7 +130,7 @@ Mobile Foundation
     {: .navgroup id="help"}
     faq.md
     troubleshooting.md
-    [Contacting support](/docs/get-support?topic=get-support-howtogetsupport#getting-customer-support)
+    [Contacting support](https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support)
 
     {: .topicgroup}
     Developer community

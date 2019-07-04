@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation developer, mobile analytics
 
@@ -28,7 +28,7 @@ subcollection:  mobilefoundation
   この選択により、以下の設定で {{site.data.keyword.mfserver_long_notm}} が作成されます。
   *	1 GB のメモリー。 開発アクティビティー、簡単なテスト・アクティビティー、および小規模な実動ワークロードには、このサイズで十分です。
 
-  * CLI を使用して MobileFirst Server にアクセスするには、IBM Cloud コンソールの左側のナビゲーション・ペインで**「サービス資格情報」**をクリックして表示される、資格情報が必要です。
+  * CLI を使用して MobileFirst Server にアクセスするには、IBM Cloud コンソールのナビゲーション・ペインで**「サービス資格情報」**をクリックして表示される、資格情報が必要です。
 
 これで、モバイル・アプリとモバイル・デバイスの管理、モバイル・バックエンドとしてのサーバーの使用、プッシュ通知の送信などを行うことができます。
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation, mobile analytics, professional plan, configure database
 
@@ -30,7 +30,8 @@ Considere o seguinte antes de configurar a instância de serviço {{site.data.ke
 
 * É necessário acesso às credenciais da instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} ou {{site.data.keyword.composeForPostgreSQL}} antes de poder definir as configurações de sua instância de serviço do {{site.data.keyword.mobilefoundation_short}}.
 
-> **Nota**: a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} (qualquer plano diferente do plano **Lite**) ou {{site.data.keyword.composeForPostgreSQL}} pode existir em qualquer `Space` dentro de sua `Organization` do {{site.data.keyword.Bluemix_notm}} ou em qualquer outra `Organization` à qual você tem acesso. Assegure-se de que tenha as permissões para acessar o `Space` no qual a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} ou do {{site.data.keyword.composeForPostgreSQL}} existe.
+A instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} (qualquer plano diferente do plano **Lite**) ou {{site.data.keyword.composeForPostgreSQL}} pode existir em qualquer `Space` dentro de sua `Organization` do {{site.data.keyword.Bluemix_notm}} ou qualquer outra `Organization` à qual você tem acesso. Assegure-se de que tenha as permissões para acessar o `Space` no qual a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} ou do {{site.data.keyword.composeForPostgreSQL}} existe.
+{: note}
 
 
 ## Configure a conexão com o banco de dados
@@ -64,7 +65,8 @@ Siga estas etapas para se conectar a uma instância de serviço existente do {{s
 
 + Selecione {{site.data.keyword.Bluemix_notm}} `Space` em que a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, na lista de espaços disponíveis na
 `Organization` selecionada.   
-> **Nota:** se não vir listados a `Organization` e o `Space` nos quais a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, verifique se você é um membro dessa `Organization` e desse `Space`. É necessário ter um acesso de função de *Desenvolvedor* para a organização e o espaço. O serviço {{site.data.keyword.mobilefoundation_short}} acessa as credenciais por meio do serviço {{site.data.keyword.Db2_on_Cloud_short}}.
+Se você não vir listados a `Organization` e o `Space` nos quais a instância de serviço do {{site.data.keyword.Db2_on_Cloud_short}} existe, verifique se você é um membro dessa `Organization` e desse `Space`. É necessário ter um acesso de função de *Desenvolvedor* para a organização e o espaço. O serviço {{site.data.keyword.mobilefoundation_short}} acessa as credenciais por meio do serviço {{site.data.keyword.Db2_on_Cloud_short}}.
+{: note}
 
 + Selecione {{site.data.keyword.Db2_on_Cloud_short}} `Service name` e `Credentials` para se conectar à instância de serviço existente do {{site.data.keyword.Db2_on_Cloud_short}}.
 

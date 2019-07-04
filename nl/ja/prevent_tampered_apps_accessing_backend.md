@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation security, restrict backend access, tampered apps
 
@@ -27,15 +27,14 @@ subcollection:  mobilefoundation
 
 アプリケーションを適切に保護するには、事前定義の MobileFirst アプリケーション認証性セキュリティー検査 (``appAuthenticity``) を有効にします。 この検査は、有効になっている場合、アプリケーションにサービスを提供する前に、アプリケーションの認証性を検証します。 実稼働環境のアプリケーションでは、この機能が有効になっている必要があります。
 
-アプリケーション認証性を有効にするには、**MobileFirst Operations Console →「 [ご使用のアプリケーション] 」→「認証性」**の画面上の指示に従うか、下記の情報を参考にできます。
+アプリケーション認証性を有効にするには、**MobileFirst Operations Console →「 [ご使用のアプリケーション] 」→「認証性」**の画面上の指示に従うか、以下の情報を参考にできます。
 
-* **可用性**
-
-    アプリケーション認証性は、サポートされるすべてのプラットフォーム (iOS、Android、Windows 8.1 Universal、Windows 10 UWP) において Cordova アプリケーションとネイティブ・アプリケーションの両方で使用できます。
-
-* **制限**
-
-    アプリケーション認証性は、iOS の **Bitcode** はサポートしません。 したがって、アプリケーション認証性を使用する前に、Xcode プロジェクトのプロパティーで Bitcode を使用不可に設定してください。
+<dl>
+  <dt>可用性</dt>
+  <dd>アプリケーション認証性は、サポートされるすべてのプラットフォーム (iOS、Android、Windows 8.1 Universal、Windows 10 UWP) において Cordova アプリケーションとネイティブ・アプリケーションの両方で使用できます。</dd>
+  <dt>制限</dt>
+  <dd>アプリケーション認証性は、iOS の **Bitcode** はサポートしません。 したがって、アプリケーション認証性を使用する前に、Xcode プロジェクトのプロパティーで Bitcode を使用不可に設定してください。</dd>
+</dl>
 
 ## アプリケーション認証性フロー
 {: #appauthenticityflow}
@@ -96,7 +95,7 @@ Xcode で BTS ツールを使用するには、以下のようにします。
 
 1. **「ビルド・フェーズ (Build Phases)」**タブで、**+** ボタンをクリックして、新規の**「スクリプト・フェーズの実行 (Run Script Phase)」**を作成します。
 2. BTS ツールのパスをコピーして、作成した新規の「スクリプト・フェーズの実行 (Run Script Phase)」に貼り付けます。
-3. 「スクリプト・フェーズの実行 (Run Script Phase)」を**「ソース・フェーズのコンパイル (Compile sources phase)」**上にドラッグします。
+3. 「スクリプトの実行フェーズ (Run Script Phase)」を**「ソースのコンパイル・フェーズ (Compile sources phase)」**の前からドラッグします。
 
 実動バージョンのアプリケーションをビルドする際には、このツールを使用する必要があります。
 

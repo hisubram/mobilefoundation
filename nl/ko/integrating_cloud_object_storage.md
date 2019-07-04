@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-24"
 
 keywords: mobile foundation, integration, cloud object storage, COS, ibm cloud
 
@@ -43,7 +43,7 @@ subcollection:  mobilefoundation
 
 1. `npm install -g mfpdev-cli`를 실행하여 [mfpdev-cli](https://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_wl_cli_description.html)를 설치하십시오. 이 cli는 ionic 앱을 등록하고 어댑터를 MF 서버에 배치하는 데 사용됩니다. 또는 MF 서버 대시보드에서 이러한 활동을 수행할 수 있습니다.
 
-2. 시스템에 [{{ site.data.keyword.cloud_notm}} CLI](https://console.bluemix.net/docs/cli/index.html#overview)를 설치하십시오.
+2. 시스템에 [{{ site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud-cli)를 설치하십시오.
 
 3. `npm install -g ionic`을 실행하여 ionic cli를 설치하십시오.
 
@@ -55,7 +55,7 @@ subcollection:  mobilefoundation
 
 {{ site.data.keyword.mobilefoundation_short}} 서버는 {{ site.data.keyword.cloud_notm}}에서 설정됩니다. {{ site.data.keyword.mobilefoundation_short}} 서버의 {{ site.data.keyword.cloud_notm}} 인스턴스를 다음과 같이 설정하십시오.
 
-* {{ site.data.keyword.cloud_notm}} 카탈로그에서 "{{ site.data.keyword.mobilefoundation_short}}"을 검색하십시오. **{{ site.data.keyword.mobilefoundation_short}}** 타일을 클릭하십시오.
+* {{ site.data.keyword.cloud_notm}} 카탈로그에서 *{{ site.data.keyword.mobilefoundation_short}}*을 검색하십시오. **{{ site.data.keyword.mobilefoundation_short}}** 타일을 클릭하십시오.
 
     ![MFPCatalog](images/mfp_catalog.png)
 
@@ -67,7 +67,7 @@ subcollection:  mobilefoundation
 
     ![MFPLogin](images/mfp_login.png)
 
-* MF 서버에 로그인하기 위한 인증 정보는 왼쪽 메뉴에 있는 **인증 정보** 탭에서 찾을 수 있습니다.
+* MF 서버에 로그인하기 위한 인증 정보는 메뉴에 있는 **인증 정보** 탭에서 찾을 수 있습니다.
 
     ![MFPcredentials](images/mfp_credentials.png)
 
@@ -79,7 +79,7 @@ subcollection:  mobilefoundation
 ## Cloud Object Storage 설정
 {: #cloud-object-storage-setup}
 
-* {{ site.data.keyword.cloud_notm}} 카탈로그에서 "Cloud Object Storage"를 검색하십시오. **Object Storage** 타일을 클릭하십시오.
+* {{ site.data.keyword.cloud_notm}} 카탈로그에서 *Cloud Object Storage*를 검색하십시오. **Object Storage** 타일을 클릭하십시오.
 
     ![카탈로그](images/catalog.png)
 
@@ -87,7 +87,7 @@ subcollection:  mobilefoundation
 
     ![COS 작성](images/cos_create.png)
 
-* 다음으로, 왼쪽 분할창 메뉴 옵션에서 **버킷**을 클릭하십시오. 버킷에 대한 적합한 이름(이 예에서는 버킷의 이름을 `sharedgallery`로 지정하도록 선택함)을 제공하고 **작성**을 클릭하십시오.
+* 다음으로, 메뉴 옵션에서 **버킷**을 클릭하십시오. 버킷에 대한 적합한 이름(이 예에서는 버킷의 이름을 `sharedgallery`로 지정하도록 선택함)을 제공하고 **작성**을 클릭하십시오.
 
     ![버킷 작성](images/bucketcreate.png)
 
@@ -101,8 +101,7 @@ subcollection:  mobilefoundation
 ## MFP-COS Ionic 앱 및 Java 어댑터
 {: #mfp-cos-ionic-app-and-java-adapter}
 
-이 [git 저장소](https://github.com/MobileFirst-Platform-Developer-Center/COS_MF_Short_Stories_Ionic_App)를 다운로드하거나 복제하십시오.
-이 저장소는 두 개의 주요 컴포넌트로 구성됩니다.
+이 [git 저장소](https://github.com/MobileFirst-Platform-Developer-Center/COS_MF_Short_Stories_Ionic_App)를 다운로드하거나 복제하십시오. 이 저장소는 두 개의 주요 컴포넌트로 구성됩니다.
 
 1. MF Java 어댑터
 2. ionic 모바일 애플리케이션
@@ -167,7 +166,7 @@ Server profile 'mfpserver' added successfully.
 
 COS 인스턴스에 연결하려면 COS 인스턴스의 일부 세부사항이 `adapter.xml` 파일에 제공되어야 합니다. 다음 필드의 값을 제공하십시오.
 
-1. **endpointURL**: 이 필드는 COS 오브젝트의 공용 엔드포인트 URL입니다. 이 URL은 COS 대시보드의 **버킷(왼쪽 메뉴 옵션에 있음) -> <your-bucket-name>(이 예에서는 `sharedgallery`) -> 구성 -> 엔드포인트 -> 공용**에서 찾을 수 있습니다.
+1. **endpointURL**: 이 필드는 COS 오브젝트의 공용 엔드포인트 URL입니다. 이 URL은 COS 대시보드의 **버킷(메뉴 옵션에 있음) -> <your-bucket-name>(이 예에서는 `sharedgallery`) -> 구성 -> 엔드포인트 -> 공용**에서 찾을 수 있습니다.
 2. **AuthToken**: 이 튜토리얼에서는 IAM 인증을 사용합니다.
 
 Java 어댑터를 COS의 인스턴스에 연결하려면 IAM 또는 HMAC를 사용하는 인증이 필요합니다. 다음은 IAM 토큰을 가져오기 위한 단계입니다. IAM 및 HMAC 인증 프로세스에 대한 추가 세부사항을 보려면 [여기](https://cloud.ibm.com/docs/services/cloud-object-storage/api-reference/api-reference-buckets.html#bucket-operations#AuthenticationOptions)를 클릭하십시오.
@@ -192,7 +191,7 @@ Java 어댑터를 COS의 인스턴스에 연결하려면 IAM 또는 HMAC를 사�
 
 	Targeted resource group default
 
-	API endpoint:     https://api.ng.bluemix.net (API version: 	2.75.0)
+	API endpoint:     https://api.us-south.cf.cloud.ibm.com (API version: 	2.128.0)
 	Region:           us-south
 	User:             <email-address>
 	Account:          <account-name> (<account-id>)
@@ -266,7 +265,7 @@ mfpdev adapter deploy
 
 어댑터가 MF 인스턴스에 배치됩니다.
 
-또는 MF 서버 대시보드에서 어댑터를 배치할 수 있습니다. MF 서버 대시보드를 열고 왼쪽 메뉴에서 **어댑터 -> 새로 작성**을 클릭하여 다음 이미지에 표시된 페이지를 여십시오.
+또는 MF 서버 대시보드에서 어댑터를 배치할 수 있습니다. MF 서버 대시보드를 열고 메뉴에서 **어댑터 -> 새로 작성**을 클릭하여 다음 이미지에 표시된 페이지를 여십시오.
 
 ![MFPNewAdapterRegister](images/mfp_new_adapter_register.png)
 
@@ -303,7 +302,7 @@ mfpdev adapter deploy
 	mfpdev app register
 	```
 
-	또는 MF 서버 대시보드에서 앱을 등록할 수 있습니다. MF 서버 대시보드를 열고 왼쪽 메뉴에서 **애플리케이션 -> 새로 작성**을 클릭하십시오.
+	또는 MF 서버 대시보드에서 앱을 등록할 수 있습니다. MF 서버 대시보드를 열고 메뉴에서 **애플리케이션 -> 새로 작성**을 클릭하십시오.
 
 	다음 이미지에 표시된 대로 페이지가 로드됩니다.
 
@@ -314,6 +313,7 @@ mfpdev adapter deploy
 	Android의 경우 **패키지** 텍스트 상자에 *애플리케이션 ID*를 입력합니다. 이 매개변수는 `AndroidManifest.xml`에 있는 Android 애플리케이션의 패키지입니다. **버전** 텍스트 상자 필드는 `AndroidManifest.xml`의 *versionName* 값으로 채워져야 합니다.
 
 	iOS의 경우 **번들 ID** 텍스트 상자에 *애플리케이션 ID*(대소문자 구분)를 입력합니다. 이 매개변수는 iOS 애플리케이션의 `mfpclient.plist`에서 찾을 수 있습니다. **버전** 텍스트 상자 필드는 iOS 애플리케이션에 있는 `mfpclient.plist` 파일의 *version* 값으로 채워져야 합니다.
+
 5. 변경사항을 추가된 환경에 적용하려면 `ionic cordova prepare`를 실행하십시오.
 6. 다음을 실행하십시오.
   ```bash
@@ -344,7 +344,7 @@ Ionic 애플리케이션은 사용자가 작성한 COS 인스턴스에서 이전
 
 ![이전 COS](images/cos_before.png)
 
-애플리케이션의 홈 페이지에는 "모든 스토리지 가져오기" 또는 "스토리 추가"를 위한 옵션이 제공됩니다.
+애플리케이션의 홈 페이지에는 *모든 스토리 가져오기* 또는 *스토리 추가*를 위한 옵션이 제공됩니다.
 
 ![앱 홈 화면](images/app-home-screen.png)
 

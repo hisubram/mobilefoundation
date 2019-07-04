@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation security, authentication, using challenge handlers
 
@@ -49,7 +49,7 @@ Em sua classe `StepUpPinCode`, no nível de classe, inclua:
 ```
 {: codeblock}
 
->**Importante**: ambas as implementações de verificação de segurança precisam ser empacotadas dentro do mesmo adaptador.
+**Importante**: ambas as implementações de verificação de segurança precisam ser empacotadas dentro do mesmo adaptador.
 {.important}
 
 Para resolver essa referência, a estrutura consulta a verificação de segurança com a classe apropriada e injeta sua referência na verificação de segurança dependente.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-06-10"
 
 keywords: push notifications, notifications, set up android app for notification, set up iOS app for notification, set up cordova app for notification, set up windows app for notification
 
@@ -42,12 +42,13 @@ iOS、Android、および Windows のネイティブ・ベースまたは Cordov
 クライアント・アプリケーションで着信プッシュ通知を処理する方法について理解するには、以下のセクションを参照してください。
 
 ### Android でのプッシュ通知の処理
-{: #handling_push_notifications_in_android }
+{: #handling_push_notifications_in_android}
 {: android}
 受け取ったプッシュ通知を Android アプリケーションが処理できるようにするためには、Google Play Services のサポートを構成する必要があります。 アプリケーションが構成されると、{{ site.data.keyword.mobilefirst_notm }} が提供する通知 API を使用して、デバイスの登録や登録抹消、タグへのサブスクライブやアンサブスクライブを実行できます。 このチュートリアルでは、Android アプリケーションでプッシュ通知を処理する方法について学習します。
 {: android}
 
-**前提条件**
+#### 前提条件
+{: #prereqs-andriod}
 {: android}
 * ローカルで稼働している {{ site.data.keyword.mfserver_short_notm }}、またはリモートで稼働している {{ site.data.keyword.mfserver_short_notm }}
 * 開発者ワークステーションに {{ site.data.keyword.mobilefirst_notm  }} CLI がインストールされている
@@ -74,7 +75,7 @@ iOS、Android、および Windows のネイティブ・ベースまたは Cordov
     {: codeblock}
     {: android}
 
-    [Google の既知の問題](https://code.google.com/p/android/issues/detail?id=212879)のために、Play Services の最新バージョン (現行は 9.2.0) は使用できません。 下位バージョンを使用してください。
+    [Google の既知の問題](https://code.google.com/p/android/issues/detail?id=212879)のために、Play Services の最新バージョン (現行は 9.2.0) は使用できません。 9.2.0 より前のバージョンを使用してください。
     {: note}
     {: android}
 
@@ -203,10 +204,11 @@ iOS、Android、および Windows のネイティブ・ベースまたは Cordov
 | [`getSubscriptions(MFPPushResponseListener)`](#get-subscriptions) | デバイスが現在サブスクライブしているタグをすべて取得します。 |
 | [`unsubscribe(String[] tagNames, MFPPushResponseListener)`](#unsubscribe) | 特定のタグからアンサブスクライブします。 |
 | [`unregisterDevice(MFPPushResponseListener)`](#unregister) | プッシュ通知サービスからデバイスを登録抹消します。 |
+{: caption="表 1. Java メソッド" caption-side="top"}
 {: android}
 
 ###### 初期化
-{: #initialization }
+{: #initialization}
 {: android}
 
 クライアント・アプリケーションが、正しいアプリケーション・コンテキストの MFPPush サービスに接続するために必要です。
@@ -417,7 +419,7 @@ MFPPush.getInstance().unregisterDevice(new MFPPushResponseListener<String>() {
 {: #option-two }
 {: android}
 
-下記の概略のように、`MFPPush` のインスタンスで `listen(new MFPPushNofiticationListener())` を呼び出すことで、リスナーを作成します。
+下記の例の概略のように、`MFPPush` のインスタンスで `listen(new MFPPushNofiticationListener())` を呼び出すことで、リスナーを作成します。
 ```java
 MFPPush.getInstance().listen(new MFPPushNotificationListener() {
     @Override
@@ -473,12 +475,12 @@ FCM でのアプリケーションのセットアップは、古い GCM モデ�
       {: codeblock}
       {: android}
 
-    - 以下の GCM プラグインを build.gradle ファイルから除去します `compile  com.google.android.gms:play-services-gcm:+`
+    - GCM プラグインより後ろを build.gradle ファイルから除去します `compile  com.google.android.gms:play-services-gcm:+`
      {: android}
  3. AndroidManifest ファイルを構成します。 `AndroidManifest.xml` で以下の変更が必要です。
     {: android}
 
-    **以下の項目を削除します。**
+    以下の項目を削除します。
     {: android}
     ```xml
         <receiver android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
@@ -504,7 +506,7 @@ FCM でのアプリケーションのセットアップは、古い GCM モデ�
     {: codeblock}
     {: android}
 
-    **以下の項目を変更する必要があります。**
+    以下の項目を変更する必要があります。
     {: android}
 
     ```xml
@@ -517,7 +519,7 @@ FCM でのアプリケーションのセットアップは、古い GCM モデ�
     {: codeblock}
     {: android}
 
-    **これらの項目を以下のように変更します。**
+    これらの項目を以下のように変更します。
     {: android}
 
     ```xml
@@ -530,7 +532,7 @@ FCM でのアプリケーションのセットアップは、古い GCM モデ�
     {: codeblock}
     {: android}
 
-    **以下の項目を追加します。**
+    以下の項目を追加します。
     {: android}
 
     ```xml
@@ -562,7 +564,8 @@ FCM でのアプリケーションのセットアップは、古い GCM モデ�
 * [対話式通知](/docs/services/mobilefoundation?topic=mobilefoundation-interactive_notifications#interactive_notifications)
 {: ios}
 
-**前提条件**
+#### 前提条件
+{: #prereqs-ios}
 {: ios}
 
 * ローカルで稼働している {{ site.data.keyword.mfserver_short }}、またはリモートで稼働している {{ site.data.keyword.mfserver_short }}
@@ -570,7 +573,7 @@ FCM でのアプリケーションのセットアップは、古い GCM モデ�
 {: ios}
 
 #### 通知構成
-{: #notifications-configuration }
+{: #notifications-configuration_ios}
 {: ios}
 
 新しい Xcode プロジェクトを作成するか、または既存のプロジェクトを使用します。
@@ -618,11 +621,11 @@ FCM でのアプリケーションのセットアップは、古い GCM モデ�
 {: ios}
 
 #### 通知 API
-{: #notifications-api }
+{: #notifications-api-ios}
 {: ios}
 
 ##### MFPPush インスタンス
-{: #mfppush-instance }
+{: #mfppush-instance-ios}
 {: ios}
 
 すべての API 呼び出しは、`MFPPush` のインスタンスから呼び出される必要があります。 これを行うには、ビュー・コントローラー内で `var` を使用し (`var push = MFPPush.sharedInstance();` など)、その後、ビュー・コントローラー内で一貫して `push.methodName()` を呼び出します。
@@ -632,7 +635,7 @@ FCM でのアプリケーションのセットアップは、古い GCM モデ�
 {: ios}
 
 #### チャレンジ・ハンドラー
-{: #challenge-handlers }
+{: #challenge-handlers-ios}
 {: ios}
 
 `push.mobileclient` スコープが**セキュリティー検査**にマップされる場合、プッシュ API を使用する前に、一致する**チャレンジ・ハンドラー**が存在し、登録済みであることを確認する必要があります。
@@ -643,7 +646,7 @@ FCM でのアプリケーションのセットアップは、古い GCM モデ�
 {: ios}
 
 #### クライアント・サイド
-{: #client-side }
+{: #client-side-ios}
 {: ios}
 
 | Swift メソッド | 説明  |
@@ -657,10 +660,11 @@ FCM でのアプリケーションのセットアップは、古い GCM モデ�
 | [`getSubscriptions(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#get-subscriptions)  | デバイスが現在サブスクライブしているタグをすべて取得します。 |
 | [`unsubscribe(tagsArray: [AnyObject], completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#unsubscribe) | 特定のタグからアンサブスクライブします。 |
 | [`unregisterDevice(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#unregister) | プッシュ通知サービスからデバイスを登録抹消します。              |
+{: caption="表 2. Swift メソッド" caption-side="top"}
 {: ios}
 
 ##### 初期化
-{: #initialization }
+{: #initialization-ios}
 {: ios}
 
 初期化は、クライアント・アプリケーションが MFPPush サービスに接続するために必要です。
@@ -677,7 +681,7 @@ MFPPush.sharedInstance().initialize();
 {: ios}
 
 ##### プッシュがサポートされるか
-{: #is-push-supported }
+{: #is-push-supported-ios}
 {: ios}
 
 デバイスがプッシュ通知をサポートするかどうかをチェックします。
@@ -696,7 +700,7 @@ if isPushSupported {
 {: ios}
 
 ##### デバイスの登録 &amp; デバイス・トークンの送信
-{: #register-device--send-device-token }
+{: #register-device--send-device-token-ios}
 {: ios}
 
 デバイスをプッシュ通知サービスに登録します。
@@ -730,7 +734,7 @@ MFPPush.sharedInstance().sendDeviceToken(deviceToken)
 {: ios}
 
 ##### タグの取得
-{: #get-tags }
+{: #get-tags-ios}
 {: ios}
 
 プッシュ通知サービスからすべての使用可能なタグを取得します。
@@ -759,7 +763,7 @@ MFPPush.sharedInstance().getTags { (response, error) -> Void in
 {: ios}
 
 ##### サブスクライブ
-{: #subscribe }
+{: #subscribe-ios}
 {: ios}
 
 目的のタグにサブスクライブします。
@@ -782,7 +786,7 @@ MFPPush.sharedInstance().subscribe(self.tagsArray) { (response, error)  -> Void 
 {: ios}
 
 ##### サブスクリプションの取得
-{: #get-subscriptions }
+{: #get-subscriptions-ios}
 {: ios}
 
 デバイスが現在サブスクライブしているタグを取得します。
@@ -811,7 +815,7 @@ MFPPush.sharedInstance().getSubscriptions { (response, error) -> Void in
 {: ios}
 
 ##### アンサブスクライブ
-{: #unsubscribe }
+{: #unsubscribe-ios}
 {: ios}
 
 タグからアンサブスクライブします。
@@ -835,7 +839,7 @@ MFPPush.sharedInstance().unsubscribe(self.tagsArray) { (response, error)  -> Voi
 {: ios}
 
 ##### 登録抹消
-{: #unregister }
+{: #unregister-ios}
 {: ios}
 
 プッシュ通知サービス・インスタンスからデバイスを登録抹消します。
@@ -858,7 +862,7 @@ MFPPush.sharedInstance().unregisterDevice { (response, error)  -> Void in
 {: ios}
 
 #### プッシュ通知の処理
-{: #handling-a-push-notification }
+{: #handling-a-push-notification-ios}
 {: ios}
 
 プッシュ通知は、ネイティブ iOS フレームワークによって直接的に処理されます。 アプリケーション・ライフサイクルに応じて、いろいろなメソッドが iOS フレームワークによって呼び出されます。
@@ -904,7 +908,8 @@ iOS でのサイレント通知または対話式通知については、以下�
 * [対話式通知](/docs/services/mobilefoundation?topic=mobilefoundation-interactive_notifications#interactive_notifications)
 {: cordova}
 
-**前提条件**
+#### 前提条件
+{: #prereqs-cordova}
 {: cordova}
 
 * ローカルで稼働している {{ site.data.keyword.mfserver_short }}、またはリモートで稼働している {{ site.data.keyword.mfserver_short }}
@@ -913,7 +918,7 @@ iOS でのサイレント通知または対話式通知については、以下�
 {: cordova}
 
 #### 通知構成
-{: #notifications-configuration }
+{: #notifications-configuration-cordova}
 {: cordova}
 
 新しい Cordova プロジェクトを作成するか既存のプロジェクトを使用し、サポートされるプラットフォーム (iOS、Android、Windows) を 1 つ以上追加します。
@@ -924,7 +929,7 @@ iOS でのサイレント通知または対話式通知については、以下�
 {: note}
 
 #### プッシュ・プラグインの追加
-{: #adding-the-push-plug-in }
+{: #adding-the-push-plug-in-cordova}
 {: cordova}
 
 1. **コマンド・ライン**・ウィンドウから Cordova プロジェクトのルートにナビゲートします。  
@@ -973,23 +978,24 @@ Android Studio では、以下の `activity` を `application` タグに追加�
 {: cordova}
 
 #### 通知 API
-{: #notifications-api }
+{: #notifications-api-cordova}
 {: cordova}
 
 ##### クライアント・サイド
-{: #client-side }
+{: #client-side-cordova}
 {: cordova}
 
 | Javascript 関数 | 説明 |
 | --- | --- |
-| [`MFPPush.initialize(success, failure)`](#initialization) | MFPPush インスタンスを初期化します。 |
-| [`MFPPush.isPushSupported(success, failure)`](#is-push-supported) | デバイスがプッシュ通知をサポートするかどうか。 |
-| [`MFPPush.registerDevice(options, success, failure)`](#register-device) | デバイスをプッシュ通知サービスに登録します。 |
-| [`MFPPush.getTags(success, failure)`](#get-tags) | プッシュ通知サービス・インスタンス内で使用可能なすべてのタグを取得します。 |
-| [`MFPPush.subscribe(tag, success, failure)`](#subscribe) | 特定のタグにサブスクライブします。 |
-| [`MFPPush.getSubsciptions(success, failure)`](#get-subscriptions) | デバイスが現在サブスクライブしているタグを取得します。 |
-| [`MFPPush.unsubscribe(tag, success, failure)`](#unsubscribe) | 特定のタグからアンサブスクライブします。 |
-| [`MFPPush.unregisterDevice(success, failure)`](#unregister) | プッシュ通知サービスからデバイスを登録抹消します。 |
+| [`MFPPush.initialize(success, failure)`](#initialization-cordova) | MFPPush インスタンスを初期化します。 |
+| [`MFPPush.isPushSupported(success, failure)`](#is-push-supported-cordova) | デバイスがプッシュ通知をサポートするかどうか。 |
+| [`MFPPush.registerDevice(options, success, failure)`](#register-device-cordova) | デバイスをプッシュ通知サービスに登録します。 |
+| [`MFPPush.getTags(success, failure)`](#get-tags-cordova) | プッシュ通知サービス・インスタンス内で使用可能なすべてのタグを取得します。 |
+| [`MFPPush.subscribe(tag, success, failure)`](#subscribe-cordova) | 特定のタグにサブスクライブします。 |
+| [`MFPPush.getSubsciptions(success, failure)`](#get-subscriptions-cordova) | デバイスが現在サブスクライブしているタグを取得します。 |
+| [`MFPPush.unsubscribe(tag, success, failure)`](#unsubscribe-cordova) | 特定のタグからアンサブスクライブします。 |
+| [`MFPPush.unregisterDevice(success, failure)`](#unregister-cordova) | プッシュ通知サービスからデバイスを登録抹消します。 |
+{: caption="表 3. Javascript 関数" caption-side="top"}
 {: cordova}
 
 ##### API 実装
@@ -997,7 +1003,7 @@ Android Studio では、以下の `activity` を `application` タグに追加�
 {: cordova}
 
 ###### 初期化
-{: #initialization }
+{: #initialization-cordova}
 {: cordova}
 
 **MFPPush** インスタンスを初期化します。
@@ -1023,7 +1029,7 @@ MFPPush.initialize (
 {: cordova}
 
 ###### プッシュがサポートされるか
-{: #is-push-supported }
+{: #is-push-supported-cordova}
 {: cordova}
 
 デバイスがプッシュ通知をサポートするかどうかをチェックします。
@@ -1043,7 +1049,7 @@ MFPPush.isPushSupported (
 {: cordova}
 
 ###### デバイスの登録
-{: #register-device }
+{: #register-device-cordova}
 {: cordova}
 
 デバイスをプッシュ通知サービスに登録します。 必要なオプションがない場合、オプションは `null` に設定できます。
@@ -1065,7 +1071,7 @@ MFPPush.registerDevice(
 {: cordova}
 
 ###### タグの取得
-{: #get-tags }
+{: #get-tags-cordova}
 {: cordova}
 
 プッシュ通知サービスからすべての使用可能なタグを取得します。
@@ -1085,7 +1091,7 @@ MFPPush.getTags (
 {: cordova}
 
 ###### サブスクライブ
-{: #subscribe }
+{: #subscribe-cordova}
 {: cordova}
 
 目的のタグにサブスクライブします。
@@ -1108,7 +1114,7 @@ MFPPush.subscribe(
 {: cordova}
 
 ###### サブスクリプションの取得
-{: #get-subscriptions }
+{: #get-subscriptions-cordova}
 {: cordova}
 
 デバイスが現在サブスクライブしているタグを取得します。
@@ -1128,7 +1134,7 @@ MFPPush.getSubscriptions (
 {: cordova}
 
 ###### アンサブスクライブ
-{: #unsubscribe }
+{: #unsubscribe-cordova}
 {: cordova}
 
 タグからアンサブスクライブします。
@@ -1151,7 +1157,7 @@ MFPPush.unsubscribe(
 {: cordova}
 
 ###### 登録抹消
-{: #unregister }
+{: #unregister-cordova}
 {: cordova}
 
 プッシュ通知サービス・インスタンスからデバイスを登録抹消します。
@@ -1171,7 +1177,7 @@ MFPPush.unregisterDevice(
 {: cordova}
 
 #### プッシュ通知の処理
-{: #handling-a-push-notification }
+{: #handling-a-push-notification-cordova}
 {: cordova}
 
 登録済みのコールバック関数内で応答オブジェクトを操作することで、受け取ったプッシュ通知を処理できます。
@@ -1192,7 +1198,8 @@ var notificationReceived = function(message) {
 {{ site.data.keyword.mobilefirst_notm }} が提供する通知 API を使用して、デバイスの登録や登録抹消、タグへのサブスクライブやアンサブスクライブを実行できます。 このチュートリアルでは、C# を使用して、ネイティブの Windows 8.1 Universal アプリケーションおよび Windows 10 UWP アプリケーションでプッシュ通知を処理する方法について学習します。
 {: windows}
 
-**前提条件**
+#### 前提条件
+{: #prereqs-windows}
 {: windows}
 
 * ローカルで稼働している {{ site.data.keyword.mfserver_short_notm }}、またはリモートで稼働している {{ site.data.keyword.mfserver_short_notm }}
@@ -1200,7 +1207,7 @@ var notificationReceived = function(message) {
 {: windows}
 
 #### 通知構成
-{: #notifications-configuration }
+{: #notifications-configuration-windows}
 {: windows}
 
 新しい Visual Studio プロジェクトを作成するか、または既存のプロジェクトを使用します。  
@@ -1210,7 +1217,7 @@ var notificationReceived = function(message) {
 {: windows}
 
 #### プッシュ SDK の追加
-{: #adding-the-push-sdk }
+{: #adding-the-push-sdk-windows}
 {: windows}
 
 1. 「ツール」→「NuGet パッケージ マネージャー」→「パッケージ マネージャー コンソール」を選択します。
@@ -1228,11 +1235,11 @@ var notificationReceived = function(message) {
 {: windows}
 
 #### 通知 API
-{: #notifications-api }
+{: #notifications-api-windows}
 {: windows}
 
 ##### MFPPush インスタンス
-{: #mfppush-instance }
+{: #mfppush-instance-windows}
 {: windows}
 
 すべての API 呼び出しは、`MFPPush` のインスタンスから呼び出される必要があります。  これを行うには、変数 (`private MFPPush PushClient = MFPPush.GetInstance();` など) を作成し、その後、クラス内で一貫して `PushClient.methodName()` を呼び出します。
@@ -1242,7 +1249,7 @@ var notificationReceived = function(message) {
 {: windows}
 
 ##### チャレンジ・ハンドラー
-{: #challenge-handlers }
+{: #challenge-handlers-windows}
 {: windows}
 
 `push.mobileclient` スコープが**セキュリティー検査**にマップされる場合、プッシュ API を使用する前に、一致する**チャレンジ・ハンドラー**が存在し、登録済みであることを確認する必要があります。
@@ -1253,23 +1260,24 @@ var notificationReceived = function(message) {
 {: windows}
 
 #### クライアント・サイド
-{: #client-side }
+{: #client-side-windows}
 {: windows}
 
 | C Sharp メソッド                                                                                                | 説明                                                             |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| [`Initialize()`](#initialization)                                                                            | 提供されたコンテキストの MFPPush を初期化します。                               |
-| [`IsPushSupported()`](#is-push-supported)                                                                    | デバイスがプッシュ通知をサポートするかどうか。                             |
-| [`RegisterDevice(JObject options)`](#register-device--send-device-token)                  | デバイスをプッシュ通知サービスに登録します。               |
-| [`GetTags()`](#get-tags)                                | プッシュ通知サービス・インスタンス内で使用可能なタグを取得します。 |
-| [`Subscribe(String[] Tags)`](#subscribe)     | 指定されたタグにデバイスをサブスクライブします。                          |
-| [`GetSubscriptions()`](#get-subscriptions)              | デバイスが現在サブスクライブしているタグをすべて取得します。               |
-| [`Unsubscribe(String[] Tags)`](#unsubscribe) | 特定のタグからアンサブスクライブします。                                  |
-| [`UnregisterDevice()`](#unregister)                     | プッシュ通知サービスからデバイスを登録抹消します。              |
+| [`Initialize()`](#initialization-windows)                                                                            | 提供されたコンテキストの MFPPush を初期化します。                               |
+| [`IsPushSupported()`](#is-push-supported-windows)                                                                    | デバイスがプッシュ通知をサポートするかどうか。                             |
+| [`RegisterDevice(JObject options)`](#register-device--send-device-token-windows)                  | デバイスをプッシュ通知サービスに登録します。               |
+| [`GetTags()`](#get-tags-windows)                                | プッシュ通知サービス・インスタンス内で使用可能なタグを取得します。 |
+| [`Subscribe(String[] Tags)`](#subscribe-windows)     | 指定されたタグにデバイスをサブスクライブします。                          |
+| [`GetSubscriptions()`](#get-subscriptions-windows)              | デバイスが現在サブスクライブしているタグをすべて取得します。               |
+| [`Unsubscribe(String[] Tags)`](#unsubscribe-windows) | 特定のタグからアンサブスクライブします。                                  |
+| [`UnregisterDevice()`](#unregister-windows)                     | プッシュ通知サービスからデバイスを登録抹消します。              |
+{: caption="表 4. C Sharp メソッド" caption-side="top"}
 {: windows}
 
 ##### 初期化
-{: #initialization }
+{: #initialization-windows}
 {: windows}
 
 初期化は、クライアント・アプリケーションが MFPPush サービスに接続するために必要です。
@@ -1286,7 +1294,7 @@ MFPPush.GetInstance().Initialize();
 {: windows}
 
 ##### プッシュがサポートされるか
-{: #is-push-supported }
+{: #is-push-supported-windows}
 {: windows}
 
 デバイスがプッシュ通知をサポートするかどうかをチェックします。
@@ -1305,7 +1313,7 @@ if (isSupported ) {
 {: windows}
 
 ##### デバイスの登録 &amp; デバイス・トークンの送信
-{: #register-device--send-device-token }
+{: #register-device--send-device-token-windows}
 {: windows}
 
 デバイスをプッシュ通知サービスに登録します。
@@ -1325,7 +1333,7 @@ if (Response.Success == true)
 {: windows}
 
 ##### タグの取得
-{: #get-tags }
+{: #get-tags-windows}
 {: windows}
 
 プッシュ通知サービスからすべての使用可能なタグを取得します。
@@ -1344,7 +1352,7 @@ if (Response.Success == true)
 {: windows}
 
 ##### サブスクライブ
-{: #subscribe }
+{: #subscribe-windows}
 {: windows}
 
 目的のタグにサブスクライブします。
@@ -1368,7 +1376,7 @@ else
 {: windows}
 
 ##### サブスクリプションの取得
-{: #get-subscriptions }
+{: #get-subscriptions-windows}
 {: windows}
 
 デバイスが現在サブスクライブしているタグを取得します。
@@ -1389,7 +1397,7 @@ else
 {: windows}
 
 ##### アンサブスクライブ
-{: #unsubscribe }
+{: #unsubscribe-windows}
 {: windows}
 
 タグからアンサブスクライブします。
@@ -1413,7 +1421,7 @@ else
 {: windows}
 
 ##### 登録抹消
-{: #unregister }
+{: #unregister-windows}
 {: windows}
 
 プッシュ通知サービス・インスタンスからデバイスを登録抹消します。
@@ -1432,7 +1440,7 @@ if (Response.Success == true)
 {: windows}
 
 #### プッシュ通知の処理
-{: #handling-a-push-notification }
+{: #handling-a-push-notification-windows}
 {: windows}
 
 プッシュ通知を処理するためには、`MFPPushNotificationListener` をセットアップする必要があります。  これは、以下のメソッドを実装することで実現できます。

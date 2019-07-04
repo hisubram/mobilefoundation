@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-06"
 
 keywords: push notifications, notification, sending silent notifications
 
@@ -40,13 +40,13 @@ Les notifications silencieuses sont des notifications qui n'affichent pas d'aler
 ## Envoi de notifications push silencieuses
 {: #sending-silent-push-notifications }
 
-Préparez la notification et envoyez-la. Pour plus d'informations, voir [Envoi de notifications push](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications). 
+Préparez la notification et envoyez-la. Pour plus d'informations, voir [Envoi de notifications push](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications).
 
 Les trois types de notifications qui sont pris en charge pour iOS sont représentés par les constantes  `DEFAULT`, `SILENT` et `MIXED`. Lorsque le type n'est pas explicitement spécifié, le type `DEFAULT` est supposé.
 
 Pour les notifications de type `MIXED`, un message est affiché sur l'appareil, tandis que, à l'arrière-plan, l'application mobile sort de veille et traite une notification silencieuse. La méthode de rappel pour les notifications de type `MIXED` est appelée deux fois : une fois lorsque la notification silencieuse atteint l'appareil et une fois lorsque l'application est ouverte en tapant sur la notification.
 
-En fonction de vos besoins, choisissez le type approprié sous **{{ site.data.keyword.mfp_oc_short_notm }} → [votre application] → Push → Envoyer des notifications → Paramètres personnalisés iOS**. 
+En fonction de vos besoins, choisissez le type approprié sous **{{ site.data.keyword.mfp_oc_short_notm }} → [votre application] → Push → Envoyer des notifications → Paramètres personnalisés iOS**.
 
 Si la notification est silencieuse, les propriétés **alerte**, **son** et **badge** sont ignorées.
 {: note}
@@ -56,7 +56,7 @@ Si la notification est silencieuse, les propriétés **alerte**, **son** et **ba
 ## Traitement des notifications push silencieuses dans les applications Cordova
 {: #handling-silent-push-notifications-in-cordova-applications }
 
-Dans la méthode de rappel de notification push JavaScript, vous devez suivre les étapes suivantes : 
+Dans la méthode de rappel de notification push JavaScript, vous devez suivre les étapes suivantes :
 
 1. Vérifiez le type de notification. Exemple :
 
@@ -69,14 +69,14 @@ Dans la méthode de rappel de notification push JavaScript, vous devez suivre le
    ```
    {: codeblock}
 
-2. Si la notification est silencieuse ou mixte, une fois le travail en arrière-plan terminé, appelez l'API `WL.Client.Push.backgroundJobDone`. 
+2. Si la notification est silencieuse ou mixte, une fois le travail en arrière-plan terminé, appelez l'API `WL.Client.Push.backgroundJobDone`.
 
 ## Traitement des notifications push silencieuses dans les applications iOS natives
 {: #handling-silent-push-notifications-in-native-ios-applications }
 
-Vous devez procéder comme suit pour recevoir des notifications silencieuses : 
+Vous devez procéder comme suit pour recevoir des notifications silencieuses :
 
-1. Activez la fonction d'application pour effectuer des tâches en arrière-plan lors de la réception des notifications distantes. 
+1. Activez la fonction d'application pour effectuer des tâches en arrière-plan lors de la réception des notifications distantes.
 2. Vérifiez si la notification est silencieuse ou non en vous assurant que la clé `content-available` est définie sur **1**.
 3. Une fois que vous avez terminé le traitement de la notification, vous devez immédiatement appeler le bloc dans le paramètre du gestionnaire, sous peine de mettre fin
 à l'application. Votre application a jusqu'à 30 secondes pour traiter la notification et appeler le bloc du gestionnaire d'achèvement spécifié.

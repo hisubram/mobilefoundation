@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-26"
+lastupdated: "2019-06-06"
 
 keywords: obfuscating resources, security
 
@@ -74,14 +74,14 @@ mfpdev app webencrypt
 
 1. 터미널 창을 열고 암호화할 Cordova 앱의 루트 디렉토리로 이동하십시오.
 2. 다음 명령 중 하나를 입력하여 앱을 준비하십시오.
-    * ```bash
+    ```bash
       cordova prepare
-      ```
-      {: codeblock}
-    * ```bash
+    ```
+    {: codeblock}
+    ```bash
       mfpdev app webupdate
-      ```
-      {: codeblock}
+    ```
+    {: codeblock}
 3. 다음 프로시저 중 하나를 완료하여 컨텐츠를 암호화하십시오.
     * 다음 명령을 입력하십시오.
       ```bash
@@ -89,7 +89,7 @@ mfpdev app webencrypt
       ```
       {: codeblock}
 
-      다음을 입력하여 `mfpdev app webencrypt` 명령에 대한 정보를 볼 수 있습니다.
+      다음을 입력하여 `mfpdev app webencrypt` 명령에 대한 정보를 볼 수 있습니다. 
       ```bash
       mfpdev help app webencrypt
       ```
@@ -97,7 +97,7 @@ mfpdev app webencrypt
       {: tip}
 
     * 패키지를 빌드할 때 `mfpwebencrypt` 플래그를 `cordova compile` 또는 `cordova build` 명령에 추가하여 Cordova 패키지의 웹 리소스를 암호화할 수도 있습니다.
-       * ```bash
+        ```bash
          cordova compile -- --mfpwebencrypt
          ```
          {: codeblock}
@@ -111,13 +111,13 @@ mfpdev app webencrypt
 4. 플랫폼별 도구와 함께 제공되는 에뮬레이터를 사용하여 암호화된 자원이 있는 애플리케이션을 테스트합니다. 예를 들어, Android에는 Android Studio의 에뮬레이터를 사용하고 iOS에는 Xcode를 사용합니다.
 
 암호화되어 있는 애플리케이션을 테스트하는 경우 다음 Cordova 명령을 사용하지 마십시오.
-* ```bash
-  cordova run
-  ```
-  {: codeblock}
-* ```bash
-  cordova emulate
-  ```
-  {: codeblock}
-이러한 명령은 WWW 폴더 내의 암호화된 컨텐츠를 새로 고치고 복호화된 컨텐츠로 다시 저장합니다. 이 명령을 사용하는 경우, 앱을 공개하기 전에 암호화하는 프로시저를 다시 완료해야 합니다.
+```bash
+cordova run
+```
+{: codeblock}
+```bash
+cordova emulate
+```
+{: codeblock}
+이러한 명령은 WWW 폴더 내의 암호화된 컨텐츠를 새로 고치고 이를 복호화된 컨텐츠로 다시 저장합니다. 이 명령을 사용하는 경우, 앱을 공개하기 전에 암호화하는 프로시저를 다시 완료해야 합니다.
 {: note}

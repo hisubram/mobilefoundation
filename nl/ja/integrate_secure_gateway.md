@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-13"
+lastupdated: "2019-06-06"
 
 keywords: integration, mobile foundation, secure gateway
 
@@ -42,7 +42,7 @@ node app.js
 
 以下の図は、このチュートリアルで説明する統合シナリオで使用されているアーキテクチャーを示しています。
 
-![アーキテクチャー図](images/SecureGatewayArchi.png)
+![アーキテクチャー図](images/SecureGatewayArchi.png "デバイス、クラウド・サービス、オンプレミス・ネットワークのアーキテクチャー図")
 
 ## Secure Gateway 統合の実装
 {: #implementing_sg_integration}
@@ -50,41 +50,41 @@ node app.js
 ### Secure Gateway サービス・インスタンスの作成
 IBM Cloud にログインし、[Secure Gateway サービス](https://cloud.ibm.com/catalog/services/secure-gateway/)のインスタンスを作成します。
 
-![IBM Cloud](images/SecureGatewayInst.gif)
+![IBM Cloud](images/SecureGatewayInst.gif "IBM Cloud カタログからの Secure Gateway インスタンスの作成")
 
-Secure Gateway サービス・インスタンスを作成したら、以下の手順に従って、IBM Cloud とオンプレミス環境の間に Secure Gateway サービスを構成します。
+Secure Gateway サービス・インスタンスを作成したら、以下の手順を使用して、IBM Cloud とオンプレミス環境の間に Secure Gateway サービスを構成します。
 
 ### ゲートウェイの追加
 {: #add_gateway}
 
 Secure Gateway サービス・ダッシュボードで**「ゲートウェイの追加」**をクリックし、任意のゲートウェイ名を指定して新しいゲートウェイを作成します。
 
-![ゲートウェイの追加](images/AcmeAddGateway.gif)
+![ゲートウェイの追加](images/AcmeAddGateway.gif "ゲートウェイの追加の UI のステップ")
 
 
 ### Secure Gateway クライアントの追加
 {: #add_sg_client}
 
-![クライアント 2 の追加](images/AcmeAddClient.gif)
+![クライアント 2 の追加](images/AcmeAddClient.gif "クライアントの追加の UI のステップ")
 
 新しいゲートウェイ内で、**「クライアント」**タブから、**「クライアントの接続」**をクリックします。
 
-任意のクライアントを選択し、Secure Gateway クライアントをオンプレミス環境で実行することができます。 Secure Gateway クライアントをセットアップする手順が、Secure Gateway コンソールに表示されます。
+任意のクライアントを選択し、Secure Gateway クライアントをオンプレミス環境で実行することができます。 Secure Gateway クライアントをセットアップするステップが、Secure Gateway コンソールで使用できます。
 
 このチュートリアルでは、Docker コンテナー・オプションを使用して Secure Gateway クライアントを実行することにします。
-次の手順に従ってください。
+以下のステップを使用します。
 *   まだインストールされていない場合は、Docker をオンプレミスのマシンにインストールします。
 *   端末を起動し、サービス・コンソールに表示されたコマンドを使用して、Secure Gateway クライアントをコンテナーで実行します。
     ```bash
     docker run –it ibmcom/secure-gateway-client <gatewayId>
     ```
     {: codeblock}
-    上の図に示されているように、`gatewayId` は、コンソール内に表示されています。
+    上記の図に示されているように、`gatewayId` は、コンソール内に表示されています。
 
 ### 宛先の追加
 {: #add_destination}
 
-![宛先の追加](images/AcmeAddDest.gif)
+![宛先の追加](images/AcmeAddDest.gif "宛先の追加の UI のステップ")
 
 新しいゲートウェイ内の**「宛先」**タブから、**「宛先の追加」**をクリックします。
 
@@ -101,7 +101,7 @@ acl allow <resourceHost>:<resourcePort>
 
 これで、宛先が構成されました。 Secure Gateway サービスは、クラウド環境からオンプレミスのリソースにアクセスするために使用できるクラウドのホストとポートの詳細を取り込みます。
 
-![宛先タブ](images/AcmeCloudPopulate.gif)
+![「宛先」タブ](images/AcmeCloudPopulate.gif "ホストとポートの詳細の画面")
 
 ### Mobile Foundation および Mobile Foundation アダプターによる Secure Gateway サービスの構成
 {: #configuration_sg_mfp}
@@ -113,7 +113,7 @@ acl allow <resourceHost>:<resourcePort>
 
 IBM Cloud コンソールから、[Mobile Foundation サービス](https://cloud.ibm.com/catalog/services/mobile-foundation)のインスタンスを作成します。
 
-Mobile Foundation サービス・コンソールから、[Mobile Foundation サーバー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/) を作成します。
+Mobile Foundation サービス・コンソールから、[Mobile Foundation サーバー ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/ibmcloud/using-mobile-foundation/) を作成します。
 
 
 ### Mobile Foundation Adapter のビルドとデプロイ
@@ -133,7 +133,7 @@ mfpdev adapter deploy
 
 JavaHTTP アダプターのリソース・エンドポイントに、直前のセクションから取得したクラウドのホストおよびポートの詳細を指定します。
 
-![AdapterConfiguration ](images/AdapterConfiguration.png)
+![アダプター構成 ](images/AdapterConfiguration.png "Java HTTP 構成ページ")
 
 `cap-sg-prd-5.securegateway.appdomain.cloud` および `18946` は、それぞれ Secure Gateway のホストとポートです。
 
@@ -146,7 +146,7 @@ Mobile Foundation サンプル・アプリを[こちら](https://github.com/Mobi
 
 アプリを実行し、ログインのための資格情報を入力し、*「ログイン」*ボタンをクリックします。 *「Fetch Acme Writers」*ボタンをクリックすると、Mobile Foundation Operations コンソールでデプロイした JavaHTTP アダプターを使用して Secure Gateway 経由でオンプレミス・エンドポイントを呼び出すことができます。 必要なデータをオンプレミス環境から受け取ります。
 
-![アプリでオンプレミス・データを受け取る](images/AcmePublishersApp.gif)
+![アプリでオンプレミス・データを受け取る](images/AcmePublishersApp.gif "データを受け取るサンプル・アプリ")
 
 Secure Gateway サービスに複数の宛先を構成し、対応するクラウド・ホストのエンドポイントに接続するための Mobile Foundation アダプターを実装することで、複数のオンプレミス・エンドポイントに接続できます。 また、Secure Gateway サービスに追加のセキュリティーを構成して、エンドポイントとの通信が HTTPS およびアプリケーション側のセキュリティーを使用して行われるようにすることもできます。 詳しくは、[こちら](/docs/services/SecureGateway?topic=securegateway-getting-started-with-sg#getting-started-with-sg)を参照してください。
 

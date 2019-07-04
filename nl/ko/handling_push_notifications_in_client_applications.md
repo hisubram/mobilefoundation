@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-06"
+lastupdated: "2019-06-10"
 
 keywords: push notifications, notifications, set up android app for notification, set up iOS app for notification, set up cordova app for notification, set up windows app for notification
 
@@ -42,12 +42,13 @@ iOS, Android 및 Windows 네이티브 기반 또는 Cordova 기반 애플리케�
 클라이언트 애플리케이션에서 수신 푸시 알림을 처리하는 방법을 학습하려면 다음 주제를 참조하십시오.
 
 ### Android에서 푸시 알림 처리
-{: #handling_push_notifications_in_android }
+{: #handling_push_notifications_in_android}
 {: android}
 Android 애플리케이션이 수신된 푸시 알림을 처리할 수 있으려면 먼저 Google Play Services에 대한 지원을 구성해야 합니다. 애플리케이션이 구성된 후 {{ site.data.keyword.mobilefirst_notm }} 제공 알림 API를 사용하여 디바이스를 등록 및 등록 취소하고 태그를 구독 및 구독 해지할 수 있습니다. 이 튜토리얼에서는 Android 애플리케이션에서 푸시 알림을 처리하는 방법에 대해 학습합니다.
 {: android}
 
-**전제조건:**
+#### 전제조건
+{: #prereqs-andriod}
 {: android}
 * 로컬로 실행되는 {{ site.data.keyword.mfserver_short_notm }} 또는 원격으로 실행 중인 {{ site.data.keyword.mfserver_short_notm }}
 * 개발자 워크스테이션에 설치된 {{ site.data.keyword.mobilefirst_notm  }} CLI
@@ -74,7 +75,7 @@ Android 애플리케이션이 수신된 푸시 알림을 처리할 수 있으려
     {: codeblock}
     {: android}
 
-    최신 Play Services 버전(현재 9.2.0)을 사용하지 못하게 하는 [알려진 Google 결함](https://code.google.com/p/android/issues/detail?id=212879)이 있습니다. 더 낮은 버전을 사용하십시오.
+    최신 Play Services 버전(현재 9.2.0)을 사용하지 못하게 하는 [알려진 Google 결함](https://code.google.com/p/android/issues/detail?id=212879)이 있습니다. 9.2.0 미만의 버전을 사용하십시오.
     {: note}
     {: android}
 
@@ -172,10 +173,10 @@ Android 애플리케이션이 수신된 푸시 알림을 처리할 수 있으려
 {: #mfppush-instance }
 {: android}
 
-모든 API 호출은 `MFPPush`의 인스턴스에서 호출되어야 합니다. 이는 `private MFPPush push = MFPPush.getInstance();`와 같은 클래스 레벨 필드를 작성한 후 클래스 전체에서 `push.<api-call>`을 호출하여 수행될 수 있습니다.
+모든 API 호출은 `MFPPush`의 인스턴스에서 호출되어야 합니다.  이는 `private MFPPush push = MFPPush.getInstance();`와 같은 클래스 레벨 필드를 작성한 후 클래스 전체에서 `push.<api-call>`를 호출하여 수행될 수 있습니다.
 {: android}
 
-또는 푸시 API 메소드에 액세스해야 하는 각 인스턴스에 대해 `MFPPush.getInstance().<api_call>`을 호출할 수 있습니다.
+또는 푸시 API 메소드에 액세스해야 하는 각 인스턴스에 대해 `MFPPush.getInstance().<api_call>`를 호출할 수 있습니다.
 {: android}
 
 ##### 인증 확인 핸들러
@@ -203,10 +204,11 @@ Android 애플리케이션이 수신된 푸시 알림을 처리할 수 있으려
 | [`getSubscriptions(MFPPushResponseListener)`](#get-subscriptions) | 현재 디바이스가 구독하는 모든 태그를 검색합니다. |
 | [`unsubscribe(String[] tagNames, MFPPushResponseListener)`](#unsubscribe) | 특정 태그의 구독을 해지합니다. |
 | [`unregisterDevice(MFPPushResponseListener)`](#unregister) | 푸시 알림 서비스에서 디바이스의 등록을 취소합니다. |
+{: caption="표 1. Java 메소드" caption-side="top"}
 {: android}
 
 ###### 초기화
-{: #initialization }
+{: #initialization}
 {: android}
 
 클라이언트 애플리케이션이 올바른 애플리케이션 컨텍스트를 사용하여 MFPPush 서비스에 연결하는 데 필요합니다.
@@ -388,7 +390,7 @@ MFPPush.getInstance().unregisterDevice(new MFPPushResponseListener<String>() {
 {: #handling-a-push-notification }
 {: android}
 
-푸시 알림을 처리하려면 `MFPPushNotificationListener`를 설정해야 합니다. 이는 다음 메소드 중 하나를 구현하여 수행할 수 있습니다.
+푸시 알림을 처리하려면 `MFPPushNotificationListener`를 설정해야 합니다.  이는 다음 메소드 중 하나를 구현하여 수행할 수 있습니다.
 {: android}
 
 ##### 옵션 1
@@ -417,7 +419,7 @@ MFPPush.getInstance().unregisterDevice(new MFPPushResponseListener<String>() {
 {: #option-two }
 {: android}
 
-아래에 설명된 대로 `MFPPush`의 인스턴스에서 `listen(new MFPPushNofiticationListener())`를 호출하여 리스너를 작성하십시오.
+다음 예제에 설명된 대로 `MFPPush`의 인스턴스에서 `listen(new MFPPushNofiticationListener())`를 호출하여 리스너를 작성하십시오.
 ```java
 MFPPush.getInstance().listen(new MFPPushNotificationListener() {
     @Override
@@ -478,7 +480,7 @@ FCM에서 애플리케이션을 설정하는 작업은 이전 GCM 모델과는 �
  3. AndroidManifest 파일을 구성하십시오. `AndroidManifest.xml`을 다음과 같이 변경해야 합니다.
     {: android}
 
-    **다음 항목을 제거해야 합니다.**
+    다음 항목을 제거하십시오.
     {: android}
     ```xml
         <receiver android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
@@ -504,7 +506,7 @@ FCM에서 애플리케이션을 설정하는 작업은 이전 GCM 모델과는 �
     {: codeblock}
     {: android}
 
-    **다음 항목을 수정해야 합니다.**
+    다음 항목을 수정해야 합니다.
     {: android}
 
     ```xml
@@ -517,7 +519,7 @@ FCM에서 애플리케이션을 설정하는 작업은 이전 GCM 모델과는 �
     {: codeblock}
     {: android}
 
-    **이 항목을 다음으로 수정하십시오.**
+    항목을 다음으로 수정하십시오.
     {: android}
 
     ```xml
@@ -530,7 +532,7 @@ FCM에서 애플리케이션을 설정하는 작업은 이전 GCM 모델과는 �
     {: codeblock}
     {: android}
 
-    **다음 항목을 추가하십시오.**
+    다음 항목을 추가하십시오.
     {: android}
 
     ```xml
@@ -558,12 +560,12 @@ FCM에서 애플리케이션을 설정하는 작업은 이전 GCM 모델과는 �
 
 자동 또는 대화식 알림에 대한 정보는 다음을 참조하십시오.
 
-
 * [자동 알림](/docs/services/mobilefoundation?topic=mobilefoundation-silent_notifications#silent_notifications)
 * [대화식 알림](/docs/services/mobilefoundation?topic=mobilefoundation-interactive_notifications#interactive_notifications)
 {: ios}
 
-**전제조건:**
+#### 전제조건
+{: #prereqs-ios}
 {: ios}
 
 * 로컬로 실행되는 {{ site.data.keyword.mfserver_short }} 또는 원격으로 실행 중인 {{ site.data.keyword.mfserver_short }}
@@ -571,7 +573,7 @@ FCM에서 애플리케이션을 설정하는 작업은 이전 GCM 모델과는 �
 {: ios}
 
 #### 알림 구성
-{: #notifications-configuration }
+{: #notifications-configuration_ios}
 {: ios}
 
 새 Xcode 프로젝트를 작성하거나 기존 프로젝트를 사용하십시오.
@@ -619,11 +621,11 @@ FCM에서 애플리케이션을 설정하는 작업은 이전 GCM 모델과는 �
 {: ios}
 
 #### 알림 API
-{: #notifications-api }
+{: #notifications-api-ios}
 {: ios}
 
 ##### MFPPush 인스턴스
-{: #mfppush-instance }
+{: #mfppush-instance-ios}
 {: ios}
 
 모든 API 호출은 `MFPPush`의 인스턴스에서 호출되어야 합니다. 이는 보기 제어기에서 `var`을 사용한 후(예: `var push = MFPPush.sharedInstance();`) 보기 제어기 전체에서 `push.methodName()`을 호출하여 수행될 수 있습니다.
@@ -633,7 +635,7 @@ FCM에서 애플리케이션을 설정하는 작업은 이전 GCM 모델과는 �
 {: ios}
 
 #### 인증 확인 핸들러
-{: #challenge-handlers }
+{: #challenge-handlers-ios}
 {: ios}
 
 `push.mobileclient` 범위가 **보안 검사**에 맵핑된 경우 푸시 API를 사용하기 전에 일치하는 **인증 확인 핸들러**가 존재하며 등록되어 있는지 확인해야 합니다.
@@ -644,24 +646,25 @@ FCM에서 애플리케이션을 설정하는 작업은 이전 GCM 모델과는 �
 {: ios}
 
 #### 클라이언트 측
-{: #client-side }
+{: #client-side-ios}
 {: ios}
 
 | Swift 메소드 | 설명  |
 |---------------|--------------|
 | [`initialize()`](#initialization) | 제공된 컨텍스트에 대한 MFPPush를 초기화합니다. |
 | [`isPushSupported()`](#is-push-supported) | 디바이스가 푸시 알림을 지원하는지 확인합니다. |
-| [`registerDevice(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#register-device--send-device-token) | 디바이스를 푸시 알림 서비스에 등록합니다. |
+| [`registerDevice(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#register-device--send-device-token) | 디바이스를 푸시 알림 서비스에 등록합니다.|
 | [`sendDeviceToken(deviceToken: NSData!)`](#register-device--send-device-token) | 디바이스 토큰을 서버에 전송합니다. |
 | [`getTags(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#get-tags) | 푸시 알림 서비스 인스턴스에서 사용 가능한 태그를 검색합니다. |
 | [`subscribe(tagsArray: [AnyObject], completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#subscribe) | 디바이스가 지정된 태그를 구독하도록 합니다. |
 | [`getSubscriptions(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#get-subscriptions)  | 현재 디바이스가 구독하는 모든 태그를 검색합니다. |
 | [`unsubscribe(tagsArray: [AnyObject], completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#unsubscribe) | 특정 태그의 구독을 해지합니다. |
-| [`unregisterDevice(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#unregister) | 푸시 알림 서비스에서 디바이스의 등록을 취소합니다. |
+| [`unregisterDevice(completionHandler: ((WLResponse!, NSError!) -> Void)!)`](#unregister) | 푸시 알림 서비스에서 디바이스의 등록을 취소합니다.              |
+{: caption="표 2. Swift 메소드" caption-side="top"}
 {: ios}
 
 ##### 초기화
-{: #initialization }
+{: #initialization-ios}
 {: ios}
 
 클라이언트 애플리케이션이 MFPPush 서비스에 연결하려면 초기화가 필요합니다.
@@ -678,7 +681,7 @@ MFPPush.sharedInstance().initialize();
 {: ios}
 
 ##### 푸시가 지원되는지 여부
-{: #is-push-supported }
+{: #is-push-supported-ios}
 {: ios}
 
 디바이스가 푸시 알림을 지원하는지 확인합니다.
@@ -697,7 +700,7 @@ if isPushSupported {
 {: ios}
 
 ##### 디바이스 등록 및 디바이스 토큰 전송
-{: #register-device--send-device-token }
+{: #register-device--send-device-token-ios}
 {: ios}
 
 디바이스를 푸시 알림 서비스에 등록합니다.
@@ -731,7 +734,7 @@ MFPPush.sharedInstance().sendDeviceToken(deviceToken)
 {: ios}
 
 ##### 태그 가져오기
-{: #get-tags }
+{: #get-tags-ios}
 {: ios}
 
 푸시 알림 서비스에서 사용 가능한 모든 태그를 검색합니다.
@@ -760,7 +763,7 @@ MFPPush.sharedInstance().getTags { (response, error) -> Void in
 {: ios}
 
 ##### 구독
-{: #subscribe }
+{: #subscribe-ios}
 {: ios}
 
 원하는 태그를 구독합니다.
@@ -783,7 +786,7 @@ MFPPush.sharedInstance().subscribe(self.tagsArray) { (response, error)  -> Void 
 {: ios}
 
 ##### 구독 가져오기
-{: #get-subscriptions }
+{: #get-subscriptions-ios}
 {: ios}
 
 현재 디바이스가 구독하는 태그를 검색합니다.
@@ -812,7 +815,7 @@ MFPPush.sharedInstance().getSubscriptions { (response, error) -> Void in
 {: ios}
 
 ##### 구독 해지
-{: #unsubscribe }
+{: #unsubscribe-ios}
 {: ios}
 
 태그의 구독을 해지합니다.
@@ -836,7 +839,7 @@ MFPPush.sharedInstance().unsubscribe(self.tagsArray) { (response, error)  -> Voi
 {: ios}
 
 ##### 등록 취소
-{: #unregister }
+{: #unregister-ios}
 {: ios}
 
 푸시 알림 서비스 인스턴스에서 디바이스의 등록을 취소합니다.
@@ -859,7 +862,7 @@ MFPPush.sharedInstance().unregisterDevice { (response, error)  -> Void in
 {: ios}
 
 #### 푸시 알림 처리
-{: #handling-a-push-notification }
+{: #handling-a-push-notification-ios}
 {: ios}
 
 푸시 알림은 네이티브 iOS 프레임워크에서 직접 처리됩니다. 애플리케이션 라이프사이클에 따라 iOS 프레임워크에서 다양한 메소드가 호출됩니다.
@@ -905,7 +908,8 @@ iOS의 자동 또는 대화식 알림에 대한 정보는 다음을 참조하십
 * [대화식 알림](/docs/services/mobilefoundation?topic=mobilefoundation-interactive_notifications#interactive_notifications)
 {: cordova}
 
-**전제조건:**
+#### 전제조건
+{: #prereqs-cordova}
 {: cordova}
 
 * 로컬로 실행되는 {{ site.data.keyword.mfserver_short }} 또는 원격으로 실행 중인 {{ site.data.keyword.mfserver_short }}
@@ -914,7 +918,7 @@ iOS의 자동 또는 대화식 알림에 대한 정보는 다음을 참조하십
 {: cordova}
 
 #### 알림 구성
-{: #notifications-configuration }
+{: #notifications-configuration-cordova}
 {: cordova}
 
 새 Cordova 프로젝트를 작성하거나 기존 프로젝트를 사용하고 지원되는 플랫폼(iOS, Android, Windows) 중 하나 이상을 추가하십시오.
@@ -925,7 +929,7 @@ iOS의 자동 또는 대화식 알림에 대한 정보는 다음을 참조하십
 {: note}
 
 #### 푸시 플러그인 추가
-{: #adding-the-push-plug-in }
+{: #adding-the-push-plug-in-cordova}
 {: cordova}
 
 1. **명령행** 창에서 Cordova 프로젝트의 루트로 이동하십시오.  
@@ -974,23 +978,24 @@ Android Studio에서 다음 `activity`를 `application` 태그에 추가하십�
 {: cordova}
 
 #### 알림 API
-{: #notifications-api }
+{: #notifications-api-cordova}
 {: cordova}
 
 ##### 클라이언트 측
-{: #client-side }
+{: #client-side-cordova}
 {: cordova}
 
 | Javascript 함수 | 설명 |
 | --- | --- |
-| [`MFPPush.initialize(success, failure)`](#initialization) | MFPPush 인스턴스를 초기화합니다. |
-| [`MFPPush.isPushSupported(success, failure)`](#is-push-supported) | 디바이스가 푸시 알림을 지원하는지 확인합니다. |
-| [`MFPPush.registerDevice(options, success, failure)`](#register-device) | 디바이스를 푸시 알림 서비스에 등록합니다. |
-| [`MFPPush.getTags(success, failure)`](#get-tags) | 푸시 알림 서비스 인스턴스에서 사용 가능한 모든 태그를 검색합니다. |
-| [`MFPPush.subscribe(tag, success, failure)`](#subscribe) | 특정 태그를 구독합니다. |
-| [`MFPPush.getSubsciptions(success, failure)`](#get-subscriptions) | 현재 디바이스가 구독하는 태그를 검색합니다. |
-| [`MFPPush.unsubscribe(tag, success, failure)`](#unsubscribe) | 특정 태그의 구독을 해지합니다. |
-| [`MFPPush.unregisterDevice(success, failure)`](#unregister) | 푸시 알림 서비스에서 디바이스의 등록을 취소합니다. |
+| [`MFPPush.initialize(success, failure)`](#initialization-cordova) | MFPPush 인스턴스를 초기화합니다. |
+| [`MFPPush.isPushSupported(success, failure)`](#is-push-supported-cordova) | 디바이스가 푸시 알림을 지원하는지 확인합니다. |
+| [`MFPPush.registerDevice(options, success, failure)`](#register-device-cordova) | 디바이스를 푸시 알림 서비스에 등록합니다. |
+| [`MFPPush.getTags(success, failure)`](#get-tags-cordova) | 푸시 알림 서비스 인스턴스에서 사용 가능한 모든 태그를 검색합니다. |
+| [`MFPPush.subscribe(tag, success, failure)`](#subscribe-cordova) | 특정 태그를 구독합니다. |
+| [`MFPPush.getSubsciptions(success, failure)`](#get-subscriptions-cordova) | 현재 디바이스가 구독하는 태그를 검색합니다. |
+| [`MFPPush.unsubscribe(tag, success, failure)`](#unsubscribe-cordova) | 특정 태그의 구독을 해지합니다. |
+| [`MFPPush.unregisterDevice(success, failure)`](#unregister-cordova) | 푸시 알림 서비스에서 디바이스의 등록을 취소합니다. |
+{: caption="표 3. Javascript 함수" caption-side="top"}
 {: cordova}
 
 ##### API 구현
@@ -998,13 +1003,13 @@ Android Studio에서 다음 `activity`를 `application` 태그에 추가하십�
 {: cordova}
 
 ###### 초기화
-{: #initialization }
+{: #initialization-cordova}
 {: cordova}
 
 **MFPPush** 인스턴스를 초기화합니다.
 {: cordova}
 
-- 클라이언트 애플리케이션이 올바른 애플리케이션 컨텍스트를 사용하여 MFPPush 서비스에 연결하는 데 필요합니다.   
+- 클라이언트 애플리케이션이 올바른 애플리케이션 컨텍스트를 사용하여 MFPPush 서비스에 연결하는 데 필요합니다.  
 - 다른 MFPPush API를 사용하기 전에 먼저 API 메소드를 호출해야 합니다.
 - 수신된 푸시 알림을 처리하도록 콜백 함수를 등록합니다.
 {: cordova}
@@ -1024,7 +1029,7 @@ MFPPush.initialize (
 {: cordova}
 
 ###### 푸시가 지원되는지 여부
-{: #is-push-supported }
+{: #is-push-supported-cordova}
 {: cordova}
 
 디바이스가 푸시 알림을 지원하는지 확인합니다.
@@ -1044,7 +1049,7 @@ MFPPush.isPushSupported (
 {: cordova}
 
 ###### 디바이스 등록
-{: #register-device }
+{: #register-device-cordova}
 {: cordova}
 
 디바이스를 푸시 알림 서비스에 등록합니다. 옵션이 필요하지 않은 경우 options를 `null`로 설정할 수 있습니다.
@@ -1066,7 +1071,7 @@ MFPPush.registerDevice(
 {: cordova}
 
 ###### 태그 가져오기
-{: #get-tags }
+{: #get-tags-cordova}
 {: cordova}
 
 푸시 알림 서비스에서 사용 가능한 모든 태그를 검색합니다.
@@ -1086,7 +1091,7 @@ MFPPush.getTags (
 {: cordova}
 
 ###### 구독
-{: #subscribe }
+{: #subscribe-cordova}
 {: cordova}
 
 원하는 태그를 구독합니다.
@@ -1109,7 +1114,7 @@ MFPPush.subscribe(
 {: cordova}
 
 ###### 구독 가져오기
-{: #get-subscriptions }
+{: #get-subscriptions-cordova}
 {: cordova}
 
 현재 디바이스가 구독하는 태그를 검색합니다.
@@ -1129,7 +1134,7 @@ MFPPush.getSubscriptions (
 {: cordova}
 
 ###### 구독 해지
-{: #unsubscribe }
+{: #unsubscribe-cordova}
 {: cordova}
 
 태그의 구독을 해지합니다.
@@ -1152,7 +1157,7 @@ MFPPush.unsubscribe(
 {: cordova}
 
 ###### 등록 취소
-{: #unregister }
+{: #unregister-cordova}
 {: cordova}
 
 푸시 알림 서비스 인스턴스에서 디바이스의 등록을 취소합니다.
@@ -1172,7 +1177,7 @@ MFPPush.unregisterDevice(
 {: cordova}
 
 #### 푸시 알림 처리
-{: #handling-a-push-notification }
+{: #handling-a-push-notification-cordova}
 {: cordova}
 
 등록된 콜백 함수에서 해당 응답 오브젝트에 대해 조작을 수행하여 수신된 푸시 알림을 처리할 수 있습니다.
@@ -1193,7 +1198,8 @@ var notificationReceived = function(message) {
 {{ site.data.keyword.mobilefirst_notm }} 제공 알림 API를 사용하여 디바이스를 등록 및 등록 취소하고 태그를 구독 및 구독 해지할 수 있습니다. 이 튜토리얼에서는 C#을 사용하여 네이티브 Windows 8.1 Universal 및 Windows 10 UWP 애플리케이션에서 푸시 알림을 처리하는 방법에 대해 학습합니다.
 {: windows}
 
-**전제조건:**
+#### 전제조건
+{: #prereqs-windows}
 {: windows}
 
 * 로컬로 실행되는 {{ site.data.keyword.mfserver_short_notm }} 또는 원격으로 실행 중인 {{ site.data.keyword.mfserver_short_notm }}
@@ -1201,7 +1207,7 @@ var notificationReceived = function(message) {
 {: windows}
 
 #### 알림 구성
-{: #notifications-configuration }
+{: #notifications-configuration-windows}
 {: windows}
 
 새 Visual Studio 프로젝트를 작성하거나 기존 프로젝트를 사용하십시오.  
@@ -1211,7 +1217,7 @@ var notificationReceived = function(message) {
 {: windows}
 
 #### 푸시 SDK 추가
-{: #adding-the-push-sdk }
+{: #adding-the-push-sdk-windows}
 {: windows}
 
 1. 도구 → NuGet 패키지 관리자 → 패키지 관리 콘솔을 선택하십시오.
@@ -1229,21 +1235,21 @@ var notificationReceived = function(message) {
 {: windows}
 
 #### 알림 API
-{: #notifications-api }
+{: #notifications-api-windows}
 {: windows}
 
 ##### MFPPush 인스턴스
-{: #mfppush-instance }
+{: #mfppush-instance-windows}
 {: windows}
 
-모든 API 호출은 `MFPPush`의 인스턴스에서 호출되어야 합니다. 이는 `private MFPPush PushClient = MFPPush.GetInstance();`와 같은 변수를 작성한 후 클래스 전체에서 `PushClient.methodName()`을 호출하여 수행될 수 있습니다.
+모든 API 호출은 `MFPPush`의 인스턴스에서 호출되어야 합니다.  이는 `private MFPPush PushClient = MFPPush.GetInstance();`와 같은 변수를 작성한 후 클래스 전체에서 `PushClient.methodName()`을 호출하여 수행될 수 있습니다.
 {: windows}
 
 또는 푸시 API 메소드에 액세스해야 하는 각 인스턴스에 대해 `MFPPush.GetInstance().methodName()`을 호출할 수 있습니다.
 {: windows}
 
 ##### 인증 확인 핸들러
-{: #challenge-handlers }
+{: #challenge-handlers-windows}
 {: windows}
 
 `push.mobileclient` 범위가 **보안 검사**에 맵핑된 경우 푸시 API를 사용하기 전에 일치하는 **인증 확인 핸들러**가 존재하며 등록되어 있는지 확인해야 합니다.
@@ -1254,23 +1260,24 @@ var notificationReceived = function(message) {
 {: windows}
 
 #### 클라이언트 측
-{: #client-side }
+{: #client-side-windows}
 {: windows}
 
 | C# 메소드                                                                                                | 설명                                                             |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| [`Initialize()`](#initialization) | 제공된 컨텍스트에 대한 MFPPush를 초기화합니다. |
-| [`IsPushSupported()`](#is-push-supported) | 디바이스가 푸시 알림을 지원하는지 확인합니다. |
-| [`RegisterDevice(JObject options)`](#register-device--send-device-token) | 디바이스를 푸시 알림 서비스에 등록합니다. |
-| [`GetTags()`](#get-tags) | 푸시 알림 서비스 인스턴스에서 사용 가능한 태그를 검색합니다. |
-| [`Subscribe(String[] Tags)`](#subscribe) | 디바이스가 지정된 태그를 구독하도록 합니다. |
-| [`GetSubscriptions()`](#get-subscriptions) | 현재 디바이스가 구독하는 모든 태그를 검색합니다. |
-| [`Unsubscribe(String[] Tags)`](#unsubscribe) | 특정 태그의 구독을 해지합니다. |
-| [`UnregisterDevice()`](#unregister) | 푸시 알림 서비스에서 디바이스의 등록을 취소합니다. |
+| [`Initialize()`](#initialization-windows)                                                                            | 제공된 컨텍스트에 대한 MFPPush를 초기화합니다.                               |
+| [`IsPushSupported()`](#is-push-supported-windows)                                                                    | 디바이스가 푸시 알림을 지원하는지 확인합니다.                             |
+| [`RegisterDevice(JObject options)`](#register-device--send-device-token-windows)                  | 디바이스를 푸시 알림 서비스에 등록합니다.               |
+| [`GetTags()`](#get-tags-windows)                                | 푸시 알림 서비스 인스턴스에서 사용 가능한 태그를 검색합니다. |
+| [`Subscribe(String[] Tags)`](#subscribe-windows)     | 디바이스가 지정된 태그를 구독하도록 합니다.                          |
+| [`GetSubscriptions()`](#get-subscriptions-windows)              | 현재 디바이스가 구독하는 모든 태그를 검색합니다.               |
+| [`Unsubscribe(String[] Tags)`](#unsubscribe-windows) | 특정 태그의 구독을 해지합니다.                                  |
+| [`UnregisterDevice()`](#unregister-windows)                     | 푸시 알림 서비스에서 디바이스의 등록을 취소합니다.              |
+{: caption="표 4. C Sharp 메소드" caption-side="top"}
 {: windows}
 
 ##### 초기화
-{: #initialization }
+{: #initialization-windows}
 {: windows}
 
 클라이언트 애플리케이션이 MFPPush 서비스에 연결하려면 초기화가 필요합니다.
@@ -1287,7 +1294,7 @@ MFPPush.GetInstance().Initialize();
 {: windows}
 
 ##### 푸시가 지원되는지 여부
-{: #is-push-supported }
+{: #is-push-supported-windows}
 {: windows}
 
 디바이스가 푸시 알림을 지원하는지 확인합니다.
@@ -1306,7 +1313,7 @@ if (isSupported ) {
 {: windows}
 
 ##### 디바이스 등록 및 디바이스 토큰 전송
-{: #register-device--send-device-token }
+{: #register-device--send-device-token-windows}
 {: windows}
 
 디바이스를 푸시 알림 서비스에 등록합니다.
@@ -1326,7 +1333,7 @@ if (Response.Success == true)
 {: windows}
 
 ##### 태그 가져오기
-{: #get-tags }
+{: #get-tags-windows}
 {: windows}
 
 푸시 알림 서비스에서 사용 가능한 모든 태그를 검색합니다.
@@ -1345,7 +1352,7 @@ if (Response.Success == true)
 {: windows}
 
 ##### 구독
-{: #subscribe }
+{: #subscribe-windows}
 {: windows}
 
 원하는 태그를 구독합니다.
@@ -1369,7 +1376,7 @@ else
 {: windows}
 
 ##### 구독 가져오기
-{: #get-subscriptions }
+{: #get-subscriptions-windows}
 {: windows}
 
 현재 디바이스가 구독하는 태그를 검색합니다.
@@ -1390,7 +1397,7 @@ else
 {: windows}
 
 ##### 구독 해지
-{: #unsubscribe }
+{: #unsubscribe-windows}
 {: windows}
 
 태그의 구독을 해지합니다.
@@ -1414,7 +1421,7 @@ else
 {: windows}
 
 ##### 등록 취소
-{: #unregister }
+{: #unregister-windows}
 {: windows}
 
 푸시 알림 서비스 인스턴스에서 디바이스의 등록을 취소합니다.
@@ -1433,10 +1440,10 @@ if (Response.Success == true)
 {: windows}
 
 #### 푸시 알림 처리
-{: #handling-a-push-notification }
+{: #handling-a-push-notification-windows}
 {: windows}
 
-푸시 알림을 처리하려면 `MFPPushNotificationListener`를 설정해야 합니다. 이는 다음 메소드를 구현하여 수행할 수 있습니다.
+푸시 알림을 처리하려면 `MFPPushNotificationListener`를 설정해야 합니다.  이는 다음 메소드를 구현하여 수행할 수 있습니다.
 {: windows}
 
 1. MFPPushNotificationListener 유형의 인터페이스를 사용하여 클래스를 작성하십시오.

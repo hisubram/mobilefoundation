@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-03-14"
+lastupdated: "2019-06-06"
 
 keywords: getting started, mobile foundation, plans, configure mobile foundation server, sample app, setup
 
@@ -17,11 +17,10 @@ subcollection:  mobilefoundation
 {:note: .note}
 
 # 入門チュートリアル
-{: #getting-started-tutorial}
+{: #getting-started}
 
 {{site.data.keyword.mobilefoundation_long}} は、エンタープライズ・モバイル・アプリケーションの開発、テスト、および実行に使用できる {{site.data.keyword.mfp_full}} 環境のセットアップを迅速に行えるようにします。 {{site.data.keyword.mobilefoundation_short}} には、以下のようなさまざまなサービス・プランが用意されています。
-* **ライト**: メモリーと CPU の数に制限のある Foundation Server のホステッド・インスタンスを 1 つプロビジョンします。アプリケーションの数に制限はありませんが、接続デバイスの数については、すべてのアプリケーションでの累計が 10 個に制限されます。このプランは無料で、試用目的でのみ使用されます。
-* **開発者**: ユーザーのアカウント内の Foundation Server のインスタンスを 1 つプロビジョンします。アプリケーションの数に制限はありませんが、接続デバイスの数については、すべてのアプリケーションでの累計が 10 個に制限されます。このプランは無料で、開発とテストの目的でのみ使用します。
+* **開発者**: ユーザーのアカウント内の Foundation Server のインスタンスを 1 つプロビジョンします。 アプリケーションの数に制限はありませんが、接続デバイスの数については、すべてのアプリケーションでの累計が 10 個に制限されます。 このプランは無料で、開発とテストの目的でのみ使用します。
 * **デバイス当たりのプロフェッショナル**: ユーザーのアカウントに Foundation Server のインスタンスを 1 つプロビジョンします。アクティブに接続しているデバイスの数に基づいて課金されます
 * **プロフェッショナル 1 アプリケーション**: ユーザーのアカウントに Foundation Server のインスタンスを 1 つプロビジョンします。アプリケーションの数は 1 つに制限されますが、ユーザーとアクティブに接続するデバイスの数には制限がありません。    
 {: shortdesc}
@@ -29,7 +28,7 @@ subcollection:  mobilefoundation
 選択可能なすべてのプランについては、[ここ](https://cloud.ibm.com/catalog/services/mobile-foundation)で確認できます。
 {: note}
 
-この入門チュートリアルに従って、サポートされるプランのいずれかを使用する {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを作成します。その後、アプリケーションを登録できます。 登録されたアプリケーションをダウンロードして編集し、アダプターをデプロイし、最後にアプリケーションをテストします。
+この入門チュートリアルに従って、サポートされるプランのいずれかを使用する {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスを作成します。 その後、アプリケーションを登録できます。 登録されたアプリケーションをダウンロードして編集し、アダプターをデプロイし、最後にアプリケーションをテストします。
 
 ## 始めに
 {: #prereqs-gs}
@@ -48,18 +47,6 @@ subcollection:  mobilefoundation
 {: #buildmobilechannel}
 
 
-### {{site.data.keyword.mobilefoundation_short}}:「ライト」プランの場合
-{: #buildchannelliteplan}
-{{site.data.keyword.mobilefoundation_short}}:「ライト」のインスタンスを作成した後、以下のステップを実行することでモバイル・チャネルの作成を開始できます。
-
-* Mobile Foundation Server のホステッド・インスタンスに即座にアクセスして作業を行うことができます。
-
-  この選択により、以下の設定で {{site.data.keyword.mfserver_long_notm}} のホステッド・インスタンスが作成されます。
-  *	1 GB のメモリー。これは、{{site.data.keyword.mfserver_long_notm}} の機能を試すのに十分な量です。  
-
-  * CLI を使用して Mobile Foundation Server にアクセスするには、IBM Cloud コンソールの左側のナビゲーション・ペインで**「サービス資格情報」**をクリックして表示される、資格情報が必要です。
-
-
 ### {{site.data.keyword.mobilefoundation_short}}: 「開発者」プランの場合
 {: #buildchanneldevplan}
 
@@ -68,9 +55,9 @@ subcollection:  mobilefoundation
 * Mobile Foundation Server に即座にアクセスして作業を行うことができます。
 
   この選択により、以下の設定で {{site.data.keyword.mfserver_long_notm}} が作成されます。
-  *	1 GB のメモリー。 開発アクティビティー、簡単なテスト・アクティビティー、および小規模な実動ワークロードには、このサイズで十分です。
+  *	1 GB のメモリー。 開発アクティビティーと簡単なテスト・アクティビティーには、このサイズで十分です。
 
-  * CLI を使用して Mobile Foundation Server にアクセスするには、IBM Cloud コンソールの左側のナビゲーション・ペインで**「サービス資格情報」**をクリックして表示される、資格情報が必要です。
+  * CLI を使用して Mobile Foundation Server にアクセスするには、IBM Cloud コンソールのナビゲーション・ペインで**「サービス資格情報」**をクリックして表示される、資格情報が必要です。
 
 ### 「{{site.data.keyword.mobilefoundation_short}}: デバイス当たりのプロフェッショナル」プランの場合
 {: #buildchannelprofdeviceplan}
@@ -107,7 +94,7 @@ subcollection:  mobilefoundation
 
       +	**「コンソールの起動」**をクリックして {{site.data.keyword.mfp_oc_short_notm}} を開きます。      
 
-      トポロジー、セキュリティー、およびその他のサーバー構成について拡張構成を使用して {{site.data.keyword.mobilefirst_notm}} サーバー・インスタンスを作成するには、**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**をクリックします。 詳しくは、[拡張構成のセットアップ](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#using_mfs_advanced_p5)を参照してください。
+      トポロジー、セキュリティー、およびその他のサーバー構成について拡張構成を使用して {{site.data.keyword.mobilefirst_notm}} サーバー・インスタンスを作成するには、**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**をクリックします。 詳しくは、[拡張構成のセットアップ](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p5#using_mfs_advanced_p5)を参照してください。
       {: tip}
 
 ### {{site.data.keyword.mobilefoundation_short}}: 「1 つの商用アプリケーション」プランの場合
@@ -145,10 +132,10 @@ subcollection:  mobilefoundation
 
       +  **「コンソールの起動」**をクリックして {{site.data.keyword.mfp_oc_short_notm}} を開きます。  
 
-      トポロジー、セキュリティー、およびその他のサーバー構成について拡張構成を使用して {{site.data.keyword.mobilefirst_notm}} サーバー・インスタンスを作成するには、**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**をクリックします。 詳しくは、[拡張構成のセットアップ](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#using_mfs_advanced_p2)を参照してください。
+      トポロジー、セキュリティー、およびその他のサーバー構成について拡張構成を使用して {{site.data.keyword.mobilefirst_notm}} サーバー・インスタンスを作成するには、**「拡張構成を使用したサーバーの始動 (Start Server with Advanced Configuration)」**をクリックします。 詳しくは、[拡張構成のセットアップ](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p2#using_mfs_advanced_p2)を参照してください。
       {: tip}
 
-{{site.data.keyword.mobilefoundation_short}} の使用の開始について詳しくは、[Using the Mobile Foundation service to set up MobileFirst Server (Mobile Foundation サービスを使用した、MobileFirst Server のセットアップ)![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/bluemix/using-mobile-foundation/){: new_window}を参照してください。
+{{site.data.keyword.mobilefoundation_short}} の使用の開始について詳しくは、[Using the Mobile Foundation service to set up MobileFirst Server (Mobile Foundation サービスを使用した、MobileFirst Server のセットアップ)![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/ibmcloud/using-mobile-foundation/){: new_window}を参照してください。
 {: note}
 
 ## ステップ 3: アプリケーションの {{site.data.keyword.mobilefoundation_short}} への登録

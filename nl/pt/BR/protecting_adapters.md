@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2018-11-19"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation security, adapter security
 
@@ -31,10 +31,10 @@ Em seu adaptador, é possível especificar o escopo de proteção para um métod
 
 O escopo padrão do MobileFirst é `RegisteredClient`, que requer um token de acesso para acessar o recurso e verifica se a solicitação de recurso é de um aplicativo que está registrado com o MobileFirst Server. Essa proteção é sempre aplicada, a menos que você [desative a proteção de recurso](#disabling-resource-protection). Portanto, mesmo se você não configurar um escopo para seu recurso, ele ainda estará protegido.
 
->**Nota**: `RegisteredClient` é uma palavra-chave reservada do MobileFirst. Não defina elementos de escopo customizados ou verificações de segurança com esse nome.
-{.note}
+`RegisteredClient` é uma palavra-chave MobileFirst reservada. Não defina elementos de escopo customizados ou verificações de segurança com esse nome.
+{: note}
 
-### Protegendo recursos do adaptador Java
+## Protegendo recursos do adaptador Java
 {: #protect-java-adapter-resources}
 
 Para designar um escopo de proteção a um método ou uma classe JAX-RS, inclua a anotação `@OAuthSecurity` no método ou na declaração de classe e configure o elemento `scope` da anotação com seu escopo preferencial. Substitua `YOUR_SCOPE` por uma sequência de um ou mais elementos de escopo (“scopeElement1 scopeElement2 …”):
@@ -46,10 +46,11 @@ Para designar um escopo de proteção a um método ou uma classe JAX-RS, inclua 
 
 Um escopo de classe aplica-se a todos os métodos na classe, exceto a métodos que tenham sua própria anotação `@OAuthSecurity`.
 
->**Nota**: quando o elemento ativado da anotação `@OAuthSecurity` estiver configurado como `false`, o elemento do escopo será ignorado. Consulte  [ Desativando a proteção de recurso Java ](#disabling-java-resource-protection).
+Quando o elemento ativado da anotação `@OAuthSecurity` é configurado como `false`, o elemento do escopo é ignorado. Consulte  [ Desativando a proteção de recurso Java ](#disabling-java-resource-protection).
+{: note}
 
-**Exemplos**
-
+### Exemplos
+{: #protect-java-adap-res-example}
 O código a seguir protege um método `helloUser` com um escopo que contém os elementos de escopo `UserAuthentication` e `Pincode`:
 
 ```java
@@ -73,7 +74,7 @@ public class WebSphereResources {
 ```
 {: codeblock}
 
-### Protegendo recursos do adaptador JavaScript
+## Protegendo recursos do adaptador JavaScript
 {: #protect-javascript-adapter-resources}
 
 Para designar um escopo de proteção a um procedimento JavaScript, no arquivo **adapter.xml**, configure o atributo de escopo do elemento <procedure> com seu escopo preferencial. Substitua `PROCEDURE_NANE` pelo nome de seu procedimento e `YOUR SCOPE` por uma sequência de um ou mais elementos de escopo (“scopeElement1 scopeElement2 …”):
@@ -83,10 +84,11 @@ Para designar um escopo de proteção a um procedimento JavaScript, no arquivo *
 ```
 {: codeblock}
 
->**Nota**: quando o atributo `secured` do elemento <procedure> estiver configurado como false, o atributo `scope` será ignorado. Consulte  [ Desativando a proteção de recurso JavaScript ](#disabling-javascript-resource-protection).
-{.note}
+Quando o atributo `secured` do elemento <procedure> é configurado como false, o atributo `scope` é ignorado. Consulte  [ Desativando a proteção de recurso JavaScript ](#disabling-javascript-resource-protection).
+{: note}
 
-** Exemplo **
+### Por exemplo
+{: #protect-javascript-adap-res-example}
 
 O código a seguir protege um procedimento `userName` com um escopo que contém os elementos de escopo `UserAuthentication` e `Pincode`:
 
@@ -112,10 +114,11 @@ Para desativar completamente a proteção de OAuth para um método ou classe de 
 
 O valor padrão do elemento `enabled` da anotação é `true`. Quando o elemento `enabled` está configurado como `false`, o elemento `scope` é ignorado e o recurso ou a classe de recurso fica desprotegida.
 
->**Nota**: ao designar um escopo a um método de uma classe desprotegida, o método é protegido apesar da anotação de classe, a menos que você configure o elemento `enabled` da anotação de recurso como `false`.
-{.note}
+Quando você designa um escopo a um método de uma classe desprotegida, o método é protegido apesar da anotação de classe, a menos que você configure o elemento `enabled` da anotação de recurso como `false`.
+{: note}
 
-**Exemplos**
+#### Exemplos
+{: #disble-java-adap-res-example}
 
 O código a seguir desativa a proteção de recurso para um método `helloUser`:
 
@@ -147,7 +150,8 @@ Para desativar completamente a proteção de OAuth para um recurso de adaptador 
 
 Quando o atributo `secured` é configurado como `false`, o atributo `scope` é ignorado e o recurso fica desprotegido.
 
-** Exemplo **
+#### Por exemplo
+{: #disable-javascript-res-prot-example}
 
 O código a seguir desativa a proteção de recurso de um procedimento `userName`:
 

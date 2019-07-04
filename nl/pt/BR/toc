@@ -2,7 +2,7 @@
 {: navgroup: .navgroup}
 {: topicgroup: .topicgroup}
 
-{: .toc subcollection="mobilefoundation" service-name="Mobile Foundation" audience="service" arm="3663370" href="/docs/services/mobilefoundation?topic=mobilefoundation-getting-started-tutorial#getting-started-tutorial" path="services/mobilefoundation"}
+{: .toc subcollection="mobilefoundation" category="mobile" audience="service" arm="3663370" href="/docs/services/mobilefoundation?topic=mobilefoundation-getting-started#getting-started" path="services/mobilefoundation"}
 Mobile Foundation
 
     {: .navgroup id="learn"}
@@ -15,7 +15,7 @@ Mobile Foundation
         release_notes.md
 
     {: .topicgroup}
-    Push Notifications
+    Notificações push
         about_push_notifications.md
 
     {: .topicgroup}
@@ -26,7 +26,7 @@ Mobile Foundation
     {: .topicgroup}
     Direct Update
         advanced_direct_update_configuration.md
-        alternate_steps_to_update_app_web_content_in_app.md   
+        alternate_steps_to_update_app_web_content_in_app.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -39,7 +39,7 @@ Mobile Foundation
         export_import_apps_adapters.md
 
 	{: .topicgroup}
-    Configurar e Enviar Notificações de Push
+    Configurar e Enviar Notificações push
         configure_push_notifications.md
         send_push_notifications.md
 	    handling_push_notifications_in_client_applications.md
@@ -81,15 +81,15 @@ Mobile Foundation
     {: .topicgroup}
     Integrar com outros serviços IBM Cloud
         integrate_secure_gateway.md
-        delivering_mfp_apps_using_ibm_cloud_devops.md
-		integrating_cloud_object_storage.md
+		    delivering_mfp_apps_using_ibm_cloud_devops.md
+		    integrating_cloud_object_storage.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     {: .topicgroup}
     API
         [Administração](https://cloud.ibm.com/apidocs/mobile-foundation/mobile-foundation-administration)
-        [Analytics](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)
+        [Analítico](https://mobile-analytics-dashboard.ng.bluemix.net/analytics-service/)
         client_sdk_api.md
 
     {: .topicgroup}
@@ -128,7 +128,7 @@ Mobile Foundation
     {: .navgroup id="help"}
     faq.md
     troubleshooting.md
-    [Entrando em contato com o suporte](/docs/get-support?topic=get-support-howtogetsupport#getting-customer-support)
+    [Entrando em contato com o suporte](https://cloud.ibm.com/docs/get-support?topic=get-support-getting-customer-support)
 
     {: .topicgroup}
     Comunidade do desenvolvedor

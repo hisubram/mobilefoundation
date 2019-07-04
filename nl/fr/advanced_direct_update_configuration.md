@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-14"
+lastupdated: "2019-06-06"
 
 keywords: Direct Update, CDN support, secure direct update
 
@@ -41,7 +41,7 @@ Si les ressources web sont plus récentes sur le serveur Mobile Foundation que d
 
 La fonction fournit un style Mise à jour directe par défaut : elle propose une boîte de dialogue de message par défaut qui est affichée quand une mise à jour directe est disponible ainsi qu'un écran de progression par défaut qui apparaît au lancement du processus de mise à jour directe. Vous pouvez implémenter un comportement d'interface utilisateur Mise à jour directe personnalisé ou personnaliser la boîte de dialogue Mise à jour directe en remplaçant cette fonction et en implémentant votre propre logique.
 
-Dans le code exemple ci-après, une fonction `handleDirectUpdate` implémente un message personnalisé dans la boîte de dialogue Mise à jour directe. Ajoutez ce code dans le fichier `www/js/index.js` du projet Cordova.
+Dans l'exemple de code suivant, une fonction `handleDirectUpdate` implémente un message personnalisé dans la boîte de dialogue Mise à jour directe. Ajoutez ce code dans le fichier `www/js/index.js` du projet Cordova.
 Autres exemples d'interface utilisateur Mise à jour directe personnalisée :
 * Boîte de dialogue qui est créée en utilisant une infrastructure JavaScript tiers (comme Dojo ou jQuery Mobile, Ionic, …)
 * Interface utilisateur entièrement native en exécutant un plug-in Cordova
@@ -95,6 +95,7 @@ Les méthodes d'écouteur sont démarrées au cours du processus de mise à jour
 | `FAILURE_ALREADY_IN_PROGRESS` | La méthode de démarrage a été appelée alors que la mise à jour directe était déjà en cours d'exécution. |
 | `FAILURE_INTEGRITY` | L'authenticité du fichier de mise à jour ne peut pas être vérifiée. |
 | `FAILURE_UNKNOWN` | Erreur interne inattendue. |
+{: caption="Tableau 1. Codes de statut" caption-side="top"}
 
 Si vous implémentez un programme d'écoute de mise à jour directe personnalisée, vous devez vous assurer que l'application mobile est rechargée lorsque le processus de mise à jour directe est terminé et la méthode `onFinish()` a été appelée. Vous devez également appeler `wl_directUpdateChalengeHandler.submitFailure()` si le processus de mise à jour directe a échoué.
 
@@ -303,47 +304,49 @@ Définit le nouveau domaine `cdn.yourcompany.com` comme URL du serveur Mobile Fo
 {: #akamai-administrator }
 1. Ouvrez le gestionnaire de propriétés Akamai et définissez la propriété **host name** sur la valeur du nouveau domaine.
 
-    ![Définition de la propriété sur la valeur du nouveau domaine](images/direct_update_cdn_3.jpg)
+    ![Définition de la propriété host name sur la valeur du nouveau domaine](images/direct_update_cdn_3.jpg "Définition de la propriété host name sur la valeur du nouveau domaine")
 
 2. Sur l'onglet Default Rule, configurez l'hôte et le port d'origine du serveur Mobile Foundation et définissez la valeur **Custom Forward Host Header** sur le nouveau domaine.
 
-    ![Définition de la valeur Custom Forward Host Header sur le domaine nouvellement créé](images/direct_update_cdn_4.jpg)
+    ![Définition de la valeur Custom Forward Host Header sur le domaine nouvellement créé](images/direct_update_cdn_4.jpg "Définition de la valeur Custom Forward Host Header sur le domaine nouvellement créé")
 
 3. Dans la liste **Caching Option**, sélectionnez **No
 Store**.
 
-    ![Dans la liste Caching Option list, sélectionnez No Store](images/direct_update_cdn_5.jpg)
+    ![Dans la liste Caching Option, sélectionnez No Store](images/direct_update_cdn_5.jpg "Dans la liste Caching Option, sélectionnez No Store")
 
 4. Dans l'onglet **Static Content configuration**, configurez les critères de mise en correspondance en fonction de l'URL de mise à jour directe de l'application. Ainsi, créez une condition qui stipule `If Path matches one of direct_update_URL`.
 
-    ![Configuration des critères de mise en correspondance en fonction de l'URL de mise à jour directe de l'application](images/direct_update_cdn_6.jpg)
+    ![Configuration des critères de mise en correspondance en fonction de l'URL de mise à jour directe de l'application](images/direct_update_cdn_6.jpg "Configuration des critères de mise en correspondance en fonction de l'URL de mise à jour directe de l'application")
 
 5. Configurez le comportement de clé de cache pour utiliser tous les paramètres de demande dans la clé de cache (nécessaire pour mettre en cache
 différentes archives de mise à jour directe pour différentes applications ou versions). Par exemple,
 dans la liste **Behavior**, sélectionnez `Include all parameters (preserve
 order from request)`.
 
-    ![Configurez le comportement de clé de cache pour utiliser tous les paramètres de demande dans la clé de cache](images/direct_update_cdn_8.jpg)
+    ![Configuration du comportement de la clé de cache de manière à utiliser tous les paramètres de demande dans la clé de cache](images/direct_update_cdn_8.jpg "Configuration du comportement de la clé de cache de manière à utiliser tous les paramètres de demande dans la clé de cache")
 
 6. Définissez des valeurs similaires aux valeurs ci-après afin de configurer le comportement de mise en cache pour mettre en cache l'adresse URL de mise à
 jour directe et pour définir la durée de vie.
 
-      ![Définition des valeurs pour configurer le comportement de mise en cache](images/direct_update_cdn_7.jpg)
+      ![Définition des valeurs de configuration du comportement de mise en cache](images/direct_update_cdn_7.jpg "Définition des valeurs de configuration du comportement de mise en cache")
 
 | Zone | Valeur |
 |:------|:------|
 | Caching Option | Cache |
 | Force Revaluation of Stale Objects | Mise à disposition périmée si validation impossible |
 | Max-Age | 3 minutes |
+{: caption="Tableau 2. Zones et valeurs pour la configuration du comportement de mise en cache" caption-side="top"}
 
 ## Mise à jour directe sécurisée
 {: #secure-dc }
 
 Désactivée par défaut, la mise à jour directe sécurisée empêche que l'attaque d'un pirate tiers altère les ressources web qui sont transmises, depuis le serveur Mobile Foundation (ou à partir d'un réseau CDN) vers l'application client.
 
-**Pour activer l'authenticité de mise à jour directe :**  
+### Activation de l'authenticité de mise à jour directe
+{: #enable-direct-update-authenticity}
 En utilisant l'outil de votre choix, extrayez la clé publique depuis le magasin de clés du serveur Mobile Foundation et convertissez-le en base64.  
-La valeur produite doit ensuite être utilisée comme indiqué ci-dessous :
+La valeur produite doit ensuite être utilisée comme indiqué dans les étapes suivantes :
 
 1. Ouvrez une fenêtre de **ligne de commande** et accédez à la racine du projet Cordova.
 2. Exécutez la commande `mfpdev app config` et sélectionnez l'option relative à la clé publique d'authenticité de mise à jour directe.
@@ -416,7 +419,7 @@ illustre les procédures à suivre avec l'utilitaire de clé du kit Java Develop
 
 2. Effectuez l'une des procédures suivantes :
     * Copiez le texte généré, sans les marqueurs `BEGIN PUBLIC KEY` et `END PUBLIC KEY`, dans le fichier de propriétés mfpclient de l'application, immédiatement après `wlSecureDirectUpdatePublicKey`.
-    * Dans l'invite de commande, émettez la commande suivante : `mfpdev app config direct_update_authenticity_public_key <public_key>`
+    * A l'invite de commande, entrez le commande suivante : `mfpdev app config direct_update_authenticity_public_key <public_key>`
 
     Pour `<public_key>`, collez le texte résultant de l'étape 1, sans les marqueurs `BEGIN PUBLIC KEY` et `END PUBLIC KEY`.
 

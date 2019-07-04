@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2018-11-16"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation faq, updates to mobile foundation, custom domain
 
@@ -12,8 +12,10 @@ subcollection:  mobilefoundation
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:faq: data-hd-content-type='faq'}
+{:note: .note}
 
 # FAQ
+{: #mfp-faq}
 
 この FAQ では、{{site.data.keyword.mobilefoundation_long}} サービスに関する、よくある質問の答えを記載しています。
 {: shortdesc}
@@ -37,10 +39,9 @@ subcollection:  mobilefoundation
 {{site.data.keyword.mobilefoundation_short}} に対する更新は、**「再作成」**をクリックして適用できます。
 更新を適用すると、{{site.data.keyword.mfp_oc_short_notm}} に表示されるサーバーのバージョンが変更され、サーバーの更新バージョンを示します。
 
-> **注:**
->  * ユーザーが自分の {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに独自のフィックスや更新を適用することはできません。
->  * **「再作成」** をクリックした際のプランによる動作の違いについては、[「デバイス当たりのプロフェッショナル」プランでのサーバーの再作成](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p5#recreate_mobilefoundation_p5)と[「プロフェッショナル 1 アプリケーション」プランでのサーバーの再作成](/docs/services/mobilefoundation?topic=mobilefoundation-c_using_mfs_p2#recreate_mobilefoundation_p2)を参照してください。
->
+* ユーザーが自分の {{site.data.keyword.mobilefoundation_short}} サービス・インスタンスに独自のフィックスや更新を適用することはできません。
+* **「再作成」**をクリックした際のプランによる動作の違いについては、[「デバイス当たりのプロフェッショナル」プランを使用する際のサーバーの再作成](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p5#recreate_mobilefoundation_p5)と[「プロフェッショナル 1 アプリケーション」プランを使用する際のサーバーの再作成](/docs/services/mobilefoundation?topic=mobilefoundation-using_mobilefoundation_p2#recreate_mobilefoundation_p2)を参照してください。
+{: note}
 
 ## {{site.data.keyword.mobilefoundation_short}} サーバー・インスタンスのカスタム・ドメインを構成するにはどうすればいいですか。
 {: #configcustomdomain}

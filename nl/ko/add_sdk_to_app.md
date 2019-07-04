@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated:  "2019-01-04"
+lastupdated: "2019-06-06"
 
 keywords: Mobile Foundation SDK, android sdk, iOS sdk, cordova sdk, react native sdk
 
@@ -187,7 +187,7 @@ mfpdev app register
    ```
    {: codeblock}
    {: reactnative}
-5. Android의 경우 `AndroidManifest.xml`(`<PROJECT_ROOT>/android/app/src/main/`)을 다음과 같이 변경하십시오.
+5. Android의 경우, `AndroidManifest.xml`(`<PROJECT_ROOT>/android/app/src/main/`)을 다음과 같이 변경하십시오.
    ```xml
    <manifest 
           xmlns:android="http://schemas.android.com/apk/res/android" 

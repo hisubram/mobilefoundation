@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-06-06"
 
 keywords: push notifications, notifications, FCM, GCM, APNS, WNS, authenticate notification
 
@@ -32,7 +32,7 @@ subcollection:  mobilefoundation
 {:xml: .ph data-hd-programlang='xml'}
 
 
-# Configurar Notificações de Push
+# Configurar Notificações push
 {: #configure_push_notifications}
 
 Para enviar notificações push para dispositivos iOS, Android ou Windows, o {{ site.data.keyword.mfserver_short_notm }} precisa primeiro ser configurado com os detalhes do FCM para Android, um certificado APNS para iOS ou credenciais WNS para o Windows 8.1 Universal/Windows 10 UWP.
@@ -82,7 +82,7 @@ Se a sua organização tem um firewall que restringe o tráfego para ou da Inter
 
 <img class="gifplayer" alt="Image of adding the GCM credentials" src="images/gcm-setup.png"/>
 
-### Serviço de Notificações de Push da Apple
+### Serviço de Notificações push da Apple
 {: #apple-push-notifications-service }
 
 Os dispositivos iOS usam o Push Notification Service (APNS) da Apple para notificações push.  
@@ -113,7 +113,7 @@ Também é possível configurar APNS usando a [API REST para o serviço {{site.d
 
 <img class="gifplayer" alt="Image of adding the APNS credentials" src="images/apns-setup.png"/>
 
-### Serviço de Notificações de Push do Windows
+### Serviço de Notificações push do Windows
 {: #windows-push-notifications-service }
 
 Os dispositivos Windows usam o Windows Push Notifications Service (WNS) para notificações push.  
@@ -123,7 +123,7 @@ Para configurar o WNS:
 1. Siga as [instruções fornecidas pela Microsoft](https://msdn.microsoft.com/en-in/library/windows/apps/hh465407.aspx) para gerar os valores de **Identificador de segurança do pacote (SID)** e **Segredo do cliente**.
 2. No {{ site.data.keyword.mfp_oc_short_notm }} → **[seu aplicativo] → Push → Configurações de Push**, inclua esses valores e clique em **Salvar**.
 
-> Também é possível configurar o WNS usando a [API de REST para o serviço de Push do {{ site.data.keyword.mobilefirst_notm }}](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_wns_settings_put.html?view=kc) ou a [API de REST para o serviço de administração do {{ site.data.keyword.mobilefirst_notm }}](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_wns_settings_put.html?view=kc)
+Também é possível configurar o WNS usando a [API de REST para o serviço de Push do {{ site.data.keyword.mobilefirst_notm }}](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/rest_runtime/r_restapi_push_wns_settings_put.html?view=kc) ou a [API de REST para o serviço de administração do {{ site.data.keyword.mobilefirst_notm }}](http://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.apiref.doc/apiref/r_restapi_update_wns_settings_put.html?view=kc)
 
 <img class="gifplayer" alt="Image of adding the WNS credentials" src="images/wns-setup.png"/>
 
@@ -135,27 +135,28 @@ Mapeie o elemento do escopo **push.mobileclient** para o aplicativo.
 1. Carregue o {{ site.data.keyword.mfp_oc_short_notm }} e navegue para **[seu aplicativo] → Segurança → Mapeamento de elementos do escopo**, clique em **Novo**.
 2. Escreva "push.mobileclient" no campo **Elemento do escopo**. Em seguida, clique em  ** Incluir **.
 
-** Lista de escopos mais disponíveis **
+Lista de mais escopos disponíveis:
 
-**Escopos** | ** Descrição **
----|---
-.l.apps.l | Permissão para ler o recurso de aplicativo.
-apps.write | Permissão para criar, atualizar, excluir o recurso de aplicativo.
-gcmConf.read | Permissão para ler as definições de configuração do GCM (Chave de API e SenderId).
-gcmConf.write | Permissão para atualizar, excluir definições de configuração do GCM.
-apnsConf.read | Permissão para ler as definições de configuração do APNs.
-apnsConf.write | Permissão para atualizar, excluir definições de configuração de APNs.
-devices.read | Permissão para ler dispositivo.
-devices.write | Permissão para criar, atualizar dispositivo de exclusão.
-subscriptions.read | Permissão para ler assinaturas.
-subscriptions.write | Permissão para criar, atualizar, excluir assinaturas.
-messages.write | Permissão para enviar notificações push.
-webhooks.read | Permissão para ler notificações de eventos.
-webhooks.write | Permissão para enviar notificações de eventos.
-smsConf.read | Permissão para ler definições de configuração SMS.
-smsConf.write | Permissão para atualizar, excluir definições de configuração de SMS.
-wnsConf.read | Permissão para ler as definições de configuração do WNS.
-wnsConf.write | Permissão para atualizar, excluir definições de configuração do WNS.
+|**Escopos** | ** Descrição **|
+|---|---|
+|.l.apps.l | Permissão para ler o recurso de aplicativo. |
+|apps.write | Permissão para criar, atualizar, excluir o recurso de aplicativo. |
+|gcmConf.read | Permissão para ler as definições de configuração do GCM (Chave de API e SenderId). |
+|gcmConf.write | Permissão para atualizar, excluir definições de configuração do GCM. |
+|apnsConf.read | Permissão para ler as definições de configuração do APNs. |
+|apnsConf.write | Permissão para atualizar, excluir definições de configuração de APNs. |
+|devices.read | Permissão para ler dispositivo. |
+|devices.write | Permissão para criar, atualizar dispositivo de exclusão. |
+|subscriptions.read | Permissão para ler assinaturas. |
+|subscriptions.write | Permissão para criar, atualizar, excluir assinaturas. |
+|messages.write | Permissão para enviar notificações push. |
+|webhooks.read | Permissão para ler notificações de eventos. |
+|webhooks.write | Permissão para enviar notificações de eventos.|
+|smsConf.read | Permissão para ler definições de configuração SMS.|
+|smsConf.write | Permissão para atualizar, excluir definições de configuração de SMS.|
+|wnsConf.read | Permissão para ler as definições de configuração do WNS.|
+|wnsConf.write | Permissão para atualizar, excluir definições de configuração do WNS.|
+{: caption="Tabela 1. Descrições do escopo" caption-side="top"}
 
 <img class="gifplayer" alt="Scope mapping" src="images/scope-mapping.png"/>
 
@@ -183,7 +184,7 @@ As assinaturas vinculam um registro de dispositivo e uma tag. Quando um disposit
 ## Tutorials a seguir
 {: #tutorials-to-follow-next }
 
-* [ Enviar Notificações de Push ](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications)
+* [ Enviar Notificações push ](/docs/services/mobilefoundation?topic=mobilefoundation-send_push_notifications#send_push_notifications)
 
 Com o lado do servidor agora configurado, configure o lado do cliente e manipule as notificações recebidas.
 

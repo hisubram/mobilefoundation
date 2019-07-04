@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-24"
 
 keywords: mobile foundation, integration, cloud object storage, COS, ibm cloud
 
@@ -34,16 +34,16 @@ subcollection:  mobilefoundation
 # {{ site.data.keyword.cos_full_notm }} と {{ site.data.keyword.IBM_notm}} {{ site.data.keyword.mobilefoundation_short}} を組み合わせた使用
 {: #using_ibm_cloud_object_storage_with_ibm_mobile_foundation}
 
-{{ site.data.keyword.IBM_notm}} {{ site.data.keyword.mobilefoundation_short}} (MF) は、パーソナライズされたコンテキスト重視の次世代コグニティブ・モバイル・アプリの構築と展開をサポートするように独自に設計された、エンタープライズ・グレードの機能を提供します。{{ site.data.keyword.cos_full_notm }} (COS) は、柔軟性があり、コスト効率が高く、拡張が容易な、非構造化データ用のクラウド・ストレージです。この使用法ガイドでは、{{ site.data.keyword.mobilefoundation_short}} を使用するモバイル・アプリケーションで、Ionic アプリケーションを介して {{ site.data.keyword.cos_full_notm }} に接続してデータを取り出したりアップロードしたりする方法について説明します。この使用法チュートリアルで使用する Ionic アプリケーション、アダプター、関連ファイルは、[ここ](https://github.com/MobileFirst-Platform-Developer-Center/COS_MF_Short_Stories_Ionic_App)から入手できます。
+{{ site.data.keyword.IBM_notm}} {{ site.data.keyword.mobilefoundation_short}} (MF) は、パーソナライズされたコンテキスト重視の次世代コグニティブ・モバイル・アプリの構築と展開をサポートするように独自に設計された、エンタープライズ・グレードの機能を提供します。 {{ site.data.keyword.cos_full_notm }} (COS) は、柔軟性があり、コスト効率が高く、拡張が容易な、非構造化データ用のクラウド・ストレージです。 この使用法ガイドでは、{{ site.data.keyword.mobilefoundation_short}} を使用するモバイル・アプリケーションで、Ionic アプリケーションを介して {{ site.data.keyword.cos_full_notm }} に接続してデータを取り出したりアップロードしたりする方法について説明します。 この使用法チュートリアルで使用する Ionic アプリケーション、アダプター、関連ファイルは、[ここ](https://github.com/MobileFirst-Platform-Developer-Center/COS_MF_Short_Stories_Ionic_App)から入手できます。
 {: shortdesc}
 
 
 ## 前提条件
 {: #cos-prerequisites}
 
-1. `npm install -g mfpdev-cli` を実行して、[mfpdev-cli](https://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_wl_cli_description.html) をインストールします。この CLI を使用して、Ionic アプリを登録し、アダプターを MF サーバーにデプロイします。代わりに MF サーバーのダッシュボードからこれらのアクティビティーを実行することもできます。
+1. `npm install -g mfpdev-cli` を実行して、[mfpdev-cli](https://www.ibm.com/support/knowledgecenter/en/SSHS8R_8.0.0/com.ibm.worklight.dev.doc/dev/c_wl_cli_description.html) をインストールします。 この CLI を使用して、Ionic アプリを登録し、アダプターを MF サーバーにデプロイします。 代わりに MF サーバーのダッシュボードからこれらのアクティビティーを実行することもできます。
 
-2. ご使用のマシンに [{{ site.data.keyword.cloud_notm}} CLI](https://console.bluemix.net/docs/cli/index.html#overview) をインストールします。
+2. ご使用のマシンに [{{ site.data.keyword.cloud_notm}} CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-ibmcloud-cli) をインストールします。
 
 3. `npm install -g ionic` を実行して、Ionic CLI をインストールします
 
@@ -53,9 +53,9 @@ subcollection:  mobilefoundation
 ## {{ site.data.keyword.mobilefoundation_short}} サーバーのセットアップ
 {: #mobile-foundation-server-setup}
 
-{{ site.data.keyword.cloud_notm}} 上で {{ site.data.keyword.mobilefoundation_short}} サーバーをセットアップします。{{ site.data.keyword.mobilefoundation_short}} サーバーの {{ site.data.keyword.cloud_notm}} インスタンスを以下のようにセットアップします。
+{{ site.data.keyword.cloud_notm}} 上で {{ site.data.keyword.mobilefoundation_short}} サーバーをセットアップします。 {{ site.data.keyword.mobilefoundation_short}} サーバーの {{ site.data.keyword.cloud_notm}} インスタンスを以下のようにセットアップします。
 
-* {{ site.data.keyword.cloud_notm}} カタログで「{{ site.data.keyword.mobilefoundation_short}}」を検索します。**「{{ site.data.keyword.mobilefoundation_short}}」**タイルをクリックします。
+* {{ site.data.keyword.cloud_notm}} カタログで、*{{ site.data.keyword.mobilefoundation_short}}* を検索します。**「{{ site.data.keyword.mobilefoundation_short}}」**タイルをクリックします。
 
     ![MFP カタログ](images/mfp_catalog.png)
 
@@ -67,7 +67,7 @@ subcollection:  mobilefoundation
 
     ![MFP ログイン](images/mfp_login.png)
 
-* MF サーバーにログインするための資格情報は、左側メニューの**「資格情報」**タブにあります。
+* MF サーバーにログインするための資格情報は、メニューの**「資格情報」**タブにあります。
 
     ![MFP 資格情報](images/mfp_credentials.png)
 
@@ -79,7 +79,7 @@ subcollection:  mobilefoundation
 ## Cloud Object Storage のセットアップ
 {: #cloud-object-storage-setup}
 
-* {{ site.data.keyword.cloud_notm}} カタログで、「Cloud Object Storage」を検索します。**「Object Storage」**タイルをクリックします。
+* {{ site.data.keyword.cloud_notm}} カタログで、*Cloud Object Storage* を検索します。**「Object Storage」**タイルをクリックします。
 
     ![カタログ](images/catalog.png)
 
@@ -87,7 +87,7 @@ subcollection:  mobilefoundation
 
     ![COS の作成](images/cos_create.png)
 
-* 次に、左側のメニュー・オプションで**「バケット」**をクリックします。バケットの適切な名前 (このサンプルではバケットの名前に `sharedgallery` を選択しました) を入力し、**「作成」**をクリックします。
+* 次に、メニュー・オプションで**「バケット」**をクリックします。バケットの適切な名前 (このサンプルではバケットの名前に `sharedgallery` を選択しました) を入力し、**「作成」**をクリックします。
 
     ![バケットの作成](images/bucketcreate.png)
 
@@ -101,7 +101,7 @@ subcollection:  mobilefoundation
 ## MFP-COS Ionic アプリと Java アダプター
 {: #mfp-cos-ionic-app-and-java-adapter}
 
-この [Git リポジトリー](https://github.com/MobileFirst-Platform-Developer-Center/COS_MF_Short_Stories_Ionic_App)をダウンロードするか複製します。このリポジトリーは、以下の 2 つの主なコンポーネントで構成されます。
+この [Git リポジトリー](https://github.com/MobileFirst-Platform-Developer-Center/COS_MF_Short_Stories_Ionic_App)をダウンロードするか複製します。 このリポジトリーは、以下の 2 つの主なコンポーネントで構成されます。
 
 1. MF Java アダプター
 2. Ionic モバイル・アプリケーション
@@ -109,19 +109,19 @@ subcollection:  mobilefoundation
 ### mfpdev-cli の構成
 {: #configuring-mfpdev-cli}
 
-サーバーの詳細情報を CLI に追加します。コマンド・プロンプトで、`mfpdev server add` を実行します。
+サーバーの詳細情報を CLI に追加します。 コマンド・プロンプトで、`mfpdev server add` を実行します。
 
 ```
 ? Enter the name of the new server profile:
 ```
 
-サーバーの名前を入力し、Enter キーを押します。このサンプルでは、名前として `mfpserver` を入力します。
+サーバーの名前を入力し、Enter キーを押します。 このサンプルでは、名前として `mfpserver` を入力します。
 
 ```
 ? Enter the fully qualified URL of this server:
 ```
 
-サーバーの URL を入力します。{{ site.data.keyword.cloud_notm}} 上の MF サーバーの場合、サービス資格情報タブに URL が記載されています。{{ site.data.keyword.cloud_notm}} 上の HTTPS MF サーバーのポートは 443 で、HTTP MF サーバー・インスタンスのポートは 80 です。
+サーバーの URL を入力します。 {{ site.data.keyword.cloud_notm}} 上の MF サーバーの場合、サービス資格情報タブに URL が記載されています。 {{ site.data.keyword.cloud_notm}} 上の HTTPS MF サーバーのポートは 443 で、HTTP MF サーバー・インスタンスのポートは 80 です。
 
 ```
 ? Enter the MobileFirst Server administrator login ID: (admin)
@@ -164,17 +164,17 @@ Server profile 'mfpserver' added successfully.
 ### MF Java アダプターの構成
 {: #configuring-the-mf-java-adapter}
 
-COS インスタンスに接続するには、`adapter.xml` ファイル内に COS インスタンスの詳細情報を入力する必要があります。以下のフィールドの値を指定します。
+COS インスタンスに接続するには、`adapter.xml` ファイル内に COS インスタンスの詳細情報を入力する必要があります。 以下のフィールドの値を指定します。
 
-1. **endpointURL**: このフィールドは、COS オブジェクトのパブリック・エンドポイントの URL です。この URL は、COS のダッシュボード上の**「バケット」(左側のメニュー・オプション上) -> <your-bucket-name> (このサンプルでは `sharedgallery`) ->「構成」->「エンドポイント」->「パブリック」**の下にあります
+1. **endpointURL**: このフィールドは、COS オブジェクトのパブリック・エンドポイントの URL です。 この URL は、COS のダッシュボード上の**「バケット」(メニュー・オプション上) -> <your-bucket-name> (このサンプルでは `sharedgallery`) ->「構成」->「エンドポイント」->「パブリック」**の下にあります。
 2. **AuthToken**: このチュートリアルでは、IAM 認証を使用しています。
 
-Java アダプターが COS のインスタンスに接続するには、IAM または HMAC を使用する認証が必要です。IAM トークンを取得するステップを以下に示します。IAM と HMAC の認証プロセスの詳細については、[ここ](https://cloud.ibm.com/docs/services/cloud-object-storage/api-reference/api-reference-buckets.html#bucket-operations#AuthenticationOptions)をクリックしてください。
+Java アダプターが COS のインスタンスに接続するには、IAM または HMAC を使用する認証が必要です。 IAM トークンを取得するステップを以下に示します。 IAM と HMAC の認証プロセスの詳細については、[ここ](https://cloud.ibm.com/docs/services/cloud-object-storage/api-reference/api-reference-buckets.html#bucket-operations#AuthenticationOptions)をクリックしてください。
 
 #### {{ site.data.keyword.cloud_notm}} CLI を使用した IAM Oauth トークンの入手
 {: #obtaining-iam-oath-token-using-ibm-cloud-cli}
 
-1. 最初に、API キーがあることを確認します。[{{ site.data.keyword.cloud_notm}} ID およびアクセス管理](https://cloud.ibm.com/iam/#/users)から API キーを取得します。
+1. 最初に、API キーがあることを確認します。 [{{ site.data.keyword.cloud_notm}} ID およびアクセス管理](https://cloud.ibm.com/iam/#/users)から API キーを取得します。
 2. CLI を使用して {{ site.data.keyword.cloud_notm}} プラットフォームにログインします。
 
   ```bash
@@ -191,7 +191,7 @@ Java アダプターが COS のインスタンスに接続するには、IAM ま
 
 	Targeted resource group default
 
-	API endpoint:     https://api.ng.bluemix.net (API version: 	2.75.0)
+	API endpoint:     https://api.us-south.cf.cloud.ibm.com (API version: 	2.128.0)
 	Region:           us-south
 	User:             <email-address>
 	Account:          <account-name> (<account-id>)
@@ -214,7 +214,7 @@ Java アダプターが COS のインスタンスに接続するには、IAM ま
 	<resource-instance-name>                           global       	active   service_instance
 	```
 
-4. 次のコマンドを実行して、COS インスタンスの詳細を取得します。<instance-name> は COS サービスの名前です (このチュートリアルでは `newObject`)。
+4. 次のコマンドを実行して、COS インスタンスの詳細を取得します。 <instance-name> は COS サービスの名前です (このチュートリアルでは `newObject`)。
 
   ```bash
 	ibmcloud resource service-instance <instance-name>
@@ -249,14 +249,14 @@ Java アダプターが COS のインスタンスに接続するには、IAM ま
 	UAA token:  Bearer <refresh-token>
 	```
 
-*endpointURL* と *authToken* の値の追加後に、アダプターを構築します。コマンド・プロンプトでアダプターのルート・フォルダーにナビゲートし、次のコマンドを実行します
+*endpointURL* と *authToken* の値の追加後に、アダプターを構築します。 コマンド・プロンプトでアダプターのルート・フォルダーにナビゲートし、次のコマンドを実行します
 
 ```bash
 mfpdev adapter build
 ```
 {: codeblock}
 
-`target` フォルダー内に `*.adapter` ファイルが作成されます。次のコマンドを実行します。
+`target` フォルダー内に `*.adapter` ファイルが作成されます。 次のコマンドを実行します。
 
 ```bash
 mfpdev adapter deploy
@@ -265,7 +265,7 @@ mfpdev adapter deploy
 
 アダプターが MF インスタンスにデプロイされます。
 
-別の方法として、アダプターを MF サーバーのダッシュボード上にデプロイできます。左側メニューで MF サーバーのダッシュボードを開き、**「アダプター」->「新規」**をクリックして、以下のイメージで示されているページを開きます。
+別の方法として、アダプターを MF サーバーのダッシュボード上にデプロイできます。 メニューで MF サーバーのダッシュボードを開き、**「アダプター」->「新規」**をクリックして、以下のイメージで示されているページを開きます。
 
 ![MFPNewAdapterRegister](images/mfp_new_adapter_register.png)
 
@@ -302,17 +302,17 @@ mfpdev adapter deploy
 	mfpdev app register
 	```
 
-	別の方法として、MF サーバーのダッシュボード上でアプリを登録できます。MF サーバーのダッシュボードを開き、左側メニューで**「アプリケーション」->「新規」**をクリックします。
+	別の方法として、MF サーバーのダッシュボード上でアプリを登録できます。 MF サーバーのダッシュボードを開き、メニューで**「アプリケーション」->「新規」**をクリックします。
 
 	以下のイメージで示されているページがロードされます。
 
 	![MFPNewAppRegister](images/mfp_new_app_register.png)
 
-	要求された詳細を入力します。テキスト・ボックス「アプリケーション名」内でアプリケーションに名前を付けます。必要なプラットフォームを選択します。
+	要求された詳細を入力します。 テキスト・ボックス「アプリケーション名」内でアプリケーションに名前を付けます。 必要なプラットフォームを選択します。
 
-	Android の場合、**「パッケージ」**テキスト・ボックスで*アプリケーション ID* を使用できます。このパラメーターは、Android アプリケーションのパッケージの `AndroidManifest.xml` に示されています。**「バージョン」**テキスト・ボックス・フィールドに、`AndroidManifest.xml` にある *versionName* 値を入力する必要があります。
+	Android の場合、**「パッケージ」**テキスト・ボックスで*アプリケーション ID* を使用できます。 このパラメーターは、Android アプリケーションのパッケージの `AndroidManifest.xml` に示されています。 **「バージョン」**テキスト・ボックス・フィールドに、`AndroidManifest.xml` にある *versionName* 値を入力する必要があります。
 
-	iOS の場合、**「バンドル ID」**テキスト・ボックスで*アプリケーション ID* を使用できます (大/小文字の区別あり)。このパラメーターは、iOS アプリケーションの `mfpclient.plist` に示されています。**「バージョン」**テキスト・ボックス・フィールドに、iOS アプリケーションの `mfpclient.plist` ファイルにある *version* 値を入力する必要があります。
+	iOS の場合、**「バンドル ID」**テキスト・ボックスで*アプリケーション ID* を使用できます (大/小文字の区別あり)。 このパラメーターは、iOS アプリケーションの `mfpclient.plist` に示されています。 **「バージョン」**テキスト・ボックス・フィールドに、iOS アプリケーションの `mfpclient.plist` ファイルにある *version* 値を入力する必要があります。
 
 5. `ionic cordova prepare` を実行して、追加した環境に変更内容をパーコレートします。
 6. 次のコマンドを実行します
@@ -338,13 +338,13 @@ mfpdev adapter deploy
 ### Ionic アプリケーションのナビゲート
 {: #navigating-the-ionic-application}
 
-Ionic アプリケーションは、作成した COS インスタンスからアップロードしたショート・ストーリーのリストを表示します (このアップロードは [Cloud Object Storage のセットアップ](#cloud-object-storage-setup)のセクションの最後のステップで説明されています)。特定のストーリーのオプションを選択すると、選択されたストーリーがロードされて表示されます。ストーリーを追加するオプションも提供されます。追加すると、COS インスタンスにアップロードされます。
+Ionic アプリケーションは、作成した COS インスタンスからアップロードしたショート・ストーリーのリストを表示します (このアップロードは [Cloud Object Storage のセットアップ](#cloud-object-storage-setup)のセクションの最後のステップで説明されています)。 特定のストーリーのオプションを選択すると、選択されたストーリーがロードされて表示されます。 ストーリーを追加するオプションも提供されます。追加すると、COS インスタンスにアップロードされます。
 
 初期 COS オブジェクト・リストは次のイメージのようになります。
 
 ![作業前の COS](images/cos_before.png)
 
-アプリケーションのホーム・ページには、「ストーリーをすべて取得 (Get all stories)」または「ストーリーの追加 (Add story)」オプションがあります。
+アプリケーションのホーム・ページには、*「ストーリーをすべて取得 (Get all stories)」* または*「ストーリーの追加 (Add story)」* オプションがあります。
 
 ![アプリのホーム画面](images/app-home-screen.png)
 
@@ -356,7 +356,7 @@ Ionic アプリケーションは、作成した COS インスタンスからア
 
 ![アプリでのストーリーのロード](images/app-story-loaded.png)
 
-次に、**「ストーリーの追加 (Add story)」**ボタンをクリックし、所有しているストーリーを追加します。テキスト域でストーリーのタイトルと内容を入力し、**「追加 (Add)」**をクリックします。
+次に、**「ストーリーの追加 (Add story)」**ボタンをクリックし、所有しているストーリーを追加します。 テキスト域でストーリーのタイトルと内容を入力し、**「追加 (Add)」**をクリックします。
 
 ![アプリでの追加入力](images/app-add-input.png)
 
@@ -369,5 +369,5 @@ Ionic アプリケーションは、作成した COS インスタンスからア
 ![COS に追加済み](images/cos_added.png)
 
 
-`ibmcloud iam oauth-tokens` を使用して入手した IAM Oauth トークンには有効期限があり、`403 - 禁止`の例外でアダプターに障害が発生します。したがって、アプリが期待どおりに機能するには、デプロイされているアダプター上でトークンが有効であることを確認する必要があります。
+`ibmcloud iam oauth-tokens` を使用して入手した IAM Oauth トークンには有効期限があり、`403 - 禁止`の例外でアダプターに障害が発生します。 したがって、アプリが期待どおりに機能するには、デプロイされているアダプター上でトークンが有効であることを確認する必要があります。
 {: note}

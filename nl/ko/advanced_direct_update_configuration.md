@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-14"
+lastupdated: "2019-06-06"
 
 keywords: Direct Update, CDN support, secure direct update
 
@@ -41,14 +41,14 @@ Mobile Foundation 서버의 웹 리소스가 애플리케이션보다 최신인 
 
 이 함수는 기본 직접 업데이트 디자인(직접 업데이트가 사용 가능한 경우 표시되는 기본 메시지 대화 상자 및 직접 업데이트 프로세스가 시작될 때 표시되는 기본 진행상태 화면)을 제공합니다. 사용자 정의 직접 업데이트 사용자 인터페이스 동작을 구현하거나 이 함수를 대체하고 고유 로직을 구현하여 직접 업데이트 대화 상자를 사용자 정의할 수 있습니다.
 
-아래 예제 코드에서 `handleDirectUpdate` 함수는 직접 업데이트 대화 상자에서 사용자 정의 메시지를 구현합니다. Cordova 프로젝트의 `www/js/index.js` 파일에 이 코드를 추가하십시오.
+다음 예제 코드에서 `handleDirectUpdate` 함수는 직접 업데이트 대화 상자에서 사용자 정의 메시지를 구현합니다. Cordova 프로젝트의 `www/js/index.js` 파일에 이 코드를 추가하십시오.
 사용자 정의된 직접 업데이트 UI의 추가 예제는 다음과 같습니다.
 * 서드파티 JavaScript 프레임워크(예: Dojo 또는 jQuery Mobile, Ionic 등)를 사용하여 작성되는 대화 상자
 * Cordova 플러그인 실행을 통한 완전한 네이티브 UI
 * 옵션과 함께 사용자에게 표시되는 대체 HTML 등
 
 ```JavaScript
-wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, directUpdateContext) {
+wl_directUpdateChallengeHandler.handleDirectUpdate = function(directUpdateData, directUpdateContext) {        
     navigator.notification.confirm(  // Creates a dialog.
         'Custom dialog body text',
         // Handle dialog buttons.
@@ -93,6 +93,7 @@ var  directUpdateCustomListener  = {
 | `FAILURE_ALREADY_IN_PROGRESS` | 직접 업데이트 실행 중에 시작 메소드가 호출되었습니다. |
 | `FAILURE_INTEGRITY` | 업데이트 파일의 진위성을 확인할 수 없습니다. |
 | `FAILURE_UNKNOWN` | 예상치 못한 내부 오류가 발생했습니다. |
+{: caption="표 1. 상태 코드" caption-side="top"}
 
 사용자 정의 직접 업데이트 리스너를 구현하는 경우 직접 업데이트 프로세스가 완료되고 `onFinish()` 메소드가 호출되었을 때 앱이 다시 로드되는지 확인해야 합니다. 또한 직접 업데이트 프로세스를 성공적으로 완료하지 못한 경우 `wl_directUpdateChalengeHandler.submitFailure()`를 호출해야 합니다.
 
@@ -293,42 +294,44 @@ Mobile Foundation 서버에 대한 DNS에서 다른 도메인을 작성하십시
 {: #akamai-administrator }
 1. Akamai 특성 관리자를 열고 **호스트 이름** 특성을 새 도메인의 값으로 설정하십시오.
 
-    ![호스트 이름 특성을 새 도메인의 값으로 설정](images/direct_update_cdn_3.jpg)
+    ![호스트 이름 특성을 새 도메인의 값으로 설정](images/direct_update_cdn_3.jpg "호스트 이름 특성을 새 도메인의 값으로 설정")
 
 2. 기본 규칙 탭에서 원래 Mobile Foundation 서버 호스트 및 포트를 구성하고 **사용자 정의 전달 호스트 헤더** 값을 새로 작성된 도메인으로 설정하십시오.
 
-    ![사용자 정의 전달 호스트 헤더 값을 새로 정의된 도메인으로 설정](images/direct_update_cdn_4.jpg)
+    ![사용자 정의 전달 호스트 헤더 값을 새로 정의된 도메인으로 설정](images/direct_update_cdn_4.jpg "사용자 정의 전달 호스트 헤더 값을 새로 정의된 도메인으로 설정")
 
 3. **캐싱 옵션** 목록에서 **저장소 없음**을 선택하십시오.
 
-    ![캐싱 옵션 목록에서 저장소 없음 선택](images/direct_update_cdn_5.jpg)
+    ![캐싱 옵션 목록에서 저장소 없음 선택](images/direct_update_cdn_5.jpg "캐싱 옵션 목록에서 저장소 없음 선택")
 
 4. **정적 컨텐츠 구성** 탭에서 애플리케이션의 직접 업데이트 URL에 따라 일치 기준을 구성하십시오. 예를 들어, `If Path matches one of direct_update_URL`로 명시하는 조건을 작성하십시오.
 
-    ![애플리케이션의 직접 업데이트 URL에 따라 일치 기준 구성](images/direct_update_cdn_6.jpg)
+    ![애플리케이션의 직접 업데이트 URL에 따라 일치 기준 구성](images/direct_update_cdn_6.jpg "애플리케이션의 직접 업데이트 URL에 따라 일치 기준 구성")
 
 5. 캐시 키의 모든 요청 매개변수를 사용하도록 캐시 키 동작을 구성하십시오(서로 다른 애플리케이션 또는 버전에 대해 서로 다른 직접 업데이트 아카이브를 캐시하려면 이를 수행해야 함). 예를 들어, **동작** 목록에서 `Include all parameters (preserve order from request)`를 선택하십시오.
 
-    ![캐시 키의 모든 요청 매개변수를 사용하도록 캐시 키 동작 구성](images/direct_update_cdn_8.jpg)
+    ![캐시 키의 모든 요청 매개변수를 사용하도록 캐시 키 동작 구성](images/direct_update_cdn_8.jpg "캐시 키의 모든 요청 매개변수를 사용하도록 캐시 키 동작 구성")
 
 6. 직접 업데이트 URL을 캐시하도록 캐싱 동작을 구성하고 TTL을 설정하려면 다음 값과 유사하게 설정하십시오.
 
-      ![캐싱 동작을 구성하도록 값 설정](images/direct_update_cdn_7.jpg)
+      ![캐싱 동작을 구성하도록 값 설정](images/direct_update_cdn_7.jpg "캐싱 동작을 구성하도록 값 설정")
 
 | 필드 | 값 |
 |:------|:------|
 | 캐싱 옵션 | 캐시 |
 | 시간이 경과된(stale) 오브젝트의 강제 재평가 | 유효성 검증할 수 없는 경우 시간이 경과된(stale) 상태로 제공 |
 | 최대 기간 | 3분 |
+{: caption="표 2. 캐싱 동작 구성에 필요한 필드 및 값" caption-side="top"}
 
 ## 보안 직접 업데이트
 {: #secure-dc }
 
 기본적으로 사용 안함으로 설정되는 보안 직접 업데이트를 사용하면 서드파티 공격자가 Mobile Foundation 서버 또는 CDN(Content Delivery Network)에서 클라이언트 애플리케이션으로 전송되는 웹 리소스를 변경하지 못합니다.
 
-**직접 업데이트 진위성을 사용으로 설정하려면 다음을 수행하십시오.**  
+### 직접 업데이트 인증 사용
+{: #enable-direct-update-authenticity}
 선호하는 도구를 사용하여 Mobile Foundation 서버 키 저장소에서 공개 키를 추출하여 base64로 변환하십시오.  
-생성되는 값은 아래에 지시된 대로 사용되어야 합니다.
+생성되는 값은 다음 단계에서 지시된 대로 사용되어야 합니다.
 
 1. **명령행** 창을 열고 Cordova 프로젝트의 루트로 이동하십시오.
 2. `mfpdev app config` 명령을 실행하고 **직접 업데이트 진위성 공개 키** 옵션을 선택하십시오.
@@ -401,6 +404,6 @@ pdGIdLtkrhzbqHFwXE0v3dt+lnLf21wRPIqYHaEu+EB/A4dLO6hm+IjBeu/No7H7TBFm
     * `BEGIN PUBLIC KEY` 및 `END PUBLIC KEY` 마커를 제외한 결과 텍스트를 애플리케이션의 mfpclient 특성 파일에서 `wlSecureDirectUpdatePublicKey` 바로 뒤에 복사하십시오.
     * 명령 프롬프트에서 다음 명령을 실행하십시오. `mfpdev app config direct_update_authenticity_public_key <public_key>`
 
-    `<public_key>`의 경우 1단계에서 생성된 텍스트를 `BEGIN PUBLIC KEY` 및 `END PUBLIC KEY` 마커 없이 붙여넣으십시오.
+    `<public_key>`의 경우 `BEGIN PUBLIC KEY` 및 `END PUBLIC KEY` 마커 없이 1단계의 결과 텍스트를 붙여넣으십시오.
 
 3. cordova build 명령을 실행하여 공개 키를 애플리케이션에 저장하십시오.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2016, 2019
-lastupdated:  "2019-02-12"
+lastupdated: "2019-06-06"
 
 keywords: mobile foundation, mobile analytics, professional plan, configure database
 
@@ -22,7 +22,7 @@ subcollection:  mobilefoundation
 Professional Per Device 플랜을 사용하면 사용자가 모바일 사용자 또는 디바이스의 수와 관계없이 프로덕션에서 모바일 애플리케이션을 빌드, 테스트 및 실행할 수 있습니다. 비용은 일별 클라이언트 디바이스의 수를 기반으로 합니다. 이 플랜은 대규모 배치 및 고가용성을 지원합니다.
 {{site.data.keyword.mobilefoundation_short}}: Professional Per Device 서비스 인스턴스를 작성한 후 다음 프로시저를 읽고 서비스를 시작하십시오.
 
-## Professional Per Device 플랜의 필수 소프트웨어
+## Professional Per Device 플랜의 전제조건
 {: #prerequisites_p5}
 
 {{site.data.keyword.mobilefoundation_short}}: Professional Per Device 서비스 인스턴스를 구성하기 전에 다음을 고려하십시오.

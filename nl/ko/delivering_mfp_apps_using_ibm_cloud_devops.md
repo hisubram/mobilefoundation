@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-13"
+lastupdated: "2019-06-10"
 
 keywords: mobile foundation, integration, devops, ibmcloud, pipeline
 
@@ -39,7 +39,7 @@ subcollection:  mobilefoundation
 
 다음 이미지는 파이프라인의 개요를 제공합니다.
 
-![overview_of_pipeline](images/p00_overview_of_pipeline.png)
+![overview_of_pipeline](images/p00_overview_of_pipeline.png "DevOps 파이프라인의 여섯 단계")
 
 
 ## 전제조건
@@ -49,7 +49,7 @@ subcollection:  mobilefoundation
 * [mfpdev-cli](https://www.npmjs.com/package/mfpdev-cli)
 * 샘플 앱 및 [MFP 어댑터](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/)
 * [GitHub](http://github.com/) 계정
-* **선택사항:** [Bitbar](https://bitbar.com/testing/) 인스턴스 및 Bitbar API 키(요구사항에 따라 임의의 서비스를 사용할 수 있음)
+* *선택사항:* [Bitbar](https://bitbar.com/testing/) 인스턴스 및 Bitbar API 키(요구사항에 따라 임의의 서비스를 사용할 수 있음)
 
 
 ## Continuous Delivery 서비스 및 도구 체인 작성
@@ -58,13 +58,13 @@ subcollection:  mobilefoundation
 * {{ site.data.keyword.cloud_notm }} 카탈로그에서 "Continuous Delivery"를 검색하십시오(또는 [여기를 클릭](https://cloud.ibm.com/catalog/services/continuous-delivery)).
 * 서비스 이름, 지역 등을 제공하여 서비스를 작성하십시오.
 
-    다음 예에서는 서비스 이름을 "MFP App/Adapter delivery Test"로, 지역/위치를 "런던"으로, 리소스 그룹을 "기본값"으로 사용합니다.
+    다음 예에서는 서비스 이름을 *MFP App/Adapter delivery Test*로, 지역/위치를 *London*으로, 리소스 그룹을 *Default*로 사용합니다.
 
-    ![configuring_continuous_delivery_service](images/p01_configuring_continuous_delivery_service.png)
+    ![configuring_continuous_delivery_service](images/p01_configuring_continuous_delivery_service.png "Mobile Foundation 서비스 인스턴스에 대한 카탈로그 작성 페이지")
 
-* 왼쪽에 있는 햄버거 메뉴의 {{ site.data.keyword.jazzhub_title }} 섹션에서 도구 체인을 작성하고 "자체 도구 체인 빌드"를 검색하여 처음부터 새로 도구 체인을 작성하십시오.
+* 탐색 메뉴에서 **DevOps**를 선택한 다음 **도구 체인 작성**을 클릭하고  "자체 도구 체인 빌드"를 검색하여 처음부터 새로 도구 체인을 작성하십시오.
 
-    ![search_build_your_own_toolchain](images/p02_search_build_your_own_toolchain.png)
+    ![search_build_your_own_toolchain](images/p02_search_build_your_own_toolchain.png "자체 도구 체인 빌드에 대한 검색 결과를 사용하여 자체 도구 체인 페이지 작성")
 
 * 구성할 도구 체인 이름, 지역 등을 제공하십시오.
 
@@ -72,13 +72,13 @@ subcollection:  mobilefoundation
 ## 버전 제어 및 파이프라인 트리거를 위해 GitHub를 도구 체인과 통합
 {: #integrating-github-with-the-toolchain}
 
-* 왼쪽 메뉴의 도구 체인 개요에서 **도구 추가**를 클릭하고 GitHub를 검색하십시오.
+* 탐색의 **개요** 페이지에서 **도구 추가**를 클릭하고 GitHub를 검색하십시오.
 * **GitHub 서버 주소**, **저장소 유형** 및 **저장소 URL**에 대해 GitHub 도구를 구성하십시오.
 * 새 저장소를 작성하거나 기존 저장소를 분기, 복제 또는 사용할 수 있습니다.
 
-    다음 예에서는 GitHub 서버를 "[https://github.com](http://github.com/)"로, 저장소 유형을 "기존"으로, 저장소 URL을 "https://github.com/sagar20896/mfp-devops-20181210030116092"로 사용합니다.
+    다음 예에서는 GitHub 서버를 "[https://github.com](http://github.com/)"으로, 저장소 유형을 *Existing*으로, 저장소 URL을 *https://github.com/sagar20896/mfp-devops-20181210030116092*로 사용합니다.
 
-    ![configuring_toolchain](images/p03_configuring_toolchain.png)
+    ![configuring_toolchain](images/p03_configuring_toolchain.png "GitHub 서버, 저장소 유형 및 저장소 URL 필드를 표시하는 통합 구성 화면")
 
 ### 도구 체인에 Delivery Pipeline 추가
 {: #adding-the-delivery-pipeline-to-the-toolchain}
@@ -96,7 +96,7 @@ subcollection:  mobilefoundation
 
 다음 예에서는 입력 유형을 *Git 저장소*로, Git 저장소를 *mfp-devops-20181210030116092*로, Git URL을 *https://github.com/sagar20896/mfp-devops-20181210030116092*로, 분기를 *마스터*로 설정합니다.
 
-![first_stage_git_input](images/p4_first_stage_git_input.png)
+![first_stage_git_input](images/p4_first_stage_git_input.png "입력 탭이 선택된 Mobile Foundation 설정 화면")
 
 - **단계 추가**를 클릭하고 이미지에 표시된 대로 GitHub 저장소를 가리키도록 **입력** 탭을 구성하십시오.
 - **작업** 탭에서 **작업 추가**를 클릭하고 *배치*를 작업 유형으로 선택하십시오. **배치자 유형**을 *Cloud Foundry*로 선택하십시오.
@@ -132,13 +132,13 @@ subcollection:  mobilefoundation
 ```
 {: codeblock}
 
-위의 스크립트에서는 Cloud Foundry CLI를 사용하여 {{ site.data.keyword.mobilefoundation_short }} 서비스 인스턴스를 작성합니다.
+앞의 스크립트에서는 Cloud Foundry CLI를 사용하여 {{ site.data.keyword.mobilefoundation_short }} 서비스 인스턴스를 작성합니다.
 
-![stage1_jobs_tab_config](images/p05_stage1_jobs_tab_config.png)
+![stage1_jobs_tab_config](images/p05_stage1_jobs_tab_config.png "작업 탭이 선택된 Mobile Foundation 설정 화면")
 
 **환경 특성** 탭에서 *INSTANCE\_NAME*을 MobileFoundation 인스턴스 이름이 될 값(텍스트 특성)으로 추가하십시오. 이 특성은 여러 단계에서 ID로 사용됩니다.
 
-![stage1_environment_properties](images/p06_stage1_environment_properties.png)
+![stage1_jobs_tab_config](images/p06_stage1_environment_properties.png "환경 특성 탭이 선택된 Mobile Foundation 설정 화면")
 
 #### 2단계 - 어댑터 빌드
 {: #stage2-building-an-adapter}
@@ -164,11 +164,11 @@ subcollection:  mobilefoundation
 ```
 {: codeblock}
 
-위의 스크립트에서는 저장소의 `adapters/JavaAdapter`에서 [mfpdev-cli](https://www.npmjs.com/package/mfpdev-cli)를 설치하여 adapter 명령을 통해 어댑터를 빌드합니다.
+앞의 스크립트에서는 저장소의 `adapters/JavaAdapter`에서 [mfpdev-cli](https://www.npmjs.com/package/mfpdev-cli)를 설치하여 adapter 명령을 통해 어댑터를 빌드합니다.
 
 다음 예에서는 **빌더 유형**을 *npm*으로 사용하고 빌드 스크립트에서 제공된 스크립트를 사용합니다. **작업 디렉토리**와 **빌드 아카이브 디렉토리** 매개변수는 비워 둡니다.
 
-![build_adapter_stage_jobs_config](images/p07_build_adapter_stage_jobs_config.png)
+![build_adapter_stage_jobs_config](images/p07_build_adapter_stage_jobs_config.png "작업 탭이 선택된 BuildAdapter 화면")
 
 #### 3단계 - 어댑터 배치
 {: #stage3-deploying-an-adapter}
@@ -184,7 +184,7 @@ subcollection:  mobilefoundation
 
 다음 예에서는 **배치자 유형**을 *Cloud Foundry*로, **{{ site.data.keyword.cloud_notm }} 지역**을 *댈러스*로 사용하며 첫 번째 단계에서 작성한 것과 동일한 API 키를 사용합니다.
 
-![deploy_adapter](images/p08_deploy_adapter.png)
+![deploy_adapter](images/p08_deploy_adapter.png "작업 탭이 선택된 배치 화면")
 
 
 아래의 **배치 스크립트**를 사용하십시오.
@@ -284,7 +284,7 @@ API 테스트 프레임워크를 사용하여 어댑터를 테스트할 수 있�
 #### 5단계 - Fastlane으로 앱 빌드
 {: #stage5-building-apps-with-fastlane}
 
-이 단계의 입력은 이전 단계에서 사용한 GitHub 저장소여야 합니다. 이 단계는 이전 단계(어댑터 테스트)에 통과한 후에 트리거되어야 합니다.
+이 단계의 입력은 이전 단계에서 사용한 GitHub 저장소여야 합니다. 이 단계는 이전 단계(어댑터 테스트)가 통과된 후에 트리거되어야 합니다.
 
 앱을 빌드하기 위해 **작업** 탭에서 배치 작업 템플리트를 사용합니다. *Cloud Foundry*를 **배치자 유형**으로 사용하십시오.
 
@@ -366,7 +366,7 @@ API 테스트 프레임워크를 사용하여 어댑터를 테스트할 수 있�
 ```
 {: codeblock}
 
-위의 스크립트에서는 `mfpdev-cli`를 사용하여 앱을 빌드하고 릴리스하기 위해 앱을 {{ site.data.keyword.mobilefoundation_short }} [Fastlane](https://fastlane.tools/)에 등록합니다.
+앞의 스크립트에서는 `mfpdev-cli`를 사용하여 앱을 빌드하고 릴리스하기 위해 앱을 {{ site.data.keyword.mobilefoundation_short }} [Fastlane](https://fastlane.tools/)에 등록합니다.
 
 이 스크립트에서 사용되는 환경 변수는 다음 **환경 특성** 탭에 정의됩니다.
 
@@ -377,7 +377,8 @@ API 테스트 프레임워크를 사용하여 어댑터를 테스트할 수 있�
 - *gitPushUser* - **GitHub 사용자 이름**
 - *gitPushEmail* - **GitHub 사용자의 이메일**
 - *gitPushToken* - **git 푸시 토큰**
-- *apkGitPushUrl* - **https://$gitPushToken:x-oauth-basic@github.com/<path><SPACE><branch>**(예: `https://$gitPushToken:x-oauth-basic@github.com/ShinojEdakkara/mfp-apps master`)
+- *apkGitPushUrl* - **https://$gitPushToken:x-oauth-basic@github.com/<path><SPACE><branch>**
+   (예: `https://$gitPushToken:x-oauth-basic@github.com/ShinojEdakkara/mfp-apps master`)
 
 
 #### 6단계 - Bitbar를 사용하여 앱 테스트
@@ -398,7 +399,7 @@ API 테스트 프레임워크를 사용하여 어댑터를 테스트할 수 있�
 ```
 {: codeblock}
 
-위의 스크립트에는 몇 가지 환경 변수가 필요합니다.
+앞의 스크립트에는 몇 가지 환경 변수가 필요합니다.
 
 - *screenshot\_dir* - **/home/pipeline/home/pipeline/$BUILD\_ID/target**
 - *applicationPath* - 테스트할 애플리케이션에 대한 **GitHub 경로**
@@ -430,4 +431,4 @@ API 테스트 프레임워크를 사용하여 어댑터를 테스트할 수 있�
 ```
 {: codeblock}
 
-- **환경 특성** 탭에서 *INSTANCE_NAME*을 {{ site.data.keyword.mobilefoundation_short }} 인스턴스가 작성될 때 첫 번째 단계에서 설정한 값으로 설정하십시오. 
+- **환경 특성** 탭에서 *INSTANCE_NAME*을 {{ site.data.keyword.mobilefoundation_short }} 인스턴스가 작성될 때 첫 번째 단계에서 설정한 값으로 설정하십시오.
